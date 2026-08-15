@@ -719,6 +719,7 @@ body {
 
 .comment-meta {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   font-size: 0.8rem;
   color: var(--text-secondary);
@@ -728,6 +729,33 @@ body {
 .comment-author {
   font-weight: 600;
   color: var(--accent-primary);
+}
+
+.comment-right-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.delete-note-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-error);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0.75;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: var(--transition);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.delete-note-btn:hover {
+  opacity: 1;
+  background: var(--color-error-bg);
 }
 
 .comment-body {

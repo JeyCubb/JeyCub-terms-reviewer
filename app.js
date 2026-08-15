@@ -10,7 +10,7 @@ let state = {
   currentIndex: 0,
   userAnswers: {}, // { "subject_qId": optionIndex }
   bookmarks: new Set(), // Set of "subject_qId" stored locally in browser
-  liveNotes: {}, // { "subject_qId": [{ id, name, text, date }] }
+  liveNotes: {}, // { "subject_qId": [{ id, name, text, date, firebaseKey }] }
   notesOpen: false,
   
   // Firebase Database Handle for notes
@@ -34,7 +34,7 @@ const DEFAULT_FIREBASE_CONFIG = {
   databaseURL: "https://fluid-mechanics-reviewer-default-rtdb.firebaseio.com"
 };
 
-// Initialize Application (Fail-safe, instant execution)
+// Initialize Application
 document.addEventListener('DOMContentLoaded', () => {
   loadStoredData();
   updateSubjectUI();
@@ -90,7 +90,7 @@ function switchSubject(subjectKey) {
 }
 
 /* ==========================================================================
-   Firebase Realtime Notes (Optional cloud sync)
+   Firebase Realtime Notes
    ========================================================================== */
 
 function initFirebase() {
@@ -327,7 +327,7 @@ function shuffleCurrentView() {
 }
 
 /* ==========================================================================
-   Togglable Per-Question Notes Section
+   Togglable Per-Question Notes Section with Delete Support
    ========================================================================== */
 
 function toggleNotesSection() {
@@ -377,7 +377,13 @@ function subscribeLiveNotesCurrent() {
         const data = snapshot.val();
         let notesList = [];
         if (data) {
-          notesList = Object.values(data).reverse();
+          Object.keys(data).forEach(fbKey => {
+            notesList.push({
+              ...data[fbKey],
+              firebaseKey: fbKey
+            });
+          });
+          notesList.reverse();
         }
         state.liveNotes[key] = notesList;
         saveData('jt_live_notes_local', state.liveNotes);
@@ -407,13 +413,18 @@ function renderLiveNotesUI(notesList) {
     return;
   }
 
-  notesList.forEach(item => {
+  notesList.forEach((item, index) => {
     const div = document.createElement('div');
     div.className = 'comment-item';
     div.innerHTML = `
       <div class="comment-meta">
         <span class="comment-author"><i class="fa-solid fa-user-graduate"></i> ${escapeHTML(item.name)}</span>
-        <span class="comment-date">${item.date}</span>
+        <div class="comment-right-meta">
+          <span class="comment-date">${item.date}</span>
+          <button class="delete-note-btn" onclick="deleteNote(${index}, '${item.firebaseKey || ''}')" title="Delete note">
+            <i class="fa-solid fa-trash-can"></i> Delete
+          </button>
+        </div>
       </div>
       <div class="comment-body">${escapeHTML(item.text)}</div>
     `;
@@ -446,7 +457,11 @@ function postLiveSharedNote() {
 
   if (state.firebaseDb) {
     try {
-      state.firebaseDb.ref(`live_notes/${key}`).push(newNote);
+      const pushRef = state.firebaseDb.ref(`live_notes/${key}`).push();
+      pushRef.set({
+        ...newNote,
+        firebaseKey: pushRef.key
+      });
     } catch (e) {
       console.error('Firebase push error:', e);
     }
@@ -458,6 +473,31 @@ function postLiveSharedNote() {
 
   if (textInput) textInput.value = '';
   renderLiveNotesUI(state.liveNotes[key]);
+}
+
+function deleteNote(noteIndex, firebaseKey) {
+  const questions = getActiveQuestions();
+  const qId = questions[state.currentIndex].id;
+  const key = `${state.currentSubject}_q${qId}`;
+
+  if (!confirm("Are you sure you want to delete this note?")) return;
+
+  if (state.liveNotes[key] && state.liveNotes[key][noteIndex]) {
+    const deletedItem = state.liveNotes[key].splice(noteIndex, 1)[0];
+
+    // Remove from Firebase if key exists
+    const fbKey = firebaseKey || (deletedItem ? deletedItem.firebaseKey : null);
+    if (fbKey && state.firebaseDb) {
+      try {
+        state.firebaseDb.ref(`live_notes/${key}/${fbKey}`).remove();
+      } catch (e) {
+        console.error("Firebase note deletion error:", e);
+      }
+    }
+
+    saveData('jt_live_notes_local', state.liveNotes);
+    renderLiveNotesUI(state.liveNotes[key]);
+  }
 }
 
 /* ==========================================================================
