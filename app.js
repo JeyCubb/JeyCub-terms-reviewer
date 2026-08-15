@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Fast, reliable, local-first review app for Engineering Board Exams.
- * Supports mode-specific layout orders (Practice = Question Top / Title Bottom, All Questions = Title Top / Search Top).
+ * Auto-blurs select dropdowns so Arrow Keys always navigate questions.
  */
 
 // Global State
@@ -87,6 +87,10 @@ function changePracticeFilter(filterVal) {
   state.practiceFilter = filterVal;
   state.currentIndex = 0;
 
+  // Immediately remove focus from select element so Arrow Keys navigate questions, not dropdown options!
+  const select = document.getElementById('practice-filter-select');
+  if (select) select.blur();
+
   // When switching to 'weak' or 'bookmarked' pool, automatically clear answered state for questions in that pool so they are ready to retry fresh!
   if (filterVal === 'weak' || filterVal === 'bookmarked') {
     const poolQuestions = getFilteredPracticeQuestions();
@@ -129,8 +133,15 @@ function resetAllSubjectAnswers() {
 function initKeyboardShortcuts() {
   document.addEventListener('keydown', (e) => {
     const activeEl = document.activeElement;
-    if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.tagName === 'SELECT')) {
+
+    // Ignore keyboard shortcuts if user is actively typing in text fields
+    if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA')) {
       return;
+    }
+
+    // Auto-blur select dropdowns if they currently hold focus when pressing arrow keys
+    if (activeEl && activeEl.tagName === 'SELECT') {
+      activeEl.blur();
     }
 
     if (state.currentMode !== 'practice') return;
@@ -189,6 +200,9 @@ function switchSubject(subjectKey) {
   state.currentSubject = subjectKey;
   state.currentIndex = 0;
   localStorage.setItem('jt_subject', subjectKey);
+
+  const select = document.getElementById('subject-selector');
+  if (select) select.blur();
 
   updateSubjectUI();
   renderCurrentPracticeQuestion();
