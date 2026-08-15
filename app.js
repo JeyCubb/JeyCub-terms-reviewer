@@ -1,5 +1,5 @@
 /**
- * Jeycub Terms Reviewer - Application Engine
+ * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
  * Auto-hides solution/notes when navigating to next or previous questions.
  */
