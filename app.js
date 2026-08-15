@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Fast, reliable, local-first review app for Engineering Board Exams.
- * Persists Random Mode across page refreshes via LocalStorage.
+ * Smoothly scrolls to top on mode switch and sorts All Questions from #1 upwards.
  */
 
 // Global State
@@ -335,6 +335,9 @@ function switchMode(mode) {
   if (mode === 'all') {
     filterAllQuestions();
   }
+
+  // Smoothly scroll to the very top when switching modes so Search bar & Problem #1 are immediately visible!
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function toggleTheme() {
@@ -727,6 +730,9 @@ function filterAllQuestions() {
       const keyB = `${state.currentSubject}_q${b.id}`;
       return (state.groupMistakes[keyB] || 0) - (state.groupMistakes[keyA] || 0);
     });
+  } else {
+    // Explicitly sort from Problem #1 going up!
+    questions.sort((a, b) => a.id - b.id);
   }
 
   let count = 0;
