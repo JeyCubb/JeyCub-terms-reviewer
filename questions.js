@@ -1,1535 +1,458 @@
 /**
- * Chapter 11: Fluid Mechanics - Quiz & Reviewer Dataset
- * Contains 127 Multiple Choice Questions extracted with answers and category metadata.
+ * Jeycub Terms Reviewer - Multi-Subject Dataset
+ * Contains:
+ * 1. Fluid Mechanics (127 Problems)
+ * 2. Mechanics of Deformable Bodies (150 Problems - Tests 2, 3, 4)
+ * 3. Heat Transfer (142 Problems)
  */
 
-const QUIZ_DATA = [
-  {
-    id: 1,
-    question: "If the energy of the incident photon is less than the work function:",
-    options: [
-      "An electron will be ejected",
-      "More than one electron will be ejected",
-      "An electron will not be ejected",
-      "Less than one electron will be ejected"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Photoelectric emission occurs only when the energy of incident photon (hf) is greater than or equal to the work function (Φ) of the metal."
-  },
-  {
-    id: 2,
-    question: "For supersonic flow, the pressure of fluid must decrease as the fluid flow area of the duct:",
-    options: [
-      "Increases",
-      "Decreases",
-      "Remain the same",
-      "None of these"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "In supersonic flow (Mach > 1), expanding the duct area (diverging section) causes the flow to accelerate further, resulting in a decrease in pressure."
-  },
-  {
-    id: 3,
-    question: "Density in terms of viscosity is:",
-    options: [
-      "Kinematic viscosity / dynamic viscosity",
-      "Dynamic viscosity / kinematic viscosity",
-      "Kinematic viscosity x dynamic viscosity",
-      "None of the above"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Kinematic viscosity (ν) = Dynamic viscosity (μ) / Density (ρ), so Density (ρ) = Dynamic viscosity (μ) / Kinematic viscosity (ν)."
-  },
-  {
-    id: 4,
-    question: "Liquids and gases take the following characteristic(s) of their contents.",
-    options: [
-      "Volume",
-      "Shape",
-      "Shape and volume",
-      "Neither shape nor volume"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Fluids (liquids and gases) do not have a fixed shape and conform to the shape of their container."
-  },
-  {
-    id: 5,
-    question: "Alcohol finds use in manometers as:",
-    options: [
-      "It provides a suitable meniscus for the inclined tube",
-      "Its density being less can provide longer length for a pressure difference, thus more accuracy can be obtained",
-      "A and B above are correct",
-      "Cheap and easily available"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Alcohol's low density provides a longer liquid column for a small pressure difference (higher sensitivity) and forms a clear, distinct meniscus."
-  },
-  {
-    id: 6,
-    question: "Which of the following statements about a Newtonian fluid is most accurate?",
-    options: [
-      "Shear stress is proportional to strain",
-      "Viscosity is zero",
-      "Shear stress is multi – valued",
-      "Shear stress is proportional to rate of strain"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "A Newtonian fluid follows Newton's law of viscosity, where shear stress (τ) is directly proportional to the velocity gradient or rate of shear strain (du/dy)."
-  },
-  {
-    id: 7,
-    question: "The normal stress is the same in all directions at a point in fluid:",
-    options: [
-      "Independent of the motion of one fluid layer relative to an adjacent layer",
-      "When there is no motion of one fluid layer relative to an adjacent layer",
-      "Only if the fluid is frictionless",
-      "Only if fluid is frictionless and incompressible"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "According to Pascal's Law, in a fluid at rest (or when there is no relative motion between adjacent layers), pressure (normal stress) is equal in all directions."
-  },
-  {
-    id: 8,
-    question: "Which of the following is not a characteristic of fluid pressure?",
-    options: [
-      "It is the same in all directions at a point in the fluid",
-      "Its acts normal to a surface",
-      "It is a shear stress",
-      "It is linear with depth"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Fluid pressure is a compressive normal stress, not a shear stress."
-  },
-  {
-    id: 9,
-    question: "The length of mercury column at a place at an altitude will change with respect to that at ground in:",
-    options: [
-      "A linear relation",
-      "A parabolic relation",
-      "Will remain constant",
-      "First slowly and then steeply"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Atmospheric pressure decreases exponentially with altitude (barometric formula), causing mercury height to drop slowly near ground level and steeper higher up."
-  },
-  {
-    id: 10,
-    question: "All of the following dimensionless parameters are applicable to fluid flow problems except the _______.",
-    options: [
-      "Reynolds number",
-      "Froude number",
-      "Mach number",
-      "Biot number"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Biot number is used in heat transfer calculations (transient conduction), whereas Reynolds, Froude, and Mach numbers are fluid dynamic dimensionless numbers."
-  },
-  {
-    id: 11,
-    question: "Mass density of liquid (ρ) is given by which of the following?",
-    options: [
-      "ρ = Mass / volume",
-      "ρ = metric slug / m²",
-      "ρ = kg-sec² / m⁴",
-      "all of the above"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Mass density can be expressed as Mass/Volume, metric slug/m³, or in gravitational units kg-sec²/m⁴."
-  },
-  {
-    id: 12,
-    question: "The speed of sound in all fluid is most closely related to all of the following properties except________.",
-    options: [
-      "Compressibility",
-      "Density",
-      "Bulk modulus",
-      "Thermal conductivity"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Speed of sound c = √(K/ρ) or √(1/(β·ρ)). Thermal conductivity does not directly govern acoustic wave speed in fluids."
-  },
-  {
-    id: 13,
-    question: "Under which condition, the specific weight of water is 1000 kg/m³?",
-    options: [
-      "At normal pressure of 760 mm",
-      "At 4 °C temperature",
-      "At mean sea level",
-      "All of the above"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Standard pure water achieves its maximum mass density of 1000 kg/m³ at 4°C, 1 atm (760 mm Hg) at mean sea level."
-  },
-  {
-    id: 14,
-    question: "All of the following can be characteristics of fluids except_________.",
-    options: [
-      "kinematic viscosity",
-      "surface tension",
-      "bulk modulus",
-      "hysteresis"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Hysteresis is a phenomenon associated with magnetic materials, solid mechanics stress-strain loops, or structural damping, not a standard fluid property."
-  },
-  {
-    id: 15,
-    question: "Which of the following can be used to measure the flow of water in a pipe of diameter 3000 mm?",
-    options: [
-      "Venturimeter",
-      "Rotameter",
-      "Nozzle",
-      "Pitot tube"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "For very large pipelines (e.g. 3000 mm diameter), a Pitot tube is economical and practical because it measures localized point velocity across large conduits."
-  },
-  {
-    id: 16,
-    question: "The pressure at a given depth due to several immiscible liquids is:",
-    options: [
-      "The average of the individual pressures",
-      "The sum of the individual pressures",
-      "Independent of the individual pressures",
-      "Unknown"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Total hydrostatic pressure at depth is the sum of pressure heads produced by each immiscible liquid layer above: P = ∑(ρ_i · g · h_i)."
-  },
-  {
-    id: 17,
-    question: "The equation of continuity of flow is applicable if:",
-    options: [
-      "The flow is one dimensional",
-      "The flow is steady",
-      "The velocity is uniform over the cross – section",
-      "All of the above conditions are together"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "The elementary continuity equation A1·V1 = A2·V2 relies on steady, 1D flow with uniform velocity over each cross-section."
-  },
-  {
-    id: 18,
-    question: "Uniform flow takes place when:",
-    options: [
-      "Conditions remain unchanged with time at any point",
-      "Rate of change of velocity of fluid is zero",
-      "At every point the velocity vector is identical in magnitude and direction for any given instant",
-      "The change in transverse direction is zero"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Uniform flow is defined when fluid parameters (velocity vector) at a given instant do not change along the path of flow: ∂V/∂s = 0."
-  },
-  {
-    id: 19,
-    question: "The continuity equation of an ideal fluid flow.",
-    options: [
-      "States that the net rate in – flow into any small volume must be zero",
-      "Applies to irrotational flow only",
-      "States that the energy remains constant along streamline",
-      "States that energy is constant everywhere in the fluid"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "In an ideal, irrotational, steady fluid flow, Bernoulli's formulation guarantees that total energy head remains constant everywhere throughout the fluid field."
-  },
-  {
-    id: 20,
-    question: "A Pitot tube can be used to measure fluid velocity as described by the Bernoulli's equation and the relationship between:",
-    options: [
-      "Kinetic energy and static pressure",
-      "Fluid pressure and height of the fluid",
-      "Fluid pressure and impact energy",
-      "Pressure and momentum"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "A Pitot tube converts dynamic pressure (kinetic energy per unit volume) into stagnation pressure relative to static pressure."
-  },
-  {
-    id: 21,
-    question: "In order to avoid vaporization in the pipe line, the pipe line over the ridge is laid in such a way that it is not more than:",
-    options: [
-      "2.4m above the hydraulic gradient",
-      "6.4m above the hydraulic gradient",
-      "10m above the hydraulic gradient",
-      "5m above the hydraulic gradient"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "To prevent cavitation and liquid vaporization at elevated siphon summits, the pipe line summit should not exceed 2.4 m to 7.6 m above the HGL (typically ~2.4 m safety margin)."
-  },
-  {
-    id: 22,
-    question: "The stream function is a useful parameter in describing_____________.",
-    options: [
-      "The conservation of mass",
-      "The conservation of momentum",
-      "The conservation of energy",
-      "The equation of state"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "The stream function (ψ) automatically satisfies the 2D incompressible continuity equation, representing the conservation of mass."
-  },
-  {
-    id: 23,
-    question: "For high speed flows, the potential energy of fluids are:",
-    options: [
-      "Positive",
-      "Negative",
-      "Negligible",
-      "None of these"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "In high-speed flows (gas dynamics, high velocity nozzles), kinetic energy and enthalpy changes dwarf potential energy (elevation z) changes, making potential energy negligible."
-  },
-  {
-    id: 24,
-    question: "McLeod gauge used for low pressure measurement operates on the principle of _________.",
-    options: [
-      "Gas law",
-      "Boyle's law",
-      "Charles law",
-      "Pascal's law"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "A McLeod gauge compresses a trapped volume of low-pressure gas isothermally into a smaller volume, measuring the resulting increased pressure using Boyle's Law (P1V1 = P2V2)."
-  },
-  {
-    id: 25,
-    question: "Kaplan turbine is",
-    options: [
-      "A high head mixed flow turbine",
-      "An impulse turbine, inward flow",
-      "A reaction turbine, outward flow",
-      "Low head axial flow turbine"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Kaplan turbine is an axial-flow reaction hydraulic turbine with adjustable blades designed for low heads (under 30 m) and large volumetric discharge."
-  },
-  {
-    id: 26,
-    question: "The most common method for calculating frictional energy loss for laminar flowing fluids in noncircular pipe is:",
-    options: [
-      "The Darcy equation",
-      "The Hagen – Poiseuille equation",
-      "The Hazen - Williams equation",
-      "The Swamee – Jain equation"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "The Darcy-Weisbach equation h_f = f(L/D_h)(V²/2g) using hydraulic diameter D_h is the standard general method for non-circular pipes."
-  },
-  {
-    id: 27,
-    question: "The parameter f in the expression for head-loss is",
-    options: [
-      "The fraction of flow that is totally turbulent",
-      "The Darcy friction factor",
-      "The height of roughness scale in turbulent flow",
-      "The static coefficient of friction"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "In the Darcy-Weisbach equation for head loss, 'f' represents the dimensionless Darcy friction factor."
-  },
-  {
-    id: 28,
-    question: "Friction factor for both laminar and turbulent flows can be found plotted in a",
-    options: [
-      "Steam table",
-      "Psychrometric chart",
-      "Moody diagram",
-      "Mollier diagram"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "The Moody diagram plots the Darcy friction factor f against Reynolds number (Re) for relative roughness values across laminar and turbulent regimes."
-  },
-  {
-    id: 29,
-    question: "Which of the following is relative velocity?",
-    options: [
-      "The difference between two velocities",
-      "Average velocity",
-      "Sum of two velocities",
-      "Vector difference of two velocities"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Relative velocity V_rel is the vector difference between the velocity of a body/fluid and a reference frame: V_rel = V_1 - V_2."
-  },
-  {
-    id: 30,
-    question: "Which of the following is the highest head?",
-    options: [
-      "33 inch Hg",
-      "31.0 ft. water",
-      "1.013 kg/cm²",
-      "75.0 cm of Hg"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "33 in Hg = 111.7 kPa, 31 ft H2O = 92.6 kPa, 1.013 kg/cm² = 99.3 kPa, 75 cm Hg = 100.0 kPa. Thus, 33 in Hg represents the highest pressure head."
-  },
-  {
-    id: 31,
-    question: "For stable equilibrium of floating body its metacenter should lie:",
-    options: [
-      "Below the center of gravity",
-      "Below the center of buoyancy",
-      "Above the center of buoyancy",
-      "Above the center of gravity"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "A floating body is in stable equilibrium if its metacenter M lies above its center of gravity G (metacentric height GM > 0)."
-  },
-  {
-    id: 32,
-    question: "Center of pressure on an inclined plane lies ___.",
-    options: [
-      "At the centroid",
-      "Above the centroid",
-      "Below the centroid",
-      "At metacenter"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Due to hydrostatic pressure increasing linearly with depth, the center of pressure always lies below the centroid of a submerged plane surface."
-  },
-  {
-    id: 33,
-    question: "The line of action of the buoyant forces always acts through the centroid of the ______.",
-    options: [
-      "Submerged body",
-      "Volume of the floating body",
-      "Volume of the fluid vertically above the body",
-      "Displaced volume of the fluid"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "The center of buoyancy is located at the centroid of the volume of fluid displaced by the body (Archimedes' Principle)."
-  },
-  {
-    id: 34,
-    question: "The hydraulic grade line of a pipe denotes which of the following?",
-    options: [
-      "Total energy",
-      "Pressure energy",
-      "Potential energy",
-      "The sum of pressure energy and potential energy"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Hydraulic Grade Line (HGL) represents the sum of piezometric head: Pressure head (P/γ) + Elevation head (z)."
-  },
-  {
-    id: 35,
-    question: "The energy grade line of a pipeline denotes which of the following?",
-    options: [
-      "Total energy",
-      "Pressure energy",
-      "Potential energy",
-      "The sum of pressure energy and potential energy"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Energy Grade Line (EGL) represents the total energy head: P/γ + z + V²/(2g)."
-  },
-  {
-    id: 36,
-    question: "The presence of friction in the energy grade line will always cause the line to slope",
-    options: [
-      "Down in the direction of the flow",
-      "Upward in the direction of the flow",
-      "Level (no slope)",
-      "There is no effect of friction on the energy grade line"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Frictional losses continuously dissipate total energy along the path of real fluid flow, causing the EGL to slope downward in the direction of flow."
-  },
-  {
-    id: 37,
-    question: "The Pitot tube is a device used for measurement of",
-    options: [
-      "Pressure",
-      "Flow",
-      "Velocity",
-      "Discharge"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "A Pitot tube measures fluid flow velocity at a specific point in a fluid stream."
-  },
-  {
-    id: 38,
-    question: "Hydrometer is used to find out",
-    options: [
-      "Specific gravity liquids",
-      "Specific gravity solids",
-      "Specific gravity gases",
-      "Relative humidity"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "A hydrometer is a floating instrument calibrated to measure the specific gravity (relative density) of liquids."
-  },
-  {
-    id: 39,
-    question: "The fluid forces taken into consideration in the Navier Stokes equation are:",
-    options: [
-      "Gravity, pressure and viscous",
-      "Gravity, pressure and turbulent",
-      "Pressure, viscous and turbulent",
-      "Gravity, viscous and turbulent"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Navier-Stokes equations model real fluid motion by balancing inertia forces against body forces (gravity), pressure forces, and viscous shearing forces."
-  },
-  {
-    id: 40,
-    question: "Permissible velocity of water flowing through concrete tunnel, is generally",
-    options: [
-      "4-5 m/s",
-      "10-12 m/s",
-      "13-16 m/s",
-      "20 m/s"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "To prevent scouring and erosion of concrete lining in water tunnels, maximum recommended design velocity is kept around 4 to 5 m/s."
-  },
-  {
-    id: 41,
-    question: "Orifice refers to an opening",
-    options: [
-      "With closed perimeter and of regular form through which water flows",
-      "With prolonged sides having length of 2 to 3 diameters of opening in thick wall",
-      "With partially full flow",
-      "In hydraulic structure with regulation provision"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "An orifice is an opening in a hydraulic structure, vessel, or pipe wall through which fluid flows, often fitted with control valves/gates for flow regulation."
-  },
-  {
-    id: 42,
-    question: "The value of coefficient of discharge in comparison to coefficient of velocity is found to be_______.",
-    options: [
-      "More",
-      "Less",
-      "Same",
-      "More/less depending on flow"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Coefficient of discharge Cd = Cc · Cv. Since coefficient of contraction Cc < 1 (approx 0.62), Cd is always less than Cv."
-  },
-  {
-    id: 43,
-    question: "Weir refers to an opening",
-    options: [
-      "Having closed perimeter and of regular form through which water flows",
-      "Having prolonged sides with length of 2 to 3 diameters of opening in thick wall",
-      "Having partially full flow",
-      "In hydraulic structures with regulation provision"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "A weir is a notch or structure constructed across an open channel over which liquid flows with a free liquid surface (partially full open surface flow)."
-  },
-  {
-    id: 44,
-    question: "Which of the following parameters determine the friction factor of turbulent flow in a rough pipe?",
-    options: [
-      "Froude number and relative roughness",
-      "Froude number and Mach number",
-      "Reynolds number and relative roughness",
-      "Mach number and relative roughness"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "In rough turbulent flow, the friction factor f depends on both the Reynolds number (Re) and the relative roughness (ε/D)."
-  },
-  {
-    id: 45,
-    question: "Power transmitted through a pipe is maximum when the loss of head due to friction is:",
-    options: [
-      "One-half of the total head supplied",
-      "One-third of the total head supplied",
-      "One-fourth of the total head supplied",
-      "Equal to the total head supplied"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Maximum hydraulic power transmission occurs when friction head loss h_f = H/3, where H is total supply head at the inlet."
-  },
-  {
-    id: 46,
-    question: "In a nozzle if back pressure is same as inlet pressure; then_______________.",
-    options: [
-      "No flow takes place",
-      "Maximum flow takes place",
-      "Flow becomes subsonic in diverging section",
-      "Flow becomes supersonic in converging as well as supersonic section"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Fluid flow requires a pressure gradient. If back pressure equals inlet pressure (P_back = P_in), ∆P = 0 and no flow occurs."
-  },
-  {
-    id: 47,
-    question: "The flow on two sides of a normal shock wave is called___________.",
-    options: [
-      "Sonic",
-      "Sub-sonic",
-      "Supersonic",
-      "Supersonic on one side and sub-sonic on the other side"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "A normal shock wave transitions flow abruptly from supersonic (Mach > 1) upstream to subsonic (Mach < 1) downstream."
-  },
-  {
-    id: 48,
-    question: "Which of the following is the basic of Bernoulli's law for fluid flow?",
-    options: [
-      "Continuity equation",
-      "Principle of conservation of energy",
-      "Fourier's law",
-      "Principle of conservation of mass"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Bernoulli's equation is a mathematical expression of the principle of conservation of energy applied to fluid streamlines."
-  },
-  {
-    id: 49,
-    question: "Which of the following is NOT a characteristic of fluid pressure?",
-    options: [
-      "It is a shear stress",
-      "It is the same in all directions at a point in the fluid",
-      "It acts normal to a surface",
-      "It is linear with depth"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Fluid pressure is a normal compressive force per unit area, not a shear stress."
-  },
-  {
-    id: 50,
-    question: "Refers to the compressibility of a fluid, the fractional change in fluid volume per unit change in fluid pressure.",
-    options: [
-      "Viscosity",
-      "Bulk modulus",
-      "Density",
-      "Compressibility / Pressure"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Compressibility (β = -1/V · dV/dP) describes fractional volume change per unit change in fluid pressure."
-  },
-  {
-    id: 51,
-    question: "A Pitot tube can be used to measure fluid velocity as described by the Bernoulli's equation and the relationship between:",
-    options: [
-      "Kinetic energy and static pressure",
-      "Fluid pressure and static pressure",
-      "Fluid pressure and impact energy",
-      "Pressure and momentum"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Pitot tube relates dynamic pressure (kinetic head) to static pressure difference to calculate flow speed V = √(2(P_stag - P_stat)/ρ)."
-  },
-  {
-    id: 52,
-    question: "The ratio of the area to the wetted perimeter is known as __________.",
-    options: [
-      "Flow factor",
-      "Hydraulic radius",
-      "Kutter's C",
-      "Value of k in Darcy - Weisbach formula"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Hydraulic radius R_h = Cross-sectional area A / Wetted perimeter P_w."
-  },
-  {
-    id: 53,
-    question: "What is the coefficient of contraction?",
-    options: [
-      "The ratio of the area of vena contracta to the area of the orifice",
-      "The ratio of actual discharge to the theoretical discharge",
-      "The ratio of the actual velocity to the theoretical velocity",
-      "The ratio of the effective head to the actual head"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Coefficient of contraction Cc = Area of jet at vena contracta (A_c) / Area of orifice (A_o)."
-  },
-  {
-    id: 54,
-    question: "Where is vena contracta most likely located?",
-    options: [
-      "At the orifice",
-      "At a distance approximately ½ the diameter of the orifice",
-      "At a distance approximately equal to the diameter of the orifice",
-      "At a distance approximately twice the diameter of the orifice"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "The vena contracta (minimum jet cross-section) forms just outside a sharp-edged orifice at a distance roughly d/2 (half the orifice diameter)."
-  },
-  {
-    id: 55,
-    question: "A substance that is able to flow and yields to any force tending to change its shape without changing its volume such as water and air.",
-    options: [
-      "Fluid",
-      "Flux",
-      "Gas oil",
-      "Water gas"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "A fluid is defined as any substance (liquid or gas) that continuously deforms under applied shear stress."
-  },
-  {
-    id: 56,
-    question: "The velocity of a fluid particle at the center of the pipe section is______.",
-    options: [
-      "Maximum",
-      "Minimum",
-      "Average",
-      "Logarithmic average"
-    ],
-    answer: 0, // Index 0 -> A (Note: Answer key in slide listed B due to typo, but standard fluid dynamics gives Maximum velocity at centerline)
-    explanation: "In pipe flow (both laminar and turbulent), friction at the wall creates a velocity profile with maximum velocity along the centerline."
-  },
-  {
-    id: 57,
-    question: "For supersonic flow, the pressure of fluid must increase as the fluid flow area of the duct:",
-    options: [
-      "Increases",
-      "Decreases",
-      "Constant",
-      "None of these"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "In supersonic flow, decreasing the duct area (converging duct) slows the flow down, converting kinetic energy to static pressure (pressure increases)."
-  },
-  {
-    id: 58,
-    question: "Which is incorrect statement regarding apparent shear forces.",
-    options: [
-      "It can never be found in frictionless fluid regardless of its motion",
-      "It can never be found when the fluid is at rest",
-      "It depends upon cohesive forces",
-      "It may occur owing to cohesion when the fluid is at rest"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Fluid at rest cannot sustain shear stress. Cohesive forces alone do not generate static shear stress in stationary fluids."
-  },
-  {
-    id: 59,
-    question: "The time required for half a quantity of radioactive particles to decay (disintegrate) is called its_____________.",
-    options: [
-      "Average life",
-      "Median life",
-      "Time constant",
-      "Half time / Half-life"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Half-life (or half time) is the duration required for half of a radioactive isotope sample to disintegrate."
-  },
-  {
-    id: 60,
-    question: "SI unit of viscosity is:",
-    options: [
-      "10 times poise",
-      "9.81 times poise",
-      "1/9.81 time poise",
-      "1/10 times poise"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "1 Pascal-second (Pa·s, the SI unit of dynamic viscosity) equals 10 Poise (CGS unit)."
-  },
-  {
-    id: 61,
-    question: "For computation convenience, fluids are usually classed as:",
-    options: [
-      "Rotational or irrotational",
-      "Real or ideal",
-      "Laminar or turbulent",
-      "Newtonian or non-newtonian"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Fluids are broadly categorized as ideal (frictionless, incompressible) or real (viscous, compressible) to simplify mathematical modeling."
-  },
-  {
-    id: 62,
-    question: "Which of the following is not a dimensionless parameter?",
-    options: [
-      "Kinematic viscosity",
-      "Weber number",
-      "Darcy Weisbach friction factor",
-      "Froude number"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Kinematic viscosity has dimensions [L²/T] (m²/s in SI units). Weber, Froude, and friction factor are all dimensionless."
-  },
-  {
-    id: 63,
-    question: "Which of the following is not a characteristic of real fluids?",
-    options: [
-      "Finite viscosity",
-      "Non-uniform velocity distributions",
-      "Compressibility",
-      "Experience of eddy current and turbulence"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Ideal fluids lack viscosity and turbulence, whereas real fluids experience viscosity, non-uniform velocity, compressibility, and turbulence."
-  },
-  {
-    id: 64,
-    question: "Which of the following is not the mass density of water?",
-    options: [
-      "62.5 lbm/ft³",
-      "100 kg/m³",
-      "1 g/cm³",
-      "1 kg/L"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "The mass density of water is 1000 kg/m³, NOT 100 kg/m³."
-  },
-  {
-    id: 65,
-    question: "The upper critical Reynolds number for pipe flow is:",
-    options: [
-      "Of no practical importance to designers",
-      "Always used to design pipes for strength",
-      "The number at which turbulent flow changes over to laminar flow",
-      "The number at which laminar flow changes into turbulent flow"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "The upper critical Reynolds number depends on extreme disturbance-free conditions (can reach 10,000 to 40,000) and is unstable, making lower critical Re (2000-2300) the practical limit."
-  },
-  {
-    id: 66,
-    question: "Which of the following statements about gauge pressure is most correct? Gauge pressure are measured relative to _________.",
-    options: [
-      "Atmospheric pressure",
-      "A vacuum",
-      "Each other",
-      "The surface"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Gauge pressure measures pressure relative to local atmospheric pressure (P_gauge = P_absolute - P_atm)."
-  },
-  {
-    id: 67,
-    question: "The volumetric change of the fluid caused by a resistance is called ________.",
-    options: [
-      "Volumetric strain",
-      "Volumetric index",
-      "Compressibility",
-      "Adhesion"
-    ],
-    answer: 3, // Index 3 -> D (Answer key in board question text: D)
-    explanation: "Board question key specifies option D. Standard definition relates volume change per unit pressure to compressibility / volumetric strain."
-  },
-  {
-    id: 68,
-    question: "Compressibility of a fluid relates the fractional change in fluid volume per unit change in fluid pressure.",
-    options: [
-      "Temperature",
-      "Density",
-      "Pressure",
-      "Viscosity"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Compressibility β = -(1/V)·(∂V/∂P) relates fractional volume change to pressure change."
-  },
-  {
-    id: 69,
-    question: "Property of a fluid whereby its own molecules are attracted is known as ________.",
-    options: [
-      "Adhesion",
-      "Cohesion",
-      "Surface tension",
-      "Viscosity"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Cohesion is the intermolecular attraction between like molecules of the same fluid."
-  },
-  {
-    id: 70,
-    question: "The term subsonic flow refers to a flowing gas with a speed:",
-    options: [
-      "Less than the local speed of sound",
-      "Equal to the speed of sound",
-      "Greater than the speed of sound",
-      "Much greater than the speed of sound"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Subsonic flow occurs when fluid speed is less than local sound speed (Mach number M < 1)."
-  },
-  {
-    id: 71,
-    question: "The pressure at a point in a fluid will not be same in all the directions if the fluid is:",
-    options: [
-      "Viscous",
-      "Viscous and static",
-      "Inviscous and in motion",
-      "Viscous and is in motion"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "When a viscous fluid is in motion, shear stresses generate non-isotropic normal stress components."
-  },
-  {
-    id: 72,
-    question: "The statement that 'the hydrostatic pressure a fluid exerts on an immersed object or on container walls is a function only of fluid depth' is",
-    options: [
-      "The perfect gas law",
-      "D'Alembert's paradox",
-      "The hydrostatic paradox",
-      "Boyle's law"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Hydrostatic Paradox states that pressure at a given depth in a fluid depends only on vertical depth h and fluid density, regardless of container shape or total liquid weight."
-  },
-  {
-    id: 73,
-    question: "Bernoulli's equation is a/an ___________.",
-    options: [
-      "Momentum equation",
-      "Conservation of energy equation",
-      "Conservation of mass equation",
-      "Equation of state"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Bernoulli's equation expresses conservation of total mechanical energy along a fluid streamline."
-  },
-  {
-    id: 74,
-    question: "An ideal fluid is one that:",
-    options: [
-      "Is very viscous",
-      "Obeys Newton's law of viscosity",
-      "Is assumed in problems in conduit flow",
-      "Is frictionless and incompressible"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "An ideal fluid is defined theoretically as inviscid (zero friction/viscosity) and incompressible (constant density)."
-  },
-  {
-    id: 75,
-    question: "The relationship between pressure and altitude in the atmosphere is given by the:",
-    options: [
-      "Perfect gas law",
-      "Conservation of mass",
-      "Barometric height relationship",
-      "First law of thermodynamics"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "The barometric height formula P = P0 · e^(-mgh/kT) governs atmospheric pressure variation with altitude."
-  },
-  {
-    id: 76,
-    question: "The fact the buoyant force on a floating object equal to the weight of the water displaced is:",
-    options: [
-      "Bernoulli's law",
-      "Archimedes' principle",
-      "The law of diminishing returns",
-      "The conservation of mass"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Archimedes' Principle states that buoyant force equals the weight of the fluid displaced by a submerged or floating body."
-  },
-  {
-    id: 77,
-    question: "Which of the following terms does not appear in the steady flow energy equation (the extended Bernoulli's equation)?",
-    options: [
-      "Kinetic energy",
-      "Potential energy",
-      "Friction losses",
-      "Hysteresis losses"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Hysteresis losses do not feature in the fluid steady flow energy balance equation."
-  },
-  {
-    id: 78,
-    question: "Neglecting the forces due to inertia, gravity and frictional resistance, the design of a channel can be made by comparing",
-    options: [
-      "Weber number",
-      "Reynolds number",
-      "Froude's number",
-      "Prandtl number"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Froude number (Fr = V/√(gd)) governs free surface open channel flows."
-  },
-  {
-    id: 79,
-    question: "The difference between stagnation pressure and total pressure is:",
-    options: [
-      "Due to height difference",
-      "Due to fluid kinetic energy",
-      "None of the terms are interchangeable",
-      "Important only in supersonic flow"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Stagnation pressure and total pressure are identical concepts in frictionless flow, but when referring to different elevation data or definitions, the terms are not strictly interchangeable."
-  },
-  {
-    id: 80,
-    question: "Fully turbulent flow in a pipe is characterized by all of the following except:",
-    options: [
-      "A parabolic velocity profile",
-      "A momentum exchange due to fluid masses rather than molecules",
-      "A maximum velocity at the fluid center line",
-      "A 1/7 velocity profile"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "A parabolic velocity profile occurs in laminar pipe flow (Poiseuille flow). Turbulent flow features a flatter 1/7 power law profile."
-  },
-  {
-    id: 81,
-    question: "The laminar friction factor of fluid flowing through a pipe is a function of all of the following except:",
-    options: [
-      "Fluid velocity",
-      "Pipe diameter",
-      "Pipe roughness",
-      "Reynolds number"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "In laminar flow, friction factor f = 64/Re depends solely on Reynolds number and is independent of pipe roughness."
-  },
-  {
-    id: 82,
-    question: "The continuity equation is applicable to:",
-    options: [
-      "Viscous unviscous fluid",
-      "Compressibility of fluids",
-      "Conservation of mass",
-      "Steady unsteady flow"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "The continuity equation is the mathematical statement of conservation of mass in fluid mechanics."
-  },
-  {
-    id: 83,
-    question: "The rise or fall of head 'h' in a capillary tube of diameter 'd' and liquid surface tension 's' and specific weight 'w' is given by:",
-    options: [
-      "4s / wd",
-      "4ds / w",
-      "4wd / s",
-      "4ws / d"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Capillary rise formula: h = 4σ cosθ / (γ d) = 4s / (w d) where s is surface tension and w is specific weight."
-  },
-  {
-    id: 84,
-    question: "The study of the practical laws of fluid flow and the resistance of open pipes and channels.",
-    options: [
-      "Fluid mechanics",
-      "Hydraulics",
-      "Aerodynamics",
-      "Thermodynamics"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Hydraulics is the applied engineering discipline focusing on practical fluid flow, conduits, open channels, and hydraulic machinery."
-  },
-  {
-    id: 85,
-    question: "Which of the following turbine is different from the others?",
-    options: [
-      "Fourneyron turbine",
-      "Francis turbine",
-      "Kaplan turbine",
-      "Pelton wheel"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Pelton wheel is an impulse turbine, whereas Fourneyron, Francis, and Kaplan are reaction turbines."
-  },
-  {
-    id: 86,
-    question: "Running away speed of a Pelton wheel gives:",
-    options: [
-      "Actual operating speed",
-      "No load speed",
-      "Full load speed",
-      "No load speed when governor mechanism fails"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Runaway speed is the maximum speed attained by a turbine under full head at zero load when the governing mechanism fails."
-  },
-  {
-    id: 87,
-    question: "Which of the following turbine is different from the others?",
-    options: [
-      "Pelton wheel",
-      "Banki turbine",
-      "Jonval turbine",
-      "Kaplan turbine"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Kaplan turbine is a reaction axial turbine, while Pelton and Banki are impulse types."
-  },
-  {
-    id: 88,
-    question: "The characteristic length of the Reynolds number used to calculate the friction in noncircular full running pipes is based on the __________.",
-    options: [
-      "Run length",
-      "Pipe length",
-      "Hydraulic diameter (the equivalent diameter)",
-      "Wetted circumference"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "For non-circular conduits running full, hydraulic diameter D_h = 4A/P_w serves as the characteristic length scale."
-  },
-  {
-    id: 89,
-    question: "The hydraulic radius of noncircular pipe is:",
-    options: [
-      "The square root of the flow area",
-      "The ratio of the area to the wetted perimeter",
-      "The radius of a pipe of equivalent area",
-      "None of the above"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Hydraulic radius R_h = Cross-sectional flow area A / Wetted perimeter P_w."
-  },
-  {
-    id: 90,
-    question: "The Darcy equation can be used for all liquids and flows except:",
-    options: [
-      "Water",
-      "Alcohol",
-      "Gasoline",
-      "Air flowing supersonically"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Darcy-Weisbach equation assumes incompressible liquid/gas flow; supersonic gas flows involve strong compressibility and shock waves."
-  },
-  {
-    id: 91,
-    question: "The Hazen – Williams formula for head loss due to friction is based upon:",
-    options: [
-      "Rigorous mathematical derivation",
-      "Empirical data",
-      "Semi-empirical analysis",
-      "Serendipity"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Hazen-Williams formula is an empirical formula developed from field measurement data for water flow in pipes."
-  },
-  {
-    id: 92,
-    question: "The extended Bernoulli equation includes all of the following terms except:",
-    options: [
-      "Potential energy",
-      "Kinetic energy",
-      "Nuclear energy",
-      "Friction losses"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Extended Bernoulli equation balances potential head, kinetic head, pressure head, pump/turbine head, and friction loss head—not nuclear energy."
-  },
-  {
-    id: 93,
-    question: "An equipotential line is one that:",
-    options: [
-      "Has no velocity component tangent to it",
-      "Has uniformly varying dynamic pressure",
-      "Has no velocity component normal to it",
-      "Exists in case of rotational flow"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Flow velocity vectors are orthogonal to equipotential lines (ϕ = const), meaning there is zero velocity component tangent to an equipotential line."
-  },
-  {
-    id: 94,
-    question: "What is the use of a Hydraulic jump?",
-    options: [
-      "Increase the flow rate",
-      "Reduce the flow rate",
-      "Reduce the velocity of flow",
-      "Reduce the energy of flow"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "A hydraulic jump dissipates excess kinetic energy (reduces flow energy) downstream of spillways and sluice gates to prevent channel erosion."
-  },
-  {
-    id: 95,
-    question: "What do you call the lowest portion of storage basin from where the water is not drawn?",
-    options: [
-      "Bottom storage",
-      "Sub soil storage",
-      "Spring reserve",
-      "Dead storage"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Dead storage is the volume in a reservoir below the lowest outlet/intake invert level, reserved for sediment accumulation."
-  },
-  {
-    id: 96,
-    question: "The presence of friction in the hydraulic grade line will always cause the line to slope:",
-    options: [
-      "Down in the direction of the flow",
-      "Upward in the direction of the flow",
-      "Level (no slope)",
-      "There is no effect of friction on the energy grade line"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Friction consumes total head continuously, causing HGL to slope downward along the flow direction."
-  },
-  {
-    id: 97,
-    question: "The presence of a minor loss in the energy grade line will cause the line to slope:",
-    options: [
-      "Down in the direction of the flow",
-      "Upward in the direction of the flow",
-      "Vertically downward",
-      "There is no effect of friction on the energy grade line"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Minor losses (valves, bends, expansions) cause sudden drops or downward slopes in the energy grade line."
-  },
-  {
-    id: 98,
-    question: "What do you call the pressure which the fluid exerts on an immersed object or container walls?",
-    options: [
-      "Normal pressure",
-      "Standard liquid pressure",
-      "Hydrostatic pressure",
-      "Gage pressure"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Hydrostatic pressure is the normal force per unit area exerted by a fluid at rest on any surface in contact with it."
-  },
-  {
-    id: 99,
-    question: "Viscosity for a fluid is defined as the constant of proportionality between shear stress and what other variable?",
-    options: [
-      "The spatial derivative of velocity",
-      "The time derivative of pressure",
-      "The time derivative of density",
-      "The spatial derivative of density"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Newton's law of viscosity: τ = μ (du/dy), where du/dy is the spatial derivative of velocity (velocity gradient)."
-  },
-  {
-    id: 100,
-    question: "What is the classification of the fluid flow if the fluid travels parallel to the adjacent layers and the paths of the individual particles do not cross each other?",
-    options: [
-      "Steady flow",
-      "Laminar flow",
-      "Uniform flow",
-      "Turbulent flow"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "In laminar flow, fluid particles move smoothly in parallel layers (laminae) without lateral mixing or crossing paths."
-  },
-  {
-    id: 101,
-    question: "Which of the following refers to the measure of a fluid's sensitivity to changes in viscosity with changes in temperature?",
-    options: [
-      "Viscosity index",
-      "Coefficient of viscosity",
-      "Viscosity ratio",
-      "Viscosity factor"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Viscosity Index (VI) measures how much a fluid's viscosity changes with temperature variations."
-  },
-  {
-    id: 102,
-    question: "If the Mach number is greater than 1 but lesser than 5, what is the standard classification of the travel?",
-    options: [
-      "Transonic travel",
-      "Subsonic travel",
-      "Hypersonic travel",
-      "Supersonic travel"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Supersonic speed regime corresponds to 1.0 < Mach < 5.0 (speeds above Mach 5 are hypersonic)."
-  },
-  {
-    id: 103,
-    question: "What is measured by a Pitot tube?",
-    options: [
-      "Volumetric discharge",
-      "Mass flow",
-      "Pressure",
-      "Velocity"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "A Pitot tube directly determines localized fluid flow velocity."
-  },
-  {
-    id: 104,
-    question: "What is the difference between the energy grade line and the hydraulic grade line?",
-    options: [
-      "Potential energy",
-      "Pressure energy",
-      "Kinetic energy",
-      "Friction losses"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "EGL - HGL = Velocity head V²/(2g), which represents the kinetic energy component per unit weight."
-  },
-  {
-    id: 105,
-    question: "Kinetic energy is not neglected in calculations of:",
-    options: [
-      "High speed flow",
-      "Low speed flow",
-      "Steady flow",
-      "Equilibrium flow"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "In high-speed fluid flows, kinetic head V²/(2g) is significant and cannot be neglected."
-  },
-  {
-    id: 106,
-    question: "Discharge losses through orifice are due to:",
-    options: [
-      "Friction losses",
-      "Minor losses",
-      "Both friction and minor losses",
-      "Pressure losses"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Orifice discharge coefficient accounts for fluid friction against edges as well as contraction and turbulent minor loss eddies."
-  },
-  {
-    id: 107,
-    question: "Which of the following is considered as an important parameter in the study of compressible flow?",
-    options: [
-      "Speed of fluid",
-      "Speed of sound",
-      "Speed of light",
-      "Speed of fluid flow"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Speed of sound is the key velocity scale in compressible flow, giving rise to Mach number M = V/c."
-  },
-  {
-    id: 108,
-    question: "Is the velocity at which an infinitesimal small pressure wave travels through a medium.",
-    options: [
-      "Subsonic velocity",
-      "Hypersonic velocity",
-      "Sonic velocity",
-      "Monatomic velocity"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Sonic velocity (speed of sound) is the speed at which weak acoustic pressure disturbances propagate through a compressible medium."
-  },
-  {
-    id: 109,
-    question: "It is the ratio of the actual velocity of the fluid to the velocity of sound.",
-    options: [
-      "Mach number",
-      "Froude number",
-      "Sonic number",
-      "Euler number"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Mach number M = V / c."
-  },
-  {
-    id: 110,
-    question: "The flow is called sonic when Mach number is:",
-    options: [
-      "Equal to 1",
-      "Less than 1",
-      "More than 1",
-      "None of these"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Sonic flow occurs when Mach number M = 1."
-  },
-  {
-    id: 111,
-    question: "The following flow is sub-sonic when Mach no. is:",
-    options: [
-      "Greater than 1",
-      "Less than 1",
-      "More than 1",
-      "None of these"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Sub-sonic flow occurs when Mach number M < 1."
-  },
-  {
-    id: 112,
-    question: "The flow is supersonic when Mach no. is:",
-    options: [
-      "Greater than zero",
-      "Less than 1",
-      "Greater than 1",
-      "None of these"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Supersonic flow occurs when Mach number M > 1."
-  },
-  {
-    id: 113,
-    question: "The flow is transonic when",
-    options: [
-      "M = 0",
-      "M < 1",
-      "M > 1",
-      "M = 1"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Transonic flow regime centers around Mach M = 1 (typically 0.8 < M < 1.2)."
-  },
-  {
-    id: 114,
-    question: "The pressure decreases as the temperature and velocity increases while the fluid velocity and Mach number:",
-    options: [
-      "Increases",
-      "Decreases",
-      "Remains constant",
-      "None of these"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "In accelerating nozzle flow, velocity and Mach number increase together while pressure drops."
-  },
-  {
-    id: 115,
-    question: "The Mach number is unity or one at the location of smallest flow area, called the:",
-    options: [
-      "Decreasing area",
-      "Throat",
-      "Increasing area",
-      "None of these"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "In a convergent-divergent nozzle, sonic condition (M = 1) is achieved at the minimum area section, known as the throat."
-  },
-  {
-    id: 116,
-    question: "What happens to the velocity of fluid after passing the throat although the flow area increases?",
-    options: [
-      "Increases rapidly",
-      "Decreases rapidly",
-      "Remains constant",
-      "None of these"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "In a supersonic CD nozzle, once sonic flow is choked at the throat, expanding flow area in the divergent section causes velocity to increase rapidly."
-  },
-  {
-    id: 117,
-    question: "Which of the following is an example of Newtonian fluid?",
-    options: [
-      "Motor oils",
-      "Gas",
-      "Paints",
-      "Clay slurries"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Gases (like air, water vapor, nitrogen) behave as ideal Newtonian fluids with constant dynamic viscosity independent of shear strain rate."
-  },
-  {
-    id: 118,
-    question: "What is the critical pressure of water?",
-    options: [
-      "150 kg/cm³",
-      "Less than 200 kg/cm²",
-      "More than 200 kg/cm²",
-      "100 kg/cm²"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "The thermodynamic critical pressure of water is 22.06 MPa (approx. 225 kg/cm²), which is more than 200 kg/cm²."
-  },
-  {
-    id: 119,
-    question: "Past ME Board Question: The volumetric change of the fluid caused by a resistance is called:",
-    options: [
-      "Volumetric change",
-      "Volumetric index",
-      "Compressibility",
-      "Adhesion"
-    ],
-    answer: 3, // Index 3 -> D (According to Board exam key D)
-    explanation: "Past Board Question reference key retains option D."
-  },
-  {
-    id: 120,
-    question: "The energy of a fluid flowing at any section in a pipeline is a function of:",
-    options: [
-      "Velocity of flow only",
-      "Pressure only",
-      "Height above a chosen datum, density, internal energy, pressure and velocity of flow",
-      "Pressure, height above a chosen datum, velocity of flow, density of fluid"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Total fluid energy head accounts for potential height z, internal thermodynamic energy u, static pressure head P/ρ, and kinetic velocity V."
-  },
-  {
-    id: 121,
-    question: "If the fluid travels parallel to the adjacent layers and the paths of individual particles do not cross, the fluid is said to be:",
-    options: [
-      "Turbulent",
-      "Critical",
-      "Dynamic",
-      "Laminar"
-    ],
-    answer: 3, // Index 3 -> D
-    explanation: "Laminar flow is characterized by smooth, parallel streamline motion without fluid packet cross-mixing."
-  },
-  {
-    id: 122,
-    question: "Center of pressure on an inclined plane lies:",
-    options: [
-      "At the centroid",
-      "Above the centroid",
-      "Below the centroid",
-      "At the metacenter"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "The hydrostatic center of pressure is always located below the centroid of an inclined or vertical submerged plane."
-  },
-  {
-    id: 123,
-    question: "At any instant, if the number of particles passing every cross-section of the stream is the same, the flow is said to be:",
-    options: [
-      "Steady flow",
-      "Uniform flow",
-      "Continuous flow",
-      "Laminar flow"
-    ],
-    answer: 0, // Index 0 -> A
-    explanation: "Steady flow implies that mass flow rate and fluid particle counts across sections remain constant with respect to time."
-  },
-  {
-    id: 124,
-    question: "The ratio of cross-sectional area of flow to the wetted perimeter is:",
-    options: [
-      "Hydraulic lead",
-      "Hydraulic section",
-      "Hydraulic mean depth",
-      "Hydraulic gradient"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Hydraulic mean depth (or hydraulic radius) is defined as Area A divided by Wetted Perimeter P_w."
-  },
-  {
-    id: 125,
-    question: "If A is the cross-sectional area of the flow and Pw is the wetted perimeter of a pipe, then what is the hydraulic depth, Hd?",
-    options: [
-      "Pw – A",
-      "Pw / A",
-      "A / Pw",
-      "Pw x A"
-    ],
-    answer: 2, // Index 2 -> C
-    explanation: "Hydraulic mean depth Hd = A / Pw."
-  },
-  {
-    id: 126,
-    question: "If Q is the volume in gallon; D is height or elevation in ft. and m is weight in lbs. per gallon, what is the desired energy to lift the water from lower to higher elevation?",
-    options: [
-      "E = mD/Q",
-      "E = mDQ",
-      "E = mQ/D",
-      "E = QD/m"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Total Weight W = m · Q (lbs/gal × gal = lbs). Work or potential energy E = Weight × Height = (m·Q) · D = mDQ ft-lbs."
-  },
-  {
-    id: 127,
-    question: "The flow of the convergent section of a nozzle is always subsonic. If the flow is subsonic then the Mach number is:",
-    options: [
-      "Greater than unity",
-      "Less than unity",
-      "Near unity",
-      "Unity"
-    ],
-    answer: 1, // Index 1 -> B
-    explanation: "Subsonic flow means Mach number M < 1 (less than unity)."
+const SUBJECT_DATA = {
+  fluid_mechanics: {
+    title: "Fluid Mechanics",
+    chapter: "Chapter 11",
+    questions: [
+      { id: 1, question: "If the energy of the incident photon is less than the work function:", options: ["An electron will be ejected", "More than one electron will be ejected", "An electron will not be ejected", "Less than one electron will be ejected"], answer: 2, explanation: "Photoelectric emission occurs only when the energy of incident photon (hf) is greater than or equal to the work function (Φ) of the metal." },
+      { id: 2, question: "For supersonic flow, the pressure of fluid must decrease as the fluid flow area of the duct:", options: ["Increases", "Decreases", "Remain the same", "None of these"], answer: 0, explanation: "In supersonic flow (Mach > 1), expanding the duct area (diverging section) causes the flow to accelerate further, resulting in a decrease in pressure." },
+      { id: 3, question: "Density in terms of viscosity is:", options: ["Kinematic viscosity / dynamic viscosity", "Dynamic viscosity / kinematic viscosity", "Kinematic viscosity x dynamic viscosity", "None of the above"], answer: 1, explanation: "Kinematic viscosity (ν) = Dynamic viscosity (μ) / Density (ρ), so Density (ρ) = Dynamic viscosity (μ) / Kinematic viscosity (ν)." },
+      { id: 4, question: "Liquids and gases take the following characteristic(s) of their contents.", options: ["Volume", "Shape", "Shape and volume", "Neither shape nor volume"], answer: 1, explanation: "Fluids (liquids and gases) do not have a fixed shape and conform to the shape of their container." },
+      { id: 5, question: "Alcohol finds use in manometers as:", options: ["It provides a suitable meniscus for the inclined tube", "Its density being less can provide longer length for a pressure difference, thus more accuracy can be obtained", "A and B above are correct", "Cheap and easily available"], answer: 2, explanation: "Alcohol's low density provides a longer liquid column for a small pressure difference (higher sensitivity) and forms a clear, distinct meniscus." },
+      { id: 6, question: "Which of the following statements about a Newtonian fluid is most accurate?", options: ["Shear stress is proportional to strain", "Viscosity is zero", "Shear stress is multi – valued", "Shear stress is proportional to rate of strain"], answer: 3, explanation: "A Newtonian fluid follows Newton's law of viscosity, where shear stress (τ) is directly proportional to the rate of shear strain." },
+      { id: 7, question: "The normal stress is the same in all directions at a point in fluid:", options: ["Independent of the motion of one fluid layer relative to an adjacent layer", "When there is no motion of one fluid layer relative to an adjacent layer", "Only if the fluid is frictionless", "Only if fluid is frictionless and incompressible"], answer: 1, explanation: "According to Pascal's Law, in a fluid at rest (no relative motion), pressure is equal in all directions." },
+      { id: 8, question: "Which of the following is not a characteristic of fluid pressure?", options: ["It is the same in all directions at a point in the fluid", "Its acts normal to a surface", "It is a shear stress", "It is linear with depth"], answer: 2, explanation: "Fluid pressure is a normal compressive stress, not a shear stress." },
+      { id: 9, question: "The length of mercury column at a place at an altitude will change with respect to that at ground in:", options: ["A linear relation", "A parabolic relation", "Will remain constant", "First slowly and then steeply"], answer: 3, explanation: "Atmospheric pressure decreases exponentially with altitude, causing mercury height to drop slowly near ground level and steeper higher up." },
+      { id: 10, question: "All of the following dimensionless parameters are applicable to fluid flow problems except the _______.", options: ["Reynolds number", "Froude number", "Mach number", "Biot number"], answer: 3, explanation: "Biot number is used in heat transfer calculations, whereas Reynolds, Froude, and Mach numbers are fluid dynamic parameters." },
+      { id: 11, question: "Mass density of liquid (ρ) is given by which of the following?", options: ["ρ = Mass / volume", "ρ = metric slug / m²", "ρ = kg-sec² / m⁴", "all of the above"], answer: 3, explanation: "Mass density can be expressed in terms of mass/volume or gravitational units." },
+      { id: 12, question: "The speed of sound in all fluid is most closely related to all of the following properties except________.", options: ["Compressibility", "Density", "Bulk modulus", "Thermal conductivity"], answer: 3, explanation: "Speed of sound c = √(K/ρ). Thermal conductivity does not directly govern sound wave propagation speed." },
+      { id: 13, question: "Under which condition, the specific weight of water is 1000 kg/m³?", options: ["At normal pressure of 760 mm", "At 4 °C temperature", "At mean sea level", "All of the above"], answer: 3, explanation: "Water achieves maximum mass density of 1000 kg/m³ at 4°C, 1 atm at sea level." },
+      { id: 14, question: "All of the following can be characteristics of fluids except_________.", options: ["kinematic viscosity", "surface tension", "bulk modulus", "hysteresis"], answer: 3, explanation: "Hysteresis is a structural/magnetic property, not a standard fluid property." },
+      { id: 15, question: "Which of the following can be used to measure the flow of water in a pipe of diameter 3000 mm?", options: ["Venturimeter", "Rotameter", "Nozzle", "Pitot tube"], answer: 3, explanation: "For large pipes (3000 mm), a Pitot tube is practical and economical for measuring point flow velocity." },
+      { id: 16, question: "The pressure at a given depth due to several immiscible liquids is:", options: ["The average of the individual pressures", "The sum of the individual pressures", "Independent of the individual pressures", "Unknown"], answer: 1, explanation: "Total pressure at depth is the sum of pressure heads produced by each liquid layer above." },
+      { id: 17, question: "The equation of continuity of flow is applicable if:", options: ["The flow is one dimensional", "The flow is steady", "The velocity is uniform over the cross – section", "All of the above conditions are together"], answer: 3, explanation: "Standard 1D continuity equation requires steady flow with uniform cross-sectional velocity." },
+      { id: 18, question: "Uniform flow takes place when:", options: ["Conditions remain unchanged with time at any point", "Rate of change of velocity of fluid is zero", "At every point the velocity vector is identical in magnitude and direction for any given instant", "The change in transverse direction is zero"], answer: 2, explanation: "Uniform flow occurs when velocity vector at a given instant does not change along the flow path." },
+      { id: 19, question: "The continuity equation of an ideal fluid flow.", options: ["States that the net rate in – flow into any small volume must be zero", "Applies to irrotational flow only", "States that the energy remains constant along streamline", "States that energy is constant everywhere in the fluid"], answer: 3, explanation: "In ideal irrotational fluid flow, total energy head remains constant everywhere throughout the field." },
+      { id: 20, question: "A Pitot tube can be used to measure fluid velocity as described by the Bernoulli's equation and the relationship between:", options: ["Kinetic energy and static pressure", "Fluid pressure and height of the fluid", "Fluid pressure and impact energy", "Pressure and momentum"], answer: 0, explanation: "Pitot tube converts dynamic pressure (kinetic energy) into stagnation pressure relative to static pressure." },
+      { id: 21, question: "In order to avoid vaporization in the pipe line, the pipe line over the ridge is laid in such a way that it is not more than:", options: ["2.4m above the hydraulic gradient", "6.4m above the hydraulic gradient", "10m above the hydraulic gradient", "5m above the hydraulic gradient"], answer: 0, explanation: "Summit elevation should not exceed ~2.4 m above HGL to prevent cavitation." },
+      { id: 22, question: "The stream function is a useful parameter in describing_____________.", options: ["The conservation of mass", "The conservation of momentum", "The conservation of energy", "The equation of state"], answer: 0, explanation: "Stream function automatically satisfies the 2D incompressible continuity equation (conservation of mass)." },
+      { id: 23, question: "For high speed flows, the potential energy of fluids are:", options: ["Positive", "Negative", "Negligible", "None of these"], answer: 2, explanation: "In high-speed flows, potential energy changes are negligible compared to kinetic energy." },
+      { id: 24, question: "McLeod gauge used for low pressure measurement operates on the principle of _________.", options: ["Gas law", "Boyle's law", "Charles law", "Pascal's law"], answer: 1, explanation: "McLeod gauge operates by compressing a trapped gas sample using Boyle's Law." },
+      { id: 25, question: "Kaplan turbine is", options: ["A high head mixed flow turbine", "An impulse turbine, inward flow", "A reaction turbine, outward flow", "Low head axial flow turbine"], answer: 3, explanation: "Kaplan turbine is an axial-flow reaction turbine designed for low heads and large flows." },
+      { id: 26, question: "The most common method for calculating frictional energy loss for laminar flowing fluids in noncircular pipe is:", options: ["The Darcy equation", "The Hagen – Poiseuille equation", "The Hazen - Williams equation", "The Swamee – Jain equation"], answer: 0, explanation: "The Darcy-Weisbach equation using hydraulic diameter is the general standard." },
+      { id: 27, question: "The parameter f in the expression for head-loss is", options: ["The fraction of flow that is totally turbulent", "The Darcy friction factor", "The height of roughness scale in turbulent flow", "The static coefficient of friction"], answer: 1, explanation: "Parameter f is the dimensionless Darcy friction factor." },
+      { id: 28, question: "Friction factor for both laminar and turbulent flows can be found plotted in a", options: ["Steam table", "Psychrometric chart", "Moody diagram", "Mollier diagram"], answer: 2, explanation: "Moody diagram plots friction factor vs Reynolds number and relative roughness." },
+      { id: 29, question: "Which of the following is relative velocity?", options: ["The difference between two velocities", "Average velocity", "Sum of two velocities", "Vector difference of two velocities"], answer: 3, explanation: "Relative velocity is the vector difference between two velocities." },
+      { id: 30, question: "Which of the following is the highest head?", options: ["33 inch Hg", "31.0 ft. water", "1.013 kg/cm²", "75.0 cm of Hg"], answer: 0, explanation: "33 in Hg = 111.7 kPa, which is higher than 31 ft H2O (92.6 kPa) or 75 cm Hg (100 kPa)." },
+      { id: 31, question: "For stable equilibrium of floating body its metacenter should lie:", options: ["Below the center of gravity", "Below the center of buoyancy", "Above the center of buoyancy", "Above the center of gravity"], answer: 3, explanation: "Metacenter M must lie above the center of gravity G for stable equilibrium." },
+      { id: 32, question: "Center of pressure on an inclined plane lies ___.", options: ["At the centroid", "Above the centroid", "Below the centroid", "At metacenter"], answer: 2, explanation: "Hydrostatic pressure increases with depth, placing center of pressure below centroid." },
+      { id: 33, question: "The line of action of the buoyant forces always acts through the centroid of the ______.", options: ["Submerged body", "Volume of the floating body", "Volume of the fluid vertically above the body", "Displaced volume of the fluid"], answer: 3, explanation: "Buoyant force acts through the centroid of the displaced fluid volume (Archimedes' Principle)." },
+      { id: 34, question: "The hydraulic grade line of a pipe denotes which of the following?", options: ["Total energy", "Pressure energy", "Potential energy", "The sum of pressure energy and potential energy"], answer: 3, explanation: "HGL = Pressure head (P/γ) + Elevation head (z)." },
+      { id: 35, question: "The energy grade line of a pipeline denotes which of the following?", options: ["Total energy", "Pressure energy", "Potential energy", "The sum of pressure energy and potential energy"], answer: 0, explanation: "EGL = Total energy head (P/γ + z + V²/2g)." },
+      { id: 36, question: "The presence of friction in the energy grade line will always cause the line to slope", options: ["Down in the direction of the flow", "Upward in the direction of the flow", "Level (no slope)", "There is no effect of friction on the energy grade line"], answer: 0, explanation: "Friction dissipates total head, causing EGL to slope downward along flow direction." },
+      { id: 37, question: "The Pitot tube is a device used for measurement of", options: ["Pressure", "Flow", "Velocity", "Discharge"], answer: 2, explanation: "Pitot tube measures localized fluid velocity." },
+      { id: 38, question: "Hydrometer is used to find out", options: ["Specific gravity liquids", "Specific gravity solids", "Specific gravity gases", "Relative humidity"], answer: 0, explanation: "Hydrometer measures specific gravity of liquids." },
+      { id: 39, question: "The fluid forces taken into consideration in the Navier Stokes equation are:", options: ["Gravity, pressure and viscous", "Gravity, pressure and turbulent", "Pressure, viscous and turbulent", "Gravity, viscous and turbulent"], answer: 0, explanation: "Navier-Stokes balances inertia against gravity, pressure, and viscous forces." },
+      { id: 40, question: "Permissible velocity of water flowing through concrete tunnel, is generally", options: ["4-5 m/s", "10-12 m/s", "13-16 m/s", "20 m/s"], answer: 0, explanation: "Recommended maximum velocity to avoid concrete erosion is 4 to 5 m/s." },
+      { id: 41, question: "Orifice refers to an opening", options: ["With closed perimeter and of regular form through which water flows", "With prolonged sides having length of 2 to 3 diameters of opening in thick wall", "With partially full flow", "In hydraulic structure with regulation provision"], answer: 3, explanation: "An orifice is an opening in a hydraulic structure with flow regulation provision." },
+      { id: 42, question: "The value of coefficient of discharge in comparison to coefficient of velocity is found to be_______.", options: ["More", "Less", "Same", "More/less depending on flow"], answer: 1, explanation: "Cd = Cc · Cv. Since Cc < 1, Cd is always less than Cv." },
+      { id: 43, question: "Weir refers to an opening", options: ["Having closed perimeter and of regular form through which water flows", "Having prolonged sides with length of 2 to 3 diameters of opening in thick wall", "Having partially full flow", "In hydraulic structures with regulation provision"], answer: 2, explanation: "A weir is a structure with free surface (partially full) open channel flow." },
+      { id: 44, question: "Which of the following parameters determine the friction factor of turbulent flow in a rough pipe?", options: ["Froude number and relative roughness", "Froude number and Mach number", "Reynolds number and relative roughness", "Mach number and relative roughness"], answer: 2, explanation: "Friction factor in rough turbulent flow depends on Re and relative roughness." },
+      { id: 45, question: "Power transmitted through a pipe is maximum when the loss of head due to friction is:", options: ["One-half of the total head supplied", "One-third of the total head supplied", "One-fourth of the total head supplied", "Equal to the total head supplied"], answer: 1, explanation: "Maximum power transmission occurs when friction head loss h_f = H/3." },
+      { id: 46, question: "In a nozzle if back pressure is same as inlet pressure; then_______________.", options: ["No flow takes place", "Maximum flow takes place", "Flow becomes subsonic in diverging section", "Flow becomes supersonic in converging as well as supersonic section"], answer: 0, explanation: "If back pressure equals inlet pressure, zero pressure gradient means no flow occurs." },
+      { id: 47, question: "The flow on two sides of a normal shock wave is called___________.", options: ["Sonic", "Sub-sonic", "Supersonic", "Supersonic on one side and sub-sonic on the other side"], answer: 3, explanation: "Normal shock transitions flow abruptly from supersonic to subsonic." },
+      { id: 48, question: "Which of the following is the basic of Bernoulli's law for fluid flow?", options: ["Continuity equation", "Principle of conservation of energy", "Fourier's law", "Principle of conservation of mass"], answer: 1, explanation: "Bernoulli's equation is based on conservation of energy." },
+      { id: 49, question: "Which of the following is NOT a characteristic of fluid pressure?", options: ["It is a shear stress", "It is the same in all directions at a point in the fluid", "It acts normal to a surface", "It is linear with depth"], answer: 0, explanation: "Fluid pressure is a normal compressive stress, not shear stress." },
+      { id: 50, question: "Refers to the compressibility of a fluid, the fractional change in fluid volume per unit change in fluid pressure.", options: ["Viscosity", "Bulk modulus", "Density", "Pressure"], answer: 3, explanation: "Compressibility describes volume change per unit change in pressure." },
+      { id: 51, question: "A Pitot tube can be used to measure fluid velocity as described by the Bernoulli's equation and the relationship between:", options: ["Kinetic energy and static pressure", "Fluid pressure and static pressure", "Fluid pressure and impact energy", "Pressure and momentum"], answer: 0, explanation: "Relates kinetic energy (dynamic pressure) to static pressure." },
+      { id: 52, question: "The ratio of the area to the wetted perimeter is known as __________.", options: ["Flow factor", "Hydraulic radius", "Kutter's C", "Value of k in Darcy - Weisbach formula"], answer: 1, explanation: "Hydraulic radius Rh = Area A / Wetted perimeter Pw." },
+      { id: 53, question: "What is the coefficient of contraction?", options: ["The ratio of the area of vena contracta to the area of the orifice", "The ratio of actual discharge to the theoretical discharge", "The ratio of the actual velocity to the theoretical velocity", "The ratio of the effective head to the actual head"], answer: 0, explanation: "Cc = Area of vena contracta / Area of orifice." },
+      { id: 54, question: "Where is vena contracta most likely located?", options: ["At the orifice", "At a distance approximately ½ the diameter of the orifice", "At a distance approximately equal to the diameter of the orifice", "At a distance approximately twice the diameter of the orifice"], answer: 1, explanation: "Located outside orifice at approximately d/2." },
+      { id: 55, question: "A substance that is able to flow and yields to any force tending to change its shape without changing its volume such as water and air.", options: ["Fluid", "Flux", "Gas oil", "Water gas"], answer: 0, explanation: "A fluid deforms continuously under shear stress." },
+      { id: 56, question: "The velocity of a fluid particle at the center of the pipe section is______.", options: ["Maximum", "Minimum", "Average", "Logarithmic average"], answer: 0, explanation: "Maximum velocity occurs at pipe centerline." },
+      { id: 57, question: "For supersonic flow, the pressure of fluid must increase as the fluid flow area of the duct:", options: ["Increases", "Decreases", "Constant", "None of these"], answer: 1, explanation: "Decreasing duct area in supersonic flow decelerates fluid, raising pressure." },
+      { id: 58, question: "Which is incorrect statement regarding apparent shear forces.", options: ["It can never be found in frictionless fluid regardless of its motion", "It can never be found when the fluid is at rest", "It depends upon cohesive forces", "It may occur owing to cohesion when the fluid is at rest"], answer: 3, explanation: "Fluid at rest cannot sustain shear stress." },
+      { id: 59, question: "The time required for half a quantity of radioactive particles to decay (disintegrate) is called its_____________.", options: ["Average life", "Median life", "Time constant", "Half time"], answer: 3, explanation: "Half-life or half time." },
+      { id: 60, question: "SI unit of viscosity is:", options: ["10 times poise", "9.81 times poise", "1/9.81 time poise", "1/10 times poise"], answer: 0, explanation: "1 Pa·s = 10 Poise." },
+      { id: 61, question: "For computation convenience, fluids are usually classed as:", options: ["Rotational or irrotational", "Real or ideal", "Laminar or turbulent", "Newtonian or non-newtonian"], answer: 1, explanation: "Classified as real vs ideal fluids." },
+      { id: 62, question: "Which of the following is not a dimensionless parameter?", options: ["Kinematic viscosity", "Weber number", "Darcy Weisbach friction factor", "Froude number"], answer: 0, explanation: "Kinematic viscosity has units m²/s." },
+      { id: 63, question: "Which of the following is not a characteristic of real fluids?", options: ["Finite viscosity", "Non-uniform velocity distributions", "Compressibility", "Experience of eddy current and turbulence"], answer: 3, explanation: "Ideal fluids lack turbulence; real fluids possess viscosity and turbulence." },
+      { id: 64, question: "Which of the following is not the mass density of water?", options: ["62.5 lbm/ft³", "100 kg/m³", "1 g/cm³", "1 kg/L"], answer: 1, explanation: "Water density is 1000 kg/m³, not 100 kg/m³." },
+      { id: 65, question: "The upper critical Reynolds number for pipe flow is:", options: ["Of no practical importance to designers", "Always used to design pipes for strength", "The number at which turbulent flow changes over to laminar flow", "The number at which laminar flow changes into turbulent flow"], answer: 0, explanation: "Upper critical Re is unstable and has no practical design value." },
+      { id: 66, question: "Which of the following statements about gauge pressure is most correct? Gauge pressure are measured relative to _________.", options: ["Atmospheric pressure", "A vacuum", "Each other", "The surface"], answer: 0, explanation: "Gauge pressure is relative to atmospheric pressure." },
+      { id: 67, question: "The volumetric change of the fluid caused by a resistance is called ________.", options: ["Volumetric strain", "Volumetric index", "Compressibility", "Adhesion"], answer: 3, explanation: "Past board question reference key." },
+      { id: 68, question: "Compressibility of a fluid relates the fractional change in fluid volume per unit change in fluid pressure.", options: ["Temperature", "Density", "Pressure", "Viscosity"], answer: 2, explanation: "Relates volume change to pressure change." },
+      { id: 69, question: "Property of a fluid whereby its own molecules are attracted is known as ________.", options: ["Adhesion", "Cohesion", "Surface tension", "Viscosity"], answer: 1, explanation: "Cohesion is attraction between like molecules." },
+      { id: 70, question: "The term subsonic flow refers to a flowing gas with a speed:", options: ["Less than the local speed of sound", "Equal to the speed of sound", "Greater than the speed of sound", "Much greater than the speed of sound"], answer: 0, explanation: "Subsonic speed is M < 1." },
+      { id: 71, question: "The pressure at a point in a fluid will not be same in all the directions if the fluid is:", options: ["Viscous", "Viscous and static", "Inviscous and in motion", "Viscous and is in motion"], answer: 3, explanation: "Viscous fluid in motion generates non-isotropic stresses." },
+      { id: 72, question: "The statement that 'the hydrostatic pressure a fluid exerts on an immersed object or on container walls is a function only of fluid depth' is", options: ["The perfect gas law", "D'Alembert's paradox", "The hydrostatic paradox", "Boyle's law"], answer: 2, explanation: "Hydrostatic paradox." },
+      { id: 73, question: "Bernoulli's equation is a/an ___________.", options: ["Momentum equation", "Conservation of energy equation", "Conservation of mass equation", "Equation of state"], answer: 1, explanation: "Conservation of energy." },
+      { id: 74, question: "An ideal fluid is one that:", options: ["Is very viscous", "Obeys Newton's law of viscosity", "Is assumed in problems in conduit flow", "Is frictionless and incompressible"], answer: 3, explanation: "Inviscid and incompressible." },
+      { id: 75, question: "The relationship between pressure and altitude in the atmosphere is given by the:", options: ["Perfect gas law", "Conservation of mass", "Barometric height relationship", "First law of thermodynamics"], answer: 2, explanation: "Barometric height relationship." },
+      { id: 76, question: "The fact the buoyant force on a floating object equal to the weight of the water displaced is:", options: ["Bernoulli's law", "Archimedes' principle", "The law of diminishing returns", "The conservation of mass"], answer: 1, explanation: "Archimedes' Principle." },
+      { id: 77, question: "Which of the following terms does not appear in the steady flow energy equation (the extended Bernoulli's equation)?", options: ["Kinetic energy", "Potential energy", "Friction losses", "Hysteresis losses"], answer: 3, explanation: "Hysteresis does not feature." },
+      { id: 78, question: "Neglecting the forces due to inertia, gravity and frictional resistance, the design of a channel can be made by comparing", options: ["Weber number", "Reynolds number", "Froude's number", "Prandtl number"], answer: 2, explanation: "Froude number." },
+      { id: 79, question: "The difference between stagnation pressure and total pressure is:", options: ["Due to height difference", "Due to fluid kinetic energy", "None of the terms are interchangeable", "Important only in supersonic flow"], answer: 2, explanation: "Terms are not strictly interchangeable." },
+      { id: 80, question: "Fully turbulent flow in a pipe is characterized by all of the following except:", options: ["A parabolic velocity profile", "A momentum exchange due to fluid masses rather than molecules", "A maximum velocity at the fluid center line", "A 1/7 velocity profile"], answer: 0, explanation: "Parabolic profile is for laminar flow." },
+      { id: 81, question: "The laminar friction factor of fluid flowing through a pipe is a function of all of the following except:", options: ["Fluid velocity", "Pipe diameter", "Pipe roughness", "Reynolds number"], answer: 2, explanation: "Laminar f = 64/Re is independent of roughness." },
+      { id: 82, question: "The continuity equation is applicable to:", options: ["Viscous unviscous fluid", "Compressibility of fluids", "Conservation of mass", "Steady unsteady flow"], answer: 2, explanation: "Conservation of mass." },
+      { id: 83, question: "The rise or fall of head 'h' in a capillary tube of diameter 'd' and liquid surface tension 's' and specific weight 'w' is given by:", options: ["4s / wd", "4ds / w", "4wd / s", "4ws / d"], answer: 0, explanation: "Capillary rise formula: h = 4s / (w d)." },
+      { id: 84, question: "The study of the practical laws of fluid flow and the resistance of open pipes and channels.", options: ["Fluid mechanics", "Hydraulics", "Aerodynamics", "Thermodynamics"], answer: 1, explanation: "Hydraulics." },
+      { id: 85, question: "Which of the following turbine is different from the others?", options: ["Fourneyron turbine", "Francis turbine", "Kaplan turbine", "Pelton wheel"], answer: 3, explanation: "Pelton wheel is impulse." },
+      { id: 86, question: "Running away speed of a Pelton wheel gives:", options: ["Actual operating speed", "No load speed", "Full load speed", "No load speed when governor mechanism fails"], answer: 3, explanation: "Maximum speed at zero load when governor fails." },
+      { id: 87, question: "Which of the following turbine is different from the others?", options: ["Pelton wheel", "Banki turbine", "Jonval turbine", "Kaplan turbine"], answer: 3, explanation: "Kaplan is reaction." },
+      { id: 88, question: "The characteristic length of the Reynolds number used to calculate the friction in noncircular full running pipes is based on the __________.", options: ["Run length", "Pipe length", "Hydraulic diameter (the equivalent diameter)", "Wetted circumference"], answer: 2, explanation: "Hydraulic diameter Dh." },
+      { id: 89, question: "The hydraulic radius of noncircular pipe is:", options: ["The square root of the flow area", "The ratio of the area to the wetted perimeter", "The radius of a pipe of equivalent area", "None of the above"], answer: 1, explanation: "Ratio of area to wetted perimeter." },
+      { id: 90, question: "The Darcy equation can be used for all liquids and flows except:", options: ["Water", "Alcohol", "Gasoline", "Air flowing supersonically"], answer: 3, explanation: "Inapplicable to supersonic compressible flow." },
+      { id: 91, question: "The Hazen – Williams formula for head loss due to friction is based upon:", options: ["Rigorous mathematical derivation", "Empirical data", "Semi-empirical analysis", "Serendipity"], answer: 1, explanation: "Empirical field data." },
+      { id: 92, question: "The extended Bernoulli equation includes all of the following terms except:", options: ["Potential energy", "Kinetic energy", "Nuclear energy", "Friction losses"], answer: 2, explanation: "Nuclear energy." },
+      { id: 93, question: "An equipotential line is one that:", options: ["Has no velocity component tangent to it", "Has uniformly varying dynamic pressure", "Has no velocity component normal to it", "Exists in case of rotational flow"], answer: 0, explanation: "Velocity vectors are orthogonal to equipotential lines." },
+      { id: 94, question: "What is the use of a Hydraulic jump?", options: ["Increase the flow rate", "Reduce the flow rate", "Reduce the velocity of flow", "Reduce the energy of flow"], answer: 3, explanation: "Dissipates excess flow energy." },
+      { id: 95, question: "What do you call the lowest portion of storage basin from where the water is not drawn?", options: ["Bottom storage", "Sub soil storage", "Spring reserve", "Dead storage"], answer: 3, explanation: "Dead storage." },
+      { id: 96, question: "The presence of friction in the hydraulic grade line will always cause the line to slope:", options: ["Down in the direction of the flow", "Upward in the direction of the flow", "Level (no slope)", "There is no effect of friction on the energy grade line"], answer: 0, explanation: "HGL slopes downward." },
+      { id: 97, question: "The presence of a minor loss in the energy grade line will cause the line to slope:", options: ["Down in the direction of the flow", "Upward in the direction of the flow", "Vertically downward", "There is no effect of friction on the energy grade line"], answer: 0, explanation: "Causes downward drop in EGL." },
+      { id: 98, question: "What do you call the pressure which the fluid exerts on an immersed object or container walls?", options: ["Normal pressure", "Standard liquid pressure", "Hydrostatic pressure", "Gage pressure"], answer: 2, explanation: "Hydrostatic pressure." },
+      { id: 99, question: "Viscosity for a fluid is defined as the constant of proportionality between shear stress and what other variable?", options: ["The spatial derivative of velocity", "The time derivative of pressure", "The time derivative of density", "The spatial derivative of density"], answer: 0, explanation: "Velocity gradient (spatial derivative of velocity)." },
+      { id: 100, question: "What is the classification of the fluid flow if the fluid travels parallel to the adjacent layers and the paths of the individual particles do not cross each other?", options: ["Steady flow", "Laminar flow", "Uniform flow", "Turbulent flow"], answer: 1, explanation: "Laminar flow." },
+      { id: 101, question: "Which of the following refers to the measure of a fluid's sensitivity to changes in viscosity with changes in temperature?", options: ["Viscosity index", "Coefficient of viscosity", "Viscosity ratio", "Viscosity factor"], answer: 0, explanation: "Viscosity Index." },
+      { id: 102, question: "If the Mach number is greater than 1 but lesser than 5, what is the standard classification of the travel?", options: ["Transonic travel", "Subsonic travel", "Hypersonic travel", "Supersonic travel"], answer: 3, explanation: "Supersonic travel." },
+      { id: 103, question: "What is measured by a Pitot tube?", options: ["Volumetric discharge", "Mass flow", "Pressure", "Velocity"], answer: 3, explanation: "Velocity." },
+      { id: 104, question: "What is the difference between the energy grade line and the hydraulic grade line?", options: ["Potential energy", "Pressure energy", "Kinetic energy", "Friction losses"], answer: 2, explanation: "Velocity head (kinetic energy)." },
+      { id: 105, question: "Kinetic energy is not neglected in calculations of:", options: ["High speed flow", "Low speed flow", "Steady flow", "Equilibrium flow"], answer: 0, explanation: "High speed flow." },
+      { id: 106, question: "Discharge losses through orifice are due to:", options: ["Friction losses", "Minor losses", "Both friction and minor losses", "Pressure losses"], answer: 2, explanation: "Friction and minor losses." },
+      { id: 107, question: "Which of the following is considered as an important parameter in the study of compressible flow?", options: ["Speed of fluid", "Speed of sound", "Speed of light", "Speed of fluid flow"], answer: 1, explanation: "Speed of sound." },
+      { id: 108, question: "Is the velocity at which an infinitesimal small pressure wave travels through a medium.", options: ["Subsonic velocity", "Hypersonic velocity", "Sonic velocity", "Monatomic velocity"], answer: 2, explanation: "Sonic velocity." },
+      { id: 109, question: "It is the ratio of the actual velocity of the fluid to the velocity of sound.", options: ["Mach number", "Froude number", "Sonic number", "Euler number"], answer: 0, explanation: "Mach number." },
+      { id: 110, question: "The flow is called sonic when Mach number is:", options: ["Equal to 1", "Less than 1", "More than 1", "None of these"], answer: 0, explanation: "M = 1." },
+      { id: 111, question: "The following flow is sub-sonic when Mach no. is:", options: ["Greater than 1", "Less than 1", "More than 1", "None of these"], answer: 1, explanation: "M < 1." },
+      { id: 112, question: "The flow is supersonic when Mach no. is:", options: ["Greater than zero", "Less than 1", "Greater than 1", "None of these"], answer: 2, explanation: "M > 1." },
+      { id: 113, question: "The flow is transonic when", options: ["M = 0", "M < 1", "M > 1", "M = 1"], answer: 3, explanation: "M = 1." },
+      { id: 114, question: "The pressure decreases as the temperature and velocity increases while the fluid velocity and Mach number:", options: ["Increases", "Decreases", "Remains constant", "None of these"], answer: 0, explanation: "Increases." },
+      { id: 115, question: "The Mach number is unity or one at the location of smallest flow area, called the:", options: ["Decreasing area", "Throat", "Increasing area", "None of these"], answer: 1, explanation: "Throat." },
+      { id: 116, question: "What happens to the velocity of fluid after passing the throat although the flow area increases?", options: ["Increases rapidly", "Decreases rapidly", "Remains constant", "None of these"], answer: 0, explanation: "Increases rapidly." },
+      { id: 117, question: "Which of the following is an example of Newtonian fluid?", options: ["Motor oils", "Gas", "Paints", "Clay slurries"], answer: 1, explanation: "Gas." },
+      { id: 118, question: "What is the critical pressure of water?", options: ["150 kg/cm³", "Less than 200 kg/cm²", "More than 200 kg/cm²", "100 kg/cm²"], answer: 2, explanation: "More than 200 kg/cm² (22.06 MPa)." },
+      { id: 119, question: "Past ME Board Question: The volumetric change of the fluid caused by a resistance is called:", options: ["Volumetric change", "Volumetric index", "Compressibility", "Adhesion"], answer: 3, explanation: "Adhesion." },
+      { id: 120, question: "The energy of a fluid flowing at any section in a pipeline is a function of:", options: ["Velocity of flow only", "Pressure only", "Height above a chosen datum, density, internal energy, pressure and velocity of flow", "Pressure, height above a chosen datum, velocity of flow, density of fluid"], answer: 2, explanation: "Elevation, density, internal energy, pressure, velocity." },
+      { id: 121, question: "If the fluid travels parallel to the adjacent layers and the paths of individual particles do not cross, the fluid is said to be:", options: ["Turbulent", "Critical", "Dynamic", "Laminar"], answer: 3, explanation: "Laminar." },
+      { id: 122, question: "Center of pressure on an inclined plane lies:", options: ["At the centroid", "Above the centroid", "Below the centroid", "At the metacenter"], answer: 2, explanation: "Below centroid." },
+      { id: 123, question: "At any instant, if the number of particles passing every cross-section of the stream is the same, the flow is said to be:", options: ["Steady flow", "Uniform flow", "Continuous flow", "Laminar flow"], answer: 0, explanation: "Steady flow." },
+      { id: 124, question: "The ratio of cross-sectional area of flow to the wetted perimeter is:", options: ["Hydraulic lead", "Hydraulic section", "Hydraulic mean depth", "Hydraulic gradient"], answer: 2, explanation: "Hydraulic mean depth." },
+      { id: 125, question: "If A is the cross-sectional area of the flow and Pw is the wetted perimeter of a pipe, then what is the hydraulic depth, Hd?", options: ["Pw – A", "Pw / A", "A / Pw", "Pw x A"], answer: 2, explanation: "A / Pw." },
+      { id: 126, question: "If Q is the volume in gallon; D is height or elevation in ft. and m is weight in lbs. per gallon, what is the desired energy to lift the water from lower to higher elevation?", options: ["E = mD/Q", "E = mDQ", "E = mQ/D", "E = QD/m"], answer: 1, explanation: "E = mDQ ft-lbs." },
+      { id: 127, question: "The flow of the convergent section of a nozzle is always subsonic. If the flow is subsonic then the Mach number is:", options: ["Greater than unity", "Less than unity", "Near unity", "Unity"], answer: 1, explanation: "Less than unity." }
+    ]
+  },
+
+  deformable_bodies: {
+    title: "Mechanics of Deformable Bodies",
+    chapter: "Stresses • Tests 2, 3, 4",
+    questions: [
+      // Test 3 (Questions 1 to 50)
+      { id: 1, question: "The ratio of the ultimate stress to the allowable stress.", options: ["Proportionality constant", "Strain", "Modulus", "Factor of safety"], answer: 3, explanation: "Factor of Safety = Ultimate Stress / Allowable Stress." },
+      { id: 2, question: "In a cantilever beam with a concentrated load at the free end, the moment is:", options: ["Constant along the beam", "Maximum at the wall", "¼ maximum half way out on the beam", "Maximum at the free end"], answer: 1, explanation: "Bending moment M = P·x is maximum at the fixed support wall." },
+      { id: 3, question: "The greatest unit pressure the soil can continuously withstand.", options: ["Yield point", "Bearing strength", "Ultimate strength", "Point of rupture"], answer: 1, explanation: "Bearing capacity/strength." },
+      { id: 4, question: "A specimen is subjected to a load. When the load is removed the strain disappears. From this information, which of the following can be deduced about this material?", options: ["It is elastic.", "It has a modulus of elasticity.", "It is plastic", "It is ductile."], answer: 0, explanation: "Elastic materials return to original shape after unloading." },
+      { id: 5, question: "A cantilever beam having a uniformly increasing load toward the fixed end:", options: ["Has uniform shear", "Has a reaction equal to the load", "Will have maximum bending moment midway to the beam", "Has a reaction is not equal to the load"], answer: 1, explanation: "Support reaction equals total applied triangular load." },
+      { id: 6, question: "The coefficient of friction for dry surfaces:", options: ["Depends on the materials and the finish condition of the surface", "Depends only on the finish condition of the surface", "Does not depend on the materials", "Depends on the composition of the materials only"], answer: 0, explanation: "Friction depends on contact materials and surface finish roughness." },
+      { id: 7, question: "The maximum stress to which a material may be subjected before failure occurs.", options: ["Rupture stress", "Yield stress", "Ultimate stress", "Allowable stress"], answer: 2, explanation: "Ultimate strength is the maximum stress before failure." },
+      { id: 8, question: "The total resistance that a material offers to an applied load.", options: ["Flexure", "Stress", "Elasticity", "Rigidity"], answer: 1, explanation: "Stress represents internal resistance per unit area." },
+      { id: 9, question: "If the areas of cross-sections of square and circular beams are the same and both are put to equal bending moment then the correct statement is:", options: ["Both the beams are equally economical", "Both the beams are equally strong", "The circular beam is more economical", "The square beam is more economical"], answer: 3, explanation: "Square beams have higher section modulus Z than circular beams of equal area." },
+      { id: 10, question: "Ties are load carrying members that carry:", options: ["Axial compressive loads", "Axial tension loads", "Prestressing thick cylinders", "Relieving thick cylinders"], answer: 1, explanation: "Ties carry tension; struts carry compression." },
+      { id: 11, question: "Auto-frottage is the method of:", options: ["Calculating stresses in thick cylinders", "Increasing life of thick cylinders", "Prestressing thick cylinders", "Relieving thick cylinders"], answer: 2, explanation: "Autofrottage prestresses thick-walled pressure vessels." },
+      { id: 12, question: "Mohr's circle can be used to determine __________ on an inclined surface.", options: ["Principal stress", "Normal stress", "Tangential stress", "All of the above"], answer: 3, explanation: "Mohr's circle determines principal, normal, and shear stresses." },
+      { id: 13, question: "Modulus of rigidity can be defined as the ratio of:", options: ["Linear stress to the longitudinal strain", "Shear stress to shear strain", "Shear to strain", "Shear stress to volumetric strain"], answer: 1, explanation: "Modulus of Rigidity G = τ / γ." },
+      { id: 14, question: "The total strain energy stored in a body is called:", options: ["Resilience", "Proof resilience", "Modulus of resilience", "Toughness"], answer: 0, explanation: "Resilience is total elastic strain energy." },
+      { id: 15, question: "The elongation of a conical bar under its own weight is equal to:", options: ["One fourth that of a prismatic bar of the same length", "One-sixth that of a prismatic bar of the same length", "One third that of a prismatic bar of the same length", "That of a prismatic bar of the same length"], answer: 2, explanation: "δ_conical = (ρgL²)/(6E) = 1/3 δ_prismatic." },
+      { id: 16, question: "Which one is the incorrect statement about true stress-strain method?", options: ["It is more sensitive to changes in mechanical conditions.", "There is no such phenomenon like true stress or true strain", "This method can be used for compression tests as well.", "True stress is load per unit area and similarly true strain is determined under actual conditions."], answer: 1, explanation: "True stress and true strain are well-defined physical quantities." },
+      { id: 17, question: "The tensile stress of a material is given by:", options: ["Average load during the test/average at the time of fracture", "Average load during the test/original cross-sectional area", "Maximum load during test/area at the time of fracture", "Maximum load during test/original cross-sectional area"], answer: 3, explanation: "Engineering tensile strength = P_max / A_original." },
+      { id: 18, question: "When a part is constrained to move and heated, it develops what kind of stress?", options: ["Compressive stress", "Principal stress", "Shear stress", "Tensile stress"], answer: 0, explanation: "Thermal expansion restricted causes compressive stress σ = E·α·ΔT." },
+      { id: 19, question: "For steel, the ultimate strength in shear as compared to in tension is nearly:", options: ["One-half", "One-third", "One-four", "The same"], answer: 0, explanation: "Shear ultimate strength is approx 50% to 60% of tensile ultimate strength." },
+      { id: 20, question: "The intensity of stress that causes unit strain is known as:", options: ["Bulk modulus", "Modulus of elasticity", "Modulus of rigidity", "Unit stress"], answer: 1, explanation: "Young's modulus E = σ / 1 = σ." },
+      { id: 21, question: "The ultimate tensile stress of mild steel, as compared to its ultimate compressive stress will be:", options: ["Less", "More", "More or less depending on the factors", "Same"], answer: 1, explanation: "Mild steel ultimate tensile strength exceeds compressive strength." },
+      { id: 22, question: "The relation between modulus of elasticity E and modulus of elasticity in shear G and Poisson's ratio μ is given by:", options: ["E = Gμ", "E = G(μ+1)", "E = 2G(μ+1)", "E = 4G(1+2μ)"], answer: 2, explanation: "E = 2G(1 + μ)." },
+      { id: 23, question: "When shear force is zero along a section, the bending moment at that section will be:", options: ["Maximum", "Minimum", "Minimum or maximum", "Zero"], answer: 2, explanation: "dM/dx = V = 0 implies local maximum or minimum bending moment." },
+      { id: 24, question: "The stress-strain curve for a glass rod during tensile test is:", options: ["An irregular curve", "A parabola", "A sudden break", "A straight line"], answer: 2, explanation: "Brittle glass breaks suddenly at elastic limit." },
+      { id: 25, question: "The ratio of average shear stress to maximum shear stress for a circular section is equal to:", options: ["2", "2/3", "3/2", "3/4"], answer: 3, explanation: "τ_max = (4/3) τ_avg, so τ_avg / τ_max = 3/4." },
+      { id: 26, question: "The ratio of bulk modulus to shear modulus for Poisson's ratio of 0.25 will be equal to:", options: ["3/2", "5/16", "1", "2"], answer: 2, explanation: "K/G = 2(1+μ) / [3(1-2μ)] = 2(1.25) / [3(0.5)] = 2.5 / 1.5 = 5/3 (Key indicates 1)." },
+      { id: 27, question: "The compression members tend to buckle in the direction of:", options: ["Axis of load", "Perpendicular to the axis of load", "Minimum cross-section", "Least radius of gyration"], answer: 3, explanation: "Buckling occurs about the axis of minimum radius of gyration r_min." },
+      { id: 28, question: "The stress in an elastic material is:", options: ["Inversely proportional to the materials yield strength", "Inversely proportional to the force acting", "Proportional to the displacement of the material acted upon by the force", "Inversely proportional to the strain"], answer: 2, explanation: "Hooke's Law: Stress is proportional to strain/displacement." },
+      { id: 29, question: "The slenderness ratio of a column is generally defined as the ratio of its:", options: ["Length to its minimum width", "Unsupported length to its maximum radius of gyration", "Length to its moment of inertia", "Unsupported length to its least radius of gyration"], answer: 3, explanation: "SR = L_eff / r_min." },
+      { id: 30, question: "The linear portion of the stress-strain diagram of steel is known as:", options: ["Modulus of elongation", "Plastic range", "Irreversible range", "Elastic range"], answer: 3, explanation: "Linear Hookean region is the elastic range." },
+      { id: 31, question: "Principal stresses occur on those planes:", options: ["Where the shearing stress is zero", "Which are 45 degrees apart", "Where the shearing stress is a maximum", "Which are subjected only to tension"], answer: 0, explanation: "Principal planes experience zero shear stress." },
+      { id: 32, question: "The ratio of moment of inertia of the cross-section of a beam to the section modulus is:", options: ["Equal to the radius of gyration", "Equal to the area of the cross-section", "A measure of distance", "Multiplied by the bending moment to determine the stress"], answer: 2, explanation: "I / Z = I / (I/c) = c (distance to extreme fiber)." },
+      { id: 33, question: "Structural steel elements subjected to torsion develop what kind of stress?", options: ["Bending stress", "Compressive stress", "Shearing stress", "Tensile stress"], answer: 2, explanation: "Torsion generates torsional shear stress." },
+      { id: 34, question: "The bending moment of a section of a beam is derived from the:", options: ["Sum of the moments of all external forces on one side of the section", "Difference between the moments on one side of the section and the opposite side", "Sum of the moments of all external forces on both sides of the section", "Sum of the moments of all external forces"], answer: 0, explanation: "Bending moment = algebraic sum of moments of external forces on one side." },
+      { id: 35, question: "The stress concentration factor:", options: ["Is a ratio of the average stress on a section to the allowable stress", "Cannot be evaluated for brittle materials", "Is the ratio of the areas involved in a sudden change of cross section", "Is the ratio of the maximum stress produced in the cross section to the average stress over the section"], answer: 3, explanation: "K_t = σ_max / σ_nominal." },
+      { id: 36, question: "Poisson's ratio is the ratio of the:", options: ["Unit lateral deformation to the unit longitudinal deformation", "Unit stress to unit strain", "Elastic limit to proportional limit", "Shear strain to compressive strain"], answer: 0, explanation: "Poisson's ratio μ = - (lateral strain) / (longitudinal strain)." },
+      { id: 37, question: "Hooke's law for an isotropic homogeneous medium experiencing one dimensional stress is known as:", options: ["Stress = E(strain)", "Strain = E(stress)", "(Force)(Area) = E(change length/length)", "Strain energy = E(internal energy)"], answer: 0, explanation: "σ = E · ε." },
+      { id: 38, question: "The modulus of rigidity of a steel member is:", options: ["A function of the length and depth", "Defined as the unit shear stress divided by the unit shear deformation", "Equal to the modulus of elasticity divided by one plus Poisson's ratio", "Defined as the length divided by the moment of inertia"], answer: 1, explanation: "G = Shear stress / Shear strain." },
+      { id: 39, question: "The maximum bending moment of a beam simply supported at both ends and subject to a total load w uniformly distributed over its length L is expressed by the formula:", options: ["w L / 8", "w L² / 8", "w L / 2", "w L² / 2"], answer: 0, explanation: "M_max = wL/8 where w is total load W (or W L/8 = w L²/8 for per unit length load)." },
+      { id: 40, question: "In a column (slenderness ratio > 160), which of the following has the greatest influence on its tendency to buckle under a compressive load?", options: ["The modulus of elasticity of the material", "The compressive strength of the material", "The radius of gyration of the column", "The length of the column"], answer: 3, explanation: "Critical Euler buckling load P_cr = π²EI / L² depends inversely on the square of column length L." },
+      { id: 41, question: "The area of the shear diagram of a beam between any two points on the beam is equal to the:", options: ["Change in shear between the two points", "Total shear beyond the two points", "Average moment between the two points", "Change in moment between the two points"], answer: 3, explanation: "∫ V dx = ΔM." },
+      { id: 42, question: "Poisson's ratio is principally used in:", options: ["The determination of capability of material for being shaped", "The determination of capacity of a material for plastic deformation with fracture", "Stress-strain relationships where stresses are applied in more than one direction", "The determination of the endurance limit"], answer: 2, explanation: "Used in multi-axial stress equations (Hooke's law in 2D/3D)." },
+      { id: 43, question: "Modulus of resilience is:", options: ["The same as the modulus of elasticity", "A measure of a material's ability to store strain energy", "The reciprocal of the modulus of elasticity", "A measure of the deflection of member"], answer: 1, explanation: "Energy absorption density up to elastic limit." },
+      { id: 44, question: "Which of the following best describes the 0.2% offset yield stress?", options: ["It is the elastic limit after which a measurable plastic strain has occurred.", "It is the stress at which the material plastically strains 0.2%.", "It is the stress at which the material elastically strains 0.2%.", "It is 0.2% below the fracture point of the material."], answer: 1, explanation: "Offset yield point corresponds to 0.002 permanent plastic strain." },
+      { id: 45, question: "Under very low deformation and at high temperature it is possible to have some plastic flow in a crystal at a shear stress lower than the critical shear stress. What is this phenomenon called?", options: ["Slip", "Twinning", "Creep", "Shearing"], answer: 2, explanation: "Time-dependent high-temperature deformation is creep." },
+      { id: 46, question: "In a stress-strain diagram what is the correct term for the stress level at e = 0.20% offset?", options: ["Elastic limit", "Plastic limit", "Offset rupture stress", "Offset yield stress"], answer: 3, explanation: "Offset yield stress." },
+      { id: 47, question: "Under which type of loading does fatigue occur?", options: ["Static load", "Plane", "High load", "Repeated load"], answer: 3, explanation: "Fatigue failure results from cyclic or repeated loads." },
+      { id: 48, question: "A specimen is subjected to the load. When the load is removed, the strain disappears. From this information, which of the following can be deduced about this material?", options: ["It is elastic", "It is plastic", "It has a high modulus of elasticity", "It is ductile"], answer: 0, explanation: "Material behaves elastically." },
+      { id: 49, question: "Which of the following may be the Poisson's ratio of a material?", options: ["0.45", "0.5", "0.55", "0.60"], answer: 0, explanation: "Poisson's ratio for real engineering materials is strictly < 0.5 (rubber is ~0.5)." },
+      { id: 50, question: "In pure torsion, the minimum torsional stress occurs at the:", options: ["Center", "Long side", "Medium side", "Short side"], answer: 1, explanation: "Test key specifies long side / center for solid sections." },
+
+      // Test 2 (Questions 51 to 100)
+      { id: 51, question: "At a given section of an I-beam the maximum bending stress occurs at the:", options: ["maximum shear stress area", "neutral axis", "web joint near the flange", "outermost"], answer: 3, explanation: "Bending stress σ = M·y/I is maximum at outermost fibers (y = y_max)." },
+      { id: 52, question: "The resultant of two or more forces is a:", options: ["couple of forces", "concurrent of forces", "momentum", "resolution of forces"], answer: 3, explanation: "Finding resultant is resolution/composition of forces." },
+      { id: 53, question: "Two or more forces acting together could be replaced by a single force with same effect in a mass called:", options: ["Couple of forces", "Resolution of forces", "Resultant", "Concurrent of forces"], answer: 2, explanation: "Resultant force." },
+      { id: 54, question: "The frictional forces depends on coefficient of friction and:", options: ["Torque", "Weights of object", "Normal of force", "Moment"], answer: 2, explanation: "Friction force F = μ · N (Normal force)." },
+      { id: 55, question: "Shear modulus is also known as:", options: ["Shear elasticity", "Poisson's ratio", "Modulus of elasticity", "Modulus of rigidity"], answer: 3, explanation: "Shear modulus G = Modulus of Rigidity." },
+      { id: 56, question: "The maximum stress induced in a material when subject to intermittent or repeated load without causing failure is called:", options: ["Ultimate stress", "Endurance limit", "Ultimate strength", "Elastic limit"], answer: 1, explanation: "Endurance limit (fatigue limit)." },
+      { id: 57, question: "Internal stress exerted by the fibers to resist the action of outside force is called:", options: ["Shearing stress", "Tensile stress", "Ultimate stress", "Compressive stress"], answer: 0, explanation: "Internal resistance stress." },
+      { id: 58, question: "Alloy steel axle under repeated load/stress will eventually fail if the load/stress is above the endurance for the steel under consideration. The endurance limit of the steel is therefore:", options: ["equal to the allowable stress of the module of elasticity", "equal to half of the ultimate strength", "equal to module of elasticity", "equal to 80% of the elastic limit"], answer: 1, explanation: "For steel, endurance limit S_e ≈ 0.5 S_ut." },
+      { id: 59, question: "Moment of inertia is also called:", options: ["Modulus of elasticity", "Weep strength", "Radius of the gyration", "None of these"], answer: 3, explanation: "Second moment of area." },
+      { id: 60, question: "Deflection of a beam is:", options: ["proportional to the modulus of elasticity and moment of inertia", "proportional to the load imposed and inversely to the length squared", "inversely proportional to the modulus of elasticity and moment of inertia", "inversely proportional to the weight imposed times the length"], answer: 2, explanation: "Deflection δ ∝ 1 / (E · I)." },
+      { id: 61, question: "Continuous stretching under load even if the stress is less than the yield point is called:", options: ["Plasticity", "Elasticity", "Creep", "Ductility"], answer: 2, explanation: "Creep." },
+      { id: 62, question: "It is the opposite direction of parallel force.", options: ["Concurrent", "Coplanar", "Couple", "Non coplanar"], answer: 2, explanation: "A couple consists of equal, opposite parallel forces." },
+      { id: 63, question: "The ratio of the moment of inertia of the cross-section of the beam to the section of modulus is:", options: ["equal to the radius of gyration", "equal to the area of the cross-section", "measure of a distance", "dependent on modulus of elasticity of beam measure"], answer: 2, explanation: "I / Z = c (distance from neutral axis)." },
+      { id: 64, question: "The differential of the shear equation is which of the following:", options: ["bending moment of the beam", "tensile strength of the beam", "slope of the elastic curve", "load of the beam"], answer: 3, explanation: "dV/dx = w(x) (distributed load)." },
+      { id: 65, question: "Could be defined as simply push and pull is known as:", options: ["Work", "Force", "Inertia", "Power"], answer: 1, explanation: "Force." },
+      { id: 66, question: "The changes in shape or geometry of the body due to action of a force on it is called deformation or:", options: ["shearing stress", "stresses", "compressive stress", "strains"], answer: 3, explanation: "Deformation/Strain." },
+      { id: 67, question: "Ability to resist deformation under stress is called:", options: ["Plasticity", "All of these", "Stiffness", "Toughness"], answer: 2, explanation: "Stiffness." },
+      { id: 68, question: "The property of a material that relates the lateral strain to longitudinal strain is called:", options: ["Stress", "Strain", "Poisson's ratio", "Endurance limit"], answer: 2, explanation: "Poisson's ratio." },
+      { id: 69, question: "The single force which produces the same effect upon a body as two or more force acting together is called:", options: ["Resultant force", "Co-planar force", "Couple", "Non-coplanar force"], answer: 0, explanation: "Resultant force." },
+      { id: 70, question: "The ability of metal to resist being crushed is called:", options: ["Shearing strength", "Compressive stress", "Torsional strength", "Tensile strength"], answer: 1, explanation: "Compressive strength/stress." },
+      { id: 71, question: "Finding the resultant of two or more forces is called:", options: ["Co-planar", "Non-coplanar forces", "Couple", "Composition of the forces"], answer: 3, explanation: "Composition of forces." },
+      { id: 72, question: "In general, the design stress and factor of safety are related as follows:", options: ["Design stress = ultimate stress times factor of safety", "Design stress = ultimate stress divided by factor of safety", "Factor of safety = design stress divided ultimate stress", "Ultimate stress = factor of safety divided by design stress"], answer: 1, explanation: "Design Stress = Ultimate Stress / FS." },
+      { id: 73, question: "Stresses that are independent to loads are known as:", options: ["Working stresses", "Operating stresses", "Residual stresses", "Shear stresses"], answer: 2, explanation: "Residual stresses exist without external load." },
+      { id: 74, question: "The ratio of unit lateral deformation to unit longitudinal deformation is called:", options: ["Poisson's ratio", "Willan's line", "Modulus of elasticity", "Deformation"], answer: 0, explanation: "Poisson's ratio." },
+      { id: 75, question: "Separated forces, which can be so combined are called:", options: ["Non-concurrent forces", "Couple", "Combined forces", "Concurrent forces"], answer: 3, explanation: "Concurrent forces." },
+      { id: 76, question: "Endurance strength is nearly proportional to the ultimate strength but not with:", options: ["yield strength", "design stress", "shear stress", "all of these"], answer: 0, explanation: "Proportional to ultimate strength." },
+      { id: 77, question: "The three moment equation maybe used to analyse a:", options: ["tapered column", "continuous beam", "endurance limit", "tensile stress"], answer: 1, explanation: "Three moment equation analyzes continuous beams." },
+      { id: 78, question: "Poisson's ratio is the ratio of:", options: ["shear strain to compressive strain", "elastic limit to compressive strain", "lateral strain to longitudinal strain", "elastic limit to proportional limit"], answer: 2, explanation: "Lateral strain to longitudinal strain." },
+      { id: 79, question: "The product of the resultant of all forces acting on a body and the time that the resultant acts:", options: ["Angular impulse", "Angular momentum", "Linear impulse", "Linear momentum"], answer: 2, explanation: "Linear Impulse = Force × Time." },
+      { id: 80, question: "The system of forces and opposite forces are added, which of the following if any is true?", options: ["equilibrium is destroyed", "equilibrium is maintained", "none of these is true", "an unbalanced of moment exist"], answer: 1, explanation: "Equal opposite forces preserve equilibrium." },
+      { id: 81, question: "What is the property of a material, which resists forces acting to pull the material apart?", options: ["Shear strength", "Tensile strength", "Torsional strength", "Compressive strength"], answer: 1, explanation: "Tensile strength." },
+      { id: 82, question: "What is the metal characteristic to withstand forces that causes twisting?", options: ["Torsional strength", "Modulus of elasticity", "Twisting moment", "Elasticity"], answer: 0, explanation: "Torsional strength." },
+      { id: 83, question: "The unit deformation is called:", options: ["Torsion", "Strain", "Stress", "Shear"], answer: 1, explanation: "Strain." },
+      { id: 84, question: "The total amount of permanent extension of the gage length measured after specimen has fractured is called:", options: ["Elongation", "Strain", "Stress", "Elastic limit"], answer: 0, explanation: "Percentage elongation." },
+      { id: 85, question: "Strength of a material is that of a stress intensity determined by considering the maximum test load to act the original area of test specimen:", options: ["Yield point", "Ultimate strength", "Break strength", "Elastic limit"], answer: 1, explanation: "Ultimate strength." },
+      { id: 86, question: "The maximum stress, which is reached during a tension test is called:", options: ["Stress", "Elasticity", "Strain", "Tensile strength"], answer: 3, explanation: "Tensile strength." },
+      { id: 87, question: "Which of the following is the differential of the shear equation?", options: ["bending moment", "load on the beam", "tensile strength of the beam", "slope of the beam"], answer: 1, explanation: "dV/dx = w." },
+      { id: 88, question: "The change in length per unit original length is:", options: ["strain", "stress", "deformation", "elastic modulus"], answer: 0, explanation: "Strain ε = ΔL / L." },
+      { id: 89, question: "The ability of material or metal to resist being crushed is:", options: ["fatigue strength", "bending strength", "torsional strength", "compressive strength"], answer: 3, explanation: "Compressive strength." },
+      { id: 90, question: "The ability of metals to withstand loads without breaking down is termed as:", options: ["Strain", "Stress", "Elasticity", "Strength"], answer: 3, explanation: "Strength." },
+      { id: 91, question: "The ability of metals to withstand forces that causes a member to twist.", options: ["Shear strength", "Tensile strength", "Bearing strength", "Torsional strength"], answer: 3, explanation: "Torsional strength." },
+      { id: 92, question: "The ratio of stress to strain within the elastic limit is called:", options: ["Creep", "Modulus of rigidity", "Modulus of elasticity", "Poisson's ratio"], answer: 2, explanation: "Modulus of elasticity." },
+      { id: 93, question: "The last point at which a material may be stretched and still return to its undeformed combination upon release of stress:", options: ["Rupture limit", "Elastic limit", "Proportional limit", "Ultimate limit"], answer: 1, explanation: "Elastic limit." },
+      { id: 94, question: "The deformation that results from a stress and is expressed in terms of the amount of deformation per inch.", options: ["Elongation", "Strain", "Poisson's ratio", "Elasticity"], answer: 1, explanation: "Unit strain." },
+      { id: 95, question: "The internal resistance a material offers to being deformed and is measured in terms of applied load.", options: ["Strain", "Elasticity", "Stress", "Resilience"], answer: 2, explanation: "Stress." },
+      { id: 96, question: "The maximum stress induced in a material when subjected to alternating or repeated loading without causing failure.", options: ["Ultimate strength", "Yield strength", "Endurance strength", "Rupture strength"], answer: 2, explanation: "Endurance strength." },
+      { id: 97, question: "The maximum stress to which a material may be subjected before failure occurs is called:", options: ["Rupture strength", "Ultimate strength", "Yield strength", "Proportional limit"], answer: 1, explanation: "Ultimate strength." },
+      { id: 98, question: "The total deformation measured in the direction of the lines stress:", options: ["Strain", "Elasticity", "Elongation", "Contraction"], answer: 0, explanation: "Total elongation/strain." },
+      { id: 99, question: "The total resistance that a material offers to an applied load is called:", options: ["Friction torque", "Stress", "Rigidity", "Compressive force"], answer: 1, explanation: "Stress." },
+      { id: 100, question: "The ability of metal to withstand forces thus following a number of twist.", options: ["Shear strength", "Bearing strength", "Endurance limit", "Deformation"], answer: 0, explanation: "Shear/torsional resistance." },
+
+      // Test 4 (Questions 101 to 150)
+      { id: 101, question: "In a specification schedule is used when the pipe specified as 'schedule 80', then pipe corresponds to the:", options: ["'extra standard' weight", "Allowable stress", "Internal pressure", "'old standard' weight"], answer: 0, explanation: "Schedule 80 is Extra Strong / Extra Heavy weight pipe." },
+      { id: 102, question: "The modulus of elasticity for ordinary steel usually falls between _______ million pounds per square inch.", options: ["26 to 28", "28 to 31", "20 to 45", "50 to 30"], answer: 1, explanation: "E for steel is 29 to 30 × 10⁶ psi (28-31 Mpsi)." },
+      { id: 103, question: "The modulus of elasticity is measured of:", options: ["Accuracy", "Quality", "Stiffness", "Rigidity"], answer: 2, explanation: "Modulus of elasticity E measures axial/bending stiffness." },
+      { id: 104, question: "The modulus of elasticity for most metals in compression is usually taken as that in:", options: ["Tension", "Bearing", "Torsion", "Yield"], answer: 0, explanation: "E in compression equals E in tension for isotropic metals." },
+      { id: 105, question: "The ratio of the moment and stress is called:", options: ["Contraction", "Proportional constant", "Section modulus", "Strain"], answer: 2, explanation: "Section modulus Z = M / σ." },
+      { id: 106, question: "For a symmetrical cross-section beam the flexural stress is ________ when the vertical shear is maximum.", options: ["Infinity", "Maximum", "Minimum", "Zero"], answer: 3, explanation: "Flexural stress is zero at neutral axis where shear stress is maximum." },
+      { id: 107, question: "When tested in compression, ductile materials usually exhibit _______ characteristics up to the yield strength as they do when tested in tension.", options: ["The same", "Less than", "More than", "Approximately the same"], answer: 3, explanation: "Compression yield stress approximately equals tension yield stress." },
+      { id: 108, question: "It has been said that 80% of the failures of machine parts have been due to:", options: ["Comprehension", "Fatigue failure", "Negligence", "Torsion"], answer: 1, explanation: "Fatigue accounts for ~80-90% of dynamic mechanical failures." },
+      { id: 109, question: "Cazand quotes values for steel showing Sn/Su ratios, often called endurance ratio, from:", options: ["0.23 to 0.65", "0.34 to 0.45", "0.34 to 0.87", "0.63 to 0.93"], answer: 0, explanation: "Endurance ratio Sn/Su ranges from 0.23 to 0.65." },
+      { id: 110, question: "The discontinuity or change of section, such as scratches, holes, bends, or grooves is a:", options: ["Stress caiser", "Stress functioning", "Stress raiser", "Stress relieving"], answer: 2, explanation: "Stress raiser (stress concentration)." },
+      { id: 111, question: "The degree of stress concentration is usually indicated by the:", options: ["Power factor", "Stress concentration factor", "Service factor", "Stress factor"], answer: 1, explanation: "Stress concentration factor Kt." },
+      { id: 112, question: "In a part at uniform temperature and not acted upon by an external load, any internal stress that exist is called:", options: ["Control stress", "Form stress", "Residual stress", "Superposed stress"], answer: 2, explanation: "Residual stress." },
+      { id: 113, question: "The stress or load induced by the tightening operation:", options: ["Initial stress", "Initial tension", "Residual stress", "None of these"], answer: 0, explanation: "Initial stress/tightening load." },
+      { id: 114, question: "A type of failure due to instability is known as:", options: ["Slenderness ratio", "Buckingham", "Buckling", "Stability"], answer: 2, explanation: "Buckling is elastic instability." },
+      { id: 115, question: "The ratio of the length of the column and the radius of gyration of the cross-sectional area about a centroidal axis is called:", options: ["Contact ratio", "Constant ratio", "Power factor", "Slenderness ratio"], answer: 3, explanation: "Slenderness ratio L / r." },
+      { id: 116, question: "Formula that applies to a very slender column is called:", options: ["Column formula", "Euler's formula", "Moment formula", "Slender formula"], answer: 1, explanation: "Euler's column formula." },
+      { id: 117, question: "If two principal stresses are zero, the state stress is:", options: ["Biaxial", "Monoaxial", "Triaxial", "Uniaxial"], answer: 3, explanation: "Uniaxial stress state." },
+      { id: 118, question: "If one principal stress is zero, the stress is:", options: ["Biaxial", "Monoaxial", "Triaxial", "Uniaxial"], answer: 0, explanation: "Biaxial stress state." },
+      { id: 119, question: "If all the principal stresses have finite value, the system is:", options: ["Biaxial", "Monoaxial", "Triaxial", "Uniaxial"], answer: 2, explanation: "Triaxial stress state." },
+      { id: 120, question: "Under theories of failure for static loading of ductile material, the design stress is the:", options: ["Endurance strength / factor of safety", "Factor of safety / yield stress", "Yield stress / factor of safety", "Ultimate stress / factor of safety"], answer: 2, explanation: "Design stress = Yield stress / FS." },
+      { id: 121, question: "Under theories of failure, the value of shear stress is ________ that of tensile stress:", options: ["Equal", "Double", "Half", "Three times"], answer: 2, explanation: "Shear yield stress is 0.5 (Maximum Shear Stress Theory) to 0.577 of tensile yield stress." },
+      { id: 122, question: "The theories of mechanics of materials shows that the results from the octahedral shear stress theory and those from the maximum distortion energy theory are _______.", options: ["More than", "Less than", "Relevant", "The same"], answer: 3, explanation: "Von Mises distortion energy theory equals octahedral shear stress theory." },
+      { id: 123, question: "A kind of stress that is caused by forces acting along or parallel to the area is called:", options: ["Bearing stress", "Shearing stress", "Tangential stress", "Tensile stress"], answer: 1, explanation: "Shearing/tangential stress." },
+      { id: 124, question: "Obtained by dividing the differential load dF by the dA over which it acts.", options: ["Elasticity", "Elongation", "Strain", "Stress"], answer: 3, explanation: "Stress σ = dF/dA." },
+      { id: 125, question: "The highest ordinate in the stress-strain diagram or curve is called:", options: ["Elastic limit", "Rupture strength", "Ultimate strength", "Yield point"], answer: 2, explanation: "Ultimate tensile strength." },
+      { id: 126, question: "A pair of forces equal in magnitude opposite in direction, and not in the same line is called:", options: ["Couple", "Momentum", "Parallel force", "Torque"], answer: 0, explanation: "Couple." },
+      { id: 127, question: "Framework composed of members joined at ends to form a rigid structure is known as:", options: ["Joists", "Machine", "Purlins", "Truss"], answer: 3, explanation: "Truss." },
+      { id: 128, question: "The ratio of the tensile stress to the tensile strain is called:", options: ["Bulk modulus", "Hooke's law", "Shear modulus", "Young modulus"], answer: 3, explanation: "Young's Modulus E = σ / ε." },
+      { id: 129, question: "The ratio of the volume stress to the volume strain is called the coefficient of volume elasticity or:", options: ["Bulk modulus", "Hooke's law", "Shear modulus", "Young modulus"], answer: 0, explanation: "Bulk Modulus K." },
+      { id: 130, question: "The action of a force is characterized by:", options: ["Its magnitude", "Direction of its action", "Point of application", "All of the above"], answer: 3, explanation: "Magnitude, direction, and point of application." },
+      { id: 131, question: "At highest or lowest point on the moment diagram:", options: ["Shear is half", "Shear is maximum", "Shear is negative", "Shear is zero"], answer: 3, explanation: "dM/dx = V = 0." },
+      { id: 132, question: "The built-in or fixed support is capable of supporting:", options: ["An axial load", "A traverse force", "A bending moment", "All of these"], answer: 3, explanation: "Fixed support resists axial force, shear force, and bending moment." },
+      { id: 133, question: "The modulus of elasticity in shear is commonly called:", options: ["Bulk modulus", "Deformation", "Modulus of rigidity", "Young modulus"], answer: 2, explanation: "Modulus of Rigidity." },
+      { id: 134, question: "The stress beyond which the material will not return to its original shape when unloaded, but will retain a permanent deformation is termed as:", options: ["Elastic limit", "Proportional limit", "Yield point", "Yield strength"], answer: 0, explanation: "Elastic limit." },
+      { id: 135, question: "Refers to the actual stress the material has when under load:", options: ["Allowable stress", "Factor of safety", "Ultimate strength", "Working stress"], answer: 3, explanation: "Working/operating stress." },
+      { id: 136, question: "The safe soil bearing pressure of diesel engine foundation is about:", options: ["2000 kg per sq. cm", "4600 kg per sq. cm", "4890 kg per sq. cm", "5633 kg per sq. cm"], answer: 2, explanation: "4890 kg/cm²." },
+      { id: 137, question: "The machine foundation must have a factor of safety of:", options: ["3", "4", "5", "6"], answer: 2, explanation: "Machine foundations require FS of 5." },
+      { id: 138, question: "The load acts over a smaller area, and the _______ continues to increase until failure:", options: ["Actual stress", "Allowable stress", "Comprehensive stress", "Tensile stress"], answer: 0, explanation: "Actual stress." },
+      { id: 139, question: "In the stress-strain diagram where there is a large increase in strain with little or no increase in stress is called:", options: ["Endurance strength", "Ultimate strength", "Rupture strength", "Yield strength"], answer: 3, explanation: "Yield point/strength." },
+      { id: 140, question: "A ___________ member that carries loads transverse to its axis:", options: ["Structure", "Column", "Beam", "Frame"], answer: 2, explanation: "Beam." },
+      { id: 141, question: "Which type of load that is applied slowly and is never removed?", options: ["Uniform load", "Static load", "Equilibrium load", "Impact load"], answer: 1, explanation: "Static load." },
+      { id: 142, question: "When varying loads are applied that are not regular in their amplitude, the loading is called:", options: ["Repeated loading", "Random loading", "Reversed loading", "Fluctuating loading"], answer: 1, explanation: "Random loading." },
+      { id: 143, question: "A measure of the relative safety of a load carrying components is termed as:", options: ["Design factor", "Load factor", "Ratio factor", "Demand factor"], answer: 0, explanation: "Design factor (Safety factor)." },
+      { id: 144, question: "The condition, which causes actual stresses in machine members to be higher than nominal values predicted by elementary equations.", options: ["Stress concentration factor", "Stress factor", "Design factor", "Load factor"], answer: 0, explanation: "Stress concentration factor." },
+      { id: 145, question: "The stress value, which is used, in mathematical determination of the required size of the machine member.", options: ["Endurance stress", "Design stress", "Maximum stress", "Normal stress"], answer: 1, explanation: "Design stress." },
+      { id: 146, question: "Typical values for Poisson's ratio of cast iron is in the range of:", options: ["0.30 to 0.33", "0.27 to 0.30", "0.25 to 0.27", "0.35 to 0.45"], answer: 2, explanation: "0.25 to 0.27." },
+      { id: 147, question: "Typical values for Poisson's ratio of steel is in range of:", options: ["0.30 to 0.33", "0.27 to 0.30", "0.27 to 0.27", "0.35 to 0.45"], answer: 1, explanation: "0.27 to 0.30." },
+      { id: 148, question: "Typical values for Poisson's ratio of aluminium and titanium is in range of:", options: ["0.25 to 0.27", "0.27 to 0.30", "0.30 to 0.33", "0.35 to 0.45"], answer: 2, explanation: "0.30 to 0.33." },
+      { id: 149, question: "The angle of inclination of the planes on which the principal stresses act is called:", options: ["Normal plane", "Principal plane", "Tangential plane", "Traverse plane"], answer: 1, explanation: "Principal plane." },
+      { id: 150, question: "___________ provides a very accurate prediction of failure of ductile materials under static loads or completely reversed normal, shear or combined stresses.", options: ["Shear stress theory", "Normal stress theory", "Distortion energy theory", "Soderberg line theory"], answer: 2, explanation: "Distortion Energy Theory (Von Mises)." }
+    ]
+  },
+
+  heat_transfer: {
+    title: "Heat Transfer",
+    chapter: "Chapter 13",
+    questions: [
+      { id: 1, question: "One of the reasons for insulating the pipes is:", options: ["They may not break under pressure", "There is minimum corrosion", "Capacity to withstand pressure is increased", "Heat loss from the surface is minimized"], answer: 3, explanation: "Insulation minimizes surface heat loss." },
+      { id: 2, question: "The rate of radiant energy, that is emitted by a surface at any temperature and in small wavelengths is found from the known rate of energy that under the same conditions will be emitted from a black surface, by multiplying with the absorptivity. The above enunciation is called:", options: ["Lambert's law", "Kirchhoff's law", "Planck's law", "Stefan Boltzmann's law"], answer: 1, explanation: "Kirchhoff's Law of Radiation." },
+      { id: 3, question: "Which of the following is generally used to measure the temperature inside the furnace?", options: ["Mercury thermometer", "Alcohol thermometer", "Ash thermometer", "Optical pyrometer"], answer: 3, explanation: "Optical pyrometers measure high furnace temperatures." },
+      { id: 4, question: "All heat transfer processes:", options: ["Involve transfer of energy", "Involve temperature difference between the bodies", "Obey first law of thermodynamics", "Obey second law of thermodynamics"], answer: 1, explanation: "Heat flow requires a temperature gradient." },
+      { id: 5, question: "What is thermal diffusivity?", options: ["A mathematical formula", "A physical property of the material", "A configuration for heat conduction", "A dimensionless parameter"], answer: 1, explanation: "Thermal diffusivity α = k / (ρ c_p) is a physical thermophysical property." },
+      { id: 6, question: "Which of the following is a unit of thermal diffusivity?", options: ["m^2/hr", "kcal/m^2hr", "kcal/ m^2hr °C", "m^2/hr °C"], answer: 0, explanation: "Thermal diffusivity has units m²/s or m²/hr." },
+      { id: 7, question: "Non-isotropic conductivity is shown by which of the following?", options: ["Brass", "Copper", "Wood", "Steel"], answer: 2, explanation: "Wood has anisotropic thermal conductivity along vs across grain." },
+      { id: 8, question: "For glass wool thermal conductivity changes from sample to sample due to changes in:", options: ["Structure", "Density", "Composition", "All of the above"], answer: 3, explanation: "Thermal conductivity of porous insulations varies with structure, density, and composition." },
+      { id: 9, question: "Which of the following is the S.I. unit of thermal conductivity?", options: ["W/m-hr-°K", "W/m °K", "KJ/m-hr-°C", "W/m-hr-°C"], answer: 1, explanation: "SI unit of thermal conductivity is W/(m·K)." },
+      { id: 10, question: "What is the value of the Prandtl number for air?", options: ["10", "6.7", "67", "0.7"], answer: 3, explanation: "Prandtl number Pr for air is approximately 0.7 to 0.71." },
+      { id: 11, question: "According to Prevost theory of heat exchange,", options: ["It is impossible to transfer heat from low temperature source to high temperature source", "Heat transfer by radiation needs no medium", "All bodies above absolute zero emit radiation", "Heat transfer in most of the cases occurs by combination of conduction, convection and radiation"], answer: 2, explanation: "Prevost theory states all bodies above 0 K emit thermal radiation." },
+      { id: 12, question: "Thermal conductivity of wood depends on which of the following?", options: ["Moisture", "Temperature", "Density", "All of the above"], answer: 3, explanation: "Depends on moisture, temperature, and density." },
+      { id: 13, question: "A fur coat on an animal will help the animal to remain:", options: ["Warm in winter", "Cool in winter", "Warm in summer", "Cool in summer"], answer: 0, explanation: "Fur traps air layers to keep animals warm in winter." },
+      { id: 14, question: "The nature of flow of a fluid inside a tube, whether it is turbulent or laminar, can be ascertained by:", options: ["Flow velocity", "Surface conditions", "Viscosity of fluid", "Reynolds number"], answer: 3, explanation: "Reynolds number Re determines flow regime." },
+      { id: 15, question: "By which of the following modes of heat transfer is the Stefan-Boltzmann law applicable?", options: ["Conduction", "Radiation", "Conduction and radiation combined", "Convection and radiation combined"], answer: 1, explanation: "Stefan-Boltzmann law governs thermal radiation Q = σ A T⁴." },
+      { id: 16, question: "At all wavelengths and temperatures the monochromatic emissivity of a white body is equal to:", options: ["Zero", "0.5", "Unity", "0.1 to 0.5"], answer: 0, explanation: "A white body reflects all radiation, so emissivity ε = 0." },
+      { id: 17, question: "The radiation from flames is having:", options: ["Continuous radiation from burning soot particles of microscopic and submicroscopic dimensions", "Radiation from suspended larger particles of coal, coke, or ash contributing to flame luminosity", "Infrared radiation from water vapor and carbon dioxide", "All of the above"], answer: 3, explanation: "Flame radiation includes soot particles, ash, and infrared gas emission." },
+      { id: 18, question: "The statement that the emissivity and absorptivity of a surface is surrounded by its own temperature are the same for both monochromatic and total radiation is called:", options: ["Lambert's law", "Kirchhoff's law", "D'Alembert's", "Law of emissivity"], answer: 1, explanation: "Kirchhoff's Law ε = α." },
+      { id: 19, question: "A reservoir that supplies energy in the form of heat is called:", options: ["Source", "Sink", "Cold reservoir", "Heat reservoir"], answer: 0, explanation: "Heat source." },
+      { id: 20, question: "In regenerator type heat exchanger, heat transfer occurs by:", options: ["Direct mixing of hot and cold fluids", "A complete separation between hot and cold fluids", "Flow of hot and cold fluids alternately over a surface", "Generation of heat again and again"], answer: 2, explanation: "Hot and cold fluids flow alternately over a matrix surface." },
+      { id: 21, question: "Least value of Prandtl number can be expected in case of:", options: ["Liquid metals", "Sugar solution", "Salt solution", "Water"], answer: 0, explanation: "Liquid metals have extremely low Pr (0.001 to 0.03)." },
+      { id: 22, question: "'The boiling point of a solution is a linear function of water at the same pressure.' The above statement is called:", options: ["Duhring's rule", "Petit and Dulong's law", "Fick's rule", "Reynolds law"], answer: 0, explanation: "Dühring's Rule." },
+      { id: 23, question: "Floating heads are provided in heat exchangers to:", options: ["Increase the pressure drop", "Decrease the pressure drop", "Facilitate maintenance", "Avoid deformation of tubes because of thermal expansion"], answer: 3, explanation: "Accommodate differential thermal expansion." },
+      { id: 24, question: "What do you call the first stage of crystal formation?", options: ["Nucleation", "Foaming", "Separation", "Vortexing"], answer: 0, explanation: "Nucleation." },
+      { id: 25, question: "In heat exchanger design, one transfer unit implies:", options: ["One fluid which is exchanging with another fluid of the same chemical composition", "The section of heat exchanger which will cause temperature drop of one degree centigrade", "The section of heat exchanger where heat transfer surface area has been one square meter", "Condition when the change in temperature of one stream is numerically equal to the average driving force"], answer: 3, explanation: "NTU definition where temperature change equals mean driving force." },
+      { id: 26, question: "Dittus-Boelter equation can be applied in case of fluids flowing in:", options: ["Transition region", "Turbulent region", "Laminar region", "Any of the above"], answer: 1, explanation: "Dittus-Boelter equation is valid for turbulent tube flow." },
+      { id: 27, question: "In sugar mills cane juice evaporation is in:", options: ["Zigzag tube evaporators", "Long vertical tube evaporators", "Short vertical tube evaporators", "Horizontal tube evaporators"], answer: 1, explanation: "Long vertical tube (LVT) evaporators." },
+      { id: 28, question: "A 1-2 heat exchanger refers to which of the following?", options: ["Single pass on shell side and double pass on tube side", "Single pass on tube side and double pass on shell side", "Single liquid cools two liquids at different temperature", "Two tubes of cold fluid pass through one tube of hot fluid"], answer: 0, explanation: "1 shell pass, 2 tube passes." },
+      { id: 29, question: "A correction of LMTD is essential in case of:", options: ["Parallel flow heat exchanger", "Counter current heat exchanger", "Cross flow heat exchanger", "None of the above"], answer: 2, explanation: "LMTD correction factor F is needed for cross flow and multi-pass shell-and-tube exchangers." },
+      { id: 30, question: "Which of the following is used as entrainer in acetic acid – water separation?", options: ["Methyl alcohol", "Phosphorous", "Butyl acetate", "Hexane"], answer: 2, explanation: "Butyl acetate is used as an entrainer in azeotropic distillation." },
+      { id: 31, question: "A type of radiation consisting of singly charged particles that penetrate to intermediate distances:", options: ["Nuclear radiation", "Alpha radiation", "Beta radiation", "Gamma radiation"], answer: 2, explanation: "Beta particles (electrons/positrons)." },
+      { id: 32, question: "An electrically charged atom or radical which carries electricity through an electrolyte is called:", options: ["Ion", "Isotope", "Molecule", "Hole"], answer: 0, explanation: "Ion." },
+      { id: 33, question: "The energy of a body that can be transmitted in the form of heat:", options: ["Heat energy", "Thermal energy", "Entropy", "Internal energy"], answer: 1, explanation: "Thermal energy." },
+      { id: 34, question: "In an isometric process, the heat transferred is equal to:", options: ["Change in enthalpy", "Change in entropy", "Change in internal energy", "Work nonflow"], answer: 2, explanation: "Isometric (constant volume): Q = ΔU." },
+      { id: 35, question: "A substance that is able to absorb liquids or gases and is used for removing them from a given medium or region:", options: ["Absorbent", "Cohesive", "Adsorbent", "Adhesive"], answer: 0, explanation: "Absorbent." },
+      { id: 36, question: "Radiant heat transfer is described by:", options: ["Newton's law", "Fourier's law", "The logarithmic mean temperature", "Kirchhoff's law"], answer: 3, explanation: "Kirchhoff's Law / Stefan-Boltzmann Law." },
+      { id: 37, question: "A reservoir that absorbs energy in the form of heat is called:", options: ["Source", "Sink", "Cold reservoir", "Heat reservoir"], answer: 1, explanation: "Heat sink." },
+      { id: 38, question: "When the entire heat exchanger is selected as control volume, net heat transfer becomes:", options: ["Unity", "Zero", "Undefined", "Indeterminate"], answer: 1, explanation: "If insulated overall control volume, net Q_ext = 0." },
+      { id: 39, question: "Heat is conducted in the direction of:", options: ["Increasing temperature", "Decreasing temperature", "Increasing and decreasing temperature", "Constant temperature"], answer: 1, explanation: "Heat flows down temperature gradient (decreasing T)." },
+      { id: 40, question: "The heat transfer term in the first law of thermodynamics may be due to any of the following except:", options: ["Conduction", "Convection", "Radiation", "Internal heat generation (e.g., chemical reaction)"], answer: 3, explanation: "Internal heat generation is a source term, not heat transfer across boundaries." },
+      { id: 41, question: "All heat transfer processes require a medium of energy exchange except:", options: ["Conduction", "Natural convection", "Forced convection", "Radiation"], answer: 3, explanation: "Radiation propagates through vacuum." },
+      { id: 42, question: "Thermal conduction is described by:", options: ["Newton's law", "The logarithmic mean temperature difference", "The Stefan-Boltzmann law", "Fourier's law"], answer: 3, explanation: "Fourier's Law q = -k A (dT/dx)." },
+      { id: 43, question: "Convection is described by which of the following laws?", options: ["Newton's law", "The logarithmic mean temperature difference", "The Stefan-Boltzmann law", "Fourier's law"], answer: 0, explanation: "Newton's Law of Cooling q = h A (T_s - T_inf)." },
+      { id: 44, question: "Radiation heat transfer is described by:", options: ["Newton's law", "The logarithmic mean temperature difference", "Fourier's law", "Kirchhoff's law"], answer: 3, explanation: "Kirchhoff's / Stefan-Boltzmann law." },
+      { id: 45, question: "The equivalent of ratio of emissive power to absorptivity for bodies in thermal equilibrium is described by:", options: ["Newton's law", "The logarithmic mean temperature difference", "Fourier's law", "Kirchhoff's law"], answer: 3, explanation: "Kirchhoff's law E/α = E_b." },
+      { id: 46, question: "The temperature potential between temperature at the two ends of a heat exchanger are given by:", options: ["The logarithmic mean temperature difference", "The Stefan-Boltzmann law", "Fourier's law", "Kirchhoff's law"], answer: 0, explanation: "LMTD." },
+      { id: 47, question: "The function of a heat exchanger is to:", options: ["Increase the water temperature entering the boiler and decrease combustion requirements", "Transfer heat from one fluid to another", "Increase the total energy content of the flow", "Exchange heat to increase energy to the flow"], answer: 1, explanation: "Transfer heat between fluids." },
+      { id: 48, question: "The function of a superheater is to:", options: ["Increase the water temperature entering the boiler and decrease combustion requirements", "Transfer heat from one fluid to another", "Increase the total energy content of the flow", "Exchange heat to increase energy to the flow"], answer: 3, explanation: "Increase enthalpy/energy of steam above saturation." },
+      { id: 49, question: "What is the series of processes that eventually bring the system back to its original condition?", options: ["Reversible process", "Irreversible process", "Cycle", "Isentropic process"], answer: 2, explanation: "Thermodynamic cycle." },
+      { id: 50, question: "A theoretical body which when heated to incandescence would emit a continuous light-ray spectrum.", options: ["Black body radiation", "Black body", "Blue body", "White body"], answer: 1, explanation: "Black body." },
+      { id: 51, question: "Which of the following is the reason for insulating the pipes?", options: ["They may not break under pressure", "There is minimum corrosion", "Capacity to withstand pressure", "Heat loss from the surface is minimized"], answer: 3, explanation: "Minimizes heat loss." },
+      { id: 52, question: "Heat transfer due to density differential:", options: ["Convection", "Nuclear", "Conduction", "Radiation"], answer: 0, explanation: "Natural/free convection." },
+      { id: 53, question: "The term 'exposure' in radiological effects is used as a measure of a gamma ray or an X-ray field in the surface of an exposed object:", options: ["Number of ions produced per mass of air x coulombs per kg", "Mass of air x surface area of an exposed object", "Mass of air over surface area of an exposed object", "Number of ions produced per mass of air + coulombs per kg"], answer: 0, explanation: "Ionization per mass unit." },
+      { id: 54, question: "The passing of heat energy from molecule to molecule through a substance:", options: ["Conduction", "Radiation", "Conservation", "Convection"], answer: 0, explanation: "Conduction." },
+      { id: 55, question: "The radiant heat transfer depends on:", options: ["Temperature", "Heat rays", "Heat flow from cold to hot", "Humidity"], answer: 1, explanation: "Electromagnetic heat rays / radiation wavelength." },
+      { id: 56, question: "What kind of heat exchanger where water is heated to a point that dissolved gases are liberated?", options: ["Evaporator", "Condenser", "Intercooler", "Deaerator"], answer: 3, explanation: "Deaerator removes dissolved O₂ and CO₂." },
+      { id: 57, question: "Heat transfer processes which include a change of phase of a fluid are considered:", options: ["Convection", "Thermal radiation", "Conduction", "Radiation"], answer: 0, explanation: "Boiling and condensation are phase-change convection processes." },
+      { id: 58, question: "A hot block is cooled by blowing cool air over its top surface. The heat that is first transferred to the air layer close to the block is by conduction. It is eventually carried away from the surface by:", options: ["Convection", "Radiation", "Conduction", "Thermal radiation"], answer: 0, explanation: "Convection." },
+      { id: 59, question: "A body that is hot compared to its surroundings illuminates more energy than it receives. What is this mode of heat transfer?", options: ["Radiation", "Conduction", "Convection", "Condensation"], answer: 0, explanation: "Thermal radiation." },
+      { id: 60, question: "What is the heat transfer due to density differential?", options: ["Convection", "Conduction", "Nuclear", "Radiation"], answer: 0, explanation: "Natural convection." },
+      { id: 61, question: "What do you call the passing of heat energy from molecule to molecule through a substance?", options: ["Conduction", "Conservation", "Radiation", "Convection"], answer: 0, explanation: "Conduction." },
+      { id: 62, question: "The transmission of heat from one place to another by fluid circulation between the spots of different temperature is called:", options: ["Convection", "Conservation", "Radiation", "Conduction"], answer: 0, explanation: "Convection." },
+      { id: 63, question: "Which of the following requires the greatest amount of heat per kilogram for a given increase in temperature?", options: ["Ice", "Water", "Steam", "Copper"], answer: 1, explanation: "Liquid water has the highest specific heat capacity (4.184 kJ/kg·K)." },
+      { id: 64, question: "What do you call the effectiveness of a body as a thermal radiator at a given temperature?", options: ["Absorptivity", "Conductivity", "Emissivity", "Reflectivity"], answer: 2, explanation: "Emissivity ε." },
+      { id: 65, question: "The natural direction of the heat flow between two reservoirs is dependent on which of the following?", options: ["Their temperature difference", "Their internal energy", "Their pressures", "Their states, whether solid, liquid and gas"], answer: 0, explanation: "Temperature difference." },
+      { id: 66, question: "Why are metals good conductors of heat?", options: ["Because they contain free electrons", "Because their atoms are relatively far apart", "Because their atoms collide infrequently", "Because they have reflecting surfaces"], answer: 0, explanation: "Free electron motion enhances thermal conductivity." },
+      { id: 67, question: "In natural convection a heated portion of a fluid moves because:", options: ["Its molecular motions become aligned", "Of molecular collisions within it", "Its density is less than that of the surrounding fluid", "Of currents in surrounding fluid"], answer: 2, explanation: "Buoyancy force driven by lower density." },
+      { id: 68, question: "In order to emit electromagnetic radiation, an object must be at a temperature:", options: ["Above 0 K", "Above 0 °C", "Above that of its surrounding", "High enough for it to glow"], answer: 0, explanation: "Above absolute zero (0 K)." },
+      { id: 69, question: "The rate at which an object radiates electromagnetic energy does not depend on its:", options: ["Surface area", "Mass", "Temperature", "Ability to absorb radiation"], answer: 1, explanation: "Radiation rate depends on area, temperature, and emissivity—not mass." },
+      { id: 70, question: "Sublimation refers to:", options: ["The vaporization of solid without first becoming liquid", "The melting of a solid", "The vaporization of a liquid", "The condensation of a gas into liquid"], answer: 0, explanation: "Direct solid to gas transition." },
+      { id: 71, question: "In the process of freeze drying, ice goes directly into water vapor. What is the temperature at which this process can take place?", options: ["Below the triple point of water", "At the triple point of water", "Above the triple point of water", "Any of the above, depending on the pressure"], answer: 0, explanation: "Below triple point pressure and temperature." },
+      { id: 72, question: "What usually happens when a vapor condenses into a liquid?", options: ["It evolves heat", "It generates heat", "Its temperature increases", "It boils with temperature less than 100 °C"], answer: 0, explanation: "Condensation releases/evolves latent heat." },
+      { id: 73, question: "In a cooling tower, the water is cooled mainly by:", options: ["Condensation", "Convection", "Evaporation", "Conduction"], answer: 2, explanation: "Evaporative cooling." },
+      { id: 74, question: "How do you classify a body that has an emissivity factor of 0.7?", options: ["Gray body", "Black body", "White body", "Theoretical body"], answer: 0, explanation: "Gray body (0 < ε < 1)." },
+      { id: 75, question: "At what particular condition that no more heat can be removed from a substance and the temperature can no longer be lowered?", options: ["Freezing point", "Absolute zero", "Critical point", "Ground zero"], answer: 1, explanation: "Absolute zero (0 K)." },
+      { id: 76, question: "What refers to the heat transfer wherein the heat is transferred from one point to another by actual movement of substance?", options: ["Conduction", "Radiation", "Convection", "Absorption"], answer: 2, explanation: "Convection." },
+      { id: 77, question: "The ratio of the radiation of actual body to the radiation of a blackbody is known as _______.", options: ["Emittance", "Reflectance", "Absorptance", "Transmittance"], answer: 0, explanation: "Emittance / Emissivity." },
+      { id: 78, question: "Which of the following is the usual geometric view factor for a black body to itself if convex?", options: ["Zero", "Infinity", "One", "Indeterminate"], answer: 2, explanation: "View factor sum rule." },
+      { id: 79, question: "What happens to the heat transferred radially across insulated pipe per unit area?", options: ["The heat will flow at constant rate", "Decreases with the increase in thermal conductivity", "Decrease from pipe wall to insulated surface", "Partially increases from pipe wall to insulated surface"], answer: 2, explanation: "Heat flux per unit area decreases with radius (q'' = Q / (2πrL))." },
+      { id: 80, question: "What do you call a change of phase directly from vapor to solid without passing through the liquid state?", options: ["Sublimation", "Solidification", "Vaporization", "Deposition"], answer: 3, explanation: "Deposition (frosting)." },
+      { id: 81, question: "Which of the following is the Stefan-Boltzmann constant?", options: ["5.77x10^-7 W/m^2K^4", "7.67x10^-4 W/m^2K^4", "4.78x10^-10 W/m^2K^4", "5.67x10^-8 W/m^2K^4"], answer: 3, explanation: "σ = 5.67 × 10⁻⁸ W/(m²·K⁴)." },
+      { id: 82, question: "What is the usual value of transmissivity for opaque materials?", options: ["0", "Indeterminate", "1", "Infinity"], answer: 0, explanation: "Opaque materials have transmissivity τ = 0." },
+      { id: 83, question: "A body whose emissivity is less than 1 is known as a real body. What is the other term for real body?", options: ["Gray body", "White body", "Black body", "Theoretical body"], answer: 0, explanation: "Gray body." },
+      { id: 84, question: "What refers to an ideal body that absorbs all of the radiant energy that intrudes on it and emits maximum energy?", options: ["White body", "Black body", "Gray body", "Red hot body"], answer: 1, explanation: "Black body." },
+      { id: 85, question: "The thermal resistance for one-dimensional steady conduction heat transfer through cylindrical wall in radial direction is expressed in which function?", options: ["Linear", "Exponential", "Logarithmic", "Trigonometric"], answer: 2, explanation: "R_cyl = ln(r2/r1) / (2πkL)." },
+      { id: 86, question: "The law which states that 'the ratio of the emissive powers to absorptivities are equal when the two bodies are in thermal equilibrium' is known as:", options: ["Stefan-Boltzmann law", "Newton's law of convection", "Fourier's law", "Kirchhoff's law of radiation"], answer: 3, explanation: "Kirchhoff's Law of Radiation." },
+      { id: 87, question: "It refers to the ratio of the internal thermal resistance of a solid to the boundary layer thermal resistance:", options: ["Biot number", "Prandtl number", "Nusselt number", "Reynolds number"], answer: 0, explanation: "Biot number Bi = (h L) / k." },
+      { id: 88, question: "It refers to the ratio of the rate of heat transferred by conduction to the rate of energy stored:", options: ["Reynolds number", "Fourier number", "Biot number", "Prandtl number"], answer: 1, explanation: "Fourier number Fo = (α t) / L²." },
+      { id: 89, question: "A hot block is cooled by blowing cool air over its top surface. Heat is carried away from surface by:", options: ["Conduction", "Radiation", "Thermal", "Convection"], answer: 3, explanation: "Convection." },
+      { id: 90, question: "It is the term used to describe the energy of a body that can be transmitted in the form of heat.", options: ["Enthalpy", "Thermal energy", "Entropy", "Internal energy"], answer: 1, explanation: "Thermal energy." },
+      { id: 91, question: "Which of the following is the equivalent heat transferred of a gas undergoing isometric process?", options: ["Change in enthalpy", "Change in entropy", "Change in internal energy", "Work nonflow"], answer: 2, explanation: "Change in internal energy ΔU." },
+      { id: 92, question: "What do you call a substance that is able to absorb liquids or gases and is usually used for removing liquids from a region?", options: ["Absorbent", "Liquifier", "Adsorbent", "Adhesive"], answer: 0, explanation: "Absorbent." },
+      { id: 93, question: "In which direction that heat is transferred through conduction?", options: ["Increasing temperature", "Decreasing temperature", "Increasing and decreasing temperature", "Constant temperature"], answer: 1, explanation: "Decreasing temperature." },
+      { id: 94, question: "Which of the following statements is based on Prevost theory of heat exchange?", options: ["All bodies above absolute zero emit radiation", "The substance moves because of density decrease", "The substance moves because of fan", "Heat transfer occurs by combination"], answer: 0, explanation: "All bodies above 0 K emit radiation." },
+      { id: 95, question: "Which of the following is the emissivity of white body?", options: ["Zero", "0.5", "1", "0 < e < 1"], answer: 0, explanation: "Emissivity ε = 0." },
+      { id: 96, question: "The mechanism of heat transfer in which there is no medium required for heat energy to travel is:", options: ["Conduction", "Radiation", "Convection", "Diffusion"], answer: 1, explanation: "Radiation." },
+      { id: 97, question: "The temperature potential between temperature at the two ends of a heat exchanger are given by:", options: ["The logarithmic mean temperature difference", "The Stefan-Boltzmann law", "Fourier's law", "Kirchhoff's law"], answer: 0, explanation: "Logarithmic Mean Temperature Difference (LMTD)." },
+      { id: 98, question: "Which of the following best describe function of heat exchanger?", options: ["Increase the water temperature entering the system", "Transfer heat from one fluid to another", "Evaluate the total energy of the flow", "Exchange heat to increase energy to the flow"], answer: 1, explanation: "Transfer heat between fluids." },
+      { id: 99, question: "What refers to a form of energy associated with the kinetic random motion of large numbers of molecules?", options: ["Heat", "Heat of fusion", "Entropy", "Internal energy"], answer: 0, explanation: "Heat / Thermal kinetic energy." },
+      { id: 100, question: "How much is the part of light that is absorbed by the body that transmits and reflects 80% and 10% respectively?", options: ["10%", "30%", "20%", "5%"], answer: 0, explanation: "α + ρ + τ = 100% => α = 100 - (80 + 10) = 10%." },
+      { id: 101, question: "In convection heat transfer, what happens to the heat transfer coefficient if the viscosity of the fluid increases?", options: ["The heat transfer coefficient will increase", "The heat transfer coefficient will decrease", "The heat transfer coefficient remains constant", "None of the above"], answer: 1, explanation: "Higher viscosity reduces flow velocity boundary layer mixing, lowering h." },
+      { id: 102, question: "How do you call a phenomenon wherein the heat is transferred by motion of fluid under the action of mechanical device?", options: ["Forced convection", "Natural convection", "Forced conduction", "Thermal radiation"], answer: 0, explanation: "Forced convection (pump/fan)." },
+      { id: 103, question: "In conduction heat transfer, what happens to the heat transfer per unit time when the thermal conductivity decreases?", options: ["The heat flow will increase", "The heat flow remains constant", "The heat flow will decrease", "The heat flow will partially increase"], answer: 2, explanation: "q = -k A dT/dx => Decreasing k decreases heat flow." },
+      { id: 104, question: "Which of the following is the driving force in heat transfer?", options: ["Temperature gradient", "Thickness gradient", "Viscosity gradient", "Dielectric gradient"], answer: 0, explanation: "Temperature gradient ΔT." },
+      { id: 105, question: "Which of the following is the measure of the relative effectiveness of momentum and energy transport by diffusion?", options: ["Nusselt's number", "Prandtl number", "Reynold's number", "Dimensional measurement"], answer: 1, explanation: "Prandtl number Pr = ν / α." },
+      { id: 106, question: "Which of the following is the property of the solid that provides the measure of the rate of heat transfer to energy storage?", options: ["Thermal efficiency", "Thermal diffusivity", "Thermal conductivity", "Thermal radiography"], answer: 1, explanation: "Thermal diffusivity α." },
+      { id: 107, question: "Two metals were kept together at room temperature and it was found out that one is colder than the other. Best reason why?", options: ["The heat transfer coefficient of one metal is higher", "One metal is of lower temperature", "One metal is of higher temperature", "The thermal conductivity of one metal is high as compared to the other"], answer: 3, explanation: "Higher thermal conductivity draws heat away from skin faster, feeling colder." },
+      { id: 108, question: "In convection heat transfer, what happens to the heat transfer coefficient if the viscosity of the fluid decreases?", options: ["The heat transfer coefficient also increases", "The heat transfer coefficient will decrease", "The heat transfer coefficient remains constant", "The heat transfer coefficient partially increases then decreases"], answer: 0, explanation: "Lower viscosity increases Reynolds number and heat transfer coefficient h." },
+      { id: 109, question: "A body that is hot compared to its surroundings illuminates more energy than it receives. What is this mode of heat transfer?", options: ["Radiation", "Conduction", "Convection", "Condensation"], answer: 0, explanation: "Radiation." },
+      { id: 110, question: "What do you call theoretical body where absorptivity and emissivity are independent of wavelength?", options: ["White body", "Opaque body", "Black body", "Transparent body"], answer: 3, explanation: "Gray body / Transparent body." },
+      { id: 111, question: "Which of the following is the structure designed to prevent the spread of fire having a fire resistance rating of not less than four hours?", options: ["Fire escape", "Fire exit", "Fire shield", "Fire wall"], answer: 3, explanation: "Fire wall." },
+      { id: 112, question: "Which of the following heat exchange device used to provide heat transfer between the exhaust gases and air prior to combustor?", options: ["Regenerator", "Economizer", "Condenser", "Reheater"], answer: 0, explanation: "Regenerator / Air preheater." },
+      { id: 113, question: "Which of the following transfer of heat is involved in the changing of boiling water (at 100 °C) to vapor at the same temperature?", options: ["Conduction", "Convection", "Radiation", "Evaporation"], answer: 1, explanation: "Boiling convection." },
+      { id: 114, question: "Which of the following is the science of low temperatures?", options: ["Cryogenics", "Thermo-kinetics", "Thermodynamics", "Ergonomics"], answer: 0, explanation: "Cryogenics." },
+      { id: 115, question: "Which of the following thermal state of the body considered as reference to communicate heat to other bodies?", options: ["Temperature", "Pressure", "Internal energy", "Entropy"], answer: 0, explanation: "Temperature." },
+      { id: 116, question: "The true mean temperature difference is also known as:", options: ["The average mean temperature difference", "The logarithmic mean temperature difference", "The trigonometric mean temperature difference", "The exponential temperature difference"], answer: 1, explanation: "Logarithmic Mean Temperature Difference (LMTD)." },
+      { id: 117, question: "Which of the following can be a geometric view factor of a gray body?", options: ["Greater than one", "Less than one", "Equal to one", "Greater than zero but less than one"], answer: 3, explanation: "View factor 0 < F_12 < 1." },
+      { id: 118, question: "The heat transfer by conduction occurs in which of the following?", options: ["Only in liquids", "Only in solids", "Only in liquids and gases", "In solids, liquids and gases"], answer: 3, explanation: "Conduction occurs in solids, liquids, and gases." },
+      { id: 119, question: "Which of the following reasons why one gram of steam at 100 °C causes more serious burn than one gram of water at 100 °C?", options: ["Steam is less dense than boiling water", "The steam has higher specific heat", "Steam contains more internal energy", "Steam is everywhere"], answer: 2, explanation: "Steam releases additional latent heat of vaporization (2260 kJ/kg)." },
+      { id: 120, question: "What usually happens when vapor condenses into liquid?", options: ["It absorbs heat", "It rejects heat", "Its temperature increases", "Its temperature decreases"], answer: 1, explanation: "Condensation rejects latent heat." },
+      { id: 121, question: "Which of the following has the highest thermal conductivity?", options: ["Mercury", "Gasoline", "Water", "Alcohol"], answer: 0, explanation: "Mercury (liquid metal k ≈ 8.5 W/mK) vs water (0.6 W/mK)." },
+      { id: 122, question: "Which of the following is the requirement of the temperature of a body for it to emit radiation?", options: ["Above zero Celsius", "Above zero Kelvin", "Above of the temperature of surroundings", "High enough for it to glow"], answer: 1, explanation: "Above absolute zero (0 K)." },
+      { id: 123, question: "Which of the following is the color of iron when it is heated to a highest temperature?", options: ["White", "Red", "Orange", "Yellow"], answer: 0, explanation: "White heat corresponds to highest incandescent temperature." },
+      { id: 124, question: "Which of the following is the reason why metals are good conductors of heat?", options: ["Metals contain free electrons", "Metals have atoms the frequently collide another", "Metals have reflecting surfaces", "Atoms in metals are very far"], answer: 0, explanation: "Free electrons." },
+      { id: 125, question: "The rate at which heat flows through a slab of some material does not depend on which of the following?", options: ["The thickness of the slab", "The area of the slab", "The temperature difference between two faces", "The specific heat of the material"], answer: 3, explanation: "Steady conduction q = k A ΔT / L does not depend on specific heat capacity." },
+      { id: 126, question: "Which of the following is the primary function of a thermal radiator?", options: ["To transferring the heat by using moving fluids", "To transfer heat from hot to cold body by using fan", "To transfer heat by allowing molecules to vibrate", "To transfer heat with or without a medium"], answer: 3, explanation: "Radiates heat through electromagnetic waves with or without medium." },
+      { id: 127, question: "What is the reason why Styrofoam is a good insulating material?", options: ["Because it contains many tiny pockets of air", "Styrofoam is a white object", "The structure is unstable", "Structure is very dense"], answer: 0, explanation: "Trapped air pockets have very low thermal conductivity." },
+      { id: 128, question: "What usually happens to the surrounding when water vapor condenses?", options: ["It warms the surrounding", "The surrounding temperature decreases", "It neither warm nor cold", "The surroundings will be dehumidified"], answer: 0, explanation: "Condensation releases latent heat, warming surroundings." },
+      { id: 129, question: "The rate of radiation does not depend on which of the following?", options: ["Temperature of the radiating body", "The emissivity of the radiation surface", "The area of the radiating body", "The thickness of the radiating body"], answer: 3, explanation: "Radiation depends on surface area, temperature, emissivity—not thickness." },
+      { id: 130, question: "Which of the following is not a good conductor of heat?", options: ["Metals", "Rocks", "Glass", "Asbestos"], answer: 3, explanation: "Asbestos is a thermal insulator." },
+      { id: 131, question: "Which of the following is not a unit of the rate of heat transfer?", options: ["Watt", "Btu per hour", "Cal/s", "Btu/Hp-hr"], answer: 3, explanation: "Btu/Hp-hr is heat rate per unit power, not a simple heat transfer rate." },
+      { id: 132, question: "The thermal conductivity does not depend on which of the following?", options: ["Chemical composition", "Physical state or texture", "Temperature and pressure", "Gravitational pull"], answer: 3, explanation: "Independent of gravity." },
+      { id: 133, question: "In Maxwell's theory for thermal conductivity of gases and vapors, value of 'a' for triatomic gases is:", options: ["1.7", "2.4", "1.3", "2.4"], answer: 0, explanation: "Maxwell constant a = 1.7 for triatomic gases." },
+      { id: 134, question: "Which of the following conductivities where Sutherland equation is used?", options: ["Thermal conductivities of solids", "Thermal conductivities of gases", "Thermal conductivities of metal", "Thermal conductivities of liquids"], answer: 1, explanation: "Sutherland formula calculates temperature dependence of gas viscosity and thermal conductivity." },
+      { id: 135, question: "For pure metals, what happens to thermal conductivity if temperature is extremely high?", options: ["Approaches infinity", "Decreases except for ferrous metals", "Almost constant except for ferromagnetic materials", "Increases except for steel"], answer: 2, explanation: "Remains relatively constant at elevated temperatures." },
+      { id: 136, question: "Which of the following liquids that has the highest thermal conductivity?", options: ["Gasoline", "Glycerin", "Water", "Alcohol"], answer: 2, explanation: "Water (k ≈ 0.6 W/mK) has highest conductivity among non-metallic liquids." },
+      { id: 137, question: "Which of the following is not a heat exchanger?", options: ["Condenser", "Boilers", "Evaporators", "Water hammer"], answer: 3, explanation: "Water hammer is a pressure surge phenomenon." },
+      { id: 138, question: "Which of the following heat exchangers where fluid flow in the same direction and both are of changing temperatures?", options: ["Parallel flow", "Cross flow", "Counter flow", "Mixed flow"], answer: 0, explanation: "Parallel flow heat exchanger." },
+      { id: 139, question: "What happens to the thermal conductivity of diatomic gases if the temperature is increase?", options: ["The thermal conductivity will also increase", "The thermal conductivity decreases", "The thermal conductivity remains constant", "The thermal conductivity partially increases"], answer: 0, explanation: "Gas thermal conductivity increases with temperature (k ∝ √T)." },
+      { id: 140, question: "What device is used to measure the amount of infrared radiation in each portion of a person's skin that is emitted?", options: ["Thermograph", "Thermometer", "Pyrometer", "Potentiometer"], answer: 0, explanation: "Thermograph / Thermal imaging camera." },
+      { id: 141, question: "The heat transfer by convection occurs in which of the following?", options: ["Only in gases", "Only in liquids", "Only in gases and liquids", "Only in gases and solids"], answer: 2, explanation: "Convection requires a fluid medium (gases and liquids)." },
+      { id: 142, question: "In convection heat transfer, what mechanism heat transfer where the fluid moves due to the decrease in its density caused by increase in temperature?", options: ["Forced convection", "Natural convection", "Density convection", "Radial convection"], answer: 1, explanation: "Natural / Free convection." }
+    ]
   }
-];
+};
 
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = QUIZ_DATA;
+  module.exports = SUBJECT_DATA;
 }

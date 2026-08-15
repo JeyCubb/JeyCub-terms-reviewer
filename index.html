@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jeycub Terms Reviewer</title>
-  <meta name="description" content="Interactive quiz reviewer app for Chapter 11: Fluid Mechanics with 127 multiple-choice problems, exam mode, live shared notes, and comments system.">
+  <meta name="description" content="Interactive quiz reviewer app for Engineering Board Exams: Fluid Mechanics, Mechanics of Deformable Bodies, and Heat Transfer with live per-question notes and exam mode.">
   <!-- Google Fonts & FontAwesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,12 +23,22 @@
     <div class="header-container">
       <div class="brand">
         <div class="brand-icon">
-          <i class="fa-solid fa-water"></i>
+          <i class="fa-solid fa-graduation-cap"></i>
         </div>
         <div class="brand-text">
           <h1>Jeycub Terms <span>Reviewer</span></h1>
-          <p>Chapter 11 • 127 Board & Concept Quiz Problems</p>
+          <p id="subject-subtitle">Engineering Board Exam Quiz Bank</p>
         </div>
+      </div>
+
+      <!-- Subject Selector Dropdown -->
+      <div class="subject-dropdown-wrapper">
+        <label for="subject-selector"><i class="fa-solid fa-book-open"></i> Subject:</label>
+        <select id="subject-selector" onchange="switchSubject(this.value)">
+          <option value="fluid_mechanics">Fluid Mechanics (127 Problems)</option>
+          <option value="deformable_bodies">Mechanics of Deformable Bodies (150 Problems)</option>
+          <option value="heat_transfer">Heat Transfer (142 Problems)</option>
+        </select>
       </div>
 
       <!-- Review Modes Toggle -->
@@ -46,7 +56,7 @@
 
       <!-- Utility Actions -->
       <div class="header-actions">
-        <button class="action-btn" title="Export/Import Notes & Firebase Setup" onclick="openNotesModal()">
+        <button class="action-btn" title="Live Sync & Backup" onclick="openNotesModal()">
           <i class="fa-solid fa-cloud-bolt"></i> Live Sync
         </button>
         <button class="action-btn" title="GitHub Pages Guide" onclick="openGithubModal()">
@@ -107,7 +117,7 @@
         <!-- Question Header -->
         <div class="quiz-header">
           <div class="question-number-badge">
-            Problem <span id="q-current-num">1</span> of 127
+            <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
           </div>
           <div class="quiz-header-right">
             <button class="bookmark-btn" id="q-bookmark-btn" onclick="toggleBookmarkCurrent()" title="Bookmark question">
@@ -157,42 +167,34 @@
         </div>
       </div>
 
-      <!-- Interactive Drawer (Live Public Shared Notes & Discussion) -->
-      <div class="interactive-drawer">
-        <div class="drawer-tabs">
-          <button class="drawer-tab active" id="tab-live" onclick="switchDrawerTab('live')">
-            <i class="fa-solid fa-users"></i> Live Shared Notes & Discussions (<span id="live-count-badge">0</span>)
-          </button>
-          <button class="drawer-tab" id="tab-notes" onclick="switchDrawerTab('notes')">
-            <i class="fa-solid fa-lock"></i> My Private Notes
-          </button>
+      <!-- Toggle Button for Question Notes & Discussion (At Bottom, Hidden by Default) -->
+      <div class="notes-toggle-wrapper">
+        <button class="notes-toggle-btn" id="toggle-notes-btn" onclick="toggleNotesSection()">
+          <i class="fa-solid fa-comments"></i> Show Question Notes & Discussion (<span id="notes-count-badge">0</span>)
+          <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>
+        </button>
+      </div>
+
+      <!-- Collapsible Per-Question Notes Section (Hidden by Default at Bottom) -->
+      <div class="interactive-drawer hidden" id="notes-section-container">
+        <div class="notes-section-header">
+          <h3><i class="fa-solid fa-pen-to-square"></i> Per-Question Live Notes & Discussions</h3>
+          <span class="notes-sub-info">Problem #<span id="notes-q-num">1</span> Notes</span>
         </div>
 
-        <!-- Tab 1: Live Public Shared Notes -->
-        <div class="drawer-content active" id="content-live">
-          <div class="live-status-bar" id="firebase-status-banner">
-            <span class="live-indicator"><i class="fa-solid fa-wifi"></i> Live Cloud Sync Active</span>
-            <span class="live-subtitle">Notes & comments shared here are visible to everyone online in real-time.</span>
-          </div>
-
-          <div class="add-comment-form">
-            <input type="text" id="live-name-input" placeholder="Your Name / Student ID" value="Engineering Student">
-            <textarea id="live-text-input" placeholder="Post a live note, key formula, or study tip for this question..."></textarea>
-            <button class="comment-submit-btn" onclick="postLiveSharedNote()"><i class="fa-solid fa-paper-plane"></i> Post Shared Note</button>
-          </div>
-
-          <div class="comments-list" id="live-notes-container">
-            <!-- Rendered dynamically -->
-          </div>
+        <div class="live-status-bar">
+          <span class="live-indicator"><i class="fa-solid fa-wifi"></i> Live Cloud Notes Sync Active</span>
+          <span class="live-subtitle">Notes and discussions posted here are stored per question and shared live online.</span>
         </div>
 
-        <!-- Tab 2: Private Notes -->
-        <div class="drawer-content" id="content-notes">
-          <textarea id="question-note-input" placeholder="Type personal notes, formulas, or reminders for this question... (Saved locally to your device)"></textarea>
-          <div class="note-actions">
-            <span class="save-status" id="note-save-status"><i class="fa-solid fa-check"></i> Saved locally</span>
-            <button class="save-btn" onclick="manualSaveNote()"><i class="fa-solid fa-floppy-disk"></i> Save Note</button>
-          </div>
+        <div class="add-comment-form">
+          <input type="text" id="live-name-input" placeholder="Your Name / Student Handle" value="Engineering Student">
+          <textarea id="live-text-input" placeholder="Post a live note, key formula, or study tip for this question..."></textarea>
+          <button class="comment-submit-btn" onclick="postLiveSharedNote()"><i class="fa-solid fa-paper-plane"></i> Post Note for Q<span id="post-q-num">1</span></button>
+        </div>
+
+        <div class="comments-list" id="live-notes-container">
+          <!-- Rendered dynamically per question -->
         </div>
       </div>
     </section>
@@ -203,7 +205,7 @@
       <div id="exam-setup-panel" class="exam-card">
         <div class="exam-header">
           <i class="fa-solid fa-clock"></i>
-          <h2>Fluid Mechanics Mock Examination</h2>
+          <h2 id="exam-subject-title">Engineering Mock Examination</h2>
           <p>Test your speed and accuracy under timed exam conditions.</p>
         </div>
         <div class="exam-config-grid">
@@ -213,7 +215,7 @@
               <option value="15">15 Questions (Quick Test)</option>
               <option value="30" selected>30 Questions (Standard Test)</option>
               <option value="60">60 Questions (Half Exam)</option>
-              <option value="127">All 127 Questions (Full Exam)</option>
+              <option value="all">All Questions in Subject</option>
             </select>
           </div>
           <div class="config-group">
@@ -284,9 +286,8 @@
             <option value="bookmarked">⭐ Bookmarked Only</option>
             <option value="correct">✓ Correctly Answered</option>
             <option value="incorrect">✗ Incorrectly Answered</option>
-            <option value="has_notes">📝 Has Private Notes</option>
           </select>
-          <span class="search-count-label" id="search-count-badge">Showing 127 of 127 questions</span>
+          <span class="search-count-label" id="search-count-badge">Showing questions</span>
         </div>
       </div>
 
@@ -305,29 +306,25 @@
         <button class="modal-close-btn" onclick="closeGithubModal()">&times;</button>
       </div>
       <div class="modal-body">
-        <p>Follow these quick steps to host your Fluid Mechanics Quiz Reviewer online for free!</p>
+        <p>Follow these quick steps to host your Jeycub Terms Reviewer online for free!</p>
 
         <ol class="deploy-steps">
           <li>
             <strong>Create a new GitHub Repository</strong>
-            <p>Go to <a href="https://github.com/new" target="_blank">github.com/new</a>, name it <code>fluid-mechanics-reviewer</code>, and click <em>Create repository</em>.</p>
+            <p>Go to <a href="https://github.com/new" target="_blank">github.com/new</a>, name it <code>JeyCub-terms-reviewer</code>, and click <em>Create repository</em>.</p>
           </li>
           <li>
             <strong>Push project files to GitHub</strong>
             <pre><code>git init
 git add .
-git commit -m "Initial commit - Fluid Mechanics Reviewer"
+git commit -m "Update Jeycub Terms Reviewer"
 git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/fluid-mechanics-reviewer.git
+git remote add origin https://github.com/YOUR-USERNAME/JeyCub-terms-reviewer.git
 git push -u origin main</code></pre>
           </li>
           <li>
             <strong>Enable GitHub Pages</strong>
-            <p>In your GitHub repository, go to <strong>Settings</strong> &rarr; <strong>Pages</strong>. Under <em>Build and deployment</em>, set Source to <strong>Deploy from a branch</strong> and select <strong>main</strong> / <code>/ (root)</code>, then click <strong>Save</strong>.</p>
-          </li>
-          <li>
-            <strong>Share with Classmates!</strong>
-            <p>Your site will be live at: <code>https://YOUR-USERNAME.github.io/fluid-mechanics-reviewer/</code></p>
+            <p>In your GitHub repository, go to <strong>Settings</strong> &rarr; <strong>Pages</strong>. Under <em>Branch</em>, select <strong>main</strong> / <code>/ (root)</code>, then click <strong>Save</strong>.</p>
           </li>
         </ol>
       </div>
@@ -345,28 +342,20 @@ git push -u origin main</code></pre>
         <button class="modal-close-btn" onclick="closeNotesModal()">&times;</button>
       </div>
       <div class="modal-body">
-        <p>Live shared notes automatically connect to our public database. You can also paste your own Firebase config below!</p>
+        <p>Live per-question notes automatically sync to our public database. You can also paste your own Firebase config below!</p>
 
         <div class="data-box-group">
           <label><strong>Custom Firebase Config (Optional):</strong></label>
-          <textarea id="firebase-config-input" placeholder='Paste your Firebase config object here (e.g. {"databaseURL": "https://your-app.firebaseio.com"})'></textarea>
+          <textarea id="firebase-config-input" placeholder='Paste your Firebase config object here'></textarea>
           <button class="save-btn" onclick="saveCustomFirebaseConfig()"><i class="fa-solid fa-plug"></i> Save & Connect Firebase</button>
         </div>
 
         <hr class="modal-divider">
 
         <div class="data-box-group">
-          <label><strong>Export Private Notes (JSON):</strong></label>
+          <label><strong>Export Progress & Notes (JSON):</strong></label>
           <textarea id="export-json-area" readonly></textarea>
           <button class="save-btn" onclick="copyExportJSON()"><i class="fa-solid fa-copy"></i> Copy JSON to Clipboard</button>
-        </div>
-
-        <hr class="modal-divider">
-
-        <div class="data-box-group">
-          <label><strong>Import Private Notes (JSON):</strong></label>
-          <textarea id="import-json-area" placeholder="Paste exported JSON data here..."></textarea>
-          <button class="save-btn secondary" onclick="importDataJSON()"><i class="fa-solid fa-file-import"></i> Restore / Merge Data</button>
         </div>
       </div>
       <div class="modal-footer">

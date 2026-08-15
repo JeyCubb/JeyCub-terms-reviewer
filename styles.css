@@ -1,10 +1,9 @@
 /* ==========================================================================
-   Fluid Mechanics Board Reviewer - Design System & Stylesheet
+   Jeycub Terms Reviewer - Multi-Subject Design System & Stylesheet
    ========================================================================== */
 
 /* Design Tokens & CSS Variables */
 :root {
-  /* Color Palette - Dark Mode Default */
   --bg-main: #0b0f19;
   --bg-header: rgba(15, 23, 42, 0.85);
   --bg-card: #151d30;
@@ -139,6 +138,33 @@ body {
 .brand-text p {
   font-size: 0.75rem;
   color: var(--text-secondary);
+}
+
+/* Subject Selector Dropdown */
+.subject-dropdown-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.subject-dropdown-wrapper label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.subject-dropdown-wrapper select {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
 }
 
 /* Mode Navigation */
@@ -527,49 +553,79 @@ body {
   gap: 0.5rem;
 }
 
-/* Interactive Drawer (Live Shared Notes & Private Notes) */
+/* Notes Section Toggle & Bottom Layout */
+.notes-toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.notes-toggle-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--accent-primary);
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.notes-toggle-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.notes-toggle-btn #toggle-notes-chevron {
+  transition: transform 0.3s ease;
+}
+
+.notes-toggle-btn.active #toggle-notes-chevron {
+  transform: rotate(180deg);
+}
+
+/* Interactive Per-Question Notes Section */
 .interactive-drawer {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-sm);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  margin-top: 1rem;
+  animation: fadeIn 0.3s ease;
 }
 
-.drawer-tabs {
-  display: flex;
-  gap: 0.5rem;
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 1.25rem;
-}
-
-.drawer-tab {
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid transparent;
-  color: var(--text-secondary);
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.drawer-tab:hover {
-  color: var(--text-primary);
-}
-
-.drawer-tab.active {
-  color: var(--accent-primary);
-  border-bottom-color: var(--accent-primary);
-}
-
-.drawer-content {
+.interactive-drawer.hidden {
   display: none;
 }
 
-.drawer-content.active {
-  display: block;
+.notes-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.notes-section-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.notes-sub-info {
+  background: var(--bg-input);
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-primary);
 }
 
 /* Live Status Banner */
@@ -593,54 +649,6 @@ body {
 .live-subtitle {
   font-size: 0.78rem;
   color: var(--text-secondary);
-}
-
-/* Notes Textarea */
-#question-note-input {
-  width: 100%;
-  height: 110px;
-  background: var(--bg-input);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 0.85rem;
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 0.9rem;
-  resize: vertical;
-  outline: none;
-  transition: var(--transition);
-}
-
-#question-note-input:focus {
-  border-color: var(--accent-primary);
-}
-
-.note-actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 0.75rem;
-}
-
-.save-status {
-  font-size: 0.8rem;
-  color: var(--color-success);
-}
-
-.save-btn {
-  background: var(--accent-primary);
-  color: #fff;
-  border: none;
-  padding: 0.45rem 1rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.save-btn:hover {
-  background: var(--accent-primary-hover);
 }
 
 /* Comments Form & List */
@@ -669,7 +677,7 @@ body {
   color: var(--text-primary);
   font-family: inherit;
   font-size: 0.875rem;
-  height: 75px;
+  height: 80px;
   outline: none;
   resize: vertical;
 }
@@ -679,7 +687,7 @@ body {
   background: var(--accent-primary);
   color: #fff;
   border: none;
-  padding: 0.45rem 1.1rem;
+  padding: 0.5rem 1.25rem;
   border-radius: var(--radius-sm);
   font-weight: 600;
   font-size: 0.85rem;
@@ -700,7 +708,7 @@ body {
   background: var(--bg-input);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1.1rem;
 }
 
 .comment-meta {
@@ -717,7 +725,7 @@ body {
 }
 
 .comment-body {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--text-primary);
 }
 
@@ -1111,6 +1119,10 @@ pre {
   .header-container {
     flex-direction: column;
     align-items: stretch;
+  }
+  .subject-dropdown-wrapper {
+    width: 100%;
+    justify-content: center;
   }
   .mode-nav {
     justify-content: center;
