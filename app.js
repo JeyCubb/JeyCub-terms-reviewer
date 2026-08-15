@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Removes gap above open notes drawer so solution sits right below question.
+ * Auto-hides solution/notes when navigating to next or previous questions.
  */
 
 // Global State
@@ -87,6 +87,7 @@ function getFilteredPracticeQuestions() {
 function changePracticeFilter(filterVal) {
   state.practiceFilter = filterVal;
   state.currentIndex = 0;
+  hideNotesSection();
 
   // Blur select dropdown immediately so arrow keys navigate questions
   const select = document.getElementById('practice-filter-select');
@@ -115,6 +116,7 @@ function resetAllSubjectAnswers() {
 
   saveData('jt_user_answers', state.userAnswers);
   state.currentIndex = 0;
+  hideNotesSection();
   renderCurrentPracticeQuestion();
   updateStats();
   if (state.currentMode === 'all') {
@@ -197,6 +199,7 @@ function switchSubject(subjectKey) {
   state.currentIndex = 0;
   state.sessionPoolAnswers = {};
   localStorage.setItem('jt_subject', subjectKey);
+  hideNotesSection();
 
   const select = document.getElementById('subject-selector');
   if (select) select.blur();
@@ -575,6 +578,7 @@ function resetCurrentQuestionState() {
 function nextQuestion() {
   const questions = getFilteredPracticeQuestions();
   if (!questions || questions.length === 0) return;
+  hideNotesSection();
   if (state.randomMode) {
     state.currentIndex = Math.floor(Math.random() * questions.length);
   } else if (state.currentIndex < questions.length - 1) {
@@ -586,6 +590,7 @@ function nextQuestion() {
 function prevQuestion() {
   const questions = getFilteredPracticeQuestions();
   if (!questions || questions.length === 0) return;
+  hideNotesSection();
   if (state.randomMode) {
     state.currentIndex = Math.floor(Math.random() * questions.length);
   } else if (state.currentIndex > 0) {
@@ -597,6 +602,20 @@ function prevQuestion() {
 /* ==========================================================================
    Togglable Per-Question Notes & Solution Section (Manual Scroll)
    ========================================================================== */
+
+function hideNotesSection() {
+  state.notesOpen = false;
+  const container = document.getElementById('notes-section-container');
+  const btn = document.getElementById('toggle-notes-btn');
+  const wrapper = btn ? btn.closest('.notes-toggle-wrapper') : null;
+
+  if (container) container.classList.add('hidden');
+  if (btn) {
+    btn.classList.remove('active');
+    btn.innerHTML = `<i class="fa-solid fa-comments"></i> Show Notes & Solution (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
+  }
+  if (wrapper) wrapper.classList.remove('active-wrapper');
+}
 
 function toggleNotesSection() {
   state.notesOpen = !state.notesOpen;
@@ -613,10 +632,7 @@ function toggleNotesSection() {
     subscribeLiveNotesCurrent();
     btn.innerHTML = `<i class="fa-solid fa-comments"></i> Hide Notes & Solution (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
   } else {
-    container.classList.add('hidden');
-    btn.classList.remove('active');
-    if (wrapper) wrapper.classList.remove('active-wrapper');
-    btn.innerHTML = `<i class="fa-solid fa-comments"></i> Show Notes & Solution (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
+    hideNotesSection();
   }
 }
 
