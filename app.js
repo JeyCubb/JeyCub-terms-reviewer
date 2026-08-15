@@ -418,7 +418,7 @@ function postLiveSharedNote() {
   const nameInput = document.getElementById('live-name-input');
   const textInput = document.getElementById('live-text-input');
 
-  const name = nameInput.value.trim() || 'Engineering Student';
+  const name = nameInput.value.trim() || 'Anonymous';
   const text = textInput.value.trim();
 
   if (!text) {
