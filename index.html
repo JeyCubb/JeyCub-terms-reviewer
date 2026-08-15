@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Firebase Realtime Database SDK -->
+  <!-- Firebase Realtime Database SDK (for shared question notes) -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 </head>
@@ -97,10 +97,9 @@
       </div>
       <div class="stat-card">
         <div class="stat-icon gold"><i class="fa-solid fa-bookmark"></i></div>
-        <div class="stat-info" style="flex: 1;">
+        <div class="stat-info">
           <span class="stat-value" id="stat-bookmarks">0</span>
           <span class="stat-label">Bookmarked</span>
-          <button class="reset-stats-btn" onclick="resetAllProgress()"><i class="fa-solid fa-rotate-left"></i> Reset Progress</button>
         </div>
       </div>
     </section>
@@ -114,8 +113,8 @@
             <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
           </div>
           <div class="quiz-header-right">
-            <button class="bookmark-btn" id="q-bookmark-btn" onclick="toggleBookmarkCurrent()" title="Bookmark question for group study">
-              <i class="fa-regular fa-star" id="bookmark-icon"></i> Bookmark for Group
+            <button class="bookmark-btn" id="q-bookmark-btn" onclick="toggleBookmarkCurrent()" title="Bookmark question">
+              <i class="fa-regular fa-star" id="bookmark-icon"></i> Bookmark
             </button>
           </div>
         </div>

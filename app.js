@@ -1,7 +1,6 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
- * Supports Multi-Subject Selection (Fluid Mechanics, Deformable Bodies, Heat Transfer),
- * Practice/Exam Modes, Realtime Shared Group Bookmarks, Togglable Bottom Per-Question Notes, and Realtime Cloud Database Sync.
+ * Fast, reliable, local-first review app for Engineering Board Exams.
  */
 
 // Global State
@@ -10,14 +9,13 @@ let state = {
   currentMode: 'practice', // 'practice', 'exam', 'all'
   currentIndex: 0,
   userAnswers: {}, // { "subject_qId": optionIndex }
-  bookmarks: new Set(), // Set of shared "subject_qId"
+  bookmarks: new Set(), // Set of "subject_qId" stored locally in browser
   liveNotes: {}, // { "subject_qId": [{ id, name, text, date }] }
   notesOpen: false,
   
-  // Firebase Database Handle
+  // Firebase Database Handle for notes
   firebaseDb: null,
   activeLiveListenerRef: null,
-  activeBookmarkListenerRef: null,
 
   // Exam state
   exam: {
@@ -31,35 +29,34 @@ let state = {
   }
 };
 
-// Default Free Public Firebase Config
+// Free Public Firebase Config for shared notes
 const DEFAULT_FIREBASE_CONFIG = {
   databaseURL: "https://fluid-mechanics-reviewer-default-rtdb.firebaseio.com"
 };
 
-// Initialize Application
+// Initialize Application (Fail-safe, instant execution)
 document.addEventListener('DOMContentLoaded', () => {
   loadStoredData();
-  initFirebase();
   updateSubjectUI();
-  initJumpDropdown();
   renderCurrentPracticeQuestion();
   updateStats();
   filterAllQuestions();
+  initFirebase();
 });
 
 /* Helper to get active dataset */
 function getActiveQuestions() {
-  if (!SUBJECT_DATA[state.currentSubject]) {
+  if (!window.SUBJECT_DATA || !window.SUBJECT_DATA[state.currentSubject]) {
     state.currentSubject = 'fluid_mechanics';
   }
-  return SUBJECT_DATA[state.currentSubject].questions;
+  return window.SUBJECT_DATA[state.currentSubject].questions;
 }
 
 function getActiveSubjectInfo() {
-  if (!SUBJECT_DATA[state.currentSubject]) {
+  if (!window.SUBJECT_DATA || !window.SUBJECT_DATA[state.currentSubject]) {
     state.currentSubject = 'fluid_mechanics';
   }
-  return SUBJECT_DATA[state.currentSubject];
+  return window.SUBJECT_DATA[state.currentSubject];
 }
 
 /* ==========================================================================
@@ -71,9 +68,6 @@ function updateSubjectUI() {
   const select = document.getElementById('subject-selector');
   if (select) select.value = state.currentSubject;
 
-  const subtitle = document.getElementById('subject-subtitle');
-  if (subtitle) subtitle.textContent = `${info.title} • ${info.chapter} Quiz Bank`;
-
   const badge = document.getElementById('subject-badge-name');
   if (badge) badge.textContent = info.title;
 
@@ -82,13 +76,12 @@ function updateSubjectUI() {
 }
 
 function switchSubject(subjectKey) {
-  if (!SUBJECT_DATA[subjectKey]) return;
+  if (!window.SUBJECT_DATA || !window.SUBJECT_DATA[subjectKey]) return;
   state.currentSubject = subjectKey;
   state.currentIndex = 0;
   localStorage.setItem('jt_subject', subjectKey);
 
   updateSubjectUI();
-  initJumpDropdown();
   renderCurrentPracticeQuestion();
   updateStats();
   if (state.currentMode === 'all') {
@@ -97,50 +90,20 @@ function switchSubject(subjectKey) {
 }
 
 /* ==========================================================================
-   Firebase Realtime Database Setup & Shared Group Bookmarks
+   Firebase Realtime Notes (Optional cloud sync)
    ========================================================================== */
 
 function initFirebase() {
   try {
-    let config = DEFAULT_FIREBASE_CONFIG;
-    const savedConfig = localStorage.getItem('fm_firebase_config');
-    if (savedConfig) {
-      config = JSON.parse(savedConfig);
-    }
-
     if (typeof firebase !== 'undefined') {
       if (!firebase.apps.length) {
-        firebase.initializeApp(config);
+        firebase.initializeApp(DEFAULT_FIREBASE_CONFIG);
       }
       state.firebaseDb = firebase.database();
-      subscribeSharedBookmarks();
     }
   } catch (e) {
-    console.warn('Firebase initialization error, using local fallback:', e);
+    console.warn('Firebase sync not available, using local notes:', e);
   }
-}
-
-/* Realtime Listener for Shared Group Bookmarks */
-function subscribeSharedBookmarks() {
-  if (!state.firebaseDb) return;
-
-  const ref = state.firebaseDb.ref('shared_bookmarks');
-  ref.on('value', snapshot => {
-    const data = snapshot.val();
-    if (data) {
-      state.bookmarks = new Set(Object.keys(data).filter(k => data[k] === true));
-    } else {
-      state.bookmarks = new Set();
-    }
-    saveData('jt_bookmarks', Array.from(state.bookmarks));
-    updateStats();
-    renderCurrentPracticeQuestion();
-    if (state.currentMode === 'all') {
-      filterAllQuestions();
-    }
-  }, err => {
-    console.warn('Bookmarks sync error:', err);
-  });
 }
 
 function toggleBookmarkCurrent() {
@@ -148,18 +111,10 @@ function toggleBookmarkCurrent() {
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
 
-  const isBookmarked = state.bookmarks.has(key);
-
-  if (isBookmarked) {
+  if (state.bookmarks.has(key)) {
     state.bookmarks.delete(key);
-    if (state.firebaseDb) {
-      state.firebaseDb.ref(`shared_bookmarks/${key}`).remove();
-    }
   } else {
     state.bookmarks.add(key);
-    if (state.firebaseDb) {
-      state.firebaseDb.ref(`shared_bookmarks/${key}`).set(true);
-    }
   }
 
   saveData('jt_bookmarks', Array.from(state.bookmarks));
@@ -174,7 +129,7 @@ function toggleBookmarkCurrent() {
 function loadStoredData() {
   try {
     const savedSubject = localStorage.getItem('jt_subject');
-    if (savedSubject && SUBJECT_DATA[savedSubject]) {
+    if (savedSubject && window.SUBJECT_DATA && window.SUBJECT_DATA[savedSubject]) {
       state.currentSubject = savedSubject;
     }
 
@@ -202,19 +157,6 @@ function saveData(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
   } catch (e) {
     console.error('Error saving data', e);
-  }
-}
-
-function resetAllProgress() {
-  if (confirm("Reset all recorded practice answers and test scores? (Notes & Bookmarks will remain).")) {
-    state.userAnswers = {};
-    saveData('jt_user_answers', state.userAnswers);
-    updateStats();
-    renderCurrentPracticeQuestion();
-    if (state.currentMode === 'all') {
-      filterAllQuestions();
-    }
-    alert("Progress reset successfully!");
   }
 }
 
@@ -246,6 +188,7 @@ function toggleTheme() {
 
 function updateThemeIcon(theme) {
   const icon = document.getElementById('theme-icon');
+  if (!icon) return;
   if (theme === 'light') {
     icon.className = 'fa-solid fa-sun';
   } else {
@@ -257,89 +200,87 @@ function updateThemeIcon(theme) {
    Practice Mode Logic
    ========================================================================== */
 
-function initJumpDropdown() {
-  const questions = getActiveQuestions();
-  const select = document.getElementById('jump-select');
-  if (!select) return;
-  select.innerHTML = '';
-  questions.forEach((q, idx) => {
-    const opt = document.createElement('option');
-    opt.value = idx;
-    opt.textContent = `Q${q.id}`;
-    select.appendChild(opt);
-  });
-}
-
 function renderCurrentPracticeQuestion() {
   const questions = getActiveQuestions();
+  if (!questions || questions.length === 0) return;
+
+  if (state.currentIndex >= questions.length) state.currentIndex = 0;
   const q = questions[state.currentIndex];
   if (!q) return;
 
   const key = `${state.currentSubject}_q${q.id}`;
 
-  document.getElementById('q-current-num').textContent = q.id;
-  document.getElementById('q-total-num').textContent = questions.length;
-  const select = document.getElementById('jump-select');
-  if (select) select.value = state.currentIndex;
+  const curNum = document.getElementById('q-current-num');
+  if (curNum) curNum.textContent = q.id;
 
-  // Bookmark Status (Shared Group Bookmark)
+  const totNum = document.getElementById('q-total-num');
+  if (totNum) totNum.textContent = questions.length;
+
+  // Bookmark Status
   const bookmarkBtn = document.getElementById('q-bookmark-btn');
   if (bookmarkBtn) {
     if (state.bookmarks.has(key)) {
       bookmarkBtn.classList.add('active');
-      bookmarkBtn.innerHTML = `<i class="fa-solid fa-star" id="bookmark-icon"></i> Group Bookmarked`;
+      bookmarkBtn.innerHTML = `<i class="fa-solid fa-star" id="bookmark-icon"></i> Bookmarked`;
     } else {
       bookmarkBtn.classList.remove('active');
-      bookmarkBtn.innerHTML = `<i class="fa-regular fa-star" id="bookmark-icon"></i> Bookmark for Group`;
+      bookmarkBtn.innerHTML = `<i class="fa-regular fa-star" id="bookmark-icon"></i> Bookmark`;
     }
   }
 
   // Question Text
-  document.getElementById('q-text').textContent = `${q.id}. ${q.question}`;
+  const qText = document.getElementById('q-text');
+  if (qText) qText.textContent = `${q.id}. ${q.question}`;
 
   // Options Grid
   const optionsContainer = document.getElementById('q-options-container');
-  optionsContainer.innerHTML = '';
+  if (optionsContainer) {
+    optionsContainer.innerHTML = '';
 
-  const chosenIndex = state.userAnswers[key];
-  const isAnswered = chosenIndex !== undefined;
+    const chosenIndex = state.userAnswers[key];
+    const isAnswered = chosenIndex !== undefined;
 
-  q.options.forEach((optText, idx) => {
-    const letter = String.fromCharCode(65 + idx);
-    const btn = document.createElement('button');
-    btn.className = 'option-btn';
-    
-    if (isAnswered) {
-      btn.classList.add('disabled');
-      if (idx === q.answer) {
-        btn.classList.add('selected-correct');
-      } else if (idx === chosenIndex) {
-        btn.classList.add('selected-incorrect');
+    q.options.forEach((optText, idx) => {
+      const letter = String.fromCharCode(65 + idx);
+      const btn = document.createElement('button');
+      btn.className = 'option-btn';
+      
+      if (isAnswered) {
+        btn.classList.add('disabled');
+        if (idx === q.answer) {
+          btn.classList.add('selected-correct');
+        } else if (idx === chosenIndex) {
+          btn.classList.add('selected-incorrect');
+        }
+      }
+
+      btn.onclick = () => selectPracticeAnswer(key, idx);
+
+      btn.innerHTML = `
+        <span class="option-letter">${letter}</span>
+        <span class="option-text">${optText}</span>
+      `;
+
+      optionsContainer.appendChild(btn);
+    });
+
+    // Solution Box
+    const expBox = document.getElementById('q-explanation-box');
+    const expText = document.getElementById('q-explanation-text');
+    if (expBox && expText) {
+      if (isAnswered) {
+        expText.textContent = q.explanation || "Standard engineering principle.";
+        expBox.classList.remove('hidden');
+      } else {
+        expBox.classList.add('hidden');
       }
     }
-
-    btn.onclick = () => selectPracticeAnswer(key, idx);
-
-    btn.innerHTML = `
-      <span class="option-letter">${letter}</span>
-      <span class="option-text">${optText}</span>
-    `;
-
-    optionsContainer.appendChild(btn);
-  });
-
-  // Solution Box
-  const expBox = document.getElementById('q-explanation-box');
-  const expText = document.getElementById('q-explanation-text');
-  if (isAnswered) {
-    expText.textContent = q.explanation || "Standard engineering principle.";
-    expBox.classList.remove('hidden');
-  } else {
-    expBox.classList.add('hidden');
   }
 
-  // Subscribe to Realtime Notes per question
-  document.getElementById('notes-q-num').textContent = q.id;
+  // Notes question number badge
+  const notesQNum = document.getElementById('notes-q-num');
+  if (notesQNum) notesQNum.textContent = q.id;
+  
   subscribeLiveNotesCurrent();
 }
 
@@ -379,11 +320,6 @@ function prevQuestion() {
   }
 }
 
-function jumpToQuestion(idx) {
-  state.currentIndex = idx;
-  renderCurrentPracticeQuestion();
-}
-
 function shuffleCurrentView() {
   const questions = getActiveQuestions();
   state.currentIndex = Math.floor(Math.random() * questions.length);
@@ -391,13 +327,15 @@ function shuffleCurrentView() {
 }
 
 /* ==========================================================================
-   Togglable Per-Question Notes Section (At Bottom, Hidden by Default)
+   Togglable Per-Question Notes Section
    ========================================================================== */
 
 function toggleNotesSection() {
   state.notesOpen = !state.notesOpen;
   const container = document.getElementById('notes-section-container');
   const btn = document.getElementById('toggle-notes-btn');
+
+  if (!container || !btn) return;
 
   if (state.notesOpen) {
     container.classList.remove('hidden');
@@ -418,34 +356,38 @@ function getLiveNotesCount() {
   return (state.liveNotes[key] || []).length;
 }
 
-/* Firebase Realtime Notes Listener */
 function subscribeLiveNotesCurrent() {
   const questions = getActiveQuestions();
+  if (!questions || !questions[state.currentIndex]) return;
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
 
   renderLiveNotesUI(state.liveNotes[key] || []);
 
   if (state.firebaseDb) {
-    if (state.activeLiveListenerRef) {
-      state.activeLiveListenerRef.off();
-    }
-
-    const ref = state.firebaseDb.ref(`live_notes/${key}`);
-    state.activeLiveListenerRef = ref;
-
-    ref.on('value', snapshot => {
-      const data = snapshot.val();
-      let notesList = [];
-      if (data) {
-        notesList = Object.values(data).reverse();
+    try {
+      if (state.activeLiveListenerRef) {
+        state.activeLiveListenerRef.off();
       }
-      state.liveNotes[key] = notesList;
-      saveData('jt_live_notes_local', state.liveNotes);
-      renderLiveNotesUI(notesList);
-    }, err => {
-      console.warn('Firebase sync error:', err);
-    });
+
+      const ref = state.firebaseDb.ref(`live_notes/${key}`);
+      state.activeLiveListenerRef = ref;
+
+      ref.on('value', snapshot => {
+        const data = snapshot.val();
+        let notesList = [];
+        if (data) {
+          notesList = Object.values(data).reverse();
+        }
+        state.liveNotes[key] = notesList;
+        saveData('jt_live_notes_local', state.liveNotes);
+        renderLiveNotesUI(notesList);
+      }, err => {
+        console.warn('Firebase notes sync error:', err);
+      });
+    } catch (e) {
+      console.warn('Notes sync exception:', e);
+    }
   }
 }
 
@@ -487,8 +429,8 @@ function postLiveSharedNote() {
   const nameInput = document.getElementById('live-name-input');
   const textInput = document.getElementById('live-text-input');
 
-  const name = nameInput.value.trim() || 'Anonymous';
-  const text = textInput.value.trim();
+  const name = (nameInput && nameInput.value.trim()) ? nameInput.value.trim() : 'Anonymous';
+  const text = textInput ? textInput.value.trim() : '';
 
   if (!text) {
     alert('Please enter a note before posting.');
@@ -514,12 +456,12 @@ function postLiveSharedNote() {
   state.liveNotes[key].unshift(newNote);
   saveData('jt_live_notes_local', state.liveNotes);
 
-  textInput.value = '';
+  if (textInput) textInput.value = '';
   renderLiveNotesUI(state.liveNotes[key]);
 }
 
 /* ==========================================================================
-   Exam Mode Logic (With Shared Group Bookmarked Questions Option)
+   Exam Mode Logic
    ========================================================================== */
 
 function startExam() {
@@ -535,7 +477,7 @@ function startExam() {
     });
 
     if (pool.length === 0) {
-      alert("No group bookmarked questions in this subject yet! Click 'Bookmark for Group' on questions in Practice mode to mark questions for group study.");
+      alert("No bookmarked questions in this subject yet! Click 'Bookmark' on questions in Practice mode to star them.");
       return;
     }
   }
@@ -729,8 +671,11 @@ function reviewExamMissed() {
    ========================================================================== */
 
 function filterAllQuestions() {
-  const searchVal = document.getElementById('search-all-input').value.toLowerCase();
-  const filterStatus = document.getElementById('filter-status-select').value;
+  const searchInput = document.getElementById('search-all-input');
+  const searchVal = searchInput ? searchInput.value.toLowerCase() : '';
+
+  const filterSelect = document.getElementById('filter-status-select');
+  const filterStatus = filterSelect ? filterSelect.value : 'all';
 
   const container = document.getElementById('all-questions-list');
   if (!container) return;
@@ -769,7 +714,7 @@ function filterAllQuestions() {
     item.innerHTML = `
       <div class="item-top">
         <span class="item-num">Problem #${q.id}</span>
-        ${isBookmarked ? '<span style="color: var(--color-warning); font-size: 0.85rem;"><i class="fa-solid fa-star"></i> Group Bookmarked</span>' : ''}
+        ${isBookmarked ? '<span style="color: var(--color-warning); font-size: 0.85rem;"><i class="fa-solid fa-star"></i> Bookmarked</span>' : ''}
       </div>
       <div class="item-q-text">${q.question}</div>
       <div class="item-options">${optionsHtml}</div>
