@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Shares Class Bookmarks and Class Weak Questions in Realtime via Firebase.
+ * Removes gap above open notes drawer so solution sits right below question.
  */
 
 // Global State
@@ -602,17 +602,20 @@ function toggleNotesSection() {
   state.notesOpen = !state.notesOpen;
   const container = document.getElementById('notes-section-container');
   const btn = document.getElementById('toggle-notes-btn');
+  const wrapper = btn ? btn.closest('.notes-toggle-wrapper') : null;
 
   if (!container || !btn) return;
 
   if (state.notesOpen) {
     container.classList.remove('hidden');
     btn.classList.add('active');
+    if (wrapper) wrapper.classList.add('active-wrapper');
     subscribeLiveNotesCurrent();
     btn.innerHTML = `<i class="fa-solid fa-comments"></i> Hide Notes & Solution (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
   } else {
     container.classList.add('hidden');
     btn.classList.remove('active');
+    if (wrapper) wrapper.classList.remove('active-wrapper');
     btn.innerHTML = `<i class="fa-solid fa-comments"></i> Show Notes & Solution (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
   }
 }

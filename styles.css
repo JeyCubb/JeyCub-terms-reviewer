@@ -765,48 +765,21 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   justify-content: center;
   margin-top: 1.5rem;
   margin-bottom: 12rem;
+  transition: margin-bottom 0.2s ease;
 }
 
-.notes-toggle-btn {
-  appearance: none;
-  -webkit-appearance: none;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--accent-primary);
-  padding: 0.85rem 1.5rem;
-  border-radius: var(--radius-full);
-  font-size: 0.95rem;
-  font-weight: 700;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
+.notes-toggle-wrapper.active-wrapper {
+  margin-bottom: 1rem;
 }
 
-.notes-toggle-btn:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--accent-primary);
-  transform: translateY(-2px);
-}
-
-.notes-toggle-btn #toggle-notes-chevron {
-  transition: transform 0.3s ease;
-}
-
-.notes-toggle-btn.active #toggle-notes-chevron {
-  transform: rotate(180deg);
-}
-
-/* Interactive Per-Question Notes Section */
+/* Interactive Per-Question Notes Section (Attaches right below toggle button) */
 .interactive-drawer {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 2rem;
   box-shadow: var(--shadow-md);
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   margin-bottom: 12rem;
   animation: fadeIn 0.3s ease;
 }
@@ -1163,7 +1136,12 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
     margin-bottom: 12rem;
   }
 
+  .notes-toggle-wrapper.active-wrapper {
+    margin-bottom: 0.75rem;
+  }
+
   .interactive-drawer {
+    margin-top: 0.5rem;
     margin-bottom: 12rem;
   }
 
