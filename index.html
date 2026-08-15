@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=3.0">
+  <link rel="stylesheet" href="styles.css?v=4.0">
 
   <!-- Firebase Realtime Database SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -65,7 +65,63 @@
   <!-- Main Container -->
   <main class="main-container">
 
-    <!-- Progress & Analytics Bar (3 Combined Cards) -->
+    <!-- MODE 1: PRACTICE MODE (Ultra-Clean Focus) -->
+    <section id="practice-view" class="view-section active">
+      <div class="quiz-card">
+        <!-- Clean Minimal Header -->
+        <div class="quiz-header">
+          <div class="question-number-badge">
+            <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
+          </div>
+        </div>
+
+        <!-- Question Body -->
+        <div class="question-content">
+          <h2 class="question-text" id="q-text">Loading question...</h2>
+          
+          <!-- Choices / Options list -->
+          <div class="options-grid" id="q-options-container">
+            <!-- Options dynamically rendered in JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Toggle Button for Question Notes & Solution (At Bottom) -->
+      <div class="notes-toggle-wrapper">
+        <button class="notes-toggle-btn" id="toggle-notes-btn" onclick="toggleNotesSection()">
+          <i class="fa-solid fa-comments"></i> Show Notes & Solution (<span id="notes-count-badge">0</span>)
+          <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>
+        </button>
+      </div>
+
+      <!-- Collapsible Per-Question Notes & Solution Section -->
+      <div class="interactive-drawer hidden" id="notes-section-container">
+        <!-- Solution & Explanation -->
+        <div class="explanation-box" id="q-explanation-box">
+          <div class="explanation-header">
+            <i class="fa-solid fa-lightbulb"></i> Solution & Engineering Explanation
+          </div>
+          <p class="explanation-text" id="q-explanation-text">Select an answer to reveal the solution.</p>
+        </div>
+
+        <div class="notes-section-header">
+          <h3><i class="fa-solid fa-pen-to-square"></i> Notes & Discussion</h3>
+          <span class="notes-sub-info">Problem #<span id="notes-q-num">1</span></span>
+        </div>
+
+        <div class="add-comment-form">
+          <input type="text" id="live-name-input" placeholder="Enter your name here (optional)">
+          <textarea id="live-text-input" placeholder="Write a note, key formula, or study tip for this question..."></textarea>
+          <button class="comment-submit-btn" onclick="postLiveSharedNote()"><i class="fa-solid fa-paper-plane"></i> Post Note</button>
+        </div>
+
+        <div class="comments-list" id="live-notes-container">
+          <!-- Rendered dynamically per question -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Progress & Analytics Bar (Placed Below so it's hidden until you scroll down) -->
     <section class="stats-bar-three">
       <!-- Box 1: Total Problems & Bookmarked -->
       <div class="stat-card-group">
@@ -77,11 +133,6 @@
           <div class="stat-sub-item">
             <span class="stat-value" id="stat-total">127</span>
             <span class="stat-label">Total</span>
-          </div>
-          <div class="stat-sub-divider"></div>
-          <div class="stat-sub-item">
-            <span class="stat-value gold-text" id="stat-bookmarks">0</span>
-            <span class="stat-label">Starred</span>
           </div>
         </div>
       </div>
@@ -120,79 +171,6 @@
       </div>
     </section>
 
-    <!-- MODE 1: PRACTICE MODE -->
-    <section id="practice-view" class="view-section active">
-      <div class="quiz-card">
-        <!-- Question Header & Question Pool Dropdown -->
-        <div class="quiz-header">
-          <div class="question-number-badge">
-            <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
-          </div>
-
-          <div class="quiz-header-controls">
-            <!-- Question Pool Dropdown -->
-            <div class="practice-filter-wrapper">
-              <label for="practice-filter-select"><i class="fa-solid fa-filter"></i> Pool:</label>
-              <select id="practice-filter-select" onchange="changePracticeFilter(this.value)">
-                <option value="all" selected>All Questions</option>
-                <option value="weak">⚠️ Weak Questions</option>
-                <option value="bookmarked">⭐ Bookmarked</option>
-              </select>
-            </div>
-
-            <!-- Bookmark Button -->
-            <button class="bookmark-btn" id="q-bookmark-btn" onclick="toggleBookmarkCurrent()" title="Bookmark question">
-              <i class="fa-regular fa-star" id="bookmark-icon"></i> Bookmark
-            </button>
-          </div>
-        </div>
-
-        <!-- Question Body -->
-        <div class="question-content">
-          <h2 class="question-text" id="q-text">Loading question...</h2>
-          
-          <!-- Choices / Options list -->
-          <div class="options-grid" id="q-options-container">
-            <!-- Options dynamically rendered in JS -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Toggle Button for Question Notes & Solution (At Bottom) -->
-      <div class="notes-toggle-wrapper">
-        <button class="notes-toggle-btn" id="toggle-notes-btn" onclick="toggleNotesSection()">
-          <i class="fa-solid fa-comments"></i> Show Notes & Solution (<span id="notes-count-badge">0</span>)
-          <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>
-        </button>
-      </div>
-
-      <!-- Collapsible Per-Question Notes & Solution Section (Hidden by Default) -->
-      <div class="interactive-drawer hidden" id="notes-section-container">
-        <!-- Pinned Engineering Concept / Explanation inside Notes -->
-        <div class="explanation-box" id="q-explanation-box">
-          <div class="explanation-header">
-            <i class="fa-solid fa-lightbulb"></i> Solution & Engineering Explanation
-          </div>
-          <p class="explanation-text" id="q-explanation-text">Select an answer to reveal the solution.</p>
-        </div>
-
-        <div class="notes-section-header">
-          <h3><i class="fa-solid fa-pen-to-square"></i> Notes & Discussion</h3>
-          <span class="notes-sub-info">Problem #<span id="notes-q-num">1</span></span>
-        </div>
-
-        <div class="add-comment-form">
-          <input type="text" id="live-name-input" placeholder="Enter your name here (optional)">
-          <textarea id="live-text-input" placeholder="Write a note, key formula, or study tip for this question..."></textarea>
-          <button class="comment-submit-btn" onclick="postLiveSharedNote()"><i class="fa-solid fa-paper-plane"></i> Post Note</button>
-        </div>
-
-        <div class="comments-list" id="live-notes-container">
-          <!-- Rendered dynamically per question -->
-        </div>
-      </div>
-    </section>
-
     <!-- MODE 2: ALL QUESTIONS / FLASHCARDS VIEW -->
     <section id="all-view" class="view-section">
       <div class="filter-controls-card">
@@ -204,7 +182,6 @@
           <select id="filter-status-select" onchange="filterAllQuestions()">
             <option value="all">All Statuses</option>
             <option value="weak">⚠️ Class Weak Questions</option>
-            <option value="bookmarked">⭐ Bookmarked Only</option>
             <option value="correct">✓ Correctly Answered</option>
             <option value="incorrect">✗ Incorrectly Answered</option>
           </select>
@@ -219,21 +196,12 @@
 
   </main>
 
-  <!-- Sticky Fixed Bottom Navigation Bar Across All Devices -->
+  <!-- Pinned Clean Bottom Navigation (ONLY Previous and Next Buttons) -->
   <div class="sticky-bottom-nav">
     <div class="sticky-bottom-container">
       <button class="quiz-nav-btn" onclick="prevQuestion()">
         <i class="fa-solid fa-arrow-left"></i> Previous
       </button>
-
-      <div class="footer-center">
-        <button class="quiz-nav-btn secondary" id="btn-toggle-random" onclick="toggleRandomMode()">
-          <i class="fa-solid fa-shuffle"></i> Random: OFF
-        </button>
-        <button class="quiz-nav-btn secondary" onclick="resetCurrentQuestionState()">
-          <i class="fa-solid fa-rotate-left"></i> Reset
-        </button>
-      </div>
 
       <button class="quiz-nav-btn primary" onclick="nextQuestion()">
         Next <i class="fa-solid fa-arrow-right"></i>
