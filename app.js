@@ -1,7 +1,7 @@
 /**
  * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Auto-hides solution/notes when navigating to next or previous questions.
+ * Fully hardened with defensive type checks to prevent runtime crashes.
  */
 
 // Global State
@@ -52,7 +52,9 @@ function getActiveQuestions() {
   if (!data[state.currentSubject]) {
     state.currentSubject = 'fluid_mechanics';
   }
-  return data[state.currentSubject] ? data[state.currentSubject].questions : [];
+  return (data[state.currentSubject] && Array.isArray(data[state.currentSubject].questions)) 
+    ? data[state.currentSubject].questions 
+    : [];
 }
 
 function getActiveSubjectInfo() {
@@ -238,7 +240,7 @@ function subscribeGroupMistakes() {
     const ref = state.firebaseDb.ref('group_mistakes');
     ref.on('value', snapshot => {
       const data = snapshot.val();
-      if (data) {
+      if (data && typeof data === 'object') {
         state.groupMistakes = data;
         saveData('jt_group_mistakes_local', state.groupMistakes);
         if (state.practiceFilter === 'weak') {
@@ -260,7 +262,7 @@ function subscribeSharedBookmarks() {
     const ref = state.firebaseDb.ref('shared_bookmarks');
     ref.on('value', snapshot => {
       const data = snapshot.val();
-      if (data) {
+      if (data && typeof data === 'object') {
         const newSet = new Set();
         Object.keys(data).forEach(key => {
           if (data[key]) newSet.add(key);
@@ -337,16 +339,28 @@ function loadStoredData() {
     }
 
     const savedAnswers = localStorage.getItem('jt_user_answers');
-    if (savedAnswers) state.userAnswers = JSON.parse(savedAnswers);
+    if (savedAnswers) {
+      const parsed = JSON.parse(savedAnswers);
+      if (parsed && typeof parsed === 'object') state.userAnswers = parsed;
+    }
 
     const savedBookmarks = localStorage.getItem('jt_bookmarks');
-    if (savedBookmarks) state.bookmarks = new Set(JSON.parse(savedBookmarks));
+    if (savedBookmarks) {
+      const parsed = JSON.parse(savedBookmarks);
+      if (Array.isArray(parsed)) state.bookmarks = new Set(parsed);
+    }
 
     const savedLive = localStorage.getItem('jt_live_notes_local');
-    if (savedLive) state.liveNotes = JSON.parse(savedLive);
+    if (savedLive) {
+      const parsed = JSON.parse(savedLive);
+      if (parsed && typeof parsed === 'object') state.liveNotes = parsed;
+    }
 
     const savedMistakes = localStorage.getItem('jt_group_mistakes_local');
-    if (savedMistakes) state.groupMistakes = JSON.parse(savedMistakes);
+    if (savedMistakes) {
+      const parsed = JSON.parse(savedMistakes);
+      if (parsed && typeof parsed === 'object') state.groupMistakes = parsed;
+    }
 
     const savedRandom = localStorage.getItem('jt_random_mode');
     if (savedRandom !== null) {
@@ -485,7 +499,7 @@ function renderCurrentPracticeQuestion() {
   }
 
   // Question Text
-  if (qText) qText.textContent = `Problem #${q.id}: ${q.question}`;
+  if (qText) qText.textContent = `Problem #${q.id}: ${q.question || ''}`;
 
   // Options Grid
   if (optionsContainer) {
@@ -501,30 +515,32 @@ function renderCurrentPracticeQuestion() {
 
     const isAnswered = chosenIndex !== undefined;
 
-    q.options.forEach((optText, idx) => {
-      const letter = String.fromCharCode(65 + idx);
-      const btn = document.createElement('button');
-      btn.className = 'option-btn';
-      btn.setAttribute('data-key-hint', `Press [${letter}]`);
-      
-      if (isAnswered) {
-        btn.classList.add('disabled');
-        if (idx === q.answer) {
-          btn.classList.add('selected-correct');
-        } else if (idx === chosenIndex) {
-          btn.classList.add('selected-incorrect');
+    if (q.options && Array.isArray(q.options)) {
+      q.options.forEach((optText, idx) => {
+        const letter = String.fromCharCode(65 + idx);
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.setAttribute('data-key-hint', `Press [${letter}]`);
+        
+        if (isAnswered) {
+          btn.classList.add('disabled');
+          if (idx === q.answer) {
+            btn.classList.add('selected-correct');
+          } else if (idx === chosenIndex) {
+            btn.classList.add('selected-incorrect');
+          }
         }
-      }
 
-      btn.onclick = () => selectPracticeAnswer(key, idx);
+        btn.onclick = () => selectPracticeAnswer(key, idx);
 
-      btn.innerHTML = `
-        <span class="option-letter">${letter}</span>
-        <span class="option-text">${optText}</span>
-      `;
+        btn.innerHTML = `
+          <span class="option-letter">${letter}</span>
+          <span class="option-text">${escapeHTML(optText)}</span>
+        `;
 
-      optionsContainer.appendChild(btn);
-    });
+        optionsContainer.appendChild(btn);
+      });
+    }
 
     // Solution & Explanation text inside Notes drawer
     const expText = document.getElementById('q-explanation-text');
@@ -665,7 +681,7 @@ function subscribeLiveNotesCurrent() {
       ref.on('value', snapshot => {
         const data = snapshot.val();
         let notesList = [];
-        if (data) {
+        if (data && typeof data === 'object') {
           Object.keys(data).forEach(fbKey => {
             notesList.push({
               ...data[fbKey],
@@ -708,15 +724,15 @@ function renderLiveNotesUI(notesList) {
     div.className = 'comment-item';
     div.innerHTML = `
       <div class="comment-meta">
-        <span class="comment-author"><i class="fa-solid fa-user-graduate"></i> ${escapeHTML(item.name)}</span>
+        <span class="comment-author"><i class="fa-solid fa-user-graduate"></i> ${escapeHTML(item.name || 'Anonymous')}</span>
         <div class="comment-right-meta">
-          <span class="comment-date">${item.date}</span>
+          <span class="comment-date">${escapeHTML(item.date || '')}</span>
           <button class="delete-note-btn" onclick="deleteNote(${index}, '${item.firebaseKey || ''}')" title="Delete note">
             <i class="fa-solid fa-trash-can"></i> Delete
           </button>
         </div>
       </div>
-      <div class="comment-body">${escapeHTML(item.text)}</div>
+      <div class="comment-body">${escapeHTML(item.text || '')}</div>
     `;
     container.appendChild(div);
   });
@@ -835,8 +851,9 @@ function filterAllQuestions() {
     if (filterStatus === 'incorrect' && !isIncorrect) return;
     if (filterStatus === 'weak' && mistakeCount === 0) return;
 
-    const qMatches = q.question.toLowerCase().includes(searchVal);
-    const optMatches = q.options.some(o => o.toLowerCase().includes(searchVal));
+    const qTextStr = (q.question || '').toLowerCase();
+    const qMatches = qTextStr.includes(searchVal);
+    const optMatches = (q.options || []).some(o => (o || '').toLowerCase().includes(searchVal));
     if (searchVal && !qMatches && !optMatches) return;
 
     count++;
@@ -845,10 +862,12 @@ function filterAllQuestions() {
     item.className = 'question-list-item';
     
     let optionsHtml = '';
-    q.options.forEach((opt, idx) => {
-      const isCorrectOpt = idx === q.answer;
-      optionsHtml += `<div class="item-opt ${isCorrectOpt ? 'correct-opt' : ''}">${String.fromCharCode(65 + idx)}. ${opt}</div>`;
-    });
+    if (q.options && Array.isArray(q.options)) {
+      q.options.forEach((opt, idx) => {
+        const isCorrectOpt = idx === q.answer;
+        optionsHtml += `<div class="item-opt ${isCorrectOpt ? 'correct-opt' : ''}">${String.fromCharCode(65 + idx)}. ${escapeHTML(opt)}</div>`;
+      });
+    }
 
     item.innerHTML = `
       <div class="item-top">
@@ -858,11 +877,11 @@ function filterAllQuestions() {
           ${isBookmarked ? '<span style="color: var(--color-warning); font-size: 0.8rem; font-weight: 700; background: var(--color-warning-bg); padding: 2px 8px; border-radius: var(--radius-sm);"><i class="fa-solid fa-star"></i> Class Bookmarked</span>' : ''}
         </div>
       </div>
-      <div class="item-q-text">${q.question}</div>
+      <div class="item-q-text">${escapeHTML(q.question || '')}</div>
       <div class="item-options">${optionsHtml}</div>
       <div class="explanation-box" style="margin: 0; padding: 0.85rem;">
         <div class="explanation-header"><i class="fa-solid fa-lightbulb"></i> Key Concept:</div>
-        <div class="explanation-text">${q.explanation}</div>
+        <div class="explanation-text">${escapeHTML(q.explanation || 'Standard engineering principle.')}</div>
       </div>
     `;
 
@@ -915,7 +934,8 @@ function updateStats() {
 }
 
 function escapeHTML(str) {
-  return str.replace(/[&<>'"]/g, 
+  if (str === null || str === undefined) return '';
+  return String(str).replace(/[&<>'"]/g, 
     tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
   );
 }
