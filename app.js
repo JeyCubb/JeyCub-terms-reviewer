@@ -1,7 +1,7 @@
 /**
  * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Fully hardened with defensive type checks to prevent runtime crashes.
+ * Shared Class Bookmarks & Class Weak Questions are compiled globally in Firebase for all users.
  */
 
 // Global State
@@ -13,9 +13,9 @@ let state = {
   randomMode: false,
   userAnswers: {}, // Master answers for All Questions mode
   sessionPoolAnswers: {}, // Transient answers for Weak / Bookmarked practice sessions
-  bookmarks: new Set(), // Set of "subject_qId" shared globally across all users
+  bookmarks: new Set(), // Shared class bookmarks (synced globally in Firebase for all users)
   liveNotes: {}, // { "subject_qId": [{ id, name, text, date, firebaseKey }] }
-  groupMistakes: {}, // { "subject_qId": mistakeCount } shared globally
+  groupMistakes: {}, // { "subject_qId": mistakeCount } shared class weak memory (synced globally)
   notesOpen: false,
   
   // Firebase Database Handle for notes, shared bookmarks & group mistakes
@@ -65,6 +65,7 @@ function getActiveSubjectInfo() {
   return data[state.currentSubject] || { title: 'Fluid Mechanics', chapter: '' };
 }
 
+/* Returns practice questions filtered by shared class pools (All, Weak, Bookmarked) */
 function getFilteredPracticeQuestions() {
   const allQs = getActiveQuestions();
   if (state.practiceFilter === 'bookmarked') {
@@ -234,21 +235,20 @@ function initFirebase() {
   }
 }
 
+/* Group mistakes synced in Realtime for all users */
 function subscribeGroupMistakes() {
   if (!state.firebaseDb) return;
   try {
     const ref = state.firebaseDb.ref('group_mistakes');
     ref.on('value', snapshot => {
       const data = snapshot.val();
-      if (data && typeof data === 'object') {
-        state.groupMistakes = data;
-        saveData('jt_group_mistakes_local', state.groupMistakes);
-        if (state.practiceFilter === 'weak') {
-          renderCurrentPracticeQuestion();
-        }
-        if (state.currentMode === 'all') {
-          filterAllQuestions();
-        }
+      state.groupMistakes = (data && typeof data === 'object') ? data : {};
+      saveData('jt_group_mistakes_local', state.groupMistakes);
+      if (state.practiceFilter === 'weak') {
+        renderCurrentPracticeQuestion();
+      }
+      if (state.currentMode === 'all') {
+        filterAllQuestions();
       }
     });
   } catch (e) {
@@ -256,24 +256,25 @@ function subscribeGroupMistakes() {
   }
 }
 
+/* Shared class bookmarks synced in Realtime for all users */
 function subscribeSharedBookmarks() {
   if (!state.firebaseDb) return;
   try {
     const ref = state.firebaseDb.ref('shared_bookmarks');
     ref.on('value', snapshot => {
       const data = snapshot.val();
+      const newSet = new Set();
       if (data && typeof data === 'object') {
-        const newSet = new Set();
         Object.keys(data).forEach(key => {
           if (data[key]) newSet.add(key);
         });
-        state.bookmarks = newSet;
-        saveData('jt_bookmarks', Array.from(state.bookmarks));
-        renderCurrentPracticeQuestion();
-        updateStats();
-        if (state.currentMode === 'all') {
-          filterAllQuestions();
-        }
+      }
+      state.bookmarks = newSet;
+      saveData('jt_bookmarks', Array.from(state.bookmarks));
+      renderCurrentPracticeQuestion();
+      updateStats();
+      if (state.currentMode === 'all') {
+        filterAllQuestions();
       }
     });
   } catch (e) {
@@ -281,6 +282,7 @@ function subscribeSharedBookmarks() {
   }
 }
 
+/* Record a mistake globally to build the shared class weak pool */
 function recordGroupMistake(key) {
   if (!state.groupMistakes[key]) state.groupMistakes[key] = 0;
   state.groupMistakes[key]++;
@@ -295,6 +297,7 @@ function recordGroupMistake(key) {
   }
 }
 
+/* Toggle shared class bookmark globally in Realtime */
 function toggleBookmarkCurrent() {
   const questions = getFilteredPracticeQuestions();
   if (!questions[state.currentIndex]) return;
