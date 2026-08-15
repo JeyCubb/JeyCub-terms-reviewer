@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Jeycub Terms Reviewer - Multi-Subject Design System & Mobile Responsive Styles
+   JeyCub Terms Reviewer - Multi-Subject Design System & Mobile Responsive Styles
    ========================================================================== */
 
 /* Design Tokens & CSS Variables */
@@ -770,6 +770,39 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 
 .notes-toggle-wrapper.active-wrapper {
   margin-bottom: 1rem;
+}
+
+.notes-toggle-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--accent-primary);
+  padding: 0.85rem 1.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.notes-toggle-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.notes-toggle-btn #toggle-notes-chevron {
+  transition: transform 0.3s ease;
+}
+
+.notes-toggle-btn.active #toggle-notes-chevron {
+  transform: rotate(180deg);
 }
 
 /* Interactive Per-Question Notes Section (Attaches right below toggle button) */
