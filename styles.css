@@ -383,6 +383,38 @@ body {
   color: var(--accent-primary);
 }
 
+.practice-filter-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.practice-filter-wrapper label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  white-space: nowrap;
+}
+
+.practice-filter-wrapper select {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+}
+
+.practice-filter-wrapper select option {
+  background: #151d30;
+  color: #f1f5f9;
+}
+
 .quiz-header-right {
   display: flex;
   align-items: center;
@@ -575,6 +607,12 @@ body {
   color: var(--text-secondary);
 }
 
+.quiz-nav-btn.secondary.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #fff;
+}
+
 .footer-center {
   display: flex;
   gap: 0.5rem;
@@ -763,172 +801,6 @@ body {
   color: var(--text-primary);
 }
 
-/* Mode 2: Exam View Styles */
-.exam-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  max-width: 650px;
-  margin: 2rem auto;
-  text-align: center;
-  box-shadow: var(--shadow-lg);
-}
-
-.exam-header i {
-  font-size: 3rem;
-  color: var(--accent-primary);
-  margin-bottom: 1rem;
-}
-
-.exam-header h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.exam-header p {
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-}
-
-.exam-config-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  text-align: left;
-}
-
-.config-group label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin-bottom: 0.4rem;
-}
-
-.config-group select {
-  width: 100%;
-  background: var(--bg-input);
-  border: 1px solid var(--border-color);
-  padding: 0.65rem;
-  border-radius: var(--radius-md);
-  color: var(--text-primary);
-  font-size: 0.9rem;
-  outline: none;
-}
-
-.start-exam-btn {
-  width: 100%;
-  background: var(--accent-gradient);
-  color: #fff;
-  border: none;
-  padding: 0.85rem;
-  border-radius: var(--radius-md);
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-}
-
-.start-exam-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-}
-
-/* Exam Active Interface */
-.exam-top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.exam-timer {
-  background: var(--color-warning-bg);
-  color: var(--color-warning);
-  border: 1px solid var(--color-warning);
-  padding: 0.4rem 1rem;
-  border-radius: var(--radius-full);
-  font-weight: 700;
-  font-family: 'JetBrains Mono', monospace;
-}
-
-.finish-exam-btn {
-  background: var(--color-error);
-  color: #fff;
-  border: none;
-  padding: 0.45rem 1rem;
-  border-radius: var(--radius-md);
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.exam-matrix-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1.5rem 0;
-  padding: 1rem;
-  background: var(--bg-input);
-  border-radius: var(--radius-md);
-}
-
-.matrix-bubble {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.matrix-bubble.answered {
-  background: var(--accent-primary);
-  color: #fff;
-  border-color: var(--accent-primary);
-}
-
-.matrix-bubble.current {
-  border-color: #fff;
-  box-shadow: 0 0 0 2px var(--accent-primary);
-}
-
-/* Exam Result Panel */
-.result-badge-icon {
-  font-size: 4rem;
-  color: var(--color-warning);
-  margin-bottom: 1rem;
-}
-
-.result-score-display {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-
-.big-score {
-  font-size: 2.5rem;
-  font-weight: 800;
-}
-
-.score-percent {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-success);
-}
-
 /* Mode 3: All Questions / Flashcard View */
 .filter-controls-card {
   background: var(--bg-card);
@@ -1068,8 +940,5 @@ body {
   }
   .quiz-card {
     padding: 1.25rem;
-  }
-  .exam-config-grid {
-    grid-template-columns: 1fr;
   }
 }

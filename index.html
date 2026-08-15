@@ -45,9 +45,6 @@
         <button class="nav-btn active" id="btn-practice-mode" onclick="switchMode('practice')">
           <i class="fa-solid fa-graduation-cap"></i> Practice
         </button>
-        <button class="nav-btn" id="btn-exam-mode" onclick="switchMode('exam')">
-          <i class="fa-solid fa-stopwatch"></i> Exam Mode
-        </button>
         <button class="nav-btn" id="btn-all-mode" onclick="switchMode('all')">
           <i class="fa-solid fa-list-check"></i> All Questions
         </button>
@@ -123,11 +120,22 @@
     <!-- MODE 1: PRACTICE MODE -->
     <section id="practice-view" class="view-section active">
       <div class="quiz-card">
-        <!-- Question Header -->
+        <!-- Question Header & Question Pool Dropdown -->
         <div class="quiz-header">
           <div class="question-number-badge">
             <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
           </div>
+
+          <!-- Question Pool Dropdown (All, Weak Questions, Bookmarked) -->
+          <div class="practice-filter-wrapper">
+            <label for="practice-filter-select"><i class="fa-solid fa-filter"></i> Pool:</label>
+            <select id="practice-filter-select" onchange="changePracticeFilter(this.value)">
+              <option value="all" selected>All Questions</option>
+              <option value="weak">⚠️ Weak Questions</option>
+              <option value="bookmarked">⭐ Bookmarked</option>
+            </select>
+          </div>
+
           <div class="quiz-header-right">
             <button class="bookmark-btn" id="q-bookmark-btn" onclick="toggleBookmarkCurrent()" title="Bookmark question">
               <i class="fa-regular fa-star" id="bookmark-icon"></i> Bookmark
@@ -199,71 +207,7 @@
       </div>
     </section>
 
-    <!-- MODE 2: EXAM MODE -->
-    <section id="exam-view" class="view-section">
-      <!-- Exam Config Panel -->
-      <div id="exam-setup-panel" class="exam-card">
-        <div class="exam-header">
-          <i class="fa-solid fa-pen-to-square"></i>
-          <h2 id="exam-subject-title">Engineering Mock Examination</h2>
-          <p>Test your knowledge and accuracy under exam conditions.</p>
-        </div>
-        <div class="exam-config-grid" style="grid-template-columns: 1fr;">
-          <div class="config-group">
-            <label for="exam-q-count"><i class="fa-solid fa-list-ol"></i> Question Pool:</label>
-            <select id="exam-q-count">
-              <option value="group_missed">Weak Questions</option>
-              <option value="bookmarked">Bookmarked</option>
-              <option value="15">15 Items</option>
-              <option value="30" selected>30 Items</option>
-            </select>
-          </div>
-        </div>
-        <button class="start-exam-btn" onclick="startExam()"><i class="fa-solid fa-play"></i> Start Exam Now</button>
-      </div>
-
-      <!-- Active Exam Interface -->
-      <div id="exam-active-panel" class="quiz-card hidden">
-        <div class="exam-top-bar">
-          <div class="exam-progress-text">Exam Question <span id="exam-cur-index">1</span> of <span id="exam-total-index">30</span></div>
-          <button class="finish-exam-btn" onclick="confirmFinishExam()"><i class="fa-solid fa-flag-checkered"></i> Submit Exam</button>
-        </div>
-
-        <div class="exam-body">
-          <h2 class="question-text" id="exam-q-text">Loading exam question...</h2>
-          <div class="options-grid" id="exam-options-container"></div>
-        </div>
-
-        <div class="exam-matrix-nav" id="exam-matrix-container">
-          <!-- Question bubble matrix -->
-        </div>
-
-        <div class="quiz-footer">
-          <button class="quiz-nav-btn" onclick="prevExamQuestion()"><i class="fa-solid fa-arrow-left"></i> Previous</button>
-          <button class="quiz-nav-btn primary" onclick="nextExamQuestion()">Next <i class="fa-solid fa-arrow-right"></i></button>
-        </div>
-      </div>
-
-      <!-- Exam Result Panel -->
-      <div id="exam-results-panel" class="exam-card hidden">
-        <div class="result-badge-icon" id="result-status-icon">
-          <i class="fa-solid fa-trophy"></i>
-        </div>
-        <h2 id="result-title">Exam Completed!</h2>
-        <div class="result-score-display">
-          <span class="big-score" id="result-score">0 / 30</span>
-          <span class="score-percent" id="result-percent">0%</span>
-        </div>
-        <p class="result-feedback" id="result-feedback-text"></p>
-        
-        <div class="result-actions">
-          <button class="quiz-nav-btn primary" onclick="reviewExamMissed()"><i class="fa-solid fa-magnifying-glass"></i> Review Incorrect Answers</button>
-          <button class="quiz-nav-btn secondary" onclick="resetExamPanel()"><i class="fa-solid fa-rotate-right"></i> Retake Exam</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- MODE 3: ALL QUESTIONS / FLASHCARDS VIEW -->
+    <!-- MODE 2: ALL QUESTIONS / FLASHCARDS VIEW -->
     <section id="all-view" class="view-section">
       <div class="filter-controls-card">
         <div class="search-input-wrapper">

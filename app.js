@@ -1,13 +1,14 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Fast, reliable, local-first review app for Engineering Board Exams.
- * Supports Group Weak Topic Analysis (Class Most Missed Questions Compilation).
+ * Supports Group Weak Topic Analysis and Filtered Practice Pools.
  */
 
 // Global State
 let state = {
   currentSubject: 'fluid_mechanics', // 'fluid_mechanics', 'deformable_bodies', 'heat_transfer'
-  currentMode: 'practice', // 'practice', 'exam', 'all'
+  currentMode: 'practice', // 'practice', 'all'
+  practiceFilter: 'all', // 'all', 'weak', 'bookmarked'
   currentIndex: 0,
   randomMode: false,
   userAnswers: {}, // { "subject_qId": optionIndex }
@@ -18,15 +19,7 @@ let state = {
   
   // Firebase Database Handle for notes & group mistakes
   firebaseDb: null,
-  activeLiveListenerRef: null,
-
-  // Exam state
-  exam: {
-    active: false,
-    questions: [],
-    currentIndex: 0,
-    userAnswers: {}
-  }
+  activeLiveListenerRef: null
 };
 
 // Free Public Firebase Config for shared notes & group mistakes compilation
@@ -67,6 +60,33 @@ function getActiveSubjectInfo() {
   return data[state.currentSubject] || { title: 'Fluid Mechanics', chapter: '' };
 }
 
+function getFilteredPracticeQuestions() {
+  const allQs = getActiveQuestions();
+  if (state.practiceFilter === 'bookmarked') {
+    return allQs.filter(q => {
+      const key = `${state.currentSubject}_q${q.id}`;
+      return state.bookmarks.has(key);
+    });
+  } else if (state.practiceFilter === 'weak') {
+    const pool = allQs.filter(q => {
+      const key = `${state.currentSubject}_q${q.id}`;
+      return (state.groupMistakes[key] || 0) > 0;
+    });
+    return pool.sort((a, b) => {
+      const keyA = `${state.currentSubject}_q${a.id}`;
+      const keyB = `${state.currentSubject}_q${b.id}`;
+      return (state.groupMistakes[keyB] || 0) - (state.groupMistakes[keyA] || 0);
+    });
+  }
+  return allQs;
+}
+
+function changePracticeFilter(filterVal) {
+  state.practiceFilter = filterVal;
+  state.currentIndex = 0;
+  renderCurrentPracticeQuestion();
+}
+
 /* ==========================================================================
    Subject Switcher Logic
    ========================================================================== */
@@ -78,9 +98,6 @@ function updateSubjectUI() {
 
   const badge = document.getElementById('subject-badge-name');
   if (badge) badge.textContent = info.title;
-
-  const examTitle = document.getElementById('exam-subject-title');
-  if (examTitle) examTitle.textContent = `${info.title} Mock Examination`;
 }
 
 function switchSubject(subjectKey) {
@@ -126,6 +143,9 @@ function subscribeGroupMistakes() {
       if (data) {
         state.groupMistakes = data;
         saveData('jt_group_mistakes_local', state.groupMistakes);
+        if (state.practiceFilter === 'weak') {
+          renderCurrentPracticeQuestion();
+        }
       }
     });
   } catch (e) {
@@ -148,7 +168,7 @@ function recordGroupMistake(key) {
 }
 
 function toggleBookmarkCurrent() {
-  const questions = getActiveQuestions();
+  const questions = getFilteredPracticeQuestions();
   if (!questions[state.currentIndex]) return;
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
@@ -214,10 +234,12 @@ function switchMode(mode) {
   state.currentMode = mode;
 
   document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-  document.getElementById(`btn-${mode}-mode`).classList.add('active');
+  const btn = document.getElementById(`btn-${mode}-mode`);
+  if (btn) btn.classList.add('active');
 
   document.querySelectorAll('.view-section').forEach(view => view.classList.remove('active'));
-  document.getElementById(`${mode}-view`).classList.add('active');
+  const view = document.getElementById(`${mode}-view`);
+  if (view) view.classList.add('active');
 
   if (mode === 'all') {
     filterAllQuestions();
@@ -261,8 +283,30 @@ function toggleRandomMode() {
 }
 
 function renderCurrentPracticeQuestion() {
-  const questions = getActiveQuestions();
-  if (!questions || questions.length === 0) return;
+  const questions = getFilteredPracticeQuestions();
+  const qText = document.getElementById('q-text');
+  const optionsContainer = document.getElementById('q-options-container');
+
+  if (!questions || questions.length === 0) {
+    const curNum = document.getElementById('q-current-num');
+    if (curNum) curNum.textContent = 0;
+    const totNum = document.getElementById('q-total-num');
+    if (totNum) totNum.textContent = 0;
+
+    if (qText) {
+      if (state.practiceFilter === 'bookmarked') {
+        qText.textContent = "No bookmarked questions in this subject yet! Click 'Bookmark' on any question to star it.";
+      } else if (state.practiceFilter === 'weak') {
+        qText.textContent = "No class weak questions recorded yet! As you and your classmates practice, missed questions will automatically be compiled here.";
+      } else {
+        qText.textContent = "No questions found.";
+      }
+    }
+    if (optionsContainer) optionsContainer.innerHTML = '';
+    const expBox = document.getElementById('q-explanation-box');
+    if (expBox) expBox.classList.add('hidden');
+    return;
+  }
 
   if (state.currentIndex >= questions.length) state.currentIndex = 0;
   const q = questions[state.currentIndex];
@@ -271,7 +315,7 @@ function renderCurrentPracticeQuestion() {
   const key = `${state.currentSubject}_q${q.id}`;
 
   const curNum = document.getElementById('q-current-num');
-  if (curNum) curNum.textContent = q.id;
+  if (curNum) curNum.textContent = state.currentIndex + 1;
 
   const totNum = document.getElementById('q-total-num');
   if (totNum) totNum.textContent = questions.length;
@@ -289,11 +333,9 @@ function renderCurrentPracticeQuestion() {
   }
 
   // Question Text
-  const qText = document.getElementById('q-text');
-  if (qText) qText.textContent = `${q.id}. ${q.question}`;
+  if (qText) qText.textContent = `Problem #${q.id}: ${q.question}`;
 
   // Options Grid
-  const optionsContainer = document.getElementById('q-options-container');
   if (optionsContainer) {
     optionsContainer.innerHTML = '';
 
@@ -347,7 +389,7 @@ function renderCurrentPracticeQuestion() {
 function selectPracticeAnswer(key, optionIdx) {
   if (state.userAnswers[key] !== undefined) return;
 
-  const questions = getActiveQuestions();
+  const questions = getFilteredPracticeQuestions();
   const q = questions[state.currentIndex];
 
   state.userAnswers[key] = optionIdx;
@@ -362,7 +404,7 @@ function selectPracticeAnswer(key, optionIdx) {
 }
 
 function resetCurrentQuestionState() {
-  const questions = getActiveQuestions();
+  const questions = getFilteredPracticeQuestions();
   const q = questions[state.currentIndex];
   if (!q) return;
   const key = `${state.currentSubject}_q${q.id}`;
@@ -374,7 +416,8 @@ function resetCurrentQuestionState() {
 }
 
 function nextQuestion() {
-  const questions = getActiveQuestions();
+  const questions = getFilteredPracticeQuestions();
+  if (!questions || questions.length === 0) return;
   if (state.randomMode) {
     state.currentIndex = Math.floor(Math.random() * questions.length);
   } else if (state.currentIndex < questions.length - 1) {
@@ -384,7 +427,8 @@ function nextQuestion() {
 }
 
 function prevQuestion() {
-  const questions = getActiveQuestions();
+  const questions = getFilteredPracticeQuestions();
+  if (!questions || questions.length === 0) return;
   if (state.randomMode) {
     state.currentIndex = Math.floor(Math.random() * questions.length);
   } else if (state.currentIndex > 0) {
@@ -418,7 +462,7 @@ function toggleNotesSection() {
 }
 
 function getLiveNotesCount() {
-  const questions = getActiveQuestions();
+  const questions = getFilteredPracticeQuestions();
   if (!questions || !questions[state.currentIndex]) return 0;
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
@@ -426,7 +470,7 @@ function getLiveNotesCount() {
 }
 
 function subscribeLiveNotesCurrent() {
-  const questions = getActiveQuestions();
+  const questions = getFilteredPracticeQuestions();
   if (!questions || !questions[state.currentIndex]) return;
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
@@ -475,7 +519,7 @@ function renderLiveNotesUI(notesList) {
   if (!container) return;
   container.innerHTML = '';
 
-  const questions = getActiveQuestions();
+  const questions = getFilteredPracticeQuestions();
   if (!questions || !questions[state.currentIndex]) return;
   const qId = questions[state.currentIndex].id;
 
@@ -504,7 +548,7 @@ function renderLiveNotesUI(notesList) {
 }
 
 function postLiveSharedNote() {
-  const questions = getActiveQuestions();
+  const questions = getFilteredPracticeQuestions();
   if (!questions[state.currentIndex]) return;
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
@@ -548,7 +592,7 @@ function postLiveSharedNote() {
 }
 
 function deleteNote(noteIndex, firebaseKey) {
-  const questions = getActiveQuestions();
+  const questions = getFilteredPracticeQuestions();
   if (!questions[state.currentIndex]) return;
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
@@ -570,197 +614,6 @@ function deleteNote(noteIndex, firebaseKey) {
     saveData('jt_live_notes_local', state.liveNotes);
     renderLiveNotesUI(state.liveNotes[key]);
   }
-}
-
-/* ==========================================================================
-   Untimed Exam Mode Logic
-   ========================================================================== */
-
-function startExam() {
-  const questions = getActiveQuestions();
-  const countVal = document.getElementById('exam-q-count').value;
-
-  let pool = questions;
-
-  if (countVal === 'bookmarked') {
-    pool = questions.filter(q => {
-      const key = `${state.currentSubject}_q${q.id}`;
-      return state.bookmarks.has(key);
-    });
-
-    if (pool.length === 0) {
-      alert("No bookmarked questions in this subject yet! Click 'Bookmark' on questions in Practice mode to star them.");
-      return;
-    }
-  } else if (countVal === 'group_missed') {
-    pool = questions.filter(q => {
-      const key = `${state.currentSubject}_q${q.id}`;
-      return (state.groupMistakes[key] || 0) > 0;
-    });
-
-    if (pool.length === 0) {
-      alert("No class mistake records found yet for this subject! As you and your classmates practice and submit answers, the hardest questions will automatically be compiled here.");
-      return;
-    }
-
-    pool.sort((a, b) => {
-      const keyA = `${state.currentSubject}_q${a.id}`;
-      const keyB = `${state.currentSubject}_q${b.id}`;
-      return (state.groupMistakes[keyB] || 0) - (state.groupMistakes[keyA] || 0);
-    });
-  }
-
-  const qCount = (countVal === 'all' || countVal === 'bookmarked' || countVal === 'group_missed') ? pool.length : Math.min(parseInt(countVal), pool.length);
-
-  const shuffled = (countVal === 'group_missed') ? [...pool] : [...pool].sort(() => 0.5 - Math.random());
-  state.exam.questions = shuffled.slice(0, qCount);
-  state.exam.currentIndex = 0;
-  state.exam.userAnswers = {};
-  state.exam.active = true;
-
-  document.getElementById('exam-setup-panel').classList.add('hidden');
-  document.getElementById('exam-results-panel').classList.add('hidden');
-  document.getElementById('exam-active-panel').classList.remove('hidden');
-
-  renderExamQuestion();
-  renderExamMatrix();
-}
-
-function renderExamQuestion() {
-  const q = state.exam.questions[state.exam.currentIndex];
-  if (!q) return;
-
-  document.getElementById('exam-cur-index').textContent = state.exam.currentIndex + 1;
-  document.getElementById('exam-total-index').textContent = state.exam.questions.length;
-  document.getElementById('exam-q-text').textContent = `Problem #${q.id}: ${q.question}`;
-
-  const container = document.getElementById('exam-options-container');
-  container.innerHTML = '';
-
-  const chosenIndex = state.exam.userAnswers[q.id];
-
-  q.options.forEach((optText, idx) => {
-    const letter = String.fromCharCode(65 + idx);
-    const btn = document.createElement('button');
-    btn.className = 'option-btn';
-    if (chosenIndex === idx) {
-      btn.classList.add('selected-correct');
-    }
-
-    btn.onclick = () => {
-      state.exam.userAnswers[q.id] = idx;
-      renderExamQuestion();
-      renderExamMatrix();
-    };
-
-    btn.innerHTML = `
-      <span class="option-letter">${letter}</span>
-      <span class="option-text">${optText}</span>
-    `;
-    container.appendChild(btn);
-  });
-}
-
-function renderExamMatrix() {
-  const container = document.getElementById('exam-matrix-container');
-  container.innerHTML = '';
-
-  state.exam.questions.forEach((q, idx) => {
-    const bubble = document.createElement('div');
-    bubble.className = 'matrix-bubble';
-    if (state.exam.userAnswers[q.id] !== undefined) bubble.classList.add('answered');
-    if (idx === state.exam.currentIndex) bubble.classList.add('current');
-
-    bubble.textContent = idx + 1;
-    bubble.onclick = () => {
-      state.exam.currentIndex = idx;
-      renderExamQuestion();
-      renderExamMatrix();
-    };
-
-    container.appendChild(bubble);
-  });
-}
-
-function nextExamQuestion() {
-  if (state.exam.currentIndex < state.exam.questions.length - 1) {
-    state.exam.currentIndex++;
-    renderExamQuestion();
-    renderExamMatrix();
-  }
-}
-
-function prevExamQuestion() {
-  if (state.exam.currentIndex > 0) {
-    state.exam.currentIndex--;
-    renderExamQuestion();
-    renderExamMatrix();
-  }
-}
-
-function confirmFinishExam() {
-  const answeredCount = Object.keys(state.exam.userAnswers).length;
-  const total = state.exam.questions.length;
-
-  if (answeredCount < total) {
-    if (!confirm(`You have only answered ${answeredCount} of ${total} questions. Submit now?`)) {
-      return;
-    }
-  }
-  finishExam();
-}
-
-function finishExam() {
-  state.exam.active = false;
-
-  let correctCount = 0;
-  state.exam.questions.forEach(q => {
-    const key = `${state.currentSubject}_q${q.id}`;
-    if (state.exam.userAnswers[q.id] === q.answer) {
-      correctCount++;
-      state.userAnswers[key] = state.exam.userAnswers[q.id];
-    } else if (state.exam.userAnswers[q.id] !== undefined) {
-      state.userAnswers[key] = state.exam.userAnswers[q.id];
-      recordGroupMistake(key);
-    }
-  });
-
-  saveData('jt_user_answers', state.userAnswers);
-  updateStats();
-
-  const total = state.exam.questions.length;
-  const percent = Math.round((correctCount / total) * 100);
-
-  document.getElementById('exam-active-panel').classList.add('hidden');
-  document.getElementById('exam-results-panel').classList.remove('hidden');
-
-  document.getElementById('result-score').textContent = `${correctCount} / ${total}`;
-  document.getElementById('result-percent').textContent = `${percent}%`;
-
-  const feedbackText = document.getElementById('result-feedback-text');
-  const icon = document.getElementById('result-status-icon');
-
-  if (percent >= 80) {
-    icon.innerHTML = `<i class="fa-solid fa-trophy"></i>`;
-    feedbackText.textContent = "Outstanding Performance! You are ready for the Board Examination!";
-  } else if (percent >= 60) {
-    icon.innerHTML = `<i class="fa-solid fa-medal"></i>`;
-    feedbackText.textContent = "Good Effort! Review your missed questions to boost your mastery score.";
-  } else {
-    icon.innerHTML = `<i class="fa-solid fa-brain"></i>`;
-    feedbackText.textContent = "Keep practicing! Review subject concepts and retake the quiz.";
-  }
-}
-
-function resetExamPanel() {
-  document.getElementById('exam-results-panel').classList.add('hidden');
-  document.getElementById('exam-setup-panel').classList.remove('hidden');
-}
-
-function reviewExamMissed() {
-  switchMode('all');
-  document.getElementById('filter-status-select').value = 'incorrect';
-  filterAllQuestions();
 }
 
 /* ==========================================================================
