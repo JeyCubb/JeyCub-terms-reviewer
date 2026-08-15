@@ -62,6 +62,7 @@ function switchSubject(subjectKey) {
   if (!SUBJECT_DATA[subjectKey]) return;
   state.currentSubject = subjectKey;
   state.currentIndex = 0;
+  localStorage.setItem('jt_subject', subjectKey);
 
   const info = getActiveSubjectInfo();
   document.getElementById('subject-subtitle').textContent = `${info.title} • ${info.chapter} Quiz Bank`;
@@ -97,21 +98,6 @@ function initFirebase() {
     }
   } catch (e) {
     console.warn('Firebase initialization error, using local fallback:', e);
-  }
-}
-
-function saveCustomFirebaseConfig() {
-  const input = document.getElementById('firebase-config-input').value.trim();
-  if (!input) return;
-
-  try {
-    const parsed = JSON.parse(input);
-    localStorage.setItem('fm_firebase_config', JSON.stringify(parsed));
-    alert('Firebase configuration saved!');
-    initFirebase();
-    subscribeLiveNotesCurrent();
-  } catch (e) {
-    alert('Invalid JSON config object.');
   }
 }
 
@@ -748,41 +734,6 @@ function updateStats() {
   document.getElementById('stat-incorrect').textContent = incorrect;
   document.getElementById('stat-accuracy').textContent = `${accuracy}%`;
   document.getElementById('stat-bookmarks').textContent = bookmarksCount;
-}
-
-/* ==========================================================================
-   Modal Functions & Utilities
-   ========================================================================== */
-
-function openGithubModal() {
-  document.getElementById('github-modal').classList.add('active');
-}
-
-function closeGithubModal() {
-  document.getElementById('github-modal').classList.remove('active');
-}
-
-function openNotesModal() {
-  const exportData = {
-    userAnswers: state.userAnswers,
-    bookmarks: Array.from(state.bookmarks),
-    liveNotesLocal: state.liveNotes,
-    exportDate: new Date().toISOString()
-  };
-
-  document.getElementById('export-json-area').value = JSON.stringify(exportData, null, 2);
-  document.getElementById('notes-modal').classList.add('active');
-}
-
-function closeNotesModal() {
-  document.getElementById('notes-modal').classList.remove('active');
-}
-
-function copyExportJSON() {
-  const area = document.getElementById('export-json-area');
-  area.select();
-  navigator.clipboard.writeText(area.value);
-  alert('Export JSON copied to clipboard!');
 }
 
 function escapeHTML(str) {

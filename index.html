@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jeycub Terms Reviewer</title>
-  <meta name="description" content="Interactive quiz reviewer app for Engineering Board Exams: Fluid Mechanics, Mechanics of Deformable Bodies, and Heat Transfer with live per-question notes and exam mode.">
+  <meta name="description" content="Interactive quiz reviewer app for Engineering Board Exams: Fluid Mechanics, Mechanics of Deformable Bodies, and Heat Transfer.">
   <!-- Google Fonts & FontAwesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,14 +54,8 @@
         </button>
       </nav>
 
-      <!-- Utility Actions -->
+      <!-- Utility Actions (Theme Toggle) -->
       <div class="header-actions">
-        <button class="action-btn" title="Live Sync & Backup" onclick="openNotesModal()">
-          <i class="fa-solid fa-cloud-bolt"></i> Live Sync
-        </button>
-        <button class="action-btn" title="GitHub Pages Guide" onclick="openGithubModal()">
-          <i class="fa-brands fa-github"></i> Deploy
-        </button>
         <button class="action-btn theme-toggle" title="Toggle Dark/Light Mode" onclick="toggleTheme()">
           <i class="fa-solid fa-moon" id="theme-icon"></i>
         </button>
@@ -184,7 +178,7 @@
 
         <div class="live-status-bar">
           <span class="live-indicator"><i class="fa-solid fa-wifi"></i> Live Cloud Notes Sync Active</span>
-          <span class="live-subtitle">Notes and discussions posted here are stored per question and shared live online.</span>
+          <span class="live-subtitle">Notes and discussions posted here are stored per question and shared live with your classmates online.</span>
         </div>
 
         <div class="add-comment-form">
@@ -297,72 +291,6 @@
     </section>
 
   </main>
-
-  <!-- MODAL 1: GITHUB PAGES DEPLOYMENT GUIDE -->
-  <div class="modal-overlay" id="github-modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3><i class="fa-brands fa-github"></i> Deploy to GitHub Pages</h3>
-        <button class="modal-close-btn" onclick="closeGithubModal()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p>Follow these quick steps to host your Jeycub Terms Reviewer online for free!</p>
-
-        <ol class="deploy-steps">
-          <li>
-            <strong>Create a new GitHub Repository</strong>
-            <p>Go to <a href="https://github.com/new" target="_blank">github.com/new</a>, name it <code>JeyCub-terms-reviewer</code>, and click <em>Create repository</em>.</p>
-          </li>
-          <li>
-            <strong>Push project files to GitHub</strong>
-            <pre><code>git init
-git add .
-git commit -m "Update Jeycub Terms Reviewer"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/JeyCub-terms-reviewer.git
-git push -u origin main</code></pre>
-          </li>
-          <li>
-            <strong>Enable GitHub Pages</strong>
-            <p>In your GitHub repository, go to <strong>Settings</strong> &rarr; <strong>Pages</strong>. Under <em>Branch</em>, select <strong>main</strong> / <code>/ (root)</code>, then click <strong>Save</strong>.</p>
-          </li>
-        </ol>
-      </div>
-      <div class="modal-footer">
-        <button class="quiz-nav-btn primary" onclick="closeGithubModal()">Got it!</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL 2: LIVE FIREBASE DATABASE & DATA BACKUP -->
-  <div class="modal-overlay" id="notes-modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3><i class="fa-solid fa-cloud-bolt"></i> Live Sync & Data Backup</h3>
-        <button class="modal-close-btn" onclick="closeNotesModal()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p>Live per-question notes automatically sync to our public database. You can also paste your own Firebase config below!</p>
-
-        <div class="data-box-group">
-          <label><strong>Custom Firebase Config (Optional):</strong></label>
-          <textarea id="firebase-config-input" placeholder='Paste your Firebase config object here'></textarea>
-          <button class="save-btn" onclick="saveCustomFirebaseConfig()"><i class="fa-solid fa-plug"></i> Save & Connect Firebase</button>
-        </div>
-
-        <hr class="modal-divider">
-
-        <div class="data-box-group">
-          <label><strong>Export Progress & Notes (JSON):</strong></label>
-          <textarea id="export-json-area" readonly></textarea>
-          <button class="save-btn" onclick="copyExportJSON()"><i class="fa-solid fa-copy"></i> Copy JSON to Clipboard</button>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button class="quiz-nav-btn secondary" onclick="closeNotesModal()">Close</button>
-      </div>
-    </div>
-  </div>
 
   <script src="questions.js"></script>
   <script src="app.js"></script>
