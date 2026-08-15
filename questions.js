@@ -6,7 +6,7 @@
  * 3. Heat Transfer (142 Problems)
  */
 
-const SUBJECT_DATA = {
+var SUBJECT_DATA = window.SUBJECT_DATA = {
   fluid_mechanics: {
     title: "Fluid Mechanics",
     chapter: "Chapter 11",

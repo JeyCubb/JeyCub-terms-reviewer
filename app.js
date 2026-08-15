@@ -43,19 +43,27 @@ document.addEventListener('DOMContentLoaded', () => {
   initFirebase();
 });
 
-/* Helper to get active dataset */
+/* Helper to get global subject dataset safely */
+function getSubjectData() {
+  if (typeof SUBJECT_DATA !== 'undefined') return SUBJECT_DATA;
+  if (typeof window !== 'undefined' && window.SUBJECT_DATA) return window.SUBJECT_DATA;
+  return {};
+}
+
 function getActiveQuestions() {
-  if (!window.SUBJECT_DATA || !window.SUBJECT_DATA[state.currentSubject]) {
+  const data = getSubjectData();
+  if (!data[state.currentSubject]) {
     state.currentSubject = 'fluid_mechanics';
   }
-  return window.SUBJECT_DATA[state.currentSubject].questions;
+  return data[state.currentSubject] ? data[state.currentSubject].questions : [];
 }
 
 function getActiveSubjectInfo() {
-  if (!window.SUBJECT_DATA || !window.SUBJECT_DATA[state.currentSubject]) {
+  const data = getSubjectData();
+  if (!data[state.currentSubject]) {
     state.currentSubject = 'fluid_mechanics';
   }
-  return window.SUBJECT_DATA[state.currentSubject];
+  return data[state.currentSubject] || { title: 'Fluid Mechanics', chapter: '' };
 }
 
 /* ==========================================================================
@@ -75,7 +83,8 @@ function updateSubjectUI() {
 }
 
 function switchSubject(subjectKey) {
-  if (!window.SUBJECT_DATA || !window.SUBJECT_DATA[subjectKey]) return;
+  const data = getSubjectData();
+  if (!data[subjectKey]) return;
   state.currentSubject = subjectKey;
   state.currentIndex = 0;
   localStorage.setItem('jt_subject', subjectKey);
@@ -139,6 +148,7 @@ function recordGroupMistake(key) {
 
 function toggleBookmarkCurrent() {
   const questions = getActiveQuestions();
+  if (!questions[state.currentIndex]) return;
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
 
@@ -159,8 +169,9 @@ function toggleBookmarkCurrent() {
 
 function loadStoredData() {
   try {
+    const data = getSubjectData();
     const savedSubject = localStorage.getItem('jt_subject');
-    if (savedSubject && window.SUBJECT_DATA && window.SUBJECT_DATA[savedSubject]) {
+    if (savedSubject && data[savedSubject]) {
       state.currentSubject = savedSubject;
     }
 
@@ -338,6 +349,7 @@ function selectPracticeAnswer(key, optionIdx) {
 function resetCurrentQuestionState() {
   const questions = getActiveQuestions();
   const q = questions[state.currentIndex];
+  if (!q) return;
   const key = `${state.currentSubject}_q${q.id}`;
 
   delete state.userAnswers[key];
@@ -363,8 +375,10 @@ function prevQuestion() {
 
 function shuffleCurrentView() {
   const questions = getActiveQuestions();
-  state.currentIndex = Math.floor(Math.random() * questions.length);
-  renderCurrentPracticeQuestion();
+  if (questions.length > 0) {
+    state.currentIndex = Math.floor(Math.random() * questions.length);
+    renderCurrentPracticeQuestion();
+  }
 }
 
 /* ==========================================================================
@@ -443,7 +457,7 @@ function subscribeLiveNotesCurrent() {
 
 function renderLiveNotesUI(notesList) {
   const badge = document.getElementById('notes-count-badge');
-  if (badge) badge.textContent = notesList.length;
+  if (badge) badge.textContent = notesList ? notesList.length : 0;
 
   const container = document.getElementById('live-notes-container');
   if (!container) return;
@@ -479,6 +493,7 @@ function renderLiveNotesUI(notesList) {
 
 function postLiveSharedNote() {
   const questions = getActiveQuestions();
+  if (!questions[state.currentIndex]) return;
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
 
@@ -522,6 +537,7 @@ function postLiveSharedNote() {
 
 function deleteNote(noteIndex, firebaseKey) {
   const questions = getActiveQuestions();
+  if (!questions[state.currentIndex]) return;
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
 
