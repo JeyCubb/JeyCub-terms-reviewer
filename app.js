@@ -9,6 +9,7 @@ let state = {
   currentSubject: 'fluid_mechanics', // 'fluid_mechanics', 'deformable_bodies', 'heat_transfer'
   currentMode: 'practice', // 'practice', 'exam', 'all'
   currentIndex: 0,
+  randomMode: false,
   userAnswers: {}, // { "subject_qId": optionIndex }
   bookmarks: new Set(), // Set of "subject_qId" stored locally in browser
   liveNotes: {}, // { "subject_qId": [{ id, name, text, date, firebaseKey }] }
@@ -245,6 +246,20 @@ function updateThemeIcon(theme) {
    Practice Mode Logic
    ========================================================================== */
 
+function toggleRandomMode() {
+  state.randomMode = !state.randomMode;
+  const btn = document.getElementById('btn-toggle-random');
+  if (btn) {
+    if (state.randomMode) {
+      btn.classList.add('active');
+      btn.innerHTML = `<i class="fa-solid fa-shuffle"></i> Random: ON`;
+    } else {
+      btn.classList.remove('active');
+      btn.innerHTML = `<i class="fa-solid fa-shuffle"></i> Random: OFF`;
+    }
+  }
+}
+
 function renderCurrentPracticeQuestion() {
   const questions = getActiveQuestions();
   if (!questions || questions.length === 0) return;
@@ -360,25 +375,22 @@ function resetCurrentQuestionState() {
 
 function nextQuestion() {
   const questions = getActiveQuestions();
-  if (state.currentIndex < questions.length - 1) {
+  if (state.randomMode) {
+    state.currentIndex = Math.floor(Math.random() * questions.length);
+  } else if (state.currentIndex < questions.length - 1) {
     state.currentIndex++;
-    renderCurrentPracticeQuestion();
   }
+  renderCurrentPracticeQuestion();
 }
 
 function prevQuestion() {
-  if (state.currentIndex > 0) {
-    state.currentIndex--;
-    renderCurrentPracticeQuestion();
-  }
-}
-
-function shuffleCurrentView() {
   const questions = getActiveQuestions();
-  if (questions.length > 0) {
+  if (state.randomMode) {
     state.currentIndex = Math.floor(Math.random() * questions.length);
-    renderCurrentPracticeQuestion();
+  } else if (state.currentIndex > 0) {
+    state.currentIndex--;
   }
+  renderCurrentPracticeQuestion();
 }
 
 /* ==========================================================================
