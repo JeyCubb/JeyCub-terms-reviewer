@@ -1,6 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Fast, reliable, local-first review app for Engineering Board Exams.
+ * Supports Group Weak Topic Analysis (Class Most Missed Questions Compilation).
  */
 
 // Global State
@@ -11,9 +12,10 @@ let state = {
   userAnswers: {}, // { "subject_qId": optionIndex }
   bookmarks: new Set(), // Set of "subject_qId" stored locally in browser
   liveNotes: {}, // { "subject_qId": [{ id, name, text, date, firebaseKey }] }
+  groupMistakes: {}, // { "subject_qId": mistakeCount }
   notesOpen: false,
   
-  // Firebase Database Handle for notes
+  // Firebase Database Handle for notes & group mistakes
   firebaseDb: null,
   activeLiveListenerRef: null,
 
@@ -29,7 +31,7 @@ let state = {
   }
 };
 
-// Free Public Firebase Config for shared notes
+// Free Public Firebase Config for shared notes & group mistakes compilation
 const DEFAULT_FIREBASE_CONFIG = {
   databaseURL: "https://fluid-mechanics-reviewer-default-rtdb.firebaseio.com"
 };
@@ -90,7 +92,7 @@ function switchSubject(subjectKey) {
 }
 
 /* ==========================================================================
-   Firebase Realtime Notes Initialization
+   Firebase Realtime Notes & Group Mistakes Compilation
    ========================================================================== */
 
 function initFirebase() {
@@ -100,11 +102,41 @@ function initFirebase() {
         firebase.initializeApp(DEFAULT_FIREBASE_CONFIG);
       }
       state.firebaseDb = firebase.database();
-      // Re-subscribe notes for current question once Firebase is ready
       subscribeLiveNotesCurrent();
+      subscribeGroupMistakes();
     }
   } catch (e) {
-    console.warn('Firebase sync not available, using local notes:', e);
+    console.warn('Firebase sync not available, using local storage fallback:', e);
+  }
+}
+
+function subscribeGroupMistakes() {
+  if (!state.firebaseDb) return;
+  try {
+    const ref = state.firebaseDb.ref('group_mistakes');
+    ref.on('value', snapshot => {
+      const data = snapshot.val();
+      if (data) {
+        state.groupMistakes = data;
+        saveData('jt_group_mistakes_local', state.groupMistakes);
+      }
+    });
+  } catch (e) {
+    console.warn('Group mistakes sync exception:', e);
+  }
+}
+
+function recordGroupMistake(key) {
+  if (!state.groupMistakes[key]) state.groupMistakes[key] = 0;
+  state.groupMistakes[key]++;
+  saveData('jt_group_mistakes_local', state.groupMistakes);
+
+  if (state.firebaseDb) {
+    try {
+      state.firebaseDb.ref(`group_mistakes/${key}`).transaction(current => (current || 0) + 1);
+    } catch (e) {
+      console.warn("Error recording group mistake in Firebase:", e);
+    }
   }
 }
 
@@ -143,6 +175,9 @@ function loadStoredData() {
 
     const savedLive = localStorage.getItem('jt_live_notes_local');
     if (savedLive) state.liveNotes = JSON.parse(savedLive);
+
+    const savedMistakes = localStorage.getItem('jt_group_mistakes_local');
+    if (savedMistakes) state.groupMistakes = JSON.parse(savedMistakes);
 
     const savedTheme = localStorage.getItem('fm_theme');
     if (savedTheme) {
@@ -283,15 +318,22 @@ function renderCurrentPracticeQuestion() {
   const notesQNum = document.getElementById('notes-q-num');
   if (notesQNum) notesQNum.textContent = q.id;
   
-  // Immediately render notes for current question
   subscribeLiveNotesCurrent();
 }
 
 function selectPracticeAnswer(key, optionIdx) {
   if (state.userAnswers[key] !== undefined) return;
 
+  const questions = getActiveQuestions();
+  const q = questions[state.currentIndex];
+
   state.userAnswers[key] = optionIdx;
   saveData('jt_user_answers', state.userAnswers);
+
+  // If wrong answer, record for group weak topic compilation!
+  if (q && optionIdx !== q.answer) {
+    recordGroupMistake(key);
+  }
 
   renderCurrentPracticeQuestion();
   updateStats();
@@ -330,7 +372,7 @@ function shuffleCurrentView() {
 }
 
 /* ==========================================================================
-   Togglable Per-Question Notes Section with Immediate Load Fix
+   Togglable Per-Question Notes Section
    ========================================================================== */
 
 function toggleNotesSection() {
@@ -343,10 +385,7 @@ function toggleNotesSection() {
   if (state.notesOpen) {
     container.classList.remove('hidden');
     btn.classList.add('active');
-    
-    // Subscribe and force immediate UI render when expanded
     subscribeLiveNotesCurrent();
-
     btn.innerHTML = `<i class="fa-solid fa-comments"></i> Hide Notes & Discussion (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
     container.scrollIntoView({ behavior: 'smooth' });
   } else {
@@ -370,11 +409,9 @@ function subscribeLiveNotesCurrent() {
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
 
-  // 1. Immediately render existing notes from localStorage / memory
   const localList = state.liveNotes[key] || [];
   renderLiveNotesUI(localList);
 
-  // 2. Fetch/listen from Firebase Realtime Database
   if (state.firebaseDb) {
     try {
       if (state.activeLiveListenerRef) {
@@ -497,7 +534,6 @@ function deleteNote(noteIndex, firebaseKey) {
   if (state.liveNotes[key] && state.liveNotes[key][noteIndex]) {
     const deletedItem = state.liveNotes[key].splice(noteIndex, 1)[0];
 
-    // Remove from Firebase if key exists
     const fbKey = firebaseKey || (deletedItem ? deletedItem.firebaseKey : null);
     if (fbKey && state.firebaseDb) {
       try {
@@ -513,7 +549,7 @@ function deleteNote(noteIndex, firebaseKey) {
 }
 
 /* ==========================================================================
-   Exam Mode Logic
+   Exam Mode Logic (With Class Most Missed Questions Weak Point Compilation)
    ========================================================================== */
 
 function startExam() {
@@ -522,6 +558,7 @@ function startExam() {
   const minutes = parseInt(document.getElementById('exam-timer-select').value);
 
   let pool = questions;
+
   if (countVal === 'bookmarked') {
     pool = questions.filter(q => {
       const key = `${state.currentSubject}_q${q.id}`;
@@ -532,11 +569,28 @@ function startExam() {
       alert("No bookmarked questions in this subject yet! Click 'Bookmark' on questions in Practice mode to star them.");
       return;
     }
+  } else if (countVal === 'group_missed') {
+    pool = questions.filter(q => {
+      const key = `${state.currentSubject}_q${q.id}`;
+      return (state.groupMistakes[key] || 0) > 0;
+    });
+
+    if (pool.length === 0) {
+      alert("No class mistake records found yet for this subject! As you and your classmates practice and submit answers, the hardest questions will automatically be compiled here.");
+      return;
+    }
+
+    // Sort questions by highest group mistake count descending
+    pool.sort((a, b) => {
+      const keyA = `${state.currentSubject}_q${a.id}`;
+      const keyB = `${state.currentSubject}_q${b.id}`;
+      return (state.groupMistakes[keyB] || 0) - (state.groupMistakes[keyA] || 0);
+    });
   }
 
-  const qCount = (countVal === 'all' || countVal === 'bookmarked') ? pool.length : Math.min(parseInt(countVal), pool.length);
+  const qCount = (countVal === 'all' || countVal === 'bookmarked' || countVal === 'group_missed') ? pool.length : Math.min(parseInt(countVal), pool.length);
 
-  const shuffled = [...pool].sort(() => 0.5 - Math.random());
+  const shuffled = (countVal === 'group_missed') ? [...pool] : [...pool].sort(() => 0.5 - Math.random());
   state.exam.questions = shuffled.slice(0, qCount);
   state.exam.currentIndex = 0;
   state.exam.userAnswers = {};
@@ -677,6 +731,7 @@ function finishExam() {
       state.userAnswers[key] = state.exam.userAnswers[q.id];
     } else if (state.exam.userAnswers[q.id] !== undefined) {
       state.userAnswers[key] = state.exam.userAnswers[q.id];
+      recordGroupMistake(key); // Record mistake for class weak points analysis!
     }
   });
 
