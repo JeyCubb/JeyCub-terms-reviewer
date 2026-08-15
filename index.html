@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Firebase Realtime Database SDK (for Live Shared Notes) -->
+  <!-- Firebase Realtime Database SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 </head>
@@ -161,10 +161,10 @@
         </div>
       </div>
 
-      <!-- Toggle Button for Question Notes & Discussion (At Bottom, Hidden by Default) -->
+      <!-- Toggle Button for Question Notes (At Bottom, Hidden by Default) -->
       <div class="notes-toggle-wrapper">
         <button class="notes-toggle-btn" id="toggle-notes-btn" onclick="toggleNotesSection()">
-          <i class="fa-solid fa-comments"></i> Show Question Notes & Discussion (<span id="notes-count-badge">0</span>)
+          <i class="fa-solid fa-comments"></i> Show Notes & Discussion (<span id="notes-count-badge">0</span>)
           <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>
         </button>
       </div>
@@ -172,19 +172,14 @@
       <!-- Collapsible Per-Question Notes Section (Hidden by Default at Bottom) -->
       <div class="interactive-drawer hidden" id="notes-section-container">
         <div class="notes-section-header">
-          <h3><i class="fa-solid fa-pen-to-square"></i> Per-Question Live Notes & Discussions</h3>
-          <span class="notes-sub-info">Problem #<span id="notes-q-num">1</span> Notes</span>
-        </div>
-
-        <div class="live-status-bar">
-          <span class="live-indicator"><i class="fa-solid fa-wifi"></i> Live Cloud Notes Sync Active</span>
-          <span class="live-subtitle">Notes and discussions posted here are stored per question and shared live with your classmates online.</span>
+          <h3><i class="fa-solid fa-pen-to-square"></i> Notes & Discussion</h3>
+          <span class="notes-sub-info">Problem #<span id="notes-q-num">1</span></span>
         </div>
 
         <div class="add-comment-form">
           <input type="text" id="live-name-input" placeholder="Your Name / Student Handle" value="Engineering Student">
-          <textarea id="live-text-input" placeholder="Post a live note, key formula, or study tip for this question..."></textarea>
-          <button class="comment-submit-btn" onclick="postLiveSharedNote()"><i class="fa-solid fa-paper-plane"></i> Post Note for Q<span id="post-q-num">1</span></button>
+          <textarea id="live-text-input" placeholder="Write a note, key formula, or study tip for this question..."></textarea>
+          <button class="comment-submit-btn" onclick="postLiveSharedNote()"><i class="fa-solid fa-paper-plane"></i> Post Note</button>
         </div>
 
         <div class="comments-list" id="live-notes-container">

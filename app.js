@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Supports Multi-Subject Selection (Fluid Mechanics, Deformable Bodies, Heat Transfer),
- * Practice/Exam Modes, Togglable Bottom Per-Question Live Notes, and Firebase Realtime Sync.
+ * Practice/Exam Modes, Togglable Bottom Per-Question Notes, and Realtime Cloud Database Sync.
  */
 
 // Global State
@@ -78,7 +78,7 @@ function switchSubject(subjectKey) {
 }
 
 /* ==========================================================================
-   Firebase Realtime Database Setup (Live Shared Notes)
+   Firebase Realtime Database Setup
    ========================================================================== */
 
 function initFirebase() {
@@ -94,7 +94,6 @@ function initFirebase() {
         firebase.initializeApp(config);
       }
       state.firebaseDb = firebase.database();
-      console.log('Firebase Realtime Database initialized!');
     }
   } catch (e) {
     console.warn('Firebase initialization error, using local fallback:', e);
@@ -257,9 +256,8 @@ function renderCurrentPracticeQuestion() {
     expBox.classList.add('hidden');
   }
 
-  // Subscribe to Realtime Live Shared Notes per question
+  // Subscribe to Realtime Notes per question
   document.getElementById('notes-q-num').textContent = q.id;
-  document.getElementById('post-q-num').textContent = q.id;
   subscribeLiveNotesCurrent();
 }
 
@@ -337,12 +335,12 @@ function toggleNotesSection() {
   if (state.notesOpen) {
     container.classList.remove('hidden');
     btn.classList.add('active');
-    btn.innerHTML = `<i class="fa-solid fa-comments"></i> Hide Question Notes & Discussion (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
+    btn.innerHTML = `<i class="fa-solid fa-comments"></i> Hide Notes & Discussion (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
     container.scrollIntoView({ behavior: 'smooth' });
   } else {
     container.classList.add('hidden');
     btn.classList.remove('active');
-    btn.innerHTML = `<i class="fa-solid fa-comments"></i> Show Question Notes & Discussion (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
+    btn.innerHTML = `<i class="fa-solid fa-comments"></i> Show Notes & Discussion (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
   }
 }
 
@@ -353,7 +351,7 @@ function getLiveNotesCount() {
   return (state.liveNotes[key] || []).length;
 }
 
-/* Firebase Realtime Live Shared Notes Listener */
+/* Firebase Realtime Notes Listener */
 function subscribeLiveNotesCurrent() {
   const questions = getActiveQuestions();
   const qId = questions[state.currentIndex].id;
