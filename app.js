@@ -146,6 +146,9 @@ function subscribeGroupMistakes() {
         if (state.practiceFilter === 'weak') {
           renderCurrentPracticeQuestion();
         }
+        if (state.currentMode === 'all') {
+          filterAllQuestions();
+        }
       }
     });
   } catch (e) {
@@ -631,7 +634,16 @@ function filterAllQuestions() {
   if (!container) return;
   container.innerHTML = '';
 
-  const questions = getActiveQuestions();
+  let questions = [...getActiveQuestions()];
+
+  if (filterStatus === 'weak') {
+    questions.sort((a, b) => {
+      const keyA = `${state.currentSubject}_q${a.id}`;
+      const keyB = `${state.currentSubject}_q${b.id}`;
+      return (state.groupMistakes[keyB] || 0) - (state.groupMistakes[keyA] || 0);
+    });
+  }
+
   let count = 0;
 
   questions.forEach(q => {
@@ -641,10 +653,12 @@ function filterAllQuestions() {
     const isAnswered = userAnswer !== undefined;
     const isCorrect = isAnswered && userAnswer === q.answer;
     const isIncorrect = isAnswered && userAnswer !== q.answer;
+    const mistakeCount = state.groupMistakes[key] || 0;
 
     if (filterStatus === 'bookmarked' && !isBookmarked) return;
     if (filterStatus === 'correct' && !isCorrect) return;
     if (filterStatus === 'incorrect' && !isIncorrect) return;
+    if (filterStatus === 'weak' && mistakeCount === 0) return;
 
     const qMatches = q.question.toLowerCase().includes(searchVal);
     const optMatches = q.options.some(o => o.toLowerCase().includes(searchVal));
@@ -664,7 +678,10 @@ function filterAllQuestions() {
     item.innerHTML = `
       <div class="item-top">
         <span class="item-num">Problem #${q.id}</span>
-        ${isBookmarked ? '<span style="color: var(--color-warning); font-size: 0.85rem;"><i class="fa-solid fa-star"></i> Bookmarked</span>' : ''}
+        <div style="display: flex; gap: 0.75rem; align-items: center;">
+          ${mistakeCount > 0 ? `<span style="color: var(--color-error); font-size: 0.85rem; font-weight: 600;"><i class="fa-solid fa-triangle-exclamation"></i> ${mistakeCount} class ${mistakeCount === 1 ? 'mistake' : 'mistakes'}</span>` : ''}
+          ${isBookmarked ? '<span style="color: var(--color-warning); font-size: 0.85rem;"><i class="fa-solid fa-star"></i> Bookmarked</span>' : ''}
+        </div>
       </div>
       <div class="item-q-text">${q.question}</div>
       <div class="item-options">${optionsHtml}</div>
