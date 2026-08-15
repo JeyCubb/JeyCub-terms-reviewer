@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Fast, reliable, local-first review app for Engineering Board Exams.
- * Preserves answer history when switching pools and supports Reset All Answers.
+ * Preserves answer history when switching pools and supports manual scrolling for notes.
  */
 
 // Global State
@@ -85,7 +85,6 @@ function getFilteredPracticeQuestions() {
 function changePracticeFilter(filterVal) {
   state.practiceFilter = filterVal;
   state.currentIndex = 0;
-  // Does NOT delete answered history when switching pools!
   renderCurrentPracticeQuestion();
 }
 
@@ -505,7 +504,7 @@ function prevQuestion() {
 }
 
 /* ==========================================================================
-   Togglable Per-Question Notes & Solution Section
+   Togglable Per-Question Notes & Solution Section (Manual Scroll)
    ========================================================================== */
 
 function toggleNotesSection() {
@@ -520,7 +519,7 @@ function toggleNotesSection() {
     btn.classList.add('active');
     subscribeLiveNotesCurrent();
     btn.innerHTML = `<i class="fa-solid fa-comments"></i> Hide Notes & Solution (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
-    container.scrollIntoView({ behavior: 'smooth' });
+    // Manual scroll only - auto-scroll removed!
   } else {
     container.classList.add('hidden');
     btn.classList.remove('active');
