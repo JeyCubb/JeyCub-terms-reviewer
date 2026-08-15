@@ -90,7 +90,7 @@ function switchSubject(subjectKey) {
 }
 
 /* ==========================================================================
-   Firebase Realtime Notes
+   Firebase Realtime Notes Initialization
    ========================================================================== */
 
 function initFirebase() {
@@ -100,6 +100,8 @@ function initFirebase() {
         firebase.initializeApp(DEFAULT_FIREBASE_CONFIG);
       }
       state.firebaseDb = firebase.database();
+      // Re-subscribe notes for current question once Firebase is ready
+      subscribeLiveNotesCurrent();
     }
   } catch (e) {
     console.warn('Firebase sync not available, using local notes:', e);
@@ -281,6 +283,7 @@ function renderCurrentPracticeQuestion() {
   const notesQNum = document.getElementById('notes-q-num');
   if (notesQNum) notesQNum.textContent = q.id;
   
+  // Immediately render notes for current question
   subscribeLiveNotesCurrent();
 }
 
@@ -327,7 +330,7 @@ function shuffleCurrentView() {
 }
 
 /* ==========================================================================
-   Togglable Per-Question Notes Section with Delete Support
+   Togglable Per-Question Notes Section with Immediate Load Fix
    ========================================================================== */
 
 function toggleNotesSection() {
@@ -340,6 +343,10 @@ function toggleNotesSection() {
   if (state.notesOpen) {
     container.classList.remove('hidden');
     btn.classList.add('active');
+    
+    // Subscribe and force immediate UI render when expanded
+    subscribeLiveNotesCurrent();
+
     btn.innerHTML = `<i class="fa-solid fa-comments"></i> Hide Notes & Discussion (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
     container.scrollIntoView({ behavior: 'smooth' });
   } else {
@@ -351,6 +358,7 @@ function toggleNotesSection() {
 
 function getLiveNotesCount() {
   const questions = getActiveQuestions();
+  if (!questions || !questions[state.currentIndex]) return 0;
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
   return (state.liveNotes[key] || []).length;
@@ -362,8 +370,11 @@ function subscribeLiveNotesCurrent() {
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
 
-  renderLiveNotesUI(state.liveNotes[key] || []);
+  // 1. Immediately render existing notes from localStorage / memory
+  const localList = state.liveNotes[key] || [];
+  renderLiveNotesUI(localList);
 
+  // 2. Fetch/listen from Firebase Realtime Database
   if (state.firebaseDb) {
     try {
       if (state.activeLiveListenerRef) {
@@ -406,9 +417,10 @@ function renderLiveNotesUI(notesList) {
   container.innerHTML = '';
 
   const questions = getActiveQuestions();
+  if (!questions || !questions[state.currentIndex]) return;
   const qId = questions[state.currentIndex].id;
 
-  if (notesList.length === 0) {
+  if (!notesList || notesList.length === 0) {
     container.innerHTML = `<p style="font-size: 0.85rem; color: var(--text-muted);">No notes posted yet for Problem #${qId}. Be the first to share a note or formula!</p>`;
     return;
   }
@@ -455,6 +467,10 @@ function postLiveSharedNote() {
     date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
   };
 
+  if (!state.liveNotes[key]) state.liveNotes[key] = [];
+  state.liveNotes[key].unshift(newNote);
+  saveData('jt_live_notes_local', state.liveNotes);
+
   if (state.firebaseDb) {
     try {
       const pushRef = state.firebaseDb.ref(`live_notes/${key}`).push();
@@ -466,10 +482,6 @@ function postLiveSharedNote() {
       console.error('Firebase push error:', e);
     }
   }
-
-  if (!state.liveNotes[key]) state.liveNotes[key] = [];
-  state.liveNotes[key].unshift(newNote);
-  saveData('jt_live_notes_local', state.liveNotes);
 
   if (textInput) textInput.value = '';
   renderLiveNotesUI(state.liveNotes[key]);
