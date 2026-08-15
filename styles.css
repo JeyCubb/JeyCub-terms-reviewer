@@ -83,7 +83,7 @@ body {
   flex-direction: column;
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
-  padding-bottom: 85px; /* Room for fixed bottom bar */
+  padding-bottom: 85px;
 }
 
 /* App Header */
@@ -1009,12 +1009,39 @@ body {
 }
 
 /* ==========================================================================
-   MOBILE RESPONSIVE STYLES (Mobile-First Polish for Phones)
+   MOBILE RESPONSIVE STYLES (Question FIRST & Always Visible at Top)
    ========================================================================== */
 
 @media (max-width: 640px) {
   body {
-    padding-bottom: 125px; /* Extra room for 2-row sticky bottom nav on mobile */
+    padding-bottom: 125px;
+  }
+
+  /* Main Container Flex Column Order */
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0.5rem;
+  }
+
+  /* PRACTICE VIEW COMES FIRST AT THE VERY TOP ON PHONES! */
+  #practice-view {
+    order: 1;
+    width: 100%;
+  }
+
+  /* STATS BAR MOVES BELOW QUESTION CARD ON PHONES */
+  .stats-bar-three {
+    order: 2;
+    margin-top: 0.5rem;
+    margin-bottom: 0.85rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+
+  #all-view {
+    order: 1;
+    width: 100%;
   }
 
   .app-header {
@@ -1068,18 +1095,6 @@ body {
     justify-content: center;
     padding: 0.4rem 0.5rem;
     font-size: 0.8rem;
-  }
-
-  /* Main Container Compact */
-  .main-container {
-    padding: 0.6rem 0.5rem;
-  }
-
-  /* Stats Bar: Compact 3-Column Mini Strip */
-  .stats-bar-three {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.4rem;
-    margin-bottom: 0.85rem;
   }
 
   .stat-card-group {
@@ -1196,7 +1211,7 @@ body {
 
   .sticky-bottom-container .quiz-nav-btn {
     justify-content: center;
-    padding: 0.6rem 0.4rem;
+    padding: 0.65rem 0.4rem;
     font-size: 0.85rem;
   }
 
