@@ -86,16 +86,32 @@ body {
   padding-bottom: 2rem;
 }
 
-/* Main Container */
+/* Main Container - Flex Column for Mode-Dependent Reordering */
 .main-container {
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
   padding: 1.25rem 1.5rem;
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-/* App Header (NON-STICKY card below practice view sections) */
+/* DYNAMIC LAYOUT ORDERING BY MODE */
+
+/* 1. PRACTICE MODE: Question Card at absolute top (Order 1), Title & Stats at bottom (Order 2 & 3) */
+body[data-mode="practice"] #practice-view { order: 1; }
+body[data-mode="practice"] .app-header { order: 2; margin-top: 1.5rem; }
+body[data-mode="practice"] .stats-bar-three { order: 3; margin-top: 1.5rem; }
+body[data-mode="practice"] .reset-progress-wrapper { order: 4; }
+
+/* 2. ALL QUESTIONS MODE: Title Header & Stats at top (Order 1 & 2), Search & Questions below (Order 3) */
+body[data-mode="all"] .app-header { order: 1; margin-top: 0.25rem; margin-bottom: 1.25rem; }
+body[data-mode="all"] .stats-bar-three { order: 2; margin-top: 0; margin-bottom: 1.5rem; }
+body[data-mode="all"] #all-view { order: 3; }
+body[data-mode="all"] .reset-progress-wrapper { order: 4; }
+
+/* App Header Card */
 .app-header {
   position: relative;
   top: auto;
@@ -104,8 +120,6 @@ body {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 1rem 1.25rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
   box-shadow: var(--shadow-sm);
 }
 
@@ -273,13 +287,11 @@ body {
   border-radius: 50%;
 }
 
-/* Stats Bar (Placed Below Title Header Card) */
+/* Stats Bar */
 .stats-bar-three {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
 }
 
 .stat-card-group {
@@ -393,7 +405,7 @@ body {
   display: block;
 }
 
-/* Quiz Card Container (AT THE VERY TOP IN PRACTICE MODE) */
+/* Quiz Card Container */
 .quiz-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -1060,8 +1072,6 @@ body {
 
   .app-header {
     padding: 0.75rem 0.85rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
   }
   
   .header-container {
@@ -1112,8 +1122,6 @@ body {
   .stats-bar-three {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.4rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
   }
 
   .stat-card-group {
@@ -1150,10 +1158,9 @@ body {
     margin-bottom: 0.85rem;
   }
 
-  /* Spacing below Show Notes & Solution button on Phone to push lower controls far down */
   .notes-toggle-wrapper {
     margin-top: 1.25rem;
-    margin-bottom: 12rem; /* Large generous space pushing lower controls box down off-screen */
+    margin-bottom: 12rem;
   }
 
   .interactive-drawer {

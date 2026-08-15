@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Fast, reliable, local-first review app for Engineering Board Exams.
- * Smoothly scrolls to top on mode switch and sorts All Questions from #1 upwards.
+ * Supports mode-specific layout orders (Practice = Question Top / Title Bottom, All Questions = Title Top / Search Top).
  */
 
 // Global State
@@ -323,6 +323,7 @@ function saveData(key, data) {
 
 function switchMode(mode) {
   state.currentMode = mode;
+  document.body.setAttribute('data-mode', mode);
 
   document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
   const btn = document.getElementById(`btn-${mode}-mode`);
@@ -336,7 +337,7 @@ function switchMode(mode) {
     filterAllQuestions();
   }
 
-  // Smoothly scroll to the very top when switching modes so Search bar & Problem #1 are immediately visible!
+  // Smoothly scroll to top on mode switch so active view is immediately visible!
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
