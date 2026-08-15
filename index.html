@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=12.0">
+  <link rel="stylesheet" href="styles.css?v=13.0">
 
   <!-- Firebase Realtime Database SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -21,106 +21,7 @@
   <!-- Main Container -->
   <main class="main-container">
 
-    <!-- Title & Subject Navigation Bar (AT THE VERY TOP) -->
-    <header class="app-header">
-      <div class="header-container">
-        
-        <!-- Brand & Theme Toggle -->
-        <div class="brand-row">
-          <div class="brand">
-            <div class="brand-icon">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <div class="brand-text">
-              <h1>Jeycub Terms <span>Reviewer</span></h1>
-            </div>
-          </div>
-
-          <div class="header-actions">
-            <button class="action-btn theme-toggle" title="Toggle Dark/Light Mode" onclick="toggleTheme()">
-              <i class="fa-solid fa-moon" id="theme-icon"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Subject Selector Dropdown -->
-        <div class="subject-dropdown-wrapper">
-          <label for="subject-selector"><i class="fa-solid fa-book-open"></i> Subject:</label>
-          <select id="subject-selector" onchange="switchSubject(this.value)">
-            <option value="fluid_mechanics">Fluid Mechanics</option>
-            <option value="deformable_bodies">Mechanics of Deformable Bodies</option>
-            <option value="heat_transfer">Heat Transfer</option>
-          </select>
-        </div>
-
-        <!-- Review Modes Toggle -->
-        <nav class="mode-nav">
-          <button class="nav-btn active" id="btn-practice-mode" onclick="switchMode('practice')">
-            <i class="fa-solid fa-graduation-cap"></i> Practice
-          </button>
-          <button class="nav-btn" id="btn-all-mode" onclick="switchMode('all')">
-            <i class="fa-solid fa-list-check"></i> All Questions
-          </button>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Progress & Analytics Bar (Directly Below Title Header) -->
-    <section class="stats-bar-three">
-      <!-- Box 1: Total Problems & Starred -->
-      <div class="stat-card-group">
-        <div class="stat-group-header">
-          <i class="fa-solid fa-layer-group stat-group-icon blue"></i>
-          <span class="stat-group-title">Overview</span>
-        </div>
-        <div class="stat-group-body">
-          <div class="stat-sub-item">
-            <span class="stat-value" id="stat-total">127</span>
-            <span class="stat-label">Total</span>
-          </div>
-          <div class="stat-sub-divider"></div>
-          <div class="stat-sub-item">
-            <span class="stat-value gold-text" id="stat-bookmarks">0</span>
-            <span class="stat-label">Starred</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Box 2: Correct & Incorrect -->
-      <div class="stat-card-group">
-        <div class="stat-group-header">
-          <i class="fa-solid fa-square-poll-vertical stat-group-icon green"></i>
-          <span class="stat-group-title">Score</span>
-        </div>
-        <div class="stat-group-body">
-          <div class="stat-sub-item">
-            <span class="stat-value green-text" id="stat-correct">0</span>
-            <span class="stat-label">Correct</span>
-          </div>
-          <div class="stat-sub-divider"></div>
-          <div class="stat-sub-item">
-            <span class="stat-value red-text" id="stat-incorrect">0</span>
-            <span class="stat-label">Wrong</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Box 3: Accuracy -->
-      <div class="stat-card-group">
-        <div class="stat-group-header">
-          <i class="fa-solid fa-chart-line stat-group-icon purple"></i>
-          <span class="stat-group-title">Mastery</span>
-        </div>
-        <div class="stat-group-body single">
-          <div class="stat-sub-item center">
-            <span class="stat-value purple-text" id="stat-accuracy">0%</span>
-            <span class="stat-label">Accuracy</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MODE 1: PRACTICE MODE -->
+    <!-- MODE 1: PRACTICE MODE (Question FIRST at the Very Top) -->
     <section id="practice-view" class="view-section active">
       
       <!-- Question Card -->
@@ -233,6 +134,105 @@
 
       <div class="questions-list-container" id="all-questions-list">
         <!-- Rendered in JS -->
+      </div>
+    </section>
+
+    <!-- Title & Subject Navigation Bar (Placed BELOW Practice & All Questions views) -->
+    <header class="app-header">
+      <div class="header-container">
+        
+        <!-- Brand & Theme Toggle -->
+        <div class="brand-row">
+          <div class="brand">
+            <div class="brand-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="brand-text">
+              <h1>Jeycub Terms <span>Reviewer</span></h1>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <button class="action-btn theme-toggle" title="Toggle Dark/Light Mode" onclick="toggleTheme()">
+              <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Subject Selector Dropdown -->
+        <div class="subject-dropdown-wrapper">
+          <label for="subject-selector"><i class="fa-solid fa-book-open"></i> Subject:</label>
+          <select id="subject-selector" onchange="switchSubject(this.value)">
+            <option value="fluid_mechanics">Fluid Mechanics</option>
+            <option value="deformable_bodies">Mechanics of Deformable Bodies</option>
+            <option value="heat_transfer">Heat Transfer</option>
+          </select>
+        </div>
+
+        <!-- Review Modes Toggle -->
+        <nav class="mode-nav">
+          <button class="nav-btn active" id="btn-practice-mode" onclick="switchMode('practice')">
+            <i class="fa-solid fa-graduation-cap"></i> Practice
+          </button>
+          <button class="nav-btn" id="btn-all-mode" onclick="switchMode('all')">
+            <i class="fa-solid fa-list-check"></i> All Questions
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Progress & Analytics Bar (Below Title Header) -->
+    <section class="stats-bar-three">
+      <!-- Box 1: Total Problems & Starred -->
+      <div class="stat-card-group">
+        <div class="stat-group-header">
+          <i class="fa-solid fa-layer-group stat-group-icon blue"></i>
+          <span class="stat-group-title">Overview</span>
+        </div>
+        <div class="stat-group-body">
+          <div class="stat-sub-item">
+            <span class="stat-value" id="stat-total">127</span>
+            <span class="stat-label">Total</span>
+          </div>
+          <div class="stat-sub-divider"></div>
+          <div class="stat-sub-item">
+            <span class="stat-value gold-text" id="stat-bookmarks">0</span>
+            <span class="stat-label">Starred</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Box 2: Correct & Incorrect -->
+      <div class="stat-card-group">
+        <div class="stat-group-header">
+          <i class="fa-solid fa-square-poll-vertical stat-group-icon green"></i>
+          <span class="stat-group-title">Score</span>
+        </div>
+        <div class="stat-group-body">
+          <div class="stat-sub-item">
+            <span class="stat-value green-text" id="stat-correct">0</span>
+            <span class="stat-label">Correct</span>
+          </div>
+          <div class="stat-sub-divider"></div>
+          <div class="stat-sub-item">
+            <span class="stat-value red-text" id="stat-incorrect">0</span>
+            <span class="stat-label">Wrong</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Box 3: Accuracy -->
+      <div class="stat-card-group">
+        <div class="stat-group-header">
+          <i class="fa-solid fa-chart-line stat-group-icon purple"></i>
+          <span class="stat-group-title">Mastery</span>
+        </div>
+        <div class="stat-group-body single">
+          <div class="stat-sub-item center">
+            <span class="stat-value purple-text" id="stat-accuracy">0%</span>
+            <span class="stat-label">Accuracy</span>
+          </div>
+        </div>
       </div>
     </section>
 

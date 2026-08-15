@@ -95,7 +95,7 @@ body {
   flex: 1;
 }
 
-/* App Header (NON-STICKY card at top) */
+/* App Header (NON-STICKY card below practice view sections) */
 .app-header {
   position: relative;
   top: auto;
@@ -104,8 +104,8 @@ body {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 1rem 1.25rem;
-  margin-top: 0.25rem;
-  margin-bottom: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   box-shadow: var(--shadow-sm);
 }
 
@@ -278,7 +278,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  margin-top: 0;
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -393,7 +393,7 @@ body {
   display: block;
 }
 
-/* Quiz Card Container */
+/* Quiz Card Container (AT THE VERY TOP IN PRACTICE MODE) */
 .quiz-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -752,7 +752,7 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 1.5rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 12rem;
 }
 
 .notes-toggle-btn {
@@ -795,7 +795,7 @@ body {
   padding: 2rem;
   box-shadow: var(--shadow-md);
   margin-top: 1rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 12rem;
   animation: fadeIn 0.3s ease;
 }
 
@@ -1060,8 +1060,8 @@ body {
 
   .app-header {
     padding: 0.75rem 0.85rem;
-    margin-top: 0.25rem;
-    margin-bottom: 0.85rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   
   .header-container {
@@ -1112,8 +1112,8 @@ body {
   .stats-bar-three {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.4rem;
-    margin-top: 0;
-    margin-bottom: 0.85rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .stat-card-group {
@@ -1150,13 +1150,14 @@ body {
     margin-bottom: 0.85rem;
   }
 
+  /* Spacing below Show Notes & Solution button on Phone to push lower controls far down */
   .notes-toggle-wrapper {
-    margin-top: 1rem;
-    margin-bottom: 3.5rem;
+    margin-top: 1.25rem;
+    margin-bottom: 12rem; /* Large generous space pushing lower controls box down off-screen */
   }
 
   .interactive-drawer {
-    margin-bottom: 3.5rem;
+    margin-bottom: 12rem;
   }
 
   .quiz-controls-card {
