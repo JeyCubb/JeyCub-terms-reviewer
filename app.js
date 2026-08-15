@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Fast, reliable, local-first review app for Engineering Board Exams.
- * Supports Keyboard Shortcuts (Arrow keys & A/B/C/D) and Group Weak Topic Analysis.
+ * Supports Fixed Sticky Bottom Controls, Notes Solution Drawer, and Group Weak Topics.
  */
 
 // Global State
@@ -94,7 +94,6 @@ function changePracticeFilter(filterVal) {
 
 function initKeyboardShortcuts() {
   document.addEventListener('keydown', (e) => {
-    // Skip keyboard shortcuts if user is typing in a text field
     const activeEl = document.activeElement;
     if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.tagName === 'SELECT')) {
       return;
@@ -353,8 +352,6 @@ function renderCurrentPracticeQuestion() {
       }
     }
     if (optionsContainer) optionsContainer.innerHTML = '';
-    const expBox = document.getElementById('q-explanation-box');
-    if (expBox) expBox.classList.add('hidden');
     return;
   }
 
@@ -417,16 +414,10 @@ function renderCurrentPracticeQuestion() {
       optionsContainer.appendChild(btn);
     });
 
-    // Solution Box
-    const expBox = document.getElementById('q-explanation-box');
+    // Solution & Explanation text inside Notes drawer
     const expText = document.getElementById('q-explanation-text');
-    if (expBox && expText) {
-      if (isAnswered) {
-        expText.textContent = q.explanation || "Standard engineering principle.";
-        expBox.classList.remove('hidden');
-      } else {
-        expBox.classList.add('hidden');
-      }
+    if (expText) {
+      expText.textContent = q.explanation || "Standard engineering principle.";
     }
   }
 
@@ -489,7 +480,7 @@ function prevQuestion() {
 }
 
 /* ==========================================================================
-   Togglable Per-Question Notes Section
+   Togglable Per-Question Notes & Solution Section
    ========================================================================== */
 
 function toggleNotesSection() {
@@ -503,12 +494,12 @@ function toggleNotesSection() {
     container.classList.remove('hidden');
     btn.classList.add('active');
     subscribeLiveNotesCurrent();
-    btn.innerHTML = `<i class="fa-solid fa-comments"></i> Hide Notes & Discussion (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
+    btn.innerHTML = `<i class="fa-solid fa-comments"></i> Hide Notes & Solution (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
     container.scrollIntoView({ behavior: 'smooth' });
   } else {
     container.classList.add('hidden');
     btn.classList.remove('active');
-    btn.innerHTML = `<i class="fa-solid fa-comments"></i> Show Notes & Discussion (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
+    btn.innerHTML = `<i class="fa-solid fa-comments"></i> Show Notes & Solution (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
   }
 }
 

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=2.0">
+  <link rel="stylesheet" href="styles.css?v=3.0">
 
   <!-- Firebase Realtime Database SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -156,46 +156,26 @@
             <!-- Options dynamically rendered in JS -->
           </div>
         </div>
-
-        <!-- Explanation Card (Revealed after answer selection) -->
-        <div class="explanation-box hidden" id="q-explanation-box">
-          <div class="explanation-header">
-            <i class="fa-solid fa-lightbulb"></i> Solution & Engineering Explanation
-          </div>
-          <p class="explanation-text" id="q-explanation-text"></p>
-        </div>
-
-        <!-- Quiz Footer Navigation -->
-        <div class="quiz-footer">
-          <button class="quiz-nav-btn" onclick="prevQuestion()">
-            <i class="fa-solid fa-arrow-left"></i> Previous
-          </button>
-
-          <button class="quiz-nav-btn primary" onclick="nextQuestion()">
-            Next <i class="fa-solid fa-arrow-right"></i>
-          </button>
-
-          <div class="footer-center">
-            <button class="quiz-nav-btn secondary" id="btn-toggle-random" onclick="toggleRandomMode()">
-              <i class="fa-solid fa-shuffle"></i> Random: OFF
-            </button>
-            <button class="quiz-nav-btn secondary" onclick="resetCurrentQuestionState()">
-              <i class="fa-solid fa-rotate-left"></i> Reset
-            </button>
-          </div>
-        </div>
       </div>
 
-      <!-- Toggle Button for Question Notes (At Bottom, Hidden by Default) -->
+      <!-- Toggle Button for Question Notes & Solution (At Bottom) -->
       <div class="notes-toggle-wrapper">
         <button class="notes-toggle-btn" id="toggle-notes-btn" onclick="toggleNotesSection()">
-          <i class="fa-solid fa-comments"></i> Show Notes & Discussion (<span id="notes-count-badge">0</span>)
+          <i class="fa-solid fa-comments"></i> Show Notes & Solution (<span id="notes-count-badge">0</span>)
           <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>
         </button>
       </div>
 
-      <!-- Collapsible Per-Question Notes Section (Hidden by Default at Bottom) -->
+      <!-- Collapsible Per-Question Notes & Solution Section (Hidden by Default) -->
       <div class="interactive-drawer hidden" id="notes-section-container">
+        <!-- Pinned Engineering Concept / Explanation inside Notes -->
+        <div class="explanation-box" id="q-explanation-box">
+          <div class="explanation-header">
+            <i class="fa-solid fa-lightbulb"></i> Solution & Engineering Explanation
+          </div>
+          <p class="explanation-text" id="q-explanation-text">Select an answer to reveal the solution.</p>
+        </div>
+
         <div class="notes-section-header">
           <h3><i class="fa-solid fa-pen-to-square"></i> Notes & Discussion</h3>
           <span class="notes-sub-info">Problem #<span id="notes-q-num">1</span></span>
@@ -238,6 +218,28 @@
     </section>
 
   </main>
+
+  <!-- Sticky Fixed Bottom Navigation Bar Across All Devices -->
+  <div class="sticky-bottom-nav">
+    <div class="sticky-bottom-container">
+      <button class="quiz-nav-btn" onclick="prevQuestion()">
+        <i class="fa-solid fa-arrow-left"></i> Previous
+      </button>
+
+      <div class="footer-center">
+        <button class="quiz-nav-btn secondary" id="btn-toggle-random" onclick="toggleRandomMode()">
+          <i class="fa-solid fa-shuffle"></i> Random: OFF
+        </button>
+        <button class="quiz-nav-btn secondary" onclick="resetCurrentQuestionState()">
+          <i class="fa-solid fa-rotate-left"></i> Reset
+        </button>
+      </div>
+
+      <button class="quiz-nav-btn primary" onclick="nextQuestion()">
+        Next <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
 
   <script src="questions.js"></script>
   <script src="app.js"></script>
