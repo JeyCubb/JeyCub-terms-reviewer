@@ -751,7 +751,8 @@ body {
 .notes-toggle-wrapper {
   display: flex;
   justify-content: center;
-  margin: 1.5rem 0;
+  margin-top: 1.5rem;
+  margin-bottom: 7rem;
 }
 
 .notes-toggle-btn {
@@ -794,6 +795,7 @@ body {
   padding: 2rem;
   box-shadow: var(--shadow-md);
   margin-top: 1rem;
+  margin-bottom: 7rem;
   animation: fadeIn 0.3s ease;
 }
 
@@ -1148,10 +1150,14 @@ body {
     margin-bottom: 0.85rem;
   }
 
-  /* Spacing below Show Notes & Solution button on Phone (4-5 lines of spacing) */
+  /* Spacing below Show Notes & Solution button on Phone to push lower controls far down */
   .notes-toggle-wrapper {
     margin-top: 1.25rem;
-    margin-bottom: 4.5rem; /* ~4.5 lines space to declutter controls/title card below */
+    margin-bottom: 12rem; /* Large generous space pushing lower controls box down off-screen */
+  }
+
+  .interactive-drawer {
+    margin-bottom: 12rem;
   }
 
   .quiz-controls-card {
