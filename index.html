@@ -97,9 +97,10 @@
       </div>
       <div class="stat-card">
         <div class="stat-icon gold"><i class="fa-solid fa-bookmark"></i></div>
-        <div class="stat-info">
+        <div class="stat-info" style="flex: 1;">
           <span class="stat-value" id="stat-bookmarks">0</span>
           <span class="stat-label">Bookmarked</span>
+          <button class="reset-stats-btn" onclick="resetAllProgress()"><i class="fa-solid fa-rotate-left"></i> Reset Progress</button>
         </div>
       </div>
     </section>
@@ -147,7 +148,7 @@
               <i class="fa-solid fa-shuffle"></i> Random
             </button>
             <button class="quiz-nav-btn secondary" onclick="resetCurrentQuestionState()">
-              <i class="fa-solid fa-rotate-left"></i> Reset
+              <i class="fa-solid fa-rotate-left"></i> Reset Question
             </button>
           </div>
           <button class="quiz-nav-btn primary" onclick="nextQuestion()">

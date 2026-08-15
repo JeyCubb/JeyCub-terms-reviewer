@@ -205,6 +205,19 @@ function saveData(key, data) {
   }
 }
 
+function resetAllProgress() {
+  if (confirm("Reset all recorded practice answers and test scores? (Notes & Bookmarks will remain).")) {
+    state.userAnswers = {};
+    saveData('jt_user_answers', state.userAnswers);
+    updateStats();
+    renderCurrentPracticeQuestion();
+    if (state.currentMode === 'all') {
+      filterAllQuestions();
+    }
+    alert("Progress reset successfully!");
+  }
+}
+
 /* ==========================================================================
    Navigation & UI Mode Switcher
    ========================================================================== */
@@ -266,17 +279,19 @@ function renderCurrentPracticeQuestion() {
 
   document.getElementById('q-current-num').textContent = q.id;
   document.getElementById('q-total-num').textContent = questions.length;
-  document.getElementById('jump-select').value = state.currentIndex;
+  const select = document.getElementById('jump-select');
+  if (select) select.value = state.currentIndex;
 
   // Bookmark Status (Shared Group Bookmark)
   const bookmarkBtn = document.getElementById('q-bookmark-btn');
-  const bookmarkIcon = document.getElementById('bookmark-icon');
-  if (state.bookmarks.has(key)) {
-    bookmarkBtn.classList.add('active');
-    bookmarkBtn.innerHTML = `<i class="fa-solid fa-star" id="bookmark-icon"></i> Group Bookmarked`;
-  } else {
-    bookmarkBtn.classList.remove('active');
-    bookmarkBtn.innerHTML = `<i class="fa-regular fa-star" id="bookmark-icon"></i> Bookmark for Group`;
+  if (bookmarkBtn) {
+    if (state.bookmarks.has(key)) {
+      bookmarkBtn.classList.add('active');
+      bookmarkBtn.innerHTML = `<i class="fa-solid fa-star" id="bookmark-icon"></i> Group Bookmarked`;
+    } else {
+      bookmarkBtn.classList.remove('active');
+      bookmarkBtn.innerHTML = `<i class="fa-regular fa-star" id="bookmark-icon"></i> Bookmark for Group`;
+    }
   }
 
   // Question Text
