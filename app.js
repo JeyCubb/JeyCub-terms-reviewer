@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
- * Fast, reliable, local-first review app for Engineering Board Exams.
- * Resets choices in Weak/Bookmarked pools for fresh retry while keeping All Questions history untouched.
+ * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
+ * Shares Class Bookmarks and Class Weak Questions in Realtime via Firebase.
  */
 
 // Global State
@@ -13,17 +13,17 @@ let state = {
   randomMode: false,
   userAnswers: {}, // Master answers for All Questions mode
   sessionPoolAnswers: {}, // Transient answers for Weak / Bookmarked practice sessions
-  bookmarks: new Set(), // Set of "subject_qId" stored locally in browser
+  bookmarks: new Set(), // Set of "subject_qId" shared globally across all users
   liveNotes: {}, // { "subject_qId": [{ id, name, text, date, firebaseKey }] }
-  groupMistakes: {}, // { "subject_qId": mistakeCount }
+  groupMistakes: {}, // { "subject_qId": mistakeCount } shared globally
   notesOpen: false,
   
-  // Firebase Database Handle for notes & group mistakes
+  // Firebase Database Handle for notes, shared bookmarks & group mistakes
   firebaseDb: null,
   activeLiveListenerRef: null
 };
 
-// Free Public Firebase Config for shared notes & group mistakes compilation
+// Free Public Firebase Config for shared notes, shared bookmarks & group mistakes compilation
 const DEFAULT_FIREBASE_CONFIG = {
   databaseURL: "https://fluid-mechanics-reviewer-default-rtdb.firebaseio.com"
 };
@@ -210,7 +210,7 @@ function switchSubject(subjectKey) {
 }
 
 /* ==========================================================================
-   Firebase Realtime Notes & Group Mistakes Compilation
+   Firebase Realtime Shared Bookmarks, Notes & Group Mistakes Compilation
    ========================================================================== */
 
 function initFirebase() {
@@ -222,6 +222,7 @@ function initFirebase() {
       state.firebaseDb = firebase.database();
       subscribeLiveNotesCurrent();
       subscribeGroupMistakes();
+      subscribeSharedBookmarks();
     }
   } catch (e) {
     console.warn('Firebase sync not available, using local storage fallback:', e);
@@ -250,6 +251,31 @@ function subscribeGroupMistakes() {
   }
 }
 
+function subscribeSharedBookmarks() {
+  if (!state.firebaseDb) return;
+  try {
+    const ref = state.firebaseDb.ref('shared_bookmarks');
+    ref.on('value', snapshot => {
+      const data = snapshot.val();
+      if (data) {
+        const newSet = new Set();
+        Object.keys(data).forEach(key => {
+          if (data[key]) newSet.add(key);
+        });
+        state.bookmarks = newSet;
+        saveData('jt_bookmarks', Array.from(state.bookmarks));
+        renderCurrentPracticeQuestion();
+        updateStats();
+        if (state.currentMode === 'all') {
+          filterAllQuestions();
+        }
+      }
+    });
+  } catch (e) {
+    console.warn('Shared bookmarks sync exception:', e);
+  }
+}
+
 function recordGroupMistake(key) {
   if (!state.groupMistakes[key]) state.groupMistakes[key] = 0;
   state.groupMistakes[key]++;
@@ -270,15 +296,29 @@ function toggleBookmarkCurrent() {
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
 
-  if (state.bookmarks.has(key)) {
+  const isBookmarked = state.bookmarks.has(key);
+  if (isBookmarked) {
     state.bookmarks.delete(key);
   } else {
     state.bookmarks.add(key);
   }
 
   saveData('jt_bookmarks', Array.from(state.bookmarks));
+
+  // Realtime Firebase sync across all users for shared class bookmarks
+  if (state.firebaseDb) {
+    try {
+      state.firebaseDb.ref(`shared_bookmarks/${key}`).set(isBookmarked ? null : true);
+    } catch (e) {
+      console.warn("Error setting shared bookmark in Firebase:", e);
+    }
+  }
+
   renderCurrentPracticeQuestion();
   updateStats();
+  if (state.currentMode === 'all') {
+    filterAllQuestions();
+  }
 }
 
 /* ==========================================================================
@@ -406,7 +446,7 @@ function renderCurrentPracticeQuestion() {
 
     if (qText) {
       if (state.practiceFilter === 'bookmarked') {
-        qText.textContent = "No bookmarked questions in this subject yet! Click 'Bookmark' on any question to star it.";
+        qText.textContent = "No bookmarked questions in this subject yet! Click 'Bookmark' on any question to star it for all classmates.";
       } else if (state.practiceFilter === 'weak') {
         qText.textContent = "No class weak questions recorded yet! As you and your classmates practice, missed questions will automatically be compiled here.";
       } else {
@@ -794,9 +834,9 @@ function filterAllQuestions() {
     item.innerHTML = `
       <div class="item-top">
         <span class="item-num">Problem #${q.id}</span>
-        <div style="display: flex; gap: 0.75rem; align-items: center;">
-          ${mistakeCount > 0 ? `<span style="color: var(--color-error); font-size: 0.85rem; font-weight: 600;"><i class="fa-solid fa-triangle-exclamation"></i> ${mistakeCount} class ${mistakeCount === 1 ? 'mistake' : 'mistakes'}</span>` : ''}
-          ${isBookmarked ? '<span style="color: var(--color-warning); font-size: 0.85rem;"><i class="fa-solid fa-star"></i> Bookmarked</span>' : ''}
+        <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+          ${mistakeCount > 0 ? `<span style="color: var(--color-error); font-size: 0.8rem; font-weight: 700; background: var(--color-error-bg); padding: 2px 8px; border-radius: var(--radius-sm);"><i class="fa-solid fa-triangle-exclamation"></i> ${mistakeCount} class ${mistakeCount === 1 ? 'mistake' : 'mistakes'}</span>` : ''}
+          ${isBookmarked ? '<span style="color: var(--color-warning); font-size: 0.8rem; font-weight: 700; background: var(--color-warning-bg); padding: 2px 8px; border-radius: var(--radius-sm);"><i class="fa-solid fa-star"></i> Class Bookmarked</span>' : ''}
         </div>
       </div>
       <div class="item-q-text">${q.question}</div>
