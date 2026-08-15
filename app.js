@@ -39,6 +39,7 @@ const DEFAULT_FIREBASE_CONFIG = {
 document.addEventListener('DOMContentLoaded', () => {
   loadStoredData();
   initFirebase();
+  updateSubjectUI();
   initJumpDropdown();
   renderCurrentPracticeQuestion();
   updateStats();
@@ -47,10 +48,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* Helper to get active dataset */
 function getActiveQuestions() {
+  if (!SUBJECT_DATA[state.currentSubject]) {
+    state.currentSubject = 'fluid_mechanics';
+  }
   return SUBJECT_DATA[state.currentSubject].questions;
 }
 
 function getActiveSubjectInfo() {
+  if (!SUBJECT_DATA[state.currentSubject]) {
+    state.currentSubject = 'fluid_mechanics';
+  }
   return SUBJECT_DATA[state.currentSubject];
 }
 
@@ -58,17 +65,28 @@ function getActiveSubjectInfo() {
    Subject Switcher Logic
    ========================================================================== */
 
+function updateSubjectUI() {
+  const info = getActiveSubjectInfo();
+  const select = document.getElementById('subject-selector');
+  if (select) select.value = state.currentSubject;
+
+  const subtitle = document.getElementById('subject-subtitle');
+  if (subtitle) subtitle.textContent = `${info.title} • ${info.chapter} Quiz Bank`;
+
+  const badge = document.getElementById('subject-badge-name');
+  if (badge) badge.textContent = info.title;
+
+  const examTitle = document.getElementById('exam-subject-title');
+  if (examTitle) examTitle.textContent = `${info.title} Mock Examination`;
+}
+
 function switchSubject(subjectKey) {
   if (!SUBJECT_DATA[subjectKey]) return;
   state.currentSubject = subjectKey;
   state.currentIndex = 0;
   localStorage.setItem('jt_subject', subjectKey);
 
-  const info = getActiveSubjectInfo();
-  document.getElementById('subject-subtitle').textContent = `${info.title} • ${info.chapter} Quiz Bank`;
-  document.getElementById('subject-badge-name').textContent = info.title;
-  document.getElementById('exam-subject-title').textContent = `${info.title} Mock Examination`;
-
+  updateSubjectUI();
   initJumpDropdown();
   renderCurrentPracticeQuestion();
   updateStats();
@@ -109,7 +127,6 @@ function loadStoredData() {
     const savedSubject = localStorage.getItem('jt_subject');
     if (savedSubject && SUBJECT_DATA[savedSubject]) {
       state.currentSubject = savedSubject;
-      document.getElementById('subject-selector').value = savedSubject;
     }
 
     const savedAnswers = localStorage.getItem('jt_user_answers');
@@ -181,6 +198,7 @@ function updateThemeIcon(theme) {
 function initJumpDropdown() {
   const questions = getActiveQuestions();
   const select = document.getElementById('jump-select');
+  if (!select) return;
   select.innerHTML = '';
   questions.forEach((q, idx) => {
     const opt = document.createElement('option');
@@ -383,9 +401,11 @@ function subscribeLiveNotesCurrent() {
 }
 
 function renderLiveNotesUI(notesList) {
-  document.getElementById('notes-count-badge').textContent = notesList.length;
+  const badge = document.getElementById('notes-count-badge');
+  if (badge) badge.textContent = notesList.length;
 
   const container = document.getElementById('live-notes-container');
+  if (!container) return;
   container.innerHTML = '';
 
   const questions = getActiveQuestions();
@@ -651,6 +671,7 @@ function filterAllQuestions() {
   const filterStatus = document.getElementById('filter-status-select').value;
 
   const container = document.getElementById('all-questions-list');
+  if (!container) return;
   container.innerHTML = '';
 
   const questions = getActiveQuestions();
@@ -699,7 +720,8 @@ function filterAllQuestions() {
     container.appendChild(item);
   });
 
-  document.getElementById('search-count-badge').textContent = `Showing ${count} of ${questions.length} problems`;
+  const badge = document.getElementById('search-count-badge');
+  if (badge) badge.textContent = `Showing ${count} of ${questions.length} problems`;
 }
 
 /* ==========================================================================
@@ -727,11 +749,20 @@ function updateStats() {
   const answeredTotal = correct + incorrect;
   const accuracy = answeredTotal > 0 ? Math.round((correct / answeredTotal) * 100) : 0;
 
-  document.getElementById('stat-total').textContent = total;
-  document.getElementById('stat-correct').textContent = correct;
-  document.getElementById('stat-incorrect').textContent = incorrect;
-  document.getElementById('stat-accuracy').textContent = `${accuracy}%`;
-  document.getElementById('stat-bookmarks').textContent = bookmarksCount;
+  const statTotal = document.getElementById('stat-total');
+  if (statTotal) statTotal.textContent = total;
+
+  const statCorrect = document.getElementById('stat-correct');
+  if (statCorrect) statCorrect.textContent = correct;
+
+  const statIncorrect = document.getElementById('stat-incorrect');
+  if (statIncorrect) statIncorrect.textContent = incorrect;
+
+  const statAccuracy = document.getElementById('stat-accuracy');
+  if (statAccuracy) statAccuracy.textContent = `${accuracy}%`;
+
+  const statBookmarks = document.getElementById('stat-bookmarks');
+  if (statBookmarks) statBookmarks.textContent = bookmarksCount;
 }
 
 function escapeHTML(str) {
