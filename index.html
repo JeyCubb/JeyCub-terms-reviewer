@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Firebase Realtime Database SDK (for shared question notes) -->
+  <!-- Firebase Realtime Database SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 </head>
@@ -34,9 +34,9 @@
       <div class="subject-dropdown-wrapper">
         <label for="subject-selector"><i class="fa-solid fa-book-open"></i> Subject:</label>
         <select id="subject-selector" onchange="switchSubject(this.value)">
-          <option value="fluid_mechanics">Fluid Mechanics (127 Problems)</option>
-          <option value="deformable_bodies">Mechanics of Deformable Bodies (150 Problems)</option>
-          <option value="heat_transfer">Heat Transfer (142 Problems)</option>
+          <option value="fluid_mechanics">Fluid Mechanics</option>
+          <option value="deformable_bodies">Mechanics of Deformable Bodies</option>
+          <option value="heat_transfer">Heat Transfer</option>
         </select>
       </div>
 
@@ -65,41 +65,57 @@
   <!-- Main Container -->
   <main class="main-container">
 
-    <!-- Progress & Analytics Bar -->
-    <section class="stats-bar">
-      <div class="stat-card">
-        <div class="stat-icon blue"><i class="fa-solid fa-layer-group"></i></div>
-        <div class="stat-info">
-          <span class="stat-value" id="stat-total">127</span>
-          <span class="stat-label">Total Problems</span>
+    <!-- Progress & Analytics Bar (3 Combined Cards) -->
+    <section class="stats-bar-three">
+      <!-- Box 1: Total Problems & Bookmarked -->
+      <div class="stat-card-group">
+        <div class="stat-group-header">
+          <i class="fa-solid fa-layer-group stat-group-icon blue"></i>
+          <span class="stat-group-title">Subject Overview</span>
+        </div>
+        <div class="stat-group-body">
+          <div class="stat-sub-item">
+            <span class="stat-value" id="stat-total">127</span>
+            <span class="stat-label">Total Problems</span>
+          </div>
+          <div class="stat-sub-divider"></div>
+          <div class="stat-sub-item">
+            <span class="stat-value gold-text" id="stat-bookmarks">0</span>
+            <span class="stat-label">Bookmarked</span>
+          </div>
         </div>
       </div>
-      <div class="stat-card">
-        <div class="stat-icon green"><i class="fa-solid fa-circle-check"></i></div>
-        <div class="stat-info">
-          <span class="stat-value" id="stat-correct">0</span>
-          <span class="stat-label">Correct</span>
+
+      <!-- Box 2: Correct & Incorrect -->
+      <div class="stat-card-group">
+        <div class="stat-group-header">
+          <i class="fa-solid fa-square-poll-vertical stat-group-icon green"></i>
+          <span class="stat-group-title">Practice Score</span>
+        </div>
+        <div class="stat-group-body">
+          <div class="stat-sub-item">
+            <span class="stat-value green-text" id="stat-correct">0</span>
+            <span class="stat-label">Correct</span>
+          </div>
+          <div class="stat-sub-divider"></div>
+          <div class="stat-sub-item">
+            <span class="stat-value red-text" id="stat-incorrect">0</span>
+            <span class="stat-label">Incorrect</span>
+          </div>
         </div>
       </div>
-      <div class="stat-card">
-        <div class="stat-icon red"><i class="fa-solid fa-circle-xmark"></i></div>
-        <div class="stat-info">
-          <span class="stat-value" id="stat-incorrect">0</span>
-          <span class="stat-label">Incorrect</span>
+
+      <!-- Box 3: Accuracy -->
+      <div class="stat-card-group">
+        <div class="stat-group-header">
+          <i class="fa-solid fa-chart-line stat-group-icon purple"></i>
+          <span class="stat-group-title">Mastery Rate</span>
         </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon purple"><i class="fa-solid fa-chart-line"></i></div>
-        <div class="stat-info">
-          <span class="stat-value" id="stat-accuracy">0%</span>
-          <span class="stat-label">Accuracy</span>
-        </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon gold"><i class="fa-solid fa-bookmark"></i></div>
-        <div class="stat-info">
-          <span class="stat-value" id="stat-bookmarks">0</span>
-          <span class="stat-label">Bookmarked</span>
+        <div class="stat-group-body single">
+          <div class="stat-sub-item center">
+            <span class="stat-value purple-text" id="stat-accuracy">0%</span>
+            <span class="stat-label">Overall Accuracy</span>
+          </div>
         </div>
       </div>
     </section>
