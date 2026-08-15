@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Fast, reliable, local-first review app for Engineering Board Exams.
- * Supports Fixed Sticky Bottom Controls, Notes Solution Drawer, and Group Weak Topics.
+ * Supports Pool Reset (Weak & Bookmarked), Reset All Answers, and Live Notes.
  */
 
 // Global State
@@ -85,7 +85,40 @@ function getFilteredPracticeQuestions() {
 function changePracticeFilter(filterVal) {
   state.practiceFilter = filterVal;
   state.currentIndex = 0;
+
+  // Reset answered status for questions in selected pool so user can re-answer them!
+  const poolQuestions = getFilteredPracticeQuestions();
+  if (filterVal === 'weak' || filterVal === 'bookmarked') {
+    poolQuestions.forEach(q => {
+      const key = `${state.currentSubject}_q${q.id}`;
+      delete state.userAnswers[key];
+    });
+    saveData('jt_user_answers', state.userAnswers);
+    updateStats();
+  }
+
   renderCurrentPracticeQuestion();
+}
+
+function resetAllSubjectAnswers() {
+  const info = getActiveSubjectInfo();
+  if (!confirm(`Are you sure you want to reset all your answered practice questions for ${info.title}? (Your bookmarked questions and notes will remain saved)`)) {
+    return;
+  }
+
+  const questions = getActiveQuestions();
+  questions.forEach(q => {
+    const key = `${state.currentSubject}_q${q.id}`;
+    delete state.userAnswers[key];
+  });
+
+  saveData('jt_user_answers', state.userAnswers);
+  state.currentIndex = 0;
+  renderCurrentPracticeQuestion();
+  updateStats();
+  if (state.currentMode === 'all') {
+    filterAllQuestions();
+  }
 }
 
 /* ==========================================================================
@@ -144,6 +177,9 @@ function updateSubjectUI() {
 
   const badge = document.getElementById('subject-badge-name');
   if (badge) badge.textContent = info.title;
+
+  const resetBtnLabel = document.getElementById('reset-subject-name');
+  if (resetBtnLabel) resetBtnLabel.textContent = info.title;
 }
 
 function switchSubject(subjectKey) {

@@ -356,6 +356,34 @@ body {
   margin-top: 2px;
 }
 
+/* Reset All Answers Button (At Very Bottom) */
+.reset-progress-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.reset-all-btn {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.reset-all-btn:hover {
+  background: var(--color-error);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
 /* Views Management */
 .view-section {
   display: none;
@@ -1219,5 +1247,10 @@ body {
   .interactive-drawer {
     padding: 1rem 0.85rem;
     border-radius: var(--radius-md);
+  }
+
+  .reset-all-btn {
+    font-size: 0.78rem;
+    padding: 0.5rem 1rem;
   }
 }
