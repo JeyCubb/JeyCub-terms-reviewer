@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Supports Multi-Subject Selection (Fluid Mechanics, Deformable Bodies, Heat Transfer),
- * Practice/Exam Modes, Bookmarked-Only Exam Filter, Togglable Bottom Per-Question Notes, and Realtime Cloud Database Sync.
+ * Practice/Exam Modes, Realtime Shared Group Bookmarks, Togglable Bottom Per-Question Notes, and Realtime Cloud Database Sync.
  */
 
 // Global State
@@ -10,13 +10,14 @@ let state = {
   currentMode: 'practice', // 'practice', 'exam', 'all'
   currentIndex: 0,
   userAnswers: {}, // { "subject_qId": optionIndex }
-  bookmarks: new Set(), // Set of "subject_qId"
+  bookmarks: new Set(), // Set of shared "subject_qId"
   liveNotes: {}, // { "subject_qId": [{ id, name, text, date }] }
   notesOpen: false,
   
   // Firebase Database Handle
   firebaseDb: null,
   activeLiveListenerRef: null,
+  activeBookmarkListenerRef: null,
 
   // Exam state
   exam: {
@@ -96,7 +97,7 @@ function switchSubject(subjectKey) {
 }
 
 /* ==========================================================================
-   Firebase Realtime Database Setup
+   Firebase Realtime Database Setup & Shared Group Bookmarks
    ========================================================================== */
 
 function initFirebase() {
@@ -112,10 +113,58 @@ function initFirebase() {
         firebase.initializeApp(config);
       }
       state.firebaseDb = firebase.database();
+      subscribeSharedBookmarks();
     }
   } catch (e) {
     console.warn('Firebase initialization error, using local fallback:', e);
   }
+}
+
+/* Realtime Listener for Shared Group Bookmarks */
+function subscribeSharedBookmarks() {
+  if (!state.firebaseDb) return;
+
+  const ref = state.firebaseDb.ref('shared_bookmarks');
+  ref.on('value', snapshot => {
+    const data = snapshot.val();
+    if (data) {
+      state.bookmarks = new Set(Object.keys(data).filter(k => data[k] === true));
+    } else {
+      state.bookmarks = new Set();
+    }
+    saveData('jt_bookmarks', Array.from(state.bookmarks));
+    updateStats();
+    renderCurrentPracticeQuestion();
+    if (state.currentMode === 'all') {
+      filterAllQuestions();
+    }
+  }, err => {
+    console.warn('Bookmarks sync error:', err);
+  });
+}
+
+function toggleBookmarkCurrent() {
+  const questions = getActiveQuestions();
+  const qId = questions[state.currentIndex].id;
+  const key = `${state.currentSubject}_q${qId}`;
+
+  const isBookmarked = state.bookmarks.has(key);
+
+  if (isBookmarked) {
+    state.bookmarks.delete(key);
+    if (state.firebaseDb) {
+      state.firebaseDb.ref(`shared_bookmarks/${key}`).remove();
+    }
+  } else {
+    state.bookmarks.add(key);
+    if (state.firebaseDb) {
+      state.firebaseDb.ref(`shared_bookmarks/${key}`).set(true);
+    }
+  }
+
+  saveData('jt_bookmarks', Array.from(state.bookmarks));
+  renderCurrentPracticeQuestion();
+  updateStats();
 }
 
 /* ==========================================================================
@@ -219,15 +268,15 @@ function renderCurrentPracticeQuestion() {
   document.getElementById('q-total-num').textContent = questions.length;
   document.getElementById('jump-select').value = state.currentIndex;
 
-  // Bookmark Status
+  // Bookmark Status (Shared Group Bookmark)
   const bookmarkBtn = document.getElementById('q-bookmark-btn');
   const bookmarkIcon = document.getElementById('bookmark-icon');
   if (state.bookmarks.has(key)) {
     bookmarkBtn.classList.add('active');
-    bookmarkIcon.className = 'fa-solid fa-star';
+    bookmarkBtn.innerHTML = `<i class="fa-solid fa-star" id="bookmark-icon"></i> Group Bookmarked`;
   } else {
     bookmarkBtn.classList.remove('active');
-    bookmarkIcon.className = 'fa-regular fa-star';
+    bookmarkBtn.innerHTML = `<i class="fa-regular fa-star" id="bookmark-icon"></i> Bookmark for Group`;
   }
 
   // Question Text
@@ -324,21 +373,6 @@ function shuffleCurrentView() {
   const questions = getActiveQuestions();
   state.currentIndex = Math.floor(Math.random() * questions.length);
   renderCurrentPracticeQuestion();
-}
-
-function toggleBookmarkCurrent() {
-  const questions = getActiveQuestions();
-  const qId = questions[state.currentIndex].id;
-  const key = `${state.currentSubject}_q${qId}`;
-
-  if (state.bookmarks.has(key)) {
-    state.bookmarks.delete(key);
-  } else {
-    state.bookmarks.add(key);
-  }
-  saveData('jt_bookmarks', Array.from(state.bookmarks));
-  renderCurrentPracticeQuestion();
-  updateStats();
 }
 
 /* ==========================================================================
@@ -470,7 +504,7 @@ function postLiveSharedNote() {
 }
 
 /* ==========================================================================
-   Exam Mode Logic (With Bookmarked Questions Only Support)
+   Exam Mode Logic (With Shared Group Bookmarked Questions Option)
    ========================================================================== */
 
 function startExam() {
@@ -486,7 +520,7 @@ function startExam() {
     });
 
     if (pool.length === 0) {
-      alert("You don't have any bookmarked questions in this subject yet! Click the star icon on questions in Practice mode to bookmark them first.");
+      alert("No group bookmarked questions in this subject yet! Click 'Bookmark for Group' on questions in Practice mode to mark questions for group study.");
       return;
     }
   }
@@ -720,7 +754,7 @@ function filterAllQuestions() {
     item.innerHTML = `
       <div class="item-top">
         <span class="item-num">Problem #${q.id}</span>
-        ${isBookmarked ? '<span style="color: var(--color-warning); font-size: 0.85rem;"><i class="fa-solid fa-star"></i> Bookmarked</span>' : ''}
+        ${isBookmarked ? '<span style="color: var(--color-warning); font-size: 0.85rem;"><i class="fa-solid fa-star"></i> Group Bookmarked</span>' : ''}
       </div>
       <div class="item-q-text">${q.question}</div>
       <div class="item-options">${optionsHtml}</div>
