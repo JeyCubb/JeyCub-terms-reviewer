@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Fast, reliable, local-first review app for Engineering Board Exams.
- * Auto-resets questions in Weak/Bookmarked pools so they are ready to retry fresh.
+ * Persists Random Mode across page refreshes via LocalStorage.
  */
 
 // Global State
@@ -31,6 +31,7 @@ const DEFAULT_FIREBASE_CONFIG = {
 document.addEventListener('DOMContentLoaded', () => {
   loadStoredData();
   updateSubjectUI();
+  updateRandomButtonUI();
   renderCurrentPracticeQuestion();
   updateStats();
   filterAllQuestions();
@@ -293,6 +294,11 @@ function loadStoredData() {
     const savedMistakes = localStorage.getItem('jt_group_mistakes_local');
     if (savedMistakes) state.groupMistakes = JSON.parse(savedMistakes);
 
+    const savedRandom = localStorage.getItem('jt_random_mode');
+    if (savedRandom !== null) {
+      state.randomMode = savedRandom === 'true';
+    }
+
     const savedTheme = localStorage.getItem('fm_theme');
     if (savedTheme) {
       document.documentElement.setAttribute('data-theme', savedTheme);
@@ -355,6 +361,11 @@ function updateThemeIcon(theme) {
 
 function toggleRandomMode() {
   state.randomMode = !state.randomMode;
+  localStorage.setItem('jt_random_mode', state.randomMode);
+  updateRandomButtonUI();
+}
+
+function updateRandomButtonUI() {
   const btn = document.getElementById('btn-toggle-random');
   if (btn) {
     if (state.randomMode) {
