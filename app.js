@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Fast, reliable, local-first review app for Engineering Board Exams.
- * Supports Group Weak Topic Analysis and Filtered Practice Pools.
+ * Supports Keyboard Shortcuts (Arrow keys & A/B/C/D) and Group Weak Topic Analysis.
  */
 
 // Global State
@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateStats();
   filterAllQuestions();
   initFirebase();
+  initKeyboardShortcuts();
 });
 
 /* Helper to get global subject dataset safely */
@@ -85,6 +86,52 @@ function changePracticeFilter(filterVal) {
   state.practiceFilter = filterVal;
   state.currentIndex = 0;
   renderCurrentPracticeQuestion();
+}
+
+/* ==========================================================================
+   Keyboard Shortcuts for PC Navigation & Answers
+   ========================================================================== */
+
+function initKeyboardShortcuts() {
+  document.addEventListener('keydown', (e) => {
+    // Skip keyboard shortcuts if user is typing in a text field
+    const activeEl = document.activeElement;
+    if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.tagName === 'SELECT')) {
+      return;
+    }
+
+    if (state.currentMode !== 'practice') return;
+
+    const key = e.key.toLowerCase();
+
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      nextQuestion();
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      prevQuestion();
+    } else if (key === 'a' || e.key === '1') {
+      e.preventDefault();
+      triggerOptionSelection(0);
+    } else if (key === 'b' || e.key === '2') {
+      e.preventDefault();
+      triggerOptionSelection(1);
+    } else if (key === 'c' || e.key === '3') {
+      e.preventDefault();
+      triggerOptionSelection(2);
+    } else if (key === 'd' || e.key === '4') {
+      e.preventDefault();
+      triggerOptionSelection(3);
+    }
+  });
+}
+
+function triggerOptionSelection(idx) {
+  const questions = getFilteredPracticeQuestions();
+  const q = questions[state.currentIndex];
+  if (!q || !q.options || !q.options[idx]) return;
+  const key = `${state.currentSubject}_q${q.id}`;
+  selectPracticeAnswer(key, idx);
 }
 
 /* ==========================================================================
@@ -349,6 +396,7 @@ function renderCurrentPracticeQuestion() {
       const letter = String.fromCharCode(65 + idx);
       const btn = document.createElement('button');
       btn.className = 'option-btn';
+      btn.setAttribute('data-key-hint', `Press [${letter}]`);
       
       if (isAnswered) {
         btn.classList.add('disabled');
