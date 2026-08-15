@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Fast, reliable, local-first review app for Engineering Board Exams.
- * Preserves answer history when switching pools and supports manual scrolling for notes.
+ * Auto-resets questions in Weak/Bookmarked pools so they are ready to retry fresh.
  */
 
 // Global State
@@ -85,6 +85,18 @@ function getFilteredPracticeQuestions() {
 function changePracticeFilter(filterVal) {
   state.practiceFilter = filterVal;
   state.currentIndex = 0;
+
+  // When switching to 'weak' or 'bookmarked' pool, automatically clear answered state for questions in that pool so they are ready to retry fresh!
+  if (filterVal === 'weak' || filterVal === 'bookmarked') {
+    const poolQuestions = getFilteredPracticeQuestions();
+    poolQuestions.forEach(q => {
+      const key = `${state.currentSubject}_q${q.id}`;
+      delete state.userAnswers[key];
+    });
+    saveData('jt_user_answers', state.userAnswers);
+    updateStats();
+  }
+
   renderCurrentPracticeQuestion();
 }
 
@@ -519,7 +531,6 @@ function toggleNotesSection() {
     btn.classList.add('active');
     subscribeLiveNotesCurrent();
     btn.innerHTML = `<i class="fa-solid fa-comments"></i> Hide Notes & Solution (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
-    // Manual scroll only - auto-scroll removed!
   } else {
     container.classList.add('hidden');
     btn.classList.remove('active');
