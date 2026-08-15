@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Fast, reliable, local-first review app for Engineering Board Exams.
- * Auto-blurs select dropdowns so Arrow Keys always navigate questions.
+ * Resets choices in Weak/Bookmarked pools for fresh retry while keeping All Questions history untouched.
  */
 
 // Global State
@@ -11,7 +11,8 @@ let state = {
   practiceFilter: 'all', // 'all', 'weak', 'bookmarked'
   currentIndex: 0,
   randomMode: false,
-  userAnswers: {}, // { "subject_qId": optionIndex }
+  userAnswers: {}, // Master answers for All Questions mode
+  sessionPoolAnswers: {}, // Transient answers for Weak / Bookmarked practice sessions
   bookmarks: new Set(), // Set of "subject_qId" stored locally in browser
   liveNotes: {}, // { "subject_qId": [{ id, name, text, date, firebaseKey }] }
   groupMistakes: {}, // { "subject_qId": mistakeCount }
@@ -87,19 +88,13 @@ function changePracticeFilter(filterVal) {
   state.practiceFilter = filterVal;
   state.currentIndex = 0;
 
-  // Immediately remove focus from select element so Arrow Keys navigate questions, not dropdown options!
+  // Blur select dropdown immediately so arrow keys navigate questions
   const select = document.getElementById('practice-filter-select');
   if (select) select.blur();
 
-  // When switching to 'weak' or 'bookmarked' pool, automatically clear answered state for questions in that pool so they are ready to retry fresh!
+  // Reset transient pool session answers so Weak and Bookmarked pools present questions fresh & unanswered
   if (filterVal === 'weak' || filterVal === 'bookmarked') {
-    const poolQuestions = getFilteredPracticeQuestions();
-    poolQuestions.forEach(q => {
-      const key = `${state.currentSubject}_q${q.id}`;
-      delete state.userAnswers[key];
-    });
-    saveData('jt_user_answers', state.userAnswers);
-    updateStats();
+    state.sessionPoolAnswers = {};
   }
 
   renderCurrentPracticeQuestion();
@@ -115,6 +110,7 @@ function resetAllSubjectAnswers() {
   questions.forEach(q => {
     const key = `${state.currentSubject}_q${q.id}`;
     delete state.userAnswers[key];
+    delete state.sessionPoolAnswers[key];
   });
 
   saveData('jt_user_answers', state.userAnswers);
@@ -199,6 +195,7 @@ function switchSubject(subjectKey) {
   if (!data[subjectKey]) return;
   state.currentSubject = subjectKey;
   state.currentIndex = 0;
+  state.sessionPoolAnswers = {};
   localStorage.setItem('jt_subject', subjectKey);
 
   const select = document.getElementById('subject-selector');
@@ -451,7 +448,14 @@ function renderCurrentPracticeQuestion() {
   if (optionsContainer) {
     optionsContainer.innerHTML = '';
 
-    const chosenIndex = state.userAnswers[key];
+    // Determine chosen index based on active pool filter
+    let chosenIndex;
+    if (state.practiceFilter === 'weak' || state.practiceFilter === 'bookmarked') {
+      chosenIndex = state.sessionPoolAnswers[key];
+    } else {
+      chosenIndex = state.userAnswers[key];
+    }
+
     const isAnswered = chosenIndex !== undefined;
 
     q.options.forEach((optText, idx) => {
@@ -494,7 +498,12 @@ function renderCurrentPracticeQuestion() {
 }
 
 function selectPracticeAnswer(key, optionIdx) {
-  if (state.userAnswers[key] !== undefined) return;
+  if (state.practiceFilter === 'weak' || state.practiceFilter === 'bookmarked') {
+    if (state.sessionPoolAnswers[key] !== undefined) return;
+    state.sessionPoolAnswers[key] = optionIdx;
+  } else {
+    if (state.userAnswers[key] !== undefined) return;
+  }
 
   const questions = getFilteredPracticeQuestions();
   const q = questions[state.currentIndex];
@@ -517,6 +526,7 @@ function resetCurrentQuestionState() {
   const key = `${state.currentSubject}_q${q.id}`;
 
   delete state.userAnswers[key];
+  delete state.sessionPoolAnswers[key];
   saveData('jt_user_answers', state.userAnswers);
   renderCurrentPracticeQuestion();
   updateStats();
