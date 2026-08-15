@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=8.0">
+  <link rel="stylesheet" href="styles.css?v=9.0">
 
   <!-- Firebase Realtime Database SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -21,38 +21,11 @@
   <!-- Main Container (Question Card FIRST at the Very Top) -->
   <main class="main-container">
 
-    <!-- MODE 1: PRACTICE MODE (Directly at top of screen) -->
+    <!-- MODE 1: PRACTICE MODE (Question FIRST at Top) -->
     <section id="practice-view" class="view-section active">
+      
+      <!-- Question Card -->
       <div class="quiz-card">
-        <!-- Practice Header & Controls -->
-        <div class="quiz-header">
-          <div class="question-number-badge">
-            <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
-          </div>
-
-          <div class="quiz-header-controls">
-            <!-- Question Pool Dropdown -->
-            <div class="practice-filter-wrapper">
-              <label for="practice-filter-select"><i class="fa-solid fa-filter"></i> Pool:</label>
-              <select id="practice-filter-select" onchange="changePracticeFilter(this.value)">
-                <option value="all" selected>All Questions</option>
-                <option value="weak">⚠️ Weak Questions</option>
-                <option value="bookmarked">⭐ Bookmarked</option>
-              </select>
-            </div>
-
-            <!-- Random Toggle Button -->
-            <button class="control-toggle-btn" id="btn-toggle-random" onclick="toggleRandomMode()" title="Toggle Random Order">
-              <i class="fa-solid fa-shuffle"></i> Random: OFF
-            </button>
-
-            <!-- Bookmark Button -->
-            <button class="bookmark-btn" id="q-bookmark-btn" onclick="toggleBookmarkCurrent()" title="Bookmark question">
-              <i class="fa-regular fa-star" id="bookmark-icon"></i> Bookmark
-            </button>
-          </div>
-        </div>
-
         <!-- Question Body -->
         <div class="question-content">
           <h2 class="question-text" id="q-text">Loading question...</h2>
@@ -62,9 +35,19 @@
             <!-- Options dynamically rendered in JS -->
           </div>
         </div>
+
+        <!-- Previous & Next Navigation Buttons (Just below the question!) -->
+        <div class="inline-nav-container">
+          <button class="quiz-nav-btn" onclick="prevQuestion()">
+            <i class="fa-solid fa-arrow-left"></i> Previous
+          </button>
+          <button class="quiz-nav-btn primary" onclick="nextQuestion()">
+            Next <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
       </div>
 
-      <!-- Toggle Button for Question Notes & Solution (At Bottom) -->
+      <!-- Toggle Button for Question Notes & Solution -->
       <div class="notes-toggle-wrapper">
         <button class="notes-toggle-btn" id="toggle-notes-btn" onclick="toggleNotesSection()">
           <i class="fa-solid fa-comments"></i> Show Notes & Solution (<span id="notes-count-badge">0</span>)
@@ -97,6 +80,35 @@
           <!-- Rendered dynamically per question -->
         </div>
       </div>
+
+      <!-- Practice Controls Box (Moved BELOW Show Notes & Solution) -->
+      <div class="quiz-controls-card">
+        <div class="question-number-badge">
+          <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
+        </div>
+
+        <div class="quiz-header-controls">
+          <!-- Question Pool Dropdown -->
+          <div class="practice-filter-wrapper">
+            <label for="practice-filter-select"><i class="fa-solid fa-filter"></i> Pool:</label>
+            <select id="practice-filter-select" onchange="changePracticeFilter(this.value)">
+              <option value="all" selected>All Questions</option>
+              <option value="weak">⚠️ Weak Questions</option>
+              <option value="bookmarked">⭐ Bookmarked</option>
+            </select>
+          </div>
+
+          <!-- Random Toggle Button -->
+          <button class="control-toggle-btn" id="btn-toggle-random" onclick="toggleRandomMode()" title="Toggle Random Order">
+            <i class="fa-solid fa-shuffle"></i> Random: OFF
+          </button>
+
+          <!-- Bookmark Button -->
+          <button class="bookmark-btn" id="q-bookmark-btn" onclick="toggleBookmarkCurrent()" title="Bookmark question">
+            <i class="fa-regular fa-star" id="bookmark-icon"></i> Bookmark
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- MODE 2: ALL QUESTIONS / FLASHCARDS VIEW -->
@@ -123,7 +135,7 @@
       </div>
     </section>
 
-    <!-- Non-Fixed Title & Subject Navigation Bar -->
+    <!-- Title & Subject Navigation Bar (Placed below controls card) -->
     <header class="app-header">
       <div class="header-container">
         
@@ -230,19 +242,6 @@
     </div>
 
   </main>
-
-  <!-- Pinned Clean Bottom Navigation (Previous and Next Buttons) -->
-  <div class="sticky-bottom-nav">
-    <div class="sticky-bottom-container">
-      <button class="quiz-nav-btn" onclick="prevQuestion()">
-        <i class="fa-solid fa-arrow-left"></i> Previous
-      </button>
-
-      <button class="quiz-nav-btn primary" onclick="nextQuestion()">
-        Next <i class="fa-solid fa-arrow-right"></i>
-      </button>
-    </div>
-  </div>
 
   <script src="questions.js"></script>
   <script src="app.js"></script>
