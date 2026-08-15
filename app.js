@@ -1,7 +1,7 @@
 /**
  * Jeycub Terms Reviewer - Application Engine
  * Supports Multi-Subject Selection (Fluid Mechanics, Deformable Bodies, Heat Transfer),
- * Practice/Exam Modes, Togglable Bottom Per-Question Notes, and Realtime Cloud Database Sync.
+ * Practice/Exam Modes, Bookmarked-Only Exam Filter, Togglable Bottom Per-Question Notes, and Realtime Cloud Database Sync.
  */
 
 // Global State
@@ -470,7 +470,7 @@ function postLiveSharedNote() {
 }
 
 /* ==========================================================================
-   Exam Mode Logic
+   Exam Mode Logic (With Bookmarked Questions Only Support)
    ========================================================================== */
 
 function startExam() {
@@ -478,9 +478,22 @@ function startExam() {
   const countVal = document.getElementById('exam-q-count').value;
   const minutes = parseInt(document.getElementById('exam-timer-select').value);
 
-  const qCount = countVal === 'all' ? questions.length : parseInt(countVal);
+  let pool = questions;
+  if (countVal === 'bookmarked') {
+    pool = questions.filter(q => {
+      const key = `${state.currentSubject}_q${q.id}`;
+      return state.bookmarks.has(key);
+    });
 
-  const shuffled = [...questions].sort(() => 0.5 - Math.random());
+    if (pool.length === 0) {
+      alert("You don't have any bookmarked questions in this subject yet! Click the star icon on questions in Practice mode to bookmark them first.");
+      return;
+    }
+  }
+
+  const qCount = (countVal === 'all' || countVal === 'bookmarked') ? pool.length : Math.min(parseInt(countVal), pool.length);
+
+  const shuffled = [...pool].sort(() => 0.5 - Math.random());
   state.exam.questions = shuffled.slice(0, qCount);
   state.exam.currentIndex = 0;
   state.exam.userAnswers = {};
