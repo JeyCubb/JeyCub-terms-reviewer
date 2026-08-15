@@ -204,11 +204,11 @@
       <!-- Exam Config Panel -->
       <div id="exam-setup-panel" class="exam-card">
         <div class="exam-header">
-          <i class="fa-solid fa-clock"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
           <h2 id="exam-subject-title">Engineering Mock Examination</h2>
-          <p>Test your speed and accuracy under timed exam conditions.</p>
+          <p>Test your knowledge and accuracy under exam conditions.</p>
         </div>
-        <div class="exam-config-grid">
+        <div class="exam-config-grid" style="grid-template-columns: 1fr;">
           <div class="config-group">
             <label for="exam-q-count"><i class="fa-solid fa-list-ol"></i> Question Pool:</label>
             <select id="exam-q-count">
@@ -220,15 +220,6 @@
               <option value="group_missed">⚠️ Group's Most Missed Questions (Class Weak Points)</option>
             </select>
           </div>
-          <div class="config-group">
-            <label for="exam-timer-select"><i class="fa-solid fa-hourglass-half"></i> Time Limit:</label>
-            <select id="exam-timer-select">
-              <option value="15">15 Minutes</option>
-              <option value="30" selected>30 Minutes</option>
-              <option value="60">60 Minutes</option>
-              <option value="0">Untimed</option>
-            </select>
-          </div>
         </div>
         <button class="start-exam-btn" onclick="startExam()"><i class="fa-solid fa-play"></i> Start Exam Now</button>
       </div>
@@ -237,7 +228,6 @@
       <div id="exam-active-panel" class="quiz-card hidden">
         <div class="exam-top-bar">
           <div class="exam-progress-text">Exam Question <span id="exam-cur-index">1</span> of <span id="exam-total-index">30</span></div>
-          <div class="exam-timer" id="exam-timer-display"><i class="fa-solid fa-stopwatch"></i> 30:00</div>
           <button class="finish-exam-btn" onclick="confirmFinishExam()"><i class="fa-solid fa-flag-checkered"></i> Submit Exam</button>
         </div>
 

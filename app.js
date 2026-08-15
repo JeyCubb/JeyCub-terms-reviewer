@@ -24,10 +24,7 @@ let state = {
     active: false,
     questions: [],
     currentIndex: 0,
-    userAnswers: {},
-    timerInterval: null,
-    secondsRemaining: 0,
-    totalSeconds: 0
+    userAnswers: {}
   }
 };
 
@@ -330,7 +327,6 @@ function selectPracticeAnswer(key, optionIdx) {
   state.userAnswers[key] = optionIdx;
   saveData('jt_user_answers', state.userAnswers);
 
-  // If wrong answer, record for group weak topic compilation!
   if (q && optionIdx !== q.answer) {
     recordGroupMistake(key);
   }
@@ -549,13 +545,12 @@ function deleteNote(noteIndex, firebaseKey) {
 }
 
 /* ==========================================================================
-   Exam Mode Logic (With Class Most Missed Questions Weak Point Compilation)
+   Untimed Exam Mode Logic
    ========================================================================== */
 
 function startExam() {
   const questions = getActiveQuestions();
   const countVal = document.getElementById('exam-q-count').value;
-  const minutes = parseInt(document.getElementById('exam-timer-select').value);
 
   let pool = questions;
 
@@ -580,7 +575,6 @@ function startExam() {
       return;
     }
 
-    // Sort questions by highest group mistake count descending
     pool.sort((a, b) => {
       const keyA = `${state.currentSubject}_q${a.id}`;
       const keyB = `${state.currentSubject}_q${b.id}`;
@@ -596,43 +590,12 @@ function startExam() {
   state.exam.userAnswers = {};
   state.exam.active = true;
 
-  if (state.exam.timerInterval) clearInterval(state.exam.timerInterval);
-  if (minutes > 0) {
-    state.exam.secondsRemaining = minutes * 60;
-    state.exam.totalSeconds = minutes * 60;
-    startExamTimer();
-  } else {
-    document.getElementById('exam-timer-display').textContent = 'Untimed';
-  }
-
   document.getElementById('exam-setup-panel').classList.add('hidden');
   document.getElementById('exam-results-panel').classList.add('hidden');
   document.getElementById('exam-active-panel').classList.remove('hidden');
 
   renderExamQuestion();
   renderExamMatrix();
-}
-
-function startExamTimer() {
-  updateTimerDisplay();
-  state.exam.timerInterval = setInterval(() => {
-    state.exam.secondsRemaining--;
-    updateTimerDisplay();
-    if (state.exam.secondsRemaining <= 0) {
-      clearInterval(state.exam.timerInterval);
-      alert('Time is up! Submitting your exam.');
-      finishExam();
-    }
-  }, 1000);
-}
-
-function updateTimerDisplay() {
-  const display = document.getElementById('exam-timer-display');
-  if (!state.exam.active || state.exam.secondsRemaining <= 0) return;
-
-  const m = Math.floor(state.exam.secondsRemaining / 60);
-  const s = state.exam.secondsRemaining % 60;
-  display.innerHTML = `<i class="fa-solid fa-stopwatch"></i> ${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
 }
 
 function renderExamQuestion() {
@@ -720,7 +683,6 @@ function confirmFinishExam() {
 }
 
 function finishExam() {
-  if (state.exam.timerInterval) clearInterval(state.exam.timerInterval);
   state.exam.active = false;
 
   let correctCount = 0;
@@ -731,7 +693,7 @@ function finishExam() {
       state.userAnswers[key] = state.exam.userAnswers[q.id];
     } else if (state.exam.userAnswers[q.id] !== undefined) {
       state.userAnswers[key] = state.exam.userAnswers[q.id];
-      recordGroupMistake(key); // Record mistake for class weak points analysis!
+      recordGroupMistake(key);
     }
   });
 
