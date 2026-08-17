@@ -1,7 +1,7 @@
 /**
  * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Reliable Ctrl key bookmark toast notification with forced reflow animation.
+ * Supports Backslash (\) key shortcut to toggle bookmarks with toast notification.
  */
 
 // Global State
@@ -201,7 +201,7 @@ function initKeyboardShortcuts() {
       return;
     }
 
-    // Auto-blur select dropdowns if they currently hold focus when pressing arrow keys, Space, or Ctrl
+    // Auto-blur select dropdowns if they currently hold focus when pressing arrow keys, Space, or Backslash
     if (activeEl && activeEl.tagName === 'SELECT') {
       activeEl.blur();
     }
@@ -214,7 +214,7 @@ function initKeyboardShortcuts() {
     if (e.key === ' ' || e.key === 'Spacebar' || key === 'space' || code === 'space') {
       e.preventDefault();
       toggleNotesSection();
-    } else if (e.key === 'Control' || key === 'control' || code === 'controlleft' || code === 'controlright') {
+    } else if (e.key === '\\' || key === '\\' || code === 'backslash') {
       e.preventDefault();
       toggleBookmarkCurrent(true); // Pass true to trigger toast notification!
     } else if (e.key === 'ArrowRight' || code === 'arrowright') {
@@ -390,7 +390,7 @@ function toggleBookmarkCurrent(triggeredViaKeyboard = false) {
     }
   }
 
-  // Show tiny toast notification ONLY when triggered via Ctrl keyboard shortcut!
+  // Show tiny toast notification ONLY when triggered via Backslash (\) keyboard shortcut!
   if (triggeredViaKeyboard) {
     showBookmarkToast(!wasBookmarked);
   }

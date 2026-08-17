@@ -911,7 +911,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   }
 
   .bookmark-btn::after {
-    content: "Key: [Ctrl]";
+    content: "Key: [\\]";
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease, transform 0.2s ease;
