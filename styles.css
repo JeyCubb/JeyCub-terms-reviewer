@@ -1036,6 +1036,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   margin-bottom: 1.25rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border-color);
+  gap: 0.5rem;
 }
 
 .notes-section-header h3 {
@@ -1050,6 +1051,30 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent-primary);
+}
+
+/* Top Right Hide Hints Button Inside Drawer */
+.hide-hints-top-btn {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1.5px solid var(--color-error);
+  color: var(--color-error);
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.hide-hints-top-btn:hover {
+  background: var(--color-error);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+  transform: translateY(-1px);
 }
 
 /* Comments Form & List */

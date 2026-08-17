@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=29.0">
+  <link rel="stylesheet" href="styles.css?v=30.0">
 
   <!-- Firebase Realtime Database SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -66,8 +66,15 @@
         </div>
 
         <div class="notes-section-header">
-          <h3><i class="fa-solid fa-pen-to-square"></i> Notes & Discussion</h3>
-          <span class="notes-sub-info">Problem #<span id="notes-q-num">1</span></span>
+          <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <h3><i class="fa-solid fa-pen-to-square"></i> Notes & Discussion</h3>
+            <span class="notes-sub-info">Problem #<span id="notes-q-num">1</span></span>
+          </div>
+
+          <!-- Top-Right Hide Hints Button -->
+          <button class="hide-hints-top-btn" onclick="hideNotesSection()" title="Hide Hints (Press Space)">
+            <i class="fa-solid fa-xmark"></i> Hide Hints
+          </button>
         </div>
 
         <!-- Posted Notes List First at the Top -->
