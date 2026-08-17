@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=26.0">
+  <link rel="stylesheet" href="styles.css?v=27.0">
 
   <!-- Firebase Realtime Database SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -93,12 +93,11 @@
         </div>
 
         <div class="quiz-header-controls">
-          <!-- Jump to Question Number (Placed to the left of Pool selector) -->
-          <div class="practice-filter-wrapper jump-wrapper">
-            <label for="jump-question-select"><i class="fa-solid fa-hashtag"></i> Jump:</label>
-            <select id="jump-question-select" onchange="jumpToQuestion(this.value)">
-              <!-- Populated dynamically via JS -->
-            </select>
+          <!-- Jump to Question Number Input (To the left of Pool selector) -->
+          <div class="jump-input-wrapper">
+            <label for="jump-number-input"><i class="fa-solid fa-hashtag"></i> Jump:</label>
+            <input type="number" id="jump-number-input" placeholder="No." min="1" max="500" onkeydown="handleJumpInputKey(event)">
+            <button class="jump-go-btn" onclick="executeJumpFromInput()" title="Jump to Problem"><i class="fa-solid fa-arrow-right"></i></button>
           </div>
 
           <!-- Practice Pool Filter Dropdown -->

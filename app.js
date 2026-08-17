@@ -1,7 +1,7 @@
 /**
  * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Supports Enter to post notes & Shift + Enter for new lines in text input.
+ * Supports Jump to Question number input directly to the left of the Pool selector.
  */
 
 // Global State
@@ -131,40 +131,38 @@ function changePracticeFilter(filterVal) {
   renderCurrentPracticeQuestion();
 }
 
-function jumpToQuestion(idxStr) {
-  const targetIdx = parseInt(idxStr, 10);
-  if (isNaN(targetIdx)) return;
+function executeJumpFromInput() {
+  const input = document.getElementById('jump-number-input');
+  if (!input) return;
+  const numVal = parseInt(input.value.trim(), 10);
+  if (isNaN(numVal)) return;
+
   const questions = getFilteredPracticeQuestions();
-  if (targetIdx >= 0 && targetIdx < questions.length) {
-    state.currentIndex = targetIdx;
+  if (!questions || questions.length === 0) return;
+
+  // Find index of question matching problem ID or 1-based index in active pool
+  let foundIndex = questions.findIndex(q => q.id === numVal);
+  if (foundIndex === -1 && numVal >= 1 && numVal <= questions.length) {
+    foundIndex = numVal - 1;
+  }
+
+  if (foundIndex !== -1) {
+    state.currentIndex = foundIndex;
     hideNotesSection();
     renderCurrentPracticeQuestion();
+    input.value = '';
+  } else {
+    alert(`Problem #${numVal} not found in the current pool.`);
   }
-  const select = document.getElementById('jump-question-select');
-  if (select) select.blur();
+
+  input.blur();
 }
 
-function updateJumpDropdown() {
-  const select = document.getElementById('jump-question-select');
-  if (!select) return;
-  const questions = getFilteredPracticeQuestions();
-
-  select.innerHTML = '';
-  if (!questions || questions.length === 0) {
-    const opt = document.createElement('option');
-    opt.value = 0;
-    opt.textContent = "None";
-    select.appendChild(opt);
-    return;
+function handleJumpInputKey(e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    executeJumpFromInput();
   }
-
-  questions.forEach((q, idx) => {
-    const opt = document.createElement('option');
-    opt.value = idx;
-    opt.textContent = `#${q.id}`;
-    if (idx === state.currentIndex) opt.selected = true;
-    select.appendChild(opt);
-  });
 }
 
 function resetAllSubjectAnswers() {
@@ -555,8 +553,6 @@ function renderCurrentPracticeQuestion() {
   const questions = getFilteredPracticeQuestions();
   const qText = document.getElementById('q-text');
   const optionsContainer = document.getElementById('q-options-container');
-
-  updateJumpDropdown();
 
   if (!questions || questions.length === 0) {
     const curNum = document.getElementById('q-current-num');
