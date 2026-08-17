@@ -1,7 +1,7 @@
 /**
  * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Supports Spacebar (Toggle Hints) and Ctrl (Toggle Bookmark) key shortcuts.
+ * Differentiates choices (Correct, Selected Incorrect, Other Options) & provides subtle concept hints.
  */
 
 // Global State
@@ -535,18 +535,34 @@ function renderCurrentPracticeQuestion() {
           btn.classList.add('disabled');
           if (idx === q.answer) {
             btn.classList.add('selected-correct');
+            btn.innerHTML = `
+              <span class="option-letter"><i class="fa-solid fa-check"></i></span>
+              <span class="option-text">${escapeHTML(optText)}</span>
+              <span class="opt-badge-tag correct-tag"><i class="fa-solid fa-circle-check"></i> Correct</span>
+            `;
           } else if (idx === chosenIndex) {
             btn.classList.add('selected-incorrect');
+            btn.innerHTML = `
+              <span class="option-letter"><i class="fa-solid fa-xmark"></i></span>
+              <span class="option-text">${escapeHTML(optText)}</span>
+              <span class="opt-badge-tag incorrect-tag"><i class="fa-solid fa-circle-xmark"></i> Your Choice</span>
+            `;
+          } else {
+            btn.classList.add('other-incorrect');
+            btn.innerHTML = `
+              <span class="option-letter">${letter}</span>
+              <span class="option-text">${escapeHTML(optText)}</span>
+              <span class="opt-badge-tag dimmed-tag">Incorrect</span>
+            `;
           }
+        } else {
+          btn.innerHTML = `
+            <span class="option-letter">${letter}</span>
+            <span class="option-text">${escapeHTML(optText)}</span>
+          `;
         }
 
         btn.onclick = () => selectPracticeAnswer(key, idx);
-
-        btn.innerHTML = `
-          <span class="option-letter">${letter}</span>
-          <span class="option-text">${escapeHTML(optText)}</span>
-        `;
-
         optionsContainer.appendChild(btn);
       });
     }
@@ -889,7 +905,7 @@ function filterAllQuestions() {
       <div class="item-q-text">${escapeHTML(q.question || '')}</div>
       <div class="item-options">${optionsHtml}</div>
       <div class="explanation-box" style="margin: 0; padding: 0.85rem;">
-        <div class="explanation-header"><i class="fa-solid fa-lightbulb"></i> Key Concept:</div>
+        <div class="explanation-header"><i class="fa-solid fa-lightbulb"></i> Concept Hint & Guidance:</div>
         <div class="explanation-text">${escapeHTML(q.explanation || 'Standard engineering principle.')}</div>
       </div>
     `;
