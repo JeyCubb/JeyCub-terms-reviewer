@@ -1,7 +1,7 @@
 /**
  * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Differentiates choices (Correct, Selected Incorrect, Other Options) & provides subtle concept hints.
+ * Jump to question number dropdown placed directly to the left of the Pool selector.
  */
 
 // Global State
@@ -102,6 +102,42 @@ function changePracticeFilter(filterVal) {
   }
 
   renderCurrentPracticeQuestion();
+}
+
+function jumpToQuestion(idxStr) {
+  const targetIdx = parseInt(idxStr, 10);
+  if (isNaN(targetIdx)) return;
+  const questions = getFilteredPracticeQuestions();
+  if (targetIdx >= 0 && targetIdx < questions.length) {
+    state.currentIndex = targetIdx;
+    hideNotesSection();
+    renderCurrentPracticeQuestion();
+  }
+  const select = document.getElementById('jump-question-select');
+  if (select) select.blur();
+}
+
+function updateJumpDropdown() {
+  const select = document.getElementById('jump-question-select');
+  if (!select) return;
+  const questions = getFilteredPracticeQuestions();
+
+  select.innerHTML = '';
+  if (!questions || questions.length === 0) {
+    const opt = document.createElement('option');
+    opt.value = 0;
+    opt.textContent = "None";
+    select.appendChild(opt);
+    return;
+  }
+
+  questions.forEach((q, idx) => {
+    const opt = document.createElement('option');
+    opt.value = idx;
+    opt.textContent = `#${q.id}`;
+    if (idx === state.currentIndex) opt.selected = true;
+    select.appendChild(opt);
+  });
 }
 
 function resetAllSubjectAnswers() {
@@ -463,6 +499,8 @@ function renderCurrentPracticeQuestion() {
   const questions = getFilteredPracticeQuestions();
   const qText = document.getElementById('q-text');
   const optionsContainer = document.getElementById('q-options-container');
+
+  updateJumpDropdown();
 
   if (!questions || questions.length === 0) {
     const curNum = document.getElementById('q-current-num');
