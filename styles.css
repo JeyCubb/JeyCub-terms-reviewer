@@ -90,12 +90,12 @@ body {
   padding-bottom: 2rem;
 }
 
-/* Tiny Floating Toast Notification (Triggered ONLY via Ctrl Keyboard Shortcut) */
+/* Tiny Floating Toast Notification Positioned at Bottom Center */
 .bookmark-toast {
   position: fixed;
-  top: 2rem;
+  bottom: 2.25rem;
   left: 50%;
-  transform: translateX(-50%) translateY(-15px);
+  transform: translateX(-50%) translateY(18px);
   background: #1c1511;
   border: 1.5px solid var(--color-warning);
   color: #fcf6f2;
