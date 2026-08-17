@@ -999,7 +999,7 @@ function filterAllQuestions() {
       <div class="item-q-text">${escapeHTML(q.question || '')}</div>
       <div class="item-options">${optionsHtml}</div>
       <div class="explanation-box" style="margin: 0; padding: 0.85rem;">
-        <div class="explanation-header"><i class="fa-solid fa-lightbulb"></i> Concept Hint & Guidance:</div>
+        <div class="explanation-header"><i class="fa-solid fa-lightbulb"></i> Hint & Concept:</div>
         <div class="explanation-text">${escapeHTML(q.explanation || 'Standard engineering principle.')}</div>
       </div>
     `;
