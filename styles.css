@@ -751,7 +751,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   }
 
   .notes-toggle-btn::after {
-    content: "Key: [Enter]";
+    content: "Key: [Space]";
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease, transform 0.2s ease;

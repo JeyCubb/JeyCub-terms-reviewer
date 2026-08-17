@@ -1,7 +1,7 @@
 /**
  * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Supports Enter (Toggle Hints) and Ctrl (Toggle Bookmark) key shortcuts.
+ * Supports Spacebar (Toggle Hints) and Ctrl (Toggle Bookmark) key shortcuts.
  */
 
 // Global State
@@ -140,7 +140,7 @@ function initKeyboardShortcuts() {
       return;
     }
 
-    // Auto-blur select dropdowns if they currently hold focus when pressing arrow keys, Enter, or Ctrl
+    // Auto-blur select dropdowns if they currently hold focus when pressing arrow keys, Space, or Ctrl
     if (activeEl && activeEl.tagName === 'SELECT') {
       activeEl.blur();
     }
@@ -149,7 +149,7 @@ function initKeyboardShortcuts() {
 
     const key = e.key.toLowerCase();
 
-    if (e.key === 'Enter') {
+    if (e.key === ' ' || e.key === 'Spacebar' || key === 'space') {
       e.preventDefault();
       toggleNotesSection();
     } else if (e.key === 'Control' || key === 'control') {
