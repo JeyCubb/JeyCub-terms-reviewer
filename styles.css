@@ -90,6 +90,36 @@ body {
   padding-bottom: 2rem;
 }
 
+/* Tiny Floating Toast Notification (Triggered ONLY via Ctrl Keyboard Shortcut) */
+.bookmark-toast {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: var(--bg-card);
+  border: 1px solid var(--color-warning);
+  color: var(--text-primary);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bookmark-toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
 /* Main Container - Flex Column for Mode-Dependent Reordering */
 .main-container {
   max-width: 1280px;
@@ -1374,9 +1404,12 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   }
 
   .practice-filter-wrapper {
-    grid-column: span 2;
     justify-content: center;
     padding: 0.3rem 0.5rem;
+  }
+
+  .practice-filter-wrapper.jump-wrapper {
+    grid-column: span 1;
   }
 
   .control-toggle-btn {

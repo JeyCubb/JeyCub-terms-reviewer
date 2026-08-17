@@ -1,7 +1,7 @@
 /**
  * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Jump to question number dropdown placed directly to the left of the Pool selector.
+ * Displays tiny floating notification ONLY when bookmarking via Ctrl keyboard shortcut.
  */
 
 // Global State
@@ -22,6 +22,8 @@ let state = {
   firebaseDb: null,
   activeLiveListenerRef: null
 };
+
+let toastTimeoutId = null;
 
 // Free Public Firebase Config for shared notes, shared bookmarks & group mistakes compilation
 const DEFAULT_FIREBASE_CONFIG = {
@@ -190,7 +192,7 @@ function initKeyboardShortcuts() {
       toggleNotesSection();
     } else if (e.key === 'Control' || key === 'control') {
       e.preventDefault();
-      toggleBookmarkCurrent();
+      toggleBookmarkCurrent(true); // Pass true to trigger tiny toast notification!
     } else if (e.key === 'ArrowRight') {
       e.preventDefault();
       nextQuestion();
@@ -340,14 +342,14 @@ function recordGroupMistake(key) {
 }
 
 /* Toggle shared class bookmark globally in Realtime */
-function toggleBookmarkCurrent() {
+function toggleBookmarkCurrent(triggeredViaKeyboard = false) {
   const questions = getFilteredPracticeQuestions();
   if (!questions[state.currentIndex]) return;
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
 
-  const isBookmarked = state.bookmarks.has(key);
-  if (isBookmarked) {
+  const wasBookmarked = state.bookmarks.has(key);
+  if (wasBookmarked) {
     state.bookmarks.delete(key);
   } else {
     state.bookmarks.add(key);
@@ -358,10 +360,15 @@ function toggleBookmarkCurrent() {
   // Realtime Firebase sync across all users for shared class bookmarks
   if (state.firebaseDb) {
     try {
-      state.firebaseDb.ref(`shared_bookmarks/${key}`).set(isBookmarked ? null : true);
+      state.firebaseDb.ref(`shared_bookmarks/${key}`).set(wasBookmarked ? null : true);
     } catch (e) {
       console.warn("Error setting shared bookmark in Firebase:", e);
     }
+  }
+
+  // Show tiny toast notification ONLY when triggered via Ctrl keyboard shortcut!
+  if (triggeredViaKeyboard) {
+    showBookmarkToast(!wasBookmarked);
   }
 
   renderCurrentPracticeQuestion();
@@ -369,6 +376,30 @@ function toggleBookmarkCurrent() {
   if (state.currentMode === 'all') {
     filterAllQuestions();
   }
+}
+
+function showBookmarkToast(isBookmarked) {
+  let toast = document.getElementById('bookmark-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'bookmark-toast';
+    toast.className = 'bookmark-toast';
+    document.body.appendChild(toast);
+  }
+
+  if (toastTimeoutId) clearTimeout(toastTimeoutId);
+
+  if (isBookmarked) {
+    toast.innerHTML = `<i class="fa-solid fa-star gold-text"></i> Added to Class Bookmarks!`;
+  } else {
+    toast.innerHTML = `<i class="fa-regular fa-star"></i> Removed from Bookmarks`;
+  }
+
+  toast.classList.add('show');
+
+  toastTimeoutId = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 1800);
 }
 
 /* ==========================================================================
