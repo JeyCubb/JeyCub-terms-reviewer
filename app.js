@@ -664,7 +664,11 @@ function renderCurrentPracticeQuestion() {
     // Solution & Explanation text inside Notes drawer
     const expText = document.getElementById('q-explanation-text');
     if (expText) {
-      expText.textContent = q.explanation || "Standard engineering principle.";
+      const raw = q.explanation || "Standard engineering principle.";
+      const formatted = escapeHTML(raw)
+        .replace(/\n/g, '<br>')
+        .replace(/•/g, '<span style="color: var(--accent-primary); font-weight: 700;">•</span>');
+      expText.innerHTML = formatted;
     }
   }
 
@@ -998,7 +1002,7 @@ function filterAllQuestions() {
       <div class="item-options">${optionsHtml}</div>
       <div class="explanation-box" style="margin: 0; padding: 0.85rem;">
         <div class="explanation-header"><i class="fa-solid fa-lightbulb"></i> Hint & Concept:</div>
-        <div class="explanation-text">${escapeHTML(q.explanation || 'Standard engineering principle.')}</div>
+        <div class="explanation-text">${escapeHTML(q.explanation || 'Standard engineering principle.').replace(/\n/g, '<br>')}</div>
       </div>
     `;
 
