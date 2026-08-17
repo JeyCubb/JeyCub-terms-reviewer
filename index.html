@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=32.0">
+  <link rel="stylesheet" href="styles.css?v=33.0">
 
   <!-- Firebase Realtime Database SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -56,10 +56,16 @@
       </div>
 
       <!-- Collapsible Per-Question Notes & Solution Section -->
-      <div class="interactive-drawer hidden" id="notes-section-container">
+      <!-- Interactive Notes & Hints Drawer -->
+      <div id="notes-section-container" class="interactive-drawer hidden">
         <!-- Concept Hint Box -->
         <div class="explanation-box" id="q-explanation-box">
-          <div class="explanation-header"><i class="fa-solid fa-lightbulb"></i> Hint & Concept:</div>
+          <div class="explanation-box-top-row">
+            <div class="explanation-header"><i class="fa-solid fa-lightbulb"></i> Hint & Concept:</div>
+            <button class="hide-hints-top-btn" onclick="hideNotesSection()" title="Hide Hints (Press Space)">
+              <i class="fa-solid fa-xmark"></i> Hide Hints
+            </button>
+          </div>
           <div class="explanation-text" id="q-explanation-text"></div>
         </div>
 
@@ -68,11 +74,6 @@
             <h3><i class="fa-solid fa-pen-to-square"></i> Notes & Discussion</h3>
             <span class="notes-sub-info">Problem #<span id="notes-q-num">1</span></span>
           </div>
-
-          <!-- Top-Right Hide Hints Button -->
-          <button class="hide-hints-top-btn" onclick="hideNotesSection()" title="Hide Hints (Press Space)">
-            <i class="fa-solid fa-xmark"></i> Hide Hints
-          </button>
         </div>
 
         <!-- Posted Notes List First at the Top -->

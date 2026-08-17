@@ -949,15 +949,48 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   animation: fadeIn 0.3s ease;
 }
 
+/* Top Row Inside Hint & Concept Box */
+.explanation-box-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .explanation-header {
   font-weight: 700;
   color: var(--accent-primary);
-  margin-bottom: 0.4rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.92rem;
   letter-spacing: 0.02em;
+}
+
+/* Hide Hints Button Inside Top-Right of Hint Container */
+.hide-hints-top-btn {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1.5px solid var(--color-error);
+  color: var(--color-error);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.hide-hints-top-btn:hover {
+  background: var(--color-error);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+  transform: translateY(-1px);
 }
 
 .explanation-text {
@@ -1051,30 +1084,6 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent-primary);
-}
-
-/* Top Right Hide Hints Button Inside Drawer */
-.hide-hints-top-btn {
-  background: rgba(239, 68, 68, 0.12);
-  border: 1.5px solid var(--color-error);
-  color: var(--color-error);
-  padding: 0.4rem 0.95rem;
-  border-radius: var(--radius-full);
-  font-size: 0.82rem;
-  font-weight: 700;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: var(--transition);
-  white-space: nowrap;
-}
-
-.hide-hints-top-btn:hover {
-  background: var(--color-error);
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
-  transform: translateY(-1px);
 }
 
 /* Comments Form & List */
