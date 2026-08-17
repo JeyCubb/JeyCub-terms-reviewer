@@ -832,7 +832,7 @@ function renderLiveNotesUI(notesList) {
   const qId = questions[state.currentIndex].id;
 
   if (!notesList || notesList.length === 0) {
-    container.innerHTML = `<p style="font-size: 0.85rem; color: var(--text-muted);">No notes posted yet for Problem #${qId}. Be the first to share a note or formula!</p>`;
+    container.innerHTML = '';
     return;
   }
 
