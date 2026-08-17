@@ -1009,6 +1009,10 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   transition: margin-bottom 0.2s ease;
 }
 
+.notes-toggle-wrapper.hidden-toggle {
+  display: none !important;
+}
+
 .notes-toggle-wrapper.active-wrapper {
   margin-bottom: 1rem;
 }

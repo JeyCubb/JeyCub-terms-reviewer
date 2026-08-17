@@ -1,7 +1,7 @@
 /**
  * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Supports Backslash (\) key shortcut to toggle bookmarks with toast notification.
+ * Hides the bottom toggle button completely when the hints drawer is shown.
  */
 
 // Global State
@@ -745,11 +745,11 @@ function hideNotesSection() {
   const wrapper = btn ? btn.closest('.notes-toggle-wrapper') : null;
 
   if (container) container.classList.add('hidden');
+  if (wrapper) wrapper.classList.remove('hidden-toggle');
   if (btn) {
     btn.classList.remove('active');
     btn.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Show Hints (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
   }
-  if (wrapper) wrapper.classList.remove('active-wrapper');
 }
 
 function toggleNotesSection() {
@@ -762,10 +762,8 @@ function toggleNotesSection() {
 
   if (state.notesOpen) {
     container.classList.remove('hidden');
-    btn.classList.add('active');
-    if (wrapper) wrapper.classList.add('active-wrapper');
+    if (wrapper) wrapper.classList.add('hidden-toggle');
     subscribeLiveNotesCurrent();
-    btn.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Hide Hints (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
   } else {
     hideNotesSection();
   }
