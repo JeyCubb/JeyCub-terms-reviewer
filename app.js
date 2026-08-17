@@ -1,7 +1,7 @@
 /**
  * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Displays tiny floating notification ONLY when bookmarking via Ctrl keyboard shortcut.
+ * Supports Enter to post notes & Shift + Enter for new lines in text input.
  */
 
 // Global State
@@ -40,7 +40,32 @@ document.addEventListener('DOMContentLoaded', () => {
   filterAllQuestions();
   initFirebase();
   initKeyboardShortcuts();
+  initNotesInputSubmit();
 });
+
+/* Initialize Enter key submission for notes */
+function initNotesInputSubmit() {
+  const textInput = document.getElementById('live-text-input');
+  const nameInput = document.getElementById('live-name-input');
+
+  if (nameInput) {
+    nameInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        if (textInput) textInput.focus();
+      }
+    });
+  }
+
+  if (textInput) {
+    textInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        postLiveSharedNote();
+      }
+    });
+  }
+}
 
 /* Helper to get global subject dataset safely */
 function getSubjectData() {

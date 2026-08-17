@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=25.0">
+  <link rel="stylesheet" href="styles.css?v=26.0">
 
   <!-- Firebase Realtime Database SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -75,11 +75,14 @@
           <!-- Rendered dynamically per question -->
         </div>
 
-        <!-- Add Note Input Form Below Posted Notes -->
+        <!-- Post Shared Note Form -->
         <div class="add-comment-form">
-          <input type="text" id="live-name-input" placeholder="Enter your name here (optional)">
-          <textarea id="live-text-input" placeholder="Write a note, key formula, or study tip for this question..."></textarea>
-          <button class="comment-submit-btn" onclick="postLiveSharedNote()"><i class="fa-solid fa-paper-plane"></i> Post Note</button>
+          <input type="text" id="live-name-input" placeholder="Your Name (Optional)" maxlength="40">
+          <textarea id="live-text-input" placeholder="Add a study tip, formula, or layman explanation for this question..." maxlength="500"></textarea>
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa-solid fa-keyboard"></i> Press <b>[Enter]</b> to post • <b>[Shift + Enter]</b> for new line</span>
+            <button class="comment-submit-btn" onclick="postLiveSharedNote()"><i class="fa-solid fa-paper-plane"></i> Post Note</button>
+          </div>
         </div>
       </div>
 
