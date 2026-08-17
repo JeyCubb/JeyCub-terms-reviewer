@@ -201,6 +201,11 @@ function initKeyboardShortcuts() {
       return;
     }
 
+    // Ignore single-key shortcuts if ANY modifier key (Ctrl, Alt, Meta/Cmd) is pressed!
+    if (e.ctrlKey || e.altKey || e.metaKey) {
+      return;
+    }
+
     // Auto-blur select dropdowns if they currently hold focus when pressing arrow keys, Space, or Backslash
     if (activeEl && activeEl.tagName === 'SELECT') {
       activeEl.blur();
