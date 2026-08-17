@@ -744,6 +744,39 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
     visibility: visible;
     transform: translateY(-50%) translateX(0);
   }
+
+  /* Show Hints Tooltip on Desktop */
+  .notes-toggle-btn {
+    position: relative;
+  }
+
+  .notes-toggle-btn::after {
+    content: "Key: [Enter]";
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: #120e0b;
+    border: 1px solid var(--accent-primary);
+    color: var(--accent-primary);
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    pointer-events: none;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+  }
+
+  .notes-toggle-btn:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 /* Solution Explanation Box inside Notes Drawer */

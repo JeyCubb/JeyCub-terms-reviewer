@@ -1,7 +1,7 @@
 /**
  * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Shared Class Bookmarks & Class Weak Questions are compiled globally in Firebase for all users.
+ * Supports Enter key shortcut to toggle Show/Hide Hints section.
  */
 
 // Global State
@@ -140,7 +140,7 @@ function initKeyboardShortcuts() {
       return;
     }
 
-    // Auto-blur select dropdowns if they currently hold focus when pressing arrow keys
+    // Auto-blur select dropdowns if they currently hold focus when pressing arrow keys or Enter
     if (activeEl && activeEl.tagName === 'SELECT') {
       activeEl.blur();
     }
@@ -149,7 +149,10 @@ function initKeyboardShortcuts() {
 
     const key = e.key.toLowerCase();
 
-    if (e.key === 'ArrowRight') {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      toggleNotesSection();
+    } else if (e.key === 'ArrowRight') {
       e.preventDefault();
       nextQuestion();
     } else if (e.key === 'ArrowLeft') {
@@ -619,7 +622,7 @@ function prevQuestion() {
 }
 
 /* ==========================================================================
-   Togglable Per-Question Notes & Solution Section (Manual Scroll)
+   Togglable Per-Question Hints & Solution Section (Manual Scroll)
    ========================================================================== */
 
 function hideNotesSection() {
@@ -631,7 +634,7 @@ function hideNotesSection() {
   if (container) container.classList.add('hidden');
   if (btn) {
     btn.classList.remove('active');
-    btn.innerHTML = `<i class="fa-solid fa-comments"></i> Show Notes & Solution (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
+    btn.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Show Hints (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
   }
   if (wrapper) wrapper.classList.remove('active-wrapper');
 }
@@ -649,7 +652,7 @@ function toggleNotesSection() {
     btn.classList.add('active');
     if (wrapper) wrapper.classList.add('active-wrapper');
     subscribeLiveNotesCurrent();
-    btn.innerHTML = `<i class="fa-solid fa-comments"></i> Hide Notes & Solution (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
+    btn.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Hide Hints (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
   } else {
     hideNotesSection();
   }
