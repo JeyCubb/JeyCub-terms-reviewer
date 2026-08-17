@@ -1,7 +1,7 @@
 /**
  * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Supports Enter key shortcut to toggle Show/Hide Hints section.
+ * Supports Enter (Toggle Hints) and Ctrl (Toggle Bookmark) key shortcuts.
  */
 
 // Global State
@@ -128,7 +128,7 @@ function resetAllSubjectAnswers() {
 }
 
 /* ==========================================================================
-   Keyboard Shortcuts for PC Navigation & Answers
+   Keyboard Shortcuts for PC Navigation, Answers, Hints & Bookmarks
    ========================================================================== */
 
 function initKeyboardShortcuts() {
@@ -140,7 +140,7 @@ function initKeyboardShortcuts() {
       return;
     }
 
-    // Auto-blur select dropdowns if they currently hold focus when pressing arrow keys or Enter
+    // Auto-blur select dropdowns if they currently hold focus when pressing arrow keys, Enter, or Ctrl
     if (activeEl && activeEl.tagName === 'SELECT') {
       activeEl.blur();
     }
@@ -152,6 +152,9 @@ function initKeyboardShortcuts() {
     if (e.key === 'Enter') {
       e.preventDefault();
       toggleNotesSection();
+    } else if (e.key === 'Control' || key === 'control') {
+      e.preventDefault();
+      toggleBookmarkCurrent();
     } else if (e.key === 'ArrowRight') {
       e.preventDefault();
       nextQuestion();
