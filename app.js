@@ -1,7 +1,7 @@
 /**
  * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
- * Supports Jump to Question number input directly to the left of the Pool selector.
+ * Reliable Ctrl key bookmark toast notification with forced reflow animation.
  */
 
 // Global State
@@ -208,30 +208,31 @@ function initKeyboardShortcuts() {
 
     if (state.currentMode !== 'practice') return;
 
-    const key = e.key.toLowerCase();
+    const key = e.key ? e.key.toLowerCase() : '';
+    const code = e.code ? e.code.toLowerCase() : '';
 
-    if (e.key === ' ' || e.key === 'Spacebar' || key === 'space') {
+    if (e.key === ' ' || e.key === 'Spacebar' || key === 'space' || code === 'space') {
       e.preventDefault();
       toggleNotesSection();
-    } else if (e.key === 'Control' || key === 'control') {
+    } else if (e.key === 'Control' || key === 'control' || code === 'controlleft' || code === 'controlright') {
       e.preventDefault();
-      toggleBookmarkCurrent(true); // Pass true to trigger tiny toast notification!
-    } else if (e.key === 'ArrowRight') {
+      toggleBookmarkCurrent(true); // Pass true to trigger toast notification!
+    } else if (e.key === 'ArrowRight' || code === 'arrowright') {
       e.preventDefault();
       nextQuestion();
-    } else if (e.key === 'ArrowLeft') {
+    } else if (e.key === 'ArrowLeft' || code === 'arrowleft') {
       e.preventDefault();
       prevQuestion();
-    } else if (key === 'a' || e.key === '1') {
+    } else if (key === 'a' || e.key === '1' || code === 'keya' || code === 'digit1') {
       e.preventDefault();
       triggerOptionSelection(0);
-    } else if (key === 'b' || e.key === '2') {
+    } else if (key === 'b' || e.key === '2' || code === 'keyb' || code === 'digit2') {
       e.preventDefault();
       triggerOptionSelection(1);
-    } else if (key === 'c' || e.key === '3') {
+    } else if (key === 'c' || e.key === '3' || code === 'keyc' || code === 'digit3') {
       e.preventDefault();
       triggerOptionSelection(2);
-    } else if (key === 'd' || e.key === '4') {
+    } else if (key === 'd' || e.key === '4' || code === 'keyd' || code === 'digit4') {
       e.preventDefault();
       triggerOptionSelection(3);
     }
@@ -418,11 +419,14 @@ function showBookmarkToast(isBookmarked) {
     toast.innerHTML = `<i class="fa-regular fa-star"></i> Removed from Bookmarks`;
   }
 
+  // Force browser animation reflow
+  toast.classList.remove('show');
+  void toast.offsetWidth;
   toast.classList.add('show');
 
   toastTimeoutId = setTimeout(() => {
     toast.classList.remove('show');
-  }, 1800);
+  }, 2000);
 }
 
 /* ==========================================================================

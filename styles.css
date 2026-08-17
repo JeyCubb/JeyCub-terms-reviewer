@@ -93,31 +93,31 @@ body {
 /* Tiny Floating Toast Notification (Triggered ONLY via Ctrl Keyboard Shortcut) */
 .bookmark-toast {
   position: fixed;
-  top: 1.5rem;
+  top: 2rem;
   left: 50%;
-  transform: translateX(-50%) translateY(-20px);
-  background: var(--bg-card);
-  border: 1px solid var(--color-warning);
-  color: var(--text-primary);
-  padding: 0.5rem 1.25rem;
+  transform: translateX(-50%) translateY(-15px);
+  background: #1c1511;
+  border: 1.5px solid var(--color-warning);
+  color: #fcf6f2;
+  padding: 0.65rem 1.35rem;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-  z-index: 9999;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(245, 158, 11, 0.3);
+  z-index: 999999;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .bookmark-toast.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) translateY(0) !important;
 }
 
 /* Main Container - Flex Column for Mode-Dependent Reordering */
