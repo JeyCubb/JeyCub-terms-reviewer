@@ -446,10 +446,8 @@ function showBookmarkToast(isBookmarked) {
 function loadStoredData() {
   try {
     const data = getSubjectData();
-    const savedSubject = localStorage.getItem('jt_subject');
-    if (savedSubject && data[savedSubject]) {
-      state.currentSubject = savedSubject;
-    }
+    // Always default to Basic Electronics (ECE 005) when the website is first loaded
+    state.currentSubject = 'basic_electronics';
 
     const savedAnswers = localStorage.getItem('jt_user_answers');
     if (savedAnswers) {
