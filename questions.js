@@ -1013,7 +1013,131 @@ var SUBJECT_DATA = {
             ],
             "answer": 2,
             "explanation": "\u2022 Why 'Schottky diode' is Correct: A Schottky metal-semiconductor diode exhibits extremely fast switching speed (nanosecond reverse recovery time) and low forward voltage drop (0.15 V to 0.45 V).\n\u2022 Why Other Choices are Incorrect: Zener diodes are for voltage regulation, LEDs emit light, and Tunnel diodes exhibit negative resistance."
+      },
+
+      {
+            "id": 84,
+            "question": "In what type of electronic circuit would you commonly find a Schottky diode?",
+            "options": [
+                  "Audio amplifiers",
+                  "Power supplies",
+                  "High-frequency rectifiers",
+                  "Voltage regulators"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'High-frequency rectifiers' is Correct: Because Schottky diodes feature metal-semiconductor junctions with virtually zero reverse recovery time, they excel at rectifying high-frequency Alternating Current (AC) signals without switching losses.\n\u2022 Why Other Choices are Incorrect: Audio amplifiers use transistors, low-frequency power supplies use Silicon PN rectifiers, and Zener diodes handle voltage regulation."
+      },
+      {
+            "id": 85,
+            "question": "What is the primary application of a Schottky diode?",
+            "options": [
+                  "Voltage regulation",
+                  "Rectification of AC signals",
+                  "High-frequency applications",
+                  "Light detection"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'High-frequency applications' is Correct: Due to majority-carrier conduction, Schottky diodes switch in nanoseconds, making high-frequency Radio Frequency (RF) and switched-mode power supplies their primary application.\n\u2022 Why Other Choices are Incorrect: Zener diodes perform voltage regulation, standard diodes perform 60Hz AC rectification, and photodiodes perform light detection."
+      },
+      {
+            "id": 86,
+            "question": "Which type of diode is designed to emit light when forward-biased?",
+            "options": [
+                  "Zener diode",
+                  "Photodiode",
+                  "Light-emitting diode (LED)",
+                  "Schottky diode"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Light-emitting diode (LED)' is Correct: When forward-biased, a Light-Emitting Diode (LED) recombines electrons and holes in its active junction layer, directly releasing excess energy as visible or infrared photons.\n\u2022 Why Other Choices are Incorrect: Zener diodes regulate voltage, photodiodes absorb light to create current, and Schottky diodes are fast rectifiers."
+      },
+      {
+            "id": 87,
+            "question": "Which special-purpose diode is used for frequency multiplication and frequency synthesis in communication systems?",
+            "options": [
+                  "Gunn diode",
+                  "Zener diode",
+                  "Varactor diode",
+                  "Tunnel diode"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Varactor diode' is Correct: Varying reverse voltage on a Varactor diode alters its junction capacitance, making it the primary tuning element in Voltage-Controlled Oscillators (VCOs) for frequency synthesis and multiplication.\n\u2022 Why Other Choices are Incorrect: Gunn diodes generate microwave signals, Zener diodes regulate DC voltage, and Tunnel diodes act as high-speed switches."
+      },
+      {
+            "id": 88,
+            "question": "Which special-purpose diode is commonly used for voltage regulation in electronic circuits?",
+            "options": [
+                  "Varactor diode",
+                  "Schottky diode",
+                  "Zener diode",
+                  "Tunnel diode"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Zener diode' is Correct: Zener diodes maintain a constant reverse breakdown voltage (V_Z) across their terminals over a wide current range, making them ideal for DC voltage regulation.\n\u2022 Why Other Choices are Incorrect: Varactor diodes are variable capacitors, Schottky diodes are fast rectifiers, and Tunnel diodes are high-speed switches."
+      },
+
+      {
+            "id": 89,
+            "question": "What is the primary function of a Photodiode?",
+            "options": [
+                  "Emit light",
+                  "Rectify signals",
+                  "Detect light and convert it into a current",
+                  "Provide variable capacitance"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Detect light and convert it into a current' is Correct: A photodiode operates under reverse bias where incoming optical photons generate electron-hole pairs, producing a photocurrent proportional to light intensity.\n\u2022 Why Other Choices are Incorrect: LEDs emit light, standard PN diodes rectify AC signals, and Varactor diodes provide variable capacitance."
+      },
+      {
+            "id": 90,
+            "question": "In which application would a Tunnel diode be most suitable?",
+            "options": [
+                  "High-frequency oscillators",
+                  "Voltage regulation",
+                  "Light detection",
+                  "Rectification of low-frequency signals"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'High-frequency oscillators' is Correct: Tunnel diodes possess a negative dynamic resistance region and ultra-fast quantum tunneling speed, making them ideal for high-frequency microwave oscillators.\n\u2022 Why Other Choices are Incorrect: Zener diodes perform voltage regulation, photodiodes perform light detection, and standard diodes rectify low-frequency signals."
+      },
+      {
+            "id": 91,
+            "question": "Which special-purpose diode is designed to exhibit a varying capacitance with reverse bias voltage and is often used in tuning circuits?",
+            "options": [
+                  "Varactor diode",
+                  "Tunnel diode",
+                  "Photodiode",
+                  "Schottky diode"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Varactor diode' is Correct: A Varactor diode (varicap) operates in reverse bias, using its variable depletion layer width to act as a voltage-controlled capacitor in electronic tuning circuits.\n\u2022 Why Other Choices are Incorrect: Tunnel diodes exhibit negative resistance, photodiodes sense light, and Schottky diodes are fast rectifiers."
+      },
+      {
+            "id": 92,
+            "question": "What is the unique characteristic of a Varactor diode?",
+            "options": [
+                  "Emission of light",
+                  "Variable capacitance with voltage",
+                  "High-speed switching",
+                  "Rectification of signals"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Variable capacitance with voltage' is Correct: The fundamental feature of a Varactor diode is that its junction capacitance varies inversely with applied reverse bias voltage.\n\u2022 Why Other Choices are Incorrect: LEDs emit light, Schottky diodes perform high-speed switching, and standard diodes rectify signals."
+      },
+      {
+            "id": 93,
+            "question": "What is the primary application of a Gunn diode?",
+            "options": [
+                  "Voltage regulation",
+                  "Microwave oscillators",
+                  "Light detection",
+                  "Rectification of AC signals"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Microwave oscillators' is Correct: Gunn diodes utilize the Gunn effect (transferred electron effect in bulk N-type Gallium Arsenide) to generate high-frequency microwave oscillations in RF transmitters and radar systems.\n\u2022 Why Other Choices are Incorrect: Zener diodes perform voltage regulation, photodiodes perform light detection, and PN junction diodes rectify AC signals."
       }
+
+
 
 
 
