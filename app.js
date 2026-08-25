@@ -560,6 +560,40 @@ function getShuffledOptionsForQuestion(key, q) {
   return state.shuffledOptionsMap[key];
 }
 
+/* Helper to reset pool answers & reshuffle option positions */
+function resetPoolAnswersAndReshuffle(questions) {
+  if (!questions) return;
+  questions.forEach(q => {
+    const key = `${state.currentSubject}_q${q.id}`;
+    delete state.userAnswers[key];
+    delete state.sessionPoolAnswers[key];
+    delete state.shuffledOptionsMap[key];
+  });
+  saveData('jt_user_answers', state.userAnswers);
+}
+
+function showPoolResetToast() {
+  let toast = document.getElementById('bookmark-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'bookmark-toast';
+    toast.className = 'bookmark-toast';
+    document.body.appendChild(toast);
+  }
+
+  if (toastTimeoutId) clearTimeout(toastTimeoutId);
+
+  toast.innerHTML = `<i class="fa-solid fa-rotate-right" style="color: var(--accent-primary);"></i> All questions completed! Resetting pool for fresh random cycle.`;
+
+  toast.classList.remove('show');
+  void toast.offsetWidth;
+  toast.classList.add('show');
+
+  toastTimeoutId = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2500);
+}
+
 /* Helper to pick random index exclusively among UNANSWERED questions */
 function getNextRandomIndex(questions) {
   if (!questions || questions.length === 0) return 0;
@@ -583,7 +617,10 @@ function getNextRandomIndex(questions) {
     const randomPos = Math.floor(Math.random() * unansweredIndices.length);
     return unansweredIndices[randomPos];
   } else {
-    // If all questions in the pool are answered, pick randomly from all questions
+    // If ALL questions in the pool are answered:
+    // Reset pool answers and option placements A-D for a fresh randomized cycle!
+    resetPoolAnswersAndReshuffle(questions);
+    showPoolResetToast();
     return Math.floor(Math.random() * questions.length);
   }
 }
