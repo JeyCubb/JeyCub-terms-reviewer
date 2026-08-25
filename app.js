@@ -11,6 +11,7 @@ let state = {
   practiceFilter: 'all', // 'all', 'weak', 'bookmarked'
   currentIndex: 0,
   randomMode: false,
+  shuffledOptionsMap: {}, // Cache jumbled options per question key
   userAnswers: {}, // Master answers for All Questions mode
   sessionPoolAnswers: {}, // Transient answers for Weak / Bookmarked practice sessions
   bookmarks: new Set(), // Shared class bookmarks (synced globally in Firebase for all users)
@@ -244,12 +245,16 @@ function initKeyboardShortcuts() {
   });
 }
 
-function triggerOptionSelection(idx) {
+function triggerOptionSelection(displayedIdx) {
   const questions = getFilteredPracticeQuestions();
   const q = questions[state.currentIndex];
-  if (!q || !q.options || !q.options[idx]) return;
+  if (!q || !q.options) return;
   const key = `${state.currentSubject}_q${q.id}`;
-  selectPracticeAnswer(key, idx);
+  const shuffled = getShuffledOptionsForQuestion(key, q);
+  if (!shuffled || !shuffled[displayedIdx]) return;
+
+  const originalIdx = shuffled[displayedIdx].originalIndex;
+  selectPracticeAnswer(key, originalIdx);
 }
 
 /* ==========================================================================
@@ -536,13 +541,69 @@ function updateThemeIcon(theme) {
 }
 
 /* ==========================================================================
-   Practice Mode Logic
+   Practice Mode Logic & Option Jumbling
    ========================================================================== */
+
+/* Helper to get cached jumbled options for a question */
+function getShuffledOptionsForQuestion(key, q) {
+  if (!state.shuffledOptionsMap[key]) {
+    if (!q || !q.options || !Array.isArray(q.options)) return [];
+    const opts = q.options.map((optText, origIdx) => ({
+      text: optText,
+      originalIndex: origIdx
+    }));
+    // Fisher-Yates shuffle algorithm to jumble option positions
+    for (let i = opts.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [opts[i], opts[j]] = [opts[j], opts[i]];
+    }
+    state.shuffledOptionsMap[key] = opts;
+  }
+  return state.shuffledOptionsMap[key];
+}
+
+/* Helper to pick random index exclusively among UNANSWERED questions */
+function getNextRandomIndex(questions) {
+  if (!questions || questions.length === 0) return 0;
+
+  // Filter indices of questions that have NOT been answered yet
+  const unansweredIndices = [];
+  questions.forEach((q, idx) => {
+    const key = `${state.currentSubject}_q${q.id}`;
+    let isAnswered = false;
+    if (state.practiceFilter === 'weak' || state.practiceFilter === 'bookmarked') {
+      isAnswered = state.sessionPoolAnswers[key] !== undefined;
+    } else {
+      isAnswered = state.userAnswers[key] !== undefined;
+    }
+    if (!isAnswered) {
+      unansweredIndices.push(idx);
+    }
+  });
+
+  if (unansweredIndices.length > 0) {
+    const randomPos = Math.floor(Math.random() * unansweredIndices.length);
+    return unansweredIndices[randomPos];
+  } else {
+    // If all questions in the pool are answered, pick randomly from all questions
+    return Math.floor(Math.random() * questions.length);
+  }
+}
 
 function toggleRandomMode() {
   state.randomMode = !state.randomMode;
   localStorage.setItem('jt_random_mode', state.randomMode);
   updateRandomButtonUI();
+
+  // If toggling Random ON, jump to a random UNANSWERED question immediately!
+  if (state.randomMode) {
+    const questions = getFilteredPracticeQuestions();
+    if (questions && questions.length > 0) {
+      state.currentIndex = getNextRandomIndex(questions);
+      hideNotesSection();
+      renderCurrentPracticeQuestion();
+    }
+  }
 }
 
 function updateRandomButtonUI() {
@@ -609,7 +670,7 @@ function renderCurrentPracticeQuestion() {
   // Question Text
   if (qText) qText.textContent = `Problem #${q.id}: ${q.question || ''}`;
 
-  // Options Grid
+  // Options Grid with Jumbled Lettering
   if (optionsContainer) {
     optionsContainer.innerHTML = '';
 
@@ -622,24 +683,28 @@ function renderCurrentPracticeQuestion() {
     }
 
     const isAnswered = chosenIndex !== undefined;
+    const shuffledOpts = getShuffledOptionsForQuestion(key, q);
 
-    if (q.options && Array.isArray(q.options)) {
-      q.options.forEach((optText, idx) => {
-        const letter = String.fromCharCode(65 + idx);
+    if (shuffledOpts && Array.isArray(shuffledOpts)) {
+      shuffledOpts.forEach((optObj, displayedIdx) => {
+        const letter = String.fromCharCode(65 + displayedIdx);
         const btn = document.createElement('button');
         btn.className = 'option-btn';
         btn.setAttribute('data-key-hint', `Press [${letter}]`);
         
+        const origIdx = optObj.originalIndex;
+        const optText = optObj.text;
+
         if (isAnswered) {
           btn.classList.add('disabled');
-          if (idx === q.answer) {
+          if (origIdx === q.answer) {
             btn.classList.add('selected-correct');
             btn.innerHTML = `
               <span class="option-letter"><i class="fa-solid fa-check"></i></span>
               <span class="option-text">${escapeHTML(optText)}</span>
               <span class="opt-badge-tag correct-tag"><i class="fa-solid fa-circle-check"></i> Correct</span>
             `;
-          } else if (idx === chosenIndex) {
+          } else if (origIdx === chosenIndex) {
             btn.classList.add('selected-incorrect');
             btn.innerHTML = `
               <span class="option-letter"><i class="fa-solid fa-xmark"></i></span>
@@ -661,7 +726,7 @@ function renderCurrentPracticeQuestion() {
           `;
         }
 
-        btn.onclick = () => selectPracticeAnswer(key, idx);
+        btn.onclick = () => selectPracticeAnswer(key, origIdx);
         optionsContainer.appendChild(btn);
       });
     }
@@ -714,6 +779,7 @@ function resetCurrentQuestionState() {
 
   delete state.userAnswers[key];
   delete state.sessionPoolAnswers[key];
+  delete state.shuffledOptionsMap[key]; // Clear cached jumbled options to reshuffle on reset
   saveData('jt_user_answers', state.userAnswers);
   renderCurrentPracticeQuestion();
   updateStats();
@@ -724,7 +790,7 @@ function nextQuestion() {
   if (!questions || questions.length === 0) return;
   hideNotesSection();
   if (state.randomMode) {
-    state.currentIndex = Math.floor(Math.random() * questions.length);
+    state.currentIndex = getNextRandomIndex(questions);
   } else if (state.currentIndex < questions.length - 1) {
     state.currentIndex++;
   }
@@ -736,7 +802,7 @@ function prevQuestion() {
   if (!questions || questions.length === 0) return;
   hideNotesSection();
   if (state.randomMode) {
-    state.currentIndex = Math.floor(Math.random() * questions.length);
+    state.currentIndex = getNextRandomIndex(questions);
   } else if (state.currentIndex > 0) {
     state.currentIndex--;
   }
