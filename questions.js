@@ -600,7 +600,251 @@ var SUBJECT_DATA = {
             ],
             "answer": 0,
             "explanation": "\u2022 Why 'Relaxation oscillators, ultra-high-speed switches, and Frequency Modulation (FM) receivers' is Correct: Negative dynamic resistance cancels circuit losses in high-frequency oscillators and enables sub-nanosecond pulse switching.\n\u2022 Why Other Choices are Incorrect: Transformers and relays are heavy magnetic/mechanical components."
+      },
+
+      {
+            "id": 50,
+            "question": "What is the primary operating bias condition for a Photodiode during light-sensing operation?",
+            "options": [
+                  "Reverse-Bias condition",
+                  "Forward-Bias condition above 1.5 V",
+                  "Thermal breakdown bias",
+                  "Direct AC bias"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Reverse-Bias condition' is Correct: Photodiodes operate in Reverse-Bias (or zero bias) to widen the depletion region and establish a strong internal electric field that efficiently separates light-generated electron-hole pairs.\n\u2022 Why Other Choices are Incorrect: Forward biasing a photodiode conducts large forward current, masking photo-generated current and potentially damaging the sensor."
+      },
+      {
+            "id": 51,
+            "question": "What fundamental physical energy conversion takes place inside a Photodiode when exposed to light?",
+            "options": [
+                  "Converts light energy (photons) into electrical current (photocurrent)",
+                  "Converts electrical energy into mechanical movement",
+                  "Converts acoustic sound waves into voltage",
+                  "Converts magnetic flux into thermal heat"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Converts light energy (photons) into electrical current (photocurrent)' is Correct: When incoming photons with energy greater than the semiconductor bandgap strike the depletion region, they excite bound electrons to create free electron-hole pairs, producing measurable photocurrent.\n\u2022 Why Other Choices are Incorrect: Solar cells also use this photoelectric principle for power generation, whereas LEDs do the reverse (electrical energy to light)."
+      },
+      {
+            "id": 52,
+            "question": "How does the generated output photocurrent (I_p) of a Photodiode respond to changes in incoming light intensity (Lux)?",
+            "options": [
+                  "Photocurrent is directly proportional to light intensity",
+                  "Photocurrent decreases exponentially as light intensity increases",
+                  "Photocurrent remains completely constant regardless of light level",
+                  "Photocurrent is inversely proportional to light intensity squared"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Photocurrent is directly proportional to light intensity' is Correct: The Current-Light (I-L) relationship of a photodiode is highly linear: higher light intensity delivers more photons per second, creating more electron-hole pairs and higher photocurrent.\n\u2022 Why Other Choices are Incorrect: Inverse or exponential responses would distort linear light measurement."
+      },
+      {
+            "id": 53,
+            "question": "What is 'Dark Current' in a Photodiode?",
+            "options": [
+                  "A small reverse leakage current that flows even when no light is present",
+                  "The maximum forward current that destroys the photodiode",
+                  "The light emitted by the photodiode when operating in total darkness",
+                  "The AC ripple current from power supplies"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'A small reverse leakage current that flows even when no light is present' is Correct: Dark current is the minor reverse saturation current caused by thermal generation of electron-hole pairs when the photodiode is completely shielded from light.\n\u2022 Why Other Choices are Incorrect: Photodiodes do not emit light, and dark current is a tiny DC leakage current."
+      },
+      {
+            "id": 54,
+            "question": "Which layer of a photodiode active region is coated with an Anti-Reflective (AR) layer or glass lens?",
+            "options": [
+                  "The P+ active surface region to maximize light absorption",
+                  "The bottom metal Cathode contact",
+                  "The outer black protective casing",
+                  "The internal battery terminals"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'The P+ active surface region to maximize light absorption' is Correct: An Anti-Reflective (AR) coating or optical glass lens is placed over the active junction surface to reduce optical reflection losses and maximize photon entry into the depletion region.\n\u2022 Why Other Choices are Incorrect: The remaining body is coated in opaque black layer to block unwanted stray light."
+      },
+      {
+            "id": 55,
+            "question": "Which of the following semiconductor materials is commonly used in fabricating Photodiodes for optical communications?",
+            "options": [
+                  "Silicon, Germanium, and Indium Gallium Arsenide (InGaAs)",
+                  "Pure Copper and Aluminum",
+                  "Sodium Chloride and Calcium",
+                  "Polyethylene plastic"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Silicon, Germanium, and Indium Gallium Arsenide (InGaAs)' is Correct: Silicon (visible light), Germanium, and Indium Gallium Arsenide (InGaAs for long-wavelength infrared fiber optics) have suitable bandgaps for absorbing target light wavelengths.\n\u2022 Why Other Choices are Incorrect: Metals and plastics lack semiconductor bandgaps necessary for photon absorption."
+      },
+      {
+            "id": 56,
+            "question": "A Light-Emitting Diode (LED) emits visible or infrared light when operated under which bias condition?",
+            "options": [
+                  "Forward-Bias condition",
+                  "Reverse-Bias condition",
+                  "Zero bias condition",
+                  "High-voltage reverse breakdown"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Forward-Bias condition' is Correct: In Forward Bias, external voltage pushes electrons from the N-region and holes from the P-region into the active junction layer, where they recombine and release energy as photons.\n\u2022 Why Other Choices are Incorrect: In Reverse Bias, the depletion region widens, blocking current and keeping the LED completely OFF."
+      },
+      {
+            "id": 57,
+            "question": "Inside the structure of a Light-Emitting Diode (LED), which layer is responsible for producing light through electron-hole recombination?",
+            "options": [
+                  "The Active layer (middle region)",
+                  "The outer plastic epoxy lens",
+                  "The bottom metal Cathode wire lead",
+                  "The external series resistor"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'The Active layer (middle region)' is Correct: The Active layer sandwiched between the P-type and N-type semiconductor layers provides the optimum energy bandgap region where injected electrons and holes recombine to emit photons.\n\u2022 Why Other Choices are Incorrect: The epoxy lens focuses the emitted light, while leads supply current."
+      },
+      {
+            "id": 58,
+            "question": "On an electronic schematic symbol for a Light-Emitting Diode (LED), what do the two small outward-pointing arrows indicate?",
+            "options": [
+                  "Light emission when current flows through the diode",
+                  "Direction of conventional current flow",
+                  "Direction of electron movement",
+                  "Maximum reverse breakdown voltage limit"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Light emission when current flows through the diode' is Correct: The two outward-pointing arrows distinguish an LED from a standard diode, symbolizing light energy radiating outward upon forward conduction.\n\u2022 Why Other Choices are Incorrect: Inward-pointing arrows represent a Photodiode (absorbing incoming light)."
+      },
+      {
+            "id": 59,
+            "question": "What is the typical forward voltage (V_F) required to turn ON a standard Red Light-Emitting Diode (LED)?",
+            "options": [
+                  "1.8 V to 2.2 V",
+                  "0.3 V to 0.4 V",
+                  "5.0 V to 12.0 V",
+                  "0.0 V"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why '1.8 V to 2.2 V' is Correct: Red LEDs typically require a minimum forward voltage (V_F) of 1.8 V to 2.2 V to initiate electroluminescence.\n\u2022 Why Other Choices are Incorrect: 0.3 V is for Germanium diodes, 0.7 V is for Silicon diodes, while Green LEDs require 2.0 V \u2013 3.2 V and Blue LEDs require 3.0 V \u2013 3.5 V."
+      },
+      {
+            "id": 60,
+            "question": "What is the typical recommended continuous forward current (I_F) range for operating standard indicator Light-Emitting Diodes (LEDs)?",
+            "options": [
+                  "10 mA to 20 mA",
+                  "1 A to 5 A",
+                  "100 A to 500 A",
+                  "1 \u00b5A to 5 \u00b5A"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why '10 mA to 20 mA' is Correct: Standard commercial indicator LEDs achieve bright, reliable illumination at continuous forward currents of 10 mA to 20 mA.\n\u2022 Why Other Choices are Incorrect: Operating above 30\u201350 mA without heat sinking causes thermal destruction, while microamps are too low to illuminate standard LEDs."
+      },
+      {
+            "id": 61,
+            "question": "What formula is used to calculate the required resistance value of a Current-Limiting Resistor (R) connected in series with a Light-Emitting Diode (LED)?",
+            "options": [
+                  "R = (V_S - V_F) / I_F",
+                  "R = V_S * V_F * I_F",
+                  "R = (V_S + V_F) / I_F^2",
+                  "R = I_F / (V_S - V_F)"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'R = (V_S - V_F) / I_F' is Correct: By Kirchhoff's Voltage Law, the resistor voltage is V_R = V_S - V_F. Applying Ohm's Law yields R = (V_S - V_F) / I_F to prevent overcurrent damage to the LED.\n\u2022 Why Other Choices are Incorrect: Multiplying or adding forward voltage violates Ohm's Law."
+      },
+      {
+            "id": 62,
+            "question": "What is the typical maximum safe Reverse Voltage rating (V_R) for most standard Light-Emitting Diodes (LEDs)?",
+            "options": [
+                  "3 V to 5 V",
+                  "100 V to 1000 V",
+                  "500 V to 2000 V",
+                  "50 V to 100 V"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why '3 V to 5 V' is Correct: LEDs have relatively low reverse breakdown voltage ratings (typically 3 V to 5 V). Applying higher reverse voltage can damage the delicate PN junction.\n\u2022 Why Other Choices are Incorrect: Standard power rectifiers handle 100 V \u2013 1000 V reverse ratings, but LEDs cannot."
+      },
+      {
+            "id": 63,
+            "question": "Which key advantage distinguishes a Light-Emitting Diode (LED) over a standard semiconductor PN junction diode?",
+            "options": [
+                  "Emits visible or infrared light efficiently with a long operational lifespan",
+                  "Used solely for AC high-voltage power rectification",
+                  "Slower switching speed and higher power loss",
+                  "Requires no forward voltage to turn ON"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Emits visible or infrared light efficiently with a long operational lifespan' is Correct: LEDs convert electrical energy directly into light via electroluminescence, offering high energy efficiency, low heat generation, and tens of thousands of operating hours.\n\u2022 Why Other Choices are Incorrect: Standard diodes dissipate energy as heat rather than light."
+      },
+      {
+            "id": 64,
+            "question": "Which of the following is a common application of Infrared (IR) Photodiodes and Light-Emitting Diodes working together as an optical pair?",
+            "options": [
+                  "TV and Air Conditioner remote controls and optical encoders",
+                  "High-power AC transformers",
+                  "Incandescent light bulbs",
+                  "Hydraulic fluid pumps"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'TV and Air Conditioner remote controls and optical encoders' is Correct: An Infrared LED transmitter sends pulsed light signals to an Infrared Photodiode receiver, forming an optical communication link.\n\u2022 Why Other Choices are Incorrect: Transformers and pumps use magnetic or mechanical energy, not optoelectronic light pairs."
+      },
+
+      {
+            "id": 65,
+            "question": "Tunnel diodes are mainly used in:",
+            "options": [
+                  "Rectifiers",
+                  "Oscillators and high-speed switches",
+                  "Voltage regulators",
+                  "Signal clippers"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Oscillators and high-speed switches' is Correct: Tunnel diodes possess negative dynamic resistance and an ultra-thin depletion layer, allowing them to switch in picoseconds and sustain high-frequency oscillations.\n\u2022 Why Other Choices are Incorrect: Standard diodes act as rectifiers and signal clippers, while Zener diodes serve as voltage regulators."
+      },
+      {
+            "id": 66,
+            "question": "Light-Emitting Diodes (LEDs) emit light because of:",
+            "options": [
+                  "Avalanche breakdown",
+                  "Electron-hole recombination releasing photons",
+                  "Thermal energy conversion",
+                  "Tunneling effect"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Electron-hole recombination releasing photons' is Correct: When forward-biased, injected electrons from the N-region and holes from the P-region recombine in the active junction layer, releasing excess bandgap energy as photons (Electroluminescence).\n\u2022 Why Other Choices are Incorrect: Avalanche breakdown occurs in reverse breakdown, thermal energy causes heating, and tunneling effect powers Tunnel diodes."
+      },
+      {
+            "id": 67,
+            "question": "The forward voltage drop of a Light-Emitting Diode (LED) is typically in the range of:",
+            "options": [
+                  "0.3 \u2013 0.7 V",
+                  "1 \u2013 3 V",
+                  "5 \u2013 10 V",
+                  "0.1 \u2013 0.2 V"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '1 \u2013 3 V' is Correct: Because LEDs are fabricated from wide-bandgap compound semiconductors (like Gallium Arsenide and Gallium Phosphide), their forward barrier voltage drop ranges from 1.8 V to 3.5 V (commonly specified as 1 \u2013 3 V).\n\u2022 Why Other Choices are Incorrect: 0.3 \u2013 0.7 V applies to standard Germanium and Silicon PN diodes, while 0.1 \u2013 0.2 V applies to Schottky diodes."
+      },
+      {
+            "id": 68,
+            "question": "Which material is commonly used to make Light-Emitting Diodes (LEDs)?",
+            "options": [
+                  "Silicon",
+                  "Germanium",
+                  "Gallium compounds (GaAs, GaP)",
+                  "Carbon"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Gallium compounds (GaAs, GaP)' is Correct: Direct bandgap compound semiconductors such as Gallium Arsenide (GaAs) and Gallium Phosphide (GaP) allow efficient photon emission during carrier recombination.\n\u2022 Why Other Choices are Incorrect: Elemental Silicon and Germanium are indirect bandgap semiconductors that dissipate recombination energy as heat rather than light."
+      },
+      {
+            "id": 69,
+            "question": "An Light-Emitting Diode (LED) usually operates with a forward current in the range of:",
+            "options": [
+                  "0.1 \u2013 1 mA",
+                  "10 \u2013 100 mA",
+                  "1 \u2013 10 A",
+                  "1 \u2013 10 \u00b5A"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '10 \u2013 100 mA' is Correct: Standard illumination and indicator LEDs operate with forward currents in the 10 mA to 100 mA range (typically 10 \u2013 20 mA for standard indicators).\n\u2022 Why Other Choices are Incorrect: Microamps are too small to excite visible emission, while 1 \u2013 10 Amperes causes rapid thermal burnout."
       }
+
+
 
 
 ]
