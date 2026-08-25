@@ -6,7 +6,7 @@
 
 // Global State
 let state = {
-  currentSubject: 'fluid_mechanics', // 'fluid_mechanics', 'deformable_bodies', 'heat_transfer'
+  currentSubject: 'basic_electronics', // 'basic_electronics', 'fluid_mechanics', 'deformable_bodies', 'heat_transfer'
   currentMode: 'practice', // 'practice', 'all'
   practiceFilter: 'all', // 'all', 'weak', 'bookmarked'
   currentIndex: 0,
@@ -77,7 +77,7 @@ function getSubjectData() {
 function getActiveQuestions() {
   const data = getSubjectData();
   if (!data[state.currentSubject]) {
-    state.currentSubject = 'fluid_mechanics';
+    state.currentSubject = 'basic_electronics';
   }
   return (data[state.currentSubject] && Array.isArray(data[state.currentSubject].questions)) 
     ? data[state.currentSubject].questions 
@@ -87,9 +87,9 @@ function getActiveQuestions() {
 function getActiveSubjectInfo() {
   const data = getSubjectData();
   if (!data[state.currentSubject]) {
-    state.currentSubject = 'fluid_mechanics';
+    state.currentSubject = 'basic_electronics';
   }
-  return data[state.currentSubject] || { title: 'Fluid Mechanics', chapter: '' };
+  return data[state.currentSubject] || { title: 'Basic Electronics (ECE 005)', chapter: '' };
 }
 
 /* Returns practice questions filtered by shared class pools (All, Weak, Bookmarked) */
