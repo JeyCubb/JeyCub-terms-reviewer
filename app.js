@@ -11,6 +11,8 @@ let state = {
   practiceFilter: 'all', // 'all', 'weak', 'bookmarked'
   currentIndex: 0,
   randomMode: false,
+  randomSequence: [], // Array of question indices in randomized alignment order
+  randomSequencePos: 0, // Current position in the randomSequence alignment
   shuffledOptionsMap: {}, // Cache jumbled options per question key
   userAnswers: {}, // Master answers for All Questions mode
   sessionPoolAnswers: {}, // Transient answers for Weak / Bookmarked practice sessions
@@ -118,6 +120,8 @@ function getFilteredPracticeQuestions() {
 function changePracticeFilter(filterVal) {
   state.practiceFilter = filterVal;
   state.currentIndex = 0;
+  state.randomSequence = [];
+  state.randomSequencePos = 0;
   hideNotesSection();
 
   // Blur select dropdown immediately so arrow keys navigate questions
@@ -127,6 +131,14 @@ function changePracticeFilter(filterVal) {
   // Reset transient pool session answers so Weak and Bookmarked pools present questions fresh & unanswered
   if (filterVal === 'weak' || filterVal === 'bookmarked') {
     state.sessionPoolAnswers = {};
+  }
+
+  if (state.randomMode) {
+    const questions = getFilteredPracticeQuestions();
+    if (questions && questions.length > 0) {
+      generateRandomSequence(questions);
+      state.currentIndex = state.randomSequence[0];
+    }
   }
 
   renderCurrentPracticeQuestion();
@@ -278,9 +290,19 @@ function switchSubject(subjectKey) {
   if (!data[subjectKey]) return;
   state.currentSubject = subjectKey;
   state.currentIndex = 0;
+  state.randomSequence = [];
+  state.randomSequencePos = 0;
   state.sessionPoolAnswers = {};
   localStorage.setItem('jt_subject', subjectKey);
   hideNotesSection();
+
+  if (state.randomMode) {
+    const questions = getFilteredPracticeQuestions();
+    if (questions && questions.length > 0) {
+      generateRandomSequence(questions);
+      state.currentIndex = state.randomSequence[0];
+    }
+  }
 
   const select = document.getElementById('subject-selector');
   if (select) select.blur();
@@ -594,35 +616,21 @@ function showPoolResetToast() {
   }, 2500);
 }
 
-/* Helper to pick random index exclusively among UNANSWERED questions */
-function getNextRandomIndex(questions) {
-  if (!questions || questions.length === 0) return 0;
-
-  // Filter indices of questions that have NOT been answered yet
-  const unansweredIndices = [];
-  questions.forEach((q, idx) => {
-    const key = `${state.currentSubject}_q${q.id}`;
-    let isAnswered = false;
-    if (state.practiceFilter === 'weak' || state.practiceFilter === 'bookmarked') {
-      isAnswered = state.sessionPoolAnswers[key] !== undefined;
-    } else {
-      isAnswered = state.userAnswers[key] !== undefined;
-    }
-    if (!isAnswered) {
-      unansweredIndices.push(idx);
-    }
-  });
-
-  if (unansweredIndices.length > 0) {
-    const randomPos = Math.floor(Math.random() * unansweredIndices.length);
-    return unansweredIndices[randomPos];
-  } else {
-    // If ALL questions in the pool are answered:
-    // Reset pool answers and option placements A-D for a fresh randomized cycle!
-    resetPoolAnswersAndReshuffle(questions);
-    showPoolResetToast();
-    return Math.floor(Math.random() * questions.length);
+/* Helper to generate a complete randomized alignment sequence of question indices */
+function generateRandomSequence(questions) {
+  if (!questions || questions.length === 0) {
+    state.randomSequence = [];
+    state.randomSequencePos = 0;
+    return;
   }
+  const indices = questions.map((_, i) => i);
+  // Fisher-Yates shuffle algorithm to generate a randomized alignment
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+  state.randomSequence = indices;
+  state.randomSequencePos = 0;
 }
 
 function toggleRandomMode() {
@@ -630,11 +638,11 @@ function toggleRandomMode() {
   localStorage.setItem('jt_random_mode', state.randomMode);
   updateRandomButtonUI();
 
-  // If toggling Random ON, jump to a random UNANSWERED question immediately!
   if (state.randomMode) {
     const questions = getFilteredPracticeQuestions();
     if (questions && questions.length > 0) {
-      state.currentIndex = getNextRandomIndex(questions);
+      generateRandomSequence(questions);
+      state.currentIndex = state.randomSequence[0];
       hideNotesSection();
       renderCurrentPracticeQuestion();
     }
@@ -836,8 +844,22 @@ function nextQuestion() {
   const questions = getFilteredPracticeQuestions();
   if (!questions || questions.length === 0) return;
   hideNotesSection();
+
   if (state.randomMode) {
-    state.currentIndex = getNextRandomIndex(questions);
+    if (!state.randomSequence || state.randomSequence.length !== questions.length) {
+      generateRandomSequence(questions);
+    }
+
+    if (state.randomSequencePos < state.randomSequence.length - 1) {
+      state.randomSequencePos++;
+      state.currentIndex = state.randomSequence[state.randomSequencePos];
+    } else {
+      // Reached the end of the randomized alignment sequence!
+      resetPoolAnswersAndReshuffle(questions);
+      generateRandomSequence(questions);
+      showPoolResetToast();
+      state.currentIndex = state.randomSequence[0];
+    }
   } else if (state.currentIndex < questions.length - 1) {
     state.currentIndex++;
   }
@@ -848,8 +870,19 @@ function prevQuestion() {
   const questions = getFilteredPracticeQuestions();
   if (!questions || questions.length === 0) return;
   hideNotesSection();
+
   if (state.randomMode) {
-    state.currentIndex = getNextRandomIndex(questions);
+    if (!state.randomSequence || state.randomSequence.length !== questions.length) {
+      generateRandomSequence(questions);
+    }
+
+    if (state.randomSequencePos > 0) {
+      state.randomSequencePos--;
+      state.currentIndex = state.randomSequence[state.randomSequencePos];
+    } else {
+      // Already at the start of the randomized alignment sequence
+      state.currentIndex = state.randomSequence[0];
+    }
   } else if (state.currentIndex > 0) {
     state.currentIndex--;
   }
