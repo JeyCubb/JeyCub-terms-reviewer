@@ -471,6 +471,25 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   min-height: 3.5rem;
 }
 
+.question-image-container {
+  margin-bottom: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.quiz-question-img {
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
 .options-grid {
   display: flex;
   flex-direction: column;

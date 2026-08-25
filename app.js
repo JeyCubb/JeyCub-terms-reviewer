@@ -705,6 +705,18 @@ function renderCurrentPracticeQuestion() {
   // Question Text
   if (qText) qText.textContent = `Problem #${q.id}: ${q.question || ''}`;
 
+  // Question Image (Diagram)
+  const imgContainer = document.getElementById('q-image-container');
+  if (imgContainer) {
+    if (q.image) {
+      imgContainer.innerHTML = `<img src="${escapeHTML(q.image)}" alt="Quiz Diagram" class="quiz-question-img">`;
+      imgContainer.style.display = 'flex';
+    } else {
+      imgContainer.innerHTML = '';
+      imgContainer.style.display = 'none';
+    }
+  }
+
   // Options Grid with Jumbled Lettering
   if (optionsContainer) {
     optionsContainer.innerHTML = '';
@@ -1105,6 +1117,7 @@ function filterAllQuestions() {
         </div>
       </div>
       <div class="item-q-text">${escapeHTML(q.question || '')}</div>
+      ${q.image ? `<div class="question-image-container"><img src="${escapeHTML(q.image)}" alt="Quiz Diagram" class="quiz-question-img"></div>` : ''}
       <div class="item-options">${optionsHtml}</div>
       <div class="explanation-box" style="margin: 0; padding: 0.85rem;">
         <div class="explanation-header"><i class="fa-solid fa-lightbulb"></i> Hint & Concept:</div>
