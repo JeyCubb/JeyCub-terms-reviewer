@@ -38,6 +38,29 @@ document.addEventListener('DOMContentLoaded', () => {
   loadStoredData();
   updateSubjectUI();
   updateRandomButtonUI();
+
+  const questions = getFilteredPracticeQuestions();
+  if (questions && questions.length > 0) {
+    if (state.currentIndex >= questions.length) {
+      state.currentIndex = 0;
+    }
+    if (state.randomMode) {
+      if (!state.randomSequence || state.randomSequence.length !== questions.length) {
+        generateRandomSequence(questions);
+      }
+      if (state.randomSequence && state.randomSequence.length > 0) {
+        const foundPos = state.randomSequence.indexOf(state.currentIndex);
+        if (foundPos !== -1) {
+          state.randomSequencePos = foundPos;
+        } else {
+          state.randomSequencePos = 0;
+          state.currentIndex = state.randomSequence[0];
+        }
+      }
+    }
+  }
+
+  saveCurrentIndex();
   renderCurrentPracticeQuestion();
   updateStats();
   filterAllQuestions();
