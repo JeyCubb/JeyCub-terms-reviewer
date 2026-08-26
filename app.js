@@ -161,6 +161,7 @@ function executeJumpFromInput() {
 
   if (foundIndex !== -1) {
     state.currentIndex = foundIndex;
+    saveCurrentIndex();
     hideNotesSection();
     renderCurrentPracticeQuestion();
     input.value = '';
@@ -192,7 +193,7 @@ function resetAllSubjectAnswers() {
   });
 
   saveData('jt_user_answers', state.userAnswers);
-  state.currentIndex = 0;
+  saveCurrentIndex(); // Persist and stay on whatever page you last resetted!
   hideNotesSection();
   renderCurrentPracticeQuestion();
   updateStats();
@@ -465,11 +466,31 @@ function showBookmarkToast(isBookmarked) {
    LocalStorage & Data Persistence
    ========================================================================== */
 
+function saveCurrentIndex() {
+  try {
+    localStorage.setItem(`jt_index_${state.currentSubject}`, state.currentIndex);
+  } catch (e) {
+    console.error('Error saving current index', e);
+  }
+}
+
 function loadStoredData() {
   try {
     const data = getSubjectData();
-    // Always default to Basic Electronics (ECE 005) when the website is first loaded
-    state.currentSubject = 'basic_electronics';
+    const savedSubject = localStorage.getItem('jt_subject');
+    if (savedSubject && data[savedSubject]) {
+      state.currentSubject = savedSubject;
+    } else {
+      state.currentSubject = 'basic_electronics';
+    }
+
+    const savedIndex = localStorage.getItem(`jt_index_${state.currentSubject}`);
+    if (savedIndex !== null) {
+      const parsedIdx = parseInt(savedIndex, 10);
+      if (!isNaN(parsedIdx) && parsedIdx >= 0) {
+        state.currentIndex = parsedIdx;
+      }
+    }
 
     const savedAnswers = localStorage.getItem('jt_user_answers');
     if (savedAnswers) {
@@ -863,6 +884,7 @@ function nextQuestion() {
   } else if (state.currentIndex < questions.length - 1) {
     state.currentIndex++;
   }
+  saveCurrentIndex();
   renderCurrentPracticeQuestion();
 }
 
@@ -886,6 +908,7 @@ function prevQuestion() {
   } else if (state.currentIndex > 0) {
     state.currentIndex--;
   }
+  saveCurrentIndex();
   renderCurrentPracticeQuestion();
 }
 
