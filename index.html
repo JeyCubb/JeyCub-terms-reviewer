@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=61.0">
+  <link rel="stylesheet" href="styles.css?v=62.0">
 
   <!-- Firebase Realtime Database SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -113,6 +113,7 @@
             <label for="practice-filter-select"><i class="fa-solid fa-layer-group"></i> Pool:</label>
             <select id="practice-filter-select" onchange="changePracticeFilter(this.value)">
               <option value="all">📚 All Questions</option>
+              <option value="prelim_exam">📝 TIP Prelim Exam (2026-2027)</option>
               <option value="weak">⚠️ Weak Questions</option>
               <option value="bookmarked">⭐ Bookmarked</option>
             </select>
@@ -182,7 +183,6 @@
           <label for="subject-selector"><i class="fa-solid fa-book-open"></i> Subject:</label>
           <select id="subject-selector" onchange="switchSubject(this.value)">
             <option value="basic_electronics" selected>Basic Electronics (ECE 005)</option>
-            <option value="ece_prelim_exam">⭐ ECE 005 Prelim Exam (TIP 2026)</option>
             <option value="fluid_mechanics">Fluid Mechanics</option>
             <option value="deformable_bodies">Mechanics of Deformable Bodies</option>
             <option value="heat_transfer">Heat Transfer</option>

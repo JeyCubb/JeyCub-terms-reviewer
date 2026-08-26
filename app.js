@@ -152,6 +152,8 @@ function getFilteredPracticeQuestions() {
       const keyB = `${state.currentSubject}_q${b.id}`;
       return (state.groupMistakes[keyB] || 0) - (state.groupMistakes[keyA] || 0);
     });
+  } else if (state.practiceFilter === 'prelim_exam') {
+    return allQs.filter(q => q.id >= 117 && q.id <= 136);
   }
   return allQs;
 }
