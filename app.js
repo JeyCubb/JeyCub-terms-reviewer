@@ -67,7 +67,23 @@ document.addEventListener('DOMContentLoaded', () => {
   initFirebase();
   initKeyboardShortcuts();
   initNotesInputSubmit();
+  initPreventDoubleTapZoom();
 });
+
+/* Prevent double-tap zoom on mobile devices */
+function initPreventDoubleTapZoom() {
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+      const target = e.target;
+      if (target && target.tagName !== 'INPUT' && target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+      }
+    }
+    lastTouchEnd = now;
+  }, { passive: false });
+}
 
 /* Initialize Enter key submission for notes */
 function initNotesInputSubmit() {
