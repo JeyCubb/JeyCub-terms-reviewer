@@ -290,11 +290,19 @@ function switchSubject(subjectKey) {
   const data = getSubjectData();
   if (!data[subjectKey]) return;
   state.currentSubject = subjectKey;
-  state.currentIndex = 0;
+  
+  const savedIndex = localStorage.getItem(`jt_index_${subjectKey}`);
+  if (savedIndex !== null) {
+    const parsedIdx = parseInt(savedIndex, 10);
+    state.currentIndex = (!isNaN(parsedIdx) && parsedIdx >= 0) ? parsedIdx : 0;
+  } else {
+    state.currentIndex = 0;
+  }
+
   state.randomSequence = [];
   state.randomSequencePos = 0;
   state.sessionPoolAnswers = {};
-  localStorage.setItem('jt_subject', subjectKey);
+  saveCurrentIndex();
   hideNotesSection();
 
   if (state.randomMode) {
@@ -302,6 +310,7 @@ function switchSubject(subjectKey) {
     if (questions && questions.length > 0) {
       generateRandomSequence(questions);
       state.currentIndex = state.randomSequence[0];
+      saveCurrentIndex();
     }
   }
 
@@ -468,6 +477,7 @@ function showBookmarkToast(isBookmarked) {
 
 function saveCurrentIndex() {
   try {
+    localStorage.setItem('jt_subject', state.currentSubject);
     localStorage.setItem(`jt_index_${state.currentSubject}`, state.currentIndex);
   } catch (e) {
     console.error('Error saving current index', e);
