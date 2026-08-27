@@ -79,7 +79,7 @@ function scrollToTopInstant() {
   window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
-/* Instant Wheel / Scroll Snap for Practice Mode */
+/* Instant Wheel / Scroll Handler: 1 wheel notch up = Page Up, 1 wheel notch down = Page Down */
 function initScrollSnapInstant() {
   let isSnapping = false;
 
@@ -88,14 +88,16 @@ function initScrollSnapInstant() {
     const active = document.activeElement;
     if (active && (active.tagName === 'TEXTAREA' || active.tagName === 'INPUT')) return;
 
-    if (e.deltaY > 15 && window.scrollY < 120 && !isSnapping) {
+    if (Math.abs(e.deltaY) < 2) return;
+
+    if (e.deltaY > 0 && !isSnapping) {
       isSnapping = true;
       scrollToBottomInstant();
-      setTimeout(() => { isSnapping = false; }, 250);
-    } else if (e.deltaY < -15 && (window.innerHeight + window.scrollY >= document.body.scrollHeight - 120) && !isSnapping) {
+      setTimeout(() => { isSnapping = false; }, 180);
+    } else if (e.deltaY < 0 && !isSnapping) {
       isSnapping = true;
       scrollToTopInstant();
-      setTimeout(() => { isSnapping = false; }, 250);
+      setTimeout(() => { isSnapping = false; }, 180);
     }
   }, { passive: true });
 }
