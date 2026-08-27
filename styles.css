@@ -126,6 +126,42 @@ body {
   transform: translateX(-50%) translateY(0) !important;
 }
 
+/* Floating Quick Page Up / Page Down Scroll Buttons */
+.floating-scroll-nav {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 5.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  z-index: 99999;
+}
+
+.scroll-nav-btn {
+  background: var(--bg-card);
+  border: 1.5px solid var(--accent-primary);
+  color: var(--accent-primary);
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.825rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), 0 0 10px var(--accent-glow);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: var(--transition);
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.scroll-nav-btn:hover {
+  background: var(--accent-primary);
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 18px var(--accent-glow);
+}
+
 /* Main Container - Flex Column for Mode-Dependent Reordering */
 .main-container {
   max-width: 1280px;

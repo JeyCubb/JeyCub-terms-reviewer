@@ -68,7 +68,37 @@ document.addEventListener('DOMContentLoaded', () => {
   initKeyboardShortcuts();
   initNotesInputSubmit();
   initPreventDoubleTapZoom();
+  initScrollSnapInstant();
 });
+
+function scrollToBottomInstant() {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' });
+}
+
+function scrollToTopInstant() {
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+/* Instant Wheel / Scroll Snap for Practice Mode */
+function initScrollSnapInstant() {
+  let isSnapping = false;
+
+  window.addEventListener('wheel', (e) => {
+    if (state.currentMode !== 'practice') return;
+    const active = document.activeElement;
+    if (active && (active.tagName === 'TEXTAREA' || active.tagName === 'INPUT')) return;
+
+    if (e.deltaY > 15 && window.scrollY < 120 && !isSnapping) {
+      isSnapping = true;
+      scrollToBottomInstant();
+      setTimeout(() => { isSnapping = false; }, 250);
+    } else if (e.deltaY < -15 && (window.innerHeight + window.scrollY >= document.body.scrollHeight - 120) && !isSnapping) {
+      isSnapping = true;
+      scrollToTopInstant();
+      setTimeout(() => { isSnapping = false; }, 250);
+    }
+  }, { passive: true });
+}
 
 /* Prevent double-tap zoom on mobile devices */
 function initPreventDoubleTapZoom() {
@@ -295,6 +325,12 @@ function initKeyboardShortcuts() {
     } else if (key === 'd' || e.key === '4' || code === 'keyd' || code === 'digit4') {
       e.preventDefault();
       triggerOptionSelection(3);
+    } else if (e.key === 'PageDown' || code === 'pagedown' || e.key === 'End' || code === 'end') {
+      e.preventDefault();
+      scrollToBottomInstant();
+    } else if (e.key === 'PageUp' || code === 'pageup' || e.key === 'Home' || code === 'home') {
+      e.preventDefault();
+      scrollToTopInstant();
     }
   });
 }
