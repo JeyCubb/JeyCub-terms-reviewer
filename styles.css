@@ -195,12 +195,12 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   box-shadow: 0 4px 12px var(--accent-glow);
 }
 
 .brand-text h1 {
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: -0.02em;
 }
@@ -228,7 +228,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 }
 
 .subject-dropdown-wrapper label {
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--accent-primary);
   white-space: nowrap;
@@ -241,7 +241,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 700;
   padding: 0.35rem 0.75rem;
   border-radius: var(--radius-md);
@@ -273,7 +273,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   color: var(--text-secondary);
   padding: 0.45rem 1.1rem;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
   display: flex;
@@ -305,7 +305,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   color: var(--text-primary);
   padding: 0.5rem 0.85rem;
   border-radius: var(--radius-md);
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 500;
   cursor: pointer;
   display: flex;
@@ -330,7 +330,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 /* Stats Bar */
 .stats-bar-three {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
 }
 
@@ -349,7 +349,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-secondary);
   text-transform: uppercase;
@@ -357,7 +357,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 }
 
 .stat-group-icon {
-  font-size: 0.95rem;
+  font-size: 1.15rem;
 }
 
 .stat-group-icon.blue { color: var(--accent-primary); }
@@ -394,13 +394,13 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 .purple-text { color: #a855f7; }
 
 .stat-value {
-  font-size: 1.35rem;
+  font-size: 1.55rem;
   font-weight: 800;
   line-height: 1.2;
 }
 
 .stat-label {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -421,7 +421,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   color: var(--color-error);
   padding: 0.65rem 1.35rem;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
@@ -469,7 +469,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 }
 
 .question-text {
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   font-weight: 600;
   line-height: 1.5;
   margin-bottom: 1.5rem;
@@ -509,7 +509,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   padding: 1rem 1.25rem;
   text-align: left;
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
   display: flex;
@@ -534,7 +534,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   flex-shrink: 0;
 }
 
@@ -587,7 +587,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 
 /* Option Badges */
 .opt-badge-tag {
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   font-weight: 700;
   padding: 3px 8px;
   border-radius: var(--radius-sm);
@@ -627,7 +627,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   color: var(--text-primary);
   padding: 0.75rem 1rem;
   border-radius: var(--radius-md);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 700;
   cursor: pointer;
   display: flex;
@@ -674,7 +674,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   padding: 0.4rem 1rem;
   border-radius: var(--radius-full);
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 1.075rem;
   color: var(--accent-primary);
 }
 
@@ -697,7 +697,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 }
 
 .jump-input-wrapper label {
-  font-size: 0.8rem;
+  font-size: 1.0rem;
   font-weight: 700;
   color: var(--accent-primary);
   white-space: nowrap;
@@ -707,7 +707,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   background: transparent;
   border: none;
   color: var(--text-primary);
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 700;
   outline: none;
   width: 44px;
@@ -731,7 +731,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -752,7 +752,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 }
 
 .practice-filter-wrapper label {
-  font-size: 0.8rem;
+  font-size: 1.0rem;
   font-weight: 700;
   color: var(--accent-primary);
   white-space: nowrap;
@@ -762,7 +762,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   background: transparent;
   border: none;
   color: var(--text-primary);
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 700;
   outline: none;
   cursor: pointer;
@@ -779,7 +779,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   color: var(--text-secondary);
   padding: 0.4rem 0.85rem;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
   display: flex;
@@ -806,7 +806,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   color: var(--text-secondary);
   padding: 0.4rem 0.85rem;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
   display: flex;
@@ -990,7 +990,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.92rem;
+  font-size: 1.12rem;
   letter-spacing: 0.02em;
 }
 
@@ -1001,7 +1001,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   color: var(--color-error);
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
-  font-size: 0.8rem;
+  font-size: 1.0rem;
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
@@ -1019,7 +1019,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 }
 
 .explanation-text {
-  font-size: 0.92rem;
+  font-size: 1.12rem;
   color: var(--text-secondary);
   line-height: 1.6;
   font-style: italic;
@@ -1050,7 +1050,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   color: var(--accent-primary);
   padding: 0.85rem 1.65rem;
   border-radius: var(--radius-full);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
@@ -1102,7 +1102,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 }
 
 .notes-section-header h3 {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 
@@ -1110,7 +1110,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   background: var(--bg-input);
   padding: 0.3rem 0.85rem;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--accent-primary);
 }
@@ -1129,7 +1129,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   border-radius: var(--radius-sm);
   padding: 0.5rem 0.85rem;
   color: var(--text-primary);
-  font-size: 0.875rem;
+  font-size: 1.075rem;
   outline: none;
 }
 
@@ -1140,7 +1140,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   padding: 0.65rem 0.85rem;
   color: var(--text-primary);
   font-family: inherit;
-  font-size: 0.875rem;
+  font-size: 1.075rem;
   height: 80px;
   outline: none;
   resize: vertical;
@@ -1154,7 +1154,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   padding: 0.5rem 1.25rem;
   border-radius: var(--radius-sm);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   cursor: pointer;
 }
 
@@ -1179,7 +1179,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.8rem;
+  font-size: 1.0rem;
   color: var(--text-secondary);
   margin-bottom: 0.35rem;
 }
@@ -1199,7 +1199,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   background: transparent;
   border: none;
   color: var(--color-error);
-  font-size: 0.78rem;
+  font-size: 0.98rem;
   font-weight: 600;
   cursor: pointer;
   opacity: 0.75;
@@ -1217,7 +1217,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 }
 
 .comment-body {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: var(--text-primary);
 }
 
@@ -1252,7 +1252,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   border-radius: var(--radius-md);
   padding: 0.75rem 1rem 0.75rem 2.5rem;
   color: var(--text-primary);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   outline: none;
 }
 
@@ -1270,7 +1270,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
   border-radius: var(--radius-sm);
   padding: 0.5rem 0.85rem;
   color: var(--text-primary);
-  font-size: 0.875rem;
+  font-size: 1.075rem;
   outline: none;
 }
 
@@ -1305,7 +1305,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 }
 
 .item-q-text {
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -1318,7 +1318,7 @@ body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 }
 
 .item-opt {
-  font-size: 0.875rem;
+  font-size: 1.075rem;
   background: var(--bg-input);
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius-sm);
