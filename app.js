@@ -186,6 +186,8 @@ function getFilteredPracticeQuestions() {
     });
   } else if (state.practiceFilter === 'prelim_exam') {
     return allQs.filter(q => q.id >= 117 && q.id <= 136);
+  } else if (state.practiceFilter === 'test8_vessels') {
+    return allQs.filter(q => q.id >= 151 && q.id <= 195);
   }
   return allQs;
 }
@@ -363,6 +365,27 @@ function updateSubjectUI() {
 
   const resetBtnLabel = document.getElementById('reset-subject-name');
   if (resetBtnLabel) resetBtnLabel.textContent = info.title;
+
+  // Dynamically update subject-specific pool filter options
+  const optPrelim = document.getElementById('opt-filter-prelim');
+  if (optPrelim) {
+    optPrelim.style.display = (state.currentSubject === 'basic_electronics') ? '' : 'none';
+  }
+  const optTest8 = document.getElementById('opt-filter-test8');
+  if (optTest8) {
+    optTest8.style.display = (state.currentSubject === 'deformable_bodies') ? '' : 'none';
+  }
+
+  // Auto-reset filter to 'all' if active filter is incompatible with newly selected subject
+  const filterSelect = document.getElementById('practice-filter-select');
+  if (filterSelect) {
+    if (state.practiceFilter === 'prelim_exam' && state.currentSubject !== 'basic_electronics') {
+      state.practiceFilter = 'all';
+    } else if (state.practiceFilter === 'test8_vessels' && state.currentSubject !== 'deformable_bodies') {
+      state.practiceFilter = 'all';
+    }
+    filterSelect.value = state.practiceFilter;
+  }
 }
 
 function switchSubject(subjectKey) {
