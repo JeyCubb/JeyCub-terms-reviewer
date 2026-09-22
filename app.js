@@ -268,13 +268,26 @@ function resetAllSubjectAnswers() {
   });
 
   saveData('jt_user_answers', state.userAnswers);
-  saveCurrentIndex(); // Persist and stay on whatever page you last resetted!
+
+  // Return to Question 1 upon resetting
+  state.currentIndex = 0;
+  state.randomSequencePos = 0;
+  if (state.randomMode) {
+    const pool = getFilteredPracticeQuestions();
+    if (pool && pool.length > 0) {
+      generateRandomSequence(pool);
+      state.currentIndex = state.randomSequence[0];
+    }
+  }
+
+  saveCurrentIndex(); // Persist Question 1 index to storage
   hideNotesSection();
   renderCurrentPracticeQuestion();
   updateStats();
   if (state.currentMode === 'all') {
     filterAllQuestions();
   }
+  scrollToTopInstant();
 }
 
 /* ==========================================================================
