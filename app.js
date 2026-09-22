@@ -933,13 +933,21 @@ function renderCurrentPracticeQuestion() {
     }
 
     // Solution & Explanation text inside Notes drawer
+    const expHeader = document.getElementById('q-explanation-header');
     const expText = document.getElementById('q-explanation-text');
+    const isRevealed = Boolean(state.revealedSolutions && state.revealedSolutions[key]);
+    const showFullSolution = (chosenIndex !== undefined) || isRevealed;
+
+    if (expHeader) {
+      if (showFullSolution) {
+        expHeader.innerHTML = `<i class="fa-solid fa-circle-check" style="color: var(--color-success);"></i> Solution & Full Explanation:`;
+      } else {
+        expHeader.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Guiding Clue & Conceptual Hint:`;
+      }
+    }
+
     if (expText) {
-      const raw = q.explanation || "Standard engineering principle.";
-      const formatted = escapeHTML(raw)
-        .replace(/\n/g, '<br>')
-        .replace(/•/g, '<span style="color: var(--accent-primary); font-weight: 700;">•</span>');
-      expText.innerHTML = formatted;
+      expText.innerHTML = getAmbiguousHint(q, showFullSolution);
     }
   }
 
@@ -948,6 +956,96 @@ function renderCurrentPracticeQuestion() {
   if (notesQNum) notesQNum.textContent = q.id;
   
   subscribeLiveNotesCurrent();
+}
+
+/* ==========================================================================
+   Ambiguous & Non-Spoiling Practice Hint Generator
+   ========================================================================== */
+
+function getAmbiguousHint(q, isAnswered) {
+  if (!q) return "Standard engineering principle.";
+
+  if (isAnswered) {
+    // When answered or revealed, display the complete solution breakdown
+    const raw = q.explanation || "Standard engineering principle.";
+    return escapeHTML(raw)
+      .replace(/\n/g, '<br>')
+      .replace(/•/g, '<span style="color: var(--accent-primary); font-weight: 700;">•</span>');
+  }
+
+  // When UNANSWERED: provide an ambiguous conceptual clue without directly giving the answer
+  const raw = q.explanation || '';
+  const options = q.options || [];
+  const ansIdx = (q.answer !== undefined && q.answer >= 0 && q.answer < options.length) ? q.answer : 0;
+  const correctOpt = options[ansIdx] || '';
+
+  // 1. Remove "Why Other Choices" section completely to prevent elimination spoilers
+  let text = raw.split(/•?\s*Why Other Choices/i)[0].trim();
+
+  // 2. Strip direct answer labels and official key headers
+  text = text.replace(/•?\s*Why\s+(?:Choice|Option|Statement)?\s*['"`]?[^'"`:\n]+['"`]?\s*is\s*Correct\s*:\s*/gi, '');
+  text = text.replace(/•?\s*Official\s+Exam\s+(?:Valid\s+)?(?:Answer|Key)\s*:[^\n]+(?:\n|$)/gi, '');
+  text = text.replace(/\bOption\s+[A-D]\b/gi, 'this choice');
+  text = text.replace(/\b[A-D]\.\s*/g, '');
+
+  // 3. Detect if the remaining text is too short or just a tautological repeat of the correct option
+  const cleanedLower = text.replace(/[.,\s]/g, '').toLowerCase();
+  const optLower = correctOpt.replace(/[.,\s]/g, '').toLowerCase();
+  const isTautology = !text || text.length < 15 || cleanedLower === optLower;
+
+  if (isTautology) {
+    const qText = (q.question || '').toLowerCase();
+    if (/viscos|fluid|flow|liquid|water|stream|pipe|channel|nozzle|pressure/.test(qText)) {
+      text = "Reflect on fluid transport properties, internal shear behavior, and how velocity and pressure gradients govern this condition.";
+    } else if (/stress|strain|cylinder|vessel|beam|load|tensil|yield|rupture/.test(qText)) {
+      text = "Consider force equilibrium, internal stress distributions across the geometry, or material failure thresholds under load.";
+    } else if (/wire|rope|sheave|drum|hoist|cable|strand/.test(qText)) {
+      text = "Think about the balance between strand flexibility, bearing wear limits around sheaves, and overall tensile breaking capacity.";
+    } else if (/heat|temperat|conduction|convection|radiation|thermal|insulat/.test(qText)) {
+      text = "Analyze the thermal gradient, governing transport mechanism (conduction, convection, or radiation), and thermodynamic energy balance.";
+    } else if (/transistor|diode|semiconduct|voltage|current|circuit|gate|electron|atom/.test(qText)) {
+      text = "Review charge carrier dynamics, p-n junction conduction behavior, or fundamental circuit analysis laws.";
+    } else {
+      text = "Analyze the problem statement's key physical conditions to determine which fundamental scientific definition or governing theorem directly applies.";
+    }
+  } else {
+    // 4. Mask direct verbatim occurrences of the correct choice text so it doesn't give away the answer
+    if (correctOpt && correctOpt.length > 3 && !/all of the above|none of the above|both a and b/i.test(correctOpt)) {
+      try {
+        const escaped = correctOpt.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const re = new RegExp('\\b' + escaped + '\\b', 'gi');
+        text = text.replace(re, '[the governing concept / parameter]');
+      } catch (e) {}
+    }
+  }
+
+  return `<div class="ambiguous-hint-content">` +
+    `<div style="line-height: 1.6; color: var(--text-secondary); margin-bottom: 0.75rem;">` +
+    `💡 <strong>Conceptual Guidance:</strong><br>${escapeHTML(text).replace(/\n/g, '<br>')}` +
+    `</div>` +
+    `<div class="hint-spoiler-footer" style="padding-top: 0.5rem; border-top: 1px dashed var(--border-color); font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">` +
+    `<span><i class="fa-solid fa-lock"></i> Direct answer is hidden so you can deduce it.</span>` +
+    `<button type="button" class="btn-reveal-solution" onclick="revealCurrentSolution()"><i class="fa-solid fa-eye"></i> Reveal Full Answer</button>` +
+    `</div>` +
+    `</div>`;
+}
+
+function revealCurrentSolution() {
+  state.revealedSolutions = state.revealedSolutions || {};
+  const questions = getFilteredPracticeQuestions();
+  const q = questions[state.currentIndex];
+  if (!q) return;
+  const key = `${state.currentSubject}_q${q.id}`;
+  state.revealedSolutions[key] = true;
+
+  const expHeader = document.getElementById('q-explanation-header');
+  if (expHeader) {
+    expHeader.innerHTML = `<i class="fa-solid fa-circle-check" style="color: var(--color-success);"></i> Solution & Full Explanation:`;
+  }
+  const expText = document.getElementById('q-explanation-text');
+  if (expText) {
+    expText.innerHTML = getAmbiguousHint(q, true);
+  }
 }
 
 function selectPracticeAnswer(key, optionIdx) {
