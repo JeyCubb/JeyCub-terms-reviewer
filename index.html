@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=76.0">
+  <link rel="stylesheet" href="styles.css?v=77.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -167,28 +167,7 @@
     <!-- MODE 3: FORMULAS MODE (INTERACTIVE RECALL QUIZ & CHEAT SHEET) -->
     <section id="formulas-view" class="view-section">
       
-      <!-- Formulas Header & Filter Card -->
-      <div class="filter-controls-card formula-header-card">
-        <!-- Sub-Navigation Tabs: Recall Quiz vs Full Sheet -->
-        <div class="formula-tab-bar">
-          <button type="button" class="formula-tab-btn active" id="btn-tab-formula-quiz" onclick="switchFormulaTab('quiz')">
-            <i class="fa-solid fa-gamepad"></i> Recall Quiz
-          </button>
-          <button type="button" class="formula-tab-btn" id="btn-tab-formula-sheet" onclick="switchFormulaTab('sheet')">
-            <i class="fa-solid fa-table-list"></i> Full Sheet & Schematics
-          </button>
-        </div>
-
-        <!-- Category Filter Pills & Counter -->
-        <div class="formula-filter-bar">
-          <div class="formula-category-scroll" id="formula-category-pills">
-            <!-- Dynamically populated category chips (All, Fixed-Bias, etc.) -->
-          </div>
-          <span class="search-count-label" id="formulas-count-badge">ECE Formulas</span>
-        </div>
-      </div>
-
-      <!-- TAB 1: INTERACTIVE RECALL QUIZ -->
+      <!-- TAB 1: INTERACTIVE RECALL QUIZ (Question Card First at Top) -->
       <div id="formula-quiz-container" class="formula-view-tab-content active">
         <div class="quiz-card formula-card">
           
@@ -367,6 +346,27 @@
         <div class="formula-sheet-cards-list" id="formula-sheet-cards-list"></div>
       </div>
 
+      <!-- Formulas Controls Card: Tabs & Category Filter (Placed at Bottom like Practice Controls) -->
+      <div class="filter-controls-card formula-header-card">
+        <!-- Sub-Navigation Tabs: Recall Quiz vs Full Sheet -->
+        <div class="formula-tab-bar">
+          <button type="button" class="formula-tab-btn active" id="btn-tab-formula-quiz" onclick="switchFormulaTab('quiz')">
+            <i class="fa-solid fa-gamepad"></i> Recall Quiz
+          </button>
+          <button type="button" class="formula-tab-btn" id="btn-tab-formula-sheet" onclick="switchFormulaTab('sheet')">
+            <i class="fa-solid fa-table-list"></i> Full Sheet & Schematics
+          </button>
+        </div>
+
+        <!-- Category Filter Pills & Counter -->
+        <div class="formula-filter-bar">
+          <div class="formula-category-scroll" id="formula-category-pills">
+            <!-- Dynamically populated category chips (All, Fixed-Bias, etc.) -->
+          </div>
+          <span class="search-count-label" id="formulas-count-badge">ECE Formulas</span>
+        </div>
+      </div>
+
     </section>
 
     <!-- Title & Subject Navigation Bar -->
@@ -467,6 +467,6 @@
 
   <script src="formulas.js?v=2.0"></script>
   <script src="questions.js?v=21.0"></script>
-  <script src="app.js?v=25.0"></script>
+  <script src="app.js?v=26.0"></script>
 </body>
 </html>

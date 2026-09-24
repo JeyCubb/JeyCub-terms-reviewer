@@ -151,10 +151,10 @@ body[data-mode="all"] .stats-bar-three { order: 2; margin-top: 0; margin-bottom:
 body[data-mode="all"] #all-view { order: 3; }
 body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 
-/* 3. FORMULAS MODE: Title Header & Stats at top, Formulas below (Order 3) */
-body[data-mode="formulas"] .app-header { order: 1; margin-top: 0.25rem; margin-bottom: 1.25rem; }
-body[data-mode="formulas"] .stats-bar-three { order: 2; margin-top: 0; margin-bottom: 1.5rem; }
-body[data-mode="formulas"] #formulas-view { order: 3; }
+/* 3. FORMULAS MODE: Formulas Challenge at absolute top (Order 1), Title & Stats at bottom (Order 2 & 3) */
+body[data-mode="formulas"] #formulas-view { order: 1; }
+body[data-mode="formulas"] .app-header { order: 2; margin-top: 1.5rem; }
+body[data-mode="formulas"] .stats-bar-three { order: 3; margin-top: 1.5rem; }
 body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
 
 /* App Header Card */
@@ -1600,7 +1600,8 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
   flex-direction: column;
   gap: 0.85rem;
   padding: 1rem 1.25rem;
-  margin-bottom: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .formula-tab-bar {
