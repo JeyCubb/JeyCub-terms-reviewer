@@ -9,7 +9,7 @@
 var SUBJECT_DATA = {
   ece_midterm: {
     title: "ECE 005 Midterm Exam Reviewer",
-    chapter: "ECE 005 Midterm - BJT Configurations, CE & CB Analysis",
+    chapter: "ECE 005 Midterm - BJT Configurations (CE, CB, CC)",
     questions: [
         {
             "id": 1,
@@ -1270,6 +1270,186 @@ var SUBJECT_DATA = {
             ],
             "answer": 1,
             "explanation": "• Why 'Common Base' is Correct: In Common Emitter, the collector-base capacitance is amplified by the voltage gain (Miller Effect), severely limiting high-frequency bandwidth. In Common Base, the base is grounded, shielding the input emitter from output collector capacitance, giving CB the highest cutoff frequency and best RF performance.\n• Why Other Choices are Incorrect: Common Emitter suffers from the Miller effect at high frequencies."
+        },
+        {
+            "id": 106,
+            "question": "In the Common Collector (CC) circuit configuration, how are the input and output AC signals connected to the transistor?",
+            "options": [
+                "Input is connected to the Emitter; Output is taken from the Collector",
+                "Input is connected directly to the Base terminal; Output is taken from across the Emitter load resistance",
+                "Input is connected to the Collector; Output is taken from the Base",
+                "Both input and output are connected directly to the Base terminal"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In the Common Collector configuration, the input AC signal is fed directly into the Base terminal, and the output signal is taken across the Emitter load resistance (RE or RL), with the Collector being common to both via the DC power supply.\n• Why Other Choices are Incorrect: Taking output from the collector is Common Emitter or Common Base."
+        },
+        {
+            "id": 107,
+            "question": "Why is the Collector terminal considered 'common' to both the input and output in a Common Collector circuit even if it is connected to a positive supply rail (VCC)?",
+            "options": [
+                "Because DC power supply rails act as an effective AC ground (zero AC potential), making the collector common to both circuits for AC signals",
+                "Because the collector is physically melted to the chassis ground during manufacture",
+                "Because no DC voltage is allowed on the collector lead",
+                "Because the collector terminal is left floating without any wire connection"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: In small-signal AC analysis, ideal DC power supplies (V_CC) present zero internal impedance, acting as an AC ground. Since the collector is connected directly to V_CC, it is at AC ground potential and serves as the common return terminal for both input and output loops.\n• Why Other Choices are Incorrect: The collector is not physically connected to earth ground, but AC grounded through V_CC."
+        },
+        {
+            "id": 108,
+            "question": "By what two popular alternative names is the Common Collector (CC) transistor amplifier widely known?",
+            "options": [
+                "Current Mirror or Cascode Circuit",
+                "Voltage Follower or Emitter Follower",
+                "Darlington Pair or Schmitt Trigger",
+                "Phase Inverter or Push-Pull Driver"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Voltage Follower or Emitter Follower' is Correct: Because the voltage at the emitter terminal tracks (follows) the input base voltage in both amplitude (Av ≈ 1) and phase (0°), this circuit is universally called an Emitter Follower or Voltage Follower.\n• Why Other Choices are Incorrect: A phase inverter produces 180° shift; a Cascode is a CE-CB combination."
+        },
+        {
+            "id": 109,
+            "question": "What is the approximate voltage gain (Av) of a Common Collector (Emitter Follower) amplifier circuit?",
+            "options": [
+                "Av is extremely high (> 500)",
+                "Av is negative and inverted (-100)",
+                "Av is approximately 1 (unity gain, Av ≤ 1)",
+                "Av is exactly 0"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Av is approximately 1 (unity gain, Av ≤ 1)' is Correct: Because V_out = V_E = V_B - V_BE, changes in emitter output voltage almost exactly equal changes in base input voltage (typically Av = 0.98 to 0.999). Thus, the Common Collector provides unity voltage gain.\n• Why Other Choices are Incorrect: It provides no voltage amplification."
+        },
+        {
+            "id": 110,
+            "question": "Why can the Common Collector configuration be considered and utilized as a 'voltage-buffer' circuit?",
+            "options": [
+                "Because it has unity voltage gain (Av ≈ 1) combined with very high input impedance and very low output impedance",
+                "Because it stores electrical voltage in chemical batteries",
+                "Because it inverts the input voltage by 180° to cancel supply ripple",
+                "Because it eliminates all current flow through the circuit"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: A voltage buffer transfers a voltage signal from a high-impedance source to a low-impedance load without loading or attenuating the signal voltage (unity gain) while delivering the required load current.\n• Why Other Choices are Incorrect: Buffers do not invert voltage or store chemical energy."
+        },
+        {
+            "id": 111,
+            "question": "What is the signal phase relationship between input voltage (Vin) and output voltage (Vout) in a Common Collector circuit?",
+            "options": [
+                "180° out-of-phase (inverted)",
+                "In-phase (0° phase shift)",
+                "90° lagging",
+                "45° leading"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'In-phase (0° phase shift)' is Correct: The Common Collector is a non-inverting circuit. When the input voltage applied to the base rises positively, the emitter voltage rises positively in unison, keeping Vin and Vout in-phase (0° phase shift).\n• Why Other Choices are Incorrect: Common Emitter is the only inverting (180°) configuration."
+        },
+        {
+            "id": 112,
+            "question": "In a Common Collector amplifier, what currents flow through the external emitter load resistance (RL or RE)?",
+            "options": [
+                "Only the base current IB",
+                "Only the collector current IC",
+                "Both the collector current and the base current combined (IE = IC + IB)",
+                "Zero current flows through the load resistor"
+            ],
+            "answer": 2,
+            "explanation": "• Why this is Correct: Because the load resistance is connected in series with the emitter terminal, the current flowing through it is the emitter current: I_E = I_C + I_B. Thus, the load receives the full sum of both collector and base currents.\n• Why Other Choices are Incorrect: Load current in CE is only IC; load current in CC is IE."
+        },
+        {
+            "id": 113,
+            "question": "Which mathematical expression correctly represents the AC current gain (Ai) of the Common Collector configuration?",
+            "options": [
+                "Ai = IC / IE = alpha",
+                "Ai = IE / IB = (IC + IB) / IB = beta + 1",
+                "Ai = IB / IC = 1 / beta",
+                "Ai = IC / IB = beta"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Ai = IE / IB = (IC + IB) / IB = beta + 1' is Correct: Current gain is the ratio of output current (I_E) to input current (I_B): A_i = I_E / I_B = (I_C + I_B) / I_B = (I_C / I_B) + 1 = beta + 1. It provides the highest current gain of all three configurations.\n• Why Other Choices are Incorrect: beta is CE current gain; alpha is CB current gain."
+        },
+        {
+            "id": 114,
+            "question": "A transistor used in a Common Collector amplifier circuit has a DC current gain Beta (β) of 149. What is the current gain (Ai) of this circuit?",
+            "options": [
+                "0.993",
+                "149",
+                "150",
+                "298"
+            ],
+            "answer": 2,
+            "explanation": "• Why '150' is Correct: In the Common Collector configuration, current gain is Ai = beta + 1 = 149 + 1 = 150.\n• Why Other Choices are Incorrect: 149 is beta (CE gain); 0.993 is alpha (CB gain)."
+        },
+        {
+            "id": 115,
+            "question": "What are the typical impedance characteristics of the Common Collector (Emitter Follower) amplifier?",
+            "options": [
+                "Low input impedance (tens of ohms) and high output impedance (megohms)",
+                "Very high input impedance (hundreds of thousands of ohms) and relatively low output impedance (tens of ohms)",
+                "Equal input and output impedances of exactly 600 ohms",
+                "Zero input impedance and infinite output impedance"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The Common Collector features very high input impedance (Zin ≈ beta * RE, often 100 kΩ to 500 kΩ) and low output impedance (Zout ≈ re + RS / beta, typically 10 Ω to 50 Ω), making it an outstanding impedance-matching buffer.\n• Why Other Choices are Incorrect: Low input and high output impedance describes Common Base."
+        },
+        {
+            "id": 116,
+            "question": "Why is the Common Collector configuration exceptionally useful in audio and instrumentation systems for 'impedance matching'?",
+            "options": [
+                "It converts high-impedance voltage sources into low-impedance drives without loading the source or losing voltage amplitude",
+                "It blocks all DC power supplies from reaching the speaker",
+                "It inverts phase to cancel high-frequency acoustic feedback",
+                "It multiplies input voltage by beta squared"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: High-impedance transducers (such as piezo pickups or high-gain voltage stages) suffer severe signal voltage drops if connected directly to low-impedance cables or speakers. Placing a CC buffer between them prevents loading (due to high Zin) and drives the load efficiently (due to low Zout).\n• Why Other Choices are Incorrect: CC does not amplify voltage or invert phase."
+        },
+        {
+            "id": 117,
+            "question": "In an Emitter Follower circuit, a base current of IB = 40 μA is applied to a transistor with Beta = 99. What total load current IE flows through the emitter resistor?",
+            "options": [
+                "0.4 mA",
+                "3.96 mA",
+                "4.0 mA",
+                "40 mA"
+            ],
+            "answer": 2,
+            "explanation": "• Why '4.0 mA' is Correct: In Common Collector, the load current is the emitter current: I_E = (beta + 1) * I_B = (99 + 1) * 40 μA = 100 * 40 μA = 4,000 μA = 4.0 mA.\n• Why Other Choices are Incorrect: 3.96 mA is collector current alone (99 * 40 μA); 0.4 mA is an order of magnitude error."
+        },
+        {
+            "id": 118,
+            "question": "How does the Power Gain of the Common Collector configuration compare to the other two configurations?",
+            "options": [
+                "It has the highest power gain of all three configurations",
+                "It has Medium power gain, because while voltage gain is unity (Av ≈ 1), it provides large current gain (Ai ≈ beta + 1)",
+                "Its power gain is strictly zero",
+                "It has lower power gain than Common Base"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Power gain is Ap = Av * Ai. Since Av ≈ 1 and Ai ≈ beta + 1, Ap ≈ beta + 1, which represents 'Medium' power gain (e.g., 50 to 200). Common Emitter has 'Very High' power gain (Av * beta), while Common Base has 'Low' power gain.\n• Why Other Choices are Incorrect: CE has the highest power gain; CC power gain is medium, not zero."
+        },
+        {
+            "id": 119,
+            "question": "In summary, the Common Collector amplifier is best characterized as providing which of the following performance combinations?",
+            "options": [
+                "High voltage gain with zero current gain",
+                "Good current amplification with very little voltage gain (unity gain)",
+                "High voltage gain with negative current gain",
+                "Zero power gain and zero current gain"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: As explicitly summarized in the Canvas LMS module: The load resistance receives both base and collector currents giving a large current gain, therefore providing good current amplification with very little voltage gain (Av ≈ 1).\n• Why Other Choices are Incorrect: Common Collector is a current amplifier, not a high voltage amplifier."
+        },
+        {
+            "id": 120,
+            "question": "Which table entry correctly pairs each transistor configuration with its core operational summary?",
+            "options": [
+                "CB: Has Current Gain but no Voltage Gain; CE: Has Voltage Gain but no Current Gain; CC: Has both gains",
+                "CB: Has Voltage Gain but no Current Gain; CE: Has both Current and Voltage Gain; CC: Has Current Gain but no Voltage Gain",
+                "CB: Inverting amplifier; CE: Non-inverting; CC: Inverting",
+                "CB: High input Z; CE: Medium input Z; CC: Low input Z"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: • Common Base: Has Voltage Gain but no Current Gain (Ai < 1).\n• Common Emitter: Has both Current and Voltage Gain (highest power gain).\n• Common Collector: Has Current Gain but no Voltage Gain (Av ≈ 1).\n• Why Other Choices are Incorrect: Common Emitter is the only inverting amplifier; Common Collector has the highest input impedance."
         }
     ]
   },
