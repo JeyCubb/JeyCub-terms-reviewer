@@ -9,7 +9,7 @@
 var SUBJECT_DATA = {
   ece_midterm: {
     title: "ECE 005 Midterm Exam Reviewer",
-    chapter: "ECE 005 Midterm - BJT Construction, Seatwork & Comprehensive Analysis",
+    chapter: "ECE 005 Midterm - Complete Mastery Bank (Boylestad, Malvino & Mehta)",
     questions: [
         {
             "id": 1,
@@ -1930,6 +1930,486 @@ var SUBJECT_DATA = {
             ],
             "answer": 2,
             "explanation": "• Why 'Collector' is Correct: The Collector region operates under high reverse-bias voltage (V_CE) and conducts full load current, generating significant heat (P = V_CE * I_C). It is manufactured with the largest physical size to transfer this thermal energy safely to the case or heat sink.\n• Why Other Choices are Incorrect: Base is the thinnest; emitter is smaller than the collector."
+        },
+        {
+            "id": 161,
+            "question": "In Malvino's 'First (Ideal) Approximation' of a conducting transistor, what value is assumed for the base-emitter junction voltage (VBE)?",
+            "options": [
+                "VBE = 0 V (the emitter diode acts like an ideal closed switch)",
+                "VBE = 0.7 V",
+                "VBE = 0.3 V",
+                "VBE = 1.0 V"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'VBE = 0 V' is Correct: In the first (ideal) approximation, the forward-biased emitter diode is treated as an ideal diode with zero threshold voltage (VBE = 0 V). This allows quick mental estimates for troubleshooting.\n• Why Other Choices are Incorrect: 0.7 V is the second approximation; 0.3 V is for Germanium."
+        },
+        {
+            "id": 162,
+            "question": "In Malvino's 'Second Approximation' of a silicon transistor, what value is assumed for the base-emitter voltage (VBE)?",
+            "options": [
+                "VBE = 0 V",
+                "VBE = 0.3 V",
+                "VBE = 0.7 V (modeled as an ideal diode in series with a 0.7 V barrier potential battery)",
+                "VBE = 1.4 V"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'VBE = 0.7 V' is Correct: The second approximation provides the best practical compromise between speed and accuracy by including the built-in barrier potential of the silicon PN junction (VBE = 0.7 V).\n• Why Other Choices are Incorrect: 0 V is the ideal approximation; 1.4 V is for a Darlington pair."
+        },
+        {
+            "id": 163,
+            "question": "What additional physical circuit parameter is incorporated in the 'Third Approximation' of a transistor?",
+            "options": [
+                "The bulk resistances (r'e and r'b) of the semiconductor regions, causing VBE to rise slightly above 0.7 V at high currents",
+                "The external load resistor only",
+                "The DC power supply internal resistance only",
+                "The capacitance of the breadboard wiring"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: The third approximation accounts for the bulk internal resistance of the semiconductor material (r'e and r'b), meaning VBE = 0.7 V + IB*r'b, which becomes important at high currents where VBE can exceed 0.8 V to 1.0 V.\n• Why Other Choices are Incorrect: External resistors are not internal transistor parameters."
+        },
+        {
+            "id": 164,
+            "question": "On a transistor's collector characteristic curves, what is the voltage called that marks the boundary where the curve transitions from the rising saturation region to the flat active region?",
+            "options": [
+                "Breakdown voltage",
+                "Knee voltage (Vknee, typically 0.7 V to 1.0 V for silicon)",
+                "Threshold pinch-off voltage",
+                "Early voltage"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Knee voltage' is Correct: The knee voltage (Vknee) is the collector-emitter voltage where collector current levels off and becomes constant. Above Vknee, the collector junction is reverse-biased and the transistor operates in the active region.\n• Why Other Choices are Incorrect: Breakdown voltage occurs at the far right of the curves."
+        },
+        {
+            "id": 165,
+            "question": "On the Common Emitter output characteristics (IC vs VCE), what are the two intercept points that define the DC load line?",
+            "options": [
+                "Cutoff intercept on horizontal axis (VCE = VCC, IC = 0) and Saturation intercept on vertical axis (VCE = 0, IC = VCC / RC)",
+                "Active Q-point and Early voltage intercept",
+                "Breakdown voltage and threshold voltage",
+                "Origin (0 V, 0 mA) and knee voltage"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: The DC load line represents KVL: VCE = VCC - IC*RC. When IC = 0, VCE = VCC (cutoff point on the voltage axis). When VCE = 0, IC = VCC / RC (saturation point on the current axis). Connecting these two points forms the load line.\n• Why Other Choices are Incorrect: The load line connects cutoff and saturation extremes."
+        },
+        {
+            "id": 166,
+            "question": "What is the technical definition of the 'Quiescent Operating Point' (Q-point) of a transistor amplifier?",
+            "options": [
+                "The maximum frequency where the transistor oscillates",
+                "The DC operating point (VCEQ, ICQ) determined by the intersection of the DC load line and the base current curve in the absence of an AC signal",
+                "The point where the transistor reaches 200°C junction temperature",
+                "The point of maximum volume on an audio amplifier"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The term 'quiescent' means quiet or at rest. The Q-point represents the steady-state DC current (ICQ) and voltage (VCEQ) established by the DC biasing network with zero input signal applied.\n• Why Other Choices are Incorrect: Q-point is a DC bias condition, not a frequency or temperature rating."
+        },
+        {
+            "id": 167,
+            "question": "(Mehta Example 8.22) For a transistor circuit with supply voltage VCC = 12.5 V and collector load resistor RC = 2.5 kΩ, what are the two end points of the DC load line?",
+            "options": [
+                "Cutoff: 12.5 V; Saturation: 5.0 mA",
+                "Cutoff: 2.5 V; Saturation: 12.5 mA",
+                "Cutoff: 10 V; Saturation: 2.5 mA",
+                "Cutoff: 25 V; Saturation: 50 mA"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'Cutoff: 12.5 V; Saturation: 5.0 mA' is Correct: Cutoff voltage is VCE(cutoff) = VCC = 12.5 V (point on VCE axis). Saturation current is IC(sat) = VCC / RC = 12.5 V / 2.5 kΩ = 5.0 mA (point on IC axis).\n• Why Other Choices are Incorrect: 12.5 / 2.5 = 5.0 mA directly."
+        },
+        {
+            "id": 168,
+            "question": "(Mehta Example 8.23) In a CE circuit with VCC = 12 V, RC = 6 kΩ, IB = 20 μA, and β = 50, what are the coordinates of the operating Q-point (VCE, IC)?",
+            "options": [
+                "VCE = 6 V, IC = 1 mA",
+                "VCE = 12 V, IC = 2 mA",
+                "VCE = 3 V, IC = 1.5 mA",
+                "VCE = 0 V, IC = 2 mA"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'VCE = 6 V, IC = 1 mA' is Correct: First calculate collector current: IC = beta * IB = 50 * 0.02 mA = 1.0 mA. Then apply KVL for VCE: VCE = VCC - IC*RC = 12 V - (1.0 mA * 6 kΩ) = 12 V - 6 V = 6 V. The Q-point is (6 V, 1 mA).\n• Why Other Choices are Incorrect: 12 V is cutoff; 0 V is saturation."
+        },
+        {
+            "id": 169,
+            "question": "(Malvino Example 6-11) A 2N3904 transistor operates with VCE = 10 V and IC = 20 mA. What is its internal power dissipation PD?",
+            "options": [
+                "20 mW",
+                "200 mW",
+                "2 W",
+                "0.5 W"
+            ],
+            "answer": 1,
+            "explanation": "• Why '200 mW' is Correct: Power dissipation is PD = VCE * IC = 10 V * 20 mA = 200 mW (0.2 W).\n• Why Other Choices are Incorrect: 10 * 20 = 200, not 20 or 2,000."
+        },
+        {
+            "id": 170,
+            "question": "(Malvino Example 6-12) A transistor is rated for PD(max) = 625 mW at 25°C with a derating factor of 5 mW/°C. What is its maximum allowable power dissipation at an ambient temperature of 100°C?",
+            "options": [
+                "625 mW",
+                "500 mW",
+                "375 mW",
+                "250 mW"
+            ],
+            "answer": 3,
+            "explanation": "• Why '250 mW' is Correct: Calculate temperature rise above 25°C: Delta_T = 100°C - 25°C = 75°C. Power reduction: Delta_P = 75°C * 5 mW/°C = 375 mW. Derated maximum power: PD(max) = 625 mW - 375 mW = 250 mW.\n• Why Other Choices are Incorrect: 375 mW is the reduction amount, so the remaining rating is 250 mW."
+        },
+        {
+            "id": 171,
+            "question": "In conservative commercial electronic design, why do engineers typically adopt a 'safety factor of 2' on transistor power dissipation ratings?",
+            "options": [
+                "To ensure that power dissipation never exceeds half of PD(max), guaranteeing long device lifetime and protecting against thermal runaway under warm conditions",
+                "Because transistors only work half of the time",
+                "Because alternating current reverses direction twice per cycle",
+                "To reduce battery voltage by half"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: Operating a transistor at or near its maximum rating significantly shortens its lifespan and increases the risk of thermal failure. A safety factor of 2 means designing for PD <= PD(max) / 2 (e.g. 125 mW for a 250 mW rating), ensuring highly reliable continuous operation.\n• Why Other Choices are Incorrect: Safety factors are thermal design margins, not related to AC frequency."
+        },
+        {
+            "id": 172,
+            "question": "Under the European Pro-Electron semiconductor numbering system (e.g., BC147 or AC125), what does the first letter indicate?",
+            "options": [
+                "The year of manufacture",
+                "The semiconductor material used (A = Germanium, B = Silicon, C = GaAs)",
+                "The maximum voltage rating",
+                "The package style"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In Pro-Electron codes, the first letter denotes the semiconductor material: 'A' represents materials with bandgap 0.6-1.0 eV (Germanium), 'B' represents bandgap 1.0-1.3 eV (Silicon), and 'C' represents bandgap >= 1.3 eV (Gallium Arsenide). Thus, BC147 is a Silicon device.\n• Why Other Choices are Incorrect: It does not denote year or package style."
+        },
+        {
+            "id": 173,
+            "question": "In the Pro-Electron transistor code BC547, what does the second letter 'C' signify?",
+            "options": [
+                "Collector lead location",
+                "Audio frequency (AF) low-power transistor",
+                "High-power industrial thyristor",
+                "Zener diode regulator"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The second letter describes the circuit function: 'C' signifies an Audio Frequency (AF) small-signal / low-power transistor. 'D' signifies an AF power transistor, 'F' an RF low-power transistor, and 'Z' a Zener diode.\n• Why Other Choices are Incorrect: C denotes AF small-signal transistor, not collector terminal."
+        },
+        {
+            "id": 174,
+            "question": "Under the EIA/JEDEC semiconductor naming standard, what does the prefix '2N' (such as in 2N3904 or 2N2222) denote?",
+            "options": [
+                "Two volts nominal operating voltage",
+                "A semiconductor device having two PN junctions (a three-terminal transistor)",
+                "A device produced exclusively by two manufacturers",
+                "A second-generation integrated circuit"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In JEDEC notation, the leading digit indicates the number of PN junctions: '1N' indicates one junction (two-terminal diode), '2N' indicates two junctions (three-terminal transistor or FET), and '3N' indicates three junctions (four-terminal dual-gate MOSFET or SCR).\n• Why Other Choices are Incorrect: 2N specifies junction count, not voltage or manufacturer."
+        },
+        {
+            "id": 175,
+            "question": "(Malvino Table 6-1 Troubleshooting) In a common-emitter circuit, if the base resistor (RB) becomes open-circuited, what will be the measured collector voltage VC?",
+            "options": [
+                "VC = 0 V",
+                "VC = VCC (full supply voltage, because IB = 0 drops the transistor into cutoff)",
+                "VC = 0.7 V",
+                "VC = VCC / 2"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: When RB opens, no base current can flow (IB = 0). The transistor enters cutoff, causing collector current to drop to zero (IC = 0). With no current through collector resistor RC, there is zero voltage drop across RC, so VC rises to full VCC.\n• Why Other Choices are Incorrect: VC = 0 V occurs when RC is open or in dead saturation."
+        },
+        {
+            "id": 176,
+            "question": "(Malvino Table 6-1 Troubleshooting) If the base resistor (RB) becomes accidentally shorted directly across a 10 V base supply, what will occur?",
+            "options": [
+                "Collector voltage drops to negative 10 V",
+                "The full 10 V supply is forced across the forward-biased base-emitter diode, drawing excessive destructive current and blowing the transistor",
+                "The transistor turns off into cutoff",
+                "The circuit oscillates as an RF transmitter"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The base-emitter junction cannot sustain 10 V forward bias without a current-limiting resistor; it clamps around 0.7 V. Shorting RB dumps massive current through the junction, causing instantaneous thermal destruction ('transistor blown').\n• Why Other Choices are Incorrect: Shorting RB drives excessive current, destroying the junction."
+        },
+        {
+            "id": 177,
+            "question": "(Malvino Table 6-1 Troubleshooting) If the collector resistor (RC) becomes open-circuited, what is the measured collector voltage (VC)?",
+            "options": [
+                "VC = VCC",
+                "VC = 0 V (disconnected from the DC supply VCC)",
+                "VC = 0.7 V",
+                "VC = -0.7 V"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'VC = 0 V' is Correct: If RC is open, the collector terminal is completely disconnected from the positive power supply VCC. Therefore, the measured collector voltage with respect to ground is 0 V.\n• Why Other Choices are Incorrect: If RC is open, no voltage from VCC can reach the collector."
+        },
+        {
+            "id": 178,
+            "question": "What is the most common internal electrical failure mode in a power BJT subjected to severe overcurrent or excessive thermal dissipation?",
+            "options": [
+                "Base terminal disconnection",
+                "Collector-to-emitter internal short circuit (VCE = 0 V)",
+                "Spontaneous transformation into a tunnel diode",
+                "Complete demagnetization of copper leads"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: As noted in Malvino and Boylestad, because the collector junction dissipates the vast majority of internal power (PD = VCE * IC), extreme temperatures melt the thin semiconductor crystal lattice between collector and emitter, causing an internal collector-to-emitter short circuit (VCE ≈ 0 V).\n• Why Other Choices are Incorrect: Collector-to-emitter short is the primary physical breakdown mechanism."
+        },
+        {
+            "id": 179,
+            "question": "How does the maximum collector-to-emitter breakdown rating (BVCEO) compare to the collector-to-base breakdown rating (BVCBO)?",
+            "options": [
+                "BVCEO is much higher than BVCBO",
+                "BVCEO is significantly lower than BVCBO (often about half the value)",
+                "BVCEO and BVCBO are always mathematically identical",
+                "BVCEO cannot be measured"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In the common-emitter configuration with base open, any initial thermal or avalanche carrier generated at the reverse-biased collector junction is amplified by the transistor gain beta, triggering breakdown at a much lower voltage than when the emitter is open (BVCBO). Thus, BVCEO is typically roughly half of BVCBO.\n• Why Other Choices are Incorrect: CE breakdown is lower due to internal beta multiplication."
+        },
+        {
+            "id": 180,
+            "question": "What is the phenomenon called 'Punch-Through' in a bipolar junction transistor?",
+            "options": [
+                "The physical punching of mounting holes into a heat sink",
+                "A breakdown condition where the reverse-biased collector-base depletion layer expands across the entire base region and contacts the emitter depletion layer",
+                "The switching on of a transistor by light pulses",
+                "The destruction of wire leads by mechanical vibration"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Punch-through (or reach-through) occurs at high collector reverse voltages when the depletion layer extends completely across the ultra-thin base region, directly linking the collector and emitter depletion layers and causing massive breakdown current.\n• Why Other Choices are Incorrect: It is a semiconductor depletion layer reach-through phenomenon."
+        },
+        {
+            "id": 181,
+            "question": "Why do common-emitter collector characteristic curves (IC vs VCE) exhibit a slight upward slope rather than remaining perfectly flat in the active region?",
+            "options": [
+                "Due to base-width modulation (the Early Effect), where higher VCE widens the CB depletion region and narrows the effective base width",
+                "Due to magnetic coupling with the power supply transformer",
+                "Because silicon atoms lose valence electrons at high voltages",
+                "Because collector current decreases linearly with VCE"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: As VCE increases, the reverse bias on the collector-base junction increases, causing its depletion region to expand further into the lightly doped base. This narrows the effective base width (WB), reducing carrier recombination and causing IC to rise slightly with VCE.\n• Why Other Choices are Incorrect: This upward slope is the classical Early Effect."
+        },
+        {
+            "id": 182,
+            "question": "How is the AC common-emitter current gain (hfe or βac) formally evaluated from a family of collector characteristic curves at an operating point?",
+            "options": [
+                "βac = IC / IB at the origin",
+                "βac = (Delta_IC / Delta_IB) evaluated along a vertical line of constant VCE",
+                "βac = Delta_VCE / Delta_IC along a horizontal line of constant IC",
+                "βac = VCE / VBE"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: By definition, ac beta is the ratio of a small change in collector current to the corresponding change in base current while holding collector-to-emitter voltage constant: beta_ac = Delta_IC / Delta_IB |_VCE=constant.\n• Why Other Choices are Incorrect: Holding VCE constant requires reading Delta_IC vertically between neighboring IB curves."
+        },
+        {
+            "id": 183,
+            "question": "In a well-designed modern BJT, approximately what fraction of the majority carriers injected by the emitter recombine in the base to form base current (IB)?",
+            "options": [
+                "About 50%",
+                "Less than 5% (typically 1% to 2%)",
+                "Exactly 100%",
+                "Zero percent"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Less than 5% (typically 1% to 2%)' is Correct: Because the base is made physically ultra-thin and lightly doped, over 95% to 99% of injected carriers diffuse directly across into the collector without recombining, leaving less than 5% to constitute the base current.\n• Why Other Choices are Incorrect: If 50% recombined, current gain beta would be only 1."
+        },
+        {
+            "id": 184,
+            "question": "Which equation relates the collector-to-emitter leakage current with base open (ICEO) to the reverse saturation current with emitter open (ICBO)?",
+            "options": [
+                "ICEO = ICBO / (beta + 1)",
+                "ICEO = (beta + 1) * ICBO = ICBO / (1 - alpha)",
+                "ICEO = ICBO - beta",
+                "ICEO = alpha * ICBO"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'ICEO = (beta + 1) * ICBO' is Correct: With the base open, the tiny reverse leakage current ICBO flowing across the collector junction enters the base and is internally amplified by beta, yielding ICEO = (beta + 1)*ICBO ≈ beta*ICBO.\n• Why Other Choices are Incorrect: Leakage is multiplied by beta + 1, making ICEO much larger than ICBO."
+        },
+        {
+            "id": 185,
+            "question": "Why is the reverse leakage current (ICBO and ICEO) such a critical factor in high-temperature BJT circuit stability?",
+            "options": [
+                "Because leakage current decreases to zero at elevated temperatures",
+                "Because leakage current approximately doubles for every 10°C increase in temperature, which can trigger thermal runaway if not stabilized",
+                "Because leakage current inverts the polarity of the DC power supply",
+                "Because leakage current converts silicon into germanium"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Thermally generated minority carriers double approximately every 10°C. At high temperatures, this multiplied leakage current increases total collector current, raising internal temperature further and potentially causing destructive thermal runaway.\n• Why Other Choices are Incorrect: Leakage increases exponentially with temperature, rather than decreasing."
+        },
+        {
+            "id": 186,
+            "question": "In a Common Emitter circuit with collector load resistor RC and supply VCC, what is the fundamental Kirchhoff's Voltage Law relationship for VCE?",
+            "options": [
+                "VCE = VCC + IC*RC",
+                "VCE = VCC - IC*RC",
+                "VCE = IC*RC - VCC",
+                "VCE = VCC / (IC*RC)"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'VCE = VCC - IC*RC' is Correct: Applying KVL around the collector-emitter loop: VCC - IC*RC - VCE = 0. Solving for collector-emitter voltage gives VCE = VCC - IC*RC.\n• Why Other Choices are Incorrect: The voltage drop across RC subtracts from the supply voltage VCC."
+        },
+        {
+            "id": 187,
+            "question": "Why is the collector circuit of an active BJT commonly modeled in equivalent circuits as a constant current source?",
+            "options": [
+                "Because collector current is controlled by the input base current (IC = beta*IB) and remains almost completely independent of collector-emitter voltage VCE",
+                "Because it can deliver infinite current to any load",
+                "Because it operates without any external power source",
+                "Because its internal resistance is zero ohms"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: In the active region, the characteristic curves are almost horizontal, meaning collector current depends on base current (IC = beta*IB) and changes negligibly with VCE. This is the exact definition of a current-controlled current source.\n• Why Other Choices are Incorrect: Ideal current sources have infinite internal resistance, not zero."
+        },
+        {
+            "id": 188,
+            "question": "When comparing the SOT-223 surface-mount transistor package to the miniature SOT-23 package, why can the SOT-223 dissipate significantly higher power (approx. 1 Watt)?",
+            "options": [
+                "It is made of pure diamond crystals",
+                "It has a physically larger body and an extra wide collector tab designed to solder directly to copper PCB lands for heat dissipation",
+                "It does not conduct direct current",
+                "It operates exclusively at cryogenic temperatures"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: SOT-223 has a larger surface area and features an extended metal collector tab on one side that solders directly to PCB copper planes, acting as an effective heat sink to dissipate up to 1 Watt (compared to ~350 mW for SOT-23).\n• Why Other Choices are Incorrect: The extra collector tab and larger area provide enhanced thermal dissipation."
+        },
+        {
+            "id": 189,
+            "question": "What is the primary distinguishing physical feature of the popular TO-220 power transistor package?",
+            "options": [
+                "A small glass bead with axial leads",
+                "A molded plastic body with a heavy metal mounting tab featuring a hole to bolt directly to an external heat sink",
+                "A round top-hat metal can with three gold leads",
+                "A rectangular flat dual-in-line package with 14 pins"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The TO-220 is a widely used power package featuring a heavy copper/metal tab with a mounting hole, allowing the package to be firmly clamped or bolted to an aluminum heat sink with thermal grease.\n• Why Other Choices are Incorrect: TO-92 is all-plastic; TO-18 is a round top-hat can; DIP-14 is an IC package."
+        },
+        {
+            "id": 190,
+            "question": "In the heavy-duty TO-3 (TO-204AA) diamond-shaped power transistor package, which terminal is electrically connected directly to the outer metal case?",
+            "options": [
+                "Base terminal",
+                "Emitter terminal",
+                "Collector terminal",
+                "No terminal (the case is completely insulated)"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Collector terminal' is Correct: In the TO-3 package, the collector is internally bonded to the heavy metal case. This provides maximum thermal conductivity from the high-power collector junction directly into the chassis or external heat sink.\n• Why Other Choices are Incorrect: The two insulated pins on the bottom are Base and Emitter."
+        },
+        {
+            "id": 191,
+            "question": "When checking a suspected BJT using a digital multimeter (DMM) set to Diode Test mode, what reading across a junction indicates that it has failed short-circuited?",
+            "options": [
+                "A reading of OL (open loop)",
+                "A reading of 0.000 V (zero volts) in both forward and reverse directions",
+                "A reading of exactly 0.700 V",
+                "A reading that fluctuates with light"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: A healthy junction reads ~0.6-0.7 V forward and OL reverse. A dead short reads 0.00 V (and often beeps continuously) in both directions, confirming junction breakdown and melting.\n• Why Other Choices are Incorrect: OL in both directions indicates an open circuit."
+        },
+        {
+            "id": 192,
+            "question": "When testing an NPN transistor with an analog ohmmeter, connecting the meter leads across the Base-Emitter junction in forward bias produces what typical resistance reading?",
+            "options": [
+                "Infinite resistance (> 10 MΩ)",
+                "Low resistance (typically 100 Ω to 1 kΩ)",
+                "Zero ohms exactly",
+                "Negative resistance"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Low resistance (typically 100 Ω to 1 kΩ)' is Correct: An analog ohmmeter applies an internal battery potential. In forward bias, the junction conducts, registering a relatively low resistance between 100 Ω and 1 kΩ. In reverse bias, it registers a very high resistance (> 100 kΩ).\n• Why Other Choices are Incorrect: Infinite resistance indicates an open junction."
+        },
+        {
+            "id": 193,
+            "question": "In a single-stage CE amplifier where AC output is taken from the collector via a coupling capacitor, what does the negative sign in the expression vout = -ic*RC represent?",
+            "options": [
+                "A negative DC power supply voltage",
+                "A 180° phase inversion between input AC voltage and output AC voltage",
+                "Loss of signal power",
+                "Negative internal semiconductor resistance"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The negative sign is mathematical shorthand denoting phase reversal: an increase in input signal voltage causes an inverted (negative-going) output voltage swing across the collector load.\n• Why Other Choices are Incorrect: It represents phase inversion, not power loss or negative supply rails."
+        },
+        {
+            "id": 194,
+            "question": "When a common-emitter amplifier drives a subsequent amplifier stage having an input resistance Ri, how is the effective AC collector load resistance (Rac) calculated?",
+            "options": [
+                "Rac = RC + Ri",
+                "Rac = RC || Ri = (RC * Ri) / (RC + Ri)",
+                "Rac = RC - Ri",
+                "Rac = RC / Ri"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Rac = RC || Ri' is Correct: Because the coupling capacitor acts as an AC short circuit, the second stage's input resistance Ri appears in parallel with the collector resistor RC for AC signals: Rac = RC || Ri.\n• Why Other Choices are Incorrect: Parallel combination reduces total AC load resistance."
+        },
+        {
+            "id": 195,
+            "question": "(Mehta Example 8.30) A single-stage transistor amplifier has a collector load RC = 2 kΩ, input resistance Ri = 1 kΩ, and current gain β = 50. What is the overall voltage gain (Av)?",
+            "options": [
+                "25",
+                "50",
+                "100",
+                "200"
+            ],
+            "answer": 2,
+            "explanation": "• Why '100' is Correct: Voltage gain is Av = beta * (RC / Ri) = 50 * (2 kΩ / 1 kΩ) = 50 * 2 = 100.\n• Why Other Choices are Incorrect: 50 * (1 / 2) = 25 (inverting ratio); direct calculation gives 100."
+        },
+        {
+            "id": 196,
+            "question": "How is the signal AC power gain (Ap) of a common-emitter amplifier expressed in terms of current gain and circuit resistances?",
+            "options": [
+                "Ap = beta * (RC / Ri)",
+                "Ap = beta^2 * (RC / Ri) = Av * Ai",
+                "Ap = beta / (RC * Ri)",
+                "Ap = (RC / Ri)^2"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Ap = beta^2 * (RC / Ri) = Av * Ai' is Correct: Power gain is the product of voltage gain and current gain: Ap = Av * Ai = (beta * RC / Ri) * beta = beta^2 * (RC / Ri).\n• Why Other Choices are Incorrect: Power gain involves current gain squared."
+        },
+        {
+            "id": 197,
+            "question": "As the operating junction temperature of a transistor increases, how does the forward voltage drop (VBE) across its base-emitter junction change?",
+            "options": [
+                "It increases by +2.5 mV/°C",
+                "It decreases at a rate of approximately -2.0 mV/°C to -2.5 mV/°C (negative temperature coefficient)",
+                "It remains fixed at exactly 0.700 V regardless of temperature",
+                "It drops instantly to zero volts"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: All silicon PN junctions have a negative temperature coefficient of barrier potential: VBE decreases by roughly 2 mV to 2.5 mV for every 1°C increase in temperature (dVBE/dT ≈ -2.2 mV/°C).\n• Why Other Choices are Incorrect: Barrier potential decreases with temperature, not increases."
+        },
+        {
+            "id": 198,
+            "question": "What is the engineering phenomenon known as 'Thermal Runaway' in a BJT amplifier?",
+            "options": [
+                "Cooling of the transistor due to fan airflow",
+                "A destructive cycle where increased temperature causes higher IC, which increases power dissipation, generating even more heat until the device burns out",
+                "The rapid evaporation of silicon solder pads",
+                "The expansion of copper leads at freezing temperatures"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Thermal runaway is a catastrophic thermal feedback loop: Higher temperature -> higher leakage current and beta -> higher collector current -> higher power dissipation (PD = VCE*IC) -> higher junction temperature. Without negative feedback stabilization (like RE), the transistor burns itself out.\n• Why Other Choices are Incorrect: It is a destructive positive thermal feedback loop."
+        },
+        {
+            "id": 199,
+            "question": "What is the primary function of attaching an extruded aluminum heat sink to a power transistor?",
+            "options": [
+                "To increase the circuit's electrical inductance",
+                "To increase the effective surface area in contact with the air, dramatically reducing thermal resistance to ambient (R_theta_JA) and conducting heat away from the junction",
+                "To shield the transistor from ambient radio waves",
+                "To prevent DC supply voltage from fluctuating"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Heat sinks possess large surface areas and fins that rapidly transfer thermal energy from the transistor case into the surrounding air via conduction and convection, preventing internal junction temperature from exceeding maximum limits (150°C - 200°C).\n• Why Other Choices are Incorrect: Heat sinks are thermal dissipation elements, not electrical shields."
+        },
+        {
+            "id": 200,
+            "question": "In summary, in which operational region does a BJT exhibit proportional linear amplification where IC = β*IB, VBE ≈ 0.7 V, and VCE > VCE(sat)?",
+            "options": [
+                "Cutoff Region",
+                "Linear Active Region",
+                "Saturation Region",
+                "Avalanche Breakdown Region"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Linear Active Region' is Correct: In the Active Region, the Base-Emitter junction is forward-biased (VBE ≈ 0.7 V) and the Collector-Base junction is reverse-biased (VCE > VCE(sat)), yielding the linear relationship IC = beta*IB with minimum waveform distortion.\n• Why Other Choices are Incorrect: Cutoff has IC = 0; Saturation has VCE ≈ 0.2 V; Breakdown destroys the device."
         }
     ]
   },
