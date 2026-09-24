@@ -9,7 +9,7 @@
 var SUBJECT_DATA = {
   ece_midterm: {
     title: "ECE 005 Midterm Exam Reviewer",
-    chapter: "ECE 005 Midterm - BJT Construction, Operation & Biasing",
+    chapter: "ECE 005 Midterm - BJT Configurations & Characteristics",
     questions: [
         {
             "id": 1,
@@ -730,6 +730,186 @@ var SUBJECT_DATA = {
             ],
             "answer": 1,
             "explanation": "• Why 'Ohmic wire leads connected to each of the three regions' is Correct: A wire lead connects directly to each of the three doped regions (Emitter, Base, Collector) to form the external terminal pins of the transistor package.\n• Why Other Choices are Incorrect: BJTs are three-terminal electronic devices connected by metallic wire leads, not optical or capacitive elements."
+        },
+        {
+            "id": 61,
+            "question": "Which of the following statements correctly summarizes the fundamental gain characteristics of the Common Base (CB) transistor configuration?",
+            "options": [
+                "It has both Current and Voltage Gain",
+                "It has Current Gain but no Voltage Gain",
+                "It has Voltage Gain but no Current Gain",
+                "It has neither Voltage Gain nor Current Gain"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'It has Voltage Gain but no Current Gain' is Correct: In the Common Base configuration, output current is collector current and input is emitter current. Since alpha = IC / IE < 1, there is no current amplification (Current Gain is Low / < 1), but it provides High Voltage Gain.\n• Why Other Choices are Incorrect: Common Emitter has both current and voltage gain; Common Collector has current gain but no voltage gain."
+        },
+        {
+            "id": 62,
+            "question": "Which BJT amplifier configuration is uniquely capable of providing BOTH current gain and voltage gain simultaneously?",
+            "options": [
+                "Common Base (CB)",
+                "Common Emitter (CE)",
+                "Common Collector (CC)",
+                "Cascode amplifier only"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Common Emitter (CE)' is Correct: The Common Emitter configuration provides medium-to-high voltage gain (Av = -RC / re) AND medium-to-high current gain (Ai ≈ beta). Because it amplifies both current and voltage, it produces the highest overall Power Gain of all three configurations.\n• Why Other Choices are Incorrect: Common Base lacks current gain; Common Collector lacks voltage gain."
+        },
+        {
+            "id": 63,
+            "question": "Which BJT configuration is characterized as having 'Current Gain but no Voltage Gain'?",
+            "options": [
+                "Common Base (CB)",
+                "Common Emitter (CE)",
+                "Common Collector (CC / Emitter-Follower)",
+                "Common Gate"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Common Collector (CC / Emitter-Follower)' is Correct: The Common Collector configuration has a voltage gain of approximately unity (Av ≤ 1, hence 'no voltage gain'), but offers high current gain (Ai ≈ beta + 1), making it ideal as a current amplifier and buffer.\n• Why Other Choices are Incorrect: Common Base has voltage gain but no current gain."
+        },
+        {
+            "id": 64,
+            "question": "According to the comparative characteristics of transistor configurations, which configuration delivers the highest overall Power Gain?",
+            "options": [
+                "Common Base (Low power gain)",
+                "Common Collector (Medium power gain)",
+                "Common Emitter (Very High power gain)",
+                "All three configurations deliver identical power gain"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Common Emitter (Very High power gain)' is Correct: Power gain is the product of voltage gain and current gain (Ap = Av * Ai). Because the Common Emitter configuration provides substantial gain for both voltage and current, its overall power gain is rated as 'Very High' (typically 10,000 to 50,000+), exceeding CB (Low) and CC (Medium).\n• Why Other Choices are Incorrect: CB lacks current gain and CC lacks voltage gain, so their power gains are substantially lower."
+        },
+        {
+            "id": 65,
+            "question": "Which transistor configuration exhibits the lowest input impedance and the highest output impedance?",
+            "options": [
+                "Common Base (Low input Z, Very High output Z)",
+                "Common Emitter (Medium input Z, High output Z)",
+                "Common Collector (High input Z, Low output Z)",
+                "Emitter-Follower (High input Z, Low output Z)"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'Common Base' is Correct: In Common Base, the input is the forward-biased base-emitter junction (yielding Low input impedance, Zin ≈ re ≈ 10 to 50 ohms) and the output is the reverse-biased collector-base junction (yielding Very High output impedance, Zout ≈ 1 MΩ to 2 MΩ).\n• Why Other Choices are Incorrect: Common Collector has high input Z and low output Z."
+        },
+        {
+            "id": 66,
+            "question": "Which BJT configuration exhibits a High input impedance and a Low output impedance, making it optimal for impedance matching between circuit stages?",
+            "options": [
+                "Common Base",
+                "Common Emitter",
+                "Common Collector (Emitter-Follower)",
+                "Inverted Active Base"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Common Collector' is Correct: The Common Collector configuration presents a High input impedance (Zin ≈ beta * RE) and a Low output impedance (Zout ≈ re + RS / beta), allowing it to match high-impedance signal sources to low-impedance loads without signal attenuation.\n• Why Other Choices are Incorrect: Common Base has low input and high output impedance."
+        },
+        {
+            "id": 67,
+            "question": "What is the signal phase shift between input and output AC waveforms for each of the three BJT configurations (Common Base, Common Emitter, Common Collector)?",
+            "options": [
+                "CB: 180°, CE: 0°, CC: 180°",
+                "CB: 0°, CE: 180°, CC: 0°",
+                "CB: 90°, CE: 180°, CC: 90°",
+                "CB: 0°, CE: 0°, CC: 0°"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'CB: 0°, CE: 180°, CC: 0°' is Correct: The Common Emitter is the only inverting configuration, producing a 180° phase inversion between base input and collector output. Both Common Base and Common Collector are non-inverting, producing a 0° phase shift between input and output.\n• Why Other Choices are Incorrect: CE is always 180°, never 0°."
+        },
+        {
+            "id": 68,
+            "question": "How do the voltage gains of the three transistor configurations rank relative to one another in the comparative characteristics table?",
+            "options": [
+                "Common Base: High, Common Emitter: Medium, Common Collector: Low",
+                "Common Base: Low, Common Emitter: High, Common Collector: Medium",
+                "Common Base: Medium, Common Emitter: Low, Common Collector: High",
+                "All three configurations have identical voltage gain"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: In the standard textbook characteristics table: Common Base has High voltage gain; Common Emitter has Medium voltage gain; and Common Collector has Low voltage gain (Av ≤ 1).\n• Why Other Choices are Incorrect: Common Collector never provides high voltage gain."
+        },
+        {
+            "id": 69,
+            "question": "How do the current gains of the three transistor configurations rank relative to one another in the comparative characteristics table?",
+            "options": [
+                "Common Base: High, Common Emitter: Medium, Common Collector: Low",
+                "Common Base: Low, Common Emitter: Medium, Common Collector: High",
+                "Common Base: Medium, Common Emitter: High, Common Collector: Low",
+                "Common Base: Low, Common Emitter: Low, Common Collector: Medium"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Common Base current gain is Low (alpha < 1); Common Emitter current gain is Medium (beta, typically 50 to 300); and Common Collector current gain is High (beta + 1, the largest current gain of all three).\n• Why Other Choices are Incorrect: Common Base has the lowest current gain, not the highest."
+        },
+        {
+            "id": 70,
+            "question": "How does the output impedance rank across the three bipolar transistor configurations?",
+            "options": [
+                "Common Collector (Low), Common Emitter (High), Common Base (Very High)",
+                "Common Collector (High), Common Emitter (Low), Common Base (Very High)",
+                "Common Collector (Very High), Common Emitter (High), Common Base (Low)",
+                "Common Collector (Medium), Common Emitter (Medium), Common Base (Medium)"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: Output impedance ranks as: Common Collector = Low (tens of ohms), Common Emitter = High (tens of kilohms), and Common Base = Very High (hundreds of kilohms to megohms).\n• Why Other Choices are Incorrect: Common Collector has the lowest output impedance, which is why it drives low-impedance loads effectively."
+        },
+        {
+            "id": 71,
+            "question": "How does input impedance rank across the three bipolar transistor configurations?",
+            "options": [
+                "Common Base (Low), Common Emitter (Medium), Common Collector (High)",
+                "Common Base (High), Common Emitter (Medium), Common Collector (Low)",
+                "Common Base (Medium), Common Emitter (Low), Common Collector (High)",
+                "Common Base (Very High), Common Emitter (High), Common Collector (Low)"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: Input impedance ranks as: Common Base = Low (10-50 Ω), Common Emitter = Medium (1-2 kΩ), and Common Collector = High (100-300+ kΩ).\n• Why Other Choices are Incorrect: Common Base input is a forward-biased junction to ground, giving it the lowest input impedance."
+        },
+        {
+            "id": 72,
+            "question": "Why is the Common Collector configuration commonly referred to as the 'Emitter-Follower'?",
+            "options": [
+                "Because the collector physically follows the base across the breadboard",
+                "Because the output voltage at the emitter follows the input AC voltage at the base almost exactly in amplitude (Av ≈ 1) and phase (0°)",
+                "Because the emitter current follows only negative DC supply rails",
+                "Because the emitter is connected in series with the collector"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In Common Collector, the load is connected to the emitter. Since V_E = V_B - V_BE, the emitter AC voltage closely tracks (follows) the input base AC voltage with zero phase shift and nearly unity gain (Av ≈ 1), giving rise to the name 'Emitter-Follower'.\n• Why Other Choices are Incorrect: It has nothing to do with physical breadboard layout or negative rails."
+        },
+        {
+            "id": 73,
+            "question": "If an NPN transistor is replaced with a PNP transistor in a Common Emitter amplifier circuit, what happens to the gain calculations and AC phase inversion?",
+            "options": [
+                "The AC phase shift becomes 0° and all gains drop to zero",
+                "The circuit no longer amplifies AC signals",
+                "The calculations and 180° phase inversion remain exactly the same; only DC voltage polarities and current directions are reversed",
+                "The voltage gain doubles while current gain is halved"
+            ],
+            "answer": 2,
+            "explanation": "• Why this is Correct: Both NPN and PNP BJTs obey identical small-signal AC equations. A PNP Common Emitter amplifier still produces a 180° phase inversion between base and collector and provides the same voltage, current, and power gains. The only practical difference is that DC power supplies and biasing voltages must be reversed in polarity.\n• Why Other Choices are Incorrect: AC signal behavior and amplification magnitude are identical."
+        },
+        {
+            "id": 74,
+            "question": "Which of the three BJT configurations is most suitable for driving an 8-ohm audio loudspeaker from a preceding high-impedance voltage amplifier stage?",
+            "options": [
+                "Common Base, due to its very high output impedance",
+                "Common Collector (Emitter-Follower), due to its low output impedance and high current driving capability",
+                "Common Emitter without an emitter resistor",
+                "Direct connection to the power supply without any transistor"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: An 8-ohm loudspeaker is a very low-impedance load. Connecting it directly to a high-impedance voltage stage would cause massive signal loading and attenuation. A Common Collector stage acts as an impedance-matching buffer with low output impedance and high current gain to drive the speaker efficiently.\n• Why Other Choices are Incorrect: Common Base has very high output impedance, which would cause severe mismatch."
+        },
+        {
+            "id": 75,
+            "question": "Why does a BJT circuit require one terminal to be 'common' between the input and output circuit ports?",
+            "options": [
+                "Because transistors have only three terminals, so one terminal must serve as the shared reference for both the two-terminal input port and two-terminal output port",
+                "Because four-terminal transistors are illegal under international standards",
+                "Because the collector and emitter must always be connected together",
+                "Because the base terminal can never conduct AC signals"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: Any standard electronic two-port network requires four connection points (two for input, two for output). Because a BJT is a three-terminal device, one terminal must be designated as 'common' (shared) between the input and output loops to complete both circuits.\n• Why Other Choices are Incorrect: A two-port network simply requires sharing one terminal to form input and output pairs."
         }
     ]
   },
