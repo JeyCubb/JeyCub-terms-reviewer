@@ -1272,6 +1272,11 @@ const FORMULA_DATA = {
   ]
 };
 
+// Link ece_midterm subject to BJT DC Biasing formula library
+if (FORMULA_DATA && FORMULA_DATA.basic_electronics) {
+  FORMULA_DATA.ece_midterm = FORMULA_DATA.basic_electronics;
+}
+
 // Export to window for browser access
 if (typeof window !== 'undefined') {
   window.FORMULA_DATA = FORMULA_DATA;

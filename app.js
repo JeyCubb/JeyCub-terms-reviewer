@@ -6,7 +6,7 @@
 
 // Global State
 let state = {
-  currentSubject: 'basic_electronics', // 'basic_electronics', 'fluid_mechanics', 'deformable_bodies', 'heat_transfer'
+  currentSubject: 'ece_midterm', // 'ece_midterm', 'basic_electronics', 'fluid_mechanics', 'deformable_bodies', 'heat_transfer'
   currentMode: 'practice', // 'practice', 'all'
   practiceFilter: 'all', // 'all', 'weak', 'bookmarked'
   currentIndex: 0,
@@ -164,7 +164,7 @@ function getSubjectData() {
 function getActiveQuestions() {
   const data = getSubjectData();
   if (!data[state.currentSubject]) {
-    state.currentSubject = 'basic_electronics';
+    state.currentSubject = 'ece_midterm';
   }
   return (data[state.currentSubject] && Array.isArray(data[state.currentSubject].questions)) 
     ? data[state.currentSubject].questions 
@@ -174,9 +174,9 @@ function getActiveQuestions() {
 function getActiveSubjectInfo() {
   const data = getSubjectData();
   if (!data[state.currentSubject]) {
-    state.currentSubject = 'basic_electronics';
+    state.currentSubject = 'ece_midterm';
   }
-  return data[state.currentSubject] || { title: 'Basic Electronics (ECE 005)', chapter: '' };
+  return data[state.currentSubject] || { title: 'ECE 005 Midterm Exam Reviewer', chapter: '' };
 }
 
 /* Returns practice questions filtered by shared class pools (All, Weak, Bookmarked) */
@@ -663,7 +663,7 @@ function loadStoredData() {
     if (savedSubject && data[savedSubject]) {
       state.currentSubject = savedSubject;
     } else {
-      state.currentSubject = 'basic_electronics';
+      state.currentSubject = 'ece_midterm';
     }
 
     const savedIndex = localStorage.getItem(`jt_index_${state.currentSubject}`);
@@ -1062,7 +1062,7 @@ function renderVariablePalette(currentFormula) {
   if (!container) return;
 
   let chips = [];
-  if (state.currentSubject === 'basic_electronics') {
+  if (state.currentSubject === 'basic_electronics' || state.currentSubject === 'ece_midterm') {
     chips = [
       // Full variables
       'V_CC', 'V_BE', 'V_CE', 'V_BC', 'V_TH', 'V_B', 'V_C', 'V_E',
@@ -1660,8 +1660,8 @@ function renderFormulaReferenceSheet() {
 
   let html = '';
 
-  // For Basic Electronics, show the full BJT schematics image banner at the top of the cheat sheet!
-  if (state.currentSubject === 'basic_electronics') {
+  // For Basic Electronics & ECE Midterm, show the full BJT schematics image banner at the top of the cheat sheet!
+  if (state.currentSubject === 'basic_electronics' || state.currentSubject === 'ece_midterm') {
     html += `
       <div class="ref-formula-card" style="padding: 1.5rem; text-align: center;">
         <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 0.5rem;">
