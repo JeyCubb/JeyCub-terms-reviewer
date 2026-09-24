@@ -12,11 +12,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=75.0">
+  <link rel="stylesheet" href="styles.css?v=76.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+
+  <!-- MathLive WYSIWYG Math Editor -->
+  <script defer src="https://unpkg.com/mathlive"></script>
 
   <!-- Firebase Realtime Database SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -221,6 +224,10 @@
               <span class="fq-target-prefix">Solve for:</span>
               <span class="fq-target-symbol" id="fq-target-symbol">I_B</span>
             </div>
+            <!-- Explicit Expected Parameters Pill -->
+            <div class="fq-expected-params-row" id="fq-expected-params-row">
+              <span class="fq-params-tag"><i class="fa-solid fa-sliders"></i> Express in terms of: <strong id="fq-expected-params-text">V_CC, V_BE, R_B</strong></span>
+            </div>
             <div class="fq-target-prompt-text" id="fq-target-desc">Base Current (I_B) in Fixed-Bias Configuration</div>
           </div>
 
@@ -262,24 +269,31 @@
             </div>
           </div>
 
-          <!-- Formula Interactive Input Field -->
-          <div class="fq-input-container">
-            <div class="fq-input-row">
-              <span class="fq-input-prefix-tag" id="fq-input-prefix">I_B = </span>
-              <input type="text" id="fq-formula-input" class="fq-formula-input" placeholder="Type formula or use toolbar / chips (e.g. (V_CC - V_BE) / R_B)..." autocomplete="off" spellcheck="false" oninput="handleFormulaInput(this.value)">
+          <!-- Formula WYSIWYG Math Field (Word Equation Editor with Dotted Boxes) -->
+          <div class="fq-wysiwyg-container">
+            <div class="fq-wysiwyg-toolbar-subrow">
+              <div class="fq-mode-pill-group">
+                <button type="button" class="fq-mode-pill-btn active" id="btn-mode-skeleton" onclick="loadSkeletonTemplate()" title="Reset to interactive skeleton with dotted placeholder boxes">
+                  <i class="fa-solid fa-puzzle-piece"></i> Dotted Skeleton
+                </button>
+                <button type="button" class="fq-mode-pill-btn" id="btn-mode-blank" onclick="loadBlankCanvas()" title="Start blank and build equation with keys 1-7">
+                  <i class="fa-solid fa-pen-to-square"></i> Blank Canvas
+                </button>
+              </div>
               <button type="button" class="fq-input-clear-btn" onclick="clearFormulaInput()" title="Clear formula input">
-                <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-eraser"></i> Clear
               </button>
             </div>
-            
-            <!-- Live Math Rendering Preview Box -->
-            <div class="fq-live-preview-box" id="fq-live-preview">
-              <span class="fq-preview-placeholder">Live math rendering preview will appear here...</span>
+
+            <!-- The Real WYSIWYG Math Field with Dotted Boxes -->
+            <div class="fq-wysiwyg-editor-box">
+              <span class="fq-input-prefix-tag" id="fq-input-prefix">I_B = </span>
+              <math-field id="fq-math-field" virtual-keyboard-mode="off" class="fq-math-field"></math-field>
             </div>
 
             <!-- Backslash Shortcuts Quick Tips -->
             <div class="fq-shortcuts-tips">
-              <i class="fa-solid fa-bolt"></i> <strong>Shorthands:</strong> Type <code>\times</code>, <code>\frac</code>, <code>\sqrt</code>, <code>\beta</code>, <code>\alpha</code>, <code>\parallel</code>, <code>\subscript</code>, <code>\superscript</code>, or <code>^</code> / <code>_</code>.
+              <i class="fa-solid fa-bolt"></i> <strong>WYSIWYG Mode:</strong> Click any dotted box <code>□</code> to fill it. Type <code>/</code> or <code>\frac</code> for stacked fractions, <code>_</code> for subscript, <code>^</code> for power, or use toolbar <code>1</code>–<code>7</code>.
             </div>
           </div>
 
@@ -451,8 +465,8 @@
       </button>
     </div>
 
-  <script src="formulas.js?v=1.0"></script>
+  <script src="formulas.js?v=2.0"></script>
   <script src="questions.js?v=21.0"></script>
-  <script src="app.js?v=24.0"></script>
+  <script src="app.js?v=25.0"></script>
 </body>
 </html>

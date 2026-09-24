@@ -311,8 +311,8 @@ function initKeyboardShortcuts() {
   document.addEventListener('keydown', (e) => {
     const activeEl = document.activeElement;
 
-    // In Formulas Mode: if typing in the formula input, Enter checks the formula!
-    if (activeEl && activeEl.id === 'fq-formula-input') {
+    // In Formulas Mode: if typing in the formula input or math-field, Enter checks the formula!
+    if (activeEl && (activeEl.id === 'fq-formula-input' || activeEl.id === 'fq-math-field' || activeEl.tagName === 'MATH-FIELD')) {
       if (e.key === 'Enter') {
         e.preventDefault();
         checkFormulaAnswer();
@@ -320,8 +320,8 @@ function initKeyboardShortcuts() {
       return;
     }
 
-    // Ignore generic shortcuts if user is actively typing in text fields
-    if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA')) {
+    // Ignore generic shortcuts if user is actively typing in text fields or math-field
+    if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.tagName === 'MATH-FIELD')) {
       return;
     }
 
@@ -868,6 +868,56 @@ function filterFormulasByCategory(category) {
   renderFormulaProblem();
 }
 
+function setMathFieldValue(latex) {
+  const mf = document.getElementById('fq-math-field');
+  if (!mf) return;
+  if (typeof mf.setValue === 'function') {
+    mf.setValue(latex || '');
+  } else {
+    mf.value = latex || '';
+  }
+}
+
+function getMathFieldValue() {
+  const mf = document.getElementById('fq-math-field');
+  if (!mf) return '';
+  if (typeof mf.getValue === 'function') {
+    return mf.getValue();
+  }
+  return mf.value || '';
+}
+
+function loadSkeletonTemplate() {
+  const formulas = getFilteredFormulas();
+  const currentF = formulas[state.formulaState.currentIndex];
+  if (!currentF) return;
+
+  const btnSkeleton = document.getElementById('btn-mode-skeleton');
+  const btnBlank = document.getElementById('btn-mode-blank');
+  if (btnSkeleton) btnSkeleton.classList.add('active');
+  if (btnBlank) btnBlank.classList.remove('active');
+
+  const skeleton = currentF.templateLatex || '';
+  state.formulaState.currentInput = skeleton;
+  setMathFieldValue(skeleton);
+
+  const mf = document.getElementById('fq-math-field');
+  if (mf) mf.focus();
+}
+
+function loadBlankCanvas() {
+  const btnSkeleton = document.getElementById('btn-mode-skeleton');
+  const btnBlank = document.getElementById('btn-mode-blank');
+  if (btnBlank) btnBlank.classList.add('active');
+  if (btnSkeleton) btnSkeleton.classList.remove('active');
+
+  state.formulaState.currentInput = '';
+  setMathFieldValue('');
+
+  const mf = document.getElementById('fq-math-field');
+  if (mf) mf.focus();
+}
+
 function renderFormulaProblem() {
   const formulas = getFilteredFormulas();
   const quizContainer = document.getElementById('formula-quiz-container');
@@ -916,23 +966,55 @@ function renderFormulaProblem() {
     renderMathText(f.targetVariable, targetSymbol);
   }
 
+  // Explicit Expected Parameters Pill
+  const expectedParamsRow = document.getElementById('fq-expected-params-row');
+  const expectedParamsText = document.getElementById('fq-expected-params-text');
+  if (expectedParamsText && expectedParamsRow) {
+    if (f.expectedParamsText) {
+      expectedParamsText.textContent = f.expectedParamsText;
+      expectedParamsRow.style.display = 'flex';
+    } else {
+      expectedParamsRow.style.display = 'none';
+    }
+  }
+
   const targetDesc = document.getElementById('fq-target-desc');
   if (targetDesc) targetDesc.textContent = f.targetPrompt || f.name;
 
   // Prefix
   const inputPrefix = document.getElementById('fq-input-prefix');
   if (inputPrefix) {
-    inputPrefix.textContent = `${f.targetVariable} = `;
+    renderMathText(`${f.targetVariable} = `, inputPrefix);
   }
 
-  // Input Field
-  const inputField = document.getElementById('fq-formula-input');
-  if (inputField) {
-    inputField.value = state.formulaState.currentInput || '';
+  // MathLive WYSIWYG Math Field
+  const mf = document.getElementById('fq-math-field');
+  const btnSkeleton = document.getElementById('btn-mode-skeleton');
+  const btnBlank = document.getElementById('btn-mode-blank');
+
+  if (state.formulaState.currentInput !== undefined && state.formulaState.currentInput !== '') {
+    setMathFieldValue(state.formulaState.currentInput);
+  } else {
+    // Default to Dotted Skeleton
+    const skeleton = f.templateLatex || '';
+    state.formulaState.currentInput = skeleton;
+    setMathFieldValue(skeleton);
+    if (btnSkeleton) btnSkeleton.classList.add('active');
+    if (btnBlank) btnBlank.classList.remove('active');
   }
 
-  // Live Math Preview
-  updateLiveMathPreview(state.formulaState.currentInput || '');
+  if (mf && !mf.dataset.listenerAttached) {
+    mf.dataset.listenerAttached = 'true';
+    mf.addEventListener('input', () => {
+      state.formulaState.currentInput = getMathFieldValue();
+    });
+    mf.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        checkFormulaAnswer();
+      }
+    });
+  }
 
   // Render Palette Chips
   renderVariablePalette(f);
@@ -982,10 +1064,14 @@ function renderVariablePalette(currentFormula) {
   let chips = [];
   if (state.currentSubject === 'basic_electronics') {
     chips = [
+      // Full variables
       'V_CC', 'V_BE', 'V_CE', 'V_BC', 'V_TH', 'V_B', 'V_C', 'V_E',
       'I_B', 'I_C', 'I_E', 'I_1', 'I_2',
       'R_B', 'R_C', 'R_E', 'R_F', 'R_1', 'R_2', 'R_TH',
-      'β', 'β + 1', 'α', '0', '1', '2',
+      'β', 'β + 1', 'α',
+      // Base letters & subscripts
+      'V', 'I', 'R', 'CC', 'BE', 'CE', 'B', 'C', 'E', '1', '2', '0',
+      // Operators
       '+', '−', '×', '/', '(', ')', '=', '∥'
     ];
   } else if (state.currentSubject === 'deformable_bodies') {
@@ -993,6 +1079,7 @@ function renderVariablePalette(currentFormula) {
       'σ_h', 'σ_L', 'σ', 'τ', 'p', 'P', 'T', 'M',
       'd', 'D', 't', 'r', 'L', 'A', 'y', 'I', 'J',
       'E', 'G', 'δ', 'θ', 'π', '2', '4', '16', '32',
+      'h', 'max', 'min',
       '+', '−', '×', '/', '(', ')', '=', '^'
     ];
   } else if (state.currentSubject === 'fluid_mechanics') {
@@ -1013,213 +1100,225 @@ function renderVariablePalette(currentFormula) {
   }).join('');
 }
 
+function symbolToLatex(sym) {
+  if (!sym) return '';
+  let s = sym;
+  if (s === 'β') return '\\beta';
+  if (s === 'β + 1') return '(\\beta + 1)';
+  if (s === 'α') return '\\alpha';
+  if (s === 'π') return '\\pi';
+  if (s === 'σ') return '\\sigma';
+  if (s === 'σ_h') return '\\sigma_h';
+  if (s === 'σ_L') return '\\sigma_L';
+  if (s === 'τ') return '\\tau';
+  if (s === 'ρ') return '\\rho';
+  if (s === 'γ') return '\\gamma';
+  if (s === 'μ') return '\\mu';
+  if (s === 'ν') return '\\nu';
+  if (s === 'δ') return '\\delta';
+  if (s === 'θ') return '\\theta';
+  if (s === 'ΔT') return '\\Delta T';
+  if (s === '∥') return ' \\parallel ';
+  if (s === '×') return ' \\cdot ';
+  if (s === '−') return '-';
+  if (s === '√') return '\\sqrt{}';
+  if (s.includes('_')) {
+    const parts = s.split('_');
+    return `${parts[0]}_{${parts.slice(1).join('_')}}`;
+  }
+  return s;
+}
+
 function insertPaletteSymbol(sym) {
-  const input = document.getElementById('fq-formula-input');
-  if (!input) return;
+  const mf = document.getElementById('fq-math-field');
+  if (!mf) return;
 
-  const start = input.selectionStart || 0;
-  const end = input.selectionEnd || 0;
-  const val = input.value;
+  const latexSym = symbolToLatex(sym);
 
-  // Add spacing around operators
-  let insertion = sym;
-  if (['+', '−', '×', '/', '=', '∥'].includes(sym)) {
-    insertion = ` ${sym} `;
+  // If currently in a skeleton template with dotted boxes, clicking a compound symbol (e.g. V_CC, R_B)
+  // replaces the first empty compound placeholder cleanly!
+  let curVal = getMathFieldValue();
+  if (sym.includes('_') && curVal.includes('\\placeholder{}_{\\placeholder{}}')) {
+    const replaced = curVal.replace('\\placeholder{}_{\\placeholder{}}', latexSym);
+    setMathFieldValue(replaced);
+    state.formulaState.currentInput = replaced;
+    mf.focus();
+    return;
+  } else if (curVal.includes('\\placeholder{}')) {
+    const replaced = curVal.replace('\\placeholder{}', latexSym);
+    setMathFieldValue(replaced);
+    state.formulaState.currentInput = replaced;
+    mf.focus();
+    return;
   }
 
-  const newVal = val.substring(0, start) + insertion + val.substring(end);
-  input.value = newVal;
-  state.formulaState.currentInput = newVal;
-
-  input.focus();
-  const newPos = start + insertion.length;
-  input.setSelectionRange(newPos, newPos);
-
-  updateLiveMathPreview(newVal);
+  // Standard MathLive insert
+  if (typeof mf.insert === 'function') {
+    mf.insert(latexSym, { focus: true, mode: 'math' });
+  } else if (typeof mf.executeCommand === 'function') {
+    mf.executeCommand(['insert', latexSym]);
+  }
+  mf.focus();
+  state.formulaState.currentInput = getMathFieldValue();
 }
 
 function insertFormulaTemplate(type) {
-  const input = document.getElementById('fq-formula-input');
-  if (!input) return;
-
-  const start = input.selectionStart || 0;
-  const end = input.selectionEnd || 0;
-  const val = input.value;
-  const selected = val.substring(start, end);
-
-  let insertion = '';
-  let cursorOffset = 0;
+  const mf = document.getElementById('fq-math-field');
+  if (!mf) return;
 
   switch (type) {
     case 'superscript': // [1]
-      if (selected) {
-        insertion = `^(${selected})`;
-        cursorOffset = insertion.length;
+      if (typeof mf.executeCommand === 'function') {
+        mf.executeCommand(['insert', '#@^{#?}']);
       } else {
-        insertion = '^2';
-        cursorOffset = insertion.length;
+        mf.insert('^{#?}');
       }
       break;
     case 'frac': // [2]
-      if (selected) {
-        insertion = `(${selected}) / ( )`;
-        cursorOffset = insertion.length - 2;
+      if (typeof mf.executeCommand === 'function') {
+        mf.executeCommand(['insert', '\\frac{#@}{#?}']);
       } else {
-        insertion = '( ) / ( )';
-        cursorOffset = 1;
+        mf.insert('\\frac{#?}{#?}');
       }
       break;
     case 'subscript': // [3]
-      if (selected) {
-        insertion = `_(${selected})`;
-        cursorOffset = insertion.length;
+      if (typeof mf.executeCommand === 'function') {
+        mf.executeCommand(['insert', '#@_{#?}']);
       } else {
-        insertion = '_';
-        cursorOffset = 1;
+        mf.insert('_{#?}');
       }
       break;
     case 'parens': // [4]
-      if (selected) {
-        insertion = `(${selected})`;
-        cursorOffset = insertion.length;
+      if (typeof mf.executeCommand === 'function') {
+        mf.executeCommand(['insert', '\\left(#@\\right)']);
       } else {
-        insertion = '( )';
-        cursorOffset = 1;
+        mf.insert('\\left(#?\\right)');
       }
       break;
     case 'equals': // [5]
-      insertion = ' = ';
-      cursorOffset = insertion.length;
+      mf.insert(' = ');
       break;
     case 'times': // [6]
-      insertion = ' × ';
-      cursorOffset = insertion.length;
+      mf.insert(' \\cdot ');
       break;
     case 'sqrt': // [7]
-      if (selected) {
-        insertion = `√(${selected})`;
-        cursorOffset = insertion.length;
+      if (typeof mf.executeCommand === 'function') {
+        mf.executeCommand(['insert', '\\sqrt{#@}']);
       } else {
-        insertion = '√( )';
-        cursorOffset = 2;
+        mf.insert('\\sqrt{#?}');
       }
       break;
     default:
       return;
   }
-
-  const newVal = val.substring(0, start) + insertion + val.substring(end);
-  input.value = newVal;
-  state.formulaState.currentInput = newVal;
-
-  input.focus();
-  const newPos = start + cursorOffset;
-  input.setSelectionRange(newPos, newPos);
-
-  updateLiveMathPreview(newVal);
+  mf.focus();
+  state.formulaState.currentInput = getMathFieldValue();
 }
 
 function handleFormulaInput(val) {
-  const input = document.getElementById('fq-formula-input');
-  let text = val;
-
-  // Replacements table for backslash commands (Word-style auto-expansion)
-  const replacements = [
-    { pattern: /\\times(\s|$)/gi, rep: '×$1' },
-    { pattern: /\\cdot(\s|$)/gi, rep: '·$1' },
-    { pattern: /\\beta(\s|$)/gi, rep: 'β$1' },
-    { pattern: /\\alpha(\s|$)/gi, rep: 'α$1' },
-    { pattern: /\\parallel(\s|$)/gi, rep: '∥$1' },
-    { pattern: /\\superscript(\s|$)/gi, rep: '^$1' },
-    { pattern: /\\subscript(\s|$)/gi, rep: '_$1' },
-    { pattern: /\\sigma(\s|$)/gi, rep: 'σ$1' },
-    { pattern: /\\tau(\s|$)/gi, rep: 'τ$1' },
-    { pattern: /\\rho(\s|$)/gi, rep: 'ρ$1' },
-    { pattern: /\\mu(\s|$)/gi, rep: 'μ$1' },
-    { pattern: /\\nu(\s|$)/gi, rep: 'ν$1' },
-    { pattern: /\\gamma(\s|$)/gi, rep: 'γ$1' },
-    { pattern: /\\pi(\s|$)/gi, rep: 'π$1' },
-    { pattern: /\\Delta(\s|$)/gi, rep: 'Δ$1' },
-    { pattern: /\\pm(\s|$)/gi, rep: '±$1' },
-    { pattern: /\\sqrt(\s|$)/gi, rep: '√$1' },
-    { pattern: /\\frac(\s|$)/gi, rep: '/$1' }
-  ];
-
-  let replaced = false;
-  for (const r of replacements) {
-    if (r.pattern.test(text)) {
-      text = text.replace(r.pattern, r.rep);
-      replaced = true;
-    }
-  }
-
-  if (replaced && input) {
-    const curPos = input.selectionStart || text.length;
-    input.value = text;
-    input.setSelectionRange(curPos, curPos);
-  }
-
-  state.formulaState.currentInput = text;
-  updateLiveMathPreview(text);
+  state.formulaState.currentInput = val;
 }
 
 function clearFormulaInput() {
   state.formulaState.currentInput = '';
   state.formulaState.checkedResult = null;
-  const input = document.getElementById('fq-formula-input');
-  if (input) {
-    input.value = '';
-    input.focus();
-  }
-  updateLiveMathPreview('');
+  setMathFieldValue('');
+  const mf = document.getElementById('fq-math-field');
+  if (mf) mf.focus();
   const feedbackCard = document.getElementById('fq-feedback-card');
   if (feedbackCard) feedbackCard.style.display = 'none';
 }
 
-function formulaToLatex(s) {
-  if (!s || !s.trim()) return '';
-  let str = s.trim();
+function latexToAlgebraic(latex) {
+  if (!latex) return '';
+  let str = latex.trim();
 
-  // Normalize operators & Greek symbols
-  str = str.replace(/×/g, ' \\cdot ').replace(/\*/g, ' \\cdot ');
-  str = str.replace(/β/g, '\\beta').replace(/α/g, '\\alpha').replace(/π/g, '\\pi');
-  str = str.replace(/σ/g, '\\sigma').replace(/τ/g, '\\tau').replace(/ρ/g, '\\rho');
-  str = str.replace(/γ/g, '\\gamma').replace(/μ/g, '\\mu').replace(/Δ/g, '\\Delta');
-  str = str.replace(/∥/g, ' \\parallel ');
+  // Strip LaTeX wrappers
+  str = str.replace(/\\left\(/g, '(').replace(/\\right\)/g, ')');
+  str = str.replace(/\\left\[/g, '[').replace(/\\right\]/g, ']');
+  str = str.replace(/\\left\{/g, '{').replace(/\\right\}/g, '}');
+  str = str.replace(/\\left\./g, '').replace(/\\right\./g, '');
+  str = str.replace(/\\mathrm\{([^}]+)\}/g, '$1');
+  str = str.replace(/\\text\{([^}]+)\}/g, '$1');
 
-  // Subscripts: X_YY -> X_{YY}
-  str = str.replace(/([A-Za-z\\]+)_([A-Za-z0-9]+)/g, '$1_{$2}');
+  // Fractions: recursively convert \frac{num}{den} to ((num)/(den))
+  while (str.includes('\\frac')) {
+    const fracIdx = str.indexOf('\\frac');
+    const numOpen = str.indexOf('{', fracIdx);
+    if (numOpen === -1) break;
+    let depth = 1;
+    let numClose = -1;
+    for (let i = numOpen + 1; i < str.length; i++) {
+      if (str[i] === '{') depth++;
+      else if (str[i] === '}') {
+        depth--;
+        if (depth === 0) { numClose = i; break; }
+      }
+    }
+    if (numClose === -1) break;
+    const num = str.substring(numOpen + 1, numClose);
 
-  // Powers: X^2 -> X^{2}
-  str = str.replace(/\^([0-9a-zA-Z]+)/g, '^{$1}');
+    const denOpen = str.indexOf('{', numClose);
+    if (denOpen === -1) break;
+    depth = 1;
+    let denClose = -1;
+    for (let i = denOpen + 1; i < str.length; i++) {
+      if (str[i] === '{') depth++;
+      else if (str[i] === '}') {
+        depth--;
+        if (depth === 0) { denClose = i; break; }
+      }
+    }
+    if (denClose === -1) break;
+    const den = str.substring(denOpen + 1, denClose);
 
-  // Radicals: √(expr)
-  str = str.replace(/(?:√|\\sqrt|sqrt)\s*\(([^()]+)\)/g, '\\sqrt{$1}');
-
-  // Fractions: (num) / (den) or (num) / den or num / (den)
-  str = str.replace(/^\s*\((.+?)\)\s*\/\s*\((.+?)\)\s*$/, '\\frac{$1}{$2}');
-  str = str.replace(/^\s*\((.+?)\)\s*\/\s*([A-Za-z0-9_{}]+)\s*$/, '\\frac{$1}{$2}');
-  str = str.replace(/^\s*([A-Za-z0-9_{}]+)\s*\/\s*\((.+?)\)\s*$/, '\\frac{$1}{$2}');
-  str = str.replace(/^\s*([A-Za-z0-9_{}]+)\s*\/\s*([A-Za-z0-9_{}]+)\s*$/, '\\frac{$1}{$2}');
-
-  return str;
-}
-
-function updateLiveMathPreview(text) {
-  const previewBox = document.getElementById('fq-live-preview');
-  if (!previewBox) return;
-
-  if (!text || !text.trim()) {
-    previewBox.innerHTML = '<span class="fq-preview-placeholder">Live math rendering preview will appear here...</span>';
-    return;
+    str = str.substring(0, fracIdx) + `((${num})/(${den}))` + str.substring(denClose + 1);
   }
 
-  const formulas = getFilteredFormulas();
-  const currentF = formulas[state.formulaState.currentIndex];
-  const prefix = currentF ? currentF.targetVariable : '';
-  const fullLatex = `${prefix} = ${formulaToLatex(text)}`;
+  // Radicals: \sqrt{arg}
+  while (str.includes('\\sqrt')) {
+    const sqrtIdx = str.indexOf('\\sqrt');
+    const openBrace = str.indexOf('{', sqrtIdx);
+    if (openBrace === -1) break;
+    let depth = 1;
+    let closeBrace = -1;
+    for (let i = openBrace + 1; i < str.length; i++) {
+      if (str[i] === '{') depth++;
+      else if (str[i] === '}') {
+        depth--;
+        if (depth === 0) { closeBrace = i; break; }
+      }
+    }
+    if (closeBrace === -1) break;
+    const arg = str.substring(openBrace + 1, closeBrace);
+    str = str.substring(0, sqrtIdx) + `sqrt(${arg})` + str.substring(closeBrace + 1);
+  }
 
-  renderMathText(fullLatex, previewBox);
+  // Operators
+  str = str.replace(/\\cdot/g, '*').replace(/\\times/g, '*').replace(/×/g, '*').replace(/·/g, '*');
+  str = str.replace(/\\pm/g, '±').replace(/−/g, '-');
+  str = str.replace(/\\parallel/g, '||').replace(/∥/g, '||');
+
+  // Greek letters
+  str = str.replace(/\\beta/g, 'beta').replace(/β/g, 'beta');
+  str = str.replace(/\\alpha/g, 'alpha').replace(/α/g, 'alpha');
+  str = str.replace(/\\sigma/g, 'sigma').replace(/σ/g, 'sigma');
+  str = str.replace(/\\tau/g, 'tau').replace(/τ/g, 'tau');
+  str = str.replace(/\\rho/g, 'rho').replace(/ρ/g, 'rho');
+  str = str.replace(/\\mu/g, 'mu').replace(/μ/g, 'mu');
+  str = str.replace(/\\nu/g, 'nu').replace(/ν/g, 'nu');
+  str = str.replace(/\\gamma/g, 'gamma').replace(/γ/g, 'gamma');
+  str = str.replace(/\\pi/g, 'pi').replace(/π/g, 'pi');
+  str = str.replace(/\\Delta/g, 'Delta').replace(/Δ/g, 'Delta');
+
+  // Subscripts & exponents
+  str = str.replace(/_\{([^}]+)\}/g, '_$1');
+  str = str.replace(/\^\{([^}]+)\}/g, '^($1)');
+
+  // Implicit multiplication: e.g. "I_B R_B" -> "I_B * R_B"
+  str = str.replace(/([A-Za-z0-9_\)]+)\s+([A-Za-z0-9_\(]+)/g, '$1 * $2');
+
+  return str;
 }
 
 function renderMathText(latexStr, element) {
@@ -1232,7 +1331,6 @@ function renderMathText(latexStr, element) {
       console.warn('KaTeX render error:', e);
     }
   }
-  // Fallback text
   element.textContent = latexStr;
 }
 
@@ -1240,7 +1338,7 @@ function normalizeFormulaStr(s) {
   if (!s) return '';
   let str = s.trim();
 
-  // Normalize Greek symbols
+  // Normalize Greek & operators
   str = str.replace(/β/g, 'beta').replace(/\\beta/g, 'beta');
   str = str.replace(/α/g, 'alpha').replace(/\\alpha/g, 'alpha');
   str = str.replace(/π/g, 'pi').replace(/\\pi/g, 'pi');
@@ -1249,39 +1347,120 @@ function normalizeFormulaStr(s) {
   str = str.replace(/ρ/g, 'rho').replace(/\\rho/g, 'rho');
   str = str.replace(/γ/g, 'gamma').replace(/\\gamma/g, 'gamma');
   str = str.replace(/μ/g, 'mu').replace(/\\mu/g, 'mu');
+  str = str.replace(/ν/g, 'nu').replace(/\\nu/g, 'nu');
+  str = str.replace(/Δ/g, 'delta').replace(/\\delta/g, 'delta');
   str = str.replace(/∥/g, '||').replace(/\\parallel/g, '||');
 
-  // Normalize multiplication & minus
+  // Operators
   str = str.replace(/×/g, '*').replace(/·/g, '*').replace(/−/g, '-');
+  str = str.replace(/_\{([^}]+)\}/g, '_$1');
+  str = str.replace(/\^\{([^}]+)\}/g, '^$1');
 
   // Remove whitespace
   str = str.replace(/\s+/g, '');
 
-  // Normalize redundant outer parens on division: /(R_B) -> /R_B
-  str = str.replace(/\/([A-Za-z0-9_]+)\)/g, '/$1');
+  // Strip redundant nested parens: ((...)) -> (...)
+  while (str.includes('((') && str.includes('))')) {
+    const prev = str;
+    str = str.replace(/\(\(([^()]+)\)\)/g, '($1)');
+    if (str === prev) break;
+  }
+  // Strip parens around single denominator terms: /(r_b) -> /r_b
+  str = str.replace(/\/([a-z0-9_]+)\)/g, '/$1');
+  str = str.replace(/\/\(([a-z0-9_]+)\)/g, '/$1');
+
+  // Strip outer parens: (A) -> A
+  if (str.startsWith('(') && str.endsWith(')')) {
+    let depth = 0;
+    let canStrip = true;
+    for (let i = 0; i < str.length - 1; i++) {
+      if (str[i] === '(') depth++;
+      else if (str[i] === ')') {
+        depth--;
+        if (depth === 0) { canStrip = false; break; }
+      }
+    }
+    if (canStrip) {
+      str = str.substring(1, str.length - 1);
+    }
+  }
 
   return str.toLowerCase();
 }
 
-function isFormulaEquivalent(userInput, canonical, variants) {
-  const normUser = normalizeFormulaStr(userInput);
-  const normCanon = normalizeFormulaStr(canonical);
+function checkDiagnosticAlternative(latex, currentF) {
+  if (!currentF || !currentF.diagnostics) return null;
+
+  const norm = normalizeFormulaStr(latexToAlgebraic(latex));
+
+  if (currentF.diagnostics.ic_beta) {
+    if (norm === 'i_c/beta' || norm === '(i_c)/beta' || norm === 'i_c/(beta)' || norm.includes('i_c/beta')) {
+      return currentF.diagnostics.ic_beta;
+    }
+  }
+
+  if (currentF.diagnostics.beta_ic) {
+    if (norm === 'beta/i_c' || norm === '(beta)/i_c' || norm === 'beta/(i_c)' || norm.includes('beta/i_c')) {
+      return currentF.diagnostics.beta_ic;
+    }
+  }
+
+  if (currentF.diagnostics.ie_ic) {
+    if (norm === 'i_e-i_c' || norm.includes('i_e-i_c')) {
+      return currentF.diagnostics.ie_ic;
+    }
+  }
+
+  if (currentF.diagnostics.vth_formula) {
+    if (norm.includes('v_th') || norm.includes('r_th')) {
+      return currentF.diagnostics.vth_formula;
+    }
+  }
+
+  return null;
+}
+
+function isFormulaEquivalent(userLatex, currentF) {
+  if (!userLatex || !currentF) return false;
+
+  // 1. Direct LaTeX normalization check against canonicalLatex
+  if (currentF.canonicalLatex) {
+    const cleanUserLatex = userLatex.replace(/\\left/g, '').replace(/\\right/g, '').replace(/\s+/g, '').toLowerCase();
+    const cleanCanonLatex = currentF.canonicalLatex.replace(/\\left/g, '').replace(/\\right/g, '').replace(/\s+/g, '').toLowerCase();
+    if (cleanUserLatex === cleanCanonLatex) return true;
+  }
+
+  // 2. Convert user LaTeX to algebraic string
+  const userAlg = latexToAlgebraic(userLatex);
+  const normUser = normalizeFormulaStr(userAlg);
+  const normCanon = normalizeFormulaStr(currentF.canonicalFormula);
 
   if (normUser === normCanon) return true;
 
+  // Check acceptableVariants
+  const variants = currentF.acceptableVariants || [];
   for (const v of variants) {
     if (normUser === normalizeFormulaStr(v)) return true;
   }
 
-  // Check with stripped outer parens: ((A)) -> (A)
-  let stripped = userInput.trim();
-  if (stripped.startsWith('(') && stripped.endsWith(')')) {
-    stripped = stripped.substring(1, stripped.length - 1).trim();
-    const normStripped = normalizeFormulaStr(stripped);
-    if (normStripped === normCanon) return true;
+  // Also test with stripped outer parens
+  let strippedNormUser = normUser;
+  if (strippedNormUser.startsWith('(') && strippedNormUser.endsWith(')')) {
+    strippedNormUser = strippedNormUser.substring(1, strippedNormUser.length - 1);
+    if (strippedNormUser === normCanon) return true;
     for (const v of variants) {
-      if (normStripped === normalizeFormulaStr(v)) return true;
+      if (strippedNormUser === normalizeFormulaStr(v)) return true;
     }
+  }
+
+  // Check commutative subtraction loop equations:
+  // e.g. V_CC - I_B*R_B - V_BE = 0 vs V_CC - V_BE - I_B*R_B = 0
+  if (normCanon.endsWith('=0')) {
+    const leftUser = normUser.replace('=0', '');
+    const leftCanon = normCanon.replace('=0', '');
+    const userTerms = leftUser.replace(/-/g, '+-').split('+').filter(Boolean).sort().join('+');
+    const canonTerms = leftCanon.replace(/-/g, '+-').split('+').filter(Boolean).sort().join('+');
+    if (userTerms === canonTerms) return true;
   }
 
   return false;
@@ -1292,18 +1471,31 @@ function checkFormulaAnswer() {
   const currentF = formulas[state.formulaState.currentIndex];
   if (!currentF) return;
 
-  const userInput = (state.formulaState.currentInput || '').trim();
-  if (!userInput) {
-    showToast('⚠️ Please enter a formula first!');
+  const rawLatex = getMathFieldValue().trim();
+
+  // 1. Check if empty
+  if (!rawLatex) {
+    showToast('⚠️ Please enter a formula in the math field first!');
     return;
   }
 
-  const isCorrect = isFormulaEquivalent(userInput, currentF.canonicalFormula, currentF.acceptableVariants || []);
+  // 2. Check if unfilled placeholders remain
+  if (rawLatex.includes('\\placeholder') || rawLatex.includes('\\square')) {
+    showToast('⚠️ Please fill in all dotted placeholder boxes (□) before checking!');
+    return;
+  }
+
+  // 3. Check for Alternative / Diagnostic matches
+  const diagMessage = checkDiagnosticAlternative(rawLatex, currentF);
+
+  // 4. Verify Equivalence
+  const isCorrect = isFormulaEquivalent(rawLatex, currentF);
 
   state.formulaState.checkedResult = {
     isCorrect,
-    userFormula: userInput,
-    formula: currentF
+    userFormula: rawLatex,
+    formula: currentF,
+    diagnosticMessage: (!isCorrect && diagMessage) ? diagMessage : null
   };
 
   if (isCorrect) {
@@ -1353,9 +1545,21 @@ function renderFeedbackCard(currentF) {
   } else {
     card.className = 'fq-feedback-card incorrect';
     header.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> <span>Formula Needs Adjustment</span>';
+
+    let diagHtml = '';
+    if (res.diagnosticMessage) {
+      diagHtml = `
+        <div class="fq-feedback-diagnostic">
+          <div class="fq-diag-header"><i class="fa-solid fa-compass"></i> Valid Physics Relationship, but Different Formulation Expected:</div>
+          <div class="fq-diag-body">${escapeHTML(res.diagnosticMessage)}</div>
+        </div>
+      `;
+    }
+
     body.innerHTML = `
       <p style="margin-bottom: 0.5rem;">The terms or operations entered do not match the expected governing formula.</p>
-      ${currentF.hint ? `<p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 0.75rem;"><strong>💡 Clue:</strong> ${currentF.hint}</p>` : ''}
+      ${diagHtml}
+      ${currentF.hint ? `<p style="font-size: 0.84rem; color: var(--text-secondary); margin: 0.75rem 0;"><strong>💡 Clue:</strong> ${currentF.hint}</p>` : ''}
       <button type="button" class="fq-btn fq-btn-hint" style="padding: 0.4rem 0.8rem; font-size: 0.82rem;" onclick="revealFormulaSolution('${currentF.id}')">
         <i class="fa-solid fa-eye"></i> Reveal Canonical Formula
       </button>

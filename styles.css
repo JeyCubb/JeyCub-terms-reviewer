@@ -1849,6 +1849,32 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
   letter-spacing: 0.03em;
 }
 
+.fq-expected-params-row {
+  margin: 0.5rem auto 0.65rem;
+  display: flex;
+  justify-content: center;
+}
+
+.fq-params-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--color-warning);
+  background: var(--color-warning-bg);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.fq-params-tag strong {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 .fq-target-prompt-text {
   font-size: 0.85rem;
   color: var(--text-secondary);
@@ -1966,22 +1992,70 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
   padding-top: 1px;
 }
 
-/* Formula Input Field & Live Math Preview */
+/* Formula WYSIWYG MathLive Editor with Dotted Boxes */
+.fq-wysiwyg-container,
 .fq-input-container {
   margin-bottom: 1.25rem;
 }
 
+.fq-wysiwyg-toolbar-subrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.fq-mode-pill-group {
+  display: inline-flex;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  gap: 3px;
+}
+
+.fq-mode-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.32rem 0.85rem;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.fq-mode-pill-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.fq-mode-pill-btn.active {
+  background: var(--accent-gradient);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(255, 107, 0, 0.35);
+}
+
+.fq-wysiwyg-editor-box,
 .fq-input-row {
   position: relative;
   display: flex;
   align-items: center;
   background: var(--bg-input);
-  border: 1.5px solid var(--border-color);
+  border: 2px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 0.25rem 0.6rem;
+  padding: 0.5rem 0.85rem;
+  min-height: 72px;
   transition: var(--transition);
 }
 
+.fq-wysiwyg-editor-box:focus-within,
 .fq-input-row:focus-within {
   border-color: var(--accent-primary);
   box-shadow: 0 0 0 3px var(--accent-glow);
@@ -1989,10 +2063,10 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
 
 .fq-input-prefix-tag {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--accent-primary);
-  padding-right: 0.4rem;
+  padding-right: 0.5rem;
   user-select: none;
   white-space: nowrap;
 }
@@ -2009,18 +2083,62 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
   min-width: 0;
 }
 
-.fq-input-clear-btn {
+/* MathLive Editor Element */
+.fq-math-field {
+  flex: 1;
+  font-size: 1.35rem;
   background: transparent;
+  color: var(--text-primary);
   border: none;
-  color: var(--text-muted);
-  font-size: 0.95rem;
+  outline: none;
+  padding: 0.2rem 0.4rem;
+  min-width: 0;
+  --primary: var(--accent-primary);
+  --keyboard-toolbar-display: none;
+}
+
+/* Custom styling for MathLive dotted placeholder boxes (□) to match user diagram */
+.fq-math-field::part(placeholder),
+math-field::part(placeholder),
+.ML__placeholder {
+  border: 2px dashed rgba(255, 140, 0, 0.85) !important;
+  background: rgba(255, 140, 0, 0.1) !important;
+  border-radius: 4px !important;
+  min-width: 1.45em !important;
+  min-height: 1.25em !important;
+  display: inline-block !important;
+  color: transparent !important;
+  margin: 0 3px !important;
+  vertical-align: middle !important;
+  transition: all 0.15s ease;
+}
+
+.fq-math-field::part(placeholder-focused),
+math-field::part(placeholder-focused) {
+  border: 2px solid var(--accent-primary) !important;
+  background: rgba(255, 107, 0, 0.25) !important;
+  box-shadow: 0 0 8px rgba(255, 107, 0, 0.5) !important;
+}
+
+.fq-input-clear-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
   cursor: pointer;
-  padding: 0.4rem;
+  padding: 0.35rem 0.75rem;
   border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: var(--transition);
 }
 
 .fq-input-clear-btn:hover {
   color: var(--color-error);
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.08);
 }
 
 .fq-live-preview-box {
@@ -2045,10 +2163,10 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
 }
 
 .fq-shortcuts-tips {
-  margin-top: 0.45rem;
-  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
   color: var(--text-secondary);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .fq-shortcuts-tips code {
@@ -2206,6 +2324,32 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
   font-size: 0.88rem;
   line-height: 1.6;
   color: var(--text-primary);
+}
+
+/* Diagnostic Feedback Box for Alternative Valid Answers */
+.fq-feedback-diagnostic {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin: 0.75rem 0;
+  text-align: left;
+}
+
+.fq-diag-header {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-warning);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.fq-diag-body {
+  font-size: 0.86rem;
+  color: var(--text-primary);
+  line-height: 1.5;
 }
 
 .fq-solution-latex-box {

@@ -12,6 +12,11 @@ const FORMULA_DATA = {
        ========================================================================== */
     {
       id: "bjt_fb_ib",
+      expectedParamsText: "V_CC, V_BE, R_B",
+      templateLatex: `\frac{\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}}{\placeholder{}_{\placeholder{}}}`,
+      canonicalLatex: `\frac{V_{CC} - V_{BE}}{R_B}`,
+      diagnostics: {"ic_beta": "You entered the active-region relationship (I_B = I_C / β). This challenge specifically tests the Base-Emitter loop equation in terms of V_CC, V_BE, and R_B!", "beta_ic": "Note: Since I_C = β·I_B, solving for I_B gives I_B = I_C / β (not β / I_C). Please construct the loop formula in terms of V_CC, V_BE, and R_B!", "ie_ic": "That is the KCL terminal current formula (I_B = I_E - I_C). Please construct the input loop formula in terms of V_CC, V_BE, and R_B!"},
+
       subject: "basic_electronics",
       category: "Fixed-Bias",
       configName: "Fixed-Bias Configuration",
@@ -37,6 +42,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_fb_kvl_be",
+      expectedParamsText: "V_CC, I_B, R_B, V_BE",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}} = 0`,
+      canonicalLatex: `V_{CC} - I_B R_B - V_{BE} = 0`,
+
       subject: "basic_electronics",
       category: "Fixed-Bias",
       configName: "Fixed-Bias Configuration",
@@ -64,6 +73,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_fb_vce",
+      expectedParamsText: "V_CC, I_C, R_C",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `V_{CC} - I_C R_C`,
+
       subject: "basic_electronics",
       category: "Fixed-Bias",
       configName: "Fixed-Bias Configuration",
@@ -88,6 +101,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_fb_ic",
+      expectedParamsText: "β, I_B",
+      templateLatex: `\beta\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `\beta I_B`,
+
       subject: "basic_electronics",
       category: "Fixed-Bias",
       configName: "Fixed-Bias Configuration",
@@ -113,6 +130,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_fb_vb",
+      expectedParamsText: "V_CC, I_B, R_B",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `V_{CC} - I_B R_B`,
+
       subject: "basic_electronics",
       category: "Fixed-Bias",
       configName: "Fixed-Bias Configuration",
@@ -137,6 +158,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_fb_ve",
+      expectedParamsText: "0 V (Grounded)",
+      templateLatex: `\placeholder{}`,
+      canonicalLatex: `0\text{ V}`,
+
       subject: "basic_electronics",
       category: "Fixed-Bias",
       configName: "Fixed-Bias Configuration",
@@ -160,6 +185,11 @@ const FORMULA_DATA = {
        ========================================================================== */
     {
       id: "bjt_es_ib",
+      expectedParamsText: "V_CC, V_BE, R_B, β, R_E",
+      templateLatex: `\frac{\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}}{\placeholder{}_{\placeholder{}} + (\beta + 1)\placeholder{}_{\placeholder{}}}`,
+      canonicalLatex: `\frac{V_{CC} - V_{BE}}{R_B + (\beta + 1)R_E}`,
+      diagnostics: {"ic_beta": "You entered I_B = I_C / β. This challenge tests the Emitter-Stabilized loop formula in terms of V_CC, V_BE, R_B, β, and R_E!", "beta_ic": "Note: I_B = I_C / β (not β / I_C). Please construct the loop formula in terms of V_CC, V_BE, R_B, β, and R_E!"},
+
       subject: "basic_electronics",
       category: "Emitter-Stabilized",
       configName: "Emitter-Stabilized Bias Configuration",
@@ -188,6 +218,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_es_kvl_be",
+      expectedParamsText: "V_CC, I_B, R_B, I_E, R_E, V_BE",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}} = 0`,
+      canonicalLatex: `V_{CC} - I_B R_B - I_E R_E - V_{BE} = 0`,
+
       subject: "basic_electronics",
       category: "Emitter-Stabilized",
       configName: "Emitter-Stabilized Bias Configuration",
@@ -216,6 +250,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_es_vce",
+      expectedParamsText: "V_CC, I_C, R_C, I_E, R_E",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `V_{CC} - I_C R_C - I_E R_E`,
+
       subject: "basic_electronics",
       category: "Emitter-Stabilized",
       configName: "Emitter-Stabilized Bias Configuration",
@@ -243,6 +281,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_es_ie",
+      expectedParamsText: "β, I_B",
+      templateLatex: `(\beta + 1)\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `(\beta + 1)I_B`,
+
       subject: "basic_electronics",
       category: "Emitter-Stabilized",
       configName: "Emitter-Stabilized Bias Configuration",
@@ -269,6 +311,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_es_ve",
+      expectedParamsText: "I_E, R_E",
+      templateLatex: `\placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `I_E R_E`,
+
       subject: "basic_electronics",
       category: "Emitter-Stabilized",
       configName: "Emitter-Stabilized Bias Configuration",
@@ -292,6 +338,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_es_vb",
+      expectedParamsText: "V_CC, I_B, R_B",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `V_{CC} - I_B R_B`,
+
       subject: "basic_electronics",
       category: "Emitter-Stabilized",
       configName: "Emitter-Stabilized Bias Configuration",
@@ -321,6 +371,10 @@ const FORMULA_DATA = {
        ========================================================================== */
     {
       id: "bjt_vd_vth",
+      expectedParamsText: "R_2, R_1, V_CC",
+      templateLatex: `\left(\frac{\placeholder{}_{\placeholder{}}}{\placeholder{}_{\placeholder{}} + \placeholder{}_{\placeholder{}}}\right)\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `\frac{R_2}{R_1 + R_2} V_{CC}`,
+
       subject: "basic_electronics",
       category: "Voltage-Divider",
       configName: "Voltage-Divider Bias Configuration",
@@ -347,6 +401,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_vd_rth",
+      expectedParamsText: "R_1, R_2",
+      templateLatex: `\frac{\placeholder{}_{\placeholder{}}\cdot\placeholder{}_{\placeholder{}}}{\placeholder{}_{\placeholder{}} + \placeholder{}_{\placeholder{}}}`,
+      canonicalLatex: `\frac{R_1 R_2}{R_1 + R_2}`,
+
       subject: "basic_electronics",
       category: "Voltage-Divider",
       configName: "Voltage-Divider Bias Configuration",
@@ -372,6 +430,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_vd_ib",
+      expectedParamsText: "V_TH, V_BE, R_TH, β, R_E",
+      templateLatex: `\frac{\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}}{\placeholder{}_{\placeholder{}} + (\beta + 1)\placeholder{}_{\placeholder{}}}`,
+      canonicalLatex: `\frac{V_{TH} - V_{BE}}{R_{TH} + (\beta + 1)R_E}`,
+
       subject: "basic_electronics",
       category: "Voltage-Divider",
       configName: "Voltage-Divider Bias Configuration",
@@ -399,6 +461,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_vd_i1",
+      expectedParamsText: "V_CC, V_B, R_1",
+      templateLatex: `\frac{\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}}{\placeholder{}_{\placeholder{}}}`,
+      canonicalLatex: `\frac{V_{CC} - V_B}{R_1}`,
+
       subject: "basic_electronics",
       category: "Voltage-Divider",
       configName: "Voltage-Divider Bias Configuration",
@@ -423,6 +489,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_vd_i2",
+      expectedParamsText: "V_B, R_2",
+      templateLatex: `\frac{\placeholder{}_{\placeholder{}}}{\placeholder{}_{\placeholder{}}}`,
+      canonicalLatex: `\frac{V_B}{R_2}`,
+
       subject: "basic_electronics",
       category: "Voltage-Divider",
       configName: "Voltage-Divider Bias Configuration",
@@ -446,6 +516,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_vd_ib_kcl",
+      expectedParamsText: "I_1, I_2",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `I_1 - I_2`,
+
       subject: "basic_electronics",
       category: "Voltage-Divider",
       configName: "Voltage-Divider Bias Configuration",
@@ -467,6 +541,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_vd_vb",
+      expectedParamsText: "V_CC, I_1, R_1",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `V_{CC} - I_1 R_1`,
+
       subject: "basic_electronics",
       category: "Voltage-Divider",
       configName: "Voltage-Divider Bias Configuration",
@@ -495,6 +573,10 @@ const FORMULA_DATA = {
        ========================================================================== */
     {
       id: "bjt_cf_ib",
+      expectedParamsText: "V_CC, V_BE, R_F, β, R_C, R_E",
+      templateLatex: `\frac{\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}}{\placeholder{}_{\placeholder{}} + (\beta + 1)(\placeholder{}_{\placeholder{}} + \placeholder{}_{\placeholder{}})}`,
+      canonicalLatex: `\frac{V_{CC} - V_{BE}}{R_F + (\beta + 1)(R_C + R_E)}`,
+
       subject: "basic_electronics",
       category: "Collector-Feedback",
       configName: "Collector-Feedback Bias Configuration",
@@ -525,6 +607,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_cf_kvl_be",
+      expectedParamsText: "V_CC, I_B, R_F, I_C, R_C, I_E, R_E, V_BE",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}} = 0`,
+      canonicalLatex: `V_{CC} - I_B R_F - I_C R_C - I_E R_E - V_{BE} = 0`,
+
       subject: "basic_electronics",
       category: "Collector-Feedback",
       configName: "Collector-Feedback Bias Configuration",
@@ -555,6 +641,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_cf_vb",
+      expectedParamsText: "V_C, I_B, R_F",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `V_C - I_B R_F`,
+
       subject: "basic_electronics",
       category: "Collector-Feedback",
       configName: "Collector-Feedback Bias Configuration",
@@ -582,6 +672,10 @@ const FORMULA_DATA = {
        ========================================================================== */
     {
       id: "bjt_all_ve",
+      expectedParamsText: "I_E, R_E",
+      templateLatex: `\placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `I_E R_E`,
+
       subject: "basic_electronics",
       category: "Universal BJT",
       configName: "Universal BJT Relations",
@@ -604,6 +698,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_all_vc",
+      expectedParamsText: "V_CC, I_C, R_C",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `V_{CC} - I_C R_C`,
+
       subject: "basic_electronics",
       category: "Universal BJT",
       configName: "Universal BJT Relations",
@@ -628,6 +726,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_all_vbe",
+      expectedParamsText: "V_B, V_E",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `V_B - V_E`,
+
       subject: "basic_electronics",
       category: "Universal BJT",
       configName: "Universal BJT Relations",
@@ -649,6 +751,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_all_vce",
+      expectedParamsText: "V_C, V_E",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `V_C - V_E`,
+
       subject: "basic_electronics",
       category: "Universal BJT",
       configName: "Universal BJT Relations",
@@ -670,6 +776,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_all_vbc",
+      expectedParamsText: "V_B, V_C",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `V_B - V_C`,
+
       subject: "basic_electronics",
       category: "Universal BJT",
       configName: "Universal BJT Relations",
@@ -691,6 +801,10 @@ const FORMULA_DATA = {
     },
     {
       id: "bjt_all_ib_diff",
+      expectedParamsText: "I_E, I_C",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `I_E - I_C`,
+
       subject: "basic_electronics",
       category: "Universal BJT",
       configName: "Universal BJT Relations",
@@ -718,6 +832,10 @@ const FORMULA_DATA = {
   deformable_bodies: [
     {
       id: "def_hoop_stress",
+      expectedParamsText: "p, d, t",
+      templateLatex: `\frac{\placeholder{}\cdot\placeholder{}}{2\placeholder{}}`,
+      canonicalLatex: `\frac{p \cdot d}{2t}`,
+
       subject: "deformable_bodies",
       category: "Thin-Walled Vessels",
       configName: "Thin-Walled Cylindrical Vessel",
@@ -747,6 +865,10 @@ const FORMULA_DATA = {
     },
     {
       id: "def_axial_stress",
+      expectedParamsText: "p, d, t",
+      templateLatex: `\frac{\placeholder{}\cdot\placeholder{}}{4\placeholder{}}`,
+      canonicalLatex: `\frac{p \cdot d}{4t}`,
+
       subject: "deformable_bodies",
       category: "Thin-Walled Vessels",
       configName: "Thin-Walled Cylindrical Vessel",
@@ -776,6 +898,10 @@ const FORMULA_DATA = {
     },
     {
       id: "def_spherical_stress",
+      expectedParamsText: "p, d, t",
+      templateLatex: `\frac{\placeholder{}\cdot\placeholder{}}{4\placeholder{}}`,
+      canonicalLatex: `\frac{p \cdot d}{4t}`,
+
       subject: "deformable_bodies",
       category: "Thin-Walled Vessels",
       configName: "Thin-Walled Spherical Vessel",
@@ -800,6 +926,10 @@ const FORMULA_DATA = {
     },
     {
       id: "def_wire_rope_sheave",
+      expectedParamsText: "T, d, D",
+      templateLatex: `\frac{2\placeholder{}}{\placeholder{}\cdot\placeholder{}}`,
+      canonicalLatex: `\frac{2T}{d \cdot D}`,
+
       subject: "deformable_bodies",
       category: "Wire Ropes",
       configName: "Wire Rope on Sheave / Drum",
@@ -826,6 +956,10 @@ const FORMULA_DATA = {
     },
     {
       id: "def_hooke_axial",
+      expectedParamsText: "P, L, A, E",
+      templateLatex: `\frac{\placeholder{}\cdot\placeholder{}}{\placeholder{}\cdot\placeholder{}}`,
+      canonicalLatex: `\frac{P \cdot L}{A \cdot E}`,
+
       subject: "deformable_bodies",
       category: "Axial Loading",
       configName: "Axial Tension / Compression",
@@ -852,6 +986,10 @@ const FORMULA_DATA = {
     },
     {
       id: "def_torsion_shear",
+      expectedParamsText: "T, r, J",
+      templateLatex: `\frac{\placeholder{}\cdot\placeholder{}}{\placeholder{}}`,
+      canonicalLatex: `\frac{T \cdot r}{J}`,
+
       subject: "deformable_bodies",
       category: "Torsion",
       configName: "Circular Shaft Torsion",
@@ -880,6 +1018,10 @@ const FORMULA_DATA = {
     },
     {
       id: "def_polar_j",
+      expectedParamsText: "π, d",
+      templateLatex: `\frac{\pi\placeholder{}^4}{32}`,
+      canonicalLatex: `\frac{\pi d^4}{32}`,
+
       subject: "deformable_bodies",
       category: "Torsion",
       configName: "Solid Circular Shaft",
@@ -906,6 +1048,10 @@ const FORMULA_DATA = {
     },
     {
       id: "def_flexure_stress",
+      expectedParamsText: "M, y, I",
+      templateLatex: `\frac{\placeholder{}\cdot\placeholder{}}{\placeholder{}}`,
+      canonicalLatex: `\frac{M \cdot y}{I}`,
+
       subject: "deformable_bodies",
       category: "Beam Bending",
       configName: "Pure Bending of Beams",
@@ -936,6 +1082,10 @@ const FORMULA_DATA = {
   fluid_mechanics: [
     {
       id: "flu_hydrostatic_p",
+      expectedParamsText: "ρ, g, h",
+      templateLatex: `\rho\placeholder{}\cdot\placeholder{}`,
+      canonicalLatex: `\rho g h`,
+
       subject: "fluid_mechanics",
       category: "Fluid Statics",
       configName: "Hydrostatic Pressure Column",
@@ -966,6 +1116,10 @@ const FORMULA_DATA = {
     },
     {
       id: "flu_reynolds_num",
+      expectedParamsText: "ρ, v, D, μ",
+      templateLatex: `\frac{\rho\placeholder{}\cdot\placeholder{}}{\mu}`,
+      canonicalLatex: `\frac{\rho v D}{\mu}`,
+
       subject: "fluid_mechanics",
       category: "Pipe Flow",
       configName: "Internal Pipe Flow",
@@ -996,6 +1150,10 @@ const FORMULA_DATA = {
     },
     {
       id: "flu_darcy_weisbach",
+      expectedParamsText: "f, L, D, v, g",
+      templateLatex: `\placeholder{}\left(\frac{\placeholder{}}{\placeholder{}}\right)\left(\frac{\placeholder{}^2}{2\placeholder{}}\right)`,
+      canonicalLatex: `f \cdot \frac{L}{D} \cdot \frac{v^2}{2g}`,
+
       subject: "fluid_mechanics",
       category: "Pipe Flow Friction",
       configName: "Pipe Major Head Loss",
@@ -1023,6 +1181,10 @@ const FORMULA_DATA = {
     },
     {
       id: "flu_hagen_poiseuille",
+      expectedParamsText: "Re",
+      templateLatex: `\frac{64}{\placeholder{}}`,
+      canonicalLatex: `\frac{64}{Re}`,
+
       subject: "fluid_mechanics",
       category: "Laminar Pipe Flow",
       configName: "Laminar Flow in Round Pipes",
@@ -1044,6 +1206,10 @@ const FORMULA_DATA = {
     },
     {
       id: "flu_continuity",
+      expectedParamsText: "A_1, v_1, A_2, v_2",
+      templateLatex: `\placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}} = \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `A_1 v_1 = A_2 v_2`,
+
       subject: "fluid_mechanics",
       category: "Conservation Laws",
       configName: "1D Steady Incompressible Flow",
@@ -1068,6 +1234,10 @@ const FORMULA_DATA = {
     },
     {
       id: "flu_torricelli",
+      expectedParamsText: "g, h",
+      templateLatex: `\sqrt{2\placeholder{}\placeholder{}}`,
+      canonicalLatex: `\sqrt{2gh}`,
+
       subject: "fluid_mechanics",
       category: "Efflux Flow",
       configName: "Tank Orifice Discharge",
