@@ -9,7 +9,7 @@
 var SUBJECT_DATA = {
   ece_midterm: {
     title: "ECE 005 Midterm Exam Reviewer",
-    chapter: "ECE 005 Midterm - BJT Configurations (CE, CB, CC)",
+    chapter: "ECE 005 Midterm - BJT Configurations, Analysis & Transistor as a Switch",
     questions: [
         {
             "id": 1,
@@ -1450,6 +1450,186 @@ var SUBJECT_DATA = {
             ],
             "answer": 1,
             "explanation": "• Why this is Correct: • Common Base: Has Voltage Gain but no Current Gain (Ai < 1).\n• Common Emitter: Has both Current and Voltage Gain (highest power gain).\n• Common Collector: Has Current Gain but no Voltage Gain (Av ≈ 1).\n• Why Other Choices are Incorrect: Common Emitter is the only inverting amplifier; Common Collector has the highest input impedance."
+        },
+        {
+            "id": 121,
+            "question": "When a Bipolar Junction Transistor is operated as an ON/OFF solid-state switch, between which two distinct operating regions on its I-V characteristics curve is it driven?",
+            "options": [
+                "Linear Active region and Breakdown region",
+                "Cut-off region (fully-OFF) and Saturation region (fully-ON)",
+                "Active region and Cut-off region only",
+                "Saturation region and Active region only"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Cut-off region (fully-OFF) and Saturation region (fully-ON)' is Correct: Transistor solid-state switches operate at the two extremes of the characteristic curves: fully-OFF in the Cut-off region (open switch) and fully-ON in the Saturation region (closed switch), bypassing the active region required for linear amplifiers.\n• Why Other Choices are Incorrect: Linear active region is used for amplifiers, not steady-state switching."
+        },
+        {
+            "id": 122,
+            "question": "What type of mechanical switch equivalent does a single bipolar transistor operating in cut-off and saturation emulate?",
+            "options": [
+                "Double-pole double-throw (DPDT) switch",
+                "Single-pole single-throw (SPST) solid-state switch",
+                "Rotary multi-wafer switch",
+                "Momentary push-button normally closed switch only"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Single-pole single-throw (SPST) solid-state switch' is Correct: With zero base drive, the transistor is an open switch (zero collector current); with positive base drive, it closes like a single-pole single-throw (SPST) solid-state switch to conduct maximum circuit current.\n• Why Other Choices are Incorrect: A single BJT provides a single make-or-break path between collector and emitter (SPST)."
+        },
+        {
+            "id": 123,
+            "question": "Which set of electrical conditions accurately characterizes the Cut-off (fully-OFF) region of an NPN transistor switch?",
+            "options": [
+                "VBE > 0.7 V, IC = VCC / RL, and VCE ≈ 0 V",
+                "Base is grounded (0 V), VBE < 0.7 V, both junctions reverse-biased, IC = 0, and VCE = VCC (logic '1')",
+                "VBE = 0.7 V, IC = beta * IB, and VCE = VCC / 2",
+                "Both junctions forward-biased with VCE = 0.2 V"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In cut-off: Base input is grounded (0 V), V_BE < 0.7 V (both junctions reverse-biased), no collector current flows (I_C = 0), and output voltage equals full supply voltage (V_OUT = V_CE = V_CC = logic '1'), acting as an open circuit.\n• Why Other Choices are Incorrect: V_CE ≈ 0 V characterizes saturation; V_CE = V_CC / 2 characterizes active-region biasing."
+        },
+        {
+            "id": 124,
+            "question": "Which set of electrical conditions characterizes the Saturation (fully-ON) region of an NPN transistor switch?",
+            "options": [
+                "Both Base-Emitter and Base-Collector junctions forward-biased, VBE > 0.7 V, IC = VCC / RL, and VCE ≈ 0 V (logic '0')",
+                "Base input is grounded (0 V), IC = 0, and VCE = VCC",
+                "Base-Emitter junction reverse-biased and Base-Collector forward-biased",
+                "Transistor operates as an open switch with infinite internal resistance"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: In saturation: Base is driven with ample positive voltage (V_BE > 0.7 V), both junctions are forward-biased, collector current reaches circuit maximum limit (I_C = V_CC / R_L), and collector-emitter voltage drops to its minimum (ideally V_CE = 0 V, logic '0'), acting as a closed switch.\n• Why Other Choices are Incorrect: Reverse bias describes cutoff."
+        },
+        {
+            "id": 125,
+            "question": "Why is the internal power dissipation (PD = VCE * IC) of a transistor switch at its absolute minimum in both the Cut-off and Saturation states?",
+            "options": [
+                "Because the DC supply voltage shuts down automatically in both states",
+                "Because in Cut-off IC ≈ 0 (yielding PD ≈ VCE * 0 = 0), and in Saturation VCE ≈ 0 (yielding PD ≈ 0 * IC = 0)",
+                "Because the ambient room temperature drops to absolute zero",
+                "Because base resistance increases to infinity in saturation"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Power dissipation is P = V_CE * I_C. In cut-off, I_C = 0 so P = 0. In saturation, V_CE ≈ 0 so P ≈ 0. Significant power dissipation only occurs momentarily during the rapid switching transitions between ON and OFF.\n• Why Other Choices are Incorrect: Supply voltage remains constant; the zero-power states are due to zero current or zero voltage."
+        },
+        {
+            "id": 126,
+            "question": "When an NPN transistor is connected with its Emitter grounded and its Collector connected to an external load, what technical function does the open-collector output perform?",
+            "options": [
+                "It sources high positive voltage to the load",
+                "It 'sinks' the externally supplied load current to circuit ground when switched ON",
+                "It isolates the load using magnetic induction",
+                "It rectifies AC power into radio frequency pulses"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: With emitter grounded, the open-collector transistor acts as a 'current sink'. When turned ON, it pulls (sinks) the bottom terminal of the load down to ground, completing the current path from the external DC power supply through the load to ground.\n• Why Other Choices are Incorrect: Sourcing current is performed by PNP transistors connected to positive rails."
+        },
+        {
+            "id": 127,
+            "question": "When switching inductive loads such as relays, solenoids, or DC motors with a transistor, what is the crucial purpose of placing a 'flywheel' (freewheeling) diode across the load?",
+            "options": [
+                "To increase the speed of the motor by multiplying supply voltage",
+                "To dissipate destructive back-EMF inductive voltage spikes (V = -L*di/dt) when the transistor turns OFF, protecting the transistor from overvoltage breakdown",
+                "To rectify the incoming DC current into an AC waveform",
+                "To prevent base current from flowing into the emitter"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Inductors resist sudden changes in current. When the transistor abruptly switches OFF, the collapsing magnetic field in the coil generates a high-voltage reverse inductive kick (back-EMF: V = -L di/dt) that can exceed the transistor's V_CEO rating and destroy it. The flywheel diode provides a safe closed-loop freewheeling path to recirculate and dissipate the stored inductive energy.\n• Why Other Choices are Incorrect: It does not speed up the motor or generate AC."
+        },
+        {
+            "id": 128,
+            "question": "(Canvas LMS Switch Example 1) An NPN transistor has β = 200 and switches a load current IC = 4 mA with an input base current Ib = 20 μA. If the input control voltage exceeds Vin = 2.5 V and Vbe = 0.7 V, what is the calculated value of the Base resistor (Rb)?",
+            "options": [
+                "9.0 kΩ",
+                "45 kΩ",
+                "90 kΩ",
+                "125 kΩ"
+            ],
+            "answer": 2,
+            "explanation": "• Why '90 kΩ' is Correct: Apply Ohm's law to the base resistor: R_b = (V_in - V_be) / I_b = (2.5 V - 0.7 V) / 20 μA = 1.8 V / 0.000020 A = 90,000 Ω = 90 kΩ.\n• Why Other Choices are Incorrect: 2.5 V / 20 μA = 125 kΩ ignores the 0.7 V diode drop; 9.0 kΩ has an incorrect factor of 10."
+        },
+        {
+            "id": 129,
+            "question": "In Canvas Example 1 where the calculated base resistance is 90 kΩ, why do circuit designers intentionally select the next lowest preferred standard value (82 kΩ)?",
+            "options": [
+                "To reduce base current and keep the transistor in the active linear region",
+                "To guarantee that the transistor is driven with slightly extra base current, ensuring deep and reliable saturation across all temperatures and beta tolerances",
+                "Because higher resistor values are illegal under international engineering codes",
+                "To save electrical energy by decreasing total circuit power"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Choosing the next lowest standard resistor (82 kΩ instead of 91 kΩ or 100 kΩ) increases base current slightly (I_B = 1.8 V / 82 kΩ ≈ 22 μA > 20 μA). This ensures an overdrive condition, guaranteeing that the transistor enters deep saturation even if beta drops with temperature or component aging.\n• Why Other Choices are Incorrect: A lower resistor increases base current, ensuring saturation rather than linear mode."
+        },
+        {
+            "id": 130,
+            "question": "(Canvas LMS Switch Example 2) A transistor with β = 200 must switch a heavy load requiring IC = 200 mA when input control voltage is 5.0 V. What is the minimum Base current (Ib) required to turn the transistor fully ON (saturated)?",
+            "options": [
+                "0.1 mA (100 μA)",
+                "1.0 mA (1000 μA)",
+                "10 mA",
+                "40 mA"
+            ],
+            "answer": 1,
+            "explanation": "• Why '1.0 mA' is Correct: To reach saturation, minimum base current is I_b(min) = I_C / beta = 200 mA / 200 = 1.0 mA (or 1000 μA).\n• Why Other Choices are Incorrect: 200 mA / 20 = 10 mA; 200 mA * 200 = 40,000 mA."
+        },
+        {
+            "id": 131,
+            "question": "(Canvas LMS Switch Example 2 Continued) With an input voltage Vin = 5.0 V, Vbe = 0.7 V, and the required minimum base current Ib = 1.0 mA, what is the calculated value of the Base resistor (Rb)?",
+            "options": [
+                "430 Ω",
+                "4.3 kΩ",
+                "5.0 kΩ",
+                "43 kΩ"
+            ],
+            "answer": 1,
+            "explanation": "• Why '4.3 kΩ' is Correct: Using Ohm's law across R_b: R_b = (V_in - V_be) / I_b = (5.0 V - 0.7 V) / 1.0 mA = 4.3 V / 0.001 A = 4,300 Ω = 4.3 kΩ.\n• Why Other Choices are Incorrect: 5.0 V / 1.0 mA = 5.0 kΩ ignores V_be; 430 Ω is an order of magnitude error."
+        },
+        {
+            "id": 132,
+            "question": "How does an NPN Common Emitter switching circuit function as a digital logic inverter (NOT gate)?",
+            "options": [
+                "A high input voltage (+5 V) turns the transistor ON, pulling output voltage down to ~0 V (logic '0'); a low input (0 V) turns it OFF, pulling output up to VCC (logic '1')",
+                "A high input produces a high output voltage",
+                "The circuit only inverts the frequency of incoming radio waves",
+                "It inverts positive voltages into negative voltages below ground"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: When input is high (logic '1'), base current saturates the BJT, pulling V_CE to ~0 V (logic '0'). When input is low (logic '0'), the BJT cuts off and collector resistor pulls V_CE up to V_CC (logic '1'). Thus, output is always the inverted logic level of the input.\n• Why Other Choices are Incorrect: Inverting digital logic means swapping high and low states, not reversing DC supply polarity."
+        },
+        {
+            "id": 133,
+            "question": "What is the primary advantage of using a BJT solid-state switch to interface a low-voltage digital microcontroller (+5 V or +3.3 V) with a high-power device (+12 V or +24 V motor)?",
+            "options": [
+                "It eliminates the need for any electrical wiring",
+                "It allows low-current, low-voltage logic outputs to safely control high-voltage, high-current loads without overloading the sensitive digital IC",
+                "It decreases the speed of operation to prevent wear on semiconductor crystals",
+                "It forces the motor to operate at a single fixed frequency"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Microcontroller GPIO pins can only deliver tens of milliamperes at 3.3 V or 5 V. Transistor switches act as electronic buffers, using microamperes of logic current to switch amperes of current at 12 V, 24 V, or higher without damaging the microcontroller.\n• Why Other Choices are Incorrect: Transistors switch much faster than mechanical switches and do not eliminate wiring."
+        },
+        {
+            "id": 134,
+            "question": "How is Pulse Width Modulation (PWM) utilized with BJT solid-state switches to control the speed of a DC motor efficiently?",
+            "options": [
+                "By varying the resistance of the collector in the linear active region to generate heat",
+                "By rapidly switching the transistor between full saturation and full cutoff, varying the ratio of ON time to total cycle period (duty cycle) with minimal power loss",
+                "By changing the supply voltage from DC to 3-phase AC",
+                "By physically varying the length of the base terminal wire"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In PWM, the transistor is driven only into cutoff (zero current) and saturation (zero voltage drop), where power dissipation is virtually zero. By adjusting the duty cycle (percentage of time ON vs OFF), average power and speed delivered to the motor can be smoothly controlled with very high electrical efficiency (>90%).\n• Why Other Choices are Incorrect: Operating in the linear active region wastes massive power as heat."
+        },
+        {
+            "id": 135,
+            "question": "What is 'overdrive factor' or 'forced beta' (βforced) in transistor switching circuit design?",
+            "options": [
+                "Designing with a base current larger than the minimum required for saturation (IB > IC / β) to guarantee deep saturation under worst-case beta and temperature conditions",
+                "Operating the transistor beyond its maximum collector current rating until breakdown occurs",
+                "Forcing the emitter current to flow backward into the base supply",
+                "Increasing the AC signal frequency beyond the transit frequency f_T"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: To guarantee that a transistor switch turns fully ON under all temperature conditions, production variations, and aging, engineers design with 'forced beta' (typically beta_forced = 10, or 2 to 5 times more base current than minimum: I_B = 2 to 5 * I_C / beta). This is called overdriving the base into hard saturation.\n• Why Other Choices are Incorrect: Overdrive does not exceed maximum ratings; it ensures reliable saturation."
         }
     ]
   },
