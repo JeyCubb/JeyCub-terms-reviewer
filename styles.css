@@ -151,6 +151,12 @@ body[data-mode="all"] .stats-bar-three { order: 2; margin-top: 0; margin-bottom:
 body[data-mode="all"] #all-view { order: 3; }
 body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 
+/* 3. FORMULAS MODE: Title Header & Stats at top, Formulas below (Order 3) */
+body[data-mode="formulas"] .app-header { order: 1; margin-top: 0.25rem; margin-bottom: 1.25rem; }
+body[data-mode="formulas"] .stats-bar-three { order: 2; margin-top: 0; margin-bottom: 1.5rem; }
+body[data-mode="formulas"] #formulas-view { order: 3; }
+body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
+
 /* App Header Card */
 .app-header {
   position: relative;

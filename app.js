@@ -399,6 +399,8 @@ function updateSubjectUI() {
     }
     filterSelect.value = state.practiceFilter;
   }
+
+  updateFormulasUI();
 }
 
 function switchSubject(subjectKey) {
@@ -683,9 +685,20 @@ function switchMode(mode) {
   if (mode === 'all') {
     filterAllQuestions();
   }
+  if (mode === 'formulas') {
+    updateFormulasUI();
+  }
 
   // Smoothly scroll to top on mode switch so active view is immediately visible!
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateFormulasUI() {
+  const info = getActiveSubjectInfo();
+  const subName = document.getElementById('formulas-subject-name');
+  if (subName) subName.textContent = info.title;
+  const countBadge = document.getElementById('formulas-count-badge');
+  if (countBadge) countBadge.textContent = `${info.title} Formulas`;
 }
 
 function toggleTheme() {

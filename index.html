@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=73.0">
+  <link rel="stylesheet" href="styles.css?v=74.0">
 
   <!-- Firebase Realtime Database SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -157,6 +157,29 @@
       </div>
     </section>
 
+    <!-- MODE 3: FORMULAS SHEET & REFERENCE VIEW -->
+    <section id="formulas-view" class="view-section">
+      <div class="filter-controls-card">
+        <div class="search-input-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="search-formulas-input" placeholder="Search formulas by name, symbol, or physical law..." oninput="if(typeof filterFormulas === 'function') filterFormulas()">
+        </div>
+        <div class="filters-row" id="formula-category-chips">
+          <span class="search-count-label" id="formulas-count-badge">Formulas Mode</span>
+        </div>
+      </div>
+
+      <div class="formulas-grid-container" id="formulas-list">
+        <div class="quiz-card" style="text-align: center; padding: 3rem 1.5rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent-primary);"><i class="fa-solid fa-square-root-variable"></i></div>
+          <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary);">Formulas Mode</h2>
+          <p style="color: var(--text-secondary); max-width: 540px; margin: 0 auto; line-height: 1.6;">
+            A dedicated formula sheet and cheat-sheet reference for <strong id="formulas-subject-name" style="color: var(--accent-primary);">Mechanics of Deformable Bodies</strong>. Implementation plan is prepared and ready to populate formulas!
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Title & Subject Navigation Bar -->
     <header class="app-header">
       <div class="header-container">
@@ -194,6 +217,9 @@
         <nav class="mode-nav">
           <button class="nav-btn active" id="btn-practice-mode" onclick="switchMode('practice')">
             <i class="fa-solid fa-graduation-cap"></i> Practice
+          </button>
+          <button class="nav-btn" id="btn-formulas-mode" onclick="switchMode('formulas')">
+            <i class="fa-solid fa-square-root-variable"></i> Formulas
           </button>
           <button class="nav-btn" id="btn-all-mode" onclick="switchMode('all')">
             <i class="fa-solid fa-list-check"></i> All Questions
@@ -251,6 +277,6 @@
     </div>
 
   <script src="questions.js?v=21.0"></script>
-  <script src="app.js?v=22.0"></script>
+  <script src="app.js?v=23.0"></script>
 </body>
 </html>
