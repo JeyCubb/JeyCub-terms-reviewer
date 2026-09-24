@@ -45,6 +45,9 @@ const FORMULA_DATA = {
       expectedParamsText: "V_CC, I_B, R_B, V_BE",
       templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}} = 0`,
       canonicalLatex: `V_{CC} - I_B R_B - V_{BE} = 0`,
+      diagnostics: {
+        "ic_rc": "You wrote I_C · R_C, which belongs to the Collector branch (output loop). For the Base-to-Emitter (input) loop, use the Base resistor drop: I_B · R_B!"
+      },
 
       subject: "basic_electronics",
       category: "Fixed-Bias",
@@ -221,6 +224,9 @@ const FORMULA_DATA = {
       expectedParamsText: "V_CC, I_B, R_B, I_E, R_E, V_BE",
       templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}} = 0`,
       canonicalLatex: `V_{CC} - I_B R_B - I_E R_E - V_{BE} = 0`,
+      diagnostics: {
+        "ic_rc": "You wrote I_C · R_C (Collector branch). In the Base-to-Emitter loop, the drops are across the Base resistor (I_B · R_B), the junction (V_BE), and the Emitter resistor (I_E · R_E)!"
+      },
 
       subject: "basic_electronics",
       category: "Emitter-Stabilized",

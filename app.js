@@ -1417,6 +1417,12 @@ function checkDiagnosticAlternative(latex, currentF) {
     }
   }
 
+  if (currentF.diagnostics.ic_rc) {
+    if (norm.includes('i_c*r_c') || norm.includes('i_c*rc') || norm.includes('ic*rc') || norm.includes('i_crc')) {
+      return currentF.diagnostics.ic_rc;
+    }
+  }
+
   return null;
 }
 
