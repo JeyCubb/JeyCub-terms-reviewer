@@ -9,7 +9,7 @@
 var SUBJECT_DATA = {
   ece_midterm: {
     title: "ECE 005 Midterm Exam Reviewer",
-    chapter: "ECE 005 Midterm - BJT and DC Biasing",
+    chapter: "ECE 005 Midterm - BJT Construction, Operation & Biasing",
     questions: [
         {
             "id": 1,
@@ -610,6 +610,126 @@ var SUBJECT_DATA = {
             ],
             "answer": 1,
             "explanation": "• Why 'I_C ≈ 0 mA, and V_CE = V_CC' is Correct: In cutoff, the base-emitter junction is reverse-biased so I_B = 0 and I_C ≈ 0 mA (only negligible leakage I_CEO flows). With no current through collector resistor R_C, the voltage drop I_C * R_C is zero, causing V_CE to rise to the full supply voltage: V_CE = V_CC - (0)*R_C = V_CC.\n• Why Other Choices are Incorrect: I_C = I_Csat and V_CE ≈ 0 V describes Saturation."
+        },
+        {
+            "id": 51,
+            "question": "The word 'Transistor' is an engineering portmanteau (combination) of which two words describing its mode of operation during early development?",
+            "options": [
+                "Transmission and Varistor",
+                "Transfer and Resistor (or Varistor)",
+                "Transformer and Transistor",
+                "Transit and Capacitor"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The word 'Transistor' was coined by John R. Pierce at Bell Labs as a combination of 'Transfer' and 'Resistor' (or Transfer Varistor). It describes the fundamental device property of transferring an input signal current from a low-resistance forward-biased circuit to a high-resistance reverse-biased output circuit.\n• Why Other Choices are Incorrect: It does not originate from transmission, transformer, or transit."
+        },
+        {
+            "id": 52,
+            "question": "On the circuit schematic symbol for both NPN and PNP transistors, what universal rule governs the direction of the arrow on the emitter terminal relative to semiconductor material types?",
+            "options": [
+                "It always points from the negative N-type region to the positive P-type region",
+                "It always points from the positive P-type region to the negative N-type region",
+                "It always points towards the external circuit ground",
+                "It always points toward the terminal with the largest physical surface area"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The arrow in the transistor circuit symbol always indicates the direction of conventional current flow through the base-emitter junction and ALWAYS points from the positive P-type region to the negative N-type region—exactly the same as the arrow in a standard PN junction diode symbol.\n• Why Other Choices are Incorrect: Electron flow is from N to P, but schematic arrows indicate conventional current (P to N)."
+        },
+        {
+            "id": 53,
+            "question": "When operating a BJT in the linear active region, the base-emitter junction is forward-biased while the base-collector junction is reverse-biased. What is this specific standard biasing condition formally called?",
+            "options": [
+                "Reverse-forward bias",
+                "Dual forward bias",
+                "Forward-reverse bias",
+                "Complementary bias"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Forward-reverse bias' is Correct: Because the base-emitter junction must be forward-biased to inject carriers and the base-collector junction must be reverse-biased to collect them, this operational state is formally designated in textbook literature as 'forward-reverse bias'.\n• Why Other Choices are Incorrect: 'Reverse-forward bias' operates the transistor in inverted mode; 'dual forward bias' establishes saturation."
+        },
+        {
+            "id": 54,
+            "question": "What is the primary operational relationship between an NPN transistor and a PNP transistor?",
+            "options": [
+                "NPN transistors amplify only AC signals, while PNP transistors amplify only DC",
+                "Their principles of operation are exactly the same; the only differences are their DC biasing voltages and power supply polarities",
+                "NPN transistors are unipolar devices, whereas PNP transistors are bipolar devices",
+                "PNP transistors do not require a forward-biased base-emitter junction"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The principle of operation for PNP and NPN transistors is fundamentally identical. The only difference lies in their external biasing voltages and the polarity of their power supplies, which reverse current directions because electrons are majority carriers in NPN while holes are majority carriers in PNP.\n• Why Other Choices are Incorrect: Both are bipolar devices that amplify both AC and DC signals."
+        },
+        {
+            "id": 55,
+            "question": "In terms of semiconductor layer architecture, how are the three doped regions arranged in an NPN transistor versus a PNP transistor?",
+            "options": [
+                "NPN consists of two p regions separated by an n region; PNP consists of two n regions separated by a p region",
+                "NPN consists of two n regions separated by a p region; PNP consists of two p regions separated by an n region",
+                "NPN consists of three n regions in series; PNP consists of three p regions in series",
+                "NPN and PNP both contain identical layers of intrinsic semiconductor material"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: An NPN transistor is constructed from two N-type semiconductor regions (Emitter and Collector) separated by a thin central P-type Base layer. Conversely, a PNP transistor is constructed from two P-type regions separated by a thin central N-type Base layer.\n• Why Other Choices are Incorrect: An NPN has P in the middle; a PNP has N in the middle."
+        },
+        {
+            "id": 56,
+            "question": "What are the specific technical designations of the two internal PN junctions within any Bipolar Junction Transistor structure?",
+            "options": [
+                "The gate-source junction and the drain-source junction",
+                "The base-emitter junction and the base-collector junction",
+                "The anode-cathode junction and the gate junction",
+                "The primary forward junction and the secondary barrier junction"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'The base-emitter junction and the base-collector junction' is Correct: The PN junction joining the base region and the emitter region is called the base-emitter junction. The PN junction connecting the base region and the collector region is called the base-collector junction.\n• Why Other Choices are Incorrect: Gate, source, and drain apply to Field-Effect Transistors; anode and cathode apply to diodes and SCRs."
+        },
+        {
+            "id": 57,
+            "question": "Why are Bipolar Junction Transistors fundamentally described as 'current regulating devices' acting like current-controlled switches?",
+            "options": [
+                "Because they regulate voltage through internal mechanical contacts",
+                "Because a small current flowing into or out of the base terminal controls and regulates a much larger collector current flowing from emitter to collector",
+                "Because they store electrostatic charge in proportion to input frequency",
+                "Because they convert alternating current into radio waves"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Bipolar transistors are current-regulating devices. The amount of current flowing through them from Emitter to Collector is directly proportional to the small biasing current injected into the base terminal (I_C = beta * I_B), allowing a small base signal to control a large load current like a sensitive electronic switch.\n• Why Other Choices are Incorrect: BJTs are solid-state semiconductor amplifiers without mechanical contacts or optical conversion."
+        },
+        {
+            "id": 58,
+            "question": "What common educational mnemonic is used to remember that the emitter schematic arrow of an NPN transistor points outwards away from the base?",
+            "options": [
+                "'Pointing iN Proudly' (PNP)",
+                "'Not Pointing iN' (NPN)",
+                "'Negative Positive Negative' (NPN)",
+                "'Never Pull Negative' (NPN)"
+            ],
+            "answer": 1,
+            "explanation": "• Why ''Not Pointing iN' (NPN)' is Correct: A widely used mnemonic for the NPN transistor symbol is 'Not Pointing iN', reminding learners that the arrow points outward on the emitter lead away from the base line. For the PNP transistor, the mnemonic is 'Pointing iN Proudly', where the arrow points inward toward the base.\n• Why Other Choices are Incorrect: 'Pointing iN Proudly' is the mnemonic for PNP."
+        },
+        {
+            "id": 59,
+            "question": "For a PNP transistor operating under active forward-reverse bias, what are the required terminal voltage relationships?",
+            "options": [
+                "The Collector must be more positive than the Base, and the Emitter must be more negative than the Base",
+                "The Emitter must be more positive than the Base (V_EB > 0), and the Collector must be more negative than the Base (V_CB < 0)",
+                "All three terminals must be maintained at the exact same ground voltage",
+                "The Base must be at the highest positive potential of all three terminals"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In a PNP transistor, the Emitter is P-type and Base is N-type, so forward-biasing the Base-Emitter junction requires the Emitter to be at a higher potential than the Base (V_EB ≈ 0.7 V). The Collector is P-type, so reverse-biasing the Base-Collector junction requires the Collector to be more negative than the Base (V_CB < 0 V).\n• Why Other Choices are Incorrect: Setting Base higher than Emitter reverse-biases the PNP emitter junction into cutoff."
+        },
+        {
+            "id": 60,
+            "question": "What component physically establishes the external electrical connection between each of the three internal semiconductor regions of a BJT and the external circuit?",
+            "options": [
+                "Optical waveguides",
+                "Ohmic wire leads connected to each of the three regions",
+                "Capacitive dielectric plates",
+                "Inductive copper coils"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Ohmic wire leads connected to each of the three regions' is Correct: A wire lead connects directly to each of the three doped regions (Emitter, Base, Collector) to form the external terminal pins of the transistor package.\n• Why Other Choices are Incorrect: BJTs are three-terminal electronic devices connected by metallic wire leads, not optical or capacitive elements."
         }
     ]
   },
