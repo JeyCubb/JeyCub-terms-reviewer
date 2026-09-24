@@ -9,7 +9,7 @@
 var SUBJECT_DATA = {
   ece_midterm: {
     title: "ECE 005 Midterm Exam Reviewer",
-    chapter: "ECE 005 Midterm - BJT Configurations & CE Analysis",
+    chapter: "ECE 005 Midterm - BJT Configurations, CE & CB Analysis",
     questions: [
         {
             "id": 1,
@@ -1090,6 +1090,186 @@ var SUBJECT_DATA = {
             ],
             "answer": 0,
             "explanation": "• Why this is Correct: When input base voltage increases, base current I_B rises, causing collector current I_C to increase. The larger I_C creates a greater voltage drop across the collector resistor (V_RC = I_C * R_C). Since V_C = V_CC - I_C * R_C, this pulls collector output voltage downward toward ground, creating an inverted (180° out-of-phase) output waveform.\n• Why Other Choices are Incorrect: V_CC does not reverse polarity, and the transistor does not turn off."
+        },
+        {
+            "id": 91,
+            "question": "In the Common Base (CB) configuration, where is the input AC signal injected and from where is the output signal extracted?",
+            "options": [
+                "Input is applied between Base and Collector; Output is taken between Emitter and Collector",
+                "Input is applied between Base and Emitter; Output is taken between Base and Collector",
+                "Input is applied between Emitter and Collector; Output is taken between Base and Emitter",
+                "Input is applied to the Collector; Output is taken from the Base"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In the Common Base (grounded base) configuration, the input signal is applied between the Base and Emitter terminals, while the amplified output signal is taken between the Base and Collector terminals, with the Base serving as the common reference point.\n• Why Other Choices are Incorrect: Taking output from the emitter corresponds to Common Collector."
+        },
+        {
+            "id": 92,
+            "question": "Why does the Common Base transistor configuration have a current gain of unity (1) or less (α ≤ 1)?",
+            "options": [
+                "Because collector current is the sum of emitter and base currents",
+                "Because the input emitter current is the sum of collector and base currents (Ie = Ic + Ib), making output collector current strictly less than input emitter current",
+                "Because the base terminal absorbs 90% of the injected charge carriers",
+                "Because the collector terminal is kept at zero volts DC"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In Common Base, input current is emitter current and output current is collector current. Since I_E = I_C + I_B, collector current is slightly less than emitter current by the small amount of base recombination current (I_B), yielding alpha = I_C / I_E < 1 (typically 0.95 to 0.998). Thus, the circuit attenuates current.\n• Why Other Choices are Incorrect: Base current absorbs only 1-5% of carriers, not 90%."
+        },
+        {
+            "id": 93,
+            "question": "What is the phase relationship between input voltage (Vin) and output voltage (Vout) in a Common Base amplifier?",
+            "options": [
+                "Vin and Vout are 180° out-of-phase (inverted)",
+                "Vin and Vout are in-phase (0° phase shift)",
+                "Vin and Vout are 90° out-of-phase",
+                "Vin and Vout are 270° out-of-phase"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Vin and Vout are in-phase (0° phase shift)' is Correct: The Common Base configuration is a non-inverting voltage amplifier. When the input voltage at the emitter rises positively, V_EB decreases, reducing I_E and I_C. The decreased I_C reduces the drop across load resistor R_L, causing collector voltage V_C to swing positively, exactly in-phase (0° shift) with the input.\n• Why Other Choices are Incorrect: Only Common Emitter inverts by 180°."
+        },
+        {
+            "id": 94,
+            "question": "According to the Canvas LMS lecture module, what semiconductor device analogy best describes the output characteristics of a Common Base transistor?",
+            "options": [
+                "A forward-biased Zener diode",
+                "An illuminated photo-diode",
+                "A backward diode",
+                "A light-emitting diode (LED)"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'An illuminated photo-diode' is Correct: In the Common Base configuration, the input characteristics resemble a forward-biased PN diode, while the output characteristics (IC vs VCB curves for fixed IE values) closely resemble an illuminated photo-diode, functioning as a constant current source where collector current is determined by injected emitter current rather than collector voltage.\n• Why Other Choices are Incorrect: Zener diodes maintain constant breakdown voltage; LEDs emit light under forward bias."
+        },
+        {
+            "id": 95,
+            "question": "What is the term given to the ratio of load resistance (RL) to input resistance (Rin) in a Common Base amplifier circuit?",
+            "options": [
+                "Current Gain",
+                "Resistance Gain",
+                "Transconductance Gain",
+                "Impedance Reflection Factor"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Resistance Gain' is Correct: In Common Base analysis, the ratio of the output load resistance to the input resistance (R_L / R_in) is formally termed the 'Resistance Gain'. Because R_in is very small (~20 Ω) and R_L is large (~kΩ), this ratio is very large.\n• Why Other Choices are Incorrect: Current gain is alpha; transconductance is gm."
+        },
+        {
+            "id": 96,
+            "question": "How is the overall voltage gain (Av) of a Common Base amplifier mathematically expressed in terms of current gain and resistance gain?",
+            "options": [
+                "Av = alpha + (RL / Rin)",
+                "Av = alpha * (RL / Rin) = (Ic / Ie) * (RL / Rin)",
+                "Av = (Rin / RL) / alpha",
+                "Av = beta * (Rin / RL)"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Voltage gain is defined as V_out / V_in = (I_c * R_L) / (I_e * R_in) = (I_c / I_e) * (R_L / R_in) = alpha * (Resistance Gain). Even though alpha < 1, the massive Resistance Gain produces a very high voltage gain.\n• Why Other Choices are Incorrect: Voltage gain is the product of current gain and resistance ratio, not sum or quotient."
+        },
+        {
+            "id": 97,
+            "question": "A Common Base amplifier has an input resistance Rin = 20 Ω, a collector load resistor RL = 5 kΩ, and a common-base current gain α = 0.98. What is the voltage gain Av?",
+            "options": [
+                "2.45",
+                "25",
+                "245",
+                "250"
+            ],
+            "answer": 2,
+            "explanation": "• Why '245' is Correct: First calculate the resistance gain: R_L / R_in = 5,000 Ω / 20 Ω = 250. Then calculate voltage gain: A_v = alpha * (R_L / R_in) = 0.98 * 250 = 245.\n• Why Other Choices are Incorrect: 250 ignores alpha; 2.45 has an incorrect decimal placement."
+        },
+        {
+            "id": 98,
+            "question": "Why is the Common Base configuration widely utilized in radio frequency (RF) and VHF/UHF amplifier circuits?",
+            "options": [
+                "Because it provides the highest audio current amplification",
+                "Because the grounded base acts as an electrostatic shield between input (emitter) and output (collector), eliminating Miller feedback capacitance and providing excellent high-frequency response",
+                "Because it operates without any DC power supply",
+                "Because it converts RF signals directly into mechanical vibrations"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In Common Base, the grounded base separates the input and output circuits, acting as an electrostatic shield. This virtually eliminates collector-to-emitter capacitive feedback (the Miller effect), preventing self-oscillation and giving the CB amplifier superior high-frequency bandwidth.\n• Why Other Choices are Incorrect: CB has no current gain, so it is not used for current amplification."
+        },
+        {
+            "id": 99,
+            "question": "Which of the following is another classic practical application of the Common Base amplifier circuit mentioned in the Canvas LMS module?",
+            "options": [
+                "Microphone pre-amplifier (matching very low-impedance dynamic microphones)",
+                "High-power audio speaker output stage",
+                "Computer digital clock memory storage",
+                "DC battery charger regulator"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: Dynamic moving-coil microphones typically have very low output impedance (around 20-50 Ω). Because the Common Base configuration has an inherently low input impedance (Z_in ≈ r_e ≈ 10-50 Ω), it matches the low impedance of the microphone without requiring a transformer.\n• Why Other Choices are Incorrect: Driving speakers requires low output impedance (Common Collector)."
+        },
+        {
+            "id": 100,
+            "question": "If a Common Base amplifier has Rin = 25 Ω and RL = 10 kΩ, what is the value of its 'Resistance Gain'?",
+            "options": [
+                "25",
+                "40",
+                "400",
+                "2,500"
+            ],
+            "answer": 2,
+            "explanation": "• Why '400' is Correct: Resistance Gain is defined as R_L / R_in = 10,000 Ω / 25 Ω = 400.\n• Why Other Choices are Incorrect: 10,000 / 250 = 40; 25 * 100 = 2,500."
+        },
+        {
+            "id": 101,
+            "question": "Why is the Common Base configuration rarely used as a general-purpose voltage amplifier in multi-stage audio systems?",
+            "options": [
+                "Because its low input impedance severely loads preceding stages, and its lack of current gain makes cascading difficult without matching transformers",
+                "Because it can only amplify negative half-cycles of AC signals",
+                "Because it produces excessive 180° phase inversion distortion",
+                "Because its maximum operating temperature is 0°C"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: General audio amplifiers require moderate-to-high input impedance to avoid loading prior voltage stages. The very low input impedance of CB (10-50 Ω) and lack of current gain (α < 1) mean cascading multiple CB stages directly yields poor overall gain.\n• Why Other Choices are Incorrect: CB has zero phase shift (non-inverting) and handles full AC cycles normally."
+        },
+        {
+            "id": 102,
+            "question": "In a Common Base circuit, if the emitter current IE is measured at 5.0 mA and alpha is 0.99, what are the collector current IC and base current IB?",
+            "options": [
+                "IC = 4.95 mA, and IB = 0.05 mA (50 μA)",
+                "IC = 5.05 mA, and IB = 0.5 mA",
+                "IC = 0.05 mA, and IB = 4.95 mA",
+                "IC = 4.95 mA, and IB = 0 mA"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'IC = 4.95 mA, and IB = 0.05 mA (50 μA)' is Correct: I_C = alpha * I_E = 0.99 * 5.0 mA = 4.95 mA. Then from KCL: I_B = I_E - I_C = 5.0 mA - 4.95 mA = 0.05 mA = 50 μA.\n• Why Other Choices are Incorrect: I_C cannot exceed I_E; I_B cannot be zero in an active BJT."
+        },
+        {
+            "id": 103,
+            "question": "What is the physical connection of the Base terminal in a practical Common Base circuit?",
+            "options": [
+                "It must always float without any electrical connection",
+                "It is connected directly to ground or AC-grounded through a capacitor to a fixed DC reference voltage",
+                "It must be wired directly to the AC output load resistor",
+                "It is connected in series with the input AC signal generator"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In Common Base circuits, the base terminal is connected directly to circuit ground (in dual-supply circuits) or held at a fixed DC reference voltage with a bypass capacitor connecting it to ground for AC signals.\n• Why Other Choices are Incorrect: A floating base places the transistor in cutoff; connecting base to the signal generator forms Common Emitter or Common Collector."
+        },
+        {
+            "id": 104,
+            "question": "How does the Common Base circuit behave with respect to signal currents versus signal voltages?",
+            "options": [
+                "It acts as a current amplifier and voltage attenuator",
+                "It acts as a current attenuator (or unity buffer) and a high voltage amplifier",
+                "It attenuates both current and voltage signals",
+                "It amplifies both current and voltage equally"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Because alpha < 1, output current is slightly smaller than input current (current attenuation). However, because output resistance is vastly higher than input resistance, it acts as a very high voltage amplifier.\n• Why Other Choices are Incorrect: CE amplifies both; CC amplifies current while attenuating voltage."
+        },
+        {
+            "id": 105,
+            "question": "Comparing all three BJT configurations, which one provides the best high-frequency performance and why?",
+            "options": [
+                "Common Collector, because it has no voltage gain",
+                "Common Base, because the grounded base eliminates capacitive Miller feedback between input and output",
+                "Common Emitter, because it has 180° phase inversion",
+                "All three configurations have identical high-frequency cutoff frequencies"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Common Base' is Correct: In Common Emitter, the collector-base capacitance is amplified by the voltage gain (Miller Effect), severely limiting high-frequency bandwidth. In Common Base, the base is grounded, shielding the input emitter from output collector capacitance, giving CB the highest cutoff frequency and best RF performance.\n• Why Other Choices are Incorrect: Common Emitter suffers from the Miller effect at high frequencies."
         }
     ]
   },
