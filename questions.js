@@ -9,7 +9,7 @@
 var SUBJECT_DATA = {
   ece_midterm: {
     title: "ECE 005 Midterm Exam Reviewer",
-    chapter: "ECE 005 Midterm - BJT Configurations & Characteristics",
+    chapter: "ECE 005 Midterm - BJT Configurations & CE Analysis",
     questions: [
         {
             "id": 1,
@@ -910,6 +910,186 @@ var SUBJECT_DATA = {
             ],
             "answer": 0,
             "explanation": "• Why this is Correct: Any standard electronic two-port network requires four connection points (two for input, two for output). Because a BJT is a three-terminal device, one terminal must be designated as 'common' (shared) between the input and output loops to complete both circuits.\n• Why Other Choices are Incorrect: A two-port network simply requires sharing one terminal to form input and output pairs."
+        },
+        {
+            "id": 76,
+            "question": "In the Common Emitter (CE) configuration, where are the input signal applied and the output signal taken from?",
+            "options": [
+                "Input is applied between Base and Collector; Output is taken between Emitter and Collector",
+                "Input is applied between Base and Emitter; Output is taken between Collector and Emitter",
+                "Input is applied between Collector and Emitter; Output is taken between Base and Emitter",
+                "Input is applied between Base and Ground; Output is taken from the power supply rail"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In the Common Emitter (grounded emitter) configuration, the input signal is injected between the Base and Emitter, while the amplified output signal is extracted across the Collector and Emitter.\n• Why Other Choices are Incorrect: Connecting input to Collector and Base represents Common Collector or inverted configurations."
+        },
+        {
+            "id": 77,
+            "question": "Why is the Common Emitter configuration regarded as the 'normal' and most widely used circuit arrangement for bipolar transistor amplifiers?",
+            "options": [
+                "Because it is the only configuration that does not require semiconductor doping",
+                "Because it provides both significant voltage and current gain, producing the highest overall power gain",
+                "Because it eliminates the need for a DC collector power supply",
+                "Because its output waveform has zero phase shift with no distortion"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The Common Emitter configuration is the industry standard 'workhorse' amplifier because it is the only configuration capable of delivering both current and voltage amplification simultaneously, yielding the highest overall power gain of all three topologies.\n• Why Other Choices are Incorrect: It requires DC power and produces a 180° phase inversion."
+        },
+        {
+            "id": 78,
+            "question": "What is the physical carrier interpretation if a bipolar transistor has a DC current gain Beta (β) equal to 100?",
+            "options": [
+                "100 electrons flow from the base terminal for every 1 electron flowing between emitter and collector",
+                "One electron will flow from the base terminal for every 100 electrons flowing between the emitter-collector terminal",
+                "The collector voltage is exactly 100 times larger than the base voltage",
+                "The base resistance is 100 times smaller than the emitter resistance"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Since Beta = I_C / I_B = 100, for every 1 unit of base current (e.g., 1 electron flowing into the base to recombine), 100 units of current (100 electrons) successfully cross from emitter to collector.\n• Why Other Choices are Incorrect: Base current is 100 times smaller than collector current, not 100 times larger."
+        },
+        {
+            "id": 79,
+            "question": "What is the typical range of current gain Beta (β) for most general-purpose small-signal bipolar junction transistors?",
+            "options": [
+                "0.1 to 0.99",
+                "1 to 5",
+                "20 to 200 (or up to 300-400)",
+                "1,000 to 10,000"
+            ],
+            "answer": 2,
+            "explanation": "• Why '20 to 200 (or up to 300-400)' is Correct: For standard general-purpose silicon BJTs (such as the 2N3904 or BC547), DC Beta (h_FE) typically ranges between 20 and 200, frequently reaching 300 to 400 under optimum collector current levels.\n• Why Other Choices are Incorrect: Values below 1 describe alpha; values above 1,000 are typical of Darlington pairs."
+        },
+        {
+            "id": 80,
+            "question": "(Canvas LMS Example 1) A bipolar NPN transistor has a DC current gain Beta of 200. What base current Ib is required to switch a resistive collector load current of 4 mA?",
+            "options": [
+                "2 μA",
+                "20 μA",
+                "50 μA",
+                "800 μA"
+            ],
+            "answer": 1,
+            "explanation": "• Why '20 μA' is Correct: Using the relationship I_C = beta * I_B, solve for base current: I_B = I_C / beta = 4 mA / 200 = 0.020 mA = 20 μA.\n• Why Other Choices are Incorrect: 4 mA * 200 = 800 mA (multiplying instead of dividing); 4 mA / 20 = 200 μA."
+        },
+        {
+            "id": 81,
+            "question": "For a standard Silicon NPN transistor in a Common Emitter circuit to conduct collector current, what condition must be satisfied regarding Collector voltage (Vc) relative to Emitter voltage (Ve)?",
+            "options": [
+                "Vc must be equal to Ve",
+                "Vc must be more negative than Ve",
+                "Vc must be greater and positive with respect to Ve (V_CE > 0)",
+                "Vc must be at ground potential while Ve is connected to +V_CC"
+            ],
+            "answer": 2,
+            "explanation": "• Why this is Correct: To maintain forward-reverse bias in an NPN transistor, the Collector (N-type) must be at a higher positive potential than the Emitter (N-type) and Base (P-type), ensuring V_CE > 0 to sweep electrons across the reverse-biased collector junction.\n• Why Other Choices are Incorrect: If Vc is negative with respect to Ve, the collector junction is forward-biased and the transistor will not operate in active mode."
+        },
+        {
+            "id": 82,
+            "question": "What is the minimum threshold voltage that must be applied to the Base terminal of a Silicon NPN transistor for it to begin conducting base current?",
+            "options": [
+                "Approximately 0.1 V",
+                "Approximately 0.3 V",
+                "Approximately 0.7 V (one forward diode drop)",
+                "Approximately 2.0 V"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Approximately 0.7 V' is Correct: Because the input characteristics of an NPN transistor correspond to a forward-biased silicon PN diode, the base-to-emitter voltage (V_BE) must exceed the built-in barrier potential of approximately 0.7 V for significant base current to flow.\n• Why Other Choices are Incorrect: 0.3 V is the threshold for Germanium devices; 0.1 V is for Schottky diodes."
+        },
+        {
+            "id": 83,
+            "question": "In a base-biased Common Emitter circuit with base supply voltage Vb, input base resistor Rb, and silicon base-emitter drop Vbe (≈ 0.7 V), which formula calculates base current Ib?",
+            "options": [
+                "I_B = (V_b + V_be) / R_b",
+                "I_B = (V_b - V_be) / R_b",
+                "I_B = V_b / (R_b * V_be)",
+                "I_B = R_b / (V_b - V_be)"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'I_B = (V_b - V_be) / R_b' is Correct: Applying Kirchhoff's Voltage Law to the base-emitter input loop: V_b - I_B * R_b - V_be = 0. Solving for base current gives I_B = (V_b - V_be) / R_b.\n• Why Other Choices are Incorrect: Adding V_be or multiplying violates Ohm's law and KVL."
+        },
+        {
+            "id": 84,
+            "question": "(Canvas LMS Example 2) An NPN transistor circuit has a DC base bias voltage Vb = 10 V and an input base resistor Rb = 100 kΩ. Assuming a standard silicon Vbe = 0.7 V, what is the base current Ib entering the transistor?",
+            "options": [
+                "100 μA",
+                "93 μA",
+                "10.7 μA",
+                "0.93 mA"
+            ],
+            "answer": 1,
+            "explanation": "• Why '93 μA' is Correct: Using I_B = (V_b - V_be) / R_b: I_B = (10 V - 0.7 V) / 100 kΩ = 9.3 V / 100,000 Ω = 0.000093 A = 0.093 mA = 93 μA.\n• Why Other Choices are Incorrect: 10 V / 100 kΩ = 100 μA ignores the 0.7 V diode drop; (10 + 0.7) / 100 kΩ = 107 μA adds rather than subtracts."
+        },
+        {
+            "id": 85,
+            "question": "If the transistor in Example 2 (with Ib = 93 μA) has a current gain Beta = 100, what will be the resulting collector current Ic in the linear active region?",
+            "options": [
+                "0.93 mA",
+                "9.3 mA",
+                "93 mA",
+                "930 mA"
+            ],
+            "answer": 1,
+            "explanation": "• Why '9.3 mA' is Correct: Using I_C = beta * I_B: I_C = 100 * 93 μA = 9,300 μA = 9.3 mA.\n• Why Other Choices are Incorrect: 93 μA / 100 = 0.93 μA; 93 mA corresponds to beta = 1000."
+        },
+        {
+            "id": 86,
+            "question": "How do base-emitter voltage (Vbe) and collector current (Ic) behave as base current (Ib) is gradually increased in a conducting BJT?",
+            "options": [
+                "V_be increases linearly while I_C stays constant",
+                "V_be increases very slowly toward ~0.7 V, while I_C rises exponentially",
+                "V_be drops to zero while I_C decreases",
+                "Both V_be and I_C remain completely fixed"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Because the base-emitter junction has exponential PN-junction diode characteristics, as I_B increases, V_be increases only slightly (clamped around 0.7 V), while collector current I_C = I_S * exp(V_be / V_T) rises exponentially with small changes in V_be.\n• Why Other Choices are Incorrect: Diode voltage does not increase linearly; it clamps logarithmically near 0.7 V."
+        },
+        {
+            "id": 87,
+            "question": "In a Common Emitter amplifier circuit, where is the external load resistance (RL or RC) connected?",
+            "options": [
+                "In series with the Base terminal",
+                "In series with the Collector terminal",
+                "Directly between Base and Emitter",
+                "In parallel with the input AC signal source only"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'In series with the Collector terminal' is Correct: In a Common Emitter amplifier, the collector load resistor (R_C or R_L) is connected in series between the DC positive supply (V_CC) and the collector terminal, converting the amplified collector current variations into an output voltage swing.\n• Why Other Choices are Incorrect: Resistors in the base branch are current-limiting bias resistors, not collector load resistors."
+        },
+        {
+            "id": 88,
+            "question": "Comparing the Common Emitter (CE) configuration with the Common Base (CB) configuration, which statement accurately reflects their relative performance?",
+            "options": [
+                "CE has lower input impedance and higher voltage gain than CB",
+                "CE has greater input impedance, current gain, and power gain than CB, but lower voltage gain",
+                "CE has lower power gain and higher output impedance than CB",
+                "CE and CB have identical input impedance and identical phase shift"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Common Emitter has a higher input impedance (Medium vs Low), significantly higher current gain (beta vs alpha < 1), and much higher power gain (Very High vs Low) than Common Base, though its voltage gain is somewhat lower than the extremely high voltage gain of CB.\n• Why Other Choices are Incorrect: CB has lower input impedance and higher voltage gain than CE."
+        },
+        {
+            "id": 89,
+            "question": "An NPN transistor with beta = 150 has a measured emitter current IE = 3.02 mA. What is the approximate base current IB?",
+            "options": [
+                "20 μA",
+                "30 μA",
+                "200 μA",
+                "450 μA"
+            ],
+            "answer": 0,
+            "explanation": "• Why '20 μA' is Correct: Since I_E = (beta + 1) * I_B: I_B = I_E / (beta + 1) = 3.02 mA / 151 = 0.020 mA = 20 μA.\n• Why Other Choices are Incorrect: 3.02 mA / 100 = 30 μA; direct division gives exactly 20 μA."
+        },
+        {
+            "id": 90,
+            "question": "Why does a 180° phase inversion occur in a Common Emitter amplifier when the input AC voltage increases positively?",
+            "options": [
+                "A positive input swing increases IB and IC, which increases the voltage drop across RC, pulling the collector voltage (VC = VCC - IC*RC) downward",
+                "The AC input signal bypasses the transistor directly through the emitter",
+                "The collector supply voltage reverses polarity during positive half-cycles",
+                "The transistor turns completely off during every positive half-cycle"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: When input base voltage increases, base current I_B rises, causing collector current I_C to increase. The larger I_C creates a greater voltage drop across the collector resistor (V_RC = I_C * R_C). Since V_C = V_CC - I_C * R_C, this pulls collector output voltage downward toward ground, creating an inverted (180° out-of-phase) output waveform.\n• Why Other Choices are Incorrect: V_CC does not reverse polarity, and the transistor does not turn off."
         }
     ]
   },
