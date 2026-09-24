@@ -9,7 +9,7 @@
 var SUBJECT_DATA = {
   ece_midterm: {
     title: "ECE 005 Midterm Exam Reviewer",
-    chapter: "ECE 005 Midterm - BJT Configurations, Switching & Darlington Applications",
+    chapter: "ECE 005 Midterm - BJT Construction, Seatwork & Comprehensive Analysis",
     questions: [
         {
             "id": 1,
@@ -1810,6 +1810,126 @@ var SUBJECT_DATA = {
             ],
             "answer": 1,
             "explanation": "• Why this is Correct: The Sziklai pair (also called the Complementary Darlington) connects an NPN and a PNP transistor together. It provides total current gain approximately equal to beta1 * beta2, but requires only a single forward diode drop at the input (V_BE ≈ 0.7 V) and achieves a lower saturation voltage (~0.3 V) than a Darlington pair.\n• Why Other Choices are Incorrect: Sziklai uses complementary transistors (NPN + PNP), not two identical ones."
+        },
+        {
+            "id": 151,
+            "question": "(Midterm Seatwork 2) What does BJT stand for in electronics?",
+            "options": [
+                "Bipolar Junction Transistor",
+                "Basic Junction Technology",
+                "Binary Junction Transformer",
+                "Base Joint Transducer"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'Bipolar Junction Transistor' is Correct: BJT stands for Bipolar Junction Transistor. It is called 'bipolar' because it utilizes both electron and hole conduction, and 'junction' because it consists of two PN junctions separating three doped regions.\n• Why Other Choices are Incorrect: BJT does not stand for Technology, Transformer, or Transducer."
+        },
+        {
+            "id": 152,
+            "question": "(Midterm Seatwork 2) In a BJT, what are the three layers formed by the P-type and N-type semiconductor materials?",
+            "options": [
+                "Emitter, Base, Collector",
+                "Anode, Cathode, Gate",
+                "Source, Drain, Gate",
+                "Channel, Substrate, Body"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'Emitter, Base, Collector' is Correct: The three functional semiconductor layers of a BJT are the Emitter (injects carriers), the Base (controls carrier flow), and the Collector (collects carriers).\n• Why Other Choices are Incorrect: Anode, Cathode, and Gate belong to thyristors (SCRs); Source, Drain, and Gate belong to FETs."
+        },
+        {
+            "id": 153,
+            "question": "(Midterm Seatwork 2) Which terminal of the BJT is responsible for the majority charge carriers injection into the base region?",
+            "options": [
+                "Collector",
+                "Base",
+                "Emitter",
+                "Substrate"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Emitter' is Correct: As its name implies, the Emitter is heavily doped and responsible for emitting (injecting) majority charge carriers across the forward-biased base-emitter junction into the base region.\n• Why Other Choices are Incorrect: The Collector collects carriers; the Base controls their transit."
+        },
+        {
+            "id": 154,
+            "question": "(Midterm Seatwork 2) What is the purpose of the thin base region in a BJT?",
+            "options": [
+                "To provide mechanical strength",
+                "To control the flow of majority charge carriers",
+                "To enhance thermal conductivity",
+                "To increase voltage handling capacity"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'To control the flow of majority charge carriers' is Correct: The Base is physically ultra-thin and lightly doped so that it allows small base currents to modulate and control the vast majority of carriers diffusing from emitter to collector with minimal recombination.\n• Why Other Choices are Incorrect: The base does not provide structural strength or heat dissipation (heat dissipation is handled by the collector)."
+        },
+        {
+            "id": 155,
+            "question": "(Midterm Seatwork 2) What type of charge carriers dominate the current flow in the emitter and collector regions of an NPN BJT?",
+            "options": [
+                "Electrons",
+                "Holes",
+                "Protons",
+                "Neutrons"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'Electrons' is Correct: In an NPN transistor, the Emitter and Collector are both composed of N-type semiconductor material, where negatively charged free electrons are the majority charge carriers.\n• Why Other Choices are Incorrect: Holes dominate in P-type regions (PNP transistors); protons and neutrons are fixed subatomic particles in the nucleus."
+        },
+        {
+            "id": 156,
+            "question": "(Midterm Seatwork 2) What type of charge carriers dominate the current flow in the emitter and collector regions of a PNP BJT?",
+            "options": [
+                "Electrons",
+                "Holes",
+                "Protons",
+                "Neutrons"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Holes' is Correct: In a PNP transistor, the Emitter and Collector are composed of P-type semiconductor material, where positively charged holes (deficiencies of electrons in valence bonds) are the majority charge carriers.\n• Why Other Choices are Incorrect: Electrons dominate in N-type material (NPN transistors)."
+        },
+        {
+            "id": 157,
+            "question": "(Midterm Seatwork 2) What is the function of the collector terminal in a BJT?",
+            "options": [
+                "To inject majority carriers into the base",
+                "To collect majority carriers emitted from the base",
+                "To control the base current",
+                "To provide mechanical support"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'To collect majority carriers emitted from the base' is Correct: The primary function of the Collector terminal is to collect the majority charge carriers that were injected by the emitter and have traversed across the base region.\n• Why Other Choices are Incorrect: Injecting carriers is the role of the emitter; controlling current is the function of the base."
+        },
+        {
+            "id": 158,
+            "question": "Which of the three semiconductor regions in a Bipolar Junction Transistor possesses the highest impurity doping concentration?",
+            "options": [
+                "Base region",
+                "Collector region",
+                "Emitter region",
+                "All three regions have identical doping concentrations"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Emitter region' is Correct: The Emitter is the most heavily doped layer in the BJT (typically 10^19 atoms/cm^3) to ensure a massive injection of majority charge carriers into the base.\n• Why Other Choices are Incorrect: Base is the most lightly doped (10^15 - 10^16 atoms/cm^3); collector is moderately doped."
+        },
+        {
+            "id": 159,
+            "question": "Which of the three semiconductor regions in a Bipolar Junction Transistor has the lowest impurity doping concentration?",
+            "options": [
+                "Emitter region",
+                "Collector region",
+                "Base region",
+                "Package substrate"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Base region' is Correct: The Base is deliberately engineered with the lowest doping concentration among all three layers to minimize recombination of minority carriers diffusing through it.\n• Why Other Choices are Incorrect: Emitter is heavily doped; collector is moderately doped."
+        },
+        {
+            "id": 160,
+            "question": "Which semiconductor region in a BJT is manufactured with the physically largest surface area and volume, and why?",
+            "options": [
+                "Emitter, to store more electrons",
+                "Base, to provide wider control area",
+                "Collector, because it dissipates the largest amount of heat generated at the reverse-biased collector-base junction",
+                "All three regions are identical cubes of equal volume"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Collector' is Correct: The Collector region operates under high reverse-bias voltage (V_CE) and conducts full load current, generating significant heat (P = V_CE * I_C). It is manufactured with the largest physical size to transfer this thermal energy safely to the case or heat sink.\n• Why Other Choices are Incorrect: Base is the thinnest; emitter is smaller than the collector."
         }
     ]
   },
