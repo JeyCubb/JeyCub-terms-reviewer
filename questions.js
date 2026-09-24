@@ -1877,7 +1877,7 @@ var SUBJECT_DATA = {
             "options": [
                 "Electrons",
                 "Holes",
-                "Protons",
+                "Proton",
                 "Neutrons"
             ],
             "answer": 1,
