@@ -9,7 +9,7 @@
 var SUBJECT_DATA = {
   ece_midterm: {
     title: "ECE 005 Midterm Exam Reviewer",
-    chapter: "ECE 005 Midterm - BJT Configurations, Analysis & Transistor as a Switch",
+    chapter: "ECE 005 Midterm - BJT Configurations, Switching & Darlington Applications",
     questions: [
         {
             "id": 1,
@@ -1630,6 +1630,186 @@ var SUBJECT_DATA = {
             ],
             "answer": 0,
             "explanation": "• Why this is Correct: To guarantee that a transistor switch turns fully ON under all temperature conditions, production variations, and aging, engineers design with 'forced beta' (typically beta_forced = 10, or 2 to 5 times more base current than minimum: I_B = 2 to 5 * I_C / beta). This is called overdriving the base into hard saturation.\n• Why Other Choices are Incorrect: Overdrive does not exceed maximum ratings; it ensures reliable saturation."
+        },
+        {
+            "id": 136,
+            "question": "What is the primary function of the Base resistor (Rb) when a digital logic gate (such as TTL or CMOS) drives a transistor switch?",
+            "options": [
+                "To amplify the logic gate's power supply voltage",
+                "To limit the output current drawn from the logic gate pin to safe levels and set the required base drive current",
+                "To convert the DC output of the gate into an alternating current",
+                "To eliminate the base-emitter PN junction barrier"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Digital logic ICs have maximum rated source and sink output current limits (typically 4 mA to 20 mA). The base resistor R_b limits the current flowing out of the logic pin to prevent damaging the IC while delivering the exact base current needed to saturate the transistor.\n• Why Other Choices are Incorrect: Resistors dissipate power rather than amplify voltage or convert DC to AC."
+        },
+        {
+            "id": 137,
+            "question": "How is the load connected in a PNP transistor switching circuit, and what is the primary role of the PNP transistor?",
+            "options": [
+                "The load is connected between the collector and ground (0 V), and the PNP transistor switches positive supply power (sources current) to it",
+                "The load is connected between base and collector to ground",
+                "The load is connected in series with the base input resistor",
+                "The load replaces the base-emitter junction"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: In a PNP switch, the Emitter is tied to the positive DC rail (+VCC) and the load is connected between the Collector and ground (0 V). Turning the PNP transistor ON connects the load to +VCC, acting as a 'high-side' current sourcing switch.\n• Why Other Choices are Incorrect: Connecting load between collector and ground is high-side switching; NPN switches the ground side."
+        },
+        {
+            "id": 138,
+            "question": "To switch a PNP transistor switch 'ON' into saturation, what voltage level must be applied to its Base terminal?",
+            "options": [
+                "A high positive voltage equal to or greater than VCC",
+                "A LOW voltage (ground / 0 V) to forward-bias the Base-Emitter junction",
+                "An alternating sine wave voltage",
+                "The base must be left completely disconnected"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'A LOW voltage (ground / 0 V)' is Correct: For a PNP transistor, the emitter is connected to +VCC. To forward-bias the base-emitter junction, the base must be made more negative than the emitter by at least 0.7 V. Grounding the base (LOW / 0 V) creates a positive VEB drop, turning the PNP switch fully ON.\n• Why Other Choices are Incorrect: Applying +VCC makes VEB = 0 V, which cuts off the PNP transistor."
+        },
+        {
+            "id": 139,
+            "question": "What is the key electrical distinction between an NPN transistor switch and a PNP transistor switch regarding current flow?",
+            "options": [
+                "NPN transistors source current (switches power), while PNP transistors sink current (switches ground)",
+                "NPN transistors sink current (switches ground), while PNP transistors source current (switches power)",
+                "NPN transistors only conduct AC current, while PNP transistors only conduct DC current",
+                "NPN switches have zero resistance, while PNP switches have infinite resistance"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: As emphasized in the Canvas lecture module: NPN transistors switch the ground path (current sinking, open-collector pull-down), while PNP transistors switch the positive supply path (current sourcing, high-side pull-up to VCC).\n• Why Other Choices are Incorrect: Reversing the roles is incorrect; both handle DC and AC identically in magnitude."
+        },
+        {
+            "id": 140,
+            "question": "What is the formal technical name for the two-transistor compound arrangement commonly known as the 'Darlington Configuration'?",
+            "options": [
+                "Complementary Gain Compounding Configuration",
+                "Symmetrical Push-Pull Topology",
+                "Differential Cascode Network",
+                "Current Mirror Steering Array"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'Complementary Gain Compounding Configuration' is Correct: The formal engineering designation for the Darlington configuration is the 'Complementary Gain Compounding Configuration', where the current gain of the first transistor is compounded with (multiplied by) the current gain of the second transistor.\n• Why Other Choices are Incorrect: Push-pull uses complementary NPN/PNP; Cascode uses CE and CB stages."
+        },
+        {
+            "id": 141,
+            "question": "How are the two individual bipolar transistors physically interconnected in an NPN Darlington transistor pair?",
+            "options": [
+                "The Emitters are tied together, and the Collector of Q1 connects to the Base of Q2",
+                "The Collectors are tied together, and the Emitter of Q1 is connected directly to the Base of Q2 (IE1 = IB2)",
+                "The Bases are tied together, and the Collectors are connected in series with the Emitters",
+                "The Emitter of Q2 is tied to the Collector of Q1"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In an NPN Darlington pair, the Collectors of both transistors are tied together to a common terminal. The Emitter of the smaller input transistor (Q1) is connected directly to the Base of the larger output transistor (Q2), so the emitter current of Q1 becomes the base drive current for Q2 (IB2 = IE1).\n• Why Other Choices are Incorrect: In a Darlington pair, collectors are tied together, not emitters."
+        },
+        {
+            "id": 142,
+            "question": "What is the mathematical relationship for the total overall current gain (βtotal or hFE(total)) of a Darlington transistor pair?",
+            "options": [
+                "βtotal = β1 + β2",
+                "βtotal = β1 * β2 (or β1 + β2 + β1*β2 ≈ β1*β2)",
+                "βtotal = (β1 * β2) / (β1 + β2)",
+                "βtotal = β1 / β2"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'βtotal = β1 * β2' is Correct: Because Q1 amplifies the base current by β1 and feeds its output into the base of Q2 which amplifies it again by β2, the overall current amplification factor is the product of the two individual gains: βtotal = β1 * β2.\n• Why Other Choices are Incorrect: Gains multiply rather than add; adding gains would only give 150 instead of 5,000."
+        },
+        {
+            "id": 143,
+            "question": "(Canvas LMS Darlington Example) A Darlington switch consists of an input transistor with current gain β1 = 100 and a second switching transistor with current gain β2 = 50. What is the total current gain (βtotal) of the Darlington device?",
+            "options": [
+                "150",
+                "500",
+                "5,000",
+                "50,000"
+            ],
+            "answer": 2,
+            "explanation": "• Why '5,000' is Correct: Multiplying the two individual gains: beta_total = beta_1 * beta_2 = 100 * 50 = 5,000.\n• Why Other Choices are Incorrect: 100 + 50 = 150 (adding instead of multiplying); 500 is a factor of 10 error."
+        },
+        {
+            "id": 144,
+            "question": "(Canvas LMS Darlington Example Continued) If the load current to be switched is IC = 200 mA and the Darlington total current gain is βtotal = 5,000, what is the required input base current (IB)?",
+            "options": [
+                "4 μA",
+                "40 μA",
+                "400 μA",
+                "1.0 mA"
+            ],
+            "answer": 1,
+            "explanation": "• Why '40 μA' is Correct: Using I_B = I_C / beta_total = 200 mA / 5,000 = 0.04 mA = 40 μA.\n• Why Other Choices are Incorrect: For a single transistor with beta = 200, I_B was 1.0 mA (1,000 μA); the Darlington reduces this requirement to just 40 μA."
+        },
+        {
+            "id": 145,
+            "question": "Comparing a single BJT switch (requiring 1.0 mA base current for a 200 mA load) to the Darlington pair (requiring 40 μA), what is the key practical advantage?",
+            "options": [
+                "The Darlington pair consumes zero power in the load",
+                "The Darlington pair allows micro-power digital logic outputs to easily switch heavy load currents without overloading the logic IC",
+                "The Darlington pair reduces circuit supply voltage to zero",
+                "The Darlington pair eliminates the need for a collector connection"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Drawing only 40 μA from a microcontroller or logic gate is well within the drive capacity of any low-power digital output pin, whereas 1.0 mA or more might overload sensitive logic families or battery-powered devices.\n• Why Other Choices are Incorrect: Load power depends on the load itself; collector connections remain essential."
+        },
+        {
+            "id": 146,
+            "question": "What is the total Base-Emitter turn-on input voltage threshold (VBE(total)) for a standard Silicon Darlington pair, and why?",
+            "options": [
+                "Approximately 0.2 V, because saturation reduces junction voltage",
+                "Approximately 0.7 V, because only one junction conducts",
+                "Approximately 1.4 V, due to the series connection of the two base-emitter PN junctions (0.7 V + 0.7 V)",
+                "Approximately 5.0 V, matching TTL logic levels"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Approximately 1.4 V' is Correct: Because the Emitter of Q1 connects directly to the Base of Q2, the input voltage from the external Base to the external Emitter must overcome both forward-biased PN junctions in series: V_BE(total) = V_BE1 + V_BE2 ≈ 0.7 V + 0.7 V = 1.4 V.\n• Why Other Choices are Incorrect: A single silicon junction requires 0.7 V; two in series require ~1.4 V."
+        },
+        {
+            "id": 147,
+            "question": "A Darlington switch is driven by a 5.0 V logic gate to switch a load with IB = 40 μA. If VBE(total) = 1.4 V, what is the calculated value of the Base resistor (Rb)?",
+            "options": [
+                "36 kΩ",
+                "90 kΩ",
+                "107.5 kΩ",
+                "125 kΩ"
+            ],
+            "answer": 1,
+            "explanation": "• Why '90 kΩ' is Correct: Apply Ohm's law taking the 1.4 V double-junction drop into account: R_b = (V_in - V_BE(total)) / I_B = (5.0 V - 1.4 V) / 40 μA = 3.6 V / 0.000040 A = 90,000 Ω = 90 kΩ.\n• Why Other Choices are Incorrect: (5.0 - 0.7) / 40 μA = 107.5 kΩ uses only a single diode drop; 5.0 V / 40 μA = 125 kΩ ignores junction drops."
+        },
+        {
+            "id": 148,
+            "question": "What is the primary operational trade-off or drawback of using a Darlington pair switch instead of a single BJT switch?",
+            "options": [
+                "Current gain is lower than a single transistor",
+                "Saturation voltage (VCE(sat)) is higher (typically 0.7 V to 0.9 V instead of 0.2 V), causing higher ON-state power dissipation",
+                "It cannot switch DC loads",
+                "It requires negative power supply rails"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In a Darlington pair, Q1 cannot be driven into deeper saturation than V_CE1 = V_BE2 ≈ 0.7 V. Therefore, V_CE(sat) of the pair is V_CE1(sat) + V_BE2 ≈ 0.2 V + 0.7 V = 0.9 V (or at minimum ~0.7 V). This higher V_CE(sat) dissipates significantly more power (heat) in high-current applications than a single saturated transistor (V_CE(sat) ≈ 0.2 V).\n• Why Other Choices are Incorrect: Current gain is vastly higher, not lower."
+        },
+        {
+            "id": 149,
+            "question": "Which of the following represents a typical practical application for a Darlington Transistor Switch as highlighted in the Canvas lecture module?",
+            "options": [
+                "Stepper motor and DC motor drivers, lighting circuits, and power inverters",
+                "Direct microwave radio antenna transmission",
+                "High-frequency FM demodulation exclusively",
+                "Passive bandpass audio filtering"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: Due to their high current gains and high switching speeds, Darlington switches are widely used in DC motor and stepper motor control, high-current relay/solenoid drivers, power inverters, and automotive lighting circuits.\n• Why Other Choices are Incorrect: Microwave antennas and audio filters use other specialized components."
+        },
+        {
+            "id": 150,
+            "question": "How does a 'Sziklai Pair' (Complementary Feedback Pair) compare to a standard Darlington Pair?",
+            "options": [
+                "It uses two identical NPN transistors with 10x higher saturation voltage",
+                "It uses complementary NPN and PNP transistors connected together to provide similar high current gain but with only a single base-emitter drop (VBE ≈ 0.7 V) and lower saturation voltage",
+                "It can only be used as a radio transmitter",
+                "It eliminates the collector terminal completely"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The Sziklai pair (also called the Complementary Darlington) connects an NPN and a PNP transistor together. It provides total current gain approximately equal to beta1 * beta2, but requires only a single forward diode drop at the input (V_BE ≈ 0.7 V) and achieves a lower saturation voltage (~0.3 V) than a Darlington pair.\n• Why Other Choices are Incorrect: Sziklai uses complementary transistors (NPN + PNP), not two identical ones."
         }
     ]
   },
