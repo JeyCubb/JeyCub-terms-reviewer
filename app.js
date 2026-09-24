@@ -23,7 +23,20 @@ let state = {
   
   // Firebase Database Handle for notes, shared bookmarks & group mistakes
   firebaseDb: null,
-  activeLiveListenerRef: null
+  activeLiveListenerRef: null,
+
+  // Formulas Mode State
+  formulaState: {
+    currentTab: 'quiz', // 'quiz' or 'sheet'
+    currentCategory: 'all',
+    currentIndex: 0,
+    currentInput: '',
+    revealedHint: false,
+    checkedResult: null,
+    schematicOpen: false,
+    searchQuery: '',
+    mastered: {}
+  }
 };
 
 let toastTimeoutId = null;
@@ -298,7 +311,16 @@ function initKeyboardShortcuts() {
   document.addEventListener('keydown', (e) => {
     const activeEl = document.activeElement;
 
-    // Ignore keyboard shortcuts if user is actively typing in text fields
+    // In Formulas Mode: if typing in the formula input, Enter checks the formula!
+    if (activeEl && activeEl.id === 'fq-formula-input') {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        checkFormulaAnswer();
+      }
+      return;
+    }
+
+    // Ignore generic shortcuts if user is actively typing in text fields
     if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA')) {
       return;
     }
@@ -311,6 +333,39 @@ function initKeyboardShortcuts() {
     // Auto-blur select dropdowns if they currently hold focus when pressing arrow keys, Space, or Backslash
     if (activeEl && activeEl.tagName === 'SELECT') {
       activeEl.blur();
+    }
+
+    // FORMULAS MODE KEYBOARD SHORTCUTS
+    if (state.currentMode === 'formulas') {
+      const fKey = e.key ? e.key.toLowerCase() : '';
+      const fCode = e.code ? e.code.toLowerCase() : '';
+
+      if (e.key === 'ArrowRight' || fCode === 'arrowright') {
+        e.preventDefault();
+        nextFormula();
+      } else if (e.key === 'ArrowLeft' || fCode === 'arrowleft') {
+        e.preventDefault();
+        prevFormula();
+      } else if (e.key === ' ' || fKey === 'space' || fCode === 'space' || fKey === 'h') {
+        e.preventDefault();
+        toggleFormulaHint();
+      } else if (fKey === 'c') {
+        e.preventDefault();
+        clearFormulaInput();
+      } else if (['1', '2', '3', '4', '5', '6', '7'].includes(e.key)) {
+        e.preventDefault();
+        const map = {
+          '1': 'superscript',
+          '2': 'frac',
+          '3': 'subscript',
+          '4': 'parens',
+          '5': 'equals',
+          '6': 'times',
+          '7': 'sqrt'
+        };
+        insertFormulaTemplate(map[e.key]);
+      }
+      return;
     }
 
     if (state.currentMode !== 'practice') return;
@@ -648,6 +703,12 @@ function loadStoredData() {
       state.randomMode = savedRandom === 'true';
     }
 
+    const savedMastered = localStorage.getItem('jt_formulas_mastered');
+    if (savedMastered) {
+      const parsed = JSON.parse(savedMastered);
+      if (parsed && typeof parsed === 'object') state.formulaState.mastered = parsed;
+    }
+
     const savedTheme = localStorage.getItem('fm_theme');
     if (savedTheme) {
       document.documentElement.setAttribute('data-theme', savedTheme);
@@ -693,12 +754,778 @@ function switchMode(mode) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+/* ==========================================================================
+   FORMULAS MODE ENGINE - INTERACTIVE RECALL & REFERENCE
+   ========================================================================== */
+
+function getFormulaDataset() {
+  if (typeof FORMULA_DATA !== 'undefined' && FORMULA_DATA[state.currentSubject]) {
+    return FORMULA_DATA[state.currentSubject];
+  }
+  if (typeof window !== 'undefined' && window.FORMULA_DATA && window.FORMULA_DATA[state.currentSubject]) {
+    return window.FORMULA_DATA[state.currentSubject];
+  }
+  return [];
+}
+
+function getFilteredFormulas() {
+  const allFormulas = getFormulaDataset();
+  let list = allFormulas;
+
+  if (state.formulaState.currentCategory && state.formulaState.currentCategory !== 'all') {
+    list = list.filter(f => f.category === state.formulaState.currentCategory);
+  }
+
+  if (state.formulaState.searchQuery && state.formulaState.searchQuery.trim()) {
+    const q = state.formulaState.searchQuery.trim().toLowerCase();
+    list = list.filter(f => 
+      (f.name && f.name.toLowerCase().includes(q)) ||
+      (f.targetVariable && f.targetVariable.toLowerCase().includes(q)) ||
+      (f.targetPrompt && f.targetPrompt.toLowerCase().includes(q)) ||
+      (f.category && f.category.toLowerCase().includes(q)) ||
+      (f.canonicalFormula && f.canonicalFormula.toLowerCase().includes(q))
+    );
+  }
+
+  return list;
+}
+
 function updateFormulasUI() {
   const info = getActiveSubjectInfo();
-  const subName = document.getElementById('formulas-subject-name');
-  if (subName) subName.textContent = info.title;
   const countBadge = document.getElementById('formulas-count-badge');
-  if (countBadge) countBadge.textContent = `${info.title} Formulas`;
+  const allFormulas = getFormulaDataset();
+
+  if (countBadge) {
+    countBadge.textContent = `${info.title} (${allFormulas.length})`;
+  }
+
+  // Populate category filter pills
+  renderFormulaCategoryPills();
+
+  // If in sheet tab, render sheet, else render current formula problem
+  if (state.formulaState.currentTab === 'sheet') {
+    renderFormulaReferenceSheet();
+  } else {
+    renderFormulaProblem();
+  }
+}
+
+function switchFormulaTab(tab) {
+  state.formulaState.currentTab = tab;
+  
+  const quizTabBtn = document.getElementById('btn-tab-formula-quiz');
+  const sheetTabBtn = document.getElementById('btn-tab-formula-sheet');
+  const quizContainer = document.getElementById('formula-quiz-container');
+  const sheetContainer = document.getElementById('formula-sheet-container');
+
+  if (tab === 'quiz') {
+    if (quizTabBtn) quizTabBtn.classList.add('active');
+    if (sheetTabBtn) sheetTabBtn.classList.remove('active');
+    if (quizContainer) quizContainer.style.display = '';
+    if (sheetContainer) sheetContainer.style.display = 'none';
+    renderFormulaProblem();
+  } else {
+    if (sheetTabBtn) sheetTabBtn.classList.add('active');
+    if (quizTabBtn) quizTabBtn.classList.remove('active');
+    if (quizContainer) quizContainer.style.display = 'none';
+    if (sheetContainer) sheetContainer.style.display = '';
+    renderFormulaReferenceSheet();
+  }
+}
+
+function renderFormulaCategoryPills() {
+  const pillsContainer = document.getElementById('formula-category-pills');
+  if (!pillsContainer) return;
+
+  const allFormulas = getFormulaDataset();
+  const categories = ['all'];
+  const catCounts = { all: allFormulas.length };
+
+  allFormulas.forEach(f => {
+    if (f.category) {
+      if (!catCounts[f.category]) {
+        categories.push(f.category);
+        catCounts[f.category] = 0;
+      }
+      catCounts[f.category]++;
+    }
+  });
+
+  pillsContainer.innerHTML = categories.map(cat => {
+    const isActive = (state.formulaState.currentCategory === cat);
+    const label = cat === 'all' ? `All (${catCounts.all})` : `${cat} (${catCounts[cat]})`;
+    return `<button type="button" class="formula-cat-pill ${isActive ? 'active' : ''}" onclick="filterFormulasByCategory('${cat}')">${label}</button>`;
+  }).join('');
+}
+
+function filterFormulasByCategory(category) {
+  state.formulaState.currentCategory = category;
+  state.formulaState.currentIndex = 0;
+  state.formulaState.currentInput = '';
+  state.formulaState.revealedHint = false;
+  state.formulaState.checkedResult = null;
+  renderFormulaCategoryPills();
+  renderFormulaProblem();
+}
+
+function renderFormulaProblem() {
+  const formulas = getFilteredFormulas();
+  const quizContainer = document.getElementById('formula-quiz-container');
+  if (!quizContainer) return;
+
+  if (!formulas || formulas.length === 0) {
+    quizContainer.innerHTML = `
+      <div class="quiz-card" style="text-align: center; padding: 2.5rem 1rem;">
+        <i class="fa-solid fa-square-root-variable" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 0.75rem;"></i>
+        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">No formulas found</h3>
+        <p style="color: var(--text-secondary); font-size: 0.88rem;">Try selecting 'All' categories or switching subjects.</p>
+        <button type="button" class="fq-btn fq-btn-check" style="margin-top: 1rem;" onclick="filterFormulasByCategory('all')">Show All Formulas</button>
+      </div>
+    `;
+    return;
+  }
+
+  // Ensure index is within range
+  if (state.formulaState.currentIndex >= formulas.length) {
+    state.formulaState.currentIndex = 0;
+  } else if (state.formulaState.currentIndex < 0) {
+    state.formulaState.currentIndex = formulas.length - 1;
+  }
+
+  const f = formulas[state.formulaState.currentIndex];
+  if (!f) return;
+
+  // Configuration Badge
+  const configBadge = document.getElementById('fq-config-badge');
+  if (configBadge) configBadge.textContent = f.configName || f.category || 'Formula';
+
+  // Status Badge
+  const statusBadge = document.getElementById('fq-status-badge');
+  const isMastered = !!(state.formulaState.mastered && state.formulaState.mastered[f.id]);
+  if (statusBadge) {
+    statusBadge.textContent = isMastered ? '✓ Mastered' : 'Unattempted';
+    statusBadge.className = `formula-status-badge ${isMastered ? 'mastered' : ''}`;
+  }
+
+  // Target Prompt & Looked-For Variable
+  const targetName = document.getElementById('fq-target-name');
+  if (targetName) targetName.textContent = f.name;
+
+  const targetSymbol = document.getElementById('fq-target-symbol');
+  if (targetSymbol) {
+    renderMathText(f.targetVariable, targetSymbol);
+  }
+
+  const targetDesc = document.getElementById('fq-target-desc');
+  if (targetDesc) targetDesc.textContent = f.targetPrompt || f.name;
+
+  // Prefix
+  const inputPrefix = document.getElementById('fq-input-prefix');
+  if (inputPrefix) {
+    inputPrefix.textContent = `${f.targetVariable} = `;
+  }
+
+  // Input Field
+  const inputField = document.getElementById('fq-formula-input');
+  if (inputField) {
+    inputField.value = state.formulaState.currentInput || '';
+  }
+
+  // Live Math Preview
+  updateLiveMathPreview(state.formulaState.currentInput || '');
+
+  // Render Palette Chips
+  renderVariablePalette(f);
+
+  // Counter
+  const counterText = document.getElementById('fq-counter-text');
+  if (counterText) {
+    counterText.textContent = `Formula ${state.formulaState.currentIndex + 1} of ${formulas.length}`;
+  }
+
+  // Dropdown Jump
+  const jumpSelect = document.getElementById('fq-jump-select');
+  if (jumpSelect) {
+    jumpSelect.innerHTML = formulas.map((item, idx) => {
+      const selected = (idx === state.formulaState.currentIndex) ? 'selected' : '';
+      const masteredMark = (state.formulaState.mastered && state.formulaState.mastered[item.id]) ? '✓ ' : '';
+      return `<option value="${idx}" ${selected}>${masteredMark}${idx + 1}. ${item.name} (${item.targetVariable})</option>`;
+    }).join('');
+  }
+
+  // Hint Box
+  const hintBox = document.getElementById('fq-hint-box');
+  const hintText = document.getElementById('fq-hint-text');
+  if (hintBox && hintText) {
+    if (state.formulaState.revealedHint && f.hint) {
+      hintText.textContent = f.hint;
+      hintBox.style.display = 'block';
+    } else {
+      hintBox.style.display = 'none';
+    }
+  }
+
+  // Feedback Card
+  renderFeedbackCard(f);
+
+  // Schematic Drawer
+  const schematicDrawer = document.getElementById('fq-schematic-drawer');
+  if (schematicDrawer) {
+    schematicDrawer.style.display = state.formulaState.schematicOpen ? 'block' : 'none';
+  }
+}
+
+function renderVariablePalette(currentFormula) {
+  const container = document.getElementById('fq-palette-chips');
+  if (!container) return;
+
+  let chips = [];
+  if (state.currentSubject === 'basic_electronics') {
+    chips = [
+      'V_CC', 'V_BE', 'V_CE', 'V_BC', 'V_TH', 'V_B', 'V_C', 'V_E',
+      'I_B', 'I_C', 'I_E', 'I_1', 'I_2',
+      'R_B', 'R_C', 'R_E', 'R_F', 'R_1', 'R_2', 'R_TH',
+      'β', 'β + 1', 'α', '0', '1', '2',
+      '+', '−', '×', '/', '(', ')', '=', '∥'
+    ];
+  } else if (state.currentSubject === 'deformable_bodies') {
+    chips = [
+      'σ_h', 'σ_L', 'σ', 'τ', 'p', 'P', 'T', 'M',
+      'd', 'D', 't', 'r', 'L', 'A', 'y', 'I', 'J',
+      'E', 'G', 'δ', 'θ', 'π', '2', '4', '16', '32',
+      '+', '−', '×', '/', '(', ')', '=', '^'
+    ];
+  } else if (state.currentSubject === 'fluid_mechanics') {
+    chips = [
+      'p', 'ρ', 'γ', 'μ', 'ν', 'g', 'h', 'v', 'Q',
+      'd', 'D', 'A', 'L', 'Re', 'f', 'h_f',
+      '2', '64', 'π',
+      '+', '−', '×', '/', '(', ')', '=', '√'
+    ];
+  } else {
+    chips = ['q', 'Q', 'k', 'A', 'h', 'T_1', 'T_2', 'ΔT', 'L', '+', '−', '×', '/', '(', ')', '='];
+  }
+
+  container.innerHTML = chips.map(chip => {
+    const isOp = ['+', '−', '×', '/', '(', ')', '=', '∥', '^', '√'].includes(chip);
+    const escaped = chip.replace(/'/g, "\\'");
+    return `<button type="button" class="fq-chip ${isOp ? 'chip-op' : ''}" onclick="insertPaletteSymbol('${escaped}')">${chip}</button>`;
+  }).join('');
+}
+
+function insertPaletteSymbol(sym) {
+  const input = document.getElementById('fq-formula-input');
+  if (!input) return;
+
+  const start = input.selectionStart || 0;
+  const end = input.selectionEnd || 0;
+  const val = input.value;
+
+  // Add spacing around operators
+  let insertion = sym;
+  if (['+', '−', '×', '/', '=', '∥'].includes(sym)) {
+    insertion = ` ${sym} `;
+  }
+
+  const newVal = val.substring(0, start) + insertion + val.substring(end);
+  input.value = newVal;
+  state.formulaState.currentInput = newVal;
+
+  input.focus();
+  const newPos = start + insertion.length;
+  input.setSelectionRange(newPos, newPos);
+
+  updateLiveMathPreview(newVal);
+}
+
+function insertFormulaTemplate(type) {
+  const input = document.getElementById('fq-formula-input');
+  if (!input) return;
+
+  const start = input.selectionStart || 0;
+  const end = input.selectionEnd || 0;
+  const val = input.value;
+  const selected = val.substring(start, end);
+
+  let insertion = '';
+  let cursorOffset = 0;
+
+  switch (type) {
+    case 'superscript': // [1]
+      if (selected) {
+        insertion = `^(${selected})`;
+        cursorOffset = insertion.length;
+      } else {
+        insertion = '^2';
+        cursorOffset = insertion.length;
+      }
+      break;
+    case 'frac': // [2]
+      if (selected) {
+        insertion = `(${selected}) / ( )`;
+        cursorOffset = insertion.length - 2;
+      } else {
+        insertion = '( ) / ( )';
+        cursorOffset = 1;
+      }
+      break;
+    case 'subscript': // [3]
+      if (selected) {
+        insertion = `_(${selected})`;
+        cursorOffset = insertion.length;
+      } else {
+        insertion = '_';
+        cursorOffset = 1;
+      }
+      break;
+    case 'parens': // [4]
+      if (selected) {
+        insertion = `(${selected})`;
+        cursorOffset = insertion.length;
+      } else {
+        insertion = '( )';
+        cursorOffset = 1;
+      }
+      break;
+    case 'equals': // [5]
+      insertion = ' = ';
+      cursorOffset = insertion.length;
+      break;
+    case 'times': // [6]
+      insertion = ' × ';
+      cursorOffset = insertion.length;
+      break;
+    case 'sqrt': // [7]
+      if (selected) {
+        insertion = `√(${selected})`;
+        cursorOffset = insertion.length;
+      } else {
+        insertion = '√( )';
+        cursorOffset = 2;
+      }
+      break;
+    default:
+      return;
+  }
+
+  const newVal = val.substring(0, start) + insertion + val.substring(end);
+  input.value = newVal;
+  state.formulaState.currentInput = newVal;
+
+  input.focus();
+  const newPos = start + cursorOffset;
+  input.setSelectionRange(newPos, newPos);
+
+  updateLiveMathPreview(newVal);
+}
+
+function handleFormulaInput(val) {
+  const input = document.getElementById('fq-formula-input');
+  let text = val;
+
+  // Replacements table for backslash commands (Word-style auto-expansion)
+  const replacements = [
+    { pattern: /\\times(\s|$)/gi, rep: '×$1' },
+    { pattern: /\\cdot(\s|$)/gi, rep: '·$1' },
+    { pattern: /\\beta(\s|$)/gi, rep: 'β$1' },
+    { pattern: /\\alpha(\s|$)/gi, rep: 'α$1' },
+    { pattern: /\\parallel(\s|$)/gi, rep: '∥$1' },
+    { pattern: /\\superscript(\s|$)/gi, rep: '^$1' },
+    { pattern: /\\subscript(\s|$)/gi, rep: '_$1' },
+    { pattern: /\\sigma(\s|$)/gi, rep: 'σ$1' },
+    { pattern: /\\tau(\s|$)/gi, rep: 'τ$1' },
+    { pattern: /\\rho(\s|$)/gi, rep: 'ρ$1' },
+    { pattern: /\\mu(\s|$)/gi, rep: 'μ$1' },
+    { pattern: /\\nu(\s|$)/gi, rep: 'ν$1' },
+    { pattern: /\\gamma(\s|$)/gi, rep: 'γ$1' },
+    { pattern: /\\pi(\s|$)/gi, rep: 'π$1' },
+    { pattern: /\\Delta(\s|$)/gi, rep: 'Δ$1' },
+    { pattern: /\\pm(\s|$)/gi, rep: '±$1' },
+    { pattern: /\\sqrt(\s|$)/gi, rep: '√$1' },
+    { pattern: /\\frac(\s|$)/gi, rep: '/$1' }
+  ];
+
+  let replaced = false;
+  for (const r of replacements) {
+    if (r.pattern.test(text)) {
+      text = text.replace(r.pattern, r.rep);
+      replaced = true;
+    }
+  }
+
+  if (replaced && input) {
+    const curPos = input.selectionStart || text.length;
+    input.value = text;
+    input.setSelectionRange(curPos, curPos);
+  }
+
+  state.formulaState.currentInput = text;
+  updateLiveMathPreview(text);
+}
+
+function clearFormulaInput() {
+  state.formulaState.currentInput = '';
+  state.formulaState.checkedResult = null;
+  const input = document.getElementById('fq-formula-input');
+  if (input) {
+    input.value = '';
+    input.focus();
+  }
+  updateLiveMathPreview('');
+  const feedbackCard = document.getElementById('fq-feedback-card');
+  if (feedbackCard) feedbackCard.style.display = 'none';
+}
+
+function formulaToLatex(s) {
+  if (!s || !s.trim()) return '';
+  let str = s.trim();
+
+  // Normalize operators & Greek symbols
+  str = str.replace(/×/g, ' \\cdot ').replace(/\*/g, ' \\cdot ');
+  str = str.replace(/β/g, '\\beta').replace(/α/g, '\\alpha').replace(/π/g, '\\pi');
+  str = str.replace(/σ/g, '\\sigma').replace(/τ/g, '\\tau').replace(/ρ/g, '\\rho');
+  str = str.replace(/γ/g, '\\gamma').replace(/μ/g, '\\mu').replace(/Δ/g, '\\Delta');
+  str = str.replace(/∥/g, ' \\parallel ');
+
+  // Subscripts: X_YY -> X_{YY}
+  str = str.replace(/([A-Za-z\\]+)_([A-Za-z0-9]+)/g, '$1_{$2}');
+
+  // Powers: X^2 -> X^{2}
+  str = str.replace(/\^([0-9a-zA-Z]+)/g, '^{$1}');
+
+  // Radicals: √(expr)
+  str = str.replace(/(?:√|\\sqrt|sqrt)\s*\(([^()]+)\)/g, '\\sqrt{$1}');
+
+  // Fractions: (num) / (den) or (num) / den or num / (den)
+  str = str.replace(/^\s*\((.+?)\)\s*\/\s*\((.+?)\)\s*$/, '\\frac{$1}{$2}');
+  str = str.replace(/^\s*\((.+?)\)\s*\/\s*([A-Za-z0-9_{}]+)\s*$/, '\\frac{$1}{$2}');
+  str = str.replace(/^\s*([A-Za-z0-9_{}]+)\s*\/\s*\((.+?)\)\s*$/, '\\frac{$1}{$2}');
+  str = str.replace(/^\s*([A-Za-z0-9_{}]+)\s*\/\s*([A-Za-z0-9_{}]+)\s*$/, '\\frac{$1}{$2}');
+
+  return str;
+}
+
+function updateLiveMathPreview(text) {
+  const previewBox = document.getElementById('fq-live-preview');
+  if (!previewBox) return;
+
+  if (!text || !text.trim()) {
+    previewBox.innerHTML = '<span class="fq-preview-placeholder">Live math rendering preview will appear here...</span>';
+    return;
+  }
+
+  const formulas = getFilteredFormulas();
+  const currentF = formulas[state.formulaState.currentIndex];
+  const prefix = currentF ? currentF.targetVariable : '';
+  const fullLatex = `${prefix} = ${formulaToLatex(text)}`;
+
+  renderMathText(fullLatex, previewBox);
+}
+
+function renderMathText(latexStr, element) {
+  if (!element) return;
+  if (typeof katex !== 'undefined' && katex.render) {
+    try {
+      katex.render(latexStr, element, { throwOnError: false, displayMode: false });
+      return;
+    } catch (e) {
+      console.warn('KaTeX render error:', e);
+    }
+  }
+  // Fallback text
+  element.textContent = latexStr;
+}
+
+function normalizeFormulaStr(s) {
+  if (!s) return '';
+  let str = s.trim();
+
+  // Normalize Greek symbols
+  str = str.replace(/β/g, 'beta').replace(/\\beta/g, 'beta');
+  str = str.replace(/α/g, 'alpha').replace(/\\alpha/g, 'alpha');
+  str = str.replace(/π/g, 'pi').replace(/\\pi/g, 'pi');
+  str = str.replace(/σ/g, 'sigma').replace(/\\sigma/g, 'sigma');
+  str = str.replace(/τ/g, 'tau').replace(/\\tau/g, 'tau');
+  str = str.replace(/ρ/g, 'rho').replace(/\\rho/g, 'rho');
+  str = str.replace(/γ/g, 'gamma').replace(/\\gamma/g, 'gamma');
+  str = str.replace(/μ/g, 'mu').replace(/\\mu/g, 'mu');
+  str = str.replace(/∥/g, '||').replace(/\\parallel/g, '||');
+
+  // Normalize multiplication & minus
+  str = str.replace(/×/g, '*').replace(/·/g, '*').replace(/−/g, '-');
+
+  // Remove whitespace
+  str = str.replace(/\s+/g, '');
+
+  // Normalize redundant outer parens on division: /(R_B) -> /R_B
+  str = str.replace(/\/([A-Za-z0-9_]+)\)/g, '/$1');
+
+  return str.toLowerCase();
+}
+
+function isFormulaEquivalent(userInput, canonical, variants) {
+  const normUser = normalizeFormulaStr(userInput);
+  const normCanon = normalizeFormulaStr(canonical);
+
+  if (normUser === normCanon) return true;
+
+  for (const v of variants) {
+    if (normUser === normalizeFormulaStr(v)) return true;
+  }
+
+  // Check with stripped outer parens: ((A)) -> (A)
+  let stripped = userInput.trim();
+  if (stripped.startsWith('(') && stripped.endsWith(')')) {
+    stripped = stripped.substring(1, stripped.length - 1).trim();
+    const normStripped = normalizeFormulaStr(stripped);
+    if (normStripped === normCanon) return true;
+    for (const v of variants) {
+      if (normStripped === normalizeFormulaStr(v)) return true;
+    }
+  }
+
+  return false;
+}
+
+function checkFormulaAnswer() {
+  const formulas = getFilteredFormulas();
+  const currentF = formulas[state.formulaState.currentIndex];
+  if (!currentF) return;
+
+  const userInput = (state.formulaState.currentInput || '').trim();
+  if (!userInput) {
+    showToast('⚠️ Please enter a formula first!');
+    return;
+  }
+
+  const isCorrect = isFormulaEquivalent(userInput, currentF.canonicalFormula, currentF.acceptableVariants || []);
+
+  state.formulaState.checkedResult = {
+    isCorrect,
+    userFormula: userInput,
+    formula: currentF
+  };
+
+  if (isCorrect) {
+    if (!state.formulaState.mastered) state.formulaState.mastered = {};
+    state.formulaState.mastered[currentF.id] = true;
+    try {
+      localStorage.setItem('jt_formulas_mastered', JSON.stringify(state.formulaState.mastered));
+    } catch(e) {}
+  }
+
+  renderFeedbackCard(currentF);
+
+  // Update status badge
+  const statusBadge = document.getElementById('fq-status-badge');
+  if (statusBadge && isCorrect) {
+    statusBadge.textContent = '✓ Mastered';
+    statusBadge.className = 'formula-status-badge mastered';
+  }
+}
+
+function renderFeedbackCard(currentF) {
+  const card = document.getElementById('fq-feedback-card');
+  const header = document.getElementById('fq-feedback-header');
+  const body = document.getElementById('fq-feedback-body');
+  if (!card || !header || !body) return;
+
+  const res = state.formulaState.checkedResult;
+  if (!res) {
+    card.style.display = 'none';
+    return;
+  }
+
+  card.style.display = 'block';
+
+  if (res.isCorrect) {
+    card.className = 'fq-feedback-card correct';
+    header.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>✓ Outstanding! Mastered Formula</span>';
+    body.innerHTML = `
+      <p style="margin-bottom: 0.5rem;">Your formula is algebraically equivalent and correctly recalls the governing relationship.</p>
+      <div class="fq-solution-latex-box" id="fq-sol-math"></div>
+      <p style="margin-top: 0.5rem; line-height: 1.5; color: var(--text-secondary);">${currentF.explanation || ''}</p>
+    `;
+    const mathBox = document.getElementById('fq-sol-math');
+    if (mathBox) {
+      renderMathText(currentF.displayFormula || `${currentF.targetVariable} = ${currentF.canonicalFormula}`, mathBox);
+    }
+  } else {
+    card.className = 'fq-feedback-card incorrect';
+    header.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> <span>Formula Needs Adjustment</span>';
+    body.innerHTML = `
+      <p style="margin-bottom: 0.5rem;">The terms or operations entered do not match the expected governing formula.</p>
+      ${currentF.hint ? `<p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 0.75rem;"><strong>💡 Clue:</strong> ${currentF.hint}</p>` : ''}
+      <button type="button" class="fq-btn fq-btn-hint" style="padding: 0.4rem 0.8rem; font-size: 0.82rem;" onclick="revealFormulaSolution('${currentF.id}')">
+        <i class="fa-solid fa-eye"></i> Reveal Canonical Formula
+      </button>
+      <div id="fq-revealed-sol-${currentF.id}" style="display: none; margin-top: 0.75rem;">
+        <div class="fq-solution-latex-box" id="fq-sol-math-rev"></div>
+        <p style="margin-top: 0.5rem; line-height: 1.5; font-size: 0.84rem; color: var(--text-secondary);">${currentF.explanation || ''}</p>
+      </div>
+    `;
+  }
+}
+
+function revealFormulaSolution(id) {
+  const container = document.getElementById(`fq-revealed-sol-${id}`);
+  if (!container) return;
+  container.style.display = 'block';
+
+  const formulas = getFilteredFormulas();
+  const currentF = formulas.find(f => f.id === id);
+  if (!currentF) return;
+
+  const mathBox = document.getElementById('fq-sol-math-rev');
+  if (mathBox) {
+    renderMathText(currentF.displayFormula || `${currentF.targetVariable} = ${currentF.canonicalFormula}`, mathBox);
+  }
+}
+
+function toggleFormulaHint(force) {
+  state.formulaState.revealedHint = (force !== undefined) ? force : !state.formulaState.revealedHint;
+  const formulas = getFilteredFormulas();
+  const currentF = formulas[state.formulaState.currentIndex];
+  const hintBox = document.getElementById('fq-hint-box');
+  const hintText = document.getElementById('fq-hint-text');
+
+  if (hintBox && hintText && currentF) {
+    if (state.formulaState.revealedHint && currentF.hint) {
+      hintText.textContent = currentF.hint;
+      hintBox.style.display = 'block';
+    } else {
+      hintBox.style.display = 'none';
+    }
+  }
+}
+
+function toggleCircuitSchematic(force) {
+  state.formulaState.schematicOpen = (force !== undefined) ? force : !state.formulaState.schematicOpen;
+  const drawer = document.getElementById('fq-schematic-drawer');
+  if (drawer) {
+    drawer.style.display = state.formulaState.schematicOpen ? 'block' : 'none';
+  }
+}
+
+function prevFormula() {
+  const formulas = getFilteredFormulas();
+  if (!formulas || formulas.length === 0) return;
+  state.formulaState.currentIndex = (state.formulaState.currentIndex - 1 + formulas.length) % formulas.length;
+  state.formulaState.currentInput = '';
+  state.formulaState.revealedHint = false;
+  state.formulaState.checkedResult = null;
+  renderFormulaProblem();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function nextFormula() {
+  const formulas = getFilteredFormulas();
+  if (!formulas || formulas.length === 0) return;
+  state.formulaState.currentIndex = (state.formulaState.currentIndex + 1) % formulas.length;
+  state.formulaState.currentInput = '';
+  state.formulaState.revealedHint = false;
+  state.formulaState.checkedResult = null;
+  renderFormulaProblem();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function jumpToFormula(idx) {
+  if (isNaN(idx)) return;
+  state.formulaState.currentIndex = idx;
+  state.formulaState.currentInput = '';
+  state.formulaState.revealedHint = false;
+  state.formulaState.checkedResult = null;
+  renderFormulaProblem();
+}
+
+function renderFormulaReferenceSheet() {
+  const listContainer = document.getElementById('formula-sheet-cards-list');
+  if (!listContainer) return;
+
+  const formulas = getFormulaDataset();
+  if (!formulas || formulas.length === 0) {
+    listContainer.innerHTML = '<div class="quiz-card" style="text-align: center; padding: 2rem;">No formulas found for this subject.</div>';
+    return;
+  }
+
+  let html = '';
+
+  // For Basic Electronics, show the full BJT schematics image banner at the top of the cheat sheet!
+  if (state.currentSubject === 'basic_electronics') {
+    html += `
+      <div class="ref-formula-card" style="padding: 1.5rem; text-align: center;">
+        <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 0.5rem;">
+          <i class="fa-solid fa-microchip"></i> BJT DC Biasing Configurations & Formula Reference
+        </h3>
+        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">
+          Full reference sheet covering Fixed-Bias, Emitter-Stabilized, Voltage-Divider, and Collector-Feedback configurations.
+        </p>
+        <div style="background: #ffffff; border-radius: 8px; padding: 0.5rem; overflow: auto; max-height: 480px;">
+          <img src="images/bjt_bias_formulas.jpg" alt="BJT DC Biasing Reference Sheet" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+        </div>
+      </div>
+    `;
+  }
+
+  // Render individual formula cards
+  html += formulas.map(f => {
+    const isMastered = !!(state.formulaState.mastered && state.formulaState.mastered[f.id]);
+    const varItems = (f.variables || []).map(v => `<li><strong>${v.sym}</strong>: ${v.label}</li>`).join('');
+
+    return `
+      <div class="ref-formula-card" id="ref-card-${f.id}">
+        <div class="ref-card-header">
+          <span class="formula-badge">${f.category || 'Formula'}</span>
+          <span class="formula-status-badge ${isMastered ? 'mastered' : ''}">${isMastered ? '✓ Mastered' : 'Unattempted'}</span>
+        </div>
+        <h4 class="ref-card-title">${f.name}</h4>
+        <div class="ref-card-math-box" id="ref-math-${f.id}"></div>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0.5rem 0; line-height: 1.5;">${f.explanation || ''}</p>
+        ${varItems ? `<ul class="ref-card-vars-list">${varItems}</ul>` : ''}
+      </div>
+    `;
+  }).join('');
+
+  listContainer.innerHTML = html;
+
+  // Render KaTeX for each reference formula
+  formulas.forEach(f => {
+    const el = document.getElementById(`ref-math-${f.id}`);
+    if (el) {
+      renderMathText(f.displayFormula || `${f.targetVariable} = ${f.canonicalFormula}`, el);
+    }
+  });
+}
+
+function filterReferenceSheet(query) {
+  const q = (query || '').trim().toLowerCase();
+  const formulas = getFormulaDataset();
+
+  formulas.forEach(f => {
+    const card = document.getElementById(`ref-card-${f.id}`);
+    if (!card) return;
+
+    if (!q) {
+      card.style.display = '';
+      return;
+    }
+
+    const match = (f.name && f.name.toLowerCase().includes(q)) ||
+                  (f.targetVariable && f.targetVariable.toLowerCase().includes(q)) ||
+                  (f.category && f.category.toLowerCase().includes(q)) ||
+                  (f.canonicalFormula && f.canonicalFormula.toLowerCase().includes(q));
+
+    card.style.display = match ? '' : 'none';
+  });
+}
+
+function filterFormulasList() {
+  const searchInput = document.getElementById('search-formulas-input');
+  if (searchInput) {
+    state.formulaState.searchQuery = searchInput.value;
+    state.formulaState.currentIndex = 0;
+    renderFormulaProblem();
+  }
 }
 
 function toggleTheme() {
