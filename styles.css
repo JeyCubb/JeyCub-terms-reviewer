@@ -2518,3 +2518,18 @@ math-field::part(placeholder-focused) {
   }
 }
 
+/* PDF Export Button Styling */
+.action-btn.pdf-btn {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #ef4444;
+}
+
+.action-btn.pdf-btn:hover {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: #ef4444;
+  color: #fca5a5;
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+

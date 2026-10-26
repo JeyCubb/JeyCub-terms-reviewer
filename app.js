@@ -6,7 +6,7 @@
 
 // Global State
 let state = {
-  currentSubject: 'ece_midterm', // 'ece_midterm', 'basic_electronics', 'fluid_mechanics', 'deformable_bodies', 'heat_transfer'
+  currentSubject: 'basic_electronics', // 'basic_electronics', 'fluid_mechanics', 'deformable_bodies', 'heat_transfer'
   currentMode: 'practice', // 'practice', 'all'
   practiceFilter: 'all', // 'all', 'weak', 'bookmarked'
   currentIndex: 0,
@@ -164,7 +164,7 @@ function getSubjectData() {
 function getActiveQuestions() {
   const data = getSubjectData();
   if (!data[state.currentSubject]) {
-    state.currentSubject = 'ece_midterm';
+    state.currentSubject = 'basic_electronics';
   }
   return (data[state.currentSubject] && Array.isArray(data[state.currentSubject].questions)) 
     ? data[state.currentSubject].questions 
@@ -174,9 +174,9 @@ function getActiveQuestions() {
 function getActiveSubjectInfo() {
   const data = getSubjectData();
   if (!data[state.currentSubject]) {
-    state.currentSubject = 'ece_midterm';
+    state.currentSubject = 'basic_electronics';
   }
-  return data[state.currentSubject] || { title: 'ECE 005 Midterm Exam Reviewer', chapter: '' };
+  return data[state.currentSubject] || { title: 'Basic Electronics', chapter: '' };
 }
 
 /* Returns practice questions filtered by shared class pools (All, Weak, Bookmarked) */
@@ -199,8 +199,16 @@ function getFilteredPracticeQuestions() {
     });
   } else if (state.practiceFilter === 'prelim_exam') {
     return allQs.filter(q => q.id >= 117 && q.id <= 136);
+  } else if (state.practiceFilter === 'seatwork2_bjt') {
+    return allQs.filter(q => q.id >= 287 && q.id <= 293);
+  } else if (state.practiceFilter === 'bjt_dc_bias') {
+    return allQs.filter(q => (q.id >= 237 && q.id <= 286) || (q.id >= 347 && q.id <= 376));
+  } else if (state.practiceFilter === 'bjt_ac_analysis') {
+    return allQs.filter(q => (q.id >= 297 && q.id <= 336) || (q.id >= 377 && q.id <= 386));
   } else if (state.practiceFilter === 'test8_vessels') {
     return allQs.filter(q => q.id >= 151 && q.id <= 195);
+  } else if (state.practiceFilter === 'fluid_machinery') {
+    return allQs.filter(q => q.id >= 128 && q.id <= 215);
   }
   return allQs;
 }
@@ -439,17 +447,36 @@ function updateSubjectUI() {
   if (optPrelim) {
     optPrelim.style.display = (state.currentSubject === 'basic_electronics') ? '' : 'none';
   }
+  const optSeatwork2 = document.getElementById('opt-filter-seatwork2');
+  if (optSeatwork2) {
+    optSeatwork2.style.display = (state.currentSubject === 'basic_electronics') ? '' : 'none';
+  }
+  const optBjtDc = document.getElementById('opt-filter-bjt-dc');
+  if (optBjtDc) {
+    optBjtDc.style.display = (state.currentSubject === 'basic_electronics') ? '' : 'none';
+  }
+  const optBjtAc = document.getElementById('opt-filter-bjt-ac');
+  if (optBjtAc) {
+    optBjtAc.style.display = (state.currentSubject === 'basic_electronics') ? '' : 'none';
+  }
   const optTest8 = document.getElementById('opt-filter-test8');
   if (optTest8) {
     optTest8.style.display = (state.currentSubject === 'deformable_bodies') ? '' : 'none';
+  }
+  const optMachinery = document.getElementById('opt-filter-machinery');
+  if (optMachinery) {
+    optMachinery.style.display = (state.currentSubject === 'fluid_mechanics') ? '' : 'none';
   }
 
   // Auto-reset filter to 'all' if active filter is incompatible with newly selected subject
   const filterSelect = document.getElementById('practice-filter-select');
   if (filterSelect) {
-    if (state.practiceFilter === 'prelim_exam' && state.currentSubject !== 'basic_electronics') {
+    const isBasicPool = (state.practiceFilter === 'prelim_exam' || state.practiceFilter === 'seatwork2_bjt' || state.practiceFilter === 'bjt_dc_bias' || state.practiceFilter === 'bjt_ac_analysis');
+    if (isBasicPool && state.currentSubject !== 'basic_electronics') {
       state.practiceFilter = 'all';
     } else if (state.practiceFilter === 'test8_vessels' && state.currentSubject !== 'deformable_bodies') {
+      state.practiceFilter = 'all';
+    } else if (state.practiceFilter === 'fluid_machinery' && state.currentSubject !== 'fluid_mechanics') {
       state.practiceFilter = 'all';
     }
     filterSelect.value = state.practiceFilter;
@@ -663,7 +690,7 @@ function loadStoredData() {
     if (savedSubject && data[savedSubject]) {
       state.currentSubject = savedSubject;
     } else {
-      state.currentSubject = 'ece_midterm';
+      state.currentSubject = 'basic_electronics';
     }
 
     const savedIndex = localStorage.getItem(`jt_index_${state.currentSubject}`);
@@ -1065,12 +1092,13 @@ function renderVariablePalette(currentFormula) {
   if (state.currentSubject === 'basic_electronics' || state.currentSubject === 'ece_midterm') {
     chips = [
       // Full variables
-      'V_CC', 'V_BE', 'V_CE', 'V_BC', 'V_TH', 'V_B', 'V_C', 'V_E',
+      'V_CC', 'V_EE', 'V_BE', 'V_CE', 'V_BC', 'V_CB', 'V_TH', 'V_B', 'V_C', 'V_E',
       'I_B', 'I_C', 'I_E', 'I_1', 'I_2',
-      'R_B', 'R_C', 'R_E', 'R_F', 'R_1', 'R_2', 'R_TH',
+      'R_B', 'R_C', 'R_E', 'R_F', 'R_1', 'R_2', 'R_TH', 'r_e', '26 mV',
+      'A_v', 'Z_i', 'Z_o', 'Z_b',
       'β', 'β + 1', 'α',
       // Base letters & subscripts
-      'V', 'I', 'R', 'CC', 'BE', 'CE', 'B', 'C', 'E', '1', '2', '0',
+      'V', 'I', 'R', 'CC', 'EE', 'BE', 'CE', 'B', 'C', 'E', '1', '2', '0',
       // Operators
       '+', '−', '×', '/', '(', ')', '=', '∥'
     ];
@@ -2508,3 +2536,185 @@ function escapeHTML(str) {
     tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
   );
 }
+
+/* ==========================================================================
+   Printable PDF Export - 2 Columns, 0.05" Margins, Simple Heading, Multiple Choice, Randomized
+   ========================================================================== */
+function downloadSubjectPdf() {
+  const info = getActiveSubjectInfo();
+  if (!info || !info.questions || info.questions.length === 0) {
+    showToast('No questions found for the current subject.');
+    return;
+  }
+
+  // Clone array and randomize questions on every PDF save
+  const shuffledQuestions = [...info.questions];
+  for (let i = shuffledQuestions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledQuestions[i], shuffledQuestions[j]] = [shuffledQuestions[j], shuffledQuestions[i]];
+  }
+
+  const optionLetters = ['A', 'B', 'C', 'D', 'E', 'F'];
+  const dateStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+  let questionsHtml = '';
+  shuffledQuestions.forEach((q, idx) => {
+    let optionsHtml = '';
+    if (q.options && q.options.length > 0) {
+      optionsHtml = q.options.map((opt, oIdx) => {
+        const letter = optionLetters[oIdx] || String.fromCharCode(65 + oIdx);
+        return `<div class="pdf-opt"><span class="pdf-opt-label">${letter}.</span> <span class="pdf-opt-text">${escapeHTML(opt)}</span></div>`;
+      }).join('');
+    }
+
+    questionsHtml += `
+      <div class="pdf-q-item">
+        <div class="pdf-q-text"><strong>${idx + 1}.</strong> ${escapeHTML(q.question)}</div>
+        <div class="pdf-q-options">${optionsHtml}</div>
+      </div>
+    `;
+  });
+
+  const printDocumentHtml = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>${escapeHTML(info.title)} - Reviewer Exam</title>
+  <style>
+    @page {
+      size: letter portrait;
+      margin: 0.05in;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body {
+      margin: 0;
+      padding: 0.05in;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 8.5pt;
+      line-height: 1.18;
+      color: #000;
+      background: #fff;
+    }
+    .pdf-header {
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 2px;
+      margin-bottom: 4px;
+    }
+    .pdf-header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .pdf-title {
+      font-size: 11pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      margin: 0;
+    }
+    .pdf-meta {
+      font-size: 7.5pt;
+      color: #333;
+    }
+    .pdf-student-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.5pt;
+      margin-top: 3px;
+      padding-top: 2px;
+      border-top: 0.5px dashed #666;
+    }
+    .pdf-info-line {
+      display: inline-block;
+      min-width: 130px;
+      border-bottom: 0.5px solid #000;
+    }
+    .pdf-columns {
+      column-count: 2;
+      column-gap: 0.15in;
+      column-rule: 0.5px solid #ccc;
+    }
+    .pdf-q-item {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      margin-bottom: 4.5px;
+      padding-bottom: 2px;
+    }
+    .pdf-q-text {
+      font-size: 8.2pt;
+      font-weight: 500;
+      margin-bottom: 1.5px;
+      text-align: justify;
+    }
+    .pdf-q-text strong {
+      font-weight: 700;
+    }
+    .pdf-q-options {
+      margin-left: 0.35rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+    }
+    .pdf-opt {
+      font-size: 7.8pt;
+      display: flex;
+      align-items: baseline;
+      gap: 0.25rem;
+    }
+    .pdf-opt-label {
+      font-weight: 700;
+      min-width: 14px;
+    }
+    .pdf-opt-text {
+      flex: 1;
+    }
+    @media screen {
+      body {
+        max-width: 8.5in;
+        margin: 20px auto;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        padding: 0.3in;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="pdf-header">
+    <div class="pdf-header-top">
+      <h1 class="pdf-title">${escapeHTML(info.title)}</h1>
+      <span class="pdf-meta">${shuffledQuestions.length} Questions • Multiple Choice • ${dateStr}</span>
+    </div>
+    <div class="pdf-student-info">
+      <span>Name: <span class="pdf-info-line"></span></span>
+      <span>Date: <span class="pdf-info-line"></span></span>
+      <span>Score: <span class="pdf-info-line" style="min-width: 60px;"></span> / ${shuffledQuestions.length}</span>
+    </div>
+  </header>
+  <main class="pdf-columns">
+    ${questionsHtml}
+  </main>
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        window.print();
+      }, 250);
+    });
+  <\/script>
+</body>
+</html>`;
+
+  // Open in an isolated print window and trigger native print / save as PDF
+  const printWindow = window.open('', '_blank');
+  if (!printWindow) {
+    showToast('Please allow popups to open the printable PDF window.');
+    return;
+  }
+  printWindow.document.open();
+  printWindow.document.write(printDocumentHtml);
+  printWindow.document.close();
+}
+

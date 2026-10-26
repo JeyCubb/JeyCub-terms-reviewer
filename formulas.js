@@ -829,6 +829,204 @@ const FORMULA_DATA = {
       ],
       hint: "KCL for the whole transistor: emitter current equals the sum of collector and base currents. Solve for I_B.",
       explanation: "From Kirchhoff's Current Law applied to the BJT as a whole: I_E = I_B + I_C ⟹ I_B = I_E - I_C."
+    },
+    /* ==========================================================================
+       6. EMITTER-FOLLOWER & COMMON-BASE DC CONFIGURATIONS
+       ========================================================================== */
+    {
+      id: "bjt_cc_ib",
+      expectedParamsText: "V_EE, V_BE, R_B, beta, R_E",
+      templateLatex: `\frac{\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}}{\placeholder{}_{\placeholder{}} + (\placeholder{} + 1)\placeholder{}_{\placeholder{}}}`,
+      canonicalLatex: `\frac{V_{EE} - V_{BE}}{R_B + (\beta + 1)R_E}`,
+      subject: "basic_electronics",
+      category: "Emitter-Follower & Common-Base",
+      configName: "Emitter-Follower (Common-Collector) DC Bias",
+      name: "Emitter-Follower Base Current (IB)",
+      targetVariable: "I_B",
+      targetPrompt: "Base Current (I_B) for Emitter-Follower DC Bias with -V_EE supply",
+      canonicalFormula: "(V_EE - V_BE) / (R_B + (beta + 1) * R_E)",
+      displayFormula: "I_B = \frac{V_{EE} - V_{BE}}{R_B + (\beta + 1)R_E}",
+      acceptableVariants: [
+        "(V_EE - V_BE) / (R_B + (beta + 1) * R_E)",
+        "(V_EE - V_BE)/(R_B + (beta + 1)*R_E)",
+        "(V_EE - V_BE) / (R_B + (beta + 1)R_E)",
+        "(V_EE - V_BE)/(R_B + (beta + 1)R_E)"
+      ],
+      variables: [
+        { sym: "V_EE", label: "Negative DC emitter supply voltage magnitude" },
+        { sym: "V_BE", label: "Base-emitter forward drop (≈ 0.7 V)" },
+        { sym: "R_B", label: "Base resistor" },
+        { sym: "\beta", label: "Common-emitter DC current gain" },
+        { sym: "R_E", label: "Emitter resistor" }
+      ],
+      hint: "Apply KVL from ground through RB, VBE, and RE to -VEE. Remember IE = (β + 1)IB.",
+      explanation: "From KVL on the input loop: -IB·RB - VBE - IE·RE + VEE = 0. Substituting IE = (β + 1)IB yields IB = (VEE - VBE) / [RB + (β + 1)RE]."
+    },
+    {
+      id: "bjt_cb_ie",
+      expectedParamsText: "V_EE, V_BE, R_E",
+      templateLatex: `\frac{\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}}{\placeholder{}_{\placeholder{}}}`,
+      canonicalLatex: `\frac{V_{EE} - V_{BE}}{R_E}`,
+      subject: "basic_electronics",
+      category: "Emitter-Follower & Common-Base",
+      configName: "Common-Base DC Bias",
+      name: "Common-Base Emitter Current (IE)",
+      targetVariable: "I_E",
+      targetPrompt: "Emitter Current (I_E) in Common-Base DC Bias with -V_EE supply",
+      canonicalFormula: "(V_EE - V_BE) / R_E",
+      displayFormula: "I_E = \frac{V_{EE} - V_{BE}}{R_E}",
+      acceptableVariants: [
+        "(V_EE - V_BE) / R_E",
+        "(V_EE - V_BE)/R_E",
+        "(V_EE-V_BE)/R_E"
+      ],
+      variables: [
+        { sym: "V_EE", label: "Emitter supply voltage magnitude" },
+        { sym: "V_BE", label: "Base-emitter junction drop (≈ 0.7 V)" },
+        { sym: "R_E", label: "Emitter bias resistor" }
+      ],
+      hint: "Base is grounded (0 V). Apply KVL around the emitter-base loop.",
+      explanation: "With the base grounded, KVL in the emitter loop gives -VEE + IE·RE + VBE = 0 ⟹ IE = (VEE - VBE) / RE."
+    },
+    {
+      id: "bjt_cb_vcb",
+      expectedParamsText: "V_CC, I_C, R_C",
+      templateLatex: `\placeholder{}_{\placeholder{}} - \placeholder{}_{\placeholder{}}\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `V_{CC} - I_C R_C`,
+      subject: "basic_electronics",
+      category: "Emitter-Follower & Common-Base",
+      configName: "Common-Base DC Bias",
+      name: "Collector-to-Base Voltage (VCB)",
+      targetVariable: "V_{CB}",
+      targetPrompt: "Collector-to-Base Reverse Voltage (V_CB)",
+      canonicalFormula: "V_CC - I_C * R_C",
+      displayFormula: "V_{CB} = V_{CC} - I_C R_C",
+      acceptableVariants: [
+        "V_CC - I_C * R_C",
+        "V_CC - I_C*R_C",
+        "V_CC - I_C R_C"
+      ],
+      variables: [
+        { sym: "V_CC", label: "Collector supply voltage" },
+        { sym: "I_C", label: "Collector current" },
+        { sym: "R_C", label: "Collector resistor" }
+      ],
+      hint: "Base is at 0 V ground. Collector potential is VCC minus the drop across RC.",
+      explanation: "Since the base is tied to ground (VB = 0 V), the collector-to-base voltage equals VC: VCB = VC - VB = VCC - IC·RC."
+    },
+
+    /* ==========================================================================
+       7. BJT AC SMALL-SIGNAL ANALYSIS & re MODEL
+       ========================================================================== */
+    {
+      id: "bjt_ac_re",
+      expectedParamsText: "26 mV, I_E",
+      templateLatex: `\frac{26\text{ mV}}{\placeholder{}_{\placeholder{}}}`,
+      canonicalLatex: `\frac{26\text{ mV}}{I_E}`,
+      subject: "basic_electronics",
+      category: "BJT AC Analysis",
+      configName: "Small-Signal re Model",
+      name: "Dynamic AC Emitter Resistance (re)",
+      targetVariable: "r_e",
+      targetPrompt: "Dynamic Emitter Resistance (r_e) at Room Temperature (25°C)",
+      canonicalFormula: "26 / I_E",
+      displayFormula: "r_e = \frac{26\text{ mV}}{I_E}",
+      acceptableVariants: [
+        "26 / I_E",
+        "26/I_E",
+        "0.026 / I_E",
+        "0.026/I_E",
+        "26 mV / I_E",
+        "26mV / I_E",
+        "26mV/I_E"
+      ],
+      variables: [
+        { sym: "26\text{ mV}", label: "Thermal voltage VT = kT/q at 25°C" },
+        { sym: "I_E", label: "DC quiescent emitter current (in mA when using 26 mV)" }
+      ],
+      hint: "Thermal voltage VT (approx 26 mV) divided by the DC emitter current IE.",
+      explanation: "From Shockley's diode equation at 25°C, the AC dynamic slope resistance of the forward-biased base-emitter junction is re = 26 mV / IE."
+    },
+    {
+      id: "bjt_ac_av_fixed",
+      expectedParamsText: "R_C, r_e",
+      templateLatex: `-\frac{\placeholder{}_{\placeholder{}}}{\placeholder{}_{\placeholder{}}}`,
+      canonicalLatex: `-\frac{R_C}{r_e}`,
+      subject: "basic_electronics",
+      category: "BJT AC Analysis",
+      configName: "Common Emitter Fixed-Bias AC",
+      name: "CE Voltage Gain (Av, Bypassed RE / Fixed Bias)",
+      targetVariable: "A_v",
+      targetPrompt: "Voltage Gain (A_v) for Common Emitter with Bypassed Emitter (ro = ∞)",
+      canonicalFormula: "-R_C / r_e",
+      displayFormula: "A_v = -\frac{R_C}{r_e}",
+      acceptableVariants: [
+        "-R_C / r_e",
+        "-R_C/r_e",
+        "-(R_C / r_e)",
+        "-(R_C/r_e)"
+      ],
+      variables: [
+        { sym: "R_C", label: "Collector load resistor" },
+        { sym: "r_e", label: "Dynamic AC emitter resistance (26 mV / IE)" }
+      ],
+      hint: "Ratio of collector resistance to emitter dynamic resistance, with a negative sign for 180° phase inversion.",
+      explanation: "In CE configuration with emitter AC-grounded, Vo = -β·ib·RC and Vi = ib·β·re. Thus Av = Vo / Vi = -RC / re. The negative sign represents 180° phase inversion."
+    },
+    {
+      id: "bjt_ac_av_unbypassed",
+      expectedParamsText: "R_C, R_E",
+      templateLatex: `-\frac{\placeholder{}_{\placeholder{}}}{\placeholder{}_{\placeholder{}}}`,
+      canonicalLatex: `-\frac{R_C}{R_E}`,
+      subject: "basic_electronics",
+      category: "BJT AC Analysis",
+      configName: "Common Emitter Unbypassed RE",
+      name: "CE Voltage Gain (Av, Unbypassed RE)",
+      targetVariable: "A_v",
+      targetPrompt: "Approximate Voltage Gain (A_v) for Common Emitter with Unbypassed RE (RE >> re)",
+      canonicalFormula: "-R_C / R_E",
+      displayFormula: "A_v \cong -\frac{R_C}{r_e + R_E} \approx -\frac{R_C}{R_E}",
+      acceptableVariants: [
+        "-R_C / R_E",
+        "-R_C/R_E",
+        "-(R_C / R_E)",
+        "-(R_C/R_E)",
+        "-R_C / (r_e + R_E)",
+        "-R_C/(r_e + R_E)"
+      ],
+      variables: [
+        { sym: "R_C", label: "Collector load resistor" },
+        { sym: "R_E", label: "Unbypassed emitter resistor" }
+      ],
+      hint: "Approximate ratio of collector resistor to unbypassed emitter resistor with 180° phase inversion.",
+      explanation: "Without a bypass capacitor, negative feedback through RE stabilizes the amplifier. Since RE >> re, the voltage gain simplifies to Av ≈ -RC / RE, which is completely independent of transistor β and temperature!"
+    },
+    {
+      id: "bjt_ac_zb_unbypassed",
+      expectedParamsText: "beta, R_E",
+      templateLatex: `\placeholder{}\cdot\placeholder{}_{\placeholder{}}`,
+      canonicalLatex: `\beta R_E`,
+      subject: "basic_electronics",
+      category: "BJT AC Analysis",
+      configName: "Common Emitter Unbypassed RE",
+      name: "Base Input Impedance (Zb, Unbypassed RE)",
+      targetVariable: "Z_b",
+      targetPrompt: "Base Input Impedance (Z_b) for Unbypassed Emitter Resistor (RE >> re)",
+      canonicalFormula: "beta * R_E",
+      displayFormula: "Z_b \cong \beta(r_e + R_E) \approx \beta R_E",
+      acceptableVariants: [
+        "beta * R_E",
+        "beta*R_E",
+        "beta R_E",
+        "beta * (r_e + R_E)",
+        "beta*(r_e + R_E)"
+      ],
+      variables: [
+        { sym: "\beta", label: "AC/DC current gain" },
+        { sym: "R_E", label: "Unbypassed emitter resistor" }
+      ],
+      hint: "Emitter resistance reflected into the base circuit by multiplying with current gain beta.",
+      explanation: "The input AC signal sees the base-emitter diode plus the unbypassed emitter resistor carrying (β + 1)ib. Looking into the base, this provides an impedance of Zb ≅ β(re + RE) ≈ β·RE."
     }
   ],
 

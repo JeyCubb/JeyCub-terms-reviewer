@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=77.0">
+  <link rel="stylesheet" href="styles.css?v=78.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -120,8 +120,12 @@
             <label for="practice-filter-select"><i class="fa-solid fa-layer-group"></i> Pool:</label>
             <select id="practice-filter-select" onchange="changePracticeFilter(this.value)">
               <option value="all">📚 All Questions</option>
-              <option value="prelim_exam" id="opt-filter-prelim">📝 TIP Prelim Exam (2026-2027)</option>
+              <option value="prelim_exam" id="opt-filter-prelim">📝 TIP Prelim Exam (Q117–Q136)</option>
+              <option value="seatwork2_bjt" id="opt-filter-seatwork2">📝 Canvas Midterm Seatwork 2: BJT (Q287–Q293)</option>
+              <option value="bjt_dc_bias" id="opt-filter-bjt-dc">⚡ BJT DC Biasing (Q237–Q286 & Q347–Q376)</option>
+              <option value="bjt_ac_analysis" id="opt-filter-bjt-ac">📶 BJT AC Analysis & re Modeling (Q297–Q336 & Q377–Q386)</option>
               <option value="test8_vessels" id="opt-filter-test8">⚓ Test 8: Vessels & Wire Ropes</option>
+              <option value="fluid_machinery" id="opt-filter-machinery">⚙️ Fluid Machinery (Q128–Q215)</option>
               <option value="weak">⚠️ Weak Questions</option>
               <option value="bookmarked">⭐ Bookmarked</option>
             </select>
@@ -385,6 +389,9 @@
           </div>
 
           <div class="header-actions">
+            <button class="action-btn pdf-btn" title="Download Subject as Printable PDF (Randomized, 2 Columns, 0.05 margin)" onclick="downloadSubjectPdf()">
+              <i class="fa-solid fa-file-pdf"></i>
+            </button>
             <button class="action-btn theme-toggle" title="Toggle Dark/Light Mode" onclick="toggleTheme()">
               <i class="fa-solid fa-moon" id="theme-icon"></i>
             </button>
@@ -395,8 +402,7 @@
         <div class="subject-dropdown-wrapper">
           <label for="subject-selector"><i class="fa-solid fa-book-open"></i> Subject:</label>
           <select id="subject-selector" onchange="switchSubject(this.value)">
-            <option value="ece_midterm" selected>ECE 005 Midterm Exam Reviewer</option>
-            <option value="basic_electronics">Basic Electronics (ECE 005 Prelim)</option>
+            <option value="basic_electronics" selected>Basic Electronics</option>
             <option value="fluid_mechanics">Fluid Mechanics</option>
             <option value="deformable_bodies">Mechanics of Deformable Bodies</option>
             <option value="heat_transfer">Heat Transfer</option>
@@ -466,8 +472,8 @@
       </button>
     </div>
 
-  <script src="formulas.js?v=4.0"></script>
-  <script src="questions.js?v=32.0"></script>
-  <script src="app.js?v=28.0"></script>
+  <script src="formulas.js?v=6.0"></script>
+  <script src="questions.js?v=35.0"></script>
+  <script src="app.js?v=31.0"></script>
 </body>
 </html>
