@@ -140,9 +140,9 @@ body {
 /* DYNAMIC LAYOUT ORDERING BY MODE */
 
 /* 1. PRACTICE MODE: Question Card at absolute top (Order 1), Title & Stats at bottom (Order 2 & 3) */
-body[data-mode="practice"] #practice-view { order: 1; }
-body[data-mode="practice"] .app-header { order: 2; margin-top: 1.5rem; }
-body[data-mode="practice"] .stats-bar-three { order: 3; margin-top: 1.5rem; }
+body[data-mode="practice"] .app-header { order: 1; margin-top: 0; }
+body[data-mode="practice"] #practice-view { order: 2; }
+body[data-mode="practice"] .stats-bar-three { order: 3; margin-top: 0.5rem; }
 body[data-mode="practice"] .reset-progress-wrapper { order: 4; }
 
 /* 2. ALL QUESTIONS MODE: Title Header & Stats at top (Order 1 & 2), Search & Questions below (Order 3) */
@@ -152,9 +152,9 @@ body[data-mode="all"] #all-view { order: 3; }
 body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 
 /* 3. FORMULAS MODE: Formulas Challenge at absolute top (Order 1), Title & Stats at bottom (Order 2 & 3) */
-body[data-mode="formulas"] #formulas-view { order: 1; }
-body[data-mode="formulas"] .app-header { order: 2; margin-top: 1.5rem; }
-body[data-mode="formulas"] .stats-bar-three { order: 3; margin-top: 1.5rem; }
+body[data-mode="formulas"] .app-header { order: 1; margin-top: 0; }
+body[data-mode="formulas"] #formulas-view { order: 2; }
+body[data-mode="formulas"] .stats-bar-three { order: 3; margin-top: 0.5rem; }
 body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
 
 /* App Header Card */
@@ -1455,15 +1455,15 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
     font-size: 0.6rem;
   }
 
-  /* Fixed Stable Height Quiz Card on Mobile so Nav Buttons Never Jump */
+  /* Quiz Card on Mobile: auto height, no forced gap */
   .quiz-card {
     padding: 1rem 0.9rem;
     border-radius: var(--radius-md);
     margin-bottom: 0.85rem;
-    min-height: 540px;
+    min-height: unset;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .question-content {
@@ -1478,7 +1478,7 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
     font-size: 1.02rem;
     line-height: 1.45;
     margin-bottom: 0.85rem;
-    min-height: 4.8rem;
+    min-height: unset;
     display: flex;
     align-items: flex-start;
   }
@@ -1519,8 +1519,8 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
   }
 
   .notes-toggle-wrapper {
-    margin-top: 1rem;
-    margin-bottom: 5rem;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   .notes-toggle-wrapper.active-wrapper {
@@ -1529,7 +1529,7 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
 
   .interactive-drawer {
     margin-top: 0.5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
     padding: 1rem 0.85rem;
     border-radius: var(--radius-md);
   }
