@@ -137,25 +137,15 @@ body {
   flex-direction: column;
 }
 
-/* DYNAMIC LAYOUT ORDERING BY MODE */
+/* Natural top-to-bottom layout: Header -> Stats -> View */
+.app-header {
+  margin-top: 0.25rem;
+  margin-bottom: 0.85rem;
+}
 
-/* 1. PRACTICE MODE: Question Card at absolute top (Order 1), Title & Stats at bottom (Order 2 & 3) */
-body[data-mode="practice"] .app-header { order: 2; margin-top: 1.5rem; }
-body[data-mode="practice"] #practice-view { order: 1; }
-body[data-mode="practice"] .stats-bar-three { order: 3; margin-top: 1.5rem; }
-body[data-mode="practice"] .reset-progress-wrapper { order: 4; }
-
-/* 2. ALL QUESTIONS MODE: Title Header & Stats at top (Order 1 & 2), Search & Questions below (Order 3) */
-body[data-mode="all"] .app-header { order: 1; margin-top: 0.25rem; margin-bottom: 1.25rem; }
-body[data-mode="all"] .stats-bar-three { order: 2; margin-top: 0; margin-bottom: 1.5rem; }
-body[data-mode="all"] #all-view { order: 3; }
-body[data-mode="all"] .reset-progress-wrapper { order: 4; }
-
-/* 3. FORMULAS MODE: Formulas Challenge at absolute top (Order 1), Title & Stats at bottom (Order 2 & 3) */
-body[data-mode="formulas"] .app-header { order: 2; margin-top: 1.5rem; }
-body[data-mode="formulas"] #formulas-view { order: 1; }
-body[data-mode="formulas"] .stats-bar-three { order: 3; margin-top: 1.5rem; }
-body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
+.stats-bar-three {
+  margin-bottom: 1.25rem;
+}
 
 /* App Header Card */
 .app-header {
