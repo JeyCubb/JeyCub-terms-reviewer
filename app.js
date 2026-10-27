@@ -1,3 +1,10 @@
+// Ensure mobile browser never restores an arbitrary middle-page scroll on refresh
+if (typeof history !== 'undefined' && 'scrollRestoration' in history) {
+  try {
+    history.scrollRestoration = 'manual';
+  } catch (e) {}
+}
+
 /**
  * JeyCub Terms Reviewer - Application Engine
  * Fast, reliable, local-first & cloud-synced review app for Engineering Board Exams.
@@ -82,6 +89,20 @@ document.addEventListener('DOMContentLoaded', () => {
   initNotesInputSubmit();
   initPreventDoubleTapZoom();
   initScrollSnapInstant();
+
+  // Anchor at the very top of the question card
+  scrollToTopInstant();
+  requestAnimationFrame(scrollToTopInstant);
+  setTimeout(scrollToTopInstant, 50);
+  setTimeout(scrollToTopInstant, 150);
+});
+
+window.addEventListener('pageshow', () => {
+  scrollToTopInstant();
+});
+
+window.addEventListener('beforeunload', () => {
+  scrollToTopInstant();
 });
 
 function scrollToBottomInstant() {
@@ -89,7 +110,9 @@ function scrollToBottomInstant() {
 }
 
 function scrollToTopInstant() {
-  window.scrollTo({ top: 0, behavior: 'instant' });
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  if (document.documentElement) document.documentElement.scrollTop = 0;
+  if (document.body) document.body.scrollTop = 0;
 }
 
 /* Instant Wheel / Scroll Handler: 1 wheel notch up = Page Up, 1 wheel notch down = Page Down */
@@ -238,6 +261,7 @@ function changePracticeFilter(filterVal) {
   }
 
   renderCurrentPracticeQuestion();
+  scrollToTopInstant();
 }
 
 function executeJumpFromInput() {
@@ -260,6 +284,7 @@ function executeJumpFromInput() {
     saveCurrentIndex();
     hideNotesSection();
     renderCurrentPracticeQuestion();
+    scrollToTopInstant();
     input.value = '';
   } else {
     alert(`Problem #${numVal} not found in the current pool.`);
@@ -2187,6 +2212,7 @@ function nextQuestion() {
   }
   saveCurrentIndex();
   renderCurrentPracticeQuestion();
+  scrollToTopInstant();
 }
 
 function prevQuestion() {
@@ -2211,6 +2237,7 @@ function prevQuestion() {
   }
   saveCurrentIndex();
   renderCurrentPracticeQuestion();
+  scrollToTopInstant();
 }
 
 /* ==========================================================================
