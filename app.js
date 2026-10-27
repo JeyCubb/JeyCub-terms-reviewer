@@ -152,110 +152,42 @@ function initScrollSnapInstant() {
 }
 
 /* ==========================================================================
-   Pinch-to-Resize Font Engine (Replaces Viewport Zoom with Dynamic Font Scaling)
+   Pinch-to-Resize & Accessible Text Sizing Engine
+   Persists across Next/Previous questions, refreshes, and app sessions
    ========================================================================== */
 
 let currentFontScale = 1.0;
 let fontToastTimeout = null;
 
-function initPinchToFontResize() {
-  const saved = localStorage.getItem('jt_font_scale');
-  if (saved) {
-    const parsed = parseFloat(saved);
-    if (!isNaN(parsed) && parsed >= 0.75 && parsed <= 2.0) {
-      currentFontScale = parsed;
-      setFontScale(parsed, false);
-    }
-  }
-
-  // 1. iOS Safari Gesture Events
-  let gestureBaseScale = 1.0;
-  document.addEventListener('gesturestart', (e) => {
-    e.preventDefault();
-    gestureBaseScale = currentFontScale;
-  }, { passive: false });
-
-  document.addEventListener('gesturechange', (e) => {
-    e.preventDefault();
-    if (!e.scale) return;
-    const newScale = Math.min(1.8, Math.max(0.8, gestureBaseScale * e.scale));
-    setFontScale(newScale, true);
-  }, { passive: false });
-
-  document.addEventListener('gestureend', (e) => {
-    e.preventDefault();
-    saveFontScale();
-  }, { passive: false });
-
-  // 2. Multi-Touch Events for Android & all Touchscreens
-  let initialTouchDistance = 0;
-  let touchBaseScale = 1.0;
-
-  document.addEventListener('touchstart', (e) => {
-    if (e.touches && e.touches.length === 2) {
-      e.preventDefault();
-      initialTouchDistance = Math.hypot(
-        e.touches[0].clientX - e.touches[1].clientX,
-        e.touches[0].clientY - e.touches[1].clientY
-      );
-      touchBaseScale = currentFontScale;
-    }
-  }, { passive: false });
-
-  document.addEventListener('touchmove', (e) => {
-    if (e.touches && e.touches.length === 2 && initialTouchDistance > 0) {
-      e.preventDefault();
-      const currentDist = Math.hypot(
-        e.touches[0].clientX - e.touches[1].clientX,
-        e.touches[0].clientY - e.touches[1].clientY
-      );
-      const ratio = currentDist / initialTouchDistance;
-      const newScale = Math.min(1.8, Math.max(0.8, touchBaseScale * ratio));
-      setFontScale(newScale, true);
-    }
-  }, { passive: false });
-
-  document.addEventListener('touchend', (e) => {
-    if (initialTouchDistance > 0) {
-      initialTouchDistance = 0;
-      saveFontScale();
-    }
-  }, { passive: false });
-
-  // 3. Trackpad Pinch-to-Zoom (Ctrl + Wheel)
-  window.addEventListener('wheel', (e) => {
-    if (e.ctrlKey) {
-      e.preventDefault();
-      const step = e.deltaY < 0 ? 0.05 : -0.05;
-      const newScale = Math.min(1.8, Math.max(0.8, currentFontScale + step));
-      setFontScale(newScale, true);
-      saveFontScale();
-    }
-  }, { passive: false });
-
-  // 4. Double-tap Zoom Prevention
-  let lastTouchEnd = 0;
-  document.addEventListener('touchend', (e) => {
-    const now = Date.now();
-    if (now - lastTouchEnd <= 300) {
-      const target = e.target;
-      if (target && target.tagName !== 'INPUT' && target.tagName !== 'TEXTAREA') {
-        e.preventDefault();
-      }
-    }
-    lastTouchEnd = now;
-  }, { passive: false });
-}
-
 function setFontScale(scale, showToast = true) {
   currentFontScale = Math.round(scale * 100) / 100;
+  
+  // Apply globally across documentElement, body, and practice view
   document.documentElement.style.setProperty('--font-scale', currentFontScale);
+  if (document.body) {
+    document.body.style.setProperty('--font-scale', currentFontScale);
+  }
+  const practiceView = document.getElementById('practice-view');
+  if (practiceView) {
+    practiceView.style.setProperty('--font-scale', currentFontScale);
+  }
+  const optionsGrid = document.getElementById('q-options-container');
+  if (optionsGrid) {
+    optionsGrid.style.setProperty('--font-scale', currentFontScale);
+  }
 
-  // ALWAYS save immediately so reload never resets font size
+  // ALWAYS save immediately so reload, next, prev never resets font size
   try {
     localStorage.setItem('jt_font_scale', currentFontScale.toFixed(2));
   } catch (e) {}
 
+  // Update header AA button badge
+  const headerBadge = document.getElementById('header-font-badge');
+  if (headerBadge) {
+    headerBadge.textContent = `${Math.round(currentFontScale * 100)}%`;
+  }
+
+  // Update toast indicator
   if (showToast) {
     const toast = document.getElementById('font-scale-toast');
     const label = document.getElementById('font-scale-val');
@@ -265,9 +197,26 @@ function setFontScale(scale, showToast = true) {
       if (fontToastTimeout) clearTimeout(fontToastTimeout);
       fontToastTimeout = setTimeout(() => {
         toast.classList.remove('show');
-      }, 1400);
+      }, 1800);
     }
   }
+}
+
+function adjustFontSize(delta) {
+  const newScale = Math.min(2.0, Math.max(0.75, currentFontScale + delta));
+  setFontScale(newScale, true);
+}
+
+function cycleFontSize() {
+  const steps = [1.0, 1.15, 1.30, 1.50, 0.85];
+  let nextIdx = 0;
+  for (let i = 0; i < steps.length; i++) {
+    if (Math.abs(currentFontScale - steps[i]) < 0.05) {
+      nextIdx = (i + 1) % steps.length;
+      break;
+    }
+  }
+  setFontScale(steps[nextIdx], true);
 }
 
 function saveFontScale() {
@@ -279,6 +228,109 @@ function saveFontScale() {
 function resetFontScale() {
   setFontScale(1.0, true);
   saveFontScale();
+}
+
+function initPinchToFontResize() {
+  // 1. Restore saved scale on boot
+  try {
+    const saved = localStorage.getItem('jt_font_scale');
+    if (saved) {
+      const parsed = parseFloat(saved);
+      if (!isNaN(parsed) && parsed >= 0.75 && parsed <= 2.2) {
+        currentFontScale = parsed;
+        setFontScale(parsed, false);
+      }
+    }
+  } catch (e) {}
+
+  // Update header badge initially
+  const headerBadge = document.getElementById('header-font-badge');
+  if (headerBadge) {
+    headerBadge.textContent = `${Math.round(currentFontScale * 100)}%`;
+  }
+
+  // 2. iOS Safari Gesture Events
+  let gestureBaseScale = 1.0;
+  document.addEventListener('gesturestart', (e) => {
+    e.preventDefault();
+    gestureBaseScale = currentFontScale;
+  }, { passive: false });
+
+  document.addEventListener('gesturechange', (e) => {
+    e.preventDefault();
+    if (!e.scale) return;
+    const newScale = Math.min(2.0, Math.max(0.75, gestureBaseScale * e.scale));
+    setFontScale(newScale, true);
+  }, { passive: false });
+
+  document.addEventListener('gestureend', (e) => {
+    e.preventDefault();
+    saveFontScale();
+  }, { passive: false });
+
+  // 3. Multi-Touch Events for Android & all Touchscreens
+  let initialTouchDistance = 0;
+  let touchBaseScale = 1.0;
+
+  document.addEventListener('touchstart', (e) => {
+    if (e.touches && e.touches.length === 2) {
+      initialTouchDistance = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      touchBaseScale = currentFontScale;
+    }
+  }, { passive: true });
+
+  document.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches.length === 2) {
+      const currentDist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      if (!initialTouchDistance) {
+        initialTouchDistance = currentDist;
+        touchBaseScale = currentFontScale;
+        return;
+      }
+      if (initialTouchDistance > 10) {
+        e.preventDefault();
+        const ratio = currentDist / initialTouchDistance;
+        const newScale = Math.min(2.0, Math.max(0.75, touchBaseScale * ratio));
+        setFontScale(newScale, true);
+      }
+    }
+  }, { passive: false });
+
+  document.addEventListener('touchend', (e) => {
+    if (initialTouchDistance > 0 && (!e.touches || e.touches.length < 2)) {
+      initialTouchDistance = 0;
+      saveFontScale();
+    }
+  }, { passive: true });
+
+  // 4. Trackpad Pinch-to-Zoom (Ctrl + Wheel)
+  window.addEventListener('wheel', (e) => {
+    if (e.ctrlKey) {
+      e.preventDefault();
+      const step = e.deltaY < 0 ? 0.05 : -0.05;
+      const newScale = Math.min(2.0, Math.max(0.75, currentFontScale + step));
+      setFontScale(newScale, true);
+    }
+  }, { passive: false });
+
+  // 5. Double-tap Zoom Prevention
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+      const target = e.target;
+      if (target && target.tagName !== 'INPUT' && target.tagName !== 'TEXTAREA' && !target.closest('.font-scale-toast')) {
+        e.preventDefault();
+      }
+    }
+    lastTouchEnd = now;
+  }, { passive: false });
 }
 
 /* Initialize Enter key submission for notes */
@@ -2051,6 +2103,11 @@ function updateRandomButtonUI() {
 }
 
 function renderCurrentPracticeQuestion() {
+  // Maintain user preferred font scale across newly rendered question & choices
+  if (currentFontScale && currentFontScale !== 1.0) {
+    document.documentElement.style.setProperty('--font-scale', currentFontScale);
+  }
+
   const questions = getFilteredPracticeQuestions();
   const qText = document.getElementById('q-text');
   const optionsContainer = document.getElementById('q-options-container');

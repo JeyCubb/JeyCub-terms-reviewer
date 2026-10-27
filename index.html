@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=88.0">
+  <link rel="stylesheet" href="styles.css?v=89.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -462,6 +462,10 @@
             </div>
 
             <div class="header-actions">
+                            <button class="action-btn font-toggle-btn" onclick="cycleFontSize()" title="Text Size: Tap to make text larger for easier reading">
+                <span class="aa-icon">A<span class="aa-sub">A</span></span>
+                <span id="header-font-badge" class="header-font-badge">100%</span>
+              </button>
               <button class="action-btn pdf-btn" title="Download Subject as Printable PDF (Randomized, 2 Columns, 0.05 margin)" onclick="downloadSubjectPdf()">
                 <i class="fa-solid fa-file-pdf"></i>
               </button>
@@ -501,13 +505,18 @@
 
   </main>
   <!-- Floating Font Size Indicator Toast (Tap to reset to 100%) -->
-  <div id="font-scale-toast" class="font-scale-toast" onclick="resetFontScale()" title="Tap to reset font size to 100%">
-    <i class="fa-solid fa-text-height"></i> Font: <span id="font-scale-val">100%</span>
+    <!-- Floating Font Size Control Toast (Accessible Text Sizing) -->
+  <div id="font-scale-toast" class="font-scale-toast" title="Text Size Controls">
+    <button type="button" class="toast-adjust-btn" onclick="adjustFontSize(-0.1); event.stopPropagation();" title="Smaller (A-)"><i class="fa-solid fa-minus"></i></button>
+    <div class="toast-center-content" onclick="resetFontScale()" title="Tap to reset to 100%">
+      <i class="fa-solid fa-text-height"></i> Text: <span id="font-scale-val">100%</span>
+    </div>
+    <button type="button" class="toast-adjust-btn" onclick="adjustFontSize(0.1); event.stopPropagation();" title="Larger (A+)"><i class="fa-solid fa-plus"></i></button>
   </div>
 
 
   <script src="formulas.js?v=6.0"></script>
   <script src="questions.js?v=35.0"></script>
-  <script src="app.js?v=36.0"></script>
+  <script src="app.js?v=37.0"></script>
 </body>
 </html>
