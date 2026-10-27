@@ -451,7 +451,7 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
   display: block;
 }
 
-/* Quiz Card Container - Fixed Stable Min-Height to Prevent Button Jumps */
+/* Quiz Card Container */
 .quiz-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -459,10 +459,10 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
   padding: 2rem;
   box-shadow: var(--shadow-md);
   margin-bottom: 1.5rem;
-  min-height: 520px;
+  min-height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 /* Question Content Container */
@@ -1455,19 +1455,19 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
     font-size: 0.6rem;
   }
 
-  /* Quiz Card on Mobile: auto height, no forced gap */
+  /* Quiz Card on Mobile: compact, no forced gap */
   .quiz-card {
     padding: 1rem 0.9rem;
     border-radius: var(--radius-md);
     margin-bottom: 0.85rem;
-    min-height: unset;
+    min-height: 0 !important;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
 
   .question-content {
-    flex: 1;
+    flex: 0 0 auto !important;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1478,14 +1478,13 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
     font-size: 1.02rem;
     line-height: 1.45;
     margin-bottom: 0.85rem;
-    min-height: unset;
-    display: flex;
-    align-items: flex-start;
+    min-height: 0 !important;
+    display: block;
   }
 
   .options-grid {
     gap: 0.55rem;
-    margin-top: auto;
+    margin-top: 0 !important;
   }
 
   .option-btn {
@@ -1504,10 +1503,10 @@ body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
     font-size: 0.75rem;
   }
 
-  /* Inline Navigation Buttons Pinned to Bottom of Card */
+  /* Inline Navigation Buttons directly below choices */
   .inline-nav-container {
     gap: 0.6rem;
-    margin-top: auto;
+    margin-top: 0.85rem !important;
     padding-top: 0.85rem;
   }
 
