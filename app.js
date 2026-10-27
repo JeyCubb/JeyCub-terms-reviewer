@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFirebase();
   initKeyboardShortcuts();
   initNotesInputSubmit();
-  initPreventDoubleTapZoom();
+  initPreventPinchAndDoubleTapZoom();
   initScrollSnapInstant();
 
   // Anchor at the very top of the question card
@@ -138,8 +138,35 @@ function initScrollSnapInstant() {
   }, { passive: true });
 }
 
-/* Prevent double-tap zoom on mobile devices */
-function initPreventDoubleTapZoom() {
+/* Prevent pinch-to-zoom and double-tap zoom on mobile devices */
+function initPreventPinchAndDoubleTapZoom() {
+  // 1. Prevent iOS Safari native gesture events (pinch-to-zoom)
+  document.addEventListener('gesturestart', (e) => {
+    e.preventDefault();
+  }, { passive: false });
+
+  document.addEventListener('gesturechange', (e) => {
+    e.preventDefault();
+  }, { passive: false });
+
+  document.addEventListener('gestureend', (e) => {
+    e.preventDefault();
+  }, { passive: false });
+
+  // 2. Prevent multi-finger touch gestures (pinch-zoom on all touchscreens)
+  document.addEventListener('touchstart', (e) => {
+    if (e.touches && e.touches.length > 1) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  document.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches.length > 1) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  // 3. Prevent rapid double-tap zoom
   let lastTouchEnd = 0;
   document.addEventListener('touchend', (e) => {
     const now = Date.now();
@@ -150,6 +177,13 @@ function initPreventDoubleTapZoom() {
       }
     }
     lastTouchEnd = now;
+  }, { passive: false });
+
+  // 4. Prevent Ctrl+Wheel / trackpad pinch-zoom
+  window.addEventListener('wheel', (e) => {
+    if (e.ctrlKey) {
+      e.preventDefault();
+    }
   }, { passive: false });
 }
 

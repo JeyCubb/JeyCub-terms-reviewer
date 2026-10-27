@@ -130,13 +130,13 @@
 
   padding: 0;
 
-  touch-action: manipulation;
+  touch-action: pan-y;
 
 }
 
 html, body {
 
-  touch-action: manipulation;
+  touch-action: pan-y;
 
   -webkit-text-size-adjust: 100%;
 
