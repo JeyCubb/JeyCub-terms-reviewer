@@ -11,6 +11,7 @@
 /* Design Tokens & CSS Variables */
 
 :root {
+  --font-scale: 1;
 
   --bg-main: #0d0c0b;
 
@@ -832,7 +833,7 @@ body {
 
 .question-text {
 
-  font-size: 1.45rem;
+  font-size: calc(1.45rem * var(--font-scale, 1));
 
   font-weight: 600;
 
@@ -904,7 +905,7 @@ body {
 
   color: var(--text-primary);
 
-  font-size: 1rem;
+  font-size: calc(1rem * var(--font-scale, 1));
 
   font-weight: 500;
 
@@ -1700,6 +1701,7 @@ body {
 /* Subtle Concept Hint Container */
 
 .explanation-box {
+  font-size: calc(0.92rem * var(--font-scale, 1));
 
   background: rgba(249, 115, 22, 0.05);
 
@@ -2569,7 +2571,7 @@ body {
 
   .question-text {
 
-    font-size: 1.02rem;
+    font-size: calc(1.02rem * var(--font-scale, 1));
 
     line-height: 1.45;
 
@@ -2593,7 +2595,7 @@ body {
 
     padding: 0.75rem 0.85rem;
 
-    font-size: 0.88rem;
+    font-size: calc(0.88rem * var(--font-scale, 1));
 
     gap: 0.65rem;
 
@@ -4454,3 +4456,41 @@ math-field::part(placeholder-focused) {
 
 }
 
+
+
+/* Floating Font Size Indicator Toast */
+.font-scale-toast {
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-24px);
+  background: rgba(28, 21, 17, 0.96);
+  border: 1.5px solid var(--accent-primary);
+  color: var(--text-primary);
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7), 0 0 15px var(--accent-glow);
+  z-index: 999999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.font-scale-toast.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+.font-scale-toast:hover {
+  background: rgba(38, 30, 24, 0.98);
+}
