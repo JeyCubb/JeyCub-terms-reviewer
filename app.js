@@ -160,7 +160,8 @@ let currentFontScale = 1.0;
 let fontToastTimeout = null;
 
 function setFontScale(scale, showToast = true) {
-  currentFontScale = Math.round(scale * 100) / 100;
+  // Snap strictly to 5% increments (e.g. 85%, 90%, 95%, 100%, 105%, 110%, etc.)
+  currentFontScale = Math.round(scale * 20) / 20;
   
   // Apply globally across documentElement, body, and practice view
   document.documentElement.style.setProperty('--font-scale', currentFontScale);
@@ -202,7 +203,7 @@ function setFontScale(scale, showToast = true) {
   }
 }
 
-function adjustFontSize(delta) {
+function adjustFontSize(delta = 0.05) {
   const newScale = Math.min(2.0, Math.max(0.75, currentFontScale + delta));
   setFontScale(newScale, true);
 }
