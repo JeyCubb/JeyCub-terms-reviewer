@@ -1,3 +1,16 @@
+// Immediately restore user preferred font scale before paint
+(function() {
+  try {
+    const s = localStorage.getItem('jt_font_scale');
+    if (s) {
+      const v = parseFloat(s);
+      if (!isNaN(v) && v >= 0.75 && v <= 2.0) {
+        document.documentElement.style.setProperty('--font-scale', v);
+      }
+    }
+  } catch (e) {}
+})();
+
 // Ensure mobile browser never restores an arbitrary middle-page scroll on refresh
 if (typeof history !== 'undefined' && 'scrollRestoration' in history) {
   try {
@@ -149,7 +162,8 @@ function initPinchToFontResize() {
   const saved = localStorage.getItem('jt_font_scale');
   if (saved) {
     const parsed = parseFloat(saved);
-    if (!isNaN(parsed) && parsed >= 0.75 && parsed <= 1.85) {
+    if (!isNaN(parsed) && parsed >= 0.75 && parsed <= 2.0) {
+      currentFontScale = parsed;
       setFontScale(parsed, false);
     }
   }
@@ -236,6 +250,11 @@ function initPinchToFontResize() {
 function setFontScale(scale, showToast = true) {
   currentFontScale = Math.round(scale * 100) / 100;
   document.documentElement.style.setProperty('--font-scale', currentFontScale);
+
+  // ALWAYS save immediately so reload never resets font size
+  try {
+    localStorage.setItem('jt_font_scale', currentFontScale.toFixed(2));
+  } catch (e) {}
 
   if (showToast) {
     const toast = document.getElementById('font-scale-toast');
@@ -818,6 +837,17 @@ function saveCurrentIndex() {
 }
 
 function loadStoredData() {
+  try {
+    const s = localStorage.getItem('jt_font_scale');
+    if (s) {
+      const v = parseFloat(s);
+      if (!isNaN(v) && v >= 0.75 && v <= 2.0) {
+        currentFontScale = v;
+        document.documentElement.style.setProperty('--font-scale', v);
+      }
+    }
+  } catch (e) {}
+
   try {
     const data = getSubjectData();
     const savedSubject = localStorage.getItem('jt_subject');
