@@ -140,9 +140,9 @@ body {
 /* DYNAMIC LAYOUT ORDERING BY MODE */
 
 /* 1. PRACTICE MODE: Question Card at absolute top (Order 1), Title & Stats at bottom (Order 2 & 3) */
-body[data-mode="practice"] .app-header { order: 1; margin-top: 0; }
-body[data-mode="practice"] #practice-view { order: 2; }
-body[data-mode="practice"] .stats-bar-three { order: 3; margin-top: 0.5rem; }
+body[data-mode="practice"] .app-header { order: 2; margin-top: 1.5rem; }
+body[data-mode="practice"] #practice-view { order: 1; }
+body[data-mode="practice"] .stats-bar-three { order: 3; margin-top: 1.5rem; }
 body[data-mode="practice"] .reset-progress-wrapper { order: 4; }
 
 /* 2. ALL QUESTIONS MODE: Title Header & Stats at top (Order 1 & 2), Search & Questions below (Order 3) */
@@ -152,9 +152,9 @@ body[data-mode="all"] #all-view { order: 3; }
 body[data-mode="all"] .reset-progress-wrapper { order: 4; }
 
 /* 3. FORMULAS MODE: Formulas Challenge at absolute top (Order 1), Title & Stats at bottom (Order 2 & 3) */
-body[data-mode="formulas"] .app-header { order: 1; margin-top: 0; }
-body[data-mode="formulas"] #formulas-view { order: 2; }
-body[data-mode="formulas"] .stats-bar-three { order: 3; margin-top: 0.5rem; }
+body[data-mode="formulas"] .app-header { order: 2; margin-top: 1.5rem; }
+body[data-mode="formulas"] #formulas-view { order: 1; }
+body[data-mode="formulas"] .stats-bar-three { order: 3; margin-top: 1.5rem; }
 body[data-mode="formulas"] .reset-progress-wrapper { order: 4; }
 
 /* App Header Card */
