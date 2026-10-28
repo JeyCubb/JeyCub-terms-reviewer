@@ -411,6 +411,8 @@ function getFilteredPracticeQuestions() {
     return allQs.filter(q => (q.id >= 297 && q.id <= 336) || (q.id >= 377 && q.id <= 386));
   } else if (state.practiceFilter === 'test8_vessels') {
     return allQs.filter(q => q.id >= 151 && q.id <= 195);
+  } else if (state.practiceFilter === 'test5_shaftings') {
+    return allQs.filter(q => q.id >= 196 && q.id <= 245);
   } else if (state.practiceFilter === 'fluid_machinery') {
     return allQs.filter(q => q.id >= 128 && q.id <= 215);
   }
@@ -669,6 +671,10 @@ function updateSubjectUI() {
   if (optTest8) {
     optTest8.style.display = (state.currentSubject === 'deformable_bodies') ? '' : 'none';
   }
+  const optTest5 = document.getElementById('opt-filter-test5');
+  if (optTest5) {
+    optTest5.style.display = (state.currentSubject === 'deformable_bodies') ? '' : 'none';
+  }
   const optMachinery = document.getElementById('opt-filter-machinery');
   if (optMachinery) {
     optMachinery.style.display = (state.currentSubject === 'fluid_mechanics') ? '' : 'none';
@@ -680,7 +686,7 @@ function updateSubjectUI() {
     const isBasicPool = (state.practiceFilter === 'prelim_exam' || state.practiceFilter === 'seatwork2_bjt' || state.practiceFilter === 'bjt_dc_bias' || state.practiceFilter === 'bjt_ac_analysis');
     if (isBasicPool && state.currentSubject !== 'basic_electronics') {
       state.practiceFilter = 'all';
-    } else if (state.practiceFilter === 'test8_vessels' && state.currentSubject !== 'deformable_bodies') {
+    } else if ((state.practiceFilter === 'test8_vessels' || state.practiceFilter === 'test5_shaftings') && state.currentSubject !== 'deformable_bodies') {
       state.practiceFilter = 'all';
     } else if (state.practiceFilter === 'fluid_machinery' && state.currentSubject !== 'fluid_mechanics') {
       state.practiceFilter = 'all';
