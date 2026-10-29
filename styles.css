@@ -1089,7 +1089,7 @@ body {
 
   display: grid;
 
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr 1fr;
 
   gap: 0.75rem;
 
@@ -2633,7 +2633,7 @@ body {
 
   .inline-nav-container {
 
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 0.45rem;
 
