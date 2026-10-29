@@ -5463,6 +5463,76 @@ var SUBJECT_DATA = {  basic_electronics: {
         options: ["The mass-weighted average of their initial temperatures", "The geometric mean of their initial absolute temperatures", "The temperature of the cooler liquid, unaffected by mass ratio", "Exactly half of the ambient room temperature"],
         answer: 0,
         explanation: "\u2705 Why 'The mass-weighted average of their initial temperatures' is Correct: Since both liquids share the same specific heat C_p, energy balance m_1\u00b7C_p\u00b7(T_1 - T_f) = m_2\u00b7C_p\u00b7(T_f - T_2) cancels C_p, giving T_f = (m_1\u00b7T_1 + m_2\u00b7T_2) / (m_1 + m_2)."
+      },
+      {
+        id: 239,
+        question: "In optical flow visualization of convection, an interferometer produces a map of interference fringes across a fluid. What do these fringe lines physically represent?",
+        options: ["Lines of constant fluid velocity (isovels)", "Lines of constant temperature (isotherms)", "Lines of constant static pressure (isobars)", "Streamlines of zero vorticity"],
+        answer: 1,
+        explanation: "\u2705 Why 'Lines of constant temperature (isotherms)' is Correct: An interferometer detects localized changes in fluid refractive index caused by density variations. For a gas or liquid at constant pressure, density varies with temperature, making each fringe line an isotherm (line of constant temperature)."
+      },
+      {
+        id: 240,
+        question: "When analyzing an interferometric fringe pattern in convection, what does a dense concentration of closely spaced isotherm lines adjacent to a solid surface indicate?",
+        options: ["Negligible temperature change and low heat flux", "A steep temperature gradient (dT/dy) and a high local heat transfer rate at the surface", "That fluid motion has completely stagnated into a vacuum", "That the fluid has reached its critical vaporization point"],
+        answer: 1,
+        explanation: "\u2705 Why 'A steep temperature gradient (dT/dy) and a high local heat transfer rate at the surface' is Correct: Closely packed isotherms mean temperature changes rapidly over a very short distance, signifying a steep wall temperature gradient and correspondingly high heat transfer rate."
+      },
+      {
+        id: 241,
+        question: "In heat transfer classification, how is fluid flow categorized when it is completely bounded by solid conduit walls (such as inside a pipe or duct) versus flow over an unconfined body (such as over a sphere or plate)?",
+        options: ["Internal flow versus External flow", "Steady flow versus Transient flow", "Homogeneous flow versus Heterogeneous flow", "Adiabatic flow versus Isentropic flow"],
+        answer: 0,
+        explanation: "\u2705 Why 'Internal flow versus External flow' is Correct: Flow completely bounded by solid surfaces is internal flow (where boundary layers merge and develop into a fully developed profile), whereas flow over an unbounded surface is external flow."
+      },
+      {
+        id: 242,
+        question: "In cryogenic vacuum-insulated containers (such as liquid nitrogen dewars), why is the inner tank suspended inside an evacuated outer shell by slender support rods of low thermal conductivity?",
+        options: ["To eliminate fluid conduction and convection across the vacuum space, restricting residual heat gain to rod conduction and radiation", "To maximize forced convective air circulation between the inner tank and ambient surroundings", "To enable spontaneous boiling of liquid nitrogen directly into the vacuum chamber", "To increase the thermal conductivity of the vacuum insulation"],
+        answer: 0,
+        explanation: "\u2705 Why 'To eliminate fluid conduction and convection across the vacuum space, restricting residual heat gain to rod conduction and radiation' is Correct: Evacuating the space between shells eliminates the medium necessary for conduction and convection, leaving only unavoidable conduction through slender support rods and radiative exchange."
+      },
+      {
+        id: 243,
+        question: "When evaluating convective heat transfer from a spherical object of diameter D into an adjacent fluid using Newton's Law of Cooling, which geometric expression represents the heat transfer surface area (A)?",
+        options: ["A = \u03c0 \u00b7 D\u00b2 (or 4 \u00b7 \u03c0 \u00b7 r\u00b2)", "A = (\u03c0 / 4) \u00b7 D\u00b2", "A = (4/3) \u00b7 \u03c0 \u00b7 r\u00b3", "A = 2 \u00b7 \u03c0 \u00b7 D"],
+        answer: 0,
+        explanation: "\u2705 Why 'A = \u03c0 \u00b7 D\u00b2 (or 4 \u00b7 \u03c0 \u00b7 r\u00b2)' is Correct: The surface area of a sphere exposed to convective heat transfer is given by A = 4\u00b7\u03c0\u00b7r\u00b2 = \u03c0\u00b7D\u00b2."
+      },
+      {
+        id: 244,
+        question: "When fluid flows inside a cylindrical heated pipe of diameter D and length L, what formula gives the internal surface area (A) through which convective heat transfer occurs?",
+        options: ["A = (\u03c0 / 4) \u00b7 D\u00b2", "A = \u03c0 \u00b7 D \u00b7 L", "A = 2 \u00b7 \u03c0 \u00b7 D\u00b2 \u00b7 L", "A = \u03c0 \u00b7 D\u00b2 / L"],
+        answer: 1,
+        explanation: "\u2705 Why 'A = \u03c0 \u00b7 D \u00b7 L' is Correct: The inner contact area of a cylindrical pipe through which heat is transferred to the flowing fluid is its circumference times length: A = \u03c0 \u00b7 D \u00b7 L."
+      },
+      {
+        id: 245,
+        question: "In a steady-flow refrigerant-to-water heat exchanger with negligible external heat loss, what energy balance equates the heat duty between the fluids?",
+        options: ["Q = m_refrig \u00b7 \u0394h_refrig = m_water \u00b7 C_p,water \u00b7 \u0394T_water", "Q = m_refrig / \u0394h_refrig = m_water / (C_p,water \u00b7 \u0394T_water)", "Q = m_water \u00b7 \u0394h_refrig \u00b7 \u0394T_water", "Q = (m_refrig + m_water) \u00b7 C_p,water"],
+        answer: 0,
+        explanation: "\u2705 Why 'Q = m_refrig \u00b7 \u0394h_refrig = m_water \u00b7 C_p,water \u00b7 \u0394T_water' is Correct: By the First Law of Thermodynamics, heat released by condensing/cooling refrigerant (m \u00b7 \u0394h) equals heat absorbed by sensible warming of the cooling water (m \u00b7 C_p \u00b7 \u0394T)."
+      },
+      {
+        id: 246,
+        question: "Why does ambient air on a windy winter day feel substantially colder to exposed human skin than calm air at the exact same thermometer temperature?",
+        options: ["Because wind lowers the actual measured thermodynamic temperature of the atmosphere", "Because forced convection induced by wind thins the insulating boundary layer, markedly boosting the convective heat transfer coefficient (wind-chill effect)", "Because atmospheric air density doubles whenever wind velocity exceeds 5 m/s", "Because wind triggers subatomic endothermic reactions on the skin surface"],
+        answer: 1,
+        explanation: "\u2705 Why 'Because forced convection induced by wind thins the insulating boundary layer, markedly boosting the convective heat transfer coefficient (wind-chill effect)' is Correct: In calm air, a warm boundary layer cushions the skin. Wind sweeps this layer away (forced convection), drastically increasing h and accelerating the rate of heat loss from the body."
+      },
+      {
+        id: 247,
+        question: "What is a primary operational distinction between forced convection and natural (free) convection regarding fluid flow rate?",
+        options: ["In forced convection, flow rate can be externally controlled via fans or pumps, whereas in natural convection, flow rate is self-induced by buoyancy and cannot be externally regulated", "Natural convection requires far higher external electrical power than forced convection", "Forced convection relies entirely on density gradients created by temperature differences", "Natural convection can only take place in a complete vacuum"],
+        answer: 0,
+        explanation: "\u2705 Why 'In forced convection, flow rate can be externally controlled via fans or pumps, whereas in natural convection, flow rate is self-induced by buoyancy and cannot be externally regulated' is Correct: Forced convection utilizes external mechanical drivers (fans, blowers, pumps), allowing precise flow control, while natural convection is driven solely by internal buoyant density differences."
+      },
+      {
+        id: 248,
+        question: "What fundamental relationship links heat transfer, mass transfer, and fluid momentum transfer within boundary layers?",
+        options: ["They share analogous differential governing equations and transport mechanisms (Reynolds and Chilton-Colburn analogies)", "They are strictly mutually exclusive and can never occur simultaneously in any fluid system", "Momentum transfer can only occur when heat transfer is mathematically zero", "Mass transfer is restricted exclusively to rigid non-porous crystalline solids"],
+        answer: 0,
+        explanation: "\u2705 Why 'They share analogous differential governing equations and transport mechanisms (Reynolds and Chilton-Colburn analogies)' is Correct: The transport of momentum (viscous shear), heat (conduction/convection), and mass (species diffusion) follow mathematically analogous boundary layer equations, enabling heat transfer coefficients to be predicted from friction factors."
       }
     ]
   }

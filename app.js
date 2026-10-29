@@ -421,7 +421,7 @@ function getFilteredPracticeQuestions() {
   } else if (state.practiceFilter === 'ht_original') {
     return allQs.filter(q => q.id >= 1 && q.id <= 146);
   } else if (state.practiceFilter === 'ht_canvas_all') {
-    return allQs.filter(q => q.id >= 147 && q.id <= 238);
+    return allQs.filter(q => q.id >= 147 && q.id <= 248);
   } else if (state.practiceFilter === 'ht_mod1_1') {
     return allQs.filter(q => q.id >= 147 && q.id <= 161);
   } else if (state.practiceFilter === 'ht_mod1_2') {
@@ -435,7 +435,7 @@ function getFilteredPracticeQuestions() {
   } else if (state.practiceFilter === 'ht_mod7_1') {
     return allQs.filter(q => q.id >= 211 && q.id <= 225);
   } else if (state.practiceFilter === 'ht_mod7_2') {
-    return allQs.filter(q => q.id >= 226 && q.id <= 238);
+    return allQs.filter(q => q.id >= 226 && q.id <= 248);
   }
   return allQs;
 }
