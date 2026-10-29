@@ -692,6 +692,36 @@ function triggerOptionSelection(displayedIdx) {
    Subject Switcher Logic
    ========================================================================== */
 
+const SUBJECT_FILTERS = {
+  basic_electronics: [
+    { value: 'prelim_exam', id: 'opt-filter-prelim', label: '📝 TIP Prelim Exam (Q117–Q136)' },
+    { value: 'seatwork2_bjt', id: 'opt-filter-seatwork2', label: '📝 Canvas Midterm Seatwork 2: BJT (Q287–Q293)' },
+    { value: 'bjt_dc_bias', id: 'opt-filter-bjt-dc', label: '⚡ BJT DC Biasing (Q237–Q286 & Q347–Q376)' },
+    { value: 'bjt_ac_analysis', id: 'opt-filter-bjt-ac', label: '📶 BJT AC Analysis & re Modeling (Q297–Q336 & Q377–Q386)' }
+  ],
+  deformable_bodies: [
+    { value: 'test8_vessels', id: 'opt-filter-test8', label: '⚓ Test 8: Vessels & Wire Ropes (Q151–Q195)' },
+    { value: 'test5_shaftings', id: 'opt-filter-test5', label: '🔩 Test 5: Shaftings (Q196–Q245)' }
+  ],
+  fluid_mechanics: [
+    { value: 'fluid_machinery', id: 'opt-filter-machinery', label: '⚙️ Fluid Machinery (Q128–Q215)' }
+  ],
+  heat_transfer: [
+    { value: 'ht_original', id: 'opt-filter-ht-original', label: '📖 Original Questions (Q1–Q146)' },
+    { value: 'ht_canvas_all', id: 'opt-filter-ht-canvas-all', label: '🎓 All Canvas Modules (Q147–Q310)' },
+    { value: 'ht_mod1_1', id: 'opt-filter-ht-mod1', label: '🔥 Module 1.1: Intro to Heat Transfer (Q147–Q161)' },
+    { value: 'ht_mod1_2', id: 'opt-filter-ht-mod2', label: '🧱 Module 1.2: Conduction in Plane Wall (Q162–Q176)' },
+    { value: 'ht_mod1_3', id: 'opt-filter-ht-mod3', label: '🏢 Module 1.3: Conduction in Composite Wall (Q177–Q188)' },
+    { value: 'ht_mod4_1', id: 'opt-filter-ht-mod4', label: '🔘 Module 4.1: Conduction in Pipes (Q189–Q200)' },
+    { value: 'ht_mod5_1', id: 'opt-filter-ht-mod5', label: '🛡️ Module 5.1: Composite Pipes (Q201–Q210)' },
+    { value: 'ht_mod7_1', id: 'opt-filter-ht-mod7', label: '🌬️ Module 7.1: Convection (Q211–Q225)' },
+    { value: 'ht_mod7_2', id: 'opt-filter-ht-mod7-2', label: '🌊 Module 7.1–7.2: Surface Convection & Principles (Q226–Q248)' },
+    { value: 'ht_assignment_conv', id: 'opt-filter-ht-assign-conv', label: '📝 Assignment: Convection & Lagging (Q249–Q258)' },
+    { value: 'ht_mod4_rad', id: 'opt-filter-ht-mod4-rad', label: '☀️ Module 4.1: Radiation & Sample Problems (Q259–Q276)' },
+    { value: 'ht_mod_hx', id: 'opt-filter-ht-mod-hx', label: '🔄 Module 13: Heat Exchangers, Flow Types, U-Value & LMTD (Q277–Q310)' }
+  ]
+};
+
 function updateSubjectUI() {
   const info = getActiveSubjectInfo();
   const select = document.getElementById('subject-selector');
@@ -703,67 +733,47 @@ function updateSubjectUI() {
   const resetBtnLabel = document.getElementById('reset-subject-name');
   if (resetBtnLabel) resetBtnLabel.textContent = info.title;
 
-  // Dynamically update subject-specific pool filter options
-  const optPrelim = document.getElementById('opt-filter-prelim');
-  if (optPrelim) {
-    optPrelim.style.display = (state.currentSubject === 'basic_electronics') ? '' : 'none';
-  }
-  const optSeatwork2 = document.getElementById('opt-filter-seatwork2');
-  if (optSeatwork2) {
-    optSeatwork2.style.display = (state.currentSubject === 'basic_electronics') ? '' : 'none';
-  }
-  const optBjtDc = document.getElementById('opt-filter-bjt-dc');
-  if (optBjtDc) {
-    optBjtDc.style.display = (state.currentSubject === 'basic_electronics') ? '' : 'none';
-  }
-  const optBjtAc = document.getElementById('opt-filter-bjt-ac');
-  if (optBjtAc) {
-    optBjtAc.style.display = (state.currentSubject === 'basic_electronics') ? '' : 'none';
-  }
-  const optTest8 = document.getElementById('opt-filter-test8');
-  if (optTest8) {
-    optTest8.style.display = (state.currentSubject === 'deformable_bodies') ? '' : 'none';
-  }
-  const optTest5 = document.getElementById('opt-filter-test5');
-  if (optTest5) {
-    optTest5.style.display = (state.currentSubject === 'deformable_bodies') ? '' : 'none';
-  }
-  const optMachinery = document.getElementById('opt-filter-machinery');
-  if (optMachinery) {
-    optMachinery.style.display = (state.currentSubject === 'fluid_mechanics') ? '' : 'none';
-  }
-  const htFilterIds = [
-    'opt-filter-ht-original',
-    'opt-filter-ht-canvas-all',
-    'opt-filter-ht-mod1',
-    'opt-filter-ht-mod2',
-    'opt-filter-ht-mod3',
-    'opt-filter-ht-mod4',
-    'opt-filter-ht-mod5',
-    'opt-filter-ht-mod7',
-    'opt-filter-ht-mod7-2',
-    'opt-filter-ht-assign-conv',
-    'opt-filter-ht-mod4-rad',
-    'opt-filter-ht-mod-hx'
-  ];
-  htFilterIds.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.style.display = (state.currentSubject === 'heat_transfer') ? '' : 'none';
-  });
-
-  // Auto-reset filter to 'all' if active filter is incompatible with newly selected subject
+  // Rebuild the filter dropdown so only the current subject's pools exist in DOM
+  // (Prevents iOS Safari native picker from showing other subjects' modules like BJT in Heat Transfer!)
   const filterSelect = document.getElementById('practice-filter-select');
   if (filterSelect) {
-    const isBasicPool = (state.practiceFilter === 'prelim_exam' || state.practiceFilter === 'seatwork2_bjt' || state.practiceFilter === 'bjt_dc_bias' || state.practiceFilter === 'bjt_ac_analysis');
-    if (isBasicPool && state.currentSubject !== 'basic_electronics') {
-      state.practiceFilter = 'all';
-    } else if ((state.practiceFilter === 'test8_vessels' || state.practiceFilter === 'test5_shaftings') && state.currentSubject !== 'deformable_bodies') {
-      state.practiceFilter = 'all';
-    } else if (state.practiceFilter === 'fluid_machinery' && state.currentSubject !== 'fluid_mechanics') {
-      state.practiceFilter = 'all';
-    } else if ((state.practiceFilter === 'ht_original' || state.practiceFilter === 'ht_canvas_all' || state.practiceFilter === 'ht_mod1_1' || state.practiceFilter === 'ht_mod1_2' || state.practiceFilter === 'ht_mod1_3' || state.practiceFilter === 'ht_mod4_1' || state.practiceFilter === 'ht_mod5_1' || state.practiceFilter === 'ht_mod7_1' || state.practiceFilter === 'ht_mod7_2' || state.practiceFilter === 'ht_assignment_conv' || state.practiceFilter === 'ht_mod4_rad' || state.practiceFilter === 'ht_mod_hx') && state.currentSubject !== 'heat_transfer') {
+    const subjectOpts = SUBJECT_FILTERS[state.currentSubject] || [];
+    const validValues = ['all', 'weak', 'bookmarked', ...subjectOpts.map(o => o.value)];
+
+    // Reset filter to 'all' if active filter does not belong to the newly selected subject
+    if (!validValues.includes(state.practiceFilter)) {
       state.practiceFilter = 'all';
     }
+
+    // Reconstruct options cleanly
+    filterSelect.innerHTML = '';
+
+    // 1. All Questions
+    const optAll = document.createElement('option');
+    optAll.value = 'all';
+    optAll.textContent = '📚 All Questions';
+    filterSelect.appendChild(optAll);
+
+    // 2. Specific Modules for CURRENT subject ONLY
+    subjectOpts.forEach(item => {
+      const opt = document.createElement('option');
+      opt.value = item.value;
+      if (item.id) opt.id = item.id;
+      opt.textContent = item.label;
+      filterSelect.appendChild(opt);
+    });
+
+    // 3. Shared Weak & Bookmarked pools
+    const optWeak = document.createElement('option');
+    optWeak.value = 'weak';
+    optWeak.textContent = '⚠️ Weak Questions';
+    filterSelect.appendChild(optWeak);
+
+    const optBookmarked = document.createElement('option');
+    optBookmarked.value = 'bookmarked';
+    optBookmarked.textContent = '⭐ Bookmarked';
+    filterSelect.appendChild(optBookmarked);
+
     filterSelect.value = state.practiceFilter;
   }
 
