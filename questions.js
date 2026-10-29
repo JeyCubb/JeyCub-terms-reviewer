@@ -5855,6 +5855,48 @@ var SUBJECT_DATA = {  basic_electronics: {
         options: ["An additional thermal resistance caused by rust, scale, sediment, or biological accumulation on tube surfaces that reduces the effective U-value over time", "A safety multiplier that artificially increases heat transfer area by 500%", "The mechanical friction factor between the shell and outer air", "A parameter indicating the percentage of refrigerant leaked into the atmosphere"],
         answer: 0,
         explanation: "\u2705 Why 'An additional thermal resistance caused by rust, scale, sediment, or biological accumulation on tube surfaces that reduces the effective U-value over time' is Correct: Fouling introduces an extra conductive resistance 1/U_dirty = 1/U_clean + R_f, degrading thermal performance and necessitating periodic cleaning."
+      },
+      {
+        id: 295,
+        question: "According to thermal engineering standards, how is a 'Heat Exchanger' comprehensively defined?",
+        options: ["A device used to transfer thermal energy (enthalpy) between two or more fluids, between a solid surface and a fluid, or between solid particulates and a fluid, at different temperatures and in thermal contact", "A closed pump that pressurizes liquids to increase their chemical potential", "An adiabatic throttling valve that reduces fluid temperature without heat loss", "A machine that converts mechanical kinetic energy directly into acoustic vibrations"],
+        answer: 0,
+        explanation: "\u2705 Why 'A device used to transfer thermal energy (enthalpy) between two or more fluids, between a solid surface and a fluid, or between solid particulates and a fluid, at different temperatures and in thermal contact' is Correct: This comprehensive definition covers all categories of heat exchange equipment, whether fluid-to-fluid, fluid-to-particulate, or fluid-to-solid."
+      },
+      {
+        id: 296,
+        question: "What is the defining characteristic of a 'Closed-Type' (indirect contact / recuperative) heat exchanger, such as a double-pipe or shell-and-tube exchanger?",
+        options: ["The hot and cold fluid streams never come into direct physical contact and are completely separated by a conductive tube wall or plate", "The two fluids are mixed directly in an open chamber to reach instant equilibrium", "Heat transfer is achieved purely by chemical combustion of the fluids", "Both fluids must always be in the supercritical gaseous phase"],
+        answer: 0,
+        explanation: "\u2705 Why 'The hot and cold fluid streams never come into direct physical contact and are completely separated by a conductive tube wall or plate' is Correct: In closed-type (recuperative) exchangers, fluids flow through separate passages separated by walls, preventing mixing and cross-contamination."
+      },
+      {
+        id: 297,
+        question: "How is a 'Double-Pipe' (concentric tube) heat exchanger structurally configured?",
+        options: ["One smaller pipe placed concentrically inside a larger pipe, where one fluid flows through the inner tube while the other flows through the annular space between pipes", "Two side-by-side pipes submerged in an unsealed water bucket", "A single spiral coil surrounded by a vacuum glass envelope", "Two intersecting perpendicular pipes with a perforated mixing junction"],
+        answer: 0,
+        explanation: "\u2705 Why 'One smaller pipe placed concentrically inside a larger pipe, where one fluid flows through the inner tube while the other flows through the annular space between pipes' is Correct: The double-pipe design is the simplest indirect-contact heat exchanger, featuring an inner pipe inside an outer pipe forming an annulus."
+      },
+      {
+        id: 298,
+        question: "What fundamental physical law explains why heat exchangers function spontaneously without requiring an external work drive?",
+        options: ["The Second Law of Thermodynamics, which dictates that thermal energy naturally and spontaneously flows from higher temperature regions to lower temperature regions", "The Conservation of Linear Momentum", "Pascal's Law of hydrostatic fluid transmission", "Archimedes' Principle of buoyancy"],
+        answer: 0,
+        explanation: "\u2705 Why 'The Second Law of Thermodynamics, which dictates that thermal energy naturally and spontaneously flows from higher temperature regions to lower temperature regions' is Correct: Spontaneous heat conduction and convection occur strictly down a negative temperature gradient (from hot to cold) in accordance with the Second Law."
+      },
+      {
+        id: 299,
+        question: "At any specific point along a heat exchanger, what parameters directly determine the local heat flux (heat flow rate per unit area, kW/m\u00b2)?",
+        options: ["The local overall heat transfer coefficient (U) and the local temperature difference (\u0394T) between the hot and cold fluid streams", "Only the total length of the heat exchanger shell", "The atmospheric barometric pressure outside the building", "The electrical ground voltage of the support frame"],
+        answer: 0,
+        explanation: "\u2705 Why 'The local overall heat transfer coefficient (U) and the local temperature difference (\u0394T) between the hot and cold fluid streams' is Correct: Local heat flux is given by q'' = U \u00b7 \u0394T, where both U and \u0394T may vary along the flow path."
+      },
+      {
+        id: 300,
+        question: "Which set of operational and physical factors directly governs the numerical magnitude of the overall heat transfer coefficient (U) in a heat exchanger?",
+        options: ["Thermophysical fluid properties (viscosity, thermal conductivity), fluid velocities, construction materials, flow geometry, and surface cleanliness (fouling)", "Only the color of paint used on the outer shell", "The ambient acoustic noise level in the plant room", "The chemical electronegativity of the fluid container bolts"],
+        answer: 0,
+        explanation: "\u2705 Why 'Thermophysical fluid properties (viscosity, thermal conductivity), fluid velocities, construction materials, flow geometry, and surface cleanliness (fouling)' is Correct: The U-value is synthesized from inner and outer convective film coefficients (governed by fluid velocity and Reynolds/Prandtl numbers), tube wall conductance (k/L), and fouling resistance."
       }
     ]
   }
