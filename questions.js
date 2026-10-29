@@ -5687,6 +5687,48 @@ var SUBJECT_DATA = {  basic_electronics: {
         options: ["Because virtually all radiation emitted by the small body strikes the room and is absorbed, with practically zero reflection returning to the body, making the enclosure act as a blackbody", "Because large rooms have an emissivity of exactly zero", "Because air inside large rooms conducts heat at infinite velocity", "Because the Stefan-Boltzmann constant doubles in large enclosed spaces"],
         answer: 0,
         explanation: "\u2705 Why 'Because virtually all radiation emitted by the small body strikes the room and is absorbed, with practically zero reflection returning to the body, making the enclosure act as a blackbody' is Correct: When A_1 << A_2, the view factor F_12 = 1 and the term (A_1/A_2)(1/\u03b5_2 - 1) in the enclosure equation approaches zero, causing the large room to behave as an ideal blackbody absorber."
+      },
+      {
+        id: 271,
+        question: "When an exposed surface (such as vegetation or a roof) exchanges heat by both convection with ambient air and radiation with the night sky, what surface energy balance applies in steady state?",
+        options: ["h \u00b7 (T_air - T_surface) = \u03b5 \u00b7 \u03c3 \u00b7 (T_surface\u2074 - T_sky\u2074)", "h \u00b7 (T_air - T_surface) = k / L \u00b7 (T_surface - T_sky)", "T_surface = (T_air + T_sky) / 2", "h + \u03b5 \u00b7 \u03c3 = T_surface \u00b7 T_sky"],
+        answer: 0,
+        explanation: "\u2705 Why 'h \u00b7 (T_air - T_surface) = \u03b5 \u00b7 \u03c3 \u00b7 (T_surface\u2074 - T_sky\u2074)' is Correct: At the surface, the convective heat gained from the warmer ambient air must equal the net radiant heat lost to the cold night sky."
+      },
+      {
+        id: 272,
+        question: "In nocturnal atmospheric radiation, what does the engineering assumption 'none of the outgoing radiation comes back' signify?",
+        options: ["The clear night sky and outer space act as an ideal blackbody radiation sink at effective sky temperature T_sky, absorbing all emitted rays without reflection", "The atmosphere reflects 100% of rays back to the ground", "The surface has zero emissivity", "Radiation velocity drops to zero at the stratospheric boundary"],
+        answer: 0,
+        explanation: "\u2705 Why 'The clear night sky and outer space act as an ideal blackbody radiation sink at effective sky temperature T_sky, absorbing all emitted rays without reflection' is Correct: Outer space behaves as an infinite heat sink that does not re-emit or reflect radiation back, modeled by assigning an effective blackbody sky temperature."
+      },
+      {
+        id: 273,
+        question: "Why does thermal radiation become the overwhelmingly dominant mode of heat transfer at high temperatures (such as 700\u00b0C steam pipes) compared to low temperatures?",
+        options: ["Because radiant emissive power increases with the fourth power of absolute temperature (T\u2074), growing far faster than linear conduction or convection", "Because thermal conductivity of metals drops to absolute zero at 700\u00b0C", "Because convective film coefficients become zero at high temperatures", "Because atmospheric density approaches infinity at elevated surface temperatures"],
+        answer: 0,
+        explanation: "\u2705 Why 'Because radiant emissive power increases with the fourth power of absolute temperature (T\u2074), growing far faster than linear conduction or convection' is Correct: Convection scales linearly with temperature difference (\u0394T), whereas radiation scales with (T_1\u2074 - T_2\u2074), making radiation grow exponentially dominant as absolute temperature rises."
+      },
+      {
+        id: 274,
+        question: "How can the non-linear radiation equation Q = \u03b5 \u00b7 \u03c3 \u00b7 A \u00b7 (T_1\u2074 - T_2\u2074) be linearized into an equivalent radiation heat transfer coefficient (h_r) such that Q = h_r \u00b7 A \u00b7 (T_1 - T_2)?",
+        options: ["h_r = \u03b5 \u00b7 \u03c3 \u00b7 (T_1 + T_2) \u00b7 (T_1\u00b2 + T_2\u00b2)", "h_r = \u03b5 \u00b7 \u03c3 / (T_1 - T_2)", "h_r = \u03b5 \u00b7 \u03c3 \u00b7 (T_1\u2074 - T_2\u2074)", "h_r = (T_1 + T_2) / (\u03b5 \u00b7 \u03c3)"],
+        answer: 0,
+        explanation: "\u2705 Why 'h_r = \u03b5 \u00b7 \u03c3 \u00b7 (T_1 + T_2) \u00b7 (T_1\u00b2 + T_2\u00b2)' is Correct: Factoring the difference of fourth powers: (T_1\u2074 - T_2\u2074) = (T_1 - T_2)(T_1 + T_2)(T_1\u00b2 + T_2\u00b2). Defining h_r = \u03b5\u00b7\u03c3\u00b7(T_1 + T_2)(T_1\u00b2 + T_2\u00b2) allows radiation to be treated like convection in parallel resistance networks."
+      },
+      {
+        id: 275,
+        question: "Why is the radiation view factor (shape factor F_12) equal to exactly 1.0 for a convex body (such as a sphere or pipe) suspended inside a complete enclosure?",
+        options: ["Because all radiant energy leaving the convex exterior surface in any direction must directly strike the enclosing surrounding walls", "Because convex bodies reflect 100% of their own emitted radiation back into their own core", "Because the surrounding enclosure is always at absolute zero", "Because view factor is defined as the ratio of surface diameters"],
+        answer: 0,
+        explanation: "\u2705 Why 'Because all radiant energy leaving the convex exterior surface in any direction must directly strike the enclosing surrounding walls' is Correct: A convex body cannot 'see' itself (F_11 = 0). By summation rule \u03a3 F_1j = 1, all radiation leaving body 1 necessarily intercepts the surrounding enclosure (F_12 = 1)."
+      },
+      {
+        id: 276,
+        question: "In agricultural frost problems, what thermodynamic balance causes crop leaves to freeze at 0\u00b0C even when ambient air temperature is above 0\u00b0C?",
+        options: ["Radiative cooling to the cold sky extracts heat faster than convection from calm air can replenish it, depressing leaf equilibrium temperature below air temperature", "Air convection cools the plant faster than radiative loss", "Evaporative cooling from dry leaves creates liquid nitrogen", "Ambient air at 4\u00b0C has a negative specific heat"],
+        answer: 0,
+        explanation: "\u2705 Why 'Radiative cooling to the cold sky extracts heat faster than convection from calm air can replenish it, depressing leaf equilibrium temperature below air temperature' is Correct: When the sky is clear, radiative emission to the ~110 K sky sink chills the surface below ambient air temperature until convective heat transfer from the warmer air matches the radiative deficit."
       }
     ]
   }
