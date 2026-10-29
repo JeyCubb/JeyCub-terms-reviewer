@@ -421,7 +421,7 @@ function getFilteredPracticeQuestions() {
   } else if (state.practiceFilter === 'ht_original') {
     return allQs.filter(q => q.id >= 1 && q.id <= 146);
   } else if (state.practiceFilter === 'ht_canvas_all') {
-    return allQs.filter(q => q.id >= 147 && q.id <= 210);
+    return allQs.filter(q => q.id >= 147 && q.id <= 225);
   } else if (state.practiceFilter === 'ht_mod1_1') {
     return allQs.filter(q => q.id >= 147 && q.id <= 161);
   } else if (state.practiceFilter === 'ht_mod1_2') {
@@ -432,6 +432,8 @@ function getFilteredPracticeQuestions() {
     return allQs.filter(q => q.id >= 189 && q.id <= 200);
   } else if (state.practiceFilter === 'ht_mod5_1') {
     return allQs.filter(q => q.id >= 201 && q.id <= 210);
+  } else if (state.practiceFilter === 'ht_mod7_1') {
+    return allQs.filter(q => q.id >= 211 && q.id <= 225);
   }
   return allQs;
 }
@@ -712,7 +714,8 @@ function updateSubjectUI() {
     'opt-filter-ht-mod2',
     'opt-filter-ht-mod3',
     'opt-filter-ht-mod4',
-    'opt-filter-ht-mod5'
+    'opt-filter-ht-mod5',
+    'opt-filter-ht-mod7'
   ];
   htFilterIds.forEach(id => {
     const el = document.getElementById(id);
@@ -729,7 +732,7 @@ function updateSubjectUI() {
       state.practiceFilter = 'all';
     } else if (state.practiceFilter === 'fluid_machinery' && state.currentSubject !== 'fluid_mechanics') {
       state.practiceFilter = 'all';
-    } else if ((state.practiceFilter === 'ht_original' || state.practiceFilter === 'ht_canvas_all' || state.practiceFilter === 'ht_mod1_1' || state.practiceFilter === 'ht_mod1_2' || state.practiceFilter === 'ht_mod1_3' || state.practiceFilter === 'ht_mod4_1' || state.practiceFilter === 'ht_mod5_1') && state.currentSubject !== 'heat_transfer') {
+    } else if ((state.practiceFilter === 'ht_original' || state.practiceFilter === 'ht_canvas_all' || state.practiceFilter === 'ht_mod1_1' || state.practiceFilter === 'ht_mod1_2' || state.practiceFilter === 'ht_mod1_3' || state.practiceFilter === 'ht_mod4_1' || state.practiceFilter === 'ht_mod5_1' || state.practiceFilter === 'ht_mod7_1') && state.currentSubject !== 'heat_transfer') {
       state.practiceFilter = 'all';
     }
     filterSelect.value = state.practiceFilter;
@@ -2249,6 +2252,8 @@ function renderCurrentPracticeQuestion() {
 
         if (isAnswered) {
           btn.classList.add('disabled');
+          btn.setAttribute('data-key-hint', 'Press again for Next →');
+          btn.setAttribute('title', 'Press again to advance to Next Question');
           if (origIdx === q.answer) {
             btn.classList.add('selected-correct');
             btn.innerHTML = `
@@ -2399,19 +2404,39 @@ function revealCurrentSolution() {
   }
 }
 
+let lastAnswerSelectTime = 0;
+
 function selectPracticeAnswer(key, optionIdx) {
   stopNarration(false);
+
+  // If already answered, pressing an option button again advances to the Next Question!
+  let isAlreadyAnswered = false;
   if (state.practiceFilter === 'weak' || state.practiceFilter === 'bookmarked') {
-    if (state.sessionPoolAnswers[key] !== undefined) return;
+    isAlreadyAnswered = (state.sessionPoolAnswers[key] !== undefined);
+  } else {
+    isAlreadyAnswered = (state.userAnswers[key] !== undefined);
+  }
+
+  if (isAlreadyAnswered) {
+    // Guard against accidental ultra-fast double clicks (< 180ms)
+    if (Date.now() - lastAnswerSelectTime < 180) {
+      return;
+    }
+    nextQuestion();
+    return;
+  }
+
+  lastAnswerSelectTime = Date.now();
+
+  if (state.practiceFilter === 'weak' || state.practiceFilter === 'bookmarked') {
     state.sessionPoolAnswers[key] = optionIdx;
   } else {
-    if (state.userAnswers[key] !== undefined) return;
+    state.userAnswers[key] = optionIdx;
   }
 
   const questions = getFilteredPracticeQuestions();
   const q = questions[state.currentIndex];
 
-  state.userAnswers[key] = optionIdx;
   saveData('jt_user_answers', state.userAnswers);
 
   if (q && optionIdx !== q.answer) {

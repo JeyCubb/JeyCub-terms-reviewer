@@ -1029,7 +1029,13 @@ body {
 
 .option-btn.disabled {
 
-  cursor: default;
+  cursor: pointer;
+
+}
+
+.option-btn.disabled:hover {
+
+  filter: brightness(1.08);
 
 }
 
