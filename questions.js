@@ -5939,6 +5939,34 @@ var SUBJECT_DATA = {  basic_electronics: {
         options: ["An exchanger where the two fluid streams flow perpendicular (at 90 degrees) to one another, widely used in automobile radiators, air conditioning coils, and compact gas-to-liquid exchangers", "An exchanger where fluids mix together in a turbulent vortex chamber", "An underground geothermal well with zero flow motion", "A pipe surrounded by a vacuum layer without any secondary fluid"],
         answer: 0,
         explanation: "\u2705 Why 'An exchanger where the two fluid streams flow perpendicular (at 90 degrees) to one another, widely used in automobile radiators, air conditioning coils, and compact gas-to-liquid exchangers' is Correct: In cross-flow, one fluid flows through finned tubes while air flows across them perpendicularly, commonly classified as mixed or unmixed cross-flow."
+      },
+      {
+        id: 307,
+        question: "When modeling the total radiant power emitted by celestial stars like the Sun, what geometric and thermal assumptions are applied?",
+        options: ["The star is modeled as a spherical blackbody (emissivity e = 1.0) with surface area A = 4\u00b7\u03c0\u00b7R\u00b2, radiating total power Q = 4\u00b7\u03c0\u00b7R\u00b2\u00b7\u03c3\u00b7T\u2074 into space", "The star radiates only through its flat equatorial circular plane A = \u03c0\u00b7R\u00b2", "The star transfers heat exclusively by conduction through interplanetary ether", "The star's emissive power is inversely proportional to the cube of its radius"],
+        answer: 0,
+        explanation: "\u2705 Why 'The star is modeled as a spherical blackbody (emissivity e = 1.0) with surface area A = 4\u00b7\u03c0\u00b7R\u00b2, radiating total power Q = 4\u00b7\u03c0\u00b7R\u00b2\u00b7\u03c3\u00b7T\u2074 into space' is Correct: Stars radiate into near absolute zero space from their full spherical surface area A = 4\u03c0R\u00b2 as idealized blackbody emitters."
+      },
+      {
+        id: 308,
+        question: "In an Air-Cooled Condenser (ACC), why is the overall heat transfer coefficient (U) customarily referenced to the 'air-side area'?",
+        options: ["Because the convective film coefficient of ambient air is far smaller than that of condensing steam, making air-side convective resistance the dominant controlling resistance", "Because air-side surface area is always smaller than the tube internal area", "Because steam cannot transfer heat across copper or steel tubes", "Because air-cooled condensers operate in a complete vacuum"],
+        answer: 0,
+        explanation: "\u2705 Why 'Because the convective film coefficient of ambient air is far smaller than that of condensing steam, making air-side convective resistance the dominant controlling resistance' is Correct: Air film coefficients (typically 20\u201350 W/m\u00b2\u00b7K) are orders of magnitude lower than phase-change condensation coefficients (5,000\u201315,000 W/m\u00b2\u00b7K). Thus, the air side controls the heat transfer and requires extended finned surfaces."
+      },
+      {
+        id: 309,
+        question: "In a boiler Economizer with no external energy loss, what thermodynamic heat balance governs the gas and water temperature changes?",
+        options: ["m_gas \u00b7 C_p,gas \u00b7 (T_gas,in - T_gas,out) = m_water \u00b7 C_p,water \u00b7 (T_water,out - T_water,in)", "m_gas \u00b7 C_p,gas = m_water \u00b7 C_p,water \u00b7 LMTD", "T_gas,in - T_gas,out = T_water,out - T_water,in regardless of mass flow rate", "m_gas \u00b7 T_gas,in = m_water \u00b7 T_water,in"],
+        answer: 0,
+        explanation: "\u2705 Why 'm_gas \u00b7 C_p,gas \u00b7 (T_gas,in - T_gas,out) = m_water \u00b7 C_p,water \u00b7 (T_water,out - T_water,in)' is Correct: By the First Law of Thermodynamics, the sensible heat lost by the flue gas stream equals the sensible heat gained by the liquid boiler feedwater."
+      },
+      {
+        id: 310,
+        question: "In heat exchangers where one of the fluids undergoes an isothermal phase change (such as in a steam condenser or boiler), how does the LMTD for parallel flow compare to that for counterflow?",
+        options: ["The LMTD is mathematically identical for both parallel flow and counterflow because the condensing or boiling fluid temperature remains perfectly constant throughout", "Counterflow LMTD is ten times larger than parallel flow", "Parallel flow cannot function when phase change occurs", "The LMTD becomes zero in all phase-change heat exchangers"],
+        answer: 0,
+        explanation: "\u2705 Why 'The LMTD is mathematically identical for both parallel flow and counterflow because the condensing or boiling fluid temperature remains perfectly constant throughout' is Correct: When one fluid temperature is constant (T_h = const or T_c = const), the temperature difference profile across the heat exchanger is geometrically identical regardless of the second fluid's flow direction, making LMTD_parallel = LMTD_counter."
       }
     ]
   }
