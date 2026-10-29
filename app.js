@@ -3272,7 +3272,8 @@ function narrateCurrentPracticeQuestion() {
 
   // Track start positions of each option for boundary tracking
   const optPositions = [];
-  let script = cleanQ + '. ... ';
+  // Solid pause after reading question before starting choices
+  let script = cleanQ + '. ... ... ';
 
   if (shuffledOpts && Array.isArray(shuffledOpts) && shuffledOpts.length > 0) {
     shuffledOpts.forEach((optObj, idx) => {
@@ -3280,7 +3281,8 @@ function narrateCurrentPracticeQuestion() {
       const cleanOpt = prepareTextForSpeech(optObj.text || '');
       const startPos = script.length;
       optPositions.push({ letter, startPos });
-      script += `${letter}. ${cleanOpt}. ... `;
+      // Distinct pause between letter and text, plus a solid half-second pause after each choice
+      script += `${letter}. ... ${cleanOpt}. ... ... `;
     });
   } else if (Array.isArray(q.options)) {
     q.options.forEach((opt, idx) => {
@@ -3288,7 +3290,7 @@ function narrateCurrentPracticeQuestion() {
       const cleanOpt = prepareTextForSpeech(opt || '');
       const startPos = script.length;
       optPositions.push({ letter, startPos });
-      script += `${letter}. ${cleanOpt}. ... `;
+      script += `${letter}. ... ${cleanOpt}. ... ... `;
     });
   }
 
@@ -3302,7 +3304,7 @@ function narrateCurrentPracticeQuestion() {
 
       narrationUtterance = new SpeechSynthesisUtterance(fullScript);
       narrationUtterance.lang = 'en-US';
-      narrationUtterance.rate = 0.98;
+      narrationUtterance.rate = 0.92; // Slightly more relaxed, comfortable reader pace
       narrationUtterance.pitch = 1.0;
 
       const voice = getBestVoice();
