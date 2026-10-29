@@ -399,11 +399,8 @@ function getFilteredPracticeQuestions() {
       const key = `${state.currentSubject}_q${q.id}`;
       return (state.groupMistakes[key] || 0) > 0;
     });
-    return pool.sort((a, b) => {
-      const keyA = `${state.currentSubject}_q${a.id}`;
-      const keyB = `${state.currentSubject}_q${b.id}`;
-      return (state.groupMistakes[keyB] || 0) - (state.groupMistakes[keyA] || 0);
-    });
+    // Stably sort by question ID so questions never jump or bump around when a mistake is made!
+    return pool.sort((a, b) => a.id - b.id);
   } else if (state.practiceFilter === 'prelim_exam') {
     return allQs.filter(q => q.id >= 117 && q.id <= 136);
   } else if (state.practiceFilter === 'seatwork2_bjt') {
@@ -842,9 +839,8 @@ function subscribeGroupMistakes() {
       const data = snapshot.val();
       state.groupMistakes = (data && typeof data === 'object') ? data : {};
       saveData('jt_group_mistakes_local', state.groupMistakes);
-      if (state.practiceFilter === 'weak') {
-        renderCurrentPracticeQuestion();
-      }
+      // Do NOT re-render the active practice question in the background while studying/reading!
+      updateStats();
       if (state.currentMode === 'all') {
         filterAllQuestions();
       }
@@ -2468,11 +2464,21 @@ function selectPracticeAnswer(key, optionIdx) {
 
   const questions = getFilteredPracticeQuestions();
   const q = questions[state.currentIndex];
+  const currentQId = q ? q.id : null;
 
   saveData('jt_user_answers', state.userAnswers);
 
   if (q && optionIdx !== q.answer) {
     recordGroupMistake(key);
+  }
+
+  // Ensure currentIndex stays securely locked on the current question so you can read the explanation
+  if (currentQId !== null) {
+    const poolNow = getFilteredPracticeQuestions();
+    const keepIdx = poolNow.findIndex(item => item.id === currentQId);
+    if (keepIdx !== -1) {
+      state.currentIndex = keepIdx;
+    }
   }
 
   renderCurrentPracticeQuestion();
