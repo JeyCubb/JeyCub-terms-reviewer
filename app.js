@@ -518,18 +518,38 @@ function handleJumpInputKey(e) {
 
 function resetAllSubjectAnswers() {
   const info = getActiveSubjectInfo();
-  if (!confirm(`Are you sure you want to reset all your answered practice questions for ${info.title}? (Your class weak questions memory and bookmarks will remain saved)`)) {
+  if (!confirm(`Are you sure you want to reset all your answered practice questions for ${info.title}?`)) {
     return;
   }
+
+  const alsoDeleteWeak = confirm(`Do you also want to DELETE the Weak Questions memory for ${info.title}?\n\n• Click OK = Reset answers AND DELETE Weak Questions memory\n• Click Cancel = Reset answers only (KEEP Weak Questions memory)`);
 
   const questions = getActiveQuestions();
   questions.forEach(q => {
     const key = `${state.currentSubject}_q${q.id}`;
     delete state.userAnswers[key];
     delete state.sessionPoolAnswers[key];
+    if (alsoDeleteWeak) {
+      delete state.groupMistakes[key];
+      if (state.firebaseDb) {
+        try {
+          state.firebaseDb.ref(`group_mistakes/${key}`).remove();
+        } catch (e) {
+          console.warn("Firebase remove error:", e);
+        }
+      }
+    }
   });
 
   saveData('jt_user_answers', state.userAnswers);
+  if (alsoDeleteWeak) {
+    saveData('jt_group_mistakes_local', state.groupMistakes);
+    if (state.practiceFilter === 'weak') {
+      state.practiceFilter = 'all';
+      const filterSelect = document.getElementById('practice-filter-select');
+      if (filterSelect) filterSelect.value = 'all';
+    }
+  }
 
   // Return to Question 1 upon resetting
   state.currentIndex = 0;
