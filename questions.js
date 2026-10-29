@@ -5897,6 +5897,48 @@ var SUBJECT_DATA = {  basic_electronics: {
         options: ["Thermophysical fluid properties (viscosity, thermal conductivity), fluid velocities, construction materials, flow geometry, and surface cleanliness (fouling)", "Only the color of paint used on the outer shell", "The ambient acoustic noise level in the plant room", "The chemical electronegativity of the fluid container bolts"],
         answer: 0,
         explanation: "\u2705 Why 'Thermophysical fluid properties (viscosity, thermal conductivity), fluid velocities, construction materials, flow geometry, and surface cleanliness (fouling)' is Correct: The U-value is synthesized from inner and outer convective film coefficients (governed by fluid velocity and Reynolds/Prandtl numbers), tube wall conductance (k/L), and fouling resistance."
+      },
+      {
+        id: 301,
+        question: "In a 'Parallel-Flow' heat exchanger, where does the maximum temperature difference (\u0394t_max) between the hot and cold fluids always occur?",
+        options: ["At the fluid inlet end, where the hottest hot fluid enters adjacent to the coldest cold fluid", "At the fluid outlet end, right before discharge", "At the exact midpoint of the pipe length", "Inside the bypass relief valve"],
+        answer: 0,
+        explanation: "\u2705 Why 'At the fluid inlet end, where the hottest hot fluid enters adjacent to the coldest cold fluid' is Correct: Because both streams enter at the same end, the initial temperature difference is at its absolute maximum (\u0394t_inlet = T_h,in - T_c,in = \u0394t_max) and continuously diminishes toward the outlet."
+      },
+      {
+        id: 302,
+        question: "What fundamental thermodynamic temperature limitation exists strictly for a Parallel-Flow heat exchanger?",
+        options: ["The cold fluid exit temperature can never exceed the hot fluid exit temperature (T_c,out \u2264 T_h,out)", "The hot fluid exit temperature can never drop below 100\u00b0C", "Both fluids must always exit at absolute zero", "The cold fluid must always vaporize before the outlet"],
+        answer: 0,
+        explanation: "\u2705 Why 'The cold fluid exit temperature can never exceed the hot fluid exit temperature (T_c,out \u2264 T_h,out)' is Correct: In parallel flow, as the two streams flow together, they can at best approach thermal equilibrium (T_c,out = T_h,out) in an infinite area exchanger, meaning the cold fluid can never emerge hotter than the leaving hot fluid."
+      },
+      {
+        id: 303,
+        question: "In a 'Counter-Flow' heat exchanger, how are the terminal temperature differences at the two ends (End 1 and End 2) defined?",
+        options: ["\u0394t_1 = (T_h,in - T_c,out) and \u0394t_2 = (T_h,out - T_c,in)", "\u0394t_1 = (T_h,in - T_c,in) and \u0394t_2 = (T_h,out - T_c,out)", "\u0394t_1 = (T_h,in + T_h,out) / 2", "\u0394t_1 = T_h,in \u00b7 T_c,out"],
+        answer: 0,
+        explanation: "\u2705 Why '\u0394t_1 = (T_h,in - T_c,out) and \u0394t_2 = (T_h,out - T_c,in)' is Correct: Because the fluids flow in opposite directions, one end pairs the hot fluid inlet with the cold fluid outlet, while the opposite end pairs the hot fluid outlet with the cold fluid inlet."
+      },
+      {
+        id: 304,
+        question: "Why is Counter-Flow able to heat the cold fluid to an exit temperature that is higher than the hot fluid exit temperature (T_c,out > T_h,out)?",
+        options: ["Because the leaving cold fluid exchanges its final heat with the incoming hottest hot fluid at the entrance end", "Because counter-flow violates the Second Law of Thermodynamics", "Because frictional shear heating generates extra thermal energy", "Because counter-flow creates an internal vacuum"],
+        answer: 0,
+        explanation: "\u2705 Why 'Because the leaving cold fluid exchanges its final heat with the incoming hottest hot fluid at the entrance end' is Correct: Counter-current flow allows the cold fluid to be warmed progressively along its path, finally encountering the highest-temperature entering hot fluid just before discharge."
+      },
+      {
+        id: 305,
+        question: "For specified hot and cold fluid inlet and outlet temperatures, how does the Logarithmic Mean Temperature Difference of a counter-flow exchanger compare to that of a parallel-flow exchanger?",
+        options: ["LMTD_counter is always greater than (or equal to) LMTD_parallel", "LMTD_counter is always smaller than LMTD_parallel", "Both LMTDs are always identical regardless of flow direction", "LMTD_counter is always negative"],
+        answer: 0,
+        explanation: "\u2705 Why 'LMTD_counter is always greater than (or equal to) LMTD_parallel' is Correct: Counter-flow maintains a more uniform and higher effective temperature driving difference throughout the exchanger, yielding LMTD_counter \u2265 LMTD_parallel, and thus requiring the smallest surface area."
+      },
+      {
+        id: 306,
+        question: "What is a 'Cross-Flow' heat exchanger and where is it commonly utilized in practical engineering systems?",
+        options: ["An exchanger where the two fluid streams flow perpendicular (at 90 degrees) to one another, widely used in automobile radiators, air conditioning coils, and compact gas-to-liquid exchangers", "An exchanger where fluids mix together in a turbulent vortex chamber", "An underground geothermal well with zero flow motion", "A pipe surrounded by a vacuum layer without any secondary fluid"],
+        answer: 0,
+        explanation: "\u2705 Why 'An exchanger where the two fluid streams flow perpendicular (at 90 degrees) to one another, widely used in automobile radiators, air conditioning coils, and compact gas-to-liquid exchangers' is Correct: In cross-flow, one fluid flows through finned tubes while air flows across them perpendicularly, commonly classified as mixed or unmixed cross-flow."
       }
     ]
   }
