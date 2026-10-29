@@ -421,7 +421,7 @@ function getFilteredPracticeQuestions() {
   } else if (state.practiceFilter === 'ht_original') {
     return allQs.filter(q => q.id >= 1 && q.id <= 146);
   } else if (state.practiceFilter === 'ht_canvas_all') {
-    return allQs.filter(q => q.id >= 147 && q.id <= 276);
+    return allQs.filter(q => q.id >= 147 && q.id <= 288);
   } else if (state.practiceFilter === 'ht_mod1_1') {
     return allQs.filter(q => q.id >= 147 && q.id <= 161);
   } else if (state.practiceFilter === 'ht_mod1_2') {
@@ -440,6 +440,8 @@ function getFilteredPracticeQuestions() {
     return allQs.filter(q => q.id >= 249 && q.id <= 258);
   } else if (state.practiceFilter === 'ht_mod4_rad') {
     return allQs.filter(q => q.id >= 259 && q.id <= 276);
+  } else if (state.practiceFilter === 'ht_mod_hx') {
+    return allQs.filter(q => q.id >= 277 && q.id <= 288);
   }
   return allQs;
 }
@@ -724,7 +726,8 @@ function updateSubjectUI() {
     'opt-filter-ht-mod7',
     'opt-filter-ht-mod7-2',
     'opt-filter-ht-assign-conv',
-    'opt-filter-ht-mod4-rad'
+    'opt-filter-ht-mod4-rad',
+    'opt-filter-ht-mod-hx'
   ];
   htFilterIds.forEach(id => {
     const el = document.getElementById(id);
@@ -741,7 +744,7 @@ function updateSubjectUI() {
       state.practiceFilter = 'all';
     } else if (state.practiceFilter === 'fluid_machinery' && state.currentSubject !== 'fluid_mechanics') {
       state.practiceFilter = 'all';
-    } else if ((state.practiceFilter === 'ht_original' || state.practiceFilter === 'ht_canvas_all' || state.practiceFilter === 'ht_mod1_1' || state.practiceFilter === 'ht_mod1_2' || state.practiceFilter === 'ht_mod1_3' || state.practiceFilter === 'ht_mod4_1' || state.practiceFilter === 'ht_mod5_1' || state.practiceFilter === 'ht_mod7_1' || state.practiceFilter === 'ht_mod7_2' || state.practiceFilter === 'ht_assignment_conv' || state.practiceFilter === 'ht_mod4_rad') && state.currentSubject !== 'heat_transfer') {
+    } else if ((state.practiceFilter === 'ht_original' || state.practiceFilter === 'ht_canvas_all' || state.practiceFilter === 'ht_mod1_1' || state.practiceFilter === 'ht_mod1_2' || state.practiceFilter === 'ht_mod1_3' || state.practiceFilter === 'ht_mod4_1' || state.practiceFilter === 'ht_mod5_1' || state.practiceFilter === 'ht_mod7_1' || state.practiceFilter === 'ht_mod7_2' || state.practiceFilter === 'ht_assignment_conv' || state.practiceFilter === 'ht_mod4_rad' || state.practiceFilter === 'ht_mod_hx') && state.currentSubject !== 'heat_transfer') {
       state.practiceFilter = 'all';
     }
     filterSelect.value = state.practiceFilter;

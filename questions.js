@@ -5729,6 +5729,90 @@ var SUBJECT_DATA = {  basic_electronics: {
         options: ["Radiative cooling to the cold sky extracts heat faster than convection from calm air can replenish it, depressing leaf equilibrium temperature below air temperature", "Air convection cools the plant faster than radiative loss", "Evaporative cooling from dry leaves creates liquid nitrogen", "Ambient air at 4\u00b0C has a negative specific heat"],
         answer: 0,
         explanation: "\u2705 Why 'Radiative cooling to the cold sky extracts heat faster than convection from calm air can replenish it, depressing leaf equilibrium temperature below air temperature' is Correct: When the sky is clear, radiative emission to the ~110 K sky sink chills the surface below ambient air temperature until convective heat transfer from the warmer air matches the radiative deficit."
+      },
+      {
+        id: 277,
+        question: "What is the fundamental conservation law governing radiant energy falling upon any physical body?",
+        options: ["a + r + t = 1 (Absorptivity + Reflectivity + Transmissivity = 1)", "a \u00b7 r \u00b7 t = 1", "a + r = t", "a / (r + t) = 1"],
+        answer: 0,
+        explanation: "\u2705 Why 'a + r + t = 1 (Absorptivity + Reflectivity + Transmissivity = 1)' is Correct: When radiant energy strikes a body, the total incident radiation is partitioned into three fractions: the fraction absorbed (a), the fraction reflected (r), and the fraction transmitted (t), which must sum to 1 by energy conservation."
+      },
+      {
+        id: 278,
+        question: "For an opaque body (a body through which no thermal radiation can pass), how does the radiation energy balance simplify?",
+        options: ["Transmissivity t = 0, so a + r = 1", "Reflectivity r = 0, so a + t = 1", "Absorptivity a = 0, so r + t = 1", "a + r + t = 0"],
+        answer: 0,
+        explanation: "\u2705 Why 'Transmissivity t = 0, so a + r = 1' is Correct: Most solid engineering materials are opaque to thermal radiation (t = 0), meaning all incident radiation is either absorbed or reflected at the surface."
+      },
+      {
+        id: 279,
+        question: "In the Stefan-Boltzmann law expressed in Metric/SI engineering units using hours, what is the numerical value of the constant \u03c3 in J / (hr\u00b7m\u00b2\u00b7K\u2074)?",
+        options: ["20,408.4 \u00d7 10\u207b\u2078 J / (hr\u00b7m\u00b2\u00b7K\u2074)", "5.67 \u00d7 10\u207b\u2078 J / (hr\u00b7m\u00b2\u00b7K\u2074)", "1,000 \u00d7 10\u207b\u2078 J / (hr\u00b7m\u00b2\u00b7K\u2074)", "3.1416 \u00d7 10\u207b\u2078 J / (hr\u00b7m\u00b2\u00b7K\u2074)"],
+        answer: 0,
+        explanation: "\u2705 Why '20,408.4 \u00d7 10\u207b\u2078 J / (hr\u00b7m\u00b2\u00b7K\u2074)' is Correct: Multiplying 5.67 \u00d7 10\u207b\u2078 W/(m\u00b2\u00b7K\u2074) by 3600 seconds/hour converts Watts (J/s) to J/hr: 5.67 \u00d7 3600 \u00d7 10\u207b\u2078 = 20,412 (commonly rounded to 20,408.4 \u00d7 10\u207b\u2078 J/(hr\u00b7m\u00b2\u00b7K\u2074))."
+      },
+      {
+        id: 280,
+        question: "What is the general thermal engineering definition of a 'Heat Exchanger'?",
+        options: ["Any device which affects the transfer of heat from one substance to another", "A machine that converts thermal heat strictly into electrical voltage", "A sealed container that completely stops heat from moving", "A compressor that pressurizes refrigerants without temperature change"],
+        answer: 0,
+        explanation: "\u2705 Why 'Any device which affects the transfer of heat from one substance to another' is Correct: A heat exchanger is an engineering device designed to efficiently transfer thermal energy between two or more fluids at different temperatures."
+      },
+      {
+        id: 281,
+        question: "In a steam condenser heat exchanger, how do the fluid temperatures behave during the heat exchange process?",
+        options: ["The condensing steam stays at constant saturation temperature while giving up latent heat to colder coolant water whose temperature gradually rises", "Both fluids decrease in temperature at identical rates", "The coolant water boils while the steam increases in temperature", "Both fluids remain at absolute zero throughout the shell"],
+        answer: 0,
+        explanation: "\u2705 Why 'The condensing steam stays at constant saturation temperature while giving up latent heat to colder coolant water whose temperature gradually rises' is Correct: Phase-change condensation occurs isothermally (constant temperature) as latent heat of vaporization is released to the cooling water."
+      },
+      {
+        id: 282,
+        question: "In a steam boiler heat exchanger, what describes the temperature profile of the boiling fluid?",
+        options: ["The boiling water receives heat at constant saturation temperature while the hot combustion gases decrease in temperature as they flow across tube banks", "The boiling water drops in temperature while the combustion gas increases in temperature", "Both fluids maintain identical rising temperatures", "The combustion gases undergo isothermal expansion"],
+        answer: 0,
+        explanation: "\u2705 Why 'The boiling water receives heat at constant saturation temperature while the hot combustion gases decrease in temperature as they flow across tube banks' is Correct: Inside the boiler tubes, water evaporates at constant saturation temperature while hot flue gases cool down as they transfer sensible heat."
+      },
+      {
+        id: 283,
+        question: "What is the flow arrangement in a 'Parallel-Flow' heat exchanger?",
+        options: ["Both hot and cold fluids enter at the same end and flow in the same direction toward the exit", "The fluids flow perpendicular to each other at a 90-degree angle", "The fluids enter at opposite ends and travel in reverse directions", "One fluid is stationary while the other rotates in a vortex"],
+        answer: 0,
+        explanation: "\u2705 Why 'Both hot and cold fluids enter at the same end and flow in the same direction toward the exit' is Correct: In parallel flow, both fluids flow co-currently in the same direction. The cold fluid exit temperature can never exceed the hot fluid exit temperature."
+      },
+      {
+        id: 284,
+        question: "Why is 'Counter-Flow' considered the most favorable and thermally efficient flow arrangement for fluid heaters and coolers?",
+        options: ["It provides the highest Logarithmic Mean Temperature Difference (LMTD) for given terminal temperatures and allows the cold fluid exit temperature to exceed the hot fluid exit temperature", "It completely eliminates the need for heat transfer surface area", "It operates with zero fluid friction and zero pressure drop", "It prevents fluids from transferring heat by convection"],
+        answer: 0,
+        explanation: "\u2705 Why 'It provides the highest Logarithmic Mean Temperature Difference (LMTD) for given terminal temperatures and allows the cold fluid exit temperature to exceed the hot fluid exit temperature' is Correct: Counter-flow maintains a uniform temperature difference along the entire length, maximizing LMTD and thermodynamic effectiveness."
+      },
+      {
+        id: 285,
+        question: "What mathematical formula defines the Logarithmic Mean Temperature Difference (LMTD)?",
+        options: ["LMTD = (\u0394t_max - \u0394t_min) / ln(\u0394t_max / \u0394t_min)", "LMTD = (\u0394t_max + \u0394t_min) / 2", "LMTD = sqrt(\u0394t_max \u00b7 \u0394t_min)", "LMTD = ln(\u0394t_max - \u0394t_min)"],
+        answer: 0,
+        explanation: "\u2705 Why 'LMTD = (\u0394t_max - \u0394t_min) / ln(\u0394t_max / \u0394t_min)' is Correct: The logarithmic mean temperature difference correctly accounts for the exponential temperature variation of fluids flowing along heat exchanger surfaces."
+      },
+      {
+        id: 286,
+        question: "According to heat transfer engineering guidelines (Kreith & Bohn), under what condition can the Arithmetic Mean Temperature Difference (AMTD) be safely used in place of the LMTD with less than 1% error?",
+        options: ["When \u0394t_max is not more than 50% greater than \u0394t_min (\u0394t_max / \u0394t_min \u2264 1.5)", "When \u0394t_max is more than 500% greater than \u0394t_min", "Only when both fluids are boiling", "Whenever fluid velocity is supersonic"],
+        answer: 0,
+        explanation: "\u2705 Why 'When \u0394t_max is not more than 50% greater than \u0394t_min (\u0394t_max / \u0394t_min \u2264 1.5)' is Correct: When the ratio of terminal temperature differences is 1.5 or less, AMTD = (\u0394t_max + \u0394t_min)/2 approximates LMTD within 1% accuracy."
+      },
+      {
+        id: 287,
+        question: "In a steam power plant, what is an 'Economizer' and what is its thermodynamic purpose?",
+        options: ["A feed-water heater that recovers waste heat from exiting boiler flue gases to preheat liquid water before entering the boiler drum", "A turbine that extracts mechanical work directly from cold air", "A chemical filter that removes dissolved oxygen from fuel oil", "A valve that reduces steam pressure before the superheater"],
+        answer: 0,
+        explanation: "\u2705 Why 'A feed-water heater that recovers waste heat from exiting boiler flue gases to preheat liquid water before entering the boiler drum' is Correct: An economizer recovers sensible heat from flue gases, raising boiler thermal efficiency by preheating boiler feed water."
+      },
+      {
+        id: 288,
+        question: "In thermal sizing of heat exchangers, how is the required heat transfer surface area (A) related to the total thermal load (Q), overall coefficient (U), and mean temperature difference (LMTD)?",
+        options: ["A = Q / (U \u00b7 LMTD)", "A = Q \u00b7 U \u00b7 LMTD", "A = (U \u00b7 LMTD) / Q", "A = Q + U + LMTD"],
+        answer: 0,
+        explanation: "\u2705 Why 'A = Q / (U \u00b7 LMTD)' is Correct: The fundamental design equation for heat exchangers is Q = U \u00b7 A \u00b7 LMTD, which rearranges to A = Q / (U \u00b7 LMTD)."
       }
     ]
   }
