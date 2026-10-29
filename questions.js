@@ -5533,6 +5533,76 @@ var SUBJECT_DATA = {  basic_electronics: {
         options: ["They share analogous differential governing equations and transport mechanisms (Reynolds and Chilton-Colburn analogies)", "They are strictly mutually exclusive and can never occur simultaneously in any fluid system", "Momentum transfer can only occur when heat transfer is mathematically zero", "Mass transfer is restricted exclusively to rigid non-porous crystalline solids"],
         answer: 0,
         explanation: "\u2705 Why 'They share analogous differential governing equations and transport mechanisms (Reynolds and Chilton-Colburn analogies)' is Correct: The transport of momentum (viscous shear), heat (conduction/convection), and mass (species diffusion) follow mathematically analogous boundary layer equations, enabling heat transfer coefficients to be predicted from friction factors."
+      },
+      {
+        id: 249,
+        question: "For a composite cylindrical pipe with convective boundaries on both inner and outer surfaces, what is the correct formula for total thermal resistance per unit length (R'_total)?",
+        options: ["R'_total = 1/(2\u03c0\u00b7r_1\u00b7h_i) + ln(r_2/r_1)/(2\u03c0\u00b7k_1) + ln(r_3/r_2)/(2\u03c0\u00b7k_2) + 1/(2\u03c0\u00b7r_3\u00b7h_o)", "R'_total = 2\u03c0\u00b7r_1\u00b7h_i + 2\u03c0\u00b7k_1/ln(r_2/r_1) + 2\u03c0\u00b7k_2/ln(r_3/r_2) + 2\u03c0\u00b7r_3\u00b7h_o", "R'_total = h_i/r_1 + k_1/(r_2 - r_1) + h_o/r_3", "R'_total = 1 / (h_i + k_1 + k_2 + h_o)"],
+        answer: 0,
+        explanation: "\u2705 Why 'R'_total = 1/(2\u03c0\u00b7r_1\u00b7h_i) + ln(r_2/r_1)/(2\u03c0\u00b7k_1) + ln(r_3/r_2)/(2\u03c0\u00b7k_2) + 1/(2\u03c0\u00b7r_3\u00b7h_o)' is Correct: In radial systems, thermal resistances in series add together: inner convection 1/(h_i\u00b7A_i), cylindrical conduction layers ln(r_outer/r_inner)/(2\u03c0\u00b7k\u00b7L), and outer convection 1/(h_o\u00b7A_o)."
+      },
+      {
+        id: 250,
+        question: "In heat exchanger analysis, how is the Overall Heat Transfer Coefficient (U) across a flat metal wall of thickness L and thermal conductivity k related to convective coefficients h_1 and h_2?",
+        options: ["1/U = 1/h_1 + L/k + 1/h_2", "U = h_1 + k/L + h_2", "U = (h_1 \u00b7 h_2 \u00b7 k) / L", "1/U = h_1 + L\u00b7k + h_2"],
+        answer: 0,
+        explanation: "\u2705 Why '1/U = 1/h_1 + L/k + 1/h_2' is Correct: The overall thermal resistance is the sum of both fluid film resistances and the conduction resistance (R_total = 1/h_1 + L/k + 1/h_2). Since U = 1/R_total, 1/U = 1/h_1 + L/k + 1/h_2."
+      },
+      {
+        id: 251,
+        question: "In the thermal analysis and maintenance of piping systems, what does the engineering term 'lagging' specifically refer to?",
+        options: ["The time delay before steady-state conduction is reached", "The layer of thermal insulation material wrapped around a pipe or equipment to minimize heat loss", "The hydrodynamic head loss experienced by a fluid entering a nozzle", "The mechanical slip between a drive belt and a pulley"],
+        answer: 1,
+        explanation: "\u2705 Why 'The layer of thermal insulation material wrapped around a pipe or equipment to minimize heat loss' is Correct: 'Lagging' is the standard industry term for insulating coverings (e.g., fiberglass, mineral wool, calcium silicate) applied to the exterior of hot pipes and vessels."
+      },
+      {
+        id: 252,
+        question: "Why is the numerical value of specific heat capacity in cal / (g\u00b7\u00b0C) identically equal to its value in BTU / (lb\u00b7\u00b0F) and BTU / (lb\u00b7\u00b0R)?",
+        options: ["Because 1 BTU = 252 cal, 1 lb = 453.6 g, and \u0394T_\u00b0F = (5/9)\u00b7\u0394T_\u00b0C, giving (252 / 453.6) \u00b7 (9/5) = 1.000 exactly", "Because the Imperial engineering system was historically calibrated directly from metric calories", "Because specific heat capacity is a dimensionless ratio independent of mass and temperature units", "Because temperature changes on the Fahrenheit scale are equal in magnitude to Celsius changes"],
+        answer: 0,
+        explanation: "\u2705 Why 'Because 1 BTU = 252 cal, 1 lb = 453.6 g, and \u0394T_\u00b0F = (5/9)\u00b7\u0394T_\u00b0C, giving (252 / 453.6) \u00b7 (9/5) = 1.000 exactly' is Correct: By definition, 1 BTU heats 1 lb of water by 1\u00b0F, and 1 cal heats 1 g of water by 1\u00b0C. Therefore, water has c_p = 1.0 in both systems, making specific heat values numerically interchangeable."
+      },
+      {
+        id: 253,
+        question: "In manufacturing and metallurgy, what is 'quenching' and what is its primary thermal objective?",
+        options: ["Rapid cooling of a heated metal in a fluid bath (oil, water, brine) to trap high-temperature microstructures (forming martensite) and maximize hardness", "Slow cooling inside an insulated furnace to maximize softness and ductility", "Submerging cold metal in a molten salt bath to increase elasticity", "Using ultrasonic vibrations to remove trapped gases from a solid metal"],
+        answer: 0,
+        explanation: "\u2705 Why 'Rapid cooling of a heated metal in a fluid bath (oil, water, brine) to trap high-temperature microstructures (forming martensite) and maximize hardness' is Correct: Quenching rapidly cools hot austenitized steel past the pearlite nose into the martensitic transformation range, achieving high yield strength and hardness."
+      },
+      {
+        id: 254,
+        question: "Why is quenching oil frequently preferred over cold water for quenching high-strength alloy steel components?",
+        options: ["Because oil provides a more moderate, uniform cooling rate that minimizes severe thermal stresses, distortion, and quench cracking", "Because oil boils at absolute zero and removes heat strictly by radiative exchange", "Because oil chemically etches surface micro-cracks closed during contact", "Because oil has a specific heat capacity ten times greater than water"],
+        answer: 0,
+        explanation: "\u2705 Why 'Because oil provides a more moderate, uniform cooling rate that minimizes severe thermal stresses, distortion, and quench cracking' is Correct: Water cools extremely rapidly, often creating violent thermal shocks that crack complex or alloy steel parts. Oil cools more gently through vapor blanket and boiling stages, preventing distortion."
+      },
+      {
+        id: 255,
+        question: "In a series thermal network of conductive and convective layers, how is the interface temperature between two adjacent layers determined?",
+        options: ["By calculating the arithmetic average of the inner and outer fluid temperatures", "By applying Ohm's law analogue: \u0394T_layer = Q \u00b7 R_layer, and subtracting the layer temperature drop from the upstream temperature", "By dividing total heat rate by the solid density of the pipe", "Interface temperature is always fixed at 100\u00b0C"],
+        answer: 1,
+        explanation: "\u2705 Why 'By applying Ohm's law analogue: \u0394T_layer = Q \u00b7 R_layer, and subtracting the layer temperature drop from the upstream temperature' is Correct: In steady state, the heat rate Q is identical across every series layer. The temperature drop across any individual layer is \u0394T_i = Q \u00b7 R_i, allowing each intermediate boundary temperature to be determined."
+      },
+      {
+        id: 256,
+        question: "In an overall heat transfer process governed by 1/U = 1/h_1 + L/k + 1/h_2, what is the 'controlling thermal resistance'?",
+        options: ["The layer having the smallest individual thermal resistance", "The layer having the largest individual thermal resistance, which dominates and limits the overall heat transfer rate", "The solid metal wall resistance L/k, regardless of its magnitude", "The resistance corresponding to the coldest fluid stream"],
+        answer: 1,
+        explanation: "\u2705 Why 'The layer having the largest individual thermal resistance, which dominates and limits the overall heat transfer rate' is Correct: The largest resistance in a series chain acts as a thermal bottleneck. Enhancing heat transfer requires reducing this controlling resistance, as small changes in minor resistances have little effect on U."
+      },
+      {
+        id: 257,
+        question: "How is the average heat transfer rate in kilowatts (kW) calculated from total thermal energy transferred (Q_total in kJ) over an elapsed time (\u0394t in minutes)?",
+        options: ["Q_rate (kW) = Q_total (kJ) / (60 \u00b7 \u0394t)", "Q_rate (kW) = Q_total (kJ) \u00b7 60 \u00b7 \u0394t", "Q_rate (kW) = Q_total (kJ) / \u0394t", "Q_rate (kW) = Q_total (kJ) + 60 \u00b7 \u0394t"],
+        answer: 0,
+        explanation: "\u2705 Why 'Q_rate (kW) = Q_total (kJ) / (60 \u00b7 \u0394t)' is Correct: Since 1 kW = 1 kJ/s, elapsed time in minutes must be multiplied by 60 to convert to seconds: Q_rate (kW) = Q_total (kJ) / (\u0394t \u00b7 60 s/min)."
+      },
+      {
+        id: 258,
+        question: "In the thermal design of cylindrical insulation, what does the concept of 'Critical Radius of Insulation' (r_cr = k / h_o) signify?",
+        options: ["The maximum radius before the pipe structurally collapses from insulation weight", "The outer insulation radius at which heat dissipation reaches a maximum, below which adding insulation paradoxically increases heat loss", "The minimum insulation thickness required to eliminate radiative emission", "The radius where internal flow velocity transitions from laminar to turbulent"],
+        answer: 1,
+        explanation: "\u2705 Why 'The outer insulation radius at which heat dissipation reaches a maximum, below which adding insulation paradoxically increases heat loss' is Correct: For cylinders, adding insulation increases conductive resistance but also expands surface area (lowering convective resistance). At r_cr = k/h_o, total resistance is minimized and heat loss is maximized."
       }
     ]
   }
