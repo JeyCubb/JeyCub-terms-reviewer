@@ -5813,6 +5813,48 @@ var SUBJECT_DATA = {  basic_electronics: {
         options: ["A = Q / (U \u00b7 LMTD)", "A = Q \u00b7 U \u00b7 LMTD", "A = (U \u00b7 LMTD) / Q", "A = Q + U + LMTD"],
         answer: 0,
         explanation: "\u2705 Why 'A = Q / (U \u00b7 LMTD)' is Correct: The fundamental design equation for heat exchangers is Q = U \u00b7 A \u00b7 LMTD, which rearranges to A = Q / (U \u00b7 LMTD)."
+      },
+      {
+        id: 289,
+        question: "In thermal systems, how is the 'Overall Heat Transfer Coefficient' (U-value) formally defined and what does a larger U-value indicate?",
+        options: ["A measure of how readily heat conducts through a series of resistant mediums; a larger U indicates easier heat transfer from the heat source to the fluid being heated", "The ratio of fluid viscosity to thermal conductivity; a larger U indicates turbulent stagnation", "The electrical resistance of a heat exchanger shell; a larger U indicates high voltage insulation", "The rate of mass loss per unit time during boiling; a larger U indicates rapid fluid depletion"],
+        answer: 0,
+        explanation: "\u2705 Why 'A measure of how readily heat conducts through a series of resistant mediums; a larger U indicates easier heat transfer from the heat source to the fluid being heated' is Correct: The U-value quantifies the overall conductance of combined conduction and convection layers. Higher U means less thermal resistance and faster heat transfer."
+      },
+      {
+        id: 290,
+        question: "What are the standard SI metric and English engineering units for the Overall Heat Transfer Coefficient (U)?",
+        options: ["W / (m\u00b2\u00b7\u00b0C) [or W/(m\u00b2\u00b7K)] in SI, and Btu / (hr\u00b7ft\u00b2\u00b7\u00b0F) in English units", "J / (kg\u00b7\u00b0C) in SI, and ft\u00b7lbf / lb in English units", "W / (m\u00b7K) in SI, and Btu / (hr\u00b7ft\u00b7\u00b0F) in English units", "N / m\u00b2 in SI, and psi in English units"],
+        answer: 0,
+        explanation: "\u2705 Why 'W / (m\u00b2\u00b7\u00b0C) [or W/(m\u00b2\u00b7K)] in SI, and Btu / (hr\u00b7ft\u00b2\u00b7\u00b0F) in English units' is Correct: The overall coefficient represents heat rate per unit area per unit temperature difference, giving W/(m\u00b2\u00b7\u00b0C) and Btu/(hr\u00b7ft\u00b2\u00b7\u00b0F)."
+      },
+      {
+        id: 291,
+        question: "In heat exchanger design, what fundamental governing equation relates heat transfer rate (Q), overall coefficient (U), contact area (A), and mean temperature difference?",
+        options: ["Q = U \u00b7 A \u00b7 \u0394T_LMTD", "Q = U / (A \u00b7 \u0394T_LMTD)", "Q = U \u00b7 A / \u0394T_LMTD", "Q = (U + A) \u00b7 \u0394T_LMTD"],
+        answer: 0,
+        explanation: "\u2705 Why 'Q = U \u00b7 A \u00b7 \u0394T_LMTD' is Correct: This is the fundamental heat exchanger rating and sizing equation, stating that the total heat transferred is proportional to the overall U-value, active surface area, and logarithmic mean temperature difference."
+      },
+      {
+        id: 292,
+        question: "How is the product (U \u00b7 A) related to the total thermal resistance (R_total) of a series of conductive and convective layers in a heat exchanger?",
+        options: ["U \u00b7 A = 1 / R_total", "U \u00b7 A = R_total", "U \u00b7 A = (R_total)\u00b2", "U \u00b7 A = ln(R_total)"],
+        answer: 0,
+        explanation: "\u2705 Why 'U \u00b7 A = 1 / R_total' is Correct: The overall thermal conductance (U\u00b7A) is the reciprocal of the total thermal resistance (R_total = \u03a3 R_i), analogous to electrical conductance G = 1/R."
+      },
+      {
+        id: 293,
+        question: "Why is the Logarithmic Mean Temperature Difference (LMTD) mathematically required instead of the Arithmetic Mean (AMTD) for rigorous heat exchanger analysis?",
+        options: ["Because fluid temperatures along the heat exchanger surface follow an exponential decay curve rather than a linear variation", "Because arithmetic averages cannot be computed for turbulent flow", "Because the First Law of Thermodynamics forbids addition of temperatures", "Because heat exchanger tube diameters vary logarithmically along length"],
+        answer: 0,
+        explanation: "\u2705 Why 'Because fluid temperatures along the heat exchanger surface follow an exponential decay curve rather than a linear variation' is Correct: As heat transfers along the conduit length, local temperature differences decrease exponentially, making the logarithmic mean the only mathematically exact driving potential."
+      },
+      {
+        id: 294,
+        question: "In operating industrial heat exchangers, what is the 'Fouling Factor' (R_f) and what impact does it have on the overall heat transfer coefficient (U)?",
+        options: ["An additional thermal resistance caused by rust, scale, sediment, or biological accumulation on tube surfaces that reduces the effective U-value over time", "A safety multiplier that artificially increases heat transfer area by 500%", "The mechanical friction factor between the shell and outer air", "A parameter indicating the percentage of refrigerant leaked into the atmosphere"],
+        answer: 0,
+        explanation: "\u2705 Why 'An additional thermal resistance caused by rust, scale, sediment, or biological accumulation on tube surfaces that reduces the effective U-value over time' is Correct: Fouling introduces an extra conductive resistance 1/U_dirty = 1/U_clean + R_f, degrading thermal performance and necessitating periodic cleaning."
       }
     ]
   }
