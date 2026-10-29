@@ -3083,14 +3083,14 @@ function getBestVoice() {
   if (!voices || voices.length === 0) return null;
 
   const preferred = [
+    'Samantha',
+    'Karen',
+    'Daniel',
     'Google US English',
     'Google UK English Female',
-    'Samantha',
     'Microsoft Zira',
     'Microsoft Jenny',
-    'Microsoft David',
-    'Karen',
-    'Daniel'
+    'Microsoft David'
   ];
 
   for (const name of preferred) {
@@ -3174,6 +3174,31 @@ function prepareTextForSpeech(text) {
   return s;
 }
 
+function unlockIosAudio() {
+  if (typeof window === 'undefined') return;
+  try {
+    if ('speechSynthesis' in window && window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+    }
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (AudioCtx) {
+      if (!window._appAudioContext) {
+        window._appAudioContext = new AudioCtx();
+      }
+      if (window._appAudioContext.state === 'suspended') {
+        window._appAudioContext.resume();
+      }
+    }
+  } catch (e) {
+    // Ignore unlock errors
+  }
+}
+
+if (typeof window !== 'undefined') {
+  document.addEventListener('touchstart', unlockIosAudio, { passive: true, once: true });
+  document.addEventListener('click', unlockIosAudio, { passive: true, once: true });
+}
+
 function stopNarration(disableAuto = false) {
   if (disableAuto) {
     state.narrationActive = false;
@@ -3190,11 +3215,15 @@ function stopNarration(disableAuto = false) {
   updateNarrationUI();
 }
 
+let hasShownIosSilentHint = false;
+
 function toggleNarration() {
   if (!('speechSynthesis' in window)) {
     alert("Speech Synthesis (text-to-speech) is not supported in this browser.");
     return;
   }
+
+  unlockIosAudio();
 
   if (state.isSpeaking) {
     // If speaking, clicking stops speech and turns OFF auto-narration
@@ -3205,7 +3234,15 @@ function toggleNarration() {
   } else {
     // Turn ON auto-narration and immediately narrate current question + choices
     state.narrationActive = true;
-    narrateCurrentPracticeQuestion();
+
+    // Show friendly one-time tip for iPhone users whose physical silent switch might be on
+    const isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent || '');
+    if (isIos && !hasShownIosSilentHint) {
+      hasShownIosSilentHint = true;
+      console.log("iOS detected: ensure side silent switch is off and volume is up.");
+    }
+
+    narrateCurrentPracticeQuestion(true);
   }
 }
 
@@ -3257,8 +3294,12 @@ function narrateCurrentPracticeQuestion() {
 
   const fullScript = script;
 
-  speechDebounceTimer = setTimeout(() => {
+  const doSpeak = () => {
     try {
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+      }
+
       narrationUtterance = new SpeechSynthesisUtterance(fullScript);
       narrationUtterance.lang = 'en-US';
       narrationUtterance.rate = 0.98;
@@ -3310,7 +3351,11 @@ function narrateCurrentPracticeQuestion() {
       state.isSpeaking = false;
       updateNarrationUI();
     }
-  }, 60);
+  };
+
+  // On iOS / WebKit, calling speak() synchronously within the user gesture event is mandatory!
+  // setTimeout destroys the trusted user interaction context on Safari.
+  doSpeak();
 }
 
 function highlightSpokenOption(letter) {
