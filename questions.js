@@ -5372,7 +5372,98 @@ var SUBJECT_DATA = {  basic_electronics: {
       { id: 222, question: "In fluid mechanics and heat transfer, fluid flow inside circular pipes, air conditioning ducts, and closed channels is categorized as:", options: ["External flow", "Internal flow", "Free molecular flow", "Unbounded atmospheric flow"], answer: 1, explanation: "• Why 'Internal flow' is Correct: Internal flow refers to fluid completely bounded and constrained by solid surfaces (e.g. inside a pipe or duct), whereas external flow involves fluid moving over an unconfined solid body (e.g. flow over an airplane wing or exterior of a cylinder)." },
       { id: 223, question: "In experimental heat transfer, what does an optical interferometer map of interference fringes (isotherms) around a heated body reveal?", options: ["Lines of constant fluid pressure only", "Lines of constant temperature, where closely spaced fringes indicate steep temperature gradients and high heat flux", "The chemical composition of the fluid", "The electrical conductivity of the solid"], answer: 1, explanation: "• Why 'Lines of constant temperature, where closely spaced fringes indicate steep temperature gradients and high heat flux' is Correct: Interferometry visualizes density (and thus temperature) contours. Closely spaced fringe lines near the surface signify large temperature gradients (dT/dy) and therefore intense local convective heat transfer." },
       { id: 224, question: "Due to the hydrodynamic 'no-slip condition' at a solid-fluid interface, by what mechanism is heat transferred from the solid surface to the fluid layer immediately adjacent to the wall (at y = 0)?", options: ["Pure Conduction, governed by q = -k_fluid · (∂T/∂y)|_{y=0}", "Pure Convection by bulk eddy motion", "Nuclear emission", "Macroscopic fluid sliding"], answer: 0, explanation: "• Why 'Pure Conduction, governed by q = -k_fluid · (∂T/∂y)|_{y=0}' is Correct: The no-slip condition states that fluid molecules directly contacting a stationary solid have zero relative velocity. Because this boundary fluid layer is motionless, heat leaves the wall purely by molecular conduction before being swept away into the fluid stream." },
-      { id: 225, question: "Why does blowing on a hot beverage or turning on a fan in a room cause a significantly faster rate of cooling?", options: ["Because higher fluid velocity increases the air density by a factor of ten", "Because higher fluid velocity thins the hydrodynamic and thermal boundary layers, substantially increasing the convective heat transfer coefficient (h)", "Because moving air has a lower specific heat capacity", "Because wind reverses the Second Law of Thermodynamics"], answer: 1, explanation: "• Why 'Because higher fluid velocity thins the hydrodynamic and thermal boundary layers, substantially increasing the convective heat transfer coefficient (h)' is Correct: Increasing fluid velocity compresses the insulating boundary layer against the surface, sharpening the temperature gradient at the wall and markedly boosting the convective heat transfer coefficient." }
+      { id: 225, question: "Why does blowing on a hot beverage or turning on a fan in a room cause a significantly faster rate of cooling?", options: ["Because higher fluid velocity increases the air density by a factor of ten", "Because higher fluid velocity thins the hydrodynamic and thermal boundary layers, substantially increasing the convective heat transfer coefficient (h)", "Because moving air has a lower specific heat capacity", "Because wind reverses the Second Law of Thermodynamics"], answer: 1, explanation: "• Why 'Because higher fluid velocity thins the hydrodynamic and thermal boundary layers, substantially increasing the convective heat transfer coefficient (h)' is Correct: Increasing fluid velocity compresses the insulating boundary layer against the surface, sharpening the temperature gradient at the wall and markedly boosting the convective heat transfer coefficient." },
+      {
+        id: 226,
+        question: "According to fundamental heat transfer principles, how is convection defined?",
+        options: ["The transmission of thermal energy solely through electromagnetic waves in a vacuum", "The mechanism of heat transfer whereby heat energy is transferred by moving fluids", "The direct transfer of kinetic energy between stationary solid molecules without bulk motion", "The spontaneous generation of thermal energy within an isolated system"],
+        answer: 1,
+        explanation: "\u2705 Why 'The mechanism of heat transfer whereby heat energy is transferred by moving fluids' is Correct: Convection specifically involves the combined action of conduction (molecular diffusion) and bulk fluid motion (advection) to transport thermal energy through moving liquids or gases."
+      },
+      {
+        id: 227,
+        question: "In the surface convection equation Q = h_c \u00b7 A \u00b7 (t_1 - t_2), what physical property does h_c represent?",
+        options: ["Enthalpy of vaporization of the fluid", "Surface coefficient associated with convection (convective film coefficient)", "Stefan-Boltzmann radiation constant", "Thermal conductivity of the solid wall material"],
+        answer: 1,
+        explanation: "\u2705 Why 'Surface coefficient associated with convection (convective film coefficient)' is Correct: The symbol h_c represents the convective heat transfer coefficient or surface film coefficient, quantifying the heat transfer rate per unit surface area per unit temperature difference."
+      },
+      {
+        id: 228,
+        question: "What are the standard SI units for the surface convection coefficient (h_c)?",
+        options: ["W / (m\u00b2\u00b7\u00b0C) or W / (m\u00b2\u00b7K)", "W / (m\u00b7K)", "kJ / (kg\u00b7\u00b0C)", "N / m\u00b2"],
+        answer: 0,
+        explanation: "\u2705 Why 'W / (m\u00b2\u00b7\u00b0C) or W / (m\u00b2\u00b7K)' is Correct: From Q = h_c \u00b7 A \u00b7 \u0394T, solving for h_c gives Q / (A \u00b7 \u0394T), resulting in Watts per square meter per Kelvin [W/(m\u00b2\u00b7K)] or equivalently [W/(m\u00b2\u00b7\u00b0C)]."
+      },
+      {
+        id: 229,
+        question: "In the surface convection formula Q = h_c \u00b7 A \u00b7 (t_1 - t_2), what does the variable A specifically designate?",
+        options: ["The cross-sectional flow area through which fluid travels inside the channel", "The surface area of the solid in direct contact with the moving fluid", "The cross-sectional area of the fluid supply pipe", "The projected frontal area perpendicular to flow velocity"],
+        answer: 1,
+        explanation: "\u2705 Why 'The surface area of the solid in direct contact with the moving fluid' is Correct: A is the wetted surface area or exposed boundary area of the solid body across which convective heat exchange occurs between the wall and the fluid."
+      },
+      {
+        id: 230,
+        question: "What is the primary thermodynamic driving potential that causes surface convective heat transfer between a solid and an adjacent fluid?",
+        options: ["Difference in hydrostatic pressure along the boundary", "Temperature difference between the solid surface and the fluid (t_1 - t_2)", "Difference in gravitational potential energy across the wall", "Difference in kinematic viscosity between fluid layers"],
+        answer: 1,
+        explanation: "\u2705 Why 'Temperature difference between the solid surface and the fluid (t_1 - t_2)' is Correct: By Newton's Law of Cooling, heat transfer is directly proportional to the temperature differential (t_1 - t_2) between the surface and the bulk fluid."
+      },
+      {
+        id: 231,
+        question: "In the sensible heat transfer equation Q = m \u00b7 C_p \u00b7 \u0394t for a flowing fluid stream, what does C_p represent?",
+        options: ["Specific heat capacity of the fluid at constant pressure", "Specific heat capacity of the fluid at constant volume", "Volumetric thermal expansion coefficient", "Critical point saturation pressure"],
+        answer: 0,
+        explanation: "\u2705 Why 'Specific heat capacity of the fluid at constant pressure' is Correct: C_p is the specific heat capacity at constant pressure, representing the amount of heat energy required to raise the temperature of a unit mass of fluid by one degree."
+      },
+      {
+        id: 232,
+        question: "Why are temperature differences expressed in Celsius (\u0394\u00b0C) and Kelvin (\u0394K) completely interchangeable when calculating sensible heat Q = m \u00b7 C_p \u00b7 \u0394t?",
+        options: ["Because Celsius and Kelvin share the exact same absolute zero reference point", "Because an interval of one degree Celsius is identical in magnitude to an interval of one Kelvin", "Because specific heat capacity approaches zero at standard ambient temperature", "Because thermal conductivity cancels the degree scale conversion factor"],
+        answer: 1,
+        explanation: "\u2705 Why 'Because an interval of one degree Celsius is identical in magnitude to an interval of one Kelvin' is Correct: The Celsius and Kelvin scales have identical degree gradations (\u0394T_K = \u0394T_\u00b0C), meaning temperature differences have the exact same numerical value on both scales."
+      },
+      {
+        id: 233,
+        question: "How is the mass flow rate (m) of a fluid determined from its volumetric flow rate (V_dot) and specific gravity (SG)?",
+        options: ["m = V_dot / (SG \u00b7 \u03c1_water)", "m = SG \u00b7 \u03c1_water \u00b7 V_dot", "m = V_dot \u00b7 g", "m = SG / V_dot"],
+        answer: 1,
+        explanation: "\u2705 Why 'm = SG \u00b7 \u03c1_water \u00b7 V_dot' is Correct: Mass flow rate is density times volumetric flow rate (m = \u03c1 \u00b7 V_dot). Since specific gravity SG = \u03c1 / \u03c1_water, fluid density is \u03c1 = SG \u00b7 \u03c1_water, yielding m = SG \u00b7 \u03c1_water \u00b7 V_dot."
+      },
+      {
+        id: 234,
+        question: "In a well-insulated, steady-flow heat exchanger, what fundamental law establishes that heat released by the hot fluid equals heat absorbed by the cold fluid?",
+        options: ["Newton's Third Law of Motion", "First Law of Thermodynamics (Conservation of Energy: Q_lost = Q_gained)", "Pascal's Principle of hydrostatic pressure transmission", "Bernoulli's Equation for frictionless incompressible flow"],
+        answer: 1,
+        explanation: "\u2705 Why 'First Law of Thermodynamics (Conservation of Energy: Q_lost = Q_gained)' is Correct: When heat loss to the surrounding environment is negligible, energy conservation dictates that all thermal energy lost by the hotter fluid must be absorbed by the colder fluid."
+      },
+      {
+        id: 235,
+        question: "For an ideal gas, how is the constant-pressure specific heat (C_p) derived from the specific heat ratio (k = C_p / C_v) and the characteristic gas constant (R)?",
+        options: ["C_p = (k \u00b7 R) / (k - 1)", "C_p = R / (k - 1)", "C_p = k \u00b7 R \u00b7 (k - 1)", "C_p = (k - 1) / (k \u00b7 R)"],
+        answer: 0,
+        explanation: "\u2705 Why 'C_p = (k \u00b7 R) / (k - 1)' is Correct: Since C_p - C_v = R and k = C_p / C_v, substituting C_v = C_p / k gives C_p \u00b7 (1 - 1/k) = R, which simplifies directly to C_p = (k \u00b7 R) / (k - 1)."
+      },
+      {
+        id: 236,
+        question: "In industrial pyrometry, how can the high temperature of hot flue gases in a duct be determined using a metal sample and a water calorimeter?",
+        options: ["By suspending the metal sample until it reaches thermal equilibrium with the gas, then quenching it in water to compute gas temperature via the Method of Mixtures", "By inserting a plastic hydrometer directly into the flue gas stream", "By condensing the flue gas inside an aluminum vessel and weighing the condensate", "By measuring the speed of sound through the calorimeter container walls"],
+        answer: 0,
+        explanation: "\u2705 Why 'By suspending the metal sample until it reaches thermal equilibrium with the gas, then quenching it in water to compute gas temperature via the Method of Mixtures' is Correct: By the Zeroth Law, the metal suspended in the flue reaches flue gas temperature. When quenched in water, heat lost by the metal equals heat gained by the water, allowing the initial flue gas temperature to be calculated."
+      },
+      {
+        id: 237,
+        question: "In practical calorimetry experiments, why must the heat capacity of the calorimeter container itself be factored into the heat balance equation?",
+        options: ["Because the container walls undergo chemical decomposition when heated", "Because the vessel is in direct thermal contact with the liquid and also absorbs heat during the temperature change", "Because the container prevents radiation from reaching the thermometer", "Because container mass decreases significantly as temperature rises"],
+        answer: 1,
+        explanation: "\u2705 Why 'Because the vessel is in direct thermal contact with the liquid and also absorbs heat during the temperature change' is Correct: The container and stirrer change temperature alongside the liquid contents, absorbing a portion of the heat represented by their heat capacity (m_cal \u00b7 C_p,cal \u00b7 \u0394T)."
+      },
+      {
+        id: 238,
+        question: "When two different quantities of the same liquid at different initial temperatures are thoroughly mixed without heat loss or phase change, what governs the final equilibrium temperature?",
+        options: ["The mass-weighted average of their initial temperatures", "The geometric mean of their initial absolute temperatures", "The temperature of the cooler liquid, unaffected by mass ratio", "Exactly half of the ambient room temperature"],
+        answer: 0,
+        explanation: "\u2705 Why 'The mass-weighted average of their initial temperatures' is Correct: Since both liquids share the same specific heat C_p, energy balance m_1\u00b7C_p\u00b7(T_1 - T_f) = m_2\u00b7C_p\u00b7(T_f - T_2) cancels C_p, giving T_f = (m_1\u00b7T_1 + m_2\u00b7T_2) / (m_1 + m_2)."
+      }
     ]
   }
 };

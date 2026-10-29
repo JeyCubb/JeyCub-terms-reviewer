@@ -421,7 +421,7 @@ function getFilteredPracticeQuestions() {
   } else if (state.practiceFilter === 'ht_original') {
     return allQs.filter(q => q.id >= 1 && q.id <= 146);
   } else if (state.practiceFilter === 'ht_canvas_all') {
-    return allQs.filter(q => q.id >= 147 && q.id <= 225);
+    return allQs.filter(q => q.id >= 147 && q.id <= 238);
   } else if (state.practiceFilter === 'ht_mod1_1') {
     return allQs.filter(q => q.id >= 147 && q.id <= 161);
   } else if (state.practiceFilter === 'ht_mod1_2') {
@@ -434,6 +434,8 @@ function getFilteredPracticeQuestions() {
     return allQs.filter(q => q.id >= 201 && q.id <= 210);
   } else if (state.practiceFilter === 'ht_mod7_1') {
     return allQs.filter(q => q.id >= 211 && q.id <= 225);
+  } else if (state.practiceFilter === 'ht_mod7_2') {
+    return allQs.filter(q => q.id >= 226 && q.id <= 238);
   }
   return allQs;
 }
@@ -715,7 +717,8 @@ function updateSubjectUI() {
     'opt-filter-ht-mod3',
     'opt-filter-ht-mod4',
     'opt-filter-ht-mod5',
-    'opt-filter-ht-mod7'
+    'opt-filter-ht-mod7',
+    'opt-filter-ht-mod7-2'
   ];
   htFilterIds.forEach(id => {
     const el = document.getElementById(id);
@@ -732,7 +735,7 @@ function updateSubjectUI() {
       state.practiceFilter = 'all';
     } else if (state.practiceFilter === 'fluid_machinery' && state.currentSubject !== 'fluid_mechanics') {
       state.practiceFilter = 'all';
-    } else if ((state.practiceFilter === 'ht_original' || state.practiceFilter === 'ht_canvas_all' || state.practiceFilter === 'ht_mod1_1' || state.practiceFilter === 'ht_mod1_2' || state.practiceFilter === 'ht_mod1_3' || state.practiceFilter === 'ht_mod4_1' || state.practiceFilter === 'ht_mod5_1' || state.practiceFilter === 'ht_mod7_1') && state.currentSubject !== 'heat_transfer') {
+    } else if ((state.practiceFilter === 'ht_original' || state.practiceFilter === 'ht_canvas_all' || state.practiceFilter === 'ht_mod1_1' || state.practiceFilter === 'ht_mod1_2' || state.practiceFilter === 'ht_mod1_3' || state.practiceFilter === 'ht_mod4_1' || state.practiceFilter === 'ht_mod5_1' || state.practiceFilter === 'ht_mod7_1' || state.practiceFilter === 'ht_mod7_2') && state.currentSubject !== 'heat_transfer') {
       state.practiceFilter = 'all';
     }
     filterSelect.value = state.practiceFilter;
@@ -3192,25 +3195,32 @@ function narrateCurrentPracticeQuestion() {
   const shuffledOpts = getShuffledOptionsForQuestion(key, q);
 
   const cleanQ = prepareTextForSpeech(q.question || '');
-  const qSpoken = `Problem ${q.id}. ${cleanQ}`;
+  // Directly read the question (no 'Problem #' prefix)
+  const qSpoken = cleanQ;
 
-  let optsSpoken = [];
+  // Track start positions of each option for boundary tracking
+  const optPositions = [];
+  let script = cleanQ + '. ... ';
+
   if (shuffledOpts && Array.isArray(shuffledOpts) && shuffledOpts.length > 0) {
-    optsSpoken = shuffledOpts.map((optObj, idx) => {
+    shuffledOpts.forEach((optObj, idx) => {
       const letter = String.fromCharCode(65 + idx);
       const cleanOpt = prepareTextForSpeech(optObj.text || '');
-      return `Option ${letter}: ${cleanOpt}`;
+      const startPos = script.length;
+      optPositions.push({ letter, startPos });
+      script += `${letter}. ${cleanOpt}. ... `;
     });
   } else if (Array.isArray(q.options)) {
-    optsSpoken = q.options.map((opt, idx) => {
+    q.options.forEach((opt, idx) => {
       const letter = String.fromCharCode(65 + idx);
       const cleanOpt = prepareTextForSpeech(opt || '');
-      return `Option ${letter}: ${cleanOpt}`;
+      const startPos = script.length;
+      optPositions.push({ letter, startPos });
+      script += `${letter}. ${cleanOpt}. ... `;
     });
   }
 
-  // Question, pause, followed by choices with pauses
-  const fullScript = `${qSpoken}. ... ${optsSpoken.join('. ... ')}.`;
+  const fullScript = script;
 
   speechDebounceTimer = setTimeout(() => {
     try {
@@ -3243,10 +3253,18 @@ function narrateCurrentPracticeQuestion() {
 
       narrationUtterance.onboundary = (e) => {
         if (e.name === 'word' && e.charIndex !== undefined) {
-          const spokenSoFar = fullScript.substring(e.charIndex);
-          const match = spokenSoFar.match(/^Option\s+([A-D])/i);
-          if (match) {
-            highlightSpokenOption(match[1].toUpperCase());
+          // Check if speech position has reached one of the options
+          let foundLetter = null;
+          for (let i = optPositions.length - 1; i >= 0; i--) {
+            if (e.charIndex >= optPositions[i].startPos - 4) {
+              foundLetter = optPositions[i].letter;
+              break;
+            }
+          }
+          if (foundLetter) {
+            highlightSpokenOption(foundLetter);
+          } else {
+            clearOptionSpeechHighlights();
           }
         }
       };
