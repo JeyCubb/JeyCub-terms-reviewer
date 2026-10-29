@@ -420,6 +420,8 @@ function getFilteredPracticeQuestions() {
     return allQs.filter(q => q.id >= 128 && q.id <= 215);
   } else if (state.practiceFilter === 'ht_mod1_1') {
     return allQs.filter(q => q.id >= 147 && q.id <= 161);
+  } else if (state.practiceFilter === 'ht_mod1_2') {
+    return allQs.filter(q => q.id >= 162 && q.id <= 176);
   }
   return allQs;
 }
@@ -697,6 +699,10 @@ function updateSubjectUI() {
   if (optHtMod1) {
     optHtMod1.style.display = (state.currentSubject === 'heat_transfer') ? '' : 'none';
   }
+  const optHtMod2 = document.getElementById('opt-filter-ht-mod2');
+  if (optHtMod2) {
+    optHtMod2.style.display = (state.currentSubject === 'heat_transfer') ? '' : 'none';
+  }
 
   // Auto-reset filter to 'all' if active filter is incompatible with newly selected subject
   const filterSelect = document.getElementById('practice-filter-select');
@@ -708,7 +714,7 @@ function updateSubjectUI() {
       state.practiceFilter = 'all';
     } else if (state.practiceFilter === 'fluid_machinery' && state.currentSubject !== 'fluid_mechanics') {
       state.practiceFilter = 'all';
-    } else if (state.practiceFilter === 'ht_mod1_1' && state.currentSubject !== 'heat_transfer') {
+    } else if ((state.practiceFilter === 'ht_mod1_1' || state.practiceFilter === 'ht_mod1_2') && state.currentSubject !== 'heat_transfer') {
       state.practiceFilter = 'all';
     }
     filterSelect.value = state.practiceFilter;
