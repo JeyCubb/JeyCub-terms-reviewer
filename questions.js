@@ -5603,6 +5603,90 @@ var SUBJECT_DATA = {  basic_electronics: {
         options: ["The maximum radius before the pipe structurally collapses from insulation weight", "The outer insulation radius at which heat dissipation reaches a maximum, below which adding insulation paradoxically increases heat loss", "The minimum insulation thickness required to eliminate radiative emission", "The radius where internal flow velocity transitions from laminar to turbulent"],
         answer: 1,
         explanation: "\u2705 Why 'The outer insulation radius at which heat dissipation reaches a maximum, below which adding insulation paradoxically increases heat loss' is Correct: For cylinders, adding insulation increases conductive resistance but also expands surface area (lowering convective resistance). At r_cr = k/h_o, total resistance is minimized and heat loss is maximized."
+      },
+      {
+        id: 259,
+        question: "How does thermal radiation heat transfer fundamentally differ from conduction and convection?",
+        options: ["Radiation does not require the presence of a material medium and can transfer energy across a complete vacuum", "Radiation only occurs between identical metals in direct atomic contact", "Radiation requires macroscopic fluid movement driven by external mechanical fans", "Radiation cannot transfer heat if body temperatures exceed absolute zero"],
+        answer: 0,
+        explanation: "\u2705 Why 'Radiation does not require the presence of a material medium and can transfer energy across a complete vacuum' is Correct: While conduction and convection rely on molecular collisions or fluid motion within a material medium, thermal radiation is transmitted via electromagnetic waves and travels freely through empty space."
+      },
+      {
+        id: 260,
+        question: "What is the physical origin of thermal electromagnetic radiation emitted by matter, and at what speed does it propagate in a vacuum?",
+        options: ["Compressional sound waves traveling at the sonic velocity of 343 m/s", "Energy emitted as a result of changes in the electronic, vibrational, and rotational energy states of atoms and molecules, propagating at the speed of light (c \u2248 3 \u00d7 10\u2078 m/s)", "Electrostatic voltage pulses traveling at infinite velocity", "Subatomic neutrino beams with variable velocity"],
+        answer: 1,
+        explanation: "\u2705 Why 'Energy emitted as a result of changes in the electronic, vibrational, and rotational energy states of atoms and molecules, propagating at the speed of light (c \u2248 3 \u00d7 10\u2078 m/s)' is Correct: Thermal radiation originates from transitions in internal electronic and vibrational energy configurations of matter and propagates at light speed in vacuum."
+      },
+      {
+        id: 261,
+        question: "What thermodynamic criterion determines whether a physical object continuously emits thermal radiation?",
+        options: ["Its absolute temperature must be above absolute zero (T > 0 K or -273.15\u00b0C)", "Its temperature must be higher than 100\u00b0C", "It must be in a pressurized liquid or gaseous state", "It must possess a net positive or negative electrical charge"],
+        answer: 0,
+        explanation: "\u2705 Why 'Its absolute temperature must be above absolute zero (T > 0 K or -273.15\u00b0C)' is Correct: All substances with a temperature above absolute zero possess thermal energy and continuously emit electromagnetic radiation in all directions."
+      },
+      {
+        id: 262,
+        question: "In heat transfer and physics, how is an idealized 'blackbody' formally defined?",
+        options: ["A hypothetical ideal body that absorbs all incident thermal radiation of all wavelengths and directions, reflecting and transmitting none", "Any surface coated with black matte enamel paint", "A material that completely blocks and reflects 100% of incident radiation", "A body with a surface emissivity of exactly zero"],
+        answer: 0,
+        explanation: "\u2705 Why 'A hypothetical ideal body that absorbs all incident thermal radiation of all wavelengths and directions, reflecting and transmitting none' is Correct: A blackbody is a perfect absorber (absorptivity \u03b1 = 1) and also a perfect emitter (emissivity \u03b5 = 1) at any given temperature and wavelength."
+      },
+      {
+        id: 263,
+        question: "Since a perfect blackbody does not naturally exist, what laboratory apparatus provides the closest physical approximation of a blackbody?",
+        options: ["A polished silver optical mirror", "A small aperture (pinhole) into a large isothermal cavity coated internally with absorptive material", "A solid translucent quartz crystal rod", "An open vacuum chamber illuminated by sunlight"],
+        answer: 1,
+        explanation: "\u2705 Why 'A small aperture (pinhole) into a large isothermal cavity coated internally with absorptive material' is Correct: Radiation entering a small hole in a cavity undergoes countless internal reflections and absorptions with negligible chance of escaping, effectively making the hole absorb virtually all incident radiation."
+      },
+      {
+        id: 264,
+        question: "Which historic physicist first formulated the exact mathematical equation describing the spectral distribution of blackbody radiation as a function of wavelength and absolute temperature?",
+        options: ["Max Planck", "Isaac Newton", "James Prescott Joule", "Daniel Bernoulli"],
+        answer: 0,
+        explanation: "\u2705 Why 'Max Planck' is Correct: Max Planck introduced the quantum hypothesis in 1900 to derive Planck's Law of Radiation, which accurately predicted blackbody spectral emissive power and resolved the ultraviolet catastrophe."
+      },
+      {
+        id: 265,
+        question: "According to the Stefan-Boltzmann Law (4th Power Law), how does the total emissive power (E_b) of a blackbody vary with its temperature?",
+        options: ["Directly proportional to temperature in degrees Celsius", "Inversely proportional to temperature in Kelvin", "Directly proportional to the fourth power of its absolute temperature (E_b = \u03c3 \u00b7 T\u2074)", "Proportional to the square root of system absolute pressure"],
+        answer: 2,
+        explanation: "\u2705 Why 'Directly proportional to the fourth power of its absolute temperature (E_b = \u03c3 \u00b7 T\u2074)' is Correct: The Stefan-Boltzmann law states that total blackbody radiant emissive power is directly proportional to T\u2074, where T is the absolute temperature in Kelvin."
+      },
+      {
+        id: 266,
+        question: "What is the numerical value and standard SI unit of the Stefan-Boltzmann constant (\u03c3)?",
+        options: ["5.67 \u00d7 10\u207b\u2078 W / (m\u00b2\u00b7K\u2074)", "1.38 \u00d7 10\u207b\u00b2\u00b3 J / K", "8.314 kJ / (kmol\u00b7K)", "6.626 \u00d7 10\u207b\u00b3\u2074 m\u00b2\u00b7kg / s"],
+        answer: 0,
+        explanation: "\u2705 Why '5.67 \u00d7 10\u207b\u2078 W / (m\u00b2\u00b7K\u2074)' is Correct: The Stefan-Boltzmann constant has the value \u03c3 = 5.670374 \u00d7 10\u207b\u2078 W/(m\u00b2\u00b7K\u2074)."
+      },
+      {
+        id: 267,
+        question: "What is 'surface emissivity' (\u03b5) and what is its possible numerical range for real engineering surfaces?",
+        options: ["The ratio of radiation emitted by a surface to that emitted by a blackbody at the same temperature, ranging from 0 \u2264 \u03b5 \u2264 1", "The ratio of reflected radiation to incident radiation, ranging from 1 to infinity", "The electrical conductivity of the surface measured in Siemens", "The thermal conductivity divided by bulk density"],
+        answer: 0,
+        explanation: "\u2705 Why 'The ratio of radiation emitted by a surface to that emitted by a blackbody at the same temperature, ranging from 0 \u2264 \u03b5 \u2264 1' is Correct: Emissivity \u03b5 measures how closely a real surface approximates a blackbody (\u03b5 = 1 for a blackbody, \u03b5 < 1 for all real surfaces, and \u03b5 = 0 for an ideal reflector)."
+      },
+      {
+        id: 268,
+        question: "When computing net radiative heat exchange with Q = \u03b5 \u00b7 \u03c3 \u00b7 A \u00b7 (T_1\u2074 - T_2\u2074), why is it strictly required that temperatures be expressed in absolute Kelvin (K)?",
+        options: ["Because the fourth-power Stefan-Boltzmann law is derived from thermodynamic principles rooted strictly at absolute zero", "Because negative Celsius values cannot be raised to an even power", "Because degrees Celsius are incompatible with metric square meters", "Because Kelvin cancels out surface reflection coefficients"],
+        answer: 0,
+        explanation: "\u2705 Why 'Because the fourth-power Stefan-Boltzmann law is derived from thermodynamic principles rooted strictly at absolute zero' is Correct: Because of the non-linear fourth-power relationship (T\u2074), using Celsius produces catastrophic mathematical errors (e.g., (100+273)\u2074 \u2260 100\u2074 + 273\u2074). Only absolute temperatures (Kelvin or Rankine) yield correct physical answers."
+      },
+      {
+        id: 269,
+        question: "Why do strawberry crops and delicate vegetation frequently suffer 'frost damage' on clear, calm nights even when ambient thermometer air temperatures remain above freezing (e.g., +4\u00b0C)?",
+        options: ["Because the crops radiate thermal energy directly to the cold night sky (effective sky temperature \u2248 110 K), dropping their surface temperature below 0\u00b0C", "Because night air contains zero relative humidity", "Because wind speed is excessively high on clear nights", "Because atmospheric nitrogen solidifies onto leaves at +4\u00b0C"],
+        answer: 0,
+        explanation: "\u2705 Why 'Because the crops radiate thermal energy directly to the cold night sky (effective sky temperature \u2248 110 K), dropping their surface temperature below 0\u00b0C' is Correct: On clear nights, the atmosphere has high transmittance to space, which acts as a blackbody sink at very low temperatures. Radiative heat loss from the plants exceeds convective heat gain from the calm air, chilling leaves below freezing."
+      },
+      {
+        id: 270,
+        question: "When a small gray object of surface area A_1 and emissivity \u03b5_1 radiates into a very large surrounding room at temperature T_2, why does the heat exchange formula simplify directly to Q = \u03b5_1 \u00b7 \u03c3 \u00b7 A_1 \u00b7 (T_1\u2074 - T_2\u2074)?",
+        options: ["Because virtually all radiation emitted by the small body strikes the room and is absorbed, with practically zero reflection returning to the body, making the enclosure act as a blackbody", "Because large rooms have an emissivity of exactly zero", "Because air inside large rooms conducts heat at infinite velocity", "Because the Stefan-Boltzmann constant doubles in large enclosed spaces"],
+        answer: 0,
+        explanation: "\u2705 Why 'Because virtually all radiation emitted by the small body strikes the room and is absorbed, with practically zero reflection returning to the body, making the enclosure act as a blackbody' is Correct: When A_1 << A_2, the view factor F_12 = 1 and the term (A_1/A_2)(1/\u03b5_2 - 1) in the enclosure equation approaches zero, causing the large room to behave as an ideal blackbody absorber."
       }
     ]
   }
