@@ -418,12 +418,18 @@ function getFilteredPracticeQuestions() {
     return allQs.filter(q => q.id >= 196 && q.id <= 245);
   } else if (state.practiceFilter === 'fluid_machinery') {
     return allQs.filter(q => q.id >= 128 && q.id <= 215);
+  } else if (state.practiceFilter === 'ht_original') {
+    return allQs.filter(q => q.id >= 1 && q.id <= 146);
+  } else if (state.practiceFilter === 'ht_canvas_all') {
+    return allQs.filter(q => q.id >= 147 && q.id <= 200);
   } else if (state.practiceFilter === 'ht_mod1_1') {
     return allQs.filter(q => q.id >= 147 && q.id <= 161);
   } else if (state.practiceFilter === 'ht_mod1_2') {
     return allQs.filter(q => q.id >= 162 && q.id <= 176);
   } else if (state.practiceFilter === 'ht_mod1_3') {
     return allQs.filter(q => q.id >= 177 && q.id <= 188);
+  } else if (state.practiceFilter === 'ht_mod4_1') {
+    return allQs.filter(q => q.id >= 189 && q.id <= 200);
   }
   return allQs;
 }
@@ -697,18 +703,18 @@ function updateSubjectUI() {
   if (optMachinery) {
     optMachinery.style.display = (state.currentSubject === 'fluid_mechanics') ? '' : 'none';
   }
-  const optHtMod1 = document.getElementById('opt-filter-ht-mod1');
-  if (optHtMod1) {
-    optHtMod1.style.display = (state.currentSubject === 'heat_transfer') ? '' : 'none';
-  }
-  const optHtMod2 = document.getElementById('opt-filter-ht-mod2');
-  if (optHtMod2) {
-    optHtMod2.style.display = (state.currentSubject === 'heat_transfer') ? '' : 'none';
-  }
-  const optHtMod3 = document.getElementById('opt-filter-ht-mod3');
-  if (optHtMod3) {
-    optHtMod3.style.display = (state.currentSubject === 'heat_transfer') ? '' : 'none';
-  }
+  const htFilterIds = [
+    'opt-filter-ht-original',
+    'opt-filter-ht-canvas-all',
+    'opt-filter-ht-mod1',
+    'opt-filter-ht-mod2',
+    'opt-filter-ht-mod3',
+    'opt-filter-ht-mod4'
+  ];
+  htFilterIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = (state.currentSubject === 'heat_transfer') ? '' : 'none';
+  });
 
   // Auto-reset filter to 'all' if active filter is incompatible with newly selected subject
   const filterSelect = document.getElementById('practice-filter-select');
@@ -720,7 +726,7 @@ function updateSubjectUI() {
       state.practiceFilter = 'all';
     } else if (state.practiceFilter === 'fluid_machinery' && state.currentSubject !== 'fluid_mechanics') {
       state.practiceFilter = 'all';
-    } else if ((state.practiceFilter === 'ht_mod1_1' || state.practiceFilter === 'ht_mod1_2' || state.practiceFilter === 'ht_mod1_3') && state.currentSubject !== 'heat_transfer') {
+    } else if ((state.practiceFilter === 'ht_original' || state.practiceFilter === 'ht_canvas_all' || state.practiceFilter === 'ht_mod1_1' || state.practiceFilter === 'ht_mod1_2' || state.practiceFilter === 'ht_mod1_3' || state.practiceFilter === 'ht_mod4_1') && state.currentSubject !== 'heat_transfer') {
       state.practiceFilter = 'all';
     }
     filterSelect.value = state.practiceFilter;
