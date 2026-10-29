@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=90.0">
+  <link rel="stylesheet" href="styles.css?v=91.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -56,6 +56,12 @@
       <div class="quiz-card">
         <!-- Question Body -->
         <div class="question-content">
+          <div class="question-header-bar">
+            <span class="question-pill-badge" id="q-pill-badge"><i class="fa-solid fa-graduation-cap"></i> Practice</span>
+            <button type="button" class="q-audio-btn" id="q-audio-btn" onclick="toggleNarration()" title="Narrate question &amp; choices">
+              <i class="fa-solid fa-volume-high" id="q-audio-icon"></i> <span id="q-audio-label">Listen</span>
+            </button>
+          </div>
           <h2 class="question-text" id="q-text">Loading question...</h2>
           
           <!-- Optional Question Diagram Image Container -->
@@ -69,10 +75,13 @@
 
         <!-- Previous & Next Navigation Buttons (Just below the question!) -->
         <div class="inline-nav-container">
-          <button class="quiz-nav-btn" onclick="prevQuestion()">
+          <button class="quiz-nav-btn" onclick="prevQuestion()" id="btn-prev-inline">
             <i class="fa-solid fa-arrow-left"></i> Previous
           </button>
-          <button class="quiz-nav-btn primary" onclick="nextQuestion()">
+          <button class="quiz-nav-btn narrate-nav-btn" id="btn-narrate" onclick="toggleNarration()" title="Narrate question &amp; choices (Auto-narrates on Next/Prev)">
+            <i class="fa-solid fa-volume-high" id="narrate-icon"></i> <span id="narrate-btn-label">Narrate</span>
+          </button>
+          <button class="quiz-nav-btn primary" onclick="nextQuestion()" id="btn-next-inline">
             Next <i class="fa-solid fa-arrow-right"></i>
           </button>
         </div>
@@ -518,6 +527,6 @@
 
   <script src="formulas.js?v=6.0"></script>
   <script src="questions.js?v=37.0"></script>
-  <script src="app.js?v=39.0"></script>
+  <script src="app.js?v=40.0"></script>
 </body>
 </html>

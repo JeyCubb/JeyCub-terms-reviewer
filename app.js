@@ -40,6 +40,8 @@ let state = {
   liveNotes: {}, // { "subject_qId": [{ id, name, text, date, firebaseKey }] }
   groupMistakes: {}, // { "subject_qId": mistakeCount } shared class weak memory (synced globally)
   notesOpen: false,
+  narrationActive: false, // Auto-narrate on next/previous
+  isSpeaking: false,      // Currently synthesizing speech
   
   // Firebase Database Handle for notes, shared bookmarks & group mistakes
   firebaseDb: null,
@@ -96,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
   saveCurrentIndex();
   renderCurrentPracticeQuestion();
   updateStats();
+  updateNarrationUI();
   filterAllQuestions();
   initFirebase();
   initKeyboardShortcuts();
@@ -445,6 +448,9 @@ function changePracticeFilter(filterVal) {
 
   renderCurrentPracticeQuestion();
   scrollToTopInstant();
+  if (state.narrationActive) {
+    narrateCurrentPracticeQuestion();
+  }
 }
 
 function executeJumpFromInput() {
@@ -468,6 +474,9 @@ function executeJumpFromInput() {
     hideNotesSection();
     renderCurrentPracticeQuestion();
     scrollToTopInstant();
+    if (state.narrationActive) {
+      narrateCurrentPracticeQuestion();
+    }
     input.value = '';
   } else {
     alert(`Problem #${numVal} not found in the current pool.`);
@@ -595,6 +604,9 @@ function initKeyboardShortcuts() {
     } else if (e.key === '\\' || key === '\\' || code === 'backslash') {
       e.preventDefault();
       toggleBookmarkCurrent(true); // Pass true to trigger toast notification!
+    } else if (key === 'n' || code === 'keyn') {
+      e.preventDefault();
+      toggleNarration();
     } else if (e.key === 'ArrowRight' || code === 'arrowright') {
       e.preventDefault();
       nextQuestion();
@@ -698,6 +710,7 @@ function updateSubjectUI() {
 }
 
 function switchSubject(subjectKey) {
+  stopNarration(true);
   const data = getSubjectData();
   if (!data[subjectKey]) return;
   state.currentSubject = subjectKey;
@@ -982,6 +995,9 @@ function saveData(key, data) {
    ========================================================================== */
 
 function switchMode(mode) {
+  if (mode !== 'practice') {
+    stopNarration(true);
+  }
   state.currentMode = mode;
   document.body.setAttribute('data-mode', mode);
 
@@ -2355,6 +2371,7 @@ function revealCurrentSolution() {
 }
 
 function selectPracticeAnswer(key, optionIdx) {
+  stopNarration(false);
   if (state.practiceFilter === 'weak' || state.practiceFilter === 'bookmarked') {
     if (state.sessionPoolAnswers[key] !== undefined) return;
     state.sessionPoolAnswers[key] = optionIdx;
@@ -2416,6 +2433,9 @@ function nextQuestion() {
   saveCurrentIndex();
   renderCurrentPracticeQuestion();
   scrollToTopInstant();
+  if (state.narrationActive) {
+    narrateCurrentPracticeQuestion();
+  }
 }
 
 function prevQuestion() {
@@ -2441,6 +2461,9 @@ function prevQuestion() {
   saveCurrentIndex();
   renderCurrentPracticeQuestion();
   scrollToTopInstant();
+  if (state.narrationActive) {
+    narrateCurrentPracticeQuestion();
+  }
 }
 
 /* ==========================================================================
@@ -2948,3 +2971,314 @@ function downloadSubjectPdf() {
   printWindow.document.close();
 }
 
+
+
+/* ==========================================================================
+   Voice Narration & Text-To-Speech (TTS) Engine
+   Provides seamless narration of questions and sequential choices.
+   Supports auto-narration when navigating Next/Prev and instant manual trigger.
+   ========================================================================== */
+
+let narrationUtterance = null;
+let speechDebounceTimer = null;
+let cachedVoice = null;
+
+function getBestVoice() {
+  if (cachedVoice) return cachedVoice;
+  if (!('speechSynthesis' in window)) return null;
+
+  const voices = window.speechSynthesis.getVoices();
+  if (!voices || voices.length === 0) return null;
+
+  const preferred = [
+    'Google US English',
+    'Google UK English Female',
+    'Samantha',
+    'Microsoft Zira',
+    'Microsoft Jenny',
+    'Microsoft David',
+    'Karen',
+    'Daniel'
+  ];
+
+  for (const name of preferred) {
+    const v = voices.find(voice => voice.name && voice.name.includes(name));
+    if (v) {
+      cachedVoice = v;
+      return v;
+    }
+  }
+
+  cachedVoice = voices.find(v => v.lang === 'en-US') ||
+                voices.find(v => v.lang && v.lang.startsWith('en')) ||
+                voices[0];
+  return cachedVoice;
+}
+
+if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+  window.speechSynthesis.onvoiceschanged = () => {
+    cachedVoice = null;
+    getBestVoice();
+  };
+}
+
+function prepareTextForSpeech(text) {
+  if (!text) return '';
+  let s = String(text);
+
+  // Replace blanks (e.g. ______ or ___ or __________) with "blank"
+  s = s.replace(/_{2,}/g, ' blank ');
+
+  // Strip HTML tags if any
+  s = s.replace(/<[^>]*>/g, ' ');
+
+  // Symbols and Greek letters
+  s = s.replace(/σ_h\b/g, 'sigma h');
+  s = s.replace(/σ_L\b/g, 'sigma L');
+  s = s.replace(/σ\b/g, 'sigma');
+  s = s.replace(/τ\b/g, 'tau');
+  s = s.replace(/π\b/g, 'pi');
+  s = s.replace(/ΔT\b/g, 'delta T');
+  s = s.replace(/Δ\b/g, 'delta');
+  s = s.replace(/μ\b/g, 'micro');
+  s = s.replace(/Ω\b/g, 'ohms');
+  s = s.replace(/kΩ\b/g, 'kilo ohms');
+  s = s.replace(/MΩ\b/g, 'mega ohms');
+  s = s.replace(/μF\b/g, 'micro farads');
+  s = s.replace(/pF\b/g, 'pico farads');
+  s = s.replace(/°C\b/g, 'degrees Celsius');
+  s = s.replace(/°F\b/g, 'degrees Fahrenheit');
+  s = s.replace(/°\b/g, ' degrees ');
+  s = s.replace(/kg\/cm²|kg\/cm\^2/gi, 'kilograms per square centimeter');
+  s = s.replace(/kg\/m³|kg\/m\^3/gi, 'kilograms per cubic meter');
+  s = s.replace(/N\/m²|N\/m\^2/gi, 'Newtons per square meter');
+  s = s.replace(/lb\/in²|lb\/in\^2/gi, 'pounds per square inch');
+  s = s.replace(/in\.\/ft|in\/ft/gi, 'inches per foot');
+  s = s.replace(/\b([a-zA-Z]+)\/([a-zA-Z]+)\b/g, '$1 per $2');
+  s = s.replace(/\bpsi\b/gi, 'P S I');
+  s = s.replace(/\brpm\b/gi, 'R P M');
+  s = s.replace(/\bRe\b/g, 'Reynolds number');
+  s = s.replace(/\bBJT\b/g, 'B J T');
+  s = s.replace(/\bFET\b/g, 'FET');
+  s = s.replace(/\bLED\b/g, 'L E D');
+  s = s.replace(/V_CC\b/g, 'V C C');
+  s = s.replace(/V_BE\b/g, 'V B E');
+  s = s.replace(/V_CE\b/g, 'V C E');
+  s = s.replace(/I_B\b/g, 'I B');
+  s = s.replace(/I_C\b/g, 'I C');
+  s = s.replace(/I_E\b/g, 'I E');
+  s = s.replace(/R_B\b/g, 'R B');
+  s = s.replace(/R_C\b/g, 'R C');
+  s = s.replace(/R_E\b/g, 'R E');
+
+  // Math operators
+  s = s.replace(/×/g, ' times ');
+  s = s.replace(/÷/g, ' divided by ');
+  s = s.replace(/\^2\b/g, ' squared');
+  s = s.replace(/\^3\b/g, ' cubed');
+
+  // Collapse whitespace
+  s = s.replace(/\s+/g, ' ').trim();
+  return s;
+}
+
+function stopNarration(disableAuto = false) {
+  if (disableAuto) {
+    state.narrationActive = false;
+  }
+  if (speechDebounceTimer) {
+    clearTimeout(speechDebounceTimer);
+    speechDebounceTimer = null;
+  }
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
+  state.isSpeaking = false;
+  clearOptionSpeechHighlights();
+  updateNarrationUI();
+}
+
+function toggleNarration() {
+  if (!('speechSynthesis' in window)) {
+    alert("Speech Synthesis (text-to-speech) is not supported in this browser.");
+    return;
+  }
+
+  if (state.isSpeaking) {
+    // If speaking, clicking stops speech and turns OFF auto-narration
+    stopNarration(true);
+  } else if (state.narrationActive) {
+    // If auto-narration was on and idle, turn it OFF
+    stopNarration(true);
+  } else {
+    // Turn ON auto-narration and immediately narrate current question + choices
+    state.narrationActive = true;
+    narrateCurrentPracticeQuestion();
+  }
+}
+
+function narrateCurrentPracticeQuestion() {
+  if (!('speechSynthesis' in window)) return;
+
+  if (speechDebounceTimer) {
+    clearTimeout(speechDebounceTimer);
+    speechDebounceTimer = null;
+  }
+  window.speechSynthesis.cancel();
+  state.isSpeaking = false;
+  clearOptionSpeechHighlights();
+  updateNarrationUI();
+
+  const questions = getFilteredPracticeQuestions();
+  if (!questions || questions.length === 0) return;
+  const q = questions[state.currentIndex];
+  if (!q) return;
+
+  const key = `${state.currentSubject}_q${q.id}`;
+  const shuffledOpts = getShuffledOptionsForQuestion(key, q);
+
+  const cleanQ = prepareTextForSpeech(q.question || '');
+  const qSpoken = `Problem ${q.id}. ${cleanQ}`;
+
+  let optsSpoken = [];
+  if (shuffledOpts && Array.isArray(shuffledOpts) && shuffledOpts.length > 0) {
+    optsSpoken = shuffledOpts.map((optObj, idx) => {
+      const letter = String.fromCharCode(65 + idx);
+      const cleanOpt = prepareTextForSpeech(optObj.text || '');
+      return `Option ${letter}: ${cleanOpt}`;
+    });
+  } else if (Array.isArray(q.options)) {
+    optsSpoken = q.options.map((opt, idx) => {
+      const letter = String.fromCharCode(65 + idx);
+      const cleanOpt = prepareTextForSpeech(opt || '');
+      return `Option ${letter}: ${cleanOpt}`;
+    });
+  }
+
+  // Question, pause, followed by choices with pauses
+  const fullScript = `${qSpoken}. ... ${optsSpoken.join('. ... ')}.`;
+
+  speechDebounceTimer = setTimeout(() => {
+    try {
+      narrationUtterance = new SpeechSynthesisUtterance(fullScript);
+      narrationUtterance.lang = 'en-US';
+      narrationUtterance.rate = 0.98;
+      narrationUtterance.pitch = 1.0;
+
+      const voice = getBestVoice();
+      if (voice) {
+        narrationUtterance.voice = voice;
+      }
+
+      narrationUtterance.onstart = () => {
+        state.isSpeaking = true;
+        updateNarrationUI();
+      };
+
+      narrationUtterance.onend = () => {
+        state.isSpeaking = false;
+        clearOptionSpeechHighlights();
+        updateNarrationUI();
+      };
+
+      narrationUtterance.onerror = (e) => {
+        state.isSpeaking = false;
+        clearOptionSpeechHighlights();
+        updateNarrationUI();
+      };
+
+      narrationUtterance.onboundary = (e) => {
+        if (e.name === 'word' && e.charIndex !== undefined) {
+          const spokenSoFar = fullScript.substring(e.charIndex);
+          const match = spokenSoFar.match(/^Option\s+([A-D])/i);
+          if (match) {
+            highlightSpokenOption(match[1].toUpperCase());
+          }
+        }
+      };
+
+      window.speechSynthesis.speak(narrationUtterance);
+    } catch (err) {
+      console.warn("Speech synthesis error:", err);
+      state.isSpeaking = false;
+      updateNarrationUI();
+    }
+  }, 60);
+}
+
+function highlightSpokenOption(letter) {
+  const container = document.getElementById('q-options-container');
+  if (!container) return;
+  const buttons = container.querySelectorAll('.option-btn');
+  buttons.forEach((btn) => {
+    const letterSpan = btn.querySelector('.option-letter');
+    if (letterSpan && letterSpan.textContent.trim() === letter) {
+      btn.classList.add('narrating-focus');
+    } else {
+      btn.classList.remove('narrating-focus');
+    }
+  });
+}
+
+function clearOptionSpeechHighlights() {
+  const container = document.getElementById('q-options-container');
+  if (!container) return;
+  const buttons = container.querySelectorAll('.option-btn');
+  buttons.forEach(btn => btn.classList.remove('narrating-focus'));
+}
+
+function updateNarrationUI() {
+  const btnNarrate = document.getElementById('btn-narrate');
+  const narrateIcon = document.getElementById('narrate-icon');
+  const narrateLabel = document.getElementById('narrate-btn-label');
+
+  const qListenBtn = document.getElementById('q-audio-btn');
+  const qListenIcon = document.getElementById('q-audio-icon');
+  const qListenLabel = document.getElementById('q-audio-label');
+
+  if (state.isSpeaking) {
+    if (btnNarrate) {
+      btnNarrate.className = 'quiz-nav-btn narrate-nav-btn is-speaking';
+      btnNarrate.setAttribute('title', 'Stop narration');
+    }
+    if (narrateIcon) narrateIcon.className = 'fa-solid fa-stop';
+    if (narrateLabel) narrateLabel.textContent = 'Stop';
+
+    if (qListenBtn) {
+      qListenBtn.className = 'q-audio-btn is-speaking';
+      qListenBtn.setAttribute('title', 'Stop narration');
+    }
+    if (qListenIcon) qListenIcon.className = 'fa-solid fa-stop';
+    if (qListenLabel) qListenLabel.textContent = 'Stop';
+
+  } else if (state.narrationActive) {
+    if (btnNarrate) {
+      btnNarrate.className = 'quiz-nav-btn narrate-nav-btn is-active';
+      btnNarrate.setAttribute('title', 'Auto-Narration is ON (speaks on Next/Prev). Click to turn OFF');
+    }
+    if (narrateIcon) narrateIcon.className = 'fa-solid fa-volume-high';
+    if (narrateLabel) narrateLabel.textContent = 'Auto: ON';
+
+    if (qListenBtn) {
+      qListenBtn.className = 'q-audio-btn is-active';
+      qListenBtn.setAttribute('title', 'Auto-Narration is ON. Click to turn OFF');
+    }
+    if (qListenIcon) qListenIcon.className = 'fa-solid fa-volume-high';
+    if (qListenLabel) qListenLabel.textContent = 'Auto: ON';
+
+  } else {
+    if (btnNarrate) {
+      btnNarrate.className = 'quiz-nav-btn narrate-nav-btn';
+      btnNarrate.setAttribute('title', 'Narrate question & choices (Auto-narrates on Next/Prev)');
+    }
+    if (narrateIcon) narrateIcon.className = 'fa-solid fa-volume-high';
+    if (narrateLabel) narrateLabel.textContent = 'Narrate';
+
+    if (qListenBtn) {
+      qListenBtn.className = 'q-audio-btn';
+      qListenBtn.setAttribute('title', 'Narrate question and choices');
+    }
+    if (qListenIcon) qListenIcon.className = 'fa-solid fa-volume-high';
+    if (qListenLabel) qListenLabel.textContent = 'Listen';
+  }
+}
