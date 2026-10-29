@@ -418,6 +418,8 @@ function getFilteredPracticeQuestions() {
     return allQs.filter(q => q.id >= 196 && q.id <= 245);
   } else if (state.practiceFilter === 'fluid_machinery') {
     return allQs.filter(q => q.id >= 128 && q.id <= 215);
+  } else if (state.practiceFilter === 'ht_mod1_1') {
+    return allQs.filter(q => q.id >= 147 && q.id <= 161);
   }
   return allQs;
 }
@@ -691,6 +693,10 @@ function updateSubjectUI() {
   if (optMachinery) {
     optMachinery.style.display = (state.currentSubject === 'fluid_mechanics') ? '' : 'none';
   }
+  const optHtMod1 = document.getElementById('opt-filter-ht-mod1');
+  if (optHtMod1) {
+    optHtMod1.style.display = (state.currentSubject === 'heat_transfer') ? '' : 'none';
+  }
 
   // Auto-reset filter to 'all' if active filter is incompatible with newly selected subject
   const filterSelect = document.getElementById('practice-filter-select');
@@ -701,6 +707,8 @@ function updateSubjectUI() {
     } else if ((state.practiceFilter === 'test8_vessels' || state.practiceFilter === 'test5_shaftings') && state.currentSubject !== 'deformable_bodies') {
       state.practiceFilter = 'all';
     } else if (state.practiceFilter === 'fluid_machinery' && state.currentSubject !== 'fluid_mechanics') {
+      state.practiceFilter = 'all';
+    } else if (state.practiceFilter === 'ht_mod1_1' && state.currentSubject !== 'heat_transfer') {
       state.practiceFilter = 'all';
     }
     filterSelect.value = state.practiceFilter;
