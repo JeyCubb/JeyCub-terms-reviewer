@@ -2932,14 +2932,17 @@ function formatMathTypography(str) {
   s = s.replace(/([a-zA-Z\)])\^([+-]?\d+)/g, '$1<sup>$2</sup>');
 
   // 4. Electrical and mechanical theta angles: θ_e -> θ<sub>e</sub>, θ_m -> θ<sub>m</sub>
-  s = s.replace(/\bθ_e\b/g, 'θ<sub>e</sub>');
-  s = s.replace(/\bθ_m\b/g, 'θ<sub>m</sub>');
+  s = s.replace(/θ_e\b/g, 'θ<sub>e</sub>');
+  s = s.replace(/θ_m\b/g, 'θ<sub>m</sub>');
+  s = s.replace(/θ_([a-zA-Z0-9]+)\b/g, 'θ<sub>$1</sub>');
 
-  // 5. Variables with subscripts: e.g. V_CE, I_B, I_C, R_1, T_2, E_ph, etc.
-  // 1-3 letters / Greek symbols followed by underscore and 1-4 alphanumeric chars
-  s = s.replace(/\b([A-Za-z\u0370-\u03ff]{1,3})_([A-Za-z0-9]{1,4})\b/g, '$1<sub>$2</sub>');
+  // 5. Greek variables with subscripts: e.g. δ_max, η_max, etc.
+  s = s.replace(/([θδγηλωΩ])_([A-Za-z0-9]+)\b/g, '$1<sub>$2</sub>');
 
-  // 6. Multiplication asterisk between spaces -> middle dot: " * " -> " · "
+  // 6. Latin variables with subscripts: e.g. V_CE, I_B, I_C, R_1, T_2, E_ph, X_s, R_a, V_t, I_a, etc.
+  s = s.replace(/\b([A-Za-z]{1,4})_([A-Za-z0-9]{1,4})\b/g, '$1<sub>$2</sub>');
+
+  // 7. Multiplication asterisk between spaces -> middle dot: " * " -> " · "
   s = s.replace(/(\s)\*(\s)/g, '$1·$2');
 
   return s;

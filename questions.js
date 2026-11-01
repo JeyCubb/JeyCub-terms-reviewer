@@ -10,4645 +10,4658 @@ var SUBJECT_DATA = {  basic_electronics: {
     title: "Basic Electronics",
     chapter: "ECE 005 - Complete Reviewer (Prelim & Midterm)",
     questions: [
-    {
-        "id": 1,
-        "question": "What is the name of Niels Bohr's 1913 atomic model?",
-        "options": [
-            "Solid Sphere Model",
-            "Plum Pudding Model",
-            "Nuclear Model",
-            "Planetary Model"
-        ],
-        "answer": 3,
-        "explanation": "• Why 'Planetary Model' is Correct: Niels Bohr proposed the Planetary Model in 1913, in which electrons orbit a dense positive nucleus in discrete energy levels, similar to planets orbiting the sun.\n• Why Other Choices are Incorrect: Dalton proposed the Solid Sphere Model (1803), Thomson proposed the Plum Pudding Model (1897), and Rutherford proposed the Nuclear Model (1911)."
-    },
-    {
-        "id": 2,
-        "question": "Which of the following best defines a semiconductor?",
-        "options": [
-            "Conductivity between a conductor and an insulator",
-            "Zero electrical resistance at standard room temperature",
-            "Complete blockage of electric current under all bias voltages",
-            "Electrical conduction carried exclusively by trivalent metal ions"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Conductivity between a conductor and an insulator' is Correct: Semiconductors are a special class of elements whose conductivity lies between conductors (like copper) and insulators (like rubber).\n• Why Other Choices are Incorrect: Superconductors have zero resistance, while insulators completely block current."
-    },
-    {
-        "id": 3,
-        "question": "How many valence electrons does a pure semiconductor atom (such as Silicon or Germanium) have?",
-        "options": [
-            "2",
-            "3",
-            "4",
-            "5"
-        ],
-        "answer": 2,
-        "explanation": "• Why '4' is Correct: Pure semiconductor atoms like Silicon (Si) and Germanium (Ge) belong to Group IV of the periodic table and have 4 valence electrons (tetravalent).\n• Why Other Choices are Incorrect: Trivalent elements have 3 valence electrons (acceptors like Boron), while pentavalent elements have 5 valence electrons (donors like Phosphorus)."
-    },
-    {
-        "id": 4,
-        "question": "What is the term for a pure semiconductor that has not been subjected to doping?",
-        "options": [
-            "Extrinsic semiconductor",
-            "Intrinsic semiconductor",
-            "N-type semiconductor",
-            "P-type semiconductor"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Intrinsic semiconductor' is Correct: An intrinsic semiconductor is an pure, un-doped semiconductor crystal where thermal excitation alone creates equal numbers of free electrons and holes.\n• Why Other Choices are Incorrect: Extrinsic semiconductors are semiconductors that have been intentionally doped with impurities to form N-type or P-type materials."
-    },
-    {
-        "id": 5,
-        "question": "Calculate the loop current (I) in a forward-biased diode circuit using the Third Approximation (Piecewise Approximation). Given: Supply Voltage = 10 V, Silicon Diode (V_B = 0.7 V, internal resistance R_B = 0.2 Ω), and Load Resistor R_L = 1 kΩ (1000 Ω).",
-        "options": [
-            "9.300 mA",
-            "9.298 mA",
-            "10.00 mA",
-            "9.600 mA"
-        ],
-        "answer": 1,
-        "explanation": "• Why '9.298 mA' is Correct: In the Third Approximation, I = (V_S - V_B) / (R_L + R_B) = (10 V - 0.7 V) / (1000 Ω + 0.2 Ω) = 9.3 V / 1000.2 Ω = 0.00929814 A = 9.298 mA.\n• Why Other Choices are Incorrect: 9.300 mA is obtained using the Second Approximation (ignoring internal resistance R_B = 0.2 Ω), and 10.00 mA is obtained using the First (Ideal) Approximation."
-    },
-    {
-        "id": 6,
-        "question": "Who discovered static electricity in ancient times by rubbing amber against fur?",
-        "options": [
-            "Ancient Egyptians",
-            "Ancient Greeks",
-            "Romans",
-            "Babylonians"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Ancient Greeks' is Correct: The ancient Greeks discovered static electricity when rubbing amber (Greek: elektron) against fur attracted light objects.\n• Why Other Choices are Incorrect: Ancient Egyptians utilized electric fish to alleviate pain, but did not discover amber static electricity."
-    },
-    {
-        "id": 7,
-        "question": "The Leyden jar, invented in 1745, was a landmark historical device because it was capable of:",
-        "options": [
-            "Generating alternating current",
-            "Storing an electric charge",
-            "Measuring magnetic flux",
-            "Amplifying radio signals"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Storing an electric charge' is Correct: The Leyden jar (1745) was the earliest form of a capacitor, designed to store static electrical charge.\n• Why Other Choices are Incorrect: Generators produce AC, magnetometers measure flux, and vacuum tubes/transistors amplify signals."
-    },
-    {
-        "id": 8,
-        "question": "In 1820, Hans Christian Oersted discovered which foundational physical phenomenon?",
-        "options": [
-            "Electromagnetism",
-            "Photoelectric emission effect",
-            "Thermionic vacuum conduction",
-            "Quantum entanglement transport"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Electromagnetism' is Correct: Oersted noticed a compass needle deflected near a current-carrying wire in 1820, establishing the field of electromagnetism.\n• Why Other Choices are Incorrect: Faraday discovered induction (1831), Edison discovered thermionic emission (1883), and Einstein explained photoelectric effect (1905)."
-    },
-    {
-        "id": 9,
-        "question": "Michael Faraday's discovery of electromagnetic induction in 1831 led directly to the development of:",
-        "options": [
-            "Electric motors and generators",
-            "Triode and pentode vacuum tubes",
-            "Silicon integrated microprocessors",
-            "High-capacitance Leyden jar banks"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Electric motors and generators' is Correct: Faraday showed that a changing magnetic field induces an electric current, enabling mechanical-to-electrical energy conversion in electric generators.\n• Why Other Choices are Incorrect: Vacuum tubes were invented by Fleming (1904), microprocessors by Intel (1971), and Leyden jars in 1745."
-    },
-    {
-        "id": 10,
-        "question": "Who invented the first vacuum tube (diode / Fleming valve) in 1904?",
-        "options": [
-            "Thomas Edison",
-            "John Ambrose Fleming",
-            "Lee de Forest",
-            "Nikola Tesla"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'John Ambrose Fleming' is Correct: John Ambrose Fleming invented the two-electrode thermionic vacuum tube (diode valve) in 1904 based on the Edison effect.\n• Why Other Choices are Incorrect: Thomas Edison discovered the Edison effect (1883), Lee de Forest added a grid to create the triode (1906), and Tesla pioneered AC power."
-    },
-    {
-        "id": 11,
-        "question": "The transistor was invented in 1947 at Bell Laboratories by which team of scientists?",
-        "options": [
-            "Jack Kilby, Robert Noyce, and Ted Hoff",
-            "John Bardeen, Walter Brattain, and William Shockley",
-            "Thomas Edison, Nikola Tesla, and Alexander Graham Bell",
-            "J.J. Thomson, Ernest Rutherford, and Niels Bohr"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'John Bardeen, Walter Brattain, and William Shockley' is Correct: Bardeen, Brattain, and Shockley co-invented the point-contact and junction transistor at Bell Labs in December 1947.\n• Why Other Choices are Incorrect: Kilby, Noyce, and Hoff developed integrated circuits and microprocessors."
-    },
-    {
-        "id": 12,
-        "question": "Integrated Circuits (ICs) were independently invented in the late 1950s by:",
-        "options": [
-            "Jack Kilby and Robert Noyce",
-            "John Bardeen and Walter Brattain",
-            "Ted Hoff and Federico Faggin",
-            "John Ambrose Fleming and Lee de Forest"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Jack Kilby and Robert Noyce' is Correct: Jack Kilby (Texas Instruments) and Robert Noyce (Fairchild Semiconductor) independently invented planar integrated circuits in 1958-1959.\n• Why Other Choices are Incorrect: Bardeen & Brattain invented the transistor; Hoff & Faggin created the Intel 4004 microprocessor."
-    },
-    {
-        "id": 13,
-        "question": "Which atomic model introduced the concept of electrons embedded in a positively charged sphere, known as the 'Plum Pudding Model'?",
-        "options": [
-            "John Dalton (1803)",
-            "J.J. Thomson (1897)",
-            "Ernest Rutherford (1911)",
-            "Erwin Schrödinger (1926)"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'J.J. Thomson (1897)' is Correct: J.J. Thomson discovered the electron in 1897 and proposed the Plum Pudding Model, where negative electrons were embedded in a positive sphere.\n• Why Other Choices are Incorrect: Dalton proposed solid sphere, Rutherford proposed nuclear model, and Schrödinger developed the quantum wave model."
-    },
-    {
-        "id": 14,
-        "question": "Erwin Schrödinger's 1926 contribution to atomic theory is known as the:",
-        "options": [
-            "Quantum mechanical model",
-            "Planetary orbital atom model",
-            "Plum pudding nuclear model",
-            "Solid billiard sphere model"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Quantum mechanical model' is Correct: Schrödinger formulated wave mechanics in 1926, defining electron positions probabilistically in 3D electron clouds (orbitals).\n• Why Other Choices are Incorrect: Dalton (solid sphere), Rutherford (nuclear), and Bohr (planetary) were earlier classical models."
-    },
-    {
-        "id": 15,
-        "question": "Which of the following is a key advantage of Silicon over Germanium in semiconductor device manufacturing?",
-        "options": [
-            "Lower leakage current and higher thermal stability",
-            "Higher intrinsic electron mobility at room temperature",
-            "Lower forward barrier voltage threshold of 0.1 to 0.3 V",
-            "Complete immunity to high-temperature thermal runaway"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Lower leakage current and higher thermal stability' is Correct: Silicon (Si) outperforms Germanium (Ge) because Si handles higher operating temperatures, has lower reverse leakage current, and is abundant in sand (SiO2).\n• Why Other Choices are Incorrect: Germanium is temperature sensitive, expensive, less abundant, and has high leakage current."
-    },
-    {
-        "id": 16,
-        "question": "What are the typical forward barrier (knee) voltages for Germanium (Ge) and Silicon (Si) diodes at room temperature?",
-        "options": [
-            "Germanium = 0.7 V, Silicon = 0.3 V",
-            "Germanium = 0.3 V, Silicon = 0.7 V",
-            "Germanium = 1.1 V, Silicon = 1.5 V",
-            "Germanium = 0.0 V, Silicon = 0.0 V"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Germanium = 0.3 V, Silicon = 0.7 V' is Correct: At 25 °C, a Germanium PN junction requires approx 0.3 V to turn on in forward bias, while Silicon requires approx 0.7 V.\n• Why Other Choices are Incorrect: Reversing the values is a common mistake; Ge has smaller bandgap energy than Si."
-    },
-    {
-        "id": 17,
-        "question": "Which of the following is an example of a Compound Semiconductor?",
-        "options": [
-            "Silicon (Si)",
-            "Germanium (Ge)",
-            "Gallium Arsenide (GaAs)",
-            "Carbon (C)"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Gallium Arsenide (GaAs)' is Correct: Gallium Arsenide (GaAs) and Cadmium Sulfide (CdS) are compound semiconductors formed by combining elements from different periodic table groups.\n• Why Other Choices are Incorrect: Silicon and Germanium are single-crystal elemental semiconductors."
-    },
-    {
-        "id": 18,
-        "question": "What type of chemical bonding is formed between semiconductor atoms in a crystal lattice by sharing valence electrons?",
-        "options": [
-            "Ionic bonding",
-            "Covalent bonding",
-            "Metallic bonding",
-            "Hydrogen bonding"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Covalent bonding' is Correct: Semiconductor atoms achieve an 8-electron stable valence octet by sharing valence electrons with four neighboring atoms in covalent bonds.\n• Why Other Choices are Incorrect: Ionic bonds involve complete electron transfer, while metallic bonds feature a sea of delocalized electrons."
-    },
-    {
-        "id": 19,
-        "question": "Adding donor impurities (such as Phosphorus or Arsenic) to an intrinsic semiconductor produces which type of material?",
-        "options": [
-            "P-type semiconductor with excess holes",
-            "N-type semiconductor with excess free electrons",
-            "Insulator with high resistance",
-            "Superconductor"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'N-type semiconductor with excess free electrons' is Correct: Pentavalent donor atoms (5 valence electrons) donate extra free electrons, creating an N-type (negative carrier) semiconductor.\n• Why Other Choices are Incorrect: Acceptor impurities (trivalent like Boron) produce P-type semiconductors with excess holes."
-    },
-    {
-        "id": 20,
-        "question": "In a P-type semiconductor, which charge carriers are the majority carriers and minority carriers?",
-        "options": [
-            "Majority: Electrons, Minority: Holes",
-            "Majority: Holes, Minority: Electrons",
-            "Majority: Positive Ions, Minority: Negative Ions",
-            "Majority: Photons, Minority: Neutrons"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Majority: Holes, Minority: Electrons' is Correct: P-type semiconductors are doped with trivalent acceptors (Boron), creating a abundance of positive holes (majority carriers) and few thermally generated electrons (minority carriers).\n• Why Other Choices are Incorrect: N-type materials have electrons as majority carriers and holes as minority carriers."
-    },
-    {
-        "id": 21,
-        "question": "In the First (Ideal) Approximation of a diode, how does the diode behave under forward bias and reverse bias conditions?",
-        "options": [
-            "Forward: Closed switch (0 V); Reverse: Open switch (0 A)",
-            "Forward: Open switch (infinite Ω); Reverse: Closed switch (0 Ω)",
-            "Forward: 0.7 V constant drop; Reverse: Small finite resistance",
-            "Forward: Variable capacitor; Reverse: Fixed inductive choke"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Forward: Closed switch (0 V); Reverse: Open switch (0 A)' is Correct: The Ideal (First) Approximation treats the diode as a perfect binary switch with zero forward voltage drop when ON and zero leakage current when OFF.\n• Why Other Choices are Incorrect: 0.7 V battery model corresponds to the Practical (Second) Approximation."
-    },
-    {
-        "id": 22,
-        "question": "In the Second (Practical) Approximation, a forward-biased diode is modeled as a switch in series with a:",
-        "options": [
-            "Constant DC voltage source",
-            "Variable linear resistance element",
-            "High-frequency bypass capacitive reactance",
-            "Dependent constant current source path"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Constant DC voltage source' is Correct: The Second Approximation accounts for barrier potential by modeling the diode as a switch in series with an opposing DC battery equal to the barrier voltage (0.7 V for Si, 0.3 V for Ge).\n• Why Other Choices are Incorrect: Adding a bulk resistor corresponds to the Third (Piecewise) Approximation."
-    },
-    {
-        "id": 23,
-        "question": "What is the region near the PN junction called where free electrons and holes recombine, leaving unneutralized donor and acceptor ions?",
-        "options": [
-            "Depletion region",
-            "Conduction channel",
-            "Saturation domain",
-            "Substrate buffer"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Depletion region' is Correct: When a PN junction is formed, mobile charge carriers diffuse across and recombine, depleting the junction of free carriers and forming a depletion region of fixed ions.\n• Why Other Choices are Incorrect: Conduction region refers to energy bands, while saturation region refers to transistor operation."
-    },
-    {
-        "id": 24,
-        "question": "Under Reverse-Bias conditions, what happens to the depletion region width of a PN junction diode?",
-        "options": [
-            "It widens",
-            "It completely shrinks to zero width",
-            "It remains completely unchanged at 0.7 V",
-            "It transitions into a pure ohmic conductor"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'It widens' is Correct: Reverse bias pulls majority carriers away from the PN junction, widening the depletion layer and preventing forward current flow.\n• Why Other Choices are Incorrect: Forward bias shrinks the depletion region width."
-    },
-    {
-        "id": 25,
-        "question": "Which diode approximation incorporates the diode's internal bulk resistance (R_B) in series with the barrier voltage battery and switch?",
-        "options": [
-            "First (Ideal) Approximation",
-            "Second (Practical) Approximation",
-            "Third (Piecewise Linear) Approximation",
-            "Fourth (Small-Signal) Approximation"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Third (Piecewise Linear) Approximation' is Correct: The Third Approximation includes the internal bulk resistance of the semiconductor material (R_B) in series with the barrier battery (V_B) and switch.\n• Why Other Choices are Incorrect: First approximation has no voltage drop or resistance; Second approximation includes barrier voltage V_B but assumes R_B = 0."
-    },
-    {
-        "id": 26,
-        "question": "Which scientist and inventor is famous for discovering and pioneering Alternating Current (AC) power transmission systems?",
-        "options": [
-            "Nikola Tesla",
-            "Alessandro Volta",
-            "Thomas Edison",
-            "James Clerk Maxwell"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Nikola Tesla' is Correct: Nikola Tesla pioneered polyphase Alternating Current (AC) power systems, AC induction motors, and high-voltage AC transmission lines.\n• Why Other Choices are Incorrect: Alessandro Volta invented the battery, Thomas Edison advocated for Direct Current (DC), and Maxwell formulated electromagnetic theory."
-    },
-    {
-        "id": 27,
-        "question": "Who invented the first practical battery (the Voltaic Pile) in 1800, providing the world with its first source of continuous direct electric current?",
-        "options": [
-            "Guglielmo Marconi",
-            "Alessandro Volta",
-            "Samuel Morse",
-            "Michael Faraday"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Alessandro Volta' is Correct: Alessandro Volta created the Voltaic Pile in 1800 (alternating discs of zinc and copper separated by brine-soaked cloth), producing the first chemical battery.\n• Why Other Choices are Incorrect: Marconi pioneered wireless radio, Morse developed telegraphy, and Faraday discovered electromagnetic induction."
-    },
-    {
-        "id": 28,
-        "question": "Who is credited with pioneering work in long-distance radio transmission and developing practical wireless telegraphy?",
-        "options": [
-            "Tim Berners-Lee",
-            "Jack Kilby",
-            "Guglielmo Marconi",
-            "Alexander Graham Bell"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Guglielmo Marconi' is Correct: Guglielmo Marconi sent the first transatlantic radio signal in 1901 and won the Nobel Prize for pioneering wireless radio communication.\n• Why Other Choices are Incorrect: Tim Berners-Lee created the World Wide Web, Jack Kilby co-invented the integrated circuit, and Bell invented the telephone."
-    },
-    {
-        "id": 29,
-        "question": "Which theoretical physicist is renowned for the formulation of classical electromagnetic theory (Maxwell's Equations), unifying electricity, magnetism, and light?",
-        "options": [
-            "James Clerk Maxwell",
-            "Nikola Tesla",
-            "Samuel Morse",
-            "Heinrich Hertz"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'James Clerk Maxwell' is Correct: James Clerk Maxwell published his four unified field equations in 1865, proving that light is an electromagnetic wave.\n• Why Other Choices are Incorrect: Tesla pioneered AC power systems, Morse invented single-wire telegraphy, and Hertz experimentally demonstrated radio waves."
-    },
-    {
-        "id": 30,
-        "question": "Jack Kilby and Robert Noyce are celebrated in electronics history for which revolutionary breakthrough in the late 1950s?",
-        "options": [
-            "Discovery of thermionic emission",
-            "Introduction of the Integrated Circuit (IC)",
-            "Development of the World Wide Web",
-            "Invention of the single-wire electric telegraph"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Introduction of the Integrated Circuit (IC)' is Correct: Jack Kilby (Texas Instruments) and Robert Noyce (Fairchild Semiconductor) independently invented the Integrated Circuit (IC), fabricating complete circuits on a single semiconductor chip.\n• Why Other Choices are Incorrect: Edison discovered thermionic emission, Berners-Lee created WWW, and Morse invented the telegraph."
-    },
-    {
-        "id": 31,
-        "question": "Which computer scientist is renowned for the development of the World Wide Web (WWW) in 1989 while working at CERN?",
-        "options": [
-            "Alan Turing",
-            "Tim Berners-Lee",
-            "Steve Wozniak",
-            "Dennis Ritchie"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Tim Berners-Lee' is Correct: Sir Tim Berners-Lee invented the World Wide Web (WWW), HTML, HTTP, and the first browser at CERN in 1989.\n• Why Other Choices are Incorrect: Alan Turing developed theoretical computer science, Wozniak co-founded Apple, and Ritchie created C/Unix."
-    },
-    {
-        "id": 32,
-        "question": "Who developed the first successful single-wire electric telegraph and co-created the dot-and-dash signaling code named after him?",
-        "options": [
-            "Samuel Morse",
-            "Alexander Graham Bell",
-            "Guglielmo Marconi",
-            "Thomas Edison"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Samuel Morse' is Correct: Samuel Morse patented the single-wire electric telegraph in 1837 and created Morse Code for long-distance telecommunication.\n• Why Other Choices are Incorrect: Bell invented the telephone, Marconi developed radio transmission, and Edison invented the incandescent bulb."
-    },
-    {
-        "id": 33,
-        "question": "In a review matching historical pioneers with their legacies, which of the following pairings is INCORRECT?",
-        "options": [
-            "Alessandro Volta — First Practical Battery",
-            "Guglielmo Marconi — Pioneering work in wireless radio transmission",
-            "Tim Berners-Lee — Development of the World Wide Web",
-            "Nikola Tesla — Invention of the vacuum tube Fleming valve"
-        ],
-        "answer": 3,
-        "explanation": "• Why 'Nikola Tesla — Invention of the vacuum tube Fleming valve' is Correct (as the INCORRECT match): The vacuum tube (Fleming valve) was invented by John Ambrose Fleming in 1904. Nikola Tesla is famous for discovering and pioneering Alternating Current (AC) power systems.\n• Why Other Choices are Valid Matches: Volta created the first battery (1800), Marconi pioneered radio, and Berners-Lee invented the World Wide Web (1989)."
-    },
-    {
-        "id": 34,
-        "question": "What is the unique structural construction of a Schottky diode compared to a traditional Positive-Negative (PN) junction diode?",
-        "options": [
-            "Metal anode joined to N-type semiconductor cathode",
-            "P-type semiconductor anode joined to metal cathode",
-            "Two intrinsic semiconductor layers without metal contact",
-            "Three alternating layers of P-type and N-type silicon"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Metal anode joined to N-type semiconductor cathode' is Correct: A Schottky diode is a metal-semiconductor junction formed by bonding a metal (like gold, silver, or platinum) as the Anode to an N-type silicon Cathode, completely omitting P-type semiconductor material.\n• Why Other Choices are Incorrect: Traditional diodes use P-N semiconductor junctions; Schottky diodes rely on metal-N semiconductor junctions."
-    },
-    {
-        "id": 35,
-        "question": "What is the typical forward voltage drop across a Schottky diode when conducting current?",
-        "options": [
-            "0.15 V to 0.45 V",
-            "0.60 V to 0.70 V",
-            "1.20 V to 1.50 V",
-            "2.00 V to 3.00 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why '0.15 V to 0.45 V' is Correct: The metal-semiconductor Schottky barrier potential is significantly lower than a standard PN junction, resulting in a low forward voltage drop of 0.15 V to 0.45 V.\n• Why Other Choices are Incorrect: Standard silicon PN diodes have a 0.6 V – 0.7 V drop, while Light-Emitting Diodes (LEDs) require 1.5 V – 3.0 V."
-    },
-    {
-        "id": 36,
-        "question": "Why do Schottky diodes exhibit extremely fast switching speeds with virtually zero reverse recovery time?",
-        "options": [
-            "Fast switching speed due to absence of minority carrier storage",
-            "Extremely high reverse breakdown voltage rating exceeding 2000 V",
-            "Zero forward voltage drop across the entire operating range",
-            "Negative resistance region under low forward bias conditions"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Fast switching speed due to absence of minority carrier storage' is Correct: In Schottky diodes, current is carried almost exclusively by majority carriers (electrons). Since there are no stored minority carriers to clear out during turn-off, reverse recovery time is negligible (a few nanoseconds).\n• Why Other Choices are Incorrect: Standard PN diodes suffer from slow switching due to minority carrier storage in the depletion region."
-    },
-    {
-        "id": 37,
-        "question": "Which of the following is a main limitation or disadvantage of a Schottky diode compared to a standard Silicon PN junction diode?",
-        "options": [
-            "Approximately 0.2 V to 0.3 V",
-            "Approximately 0.7 V to 0.8 V",
-            "Approximately 1.1 V to 1.2 V",
-            "Approximately 2.0 V to 3.0 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Approximately 0.2 V to 0.3 V' is Correct: Because of the thin metal barrier, Schottky diodes experience higher reverse leakage current and lower reverse breakdown voltages, making them unsuitable for high-voltage circuits.\n• Why Other Choices are Incorrect: Schottky diodes excel in fast switching speed and low forward voltage drop."
-    },
-    {
-        "id": 38,
-        "question": "In a forward-biased Schottky diode, what is the direction of conventional current flow?",
-        "options": [
-            "A heavily doped PN diode exhibiting negative resistance",
-            "A lightly doped diode used for radio-frequency tuning",
-            "A metal-semiconductor diode used for fast rectification",
-            "A four-layer diode used for high-power thyristor switching"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'A heavily doped PN diode exhibiting negative resistance' is Correct: Forward bias connects the positive terminal to the Metal (Anode) and negative to N-type (Cathode), directing conventional current from Metal to N-type semiconductor.\n• Why Other Choices are Incorrect: Electron flow is in the opposite direction (N-type to Metal)."
-    },
-    {
-        "id": 39,
-        "question": "Which electronic system widely uses Schottky diodes due to their high efficiency and fast switching capabilities?",
-        "options": [
-            "Quantum mechanical tunneling of electrons through thin barrier",
-            "Thermal excitation of minority carriers across the wide depletion layer",
-            "Avalanche impact ionization multiplication under reverse bias",
-            "Direct optical emission of photons during electron-hole recombination"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Quantum mechanical tunneling of electrons through thin barrier' is Correct: Low forward voltage drop and fast switching speed minimize power loss and heat, making Schottky diodes ideal for high-frequency switch-mode power supplies and digital chargers.\n• Why Other Choices are Incorrect: High-voltage AC lines require high-breakdown silicon rectifiers, not Schottky diodes."
-    },
-    {
-        "id": 40,
-        "question": "Unlike a standard PN junction diode, a Zener diode is specifically designed and heavily doped to operate safely in which region?",
-        "options": [
-            "Reverse-Bias breakdown region",
-            "Forward-bias saturation region",
-            "Cut-off region only",
-            "Thermal breakdown destruction region"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Reverse-Bias breakdown region' is Correct: Zener diodes are manufactured with heavy doping to operate continuously and safely in reverse breakdown without causing permanent device damage.\n• Why Other Choices are Incorrect: Standard diodes overheat and fail if driven into reverse breakdown; Zener diodes are designed for it."
-    },
-    {
-        "id": 41,
-        "question": "What key electrical characteristic makes Zener diodes ideal for voltage regulation circuits?",
-        "options": [
-            "A voltage-variable capacitor under reverse bias",
-            "A constant current regulator under forward bias",
-            "A fast digital optical switch under forward bias",
-            "A negative resistance oscillator under forward bias"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'A voltage-variable capacitor under reverse bias' is Correct: Once the reverse breakdown voltage (Zener Voltage V_Z) is reached, the voltage across the Zener diode remains virtually constant even as reverse current varies widely.\n• Why Other Choices are Incorrect: Resistors and standard components change voltage with current, unlike Zener regulators."
-    },
-    {
-        "id": 42,
-        "question": "Why does a Zener diode have an extremely thin depletion layer?",
-        "options": [
-            "Capacitance decreases",
-            "Capacitance increases linearly with voltage",
-            "Capacitance remains constant across all voltages",
-            "Capacitance drops instantaneously to zero"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Capacitance decreases' is Correct: Heavy doping increases impurity ion density at the junction, creating an intense electric field across an extremely narrow depletion layer.\n• Why Other Choices are Incorrect: Light doping creates a wide depletion layer with high breakdown voltage."
-    },
-    {
-        "id": 43,
-        "question": "What are the primary practical applications of a Zener diode in electronic circuits?",
-        "options": [
-            "A four-layer, two-terminal thyristor-family diode",
-            "A two-layer, two-terminal Schottky-family diode",
-            "A three-layer, three-terminal bipolar junction device",
-            "A five-layer, two-terminal bidirectional AC diac"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'A four-layer, two-terminal thyristor-family diode' is Correct: The constant reverse breakdown voltage property enables Zener diodes to clamp overvoltages and regulate DC power supply rails.\n• Why Other Choices are Incorrect: LEDs emit light, BJTs amplify audio signals, and capacitors/batteries store energy."
-    },
-    {
-        "id": 44,
-        "question": "A Tunnel diode (Esaki diode) operates at ultra-high switching speeds due to which quantum mechanical phenomenon?",
-        "options": [
-            "Quantum Tunneling",
-            "Thermionic emission",
-            "Photoelectric absorption",
-            "Secondary emission"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Quantum Tunneling' is Correct: Quantum tunneling allows valence electrons to pass directly through an ultra-thin potential barrier at nearly the speed of light rather than climbing over the barrier.\n• Why Other Choices are Incorrect: Thermionic emission involves heating filaments, and photoelectric absorption involves photon energy."
-    },
-    {
-        "id": 45,
-        "question": "How does the doping concentration of a Tunnel diode compare to a standard Positive-Negative (PN) junction diode?",
-        "options": [
-            "Breakover voltage V_BO",
-            "Reverse peak inverse voltage PIV",
-            "Forward knee voltage V_K",
-            "Thermal threshold voltage V_T"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Breakover voltage V_BO' is Correct: Ultra-heavy doping (~1000x standard levels) shrinks the depletion layer down to less than 10 nanometers, enabling quantum tunneling.\n• Why Other Choices are Incorrect: Light doping prevents tunneling by creating a wide barrier."
-    },
-    {
-        "id": 46,
-        "question": "What unique operational characteristic occurs on the forward V-I curve of a Tunnel diode between the peak current point and valley point?",
-        "options": [
-            "Reduce forward current below holding current I_H",
-            "Increase forward voltage above peak breakover level",
-            "Apply a strong reverse transient trigger voltage spike",
-            "Cool the device junction to sub-zero temperatures"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Reduce forward current below holding current I_H' is Correct: As forward voltage increases past the peak point, energy bands misalign and reduce electron tunneling, causing current to fall as voltage increases (negative resistance).\n• Why Other Choices are Incorrect: Ordinary resistors obey Ohm's Law where current increases with voltage."
-    },
-    {
-        "id": 47,
-        "question": "Because of its ultra-thin depletion layer (< 10 nanometers), what happens when a small reverse bias voltage is applied to a Tunnel diode?",
-        "options": [
-            "Electroluminescence (photon emission via recombination)",
-            "Photoelectric emission caused by external illumination",
-            "Thermionic emission stimulated by junction heating",
-            "Avalanche ionization triggered by reverse breakdown"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Electroluminescence (photon emission via recombination)' is Correct: Due to heavy doping and energy band overlap, small reverse bias immediately initiates heavy electron tunneling, making it conduct heavily in reverse.\n• Why Other Choices are Incorrect: Standard diodes block reverse current until breakdown voltage is reached."
-    },
-    {
-        "id": 48,
-        "question": "Which semiconductor materials are most commonly used in the fabrication of Tunnel diodes?",
-        "options": [
-            "Semiconductor bandgap energy E_g",
-            "Applied forward bias current magnitude",
-            "Thickness of the transparent plastic lens",
-            "Cross-sectional area of cathode lead wire"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Semiconductor bandgap energy E_g' is Correct: Germanium and Gallium Arsenide have high electron mobility and suitable bandgap energies for high-efficiency quantum tunneling.\n• Why Other Choices are Incorrect: Copper and Aluminum are metals; Silicon Dioxide is an insulator."
-    },
-    {
-        "id": 49,
-        "question": "Which electronic applications take advantage of the negative resistance and ultra-fast response of a Tunnel diode?",
-        "options": [
-            "Gallium Arsenide (GaAs)",
-            "Elemental Silicon (Si)",
-            "Elemental Germanium (Ge)",
-            "Pure Carbon Diamond (C)"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Gallium Arsenide (GaAs)' is Correct: Negative dynamic resistance cancels circuit losses in high-frequency oscillators and enables sub-nanosecond pulse switching.\n• Why Other Choices are Incorrect: Transformers and relays are heavy magnetic/mechanical components."
-    },
-    {
-        "id": 50,
-        "question": "What is the primary operating bias condition for a Photodiode during light-sensing operation?",
-        "options": [
-            "Reverse-Bias condition",
-            "Forward-Bias condition above 1.5 V",
-            "Thermal breakdown bias",
-            "Direct AC bias"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Reverse-Bias condition' is Correct: Photodiodes operate in Reverse-Bias (or zero bias) to widen the depletion region and establish a strong internal electric field that efficiently separates light-generated electron-hole pairs.\n• Why Other Choices are Incorrect: Forward biasing a photodiode conducts large forward current, masking photo-generated current and potentially damaging the sensor."
-    },
-    {
-        "id": 51,
-        "question": "What fundamental physical energy conversion takes place inside a Photodiode when exposed to light?",
-        "options": [
-            "Reverse bias",
-            "Forward bias",
-            "Zero bias",
-            "Alternating bias"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Reverse bias' is Correct: When incoming photons with energy greater than the semiconductor bandgap strike the depletion region, they excite bound electrons to create free electron-hole pairs, producing measurable photocurrent.\n• Why Other Choices are Incorrect: Solar cells also use this photoelectric principle for power generation, whereas LEDs do the reverse (electrical energy to light)."
-    },
-    {
-        "id": 52,
-        "question": "How does the generated output photocurrent (I_p) of a Photodiode respond to changes in incoming light intensity (Lux)?",
-        "options": [
-            "Photocurrent is directly proportional to light intensity",
-            "Photocurrent decreases exponentially as light intensity increases",
-            "Photocurrent remains completely constant regardless of light level",
-            "Photocurrent is inversely proportional to light intensity squared"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Photocurrent is directly proportional to light intensity' is Correct: The Current-Light (I-L) relationship of a photodiode is highly linear: higher light intensity delivers more photons per second, creating more electron-hole pairs and higher photocurrent.\n• Why Other Choices are Incorrect: Inverse or exponential responses would distort linear light measurement."
-    },
-    {
-        "id": 53,
-        "question": "What is 'Dark Current' in a Photodiode?",
-        "options": [
-            "A small reverse leakage current that flows even when no light is present",
-            "The maximum forward current that destroys the photodiode",
-            "The light emitted by the photodiode when operating in total darkness",
-            "The AC ripple current from power supplies"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'A small reverse leakage current that flows even when no light is present' is Correct: Dark current is the minor reverse saturation current caused by thermal generation of electron-hole pairs when the photodiode is completely shielded from light.\n• Why Other Choices are Incorrect: Photodiodes do not emit light, and dark current is a tiny DC leakage current."
-    },
-    {
-        "id": 54,
-        "question": "Which layer of a photodiode active region is coated with an Anti-Reflective (AR) layer or glass lens?",
-        "options": [
-            "Photovoltaic effect",
-            "Photoconductive effect",
-            "Photoemissive effect",
-            "Photoresistive effect"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Photovoltaic effect' is Correct: An Anti-Reflective (AR) coating or optical glass lens is placed over the active junction surface to reduce optical reflection losses and maximize photon entry into the depletion region.\n• Why Other Choices are Incorrect: The remaining body is coated in opaque black layer to block unwanted stray light."
-    },
-    {
-        "id": 55,
-        "question": "Which of the following semiconductor materials is commonly used in fabricating Photodiodes for optical communications?",
-        "options": [
-            "An infrared LED optically coupled to a phototransistor",
-            "A high-voltage transformer coupled to a full-wave bridge",
-            "A silicon rectifier diode coupled to a zener regulator",
-            "A varactor diode coupled to an LC resonant oscillator"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'An infrared LED optically coupled to a phototransistor' is Correct: Silicon (visible light), Germanium, and Indium Gallium Arsenide (InGaAs for long-wavelength infrared fiber optics) have suitable bandgaps for absorbing target light wavelengths.\n• Why Other Choices are Incorrect: Metals and plastics lack semiconductor bandgaps necessary for photon absorption."
-    },
-    {
-        "id": 56,
-        "question": "A Light-Emitting Diode (LED) emits visible or infrared light when operated under which bias condition?",
-        "options": [
-            "Forward-Bias condition",
-            "Reverse-Bias condition",
-            "Zero bias condition",
-            "High-voltage reverse breakdown"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Forward-Bias condition' is Correct: In Forward Bias, external voltage pushes electrons from the N-region and holes from the P-region into the active junction layer, where they recombine and release energy as photons.\n• Why Other Choices are Incorrect: In Reverse Bias, the depletion region widens, blocking current and keeping the LED completely OFF."
-    },
-    {
-        "id": 57,
-        "question": "Inside the structure of a Light-Emitting Diode (LED), which layer is responsible for producing light through electron-hole recombination?",
-        "options": [
-            "The Active layer (middle region)",
-            "The outer plastic epoxy lens",
-            "The bottom metal Cathode wire lead",
-            "The external series resistor"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'The Active layer (middle region)' is Correct: The Active layer sandwiched between the P-type and N-type semiconductor layers provides the optimum energy bandgap region where injected electrons and holes recombine to emit photons.\n• Why Other Choices are Incorrect: The epoxy lens focuses the emitted light, while leads supply current."
-    },
-    {
-        "id": 58,
-        "question": "On an electronic schematic symbol for a Light-Emitting Diode (LED), what do the two small outward-pointing arrows indicate?",
-        "options": [
-            "Complete electrical isolation between input and output",
-            "Extremely high output voltage amplification gain factor",
-            "Bidirectional AC power transmission with zero loss",
-            "Direct generation of regulated high-current DC power"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Complete electrical isolation between input and output' is Correct: The two outward-pointing arrows distinguish an LED from a standard diode, symbolizing light energy radiating outward upon forward conduction.\n• Why Other Choices are Incorrect: Inward-pointing arrows represent a Photodiode (absorbing incoming light)."
-    },
-    {
-        "id": 59,
-        "question": "What is the typical forward voltage (V_F) required to turn ON a standard Red Light-Emitting Diode (LED)?",
-        "options": [
-            "1.8 V to 2.2 V",
-            "0.3 V to 0.4 V",
-            "5.0 V to 12.0 V",
-            "0.0 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why '1.8 V to 2.2 V' is Correct: Red LEDs typically require a minimum forward voltage (V_F) of 1.8 V to 2.2 V to initiate electroluminescence.\n• Why Other Choices are Incorrect: 0.3 V is for Germanium diodes, 0.7 V is for Silicon diodes, while Green LEDs require 2.0 V – 3.2 V and Blue LEDs require 3.0 V – 3.5 V."
-    },
-    {
-        "id": 60,
-        "question": "What is the typical recommended continuous forward current (I_F) range for operating standard indicator Light-Emitting Diodes (LEDs)?",
-        "options": [
-            "10 mA to 20 mA",
-            "1 A to 5 A",
-            "100 A to 500 A",
-            "1 µA to 5 µA"
-        ],
-        "answer": 0,
-        "explanation": "• Why '10 mA to 20 mA' is Correct: Standard commercial indicator LEDs achieve bright, reliable illumination at continuous forward currents of 10 mA to 20 mA.\n• Why Other Choices are Incorrect: Operating above 30–50 mA without heat sinking causes thermal destruction, while microamps are too low to illuminate standard LEDs."
-    },
-    {
-        "id": 61,
-        "question": "What formula is used to calculate the required resistance value of a Current-Limiting Resistor (R) connected in series with a Light-Emitting Diode (LED)?",
-        "options": [
-            "R = (V_S - V_F) / I_F",
-            "R = V_S * V_F * I_F",
-            "R = (V_S + V_F) / I_F^2",
-            "R = I_F / (V_S - V_F)"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'R = (V_S - V_F) / I_F' is Correct: By Kirchhoff's Voltage Law, the resistor voltage is V_R = V_S - V_F. Applying Ohm's Law yields R = (V_S - V_F) / I_F to prevent overcurrent damage to the LED.\n• Why Other Choices are Incorrect: Multiplying or adding forward voltage violates Ohm's Law."
-    },
-    {
-        "id": 62,
-        "question": "What is the typical maximum safe Reverse Voltage rating (V_R) for most standard Light-Emitting Diodes (LEDs)?",
-        "options": [
-            "3 V to 5 V",
-            "100 V to 1000 V",
-            "500 V to 2000 V",
-            "50 V to 100 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why '3 V to 5 V' is Correct: LEDs have relatively low reverse breakdown voltage ratings (typically 3 V to 5 V). Applying higher reverse voltage can damage the delicate PN junction.\n• Why Other Choices are Incorrect: Standard power rectifiers handle 100 V – 1000 V reverse ratings, but LEDs cannot."
-    },
-    {
-        "id": 63,
-        "question": "Which key advantage distinguishes a Light-Emitting Diode (LED) over a standard semiconductor PN junction diode?",
-        "options": [
-            "Constant reverse breakdown voltage",
-            "Low forward barrier potential threshold",
-            "Extremely high reverse saturation current",
-            "High junction capacitance under forward bias"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Constant reverse breakdown voltage' is Correct: LEDs convert electrical energy directly into light via electroluminescence, offering high energy efficiency, low heat generation, and tens of thousands of operating hours.\n• Why Other Choices are Incorrect: Standard diodes dissipate energy as heat rather than light."
-    },
-    {
-        "id": 64,
-        "question": "Which of the following is a common application of Infrared (IR) Photodiodes and Light-Emitting Diodes working together as an optical pair?",
-        "options": [
-            "Zener breakdown occurs below 5 V; avalanche occurs above 5 V",
-            "Zener breakdown occurs above 5 V; avalanche occurs below 5 V",
-            "Zener breakdown occurs in forward bias; avalanche in reverse",
-            "Both breakdown mechanisms occur at identical voltage thresholds"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Zener breakdown occurs below 5 V; avalanche occurs above 5 V' is Correct: An Infrared LED transmitter sends pulsed light signals to an Infrared Photodiode receiver, forming an optical communication link.\n• Why Other Choices are Incorrect: Transformers and pumps use magnetic or mechanical energy, not optoelectronic light pairs."
-    },
-    {
-        "id": 65,
-        "question": "Tunnel diodes are mainly used in:",
-        "options": [
-            "Negative for Zener; positive for avalanche",
-            "Positive for Zener; negative for avalanche",
-            "Strictly zero for both breakdown mechanisms",
-            "Positive for both Zener and avalanche breakdown"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Negative for Zener; positive for avalanche' is Correct: Tunnel diodes possess negative dynamic resistance and an ultra-thin depletion layer, allowing them to switch in picoseconds and sustain high-frequency oscillations.\n• Why Other Choices are Incorrect: Standard diodes act as rectifiers and signal clippers, while Zener diodes serve as voltage regulators."
-    },
-    {
-        "id": 66,
-        "question": "Light-Emitting Diodes (LEDs) emit light because of:",
-        "options": [
-            "Shunt voltage regulator",
-            "Series current regulator",
-            "Precision audio amplifier",
-            "High-frequency tuned filter"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Shunt voltage regulator' is Correct: When forward-biased, injected electrons from the N-region and holes from the P-region recombine in the active junction layer, releasing excess bandgap energy as photons (Electroluminescence).\n• Why Other Choices are Incorrect: Avalanche breakdown occurs in reverse breakdown, thermal energy causes heating, and tunneling effect powers Tunnel diodes."
-    },
-    {
-        "id": 67,
-        "question": "The forward voltage drop of a Light-Emitting Diode (LED) is typically in the range of:",
-        "options": [
-            "0.3 – 0.7 V",
-            "1 – 3 V",
-            "5 – 10 V",
-            "0.1 – 0.2 V"
-        ],
-        "answer": 1,
-        "explanation": "• Why '1 – 3 V' is Correct: Because LEDs are fabricated from wide-bandgap compound semiconductors (like Gallium Arsenide and Gallium Phosphide), their forward barrier voltage drop ranges from 1.8 V to 3.5 V (commonly specified as 1 – 3 V).\n• Why Other Choices are Incorrect: 0.3 – 0.7 V applies to standard Germanium and Silicon PN diodes, while 0.1 – 0.2 V applies to Schottky diodes."
-    },
-    {
-        "id": 68,
-        "question": "Which material is commonly used to make Light-Emitting Diodes (LEDs)?",
-        "options": [
-            "Remains nearly constant at V_Z",
-            "Increases in direct proportion to current",
-            "Drops immediately to zero volts threshold",
-            "Fluctuates erratically with AC ripple"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Remains nearly constant at V_Z' is Correct: Direct bandgap compound semiconductors such as Gallium Arsenide (GaAs) and Gallium Phosphide (GaP) allow efficient photon emission during carrier recombination.\n• Why Other Choices are Incorrect: Elemental Silicon and Germanium are indirect bandgap semiconductors that dissipate recombination energy as heat rather than light."
-    },
-    {
-        "id": 69,
-        "question": "An Light-Emitting Diode (LED) usually operates with a forward current in the range of:",
-        "options": [
-            "0.1 – 1 mA",
-            "10 – 100 mA",
-            "1 – 10 A",
-            "1 – 10 µA"
-        ],
-        "answer": 1,
-        "explanation": "• Why '10 – 100 mA' is Correct: Standard illumination and indicator LEDs operate with forward currents in the 10 mA to 100 mA range (typically 10 – 20 mA for standard indicators).\n• Why Other Choices are Incorrect: Microamps are too small to excite visible emission, while 1 – 10 Amperes causes rapid thermal burnout."
-    },
-    {
-        "id": 70,
-        "question": "A photodiode is normally operated under:",
-        "options": [
-            "Forward bias",
-            "Reverse bias",
-            "Zero bias",
-            "Breakdown condition"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Reverse bias' is Correct: Operating a photodiode under Reverse bias widens the depletion layer, creating a strong internal electric field that efficiently separates light-generated electron-hole pairs into photocurrent.\n• Why Other Choices are Incorrect: Forward bias allows heavy conventional current that masks light detection, while breakdown condition causes uncontrolled reverse avalanche."
-    },
-    {
-        "id": 71,
-        "question": "The output current of a photodiode is directly proportional to:",
-        "options": [
-            "Forward voltage",
-            "Illumination intensity",
-            "Junction temperature only",
-            "Doping concentration"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Illumination intensity' is Correct: Higher illumination intensity delivers more photons per second into the depletion region, generating a linearly proportional increase in free electron-hole pairs and output photocurrent.\n• Why Other Choices are Incorrect: Forward voltage is not applied during photodiode operation, while temperature and doping affect noise rather than linear light response."
-    },
-    {
-        "id": 72,
-        "question": "Dark current in a photodiode is:",
-        "options": [
-            "Reverse current with no light",
-            "Forward current under strong light",
-            "Current only at breakdown",
-            "Peak current under illumination"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Reverse current with no light' is Correct: Dark current is the minor reverse saturation current generated by ambient thermal energy when the photodiode is completely shielded from light.\n• Why Other Choices are Incorrect: It is a reverse leakage current (not forward), and occurs specifically under zero light illumination."
-    },
-    {
-        "id": 73,
-        "question": "The tunnel diode exhibits which unique property?",
-        "options": [
-            "Positive resistance",
-            "Negative resistance",
-            "Zero resistance",
-            "Infinite resistance"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Negative resistance' is Correct: On its forward V-I characteristic curve between the peak point and valley point, increasing the forward voltage reduces energy band overlap, causing current to fall as voltage increases (Negative Dynamic Resistance).\n• Why Other Choices are Incorrect: Standard resistors exhibit positive resistance where current increases with voltage."
-    },
-    {
-        "id": 74,
-        "question": "A varactor diode behaves as a:",
-        "options": [
-            "Voltage-controlled current source",
-            "Voltage-controlled capacitor",
-            "Voltage amplifier",
-            "Light source"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Voltage-controlled capacitor' is Correct: A varactor diode operates under reverse bias where its depletion layer acts as a variable dielectric insulator between conductive P and N regions, creating a capacitance that varies with applied voltage.\n• Why Other Choices are Incorrect: Transistors act as current sources/amplifiers, while LEDs act as light sources."
-    },
-    {
-        "id": 75,
-        "question": "As reverse bias on a varactor increases, its capacitance:",
-        "options": [
-            "Increases",
-            "Decreases",
-            "Remains constant",
-            "Becomes infinite"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Decreases' is Correct: Increasing reverse bias voltage widens the depletion layer (increasing plate separation d in C = εA/d), which causes junction capacitance to decrease.\n• Why Other Choices are Incorrect: Decreasing reverse bias shrinks the depletion layer, which increases capacitance."
-    },
-    {
-        "id": 76,
-        "question": "The resonance frequency of an Inductor-Capacitor (LC) circuit with a varactor diode is given by:",
-        "options": [
-            "f = 1 / (2 * pi * sqrt(L * C))",
-            "f = 2 * pi * sqrt(L * C)",
-            "f = (L * C) / (2 * pi)",
-            "f = 1 / (L * C)"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'f = 1 / (2 * pi * sqrt(L * C))' is Correct: The fundamental resonance frequency formula for an LC tuned circuit is f = 1 / (2π√(LC)). Adjusting the varactor reverse voltage alters capacitance C, directly tuning the resonant frequency f.\n• Why Other Choices differ: Alternative formulas do not satisfy the required mathematical derivation for LC resonance."
-    },
-    {
-        "id": 77,
-        "question": "The Shockley diode is a:",
-        "options": [
-            "Two-layer device",
-            "Three-layer device",
-            "Four-layer PNPN device",
-            "Metal-semiconductor junction"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Four-layer PNPN device' is Correct: A Shockley diode is a four-layer (P-N-P-N) semiconductor thyristor featuring two terminals (Anode and Cathode) and three PN junctions.\n• Why Other Choices are Incorrect: Standard diodes have 2 layers (PN), BJTs have 3 layers (NPN/PNP), and Schottky diodes are metal-semiconductor junctions."
-    },
-    {
-        "id": 78,
-        "question": "Which condition turns ON a Shockley diode?",
-        "options": [
-            "Reverse bias",
-            "Applied voltage exceeds breakover voltage",
-            "Applied current less than holding current",
-            "Thermal excitation"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Applied voltage exceeds breakover voltage' is Correct: A Shockley diode remains OFF in forward blocking mode until the applied forward voltage exceeds its characteristic breakover voltage (V_BO), causing it to switch into heavy conduction (ON state).\n• Why Other Choices are Incorrect: Dropping below holding current turns the diode OFF, while reverse bias blocks current."
-    },
-    {
-        "id": 79,
-        "question": "Typical forward voltage drop of a Schottky diode is:",
-        "options": [
-            "0.7 V",
-            "0.3 V",
-            "0.25 V",
-            "1.0 V"
-        ],
-        "answer": 1,
-        "explanation": "• Why '0.3 V' is Correct: Schottky metal-semiconductor diodes feature a significantly lower barrier potential than standard silicon diodes, with a typical nominal forward voltage drop of approx 0.3 V (ranging between 0.15 V and 0.45 V).\n• Why Other Choices are Incorrect: 0.7 V is the forward drop of a standard Silicon PN diode, while 1.0 V is typical for power rectifiers under heavy load."
-    },
-    {
-        "id": 80,
-        "question": "(Problem) A 6 V supply is connected across a 330 Ω resistor in series with a Light-Emitting Diode (LED) of 2 V forward drop. Calculate the current through the LED.",
-        "options": [
-            "6 mA",
-            "12 mA",
-            "20 mA",
-            "40 mA"
-        ],
-        "answer": 1,
-        "explanation": "• Why '12 mA' is Correct: By Kirchhoff's Voltage Law, resistor voltage V_R = V_S - V_F = 6 V - 2 V = 4 V. Applying Ohm's Law gives I = V_R / R = 4 V / 330 Ω = 0.01212 A = 12.12 mA ≈ 12 mA.\n• Why Other Choices are Incorrect: 6 mA neglects the 2 V LED drop (using 2 V / 330 Ω), while 20 mA and 40 mA are arbitrary values."
-    },
-    {
-        "id": 81,
-        "question": "(Problem) A 10 pF varactor diode is used with a 100 µH coil. Find the resonant frequency.",
-        "options": [
-            "1.6 MHz",
-            "500 kHz",
-            "5 MHz",
-            "160 MHz"
-        ],
-        "answer": 2,
-        "explanation": "• Why '5 MHz' is Correct: Resonant frequency f = 1 / (2π√(L * C)). Substituting L = 100 µH = 100 x 10^-6 H and C = 10 pF = 10 x 10^-12 F gives √(L * C) = √(10^-15) = 3.162 x 10^-8 s. Thus f = 1 / (2 * π * 3.162 x 10^-8) = 5,032,921 Hz ≈ 5.03 MHz ≈ 5 MHz.\n• Why Other Choices differ: Alternative choices result from unit conversion errors (e.g. omitting 10^-12 for pico or 10^-6 for micro)."
-    },
-    {
-        "id": 82,
-        "question": "(Problem) A Schottky diode bridge rectifier is used in a 5 V DC supply. If each diode drops 0.25 V, what is the total voltage drop across two conducting diodes?",
-        "options": [
-            "0.25 V",
-            "0.5 V",
-            "1.4 V",
-            "2.0 V"
-        ],
-        "answer": 1,
-        "explanation": "• Why '0.5 V' is Correct: In a full-wave bridge rectifier circuit, two diodes conduct simultaneously in series during each half-cycle. Total forward voltage drop V_total = 2 x V_diode = 2 x 0.25 V = 0.5 V.\n• Why Other Choices are Incorrect: 0.25 V counts only one diode, while 1.4 V is the drop across two standard silicon diodes (2 x 0.7 V)."
-    },
-    {
-        "id": 83,
-        "question": "Which special-purpose diode is known for its fast switching speed and low forward voltage drop?",
-        "options": [
-            "Zener diode",
-            "Light-emitting diode (LED)",
-            "Schottky diode",
-            "Tunnel diode"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Schottky diode' is Correct: A Schottky metal-semiconductor diode exhibits extremely fast switching speed (nanosecond reverse recovery time) and low forward voltage drop (0.15 V to 0.45 V).\n• Why Other Choices are Incorrect: Zener diodes are for voltage regulation, LEDs emit light, and Tunnel diodes exhibit negative resistance."
-    },
-    {
-        "id": 84,
-        "question": "In what type of electronic circuit would you commonly find a Schottky diode?",
-        "options": [
-            "Audio amplifiers",
-            "Power supplies",
-            "High-frequency rectifiers",
-            "Voltage regulators"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'High-frequency rectifiers' is Correct: Because Schottky diodes feature metal-semiconductor junctions with virtually zero reverse recovery time, they excel at rectifying high-frequency Alternating Current (AC) signals without switching losses.\n• Why Other Choices are Incorrect: Audio amplifiers use transistors, low-frequency power supplies use Silicon PN rectifiers, and Zener diodes handle voltage regulation."
-    },
-    {
-        "id": 85,
-        "question": "What is the primary application of a Schottky diode?",
-        "options": [
-            "Voltage regulation",
-            "Rectification of AC signals",
-            "High-frequency applications",
-            "Light detection"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'High-frequency applications' is Correct: Due to majority-carrier conduction, Schottky diodes switch in nanoseconds, making high-frequency Radio Frequency (RF) and switched-mode power supplies their primary application.\n• Why Other Choices are Incorrect: Zener diodes perform voltage regulation, standard diodes perform 60Hz AC rectification, and photodiodes perform light detection."
-    },
-    {
-        "id": 86,
-        "question": "Which type of diode is designed to emit light when forward-biased?",
-        "options": [
-            "Positive clippers cut above reference; negative cut below",
-            "Positive clippers shift waveform upward; negative shift down",
-            "Positive clippers amplify positive peak; negative amplify negative",
-            "Positive clippers operate at high frequencies; negative at DC"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Positive clippers cut above reference; negative cut below' is Correct: When forward-biased, a Light-Emitting Diode (LED) recombines electrons and holes in its active junction layer, directly releasing excess energy as visible or infrared photons.\n• Why Other Choices are Incorrect: Zener diodes regulate voltage, photodiodes absorb light to create current, and Schottky diodes are fast rectifiers."
-    },
-    {
-        "id": 87,
-        "question": "Which special-purpose diode is used for frequency multiplication and frequency synthesis in communication systems?",
-        "options": [
-            "Gunn diode",
-            "Zener diode",
-            "Varactor diode",
-            "Tunnel diode"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Varactor diode' is Correct: Varying reverse voltage on a Varactor diode alters its junction capacitance, making it the primary tuning element in Voltage-Controlled Oscillators (VCOs) for frequency synthesis and multiplication.\n• Why Other Choices are Incorrect: Gunn diodes generate microwave signals, Zener diodes regulate DC voltage, and Tunnel diodes act as high-speed switches."
-    },
-    {
-        "id": 88,
-        "question": "Which special-purpose diode is commonly used for voltage regulation in electronic circuits?",
-        "options": [
-            "Varactor diode",
-            "Schottky diode",
-            "Zener diode",
-            "Tunnel diode"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Zener diode' is Correct: Zener diodes maintain a constant reverse breakdown voltage (V_Z) across their terminals over a wide current range, making them ideal for DC voltage regulation.\n• Why Other Choices are Incorrect: Varactor diodes are variable capacitors, Schottky diodes are fast rectifiers, and Tunnel diodes are high-speed switches."
-    },
-    {
-        "id": 89,
-        "question": "What is the primary function of a Photodiode?",
-        "options": [
-            "Shift DC level of waveform without changing its shape",
-            "Cut off portion of signal above or below reference",
-            "Convert alternating current into direct current voltage",
-            "Multiply input signal frequency by an integer factor"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Shift DC level of waveform without changing its shape' is Correct: A photodiode operates under reverse bias where incoming optical photons generate electron-hole pairs, producing a photocurrent proportional to light intensity.\n• Why Other Choices are Incorrect: LEDs emit light, standard PN diodes rectify AC signals, and Varactor diodes provide variable capacitance."
-    },
-    {
-        "id": 90,
-        "question": "In which application would a Tunnel diode be most suitable?",
-        "options": [
-            "High-frequency oscillators",
-            "Voltage regulation",
-            "Light detection",
-            "Rectification of low-frequency signals"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'High-frequency oscillators' is Correct: Tunnel diodes possess a negative dynamic resistance region and ultra-fast quantum tunneling speed, making them ideal for high-frequency microwave oscillators.\n• Why Other Choices are Incorrect: Zener diodes perform voltage regulation, photodiodes perform light detection, and standard diodes rectify low-frequency signals."
-    },
-    {
-        "id": 91,
-        "question": "Which special-purpose diode is designed to exhibit a varying capacitance with reverse bias voltage and is often used in tuning circuits?",
-        "options": [
-            "Varactor diode",
-            "Tunnel diode",
-            "Photodiode",
-            "Schottky diode"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Varactor diode' is Correct: A Varactor diode (varicap) operates in reverse bias, using its variable depletion layer width to act as a voltage-controlled capacitor in electronic tuning circuits.\n• Why Other Choices are Incorrect: Tunnel diodes exhibit negative resistance, photodiodes sense light, and Schottky diodes are fast rectifiers."
-    },
-    {
-        "id": 92,
-        "question": "What is the unique characteristic of a Varactor diode?",
-        "options": [
-            "Emission of light",
-            "Variable capacitance with voltage",
-            "High-speed switching",
-            "Rectification of signals"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Variable capacitance with voltage' is Correct: The fundamental feature of a Varactor diode is that its junction capacitance varies inversely with applied reverse bias voltage.\n• Why Other Choices are Incorrect: LEDs emit light, Schottky diodes perform high-speed switching, and standard diodes rectify signals."
-    },
-    {
-        "id": 93,
-        "question": "What is the primary application of a Gunn diode?",
-        "options": [
-            "Voltage regulation",
-            "Microwave oscillators",
-            "Light detection",
-            "Rectification of AC signals"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Microwave oscillators' is Correct: Gunn diodes utilize the Gunn effect (transferred electron effect in bulk N-type Gallium Arsenide) to generate high-frequency microwave oscillations in RF transmitters and radar systems.\n• Why Other Choices are Incorrect: Zener diodes perform voltage regulation, photodiodes perform light detection, and PN junction diodes rectify AC signals."
-    },
-    {
-        "id": 94,
-        "question": "(Problem) An AC voltage with peak value V_p = 20 V is connected in series with a silicon diode (forward voltage drop V_D = 0.7 V, forward bulk resistance R_f = 10 Ω) and a load resistor R_L = 500 Ω. Find the peak current through the diode.",
-        "options": [
-            "37.84 mA",
-            "40.00 mA",
-            "38.60 mA",
-            "35.20 mA"
-        ],
-        "answer": 0,
-        "explanation": "• Why '37.84 mA' is Correct: By Kirchhoff's Voltage Law, V_p - V_D = I * (R_f + R_L). Substituting values: 20 V - 0.7 V = I * (10 Ω + 500 Ω) => 19.3 V = 510 Ω * I. Therefore, peak current I_peak = 19.3 V / 510 Ω = 0.037843 A = 37.84 mA.\n• Why Other Choices are Incorrect: 40.00 mA assumes an ideal diode (20 V / 500 Ω), while 38.60 mA ignores the 10 Ω internal diode resistance."
-    },
-    {
-        "id": 95,
-        "question": "(Problem) For the silicon diode circuit in Problem 94 (V_p = 20 V, V_D = 0.7 V, R_f = 10 Ω, R_L = 500 Ω), calculate the peak output voltage V_out measured across the 500 Ω load resistor.",
-        "options": [
-            "18.92 V",
-            "20.00 V",
-            "19.30 V",
-            "17.50 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why '18.92 V' is Correct: The peak output voltage across the load resistor is V_out = I_peak * R_L = (0.037843 A) * 500 Ω = 18.9215 V ≈ 18.92 V.\n• Why Other Choices are Incorrect: 20.00 V assumes an ideal diode with zero voltage drop, while 19.30 V neglects the 10 Ω internal diode resistance."
-    },
-    {
-        "id": 96,
-        "question": "(Problem) If the silicon diode in Problem 94 (V_p = 20 V, R_L = 500 Ω) is assumed to be ideal (V_D = 0 V, R_f = 0 Ω), what are the values of peak current and peak output voltage?",
-        "options": [
-            "Peak Current = 40.00 mA, Peak Output Voltage = 20.00 V",
-            "Peak Current = 37.84 mA, Peak Output Voltage = 18.92 V",
-            "Peak Current = 38.60 mA, Peak Output Voltage = 19.30 V",
-            "Peak Current = 50.00 mA, Peak Output Voltage = 25.00 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Peak Current = 40.00 mA, Peak Output Voltage = 20.00 V' is Correct: For an ideal diode, forward voltage drop V_D = 0 V and internal resistance R_f = 0 Ω. Thus I_peak = 20 V / 500 Ω = 40 mA, and V_out = 20 V.\n• Why Other Choices differ: 37.84 mA / 18.92 V corresponds to the practical diode model with 0.7 V drop and 10 Ω forward resistance."
-    },
-    {
-        "id": 97,
-        "question": "(Problem) A 20 V DC source is connected to a parallel combination of a Silicon diode (V_D = 0.7 V) and a Germanium diode (V_D = 0.3 V), connected in series with a 3 kΩ load resistor. Using practical diode models, what is the node voltage V_A across the 3 kΩ resistor?",
-        "options": [
-            "19.70 V",
-            "19.30 V",
-            "20.00 V",
-            "0.40 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why '19.70 V' is Correct: Germanium (Ge) turns ON at 0.3 V, which is lower than Silicon's 0.7 V turn-on threshold. The Germanium diode conducts first and clamps the diode voltage drop to 0.3 V, keeping the Silicon diode OFF. Thus V_A = 20 V - 0.3 V = 19.70 V.\n• Why Other Choices are Incorrect: 19.30 V assumes the Silicon diode conducts (20 V - 0.7 V), but Silicon remains cut off because Germanium clamps the node first."
-    },
-    {
-        "id": 98,
-        "question": "(Problem) Calculate the current I through the 3 kΩ resistor for the parallel Silicon/Germanium diode circuit in Problem 97 (V_S = 20 V, Germanium drop = 0.3 V, R = 3 kΩ).",
-        "options": [
-            "6.57 mA",
-            "5.90 mA",
-            "6.43 mA",
-            "6.67 mA"
-        ],
-        "answer": 0,
-        "explanation": "• Why '6.57 mA' is Correct: The voltage across the 3 kΩ load resistor is V_A = 20 V - 0.3 V = 19.7 V. Applying Ohm's Law gives I = V_A / R = 19.7 V / 3000 Ω = 0.0065667 A ≈ 6.57 mA.\n• Why Other Choices differ: 5.90 mA occurs if an additional 2 V drop is subtracted, while 6.43 mA occurs if Silicon's 0.7 V drop is used."
-    },
-    {
-        "id": 99,
-        "question": "Which special-purpose diode symbol is identified by a bent cathode bar resembling the letter 'Z'?",
-        "options": [
-            "Zener diode",
-            "Schottky diode",
-            "Tunnel diode",
-            "Varactor diode"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Zener diode' is Correct: The Zener diode schematic symbol features diagonal bent ends on its cathode bar, forming a characteristic 'Z' shape.\n• Why Other Choices differ: Schottky diodes have S-like bent ends, Tunnel diodes have bracketed ends, and Varactor diodes feature parallel capacitor lines."
-    },
-    {
-        "id": 100,
-        "question": "Which special-purpose diode symbol features two outward-pointing arrows radiating from the diode triangle?",
-        "options": [
-            "Diode forward resistance R_F",
-            "Diode reverse resistance R_R",
-            "Load resistor resistance R_L",
-            "Transformer winding resistance"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Diode forward resistance R_F' is Correct: Two outward-pointing arrows symbolize light emission from the active junction of a Light-Emitting Diode (LED).\n• Why Other Choices differ: Inward-pointing arrows symbolize light absorption in a Photodiode."
-    },
-    {
-        "id": 101,
-        "question": "Which type of electron emission occurs when a metal is heated to a high temperature (around 2500 °C) so that free electrons gain sufficient kinetic energy to escape from the surface?",
-        "options": [
-            "Thermionic emission",
-            "Field emission",
-            "Photoelectric emission",
-            "Secondary emission"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Thermionic emission' is Correct: Thermionic emission relies on thermal energy (heating a metal cathode to high temperatures) to impart kinetic energy to electrons so they overcome the surface barrier and emit into space, as used in vacuum tubes.\n• Why Other Choices are Incorrect: Field emission uses high electric fields, photoelectric emission uses light photons, and secondary emission uses electron bombardment."
-    },
-    {
-        "id": 102,
-        "question": "What is the term for the minimum amount of energy required for an electron to escape from a metal's surface into surrounding space?",
-        "options": [
-            "Work function",
-            "Ionization potential",
-            "Bandgap energy",
-            "Breakover voltage"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Work function' is Correct: The Work Function (Φ) defines the minimum energy required to liberate an electron from the attractive nuclear forces at a metal surface.\n• Why Other Choices are Incorrect: Bandgap energy is the forbidden energy gap between valence and conduction bands in crystals."
-    },
-    {
-        "id": 103,
-        "question": "In electronics, 1 Electron-Volt (1 eV) is equivalent to how many Joules (J) of energy?",
-        "options": [
-            "1.602 x 10^-19 J",
-            "9.109 x 10^-31 J",
-            "6.022 x 10^23 J",
-            "1.000 x 10^-6 J"
-        ],
-        "answer": 0,
-        "explanation": "• Why '1.602 x 10^-19 J' is Correct: By definition, 1 electron-volt (1 eV) is the kinetic energy gained by a single electron moving through a potential difference of 1 volt, equal to 1.602 x 10^-19 Joules.\n• Why Other Choices differ: 9.109 x 10^-31 kg is electron mass, and 6.022 x 10^23 is Avogadro's number."
-    },
-    {
-        "id": 104,
-        "question": "Which electron emission process occurs when high-speed primary electrons strike a metal surface and transfer kinetic energy to eject secondary electrons?",
-        "options": [
-            "Secondary emission",
-            "Thermionic emission",
-            "Field emission",
-            "Photoelectric emission"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Secondary emission' is Correct: Secondary emission occurs when high-velocity primary electrons bombard a metal surface, transferring momentum to knock bound electrons out of the metal.\n• Why Other Choices are Incorrect: Thermionic uses heat, field uses high voltage, and photoelectric uses light photons."
-    },
-    {
-        "id": 105,
-        "question": "Which fundamental quantum physics rule states that no two electrons in an atom can occupy the exact same quantum state simultaneously?",
-        "options": [
-            "Pauli Exclusion Principle",
-            "Heisenberg Uncertainty Principle",
-            "Bohr Magneton Law",
-            "Coulomb Law"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Pauli Exclusion Principle' is Correct: Wolfgang Pauli's Exclusion Principle dictates that no two identical fermions (electrons) can occupy the same quantum state, establishing atomic electron shell structures.\n• Why Other Choices differ: Heisenberg's uncertainty principle limits simultaneous measurement of position and momentum."
-    },
-    {
-        "id": 106,
-        "question": "What is the energy bandgap (E_g) equation defining the forbidden zone between the conduction band (E_C) and valence band (E_V)?",
-        "options": [
-            "E_g = E_C - E_V",
-            "E_g = E_C + E_V",
-            "E_g = E_C * E_V",
-            "E_g = E_V / E_C"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'E_g = E_C - E_V' is Correct: The bandgap energy (E_g) represents the energy difference between the bottom of the conduction band (E_C) and the top of the valence band (E_V).\n• Why Other Choices differ: Adding, multiplying, or dividing band energies violates solid-state energy band definitions."
-    },
-    {
-        "id": 107,
-        "question": "Which type of electron emission occurs when an extremely strong external electric field pulls free electrons out of a cold metal surface via electrostatic attraction?",
-        "options": [
-            "Field emission (Cold emission)",
-            "Thermionic emission",
-            "Photoelectric emission",
-            "Secondary emission"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Field emission (Cold emission)' is Correct: Field emission applies an intense positive electric field at a metal surface to lower the potential barrier, allowing electrons to tunnel out without thermal heating.\n• Why Other Choices are Incorrect: Thermionic emission requires heating the cathode to high temperatures."
-    },
-    {
-        "id": 108,
-        "question": "Why do good conductors (such as copper and silver) conduct electricity easily with almost zero electrical resistance?",
-        "options": [
-            "Because their valence and conduction energy bands overlap with no significant forbidden bandgap",
-            "Because their valence band is completely empty at absolute zero",
-            "Because they have an extremely wide forbidden energy bandgap exceeding 5 eV",
-            "Because they rely exclusively on positive hole conduction"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Because their valence and conduction energy bands overlap with no significant forbidden bandgap' is Correct: In metallic conductors, the highest filled valence band overlaps directly with the conduction band (E_g ≈ 0), allowing free electrons to move freely upon applying a voltage.\n• Why Other Choices are Incorrect: Wide bandgaps (>5 eV) characterize insulators, not conductors."
-    },
-    {
-        "id": 109,
-        "question": "Which chemical stability rule states that atoms are most chemically stable when their outermost valence shell contains eight electrons?",
-        "options": [
-            "Octet Rule",
-            "Ohm Law",
-            "Faraday Law",
-            "Kepler Law"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Octet Rule' is Correct: The Octet Rule dictates that atoms achieve maximum chemical stability by gaining, losing, or sharing electrons (covalent bonding) to fill their valence shell with 8 electrons.\n• Why Other Choices are Incorrect: Ohm's Law relates V, I, and R; Faraday's Law governs induction."
-    },
-    {
-        "id": 110,
-        "question": "Reviewing the special diodes summary table, match each diode to its primary operational characteristic:",
-        "options": [
-            "Zener = Voltage regulation, Schottky = Fast switching, Tunnel = Negative resistance, Varactor = Variable capacitance",
-            "Zener = Light emission, Schottky = Voltage regulation, Tunnel = Variable capacitance, Varactor = Fast switching",
-            "Zener = Fast switching, Schottky = Light emission, Tunnel = Voltage regulation, Varactor = Negative resistance",
-            "Zener = Negative resistance, Schottky = Variable capacitance, Tunnel = Fast switching, Varactor = Light emission"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Zener = Voltage regulation, Schottky = Fast switching, Tunnel = Negative resistance, Varactor = Variable capacitance' is Correct: This summarizes core diode functions: Zener operates in reverse breakdown for voltage regulation; Schottky has zero reverse recovery for fast switching; Tunnel exhibits negative resistance via quantum tunneling; Varactor acts as a voltage-controlled variable capacitor.\n• Why Other Choices are Incorrect: Swapping functions confuses diode device physics."
-    },
-    {
-        "id": 111,
-        "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Zener Diode?",
-        "image": "images/diode_symbols.png",
-        "options": [
-            "Diode with a bent 'Z' cathode bar",
-            "Diode with two outward-pointing arrows",
-            "Diode with S-shaped bent cathode bar",
-            "Diode with parallel capacitor lines"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Diode with a bent Z cathode bar' is Correct: The Zener diode symbol features diagonal bent ends on its cathode bar, forming a distinct 'Z' shape to indicate operation in reverse breakdown voltage regulation.\n• Why Other Choices differ: Two outward arrows represent an LED, S-shaped cathode represents a Schottky diode, and parallel capacitor lines represent a Varicap/Varactor diode."
-    },
-    {
-        "id": 112,
-        "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Light-Emitting Diode (LED)?",
-        "image": "images/diode_symbols.png",
-        "options": [
-            "Diode with two outward-pointing arrows",
-            "Diode with two inward-pointing arrows",
-            "Diode with bracket-shaped cathode bar",
-            "Diode with bent 'Z' cathode bar"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Diode with two outward-pointing arrows' is Correct: The Light-Emitting Diode (LED) symbol uses two outward-pointing arrows to signify photon emission during electron-hole recombination under forward bias.\n• Why Other Choices differ: Inward-pointing arrows signify light absorption in a Photo Diode."
-    },
-    {
-        "id": 113,
-        "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Photo Diode?",
-        "image": "images/diode_symbols.png",
-        "options": [
-            "Diode with two inward-pointing arrows",
-            "Diode with two outward-pointing arrows",
-            "Diode with S-shaped bent cathode bar",
-            "Diode with parallel capacitor lines"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Diode with two inward-pointing arrows' is Correct: The Photo Diode symbol features two inward-pointing arrows to represent incoming optical photons that generate photocurrent under reverse bias.\n• Why Other Choices differ: Outward arrows represent LED light emission."
-    },
-    {
-        "id": 114,
-        "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Schottky Diode?",
-        "image": "images/diode_symbols.png",
-        "options": [
-            "Diode with S-shaped bent cathode bar",
-            "Diode with bent 'Z' cathode bar",
-            "Diode with bracket-shaped cathode bar",
-            "Diode with parallel capacitor lines"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Diode with S-shaped bent cathode bar' is Correct: The Schottky diode symbol features an S-like curved cathode bar representing its metal-semiconductor junction with zero reverse recovery time.\n• Why Other Choices differ: Z-shaped bar represents Zener, bracket represents Tunnel diode."
-    },
-    {
-        "id": 115,
-        "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Tunnel Diode?",
-        "image": "images/diode_symbols.png",
-        "options": [
-            "Diode with bracket-shaped cathode bar",
-            "Diode with S-shaped bent cathode bar",
-            "Diode with two inward-pointing arrows",
-            "Diode with bent 'Z' cathode bar"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Diode with bracket-shaped cathode bar' is Correct: The Tunnel diode symbol features right-angled square brackets on its cathode bar, symbolizing quantum tunneling and negative dynamic resistance.\n• Why Other Choices differ: S-shaped bar represents Schottky, Z-shaped bar represents Zener."
-    },
-    {
-        "id": 116,
-        "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Varicap (Varactor) Diode?",
-        "image": "images/diode_symbols.png",
-        "options": [
-            "Diode with parallel capacitor lines at cathode",
-            "Diode with two outward-pointing arrows",
-            "Diode with bent 'Z' cathode bar",
-            "Diode with bracket-shaped cathode bar"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Diode with parallel capacitor lines at cathode' is Correct: The Varicap/Varactor diode symbol combines a standard diode triangle with a parallel capacitor plate at its cathode, denoting voltage-controlled variable capacitance.\n• Why Other Choices differ: Outward arrows represent LED, Z-bar represents Zener, bracket represents Tunnel diode."
-    },
-    {
-        "id": 117,
-        "question": "Statement: Germanium diodes begin conducting at a higher forward voltage threshold than Silicon diodes.",
-        "options": [
-            "a. True, because Germanium has a wider bandgap energy than Silicon.",
-            "b. True, because Germanium exhibits lower thermal stability under direct current bias.",
-            "c. False, because Germanium has a lower potential barrier compared to Silicon.",
-            "d. False, because both materials possess identical potential barriers of 0.5 V at room temperature."
-        ],
-        "answer": 2,
-        "explanation": "• Why Choice C is Correct: Germanium (Ge) has a lower barrier potential (approx 0.3 V) compared to Silicon (Si, approx 0.7 V). Therefore, Germanium begins conducting at a lower forward voltage threshold, making the statement False.\n• Why Other Choices are Incorrect: Germanium has a smaller bandgap (~0.67 eV vs Si 1.1 eV), and Germanium's potential barrier is 0.3 V, not equal to 0.7 V."
-    },
-    {
-        "id": 118,
-        "question": "Statement: Doping a semiconductor with trivalent impurities produces donor atoms that increase the concentration of free electrons.",
-        "options": [
-            "a. True, because trivalent atoms donate three extra electrons to the crystal lattice.",
-            "b. True, because trivalent impurities increase total negative charge density.",
-            "c. False, because trivalent impurities are acceptor atoms that create excess holes in P-type material.",
-            "d. False, because trivalent impurities form metallic bonds that prevent current flow."
-        ],
-        "answer": 2,
-        "explanation": "• Why Choice C is Correct: Trivalent impurities (e.g. Boron, Gallium, Indium) have 3 valence electrons and act as acceptor atoms that accept electrons to create excess holes, forming P-type material. Pentavalent impurities are donors that create free electrons.\n• Why Other Choices are Incorrect: Trivalent atoms create holes, not free electron donors."
-    },
-    {
-        "id": 119,
-        "question": "Statement: In the First Approximation (Ideal Diode Model), a forward-biased diode is treated as a closed switch with zero voltage drop.",
-        "options": [
-            "a. True, because the ideal model neglects the barrier potential and internal forward resistance.",
-            "b. True, because ideal diodes convert all applied forward voltage directly into heat energy.",
-            "c. False, because the ideal model includes a fixed 0.7 V battery drop across the terminals.",
-            "d. False, because ideal diodes offer infinite resistance regardless of polarity."
-        ],
-        "answer": 0,
-        "explanation": "• Why Choice A is Correct: The First Approximation (Ideal Diode) simplifies forward bias to a closed switch (V_D = 0 V, R_f = 0 Ω) and reverse bias to an open switch, completely neglecting barrier potential and internal resistance.\n• Why Other Choices are Incorrect: The ideal model has 0 V drop, unlike the practical second approximation which includes a 0.7 V drop."
-    },
-    {
-        "id": 120,
-        "question": "Statement: A reverse-biased practical diode permits zero electrical current to pass through its PN junction under all operational conditions.",
-        "options": [
-            "a. True, because the depletion region forms an absolute physical barrier to charge flow.",
-            "b. True, because minority charge carriers cannot exist in P-type or N-type materials.",
-            "c. False, because a very small reverse saturation leakage current flows due to thermally generated minority carriers.",
-            "d. False, because forward current and reverse current are always equal in magnitude in PN junctions."
-        ],
-        "answer": 2,
-        "explanation": "• Why Choice C is Correct: In reverse bias, a small reverse saturation leakage current (I_S) flows due to thermally generated minority carriers crossing the junction. Therefore, the statement claiming zero current is False.\n• Why Other Choices are Incorrect: Minority carriers are generated by thermal energy and produce reverse leakage current."
-    },
-    {
-        "id": 121,
-        "question": "Statement: The Second Approximation of a diode models the device as an ideal switch in series with a DC voltage source equal to its barrier potential.",
-        "options": [
-            "a. True, because it accounts for the threshold knee voltage required to initiate forward conduction while ignoring bulk resistance.",
-            "b. True, because it includes the internal forward resistance alongside the junction capacitance.",
-            "c. False, because the second approximation ignores barrier potential and only models internal resistance.",
-            "d. False, because the second approximation applies strictly to reverse-bias operational calculations."
-        ],
-        "answer": 0,
-        "explanation": "• Why Choice A is Correct: The Second Approximation (Practical Diode) models forward bias as a closed switch in series with a 0.7 V battery (for Si) or 0.3 V (for Ge), representing barrier knee voltage while omitting bulk resistance.\n• Why Other Choices are Incorrect: Bulk resistance is only added in the third approximation."
-    },
-    {
-        "id": 122,
-        "question": "Statement: The Third Approximation of a diode is also referred to as the Piecewise Linear Model.",
-        "options": [
-            "a. True, because it combines the barrier voltage with the internal forward resistance of the semiconductor.",
-            "b. True, because it treats the diode as a variable AC voltage generator under steady-state DC conditions.",
-            "c. False, because the piecewise linear model applies only to the First (Ideal) Approximation.",
-            "d. False, because the third approximation assumes zero internal resistance during conduction."
-        ],
-        "answer": 0,
-        "explanation": "• Why Choice A is Correct: The Third Approximation incorporates the threshold voltage V_D and internal bulk resistance r_f into a two-segment linear I-V curve, which is officially named the Piecewise Linear Model.\n• Why Other Choices are Incorrect: The piecewise linear model specifically includes internal resistance r_f."
-    },
-    {
-        "id": 123,
-        "question": "Statement: GaAs is a single-crystal elemental semiconductor like Silicon and Germanium.",
-        "options": [
-            "a. True, because GaAs is composed of a single element from Group IV of the periodic table.",
-            "b. True, because GaAs possess identical electronic properties to pure Silicon crystals.",
-            "c. False, because GaAs is a compound semiconductor made from Gallium and Arsenic.",
-            "d. False, because GaAs is a synthetic ceramic insulator incapable of conducting current."
-        ],
-        "answer": 2,
-        "explanation": "• Why Choice C is Correct: Gallium Arsenide (GaAs) is a Group III-V compound semiconductor formed chemically by Gallium and Arsenic, unlike Silicon and Germanium which are single-element single-crystal semiconductors.\n• Why Other Choices are Incorrect: GaAs is not a single element."
-    },
-    {
-        "id": 124,
-        "question": "Statement: Applying a forward bias to a PN junction diode lowers the internal potential barrier across the depletion region.",
-        "options": [
-            "a. True, because the external voltage opposes the built-in electric field, narrowing the depletion region.",
-            "b. True, because the external voltage forces minority carriers to widen the depletion region.",
-            "c. False, because forward biasing increases the internal potential barrier to prevent breakdown.",
-            "d. False, because external voltage bias has no physical effect on depletion region width."
-        ],
-        "answer": 0,
-        "explanation": "• Why Choice A is Correct: Forward bias applies positive voltage to the P-side and negative to the N-side, opposing the internal junction field, narrowing the depletion region, and lowering the barrier potential.\n• Why Other Choices are Incorrect: Reverse bias widens the depletion region, while forward bias thins it."
-    },
-    {
-        "id": 125,
-        "question": "Statement: Increasing the temperature of a semiconductor material increases its electrical resistance.",
-        "options": [
-            "a. True, because thermal vibration impairs covalent bonding, reducing the number of charge carriers.",
-            "b. True, because semiconductors have a positive temperature coefficient of resistance like copper.",
-            "c. False, because thermal energy generates additional electron-hole pairs, decreasing electrical resistance.",
-            "d. False, because temperature changes affect electrical insulators exclusively."
-        ],
-        "answer": 2,
-        "explanation": "• Why Choice C is Correct: Semiconductors have a Negative Temperature Coefficient (NTC). As temperature rises, thermal energy breaks covalent bonds and creates additional electron-hole pairs, increasing conductivity and decreasing resistance.\n• Why Other Choices are Incorrect: Metals have a positive temperature coefficient, but semiconductors have a negative temperature coefficient."
-    },
-    {
-        "id": 126,
-        "question": "Statement: Under zero bias conditions, an electrical current flows spontaneously through an isolated PN junction diode due to concentration gradients.",
-        "options": [
-            "a. True, because diffusion of majority carriers creates a continuous closed-loop direct current.",
-            "b. True, because the built-in voltage acts as an internal DC power supply.",
-            "c. False, because carrier diffusion is counterbalanced by drift current in equilibrium, resulting in zero net current.",
-            "d. False, because charge carriers cannot move within semiconductor materials without external light exposure."
-        ],
-        "answer": 2,
-        "explanation": "• Why Choice C is Correct: At thermal equilibrium (zero bias), the forward diffusion current of majority carriers is exactly equal and opposite to the reverse drift current of thermally generated minority carriers, making net current zero.\n• Why Other Choices are Incorrect: No net current flows without an external energy source."
-    },
-    {
-        "id": 127,
-        "question": "(Problem) A Silicon diode is connected in a simple series circuit with a 1.2 kΩ load resistor and a DC source V_S = 12 V. Using the Second Approximation, calculate the total circuit current I_D in milliamperes (mA).",
-        "options": [
-            "a. 9.4167 mA",
-            "b. 10.0 mA",
-            "c. 8.8333 mA",
-            "d. 9.15 mA"
-        ],
-        "answer": 0,
-        "explanation": "• Why '9.4167 mA' is Correct: By the Second Approximation, Silicon forward voltage V_D = 0.7 V. Voltage across load resistor V_R = V_S - V_D = 12 V - 0.7 V = 11.3 V. By Ohm's Law, I_D = V_R / R_L = 11.3 V / 1200 Ω = 0.00941667 A = 9.4167 mA.\n• Why Other Choices are Incorrect: 10.0 mA assumes an ideal diode (12 V / 1200 Ω), while 8.8333 mA assumes an incorrect drop."
-    },
-    {
-        "id": 128,
-        "question": "(Problem) For the same series circuit described in Item 11 (V_S = 12 V, Silicon diode V_D = 0.7 V, R_L = 1.2 kΩ, I_D = 9.4167 mA), calculate the power dissipated by the Silicon diode (P_D) in milliwatts (mW) using the Second Approximation.",
-        "options": [
-            "a. 7.1 mW",
-            "b. 6.5917 mW",
-            "c. 6.1833 mW",
-            "d. 8.4 mW"
-        ],
-        "answer": 1,
-        "explanation": "• Why '6.5917 mW' is Correct: Power dissipated by diode P_D = V_D * I_D = 0.7 V * 9.416667 mA = 6.591667 mW ≈ 6.5917 mW.\n• Why Other Choices are Incorrect: 7.1 mW and 6.1833 mW use incorrect current or voltage values."
-    },
-    {
-        "id": 129,
-        "question": "(Problem) A Germanium diode exhibits an internal forward resistance r_f = 15 Ω. It is connected in series with a load resistor R_L = 470 Ω and a 9 V DC supply. Using the Third Approximation, calculate the total current in milliamperes (mA).",
-        "options": [
-            "a. 18.5106 mA",
-            "b. 17.9381 mA",
-            "c. 19.1489 mA",
-            "d. 17.3913 mA"
-        ],
-        "answer": 1,
-        "explanation": "• Why '17.9381 mA' is Correct: Third Approximation for Germanium: V_D = 0.3 V, internal resistance r_f = 15 Ω. Total circuit resistance R_total = r_f + R_L = 15 Ω + 470 Ω = 485 Ω. Current I = (V_S - V_D) / R_total = (9 V - 0.3 V) / 485 Ω = 8.7 V / 485 Ω = 0.01793814 A = 17.9381 mA.\n• Why Other Choices are Incorrect: 18.5106 mA ignores internal resistance r_f (8.7 V / 470 Ω)."
-    },
-    {
-        "id": 130,
-        "question": "(Problem) Using the parameters and results from Item 13 (V_S = 9 V, Germanium V_D = 0.3 V, r_f = 15 Ω, R_L = 470 Ω, I = 17.9381 mA), calculate the actual terminal voltage drop across the Germanium diode in volts using the Third Approximation.",
-        "options": [
-            "a. 0.3 V",
-            "b. 0.5691 V",
-            "c. 0.2691 V",
-            "d. 0.45 V"
-        ],
-        "answer": 1,
-        "explanation": "• Why '0.5691 V' is Correct: Actual diode terminal voltage V_terminal = V_D + (I * r_f) = 0.3 V + (0.01793814 A * 15 Ω) = 0.3 V + 0.269072 V = 0.569072 V ≈ 0.5691 V.\n• Why Other Choices are Incorrect: 0.3 V is only the knee voltage without internal resistance voltage drop."
-    },
-    {
-        "id": 131,
-        "question": "(Problem) A Gallium Arsenide (GaAs) diode (V_F = 1.2 V) is connected across a 15 V DC source in series with a 2.2 kΩ resistor. Using the Second Approximation, determine the voltage across the load resistor V_L in volts (V).",
-        "options": [
-            "a. 15 V",
-            "b. 13.8 V",
-            "c. 1.2 V",
-            "d. 14.3 V"
-        ],
-        "answer": 1,
-        "explanation": "• Why '13.8 V' is Correct: GaAs forward barrier voltage V_F = 1.2 V. By Kirchhoff's Voltage Law, voltage across load resistor V_L = V_S - V_F = 15 V - 1.2 V = 13.8 V.\n• Why Other Choices are Incorrect: 15 V neglects diode drop, 1.2 V is the diode drop itself, and 14.3 V assumes 0.7 V drop."
-    },
-    {
-        "id": 132,
-        "question": "(Problem) Two identical Silicon diodes are connected in series with a 680 Ω load resistor and a 10 V DC voltage supply. Using the Second Approximation, calculate the total circuit current in milliamperes (mA).",
-        "options": [
-            "a. 13.6765 mA",
-            "b. 12.6471 mA",
-            "c. 14.7059 mA",
-            "d. 11.6176 mA"
-        ],
-        "answer": 1,
-        "explanation": "• Why '12.6471 mA' is Correct: Two series Silicon diodes drop V_total = 2 * 0.7 V = 1.4 V. Resistor voltage V_R = 10 V - 1.4 V = 8.6 V. Circuit current I = 8.6 V / 680 Ω = 0.01264706 A = 12.6471 mA.\n• Why Other Choices are Incorrect: 13.6765 mA counts only one diode drop (9.3 V / 680 Ω)."
-    },
-    {
-        "id": 133,
-        "question": "(Problem) For a series circuit with a 10 V DC source and a single Silicon diode (V_D = 0.7 V) connected across a 330 Ω load resistor, calculate the load voltage V_L across the 330 Ω resistor in volts (V).",
-        "options": [
-            "a. 9.3 V",
-            "b. 4.3 V",
-            "c. 10.0 V",
-            "d. 7.9 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why '9.3 V' is Correct: By KVL, load voltage V_L = V_S - V_D = 10 V - 0.7 V = 9.3 V.\n• Why Other Choices are Incorrect: 4.3 V corresponds to a 5 V source (5 V - 0.7 V), while 10.0 V ignores diode barrier drop."
-    },
-    {
-        "id": 134,
-        "question": "(Problem) Two Silicon diodes are connected in parallel with each other in the forward direction. This parallel branch is placed in series with a 330 Ω resistor and a 5 V DC supply. Assuming equal current sharing, calculate the current through each individual diode in milliamperes (mA) using the Second Approximation.",
-        "options": [
-            "a. 13.0303 mA",
-            "b. 6.5152 mA",
-            "c. 7.5758 mA",
-            "d. 3.2576 mA"
-        ],
-        "answer": 1,
-        "explanation": "• Why '6.5152 mA' is Correct: Parallel Silicon diodes clamp the branch voltage to V_D = 0.7 V. Resistor voltage V_R = 5 V - 0.7 V = 4.3 V. Total supply current I_total = 4.3 V / 330 Ω = 13.0303 mA. Since current divides equally between two parallel diodes: I_diode = 13.0303 mA / 2 = 6.51515 mA ≈ 6.5152 mA.\n• Why Other Choices are Incorrect: 13.0303 mA is total circuit current before dividing by 2."
-    },
-    {
-        "id": 135,
-        "question": "(Problem) An ideal Silicon diode is connected in reverse bias across a 24 V DC supply in series with a 1 kΩ resistor. Calculate the terminal voltage across the reverse-biased diode V_D in volts (V).",
-        "options": [
-            "a. 0 V",
-            "b. 24 V",
-            "c. 12 V",
-            "d. 0.7 V"
-        ],
-        "answer": 1,
-        "explanation": "• Why '24 V' is Correct: In reverse bias, an ideal diode acts as an open circuit (I = 0). With zero current flowing through the resistor (V_R = 0 V), the full 24 V supply voltage drops across the open diode terminals.\n• Why Other Choices are Incorrect: 0 V occurs across an ideal diode in forward bias, not reverse bias."
-    },
-    {
-        "id": 136,
-        "question": "(Problem) A Silicon diode and a Germanium diode are connected in parallel (facing the same forward conduction path) in series with a 1.5 kΩ load resistor and a 12 V DC source. Using the Second Approximation, determine the total current drawn from the supply in milliamperes (mA).",
-        "options": [
-            "a. 7.5333 mA",
-            "b. 7.8000 mA",
-            "c. 7.2667 mA",
-            "d. 8.0000 mA"
-        ],
-        "answer": 1,
-        "explanation": "• Why '7.8000 mA' is Correct: Germanium turns ON at 0.3 V, which is lower than Silicon's 0.7 V threshold. Germanium conducts first and clamps the node voltage to 0.3 V, keeping Silicon OFF. Resistor voltage V_R = 12 V - 0.3 V = 11.7 V. Total current I = 11.7 V / 1500 Ω = 0.0078 A = 7.8 mA.\n• Why Other Choices are Incorrect: 7.5333 mA assumes Silicon conducts (11.3 V / 1500 Ω = 7.533 mA), but Silicon remains OFF."
-    },
-    {
-        "id": 137,
-        "question": "A Bipolar Junction Transistor (BJT) is structurally formed by joining two PN junctions in series. How many semiconductor layers, junctions, and terminals does a BJT possess?",
-        "options": [
-            "Two layers, one junction, and two terminals",
-            "Three layers, two junctions, and three terminals",
-            "Three layers, three junctions, and three terminals",
-            "Four layers, three junctions, and two terminals"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Three layers, two junctions, and three terminals' is Correct: A BJT is constructed from three alternating layers of semiconductor material (N-P-N or P-N-P), creating two internal PN junctions (Base-Emitter and Base-Collector) and three accessible external terminals (Emitter, Base, and Collector).\n• Why Other Choices are Incorrect: A simple diode has two layers and one junction. An SCR (thyristor) has four layers and three junctions."
-    },
-    {
-        "id": 138,
-        "question": "Why is the Bipolar Junction Transistor designated as a 'bipolar' device?",
-        "options": [
-            "Conduction involves both electrons and holes",
-            "Operation uses two independent external power supply rails",
-            "Transistor possesses two junctions of identical physical size",
-            "Device functions exclusively with dual positive/negative pins"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In a BJT, conduction involves both electrons and holes acting as charge carriers across the junctions, making it 'bipolar'. In contrast, Field-Effect Transistors (FETs) are 'unipolar' because conduction relies on only one type of charge carrier (either electrons or holes).\n• Why Other Choices are Incorrect: The term 'bipolar' does not refer to power supply rails or symmetrical junction sizing."
-    },
-    {
-        "id": 139,
-        "question": "If two discrete signal diodes are connected back-to-back such that their anodes are tied together to a common terminal, which type of BJT structure does this model?",
-        "options": [
-            "PNP Transistor",
-            "NPN Transistor",
-            "Junction Field-Effect Transistor (JFET)",
-            "Metal-Oxide-Semiconductor FET (MOSFET)"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'NPN Transistor' is Correct: In the back-to-back diode analogy of an NPN transistor, the two P-type anodes are fused together to form the common Base (P-type), while the two N-type cathodes form the Emitter and Collector (N-type).\n• Why Other Choices are Incorrect: For a PNP transistor, the two cathodes (N-type) are connected together to form the shared Base, with the anodes acting as Emitter and Collector."
-    },
-    {
-        "id": 140,
-        "question": "If two signal diodes are connected back-to-back sharing a common N-type cathode terminal, which transistor type is represented?",
-        "options": [
-            "NPN Transistor",
-            "PNP Transistor",
-            "Unijunction Transistor (UJT)",
-            "Silicon Controlled Rectifier (SCR)"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'PNP Transistor' is Correct: A PNP transistor consists of two P-type regions separated by an N-type base. In the diode analogy, the two diodes have their cathodes connected back-to-back to form the shared central N-type base terminal.\n• Why Other Choices are Incorrect: Connecting anodes forms an NPN transistor."
-    },
-    {
-        "id": 141,
-        "question": "Transistors are classified as active circuit components rather than passive components. What fundamentally characterizes an 'active' device?",
-        "options": [
-            "Controls current flow to produce signal amplification",
-            "Dissipates electrical power strictly as passive thermal heat",
-            "Requires zero external DC biasing power supplies to function",
-            "Maintains strictly linear ohmic resistance across all inputs"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Active devices are electronic components that can control the flow of electricity, inject energy into a circuit, and produce amplification using external DC power. Resistors, capacitors, and inductors are passive devices because they cannot amplify.\n• Why Other Choices are Incorrect: Passive devices dissipate or store energy, whereas active devices can amplify signals."
-    },
-    {
-        "id": 142,
-        "question": "The ability of a transistor to change between an insulating state and a conducting state enables it to perform which two fundamental engineering functions?",
-        "options": [
-            "Rectification and Filtering",
-            "Switching and Amplification",
-            "Modulation and Demodulation exclusively",
-            "Inductance and Capacitance"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Switching and Amplification' is Correct: Transistors have two foundational functions: (1) Switching in digital electronics (fully OFF in cutoff or fully ON in saturation), and (2) Amplification in analogue electronics (operating in the linear active region to enlarge input signals).\n• Why Other Choices are Incorrect: Rectification is primarily the function of diodes."
-    },
-    {
-        "id": 143,
-        "question": "When a BJT is utilized as a digital switch (logic inverter or driver), between which two operational regions does it transition?",
-        "options": [
-            "Active region and Breakdown region",
-            "Cutoff region and Saturation region",
-            "Active region and Cutoff region only",
-            "Saturation region and Active region only"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Cutoff region and Saturation region' is Correct: In digital switching, the transistor operates as an open switch in the Cutoff region (zero current, maximum voltage across terminals) and as a closed switch in the Saturation region (maximum current, near-zero voltage drop across terminals).\n• Why Other Choices are Incorrect: The active region is avoided during steady-state switching to minimize power dissipation."
-    },
-    {
-        "id": 144,
-        "question": "For linear, undistorted analogue signal amplification, in which region must a BJT be biased?",
-        "options": [
-            "Saturation region",
-            "Cutoff region",
-            "Active (or Linear) region",
-            "Avalanche breakdown region"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Active (or Linear) region' is Correct: In the Active region, collector current is proportional to base current (IC = beta * IB), providing linear input-to-output amplification without clipping waveform peaks.\n• Why Other Choices are Incorrect: Saturation and cutoff clip the waveform peaks, resulting in severe non-linear distortion."
-    },
-    {
-        "id": 145,
-        "question": "What are the exact PN junction biasing conditions required for a BJT to operate in the Active (linear amplification) region?",
-        "options": [
-            "Base-Emitter forward-biased and Base-Collector forward-biased",
-            "Base-Emitter reverse-biased and Base-Collector forward-biased",
-            "Base-Emitter forward-biased and Base-Collector reverse-biased",
-            "Base-Emitter reverse-biased and Base-Collector reverse-biased"
-        ],
-        "answer": 2,
-        "explanation": "• Why this is Correct: In the active region, the Base-Emitter (input) junction is forward-biased to permit carrier injection into the base, and the Base-Collector (output) junction is reverse-biased to sweep carriers into the collector.\n• Why Other Choices are Incorrect: Forward-forward corresponds to Saturation, reverse-reverse corresponds to Cutoff, and reverse-forward corresponds to Inverted Active."
-    },
-    {
-        "id": 146,
-        "question": "What junction biasing states place a BJT into the Cutoff region (OFF state)?",
-        "options": [
-            "Base-Emitter forward-biased and Base-Collector reverse-biased",
-            "Both Base-Emitter and Base-Collector junctions reverse-biased",
-            "Both Base-Emitter and Base-Collector junctions forward-biased",
-            "Base-Emitter reverse-biased and Base-Collector forward-biased"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: In the cutoff region, both junctions are reverse-biased. No majority carriers are injected into the base, resulting in near-zero terminal currents (only negligible reverse saturation leakage I_CEO flows).\n• Why Other Choices are Incorrect: Forward-biasing either junction allows substantial current to flow."
-    },
-    {
-        "id": 147,
-        "question": "What junction biasing states define the Saturation region (fully ON state)?",
-        "options": [
-            "Both Base-Emitter and Base-Collector junctions forward-biased",
-            "Both Base-Emitter and Base-Collector junctions reverse-biased",
-            "Base-Emitter forward-biased and Base-Collector reverse-biased",
-            "Base-Emitter reverse-biased and Base-Collector forward-biased"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: When both junctions are forward-biased, the transistor enters saturation. Collector current reaches its maximum external circuit limit (I_C(sat) ≈ V_CC / R_C) and V_CE drops to its minimum saturation voltage (V_CE(sat) ≈ 0.2 V).\n• Why Other Choices are Incorrect: Reverse-biasing the collector-base junction establishes the active region."
-    },
-    {
-        "id": 148,
-        "question": "How is the Emitter region of a BJT physically engineered with respect to impurity doping concentration?",
-        "options": [
-            "Heavily doped to inject carriers",
-            "Lightly doped to minimize leakage current across junctions",
-            "Moderately doped to match collector layer carrier densities",
-            "Completely undoped intrinsic semiconductor material substrate"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: The Emitter region is the most heavily doped layer. Its primary role is to emit (inject) a massive concentration of majority carriers (electrons in NPN, holes in PNP) across the forward-biased emitter junction into the thin base layer.\n• Why Other Choices are Incorrect: Lightly doped regions cannot supply sufficient carriers for high current gain."
-    },
-    {
-        "id": 149,
-        "question": "What are the two primary structural characteristics of the BJT Base layer that are essential for effective transistor operation?",
-        "options": [
-            "Extremely thick and heavily doped",
-            "Extremely thin and lightly doped",
-            "Thick and moderately doped",
-            "Equal in thickness and doping to the collector"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: Making the base very thin and lightly doped ensures that over 95% to 99% of carriers injected from the emitter diffuse directly across into the collector without recombining in the base. This keeps base current I_B tiny and maximizes current gain beta.\n• Why Other Choices are Incorrect: A thick or heavily doped base would cause excessive carrier recombination, destroying transistor action."
-    },
-    {
-        "id": 150,
-        "question": "Why is the Collector region physically manufactured with the largest surface area among the three semiconductor layers?",
-        "options": [
-            "To dissipate heat generated at collector junction",
-            "To maximize internal electrostatic junction capacitance values",
-            "To ensure highest bulk electrical resistance throughout circuit",
-            "To facilitate easier mechanical attachment of external lead pins"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: The Collector region operates under reverse bias with a relatively large voltage drop (V_CE) and conducts almost the full emitter current (I_C ≈ I_E). The resulting power dissipation (P = V_CE * I_C) is highest at the collector junction, requiring a larger physical volume and surface area to safely dissipate heat.\n• Why Other Choices are Incorrect: Minimizing capacitance is desirable, and large physical size does not increase resistance."
-    },
-    {
-        "id": 151,
-        "question": "According to Kirchhoff's Current Law (KCL), what is the universal relationship between the three terminal currents of any BJT?",
-        "options": [
-            "I_C = I_B + I_E",
-            "I_E = I_B + I_C",
-            "I_B = I_E + I_C",
-            "I_E = I_C - I_B"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'I_E = I_B + I_C' is Correct: By applying KCL to the transistor package as a single node, total current leaving or entering the emitter must equal the sum of collector current and base current: I_E = I_B + I_C. Since I_B is very small, I_E ≈ I_C.\n• Why Other Choices are Incorrect: Emitter current is always the largest terminal current."
-    },
-    {
-        "id": 152,
-        "question": "In an NPN transistor operating in the active region, which charge carriers constitute the majority carriers injected from emitter to collector?",
-        "options": [
-            "Holes",
-            "Electrons",
-            "Positrons",
-            "Photons"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Electrons' is Correct: In an NPN transistor, the Emitter is N-type, meaning its majority carriers are electrons. When forward-biased, these electrons are injected into the P-type base and swept into the N-type collector.\n• Why Other Choices are Incorrect: In a PNP transistor, holes are the injected majority carriers."
-    },
-    {
-        "id": 153,
-        "question": "What is the definition of the DC current gain beta (h_FE) in the common-emitter configuration?",
-        "options": [
-            "beta = I_B / I_C",
-            "beta = I_C / I_B",
-            "beta = I_C / I_E",
-            "beta = I_E / I_B"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'beta = I_C / I_B' is Correct: The common-emitter DC current gain, designated as beta (or h_FE on datasheets), is defined as the ratio of output DC collector current to input DC base current: beta = I_C / I_B. Typical values range from 50 to 400.\n• Why Other Choices are Incorrect: I_C / I_E is alpha; I_B / I_C is the reciprocal of beta."
-    },
-    {
-        "id": 154,
-        "question": "What is the common-base DC current amplification factor alpha (α) defined as?",
-        "options": [
-            "alpha = I_C / I_E",
-            "alpha = I_E / I_C",
-            "alpha = I_B / I_E",
-            "alpha = I_C / I_B"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: alpha (α) is defined as the ratio of collector current to emitter current in the common-base configuration: alpha = I_C / I_E.\n• Why Other Choices are Incorrect: I_C / I_B is beta; I_E / I_C is the reciprocal of alpha."
-    },
-    {
-        "id": 155,
-        "question": "Which mathematical formula correctly converts common-emitter gain beta to common-base gain alpha?",
-        "options": [
-            "alpha = beta / (beta + 1)",
-            "alpha = (beta + 1) / beta",
-            "alpha = beta / (beta - 1)",
-            "alpha = beta * (beta + 1)"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'alpha = beta / (beta + 1)' is Correct: Since I_E = I_B + I_C = (I_C / beta) + I_C = I_C * ((1 + beta) / beta), solving for alpha = I_C / I_E yields alpha = beta / (beta + 1).\n• Why Other Choices are Incorrect: (beta + 1) / beta would yield a value greater than 1."
-    },
-    {
-        "id": 156,
-        "question": "If a transistor has a common-emitter current gain beta = 199, what is its corresponding common-base current gain alpha?",
-        "options": [
-            "0.950",
-            "0.990",
-            "0.995",
-            "1.005"
-        ],
-        "answer": 2,
-        "explanation": "• Why '0.995' is Correct: Using alpha = beta / (beta + 1) = 199 / (199 + 1) = 199 / 200 = 0.995.\n• Why Other Choices are Incorrect: Direct calculation yields exactly 0.995."
-    },
-    {
-        "id": 157,
-        "question": "On a standard transistor schematic symbol, what does the arrow located on the Emitter terminal indicate?",
-        "options": [
-            "Direction of conventional current when forward-biased",
-            "Direction of minority carrier drift under reverse bias",
-            "Polarity of external positive DC supply rail voltage",
-            "Physical orientation of internal substrate layer plane"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: The arrow on the emitter symbol always points in the direction of conventional current (positive charge flow) through the forward-biased Base-Emitter junction: pointing OUT of the base for NPN ('Not Pointing iN') and pointing INTO the base for PNP ('Pointing iN Proudly').\n• Why Other Choices are Incorrect: It does not indicate electron drift direction (which is opposite to conventional current)."
-    },
-    {
-        "id": 158,
-        "question": "In an NPN transistor schematic symbol, how is the arrow oriented on the emitter lead?",
-        "options": [
-            "Pointing inward toward the base",
-            "Pointing outward away from the base",
-            "Pointing horizontally toward the collector",
-            "There is no arrow on an NPN transistor"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Pointing outward away from the base' is Correct: In an NPN transistor, conventional current flows from Base to Emitter, so the arrow points outward away from the base line.\n• Why Other Choices are Incorrect: An arrow pointing inward toward the base represents a PNP transistor."
-    },
-    {
-        "id": 159,
-        "question": "What is the typical forward-bias voltage drop across the Base-Emitter junction (V_BE) for a conducting Silicon BJT at room temperature?",
-        "options": [
-            "0.1 V to 0.2 V",
-            "0.3 V",
-            "0.7 V",
-            "1.4 V"
-        ],
-        "answer": 2,
-        "explanation": "• Why '0.7 V' is Correct: Like standard silicon PN junction diodes, the Base-Emitter junction of a silicon BJT has a built-in barrier potential of approximately 0.7 V (0.6 V to 0.7 V) when conducting.\n• Why Other Choices are Incorrect: 0.3 V is typical for Germanium; 0.1 V is typical for Schottky."
-    },
-    {
-        "id": 160,
-        "question": "What is the primary difference between a BJT and a Field-Effect Transistor (FET) in terms of control mechanism?",
-        "options": [
-            "A BJT is a current-controlled device, whereas a FET is a voltage-controlled device",
-            "A BJT is a voltage-controlled device, whereas a FET is a current-controlled device",
-            "A BJT can only conduct AC signals, whereas a FET only conducts DC",
-            "A BJT does not require any semiconductor doping"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In a BJT, output current (I_C) is controlled by the input current (I_B), making it a current-controlled current source. In a FET, the gate draws negligible current and electric field voltage (V_GS) controls drain current, making it voltage-controlled.\n• Why Other Choices are Incorrect: Both handle AC and DC, and both are doped semiconductors."
-    },
-    {
-        "id": 161,
-        "question": "In the back-to-back diode analogy of a BJT, why can't two discrete physical signal diodes wired back-to-back function as a real transistor?",
-        "options": [
-            "Discrete diodes lack shared, ultra-thin base layer",
-            "Signal diodes are physically incapable of conducting forward current",
-            "Diodes require cryogenic operating temperatures for carrier movement",
-            "Series connection of two diodes causes immediate destructive breakdown"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: While the two-diode model helps explain polarity and junction biasing, real transistor action requires a continuous single crystal lattice where the base is physically thinner than the diffusion length of minority carriers, allowing carriers injected from the emitter to reach the collector before recombining.\n• Why Other Choices are Incorrect: Discrete diodes operate normally at room temperature and do not break down when connected back-to-back."
-    },
-    {
-        "id": 162,
-        "question": "Who demonstrated the amplifying action of the first point-contact transistor at Bell Telephone Laboratories on December 23, 1947?",
-        "options": [
-            "Thomas Edison, Nikola Tesla, and George Westinghouse",
-            "Dr. William Shockley, Walter H. Brattain, and John Bardeen",
-            "Jack Kilby, Robert Noyce, and Gordon Moore",
-            "Heinrich Hertz, Guglielmo Marconi, and Lee de Forest"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: The amplifying action of the first transistor was demonstrated by Dr. William Shockley, Walter H. Brattain, and John Bardeen at Bell Telephone Laboratories on December 23, 1947. They were jointly awarded the 1956 Nobel Prize in Physics for their discovery.\n• Why Other Choices are Incorrect: Kilby and Noyce invented the integrated circuit; Lee de Forest invented the Audion vacuum tube triode."
-    },
-    {
-        "id": 163,
-        "question": "A transistor operating in the active region has a measured base current IB = 50 μA and collector current IC = 3.65 mA. What is the total emitter current IE?",
-        "options": [
-            "3.60 mA",
-            "3.70 mA",
-            "7.30 mA",
-            "53.65 mA"
-        ],
-        "answer": 1,
-        "explanation": "• Why '3.70 mA' is Correct: First convert I_B to milliamperes: 50 μA = 0.050 mA. Using KCL: I_E = I_C + I_B = 3.65 mA + 0.050 mA = 3.70 mA.\n• Why Other Choices are Incorrect: Forgetting to convert μA to mA or subtracting instead of adding produces incorrect values."
-    },
-    {
-        "id": 164,
-        "question": "Which mathematical equation correctly expresses the common-emitter current gain beta in terms of the common-base current gain alpha?",
-        "options": [
-            "beta = alpha / (1 - alpha)",
-            "beta = (1 - alpha) / alpha",
-            "beta = alpha / (alpha + 1)",
-            "beta = 1 / (1 - alpha)"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'beta = alpha / (1 - alpha)' is Correct: Starting from alpha = beta / (beta + 1), cross-multiplying gives alpha * beta + alpha = beta. Rearranging yields beta * (1 - alpha) = alpha, so beta = alpha / (1 - alpha).\n• Why Other Choices are Incorrect: alpha / (alpha + 1) converts beta to alpha; 1 / (1 - alpha) is equal to beta + 1."
-    },
-    {
-        "id": 165,
-        "question": "If a transistor has a common-base current gain alpha = 0.98, what is its common-emitter current gain beta?",
-        "options": [
-            "49",
-            "50",
-            "98",
-            "100"
-        ],
-        "answer": 0,
-        "explanation": "• Why '49' is Correct: Using beta = alpha / (1 - alpha) = 0.98 / (1 - 0.98) = 0.98 / 0.02 = 49.\n• Why Other Choices are Incorrect: beta + 1 = 50, but beta alone equals 49."
-    },
-    {
-        "id": 166,
-        "question": "In a Common-Emitter (CE) voltage amplifier, what is the phase relationship between the input AC voltage applied at the base and the output AC voltage taken at the collector?",
-        "options": [
-            "180° out-of-phase (inverted)",
-            "0° (in-phase with input)",
-            "90° leading phase angle",
-            "270° lagging phase angle"
-        ],
-        "answer": 0,
-        "explanation": "• Why '180° out-of-phase (inverted)' is Correct: A Common-Emitter amplifier produces a 180° phase inversion between input and output. When the input voltage increases, I_B and I_C increase, causing a larger voltage drop across R_C, which pulls the collector voltage V_C downward.\n• Why Other Choices are Incorrect: Common-Base and Common-Collector amplifiers have a 0° phase shift (in-phase)."
-    },
-    {
-        "id": 167,
-        "question": "Which BJT amplifier configuration is characterized by a voltage gain approximately equal to 1, high current gain, very high input impedance, and low output impedance?",
-        "options": [
-            "Common-Collector (CC)",
-            "Common-Emitter (CE) amplifier",
-            "Common-Base (CB) amplifier",
-            "Cascode differential amplifier"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Common-Collector (CC)' is Correct: The Common-Collector (also called Emitter-Follower) configuration features unity voltage gain (A_v ≈ 1), high current gain (A_i ≈ beta + 1), very high input impedance (Z_in ≈ beta * R_E), and very low output impedance (Z_out ≈ r_e), making the emitter voltage closely follow the base voltage.\n• Why Other Choices are Incorrect: Common-Emitter has high voltage and current gain; Common-Base has low input impedance and unity current gain."
-    },
-    {
-        "id": 168,
-        "question": "What is the primary practical engineering application of a Common-Collector (Emitter-Follower) amplifier?",
-        "options": [
-            "Impedance matching and buffering",
-            "High-frequency RF voltage amplification",
-            "High-voltage pulse timing generation",
-            "Precision full-wave power rectification"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Because the Emitter-Follower presents a high input impedance and a low output impedance with unity voltage gain, it is widely used as a buffer amplifier to prevent signal loading when connecting high-impedance signal sources to low-impedance loads (such as speakers or cables).\n• Why Other Choices are Incorrect: Common-Collector provides no voltage amplification, so it cannot amplify weak RF signals."
-    },
-    {
-        "id": 169,
-        "question": "Which BJT configuration exhibits low input impedance, high output impedance, unity current gain (alpha < 1), high voltage gain, and zero phase inversion?",
-        "options": [
-            "Common-Base (CB)",
-            "Common-Emitter (CE)",
-            "Common-Collector (CC)",
-            "Darlington Pair"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Common-Base' is Correct: The Common-Base configuration has input at the emitter and output at the collector. It provides unity current gain (I_C / I_E = alpha < 1), very low input impedance (Z_in ≈ r_e), high output impedance, excellent high-frequency response (minimizing the Miller effect), and no phase inversion.\n• Why Other Choices are Incorrect: Common-Emitter provides high current gain and inverts phase."
-    },
-    {
-        "id": 170,
-        "question": "What does the reverse saturation leakage current parameter ICBO represent on a BJT specification datasheet?",
-        "options": [
-            "Collector-to-Base leakage current with the Emitter Open",
-            "Collector-to-Emitter leakage current with the Base Open",
-            "Base-to-Emitter leakage current with the Collector Open",
-            "Breakdown current at the Output terminal"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Collector-to-Base leakage current with the Emitter Open' is Correct: By JEDEC standard notation, I_CBO represents the Collector-to-Base current when the Emitter terminal is Open (unconnected) under reverse bias. It is composed of thermally generated minority charge carriers.\n• Why Other Choices are Incorrect: Collector-to-Emitter leakage with Base Open is designated as I_CEO."
-    },
-    {
-        "id": 171,
-        "question": "How is the Collector-to-Emitter leakage current with Base open (ICEO) mathematically related to the Collector-to-Base leakage current with Emitter open (ICBO)?",
-        "options": [
-            "I_CEO = I_CBO / beta",
-            "I_CEO = (beta + 1) * I_CBO",
-            "I_CEO = I_CBO - beta",
-            "I_CEO = I_CBO / (beta + 1)"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'I_CEO = (beta + 1) * I_CBO' is Correct: With the base open (I_B = 0), the reverse leakage I_CBO entering the base is internally amplified by the transistor action, resulting in I_CEO = (beta + 1) * I_CBO ≈ beta * I_CBO. Consequently, I_CEO is orders of magnitude larger than I_CBO.\n• Why Other Choices are Incorrect: Leakage is amplified by beta + 1, not divided."
-    },
-    {
-        "id": 172,
-        "question": "As ambient operating temperature increases, approximately by what factor do the reverse saturation leakage currents (ICBO and ICEO) increase for silicon BJTs?",
-        "options": [
-            "They decrease by 50% for every 10°C rise",
-            "They double for approximately every 10°C rise",
-            "They remain constant regardless of temperature",
-            "They increase by 10x for every 1°C rise"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: Thermal generation of electron-hole pairs across the depletion region increases exponentially with temperature. As a standard semiconductor rule of thumb, reverse saturation leakage currents approximately double for every 10°C increase in junction temperature.\n• Why Other Choices are Incorrect: Leakage current increases, rather than decreases or stays constant."
-    },
-    {
-        "id": 173,
-        "question": "What is the phenomenon known as the 'Early Effect' (or Base-Width Modulation) in a BJT?",
-        "options": [
-            "Narrowing of effective base width as V_CB increases",
-            "Conduction of transistor before input AC signal arrival",
-            "Melting of internal emitter wire bond under overcurrent",
-            "Reduction in current gain beta at cryogenic temperatures"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Discovered by James M. Early, the Early Effect occurs because increasing reverse bias on the collector-base junction widens the depletion region into the lightly doped base. This narrows the effective neutral base width (W_B), reducing recombination and causing collector current to slightly increase with V_CE.\n• Why Other Choices are Incorrect: It has nothing to do with timing or destruction."
-    },
-    {
-        "id": 174,
-        "question": "On the Common-Emitter output characteristics curves (IC vs VCE), if the active-region curve slopes are extrapolated backward into negative VCE, where do they intersect?",
-        "options": [
-            "At the origin (0 V, 0 mA)",
-            "At the negative Early Voltage (-V_A) on the voltage axis",
-            "At the collector supply voltage V_CC",
-            "They never intersect because they are perfectly horizontal"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'At the negative Early Voltage (-V_A)' is Correct: Extrapolating the active-region output characteristic lines backward intersects the horizontal voltage axis at a common point known as the Early Voltage (-V_A), typically between 50 V and 150 V.\n• Why Other Choices are Incorrect: Due to base-width modulation, the curves have a positive slope and do not remain horizontal."
-    },
-    {
-        "id": 175,
-        "question": "How does the Early Effect affect the dynamic output resistance ro of a BJT in the common-emitter configuration?",
-        "options": [
-            "It makes the output resistance infinite (ideal current source)",
-            "It introduces a finite output resistance approximately given by ro ≈ V_A / I_C",
-            "It reduces the output resistance to zero ohms",
-            "It causes negative incremental resistance"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: Because the I_C vs V_CE curves have a non-zero slope (dI_C / dV_CE), the BJT acts as a practical current source with finite dynamic output resistance: r_o = (V_A + V_CE) / I_C ≈ V_A / I_C.\n• Why Other Choices are Incorrect: An ideal current source has infinite r_o; the Early Effect makes it finite."
-    },
-    {
-        "id": 176,
-        "question": "How is the maximum collector power dissipation rating (PCmax) of a transistor defined and plotted on the output characteristics?",
-        "options": [
-            "P_Cmax = V_CE + I_C, plotted as a straight line",
-            "P_Cmax = V_CE * I_C, plotted as a hyperbola curve",
-            "P_Cmax = V_BE * I_B, plotted as an exponential curve",
-            "P_Cmax = I_C^2 * R_B, plotted as a parabola"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'P_Cmax = V_CE * I_C, plotted as a hyperbola curve' is Correct: Transistor collector dissipation is the product of collector-emitter voltage and collector current: P_C = V_CE * I_C. Plotting this constant maximum power limit on the I_C vs V_CE plane forms a hyperbolic curve.\n• Why Other Choices are Incorrect: Power is the product of voltage and current, forming a hyperbola."
-    },
-    {
-        "id": 177,
-        "question": "What is the 'Safe Operating Area' (SOA) of a power BJT?",
-        "options": [
-            "The temperature range inside a refrigerated electronics chassis",
-            "The region on the I_C-V_CE plane bounded by I_Cmax, V_CEmax, P_Cmax, and second breakdown limits",
-            "The physical clearance required between two neighboring circuit board components",
-            "The frequency band where input capacitance is cancelled by inductance"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: The Safe Operating Area (SOA) defines the voltage and current boundary conditions over which the transistor can operate without self-destruction or degradation. It is bounded by maximum collector current, maximum breakdown voltage, maximum power dissipation, and the second breakdown limit.\n• Why Other Choices are Incorrect: SOA is an electrical operating envelope on the characteristic curves."
-    },
-    {
-        "id": 178,
-        "question": "Which classic transistor package consists of a heavy metal diamond-shaped case with two protruding leads, where the metal case itself serves as the Collector terminal for direct heat sinking?",
-        "options": [
-            "TO-92",
-            "TO-3",
-            "TO-18",
-            "SOT-23"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'TO-3' is Correct: The TO-3 is a high-power metal package shaped like a diamond with two mounting screw holes. It has two base/emitter pins on the bottom, while the heavy metal case serves as the Collector connection to facilitate heat transfer to an external heat sink.\n• Why Other Choices are Incorrect: TO-92 is a small plastic case; TO-18 is a miniature metal can; SOT-23 is surface-mount."
-    },
-    {
-        "id": 179,
-        "question": "When testing a functioning Silicon NPN transistor using the 'Diode Check' function of a Digital Multimeter (DMM), what reading is expected when connecting the RED (+) lead to the Base and the BLACK (-) lead to the Emitter?",
-        "options": [
-            "Approximately 0.6 V to 0.7 V drop",
-            "Over-limit open-circuit display (OL)",
-            "Zero ohms dead-short continuity reading",
-            "Negative voltage reading (-0.7 V drop)"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: The Base-Emitter junction of an NPN transistor is a PN diode with P on the Base and N on the Emitter. Connecting the positive (red) meter lead to Base and negative (black) lead to Emitter forward-biases the junction, displaying its built-in forward potential of ~0.6 V to 0.7 V.\n• Why Other Choices are Incorrect: Reversing the leads produces OL (reverse bias); 0 V indicates a shorted junction."
-    },
-    {
-        "id": 180,
-        "question": "Why is the Fixed-Bias BJT configuration rarely used in commercial linear amplifier designs?",
-        "options": [
-            "Operating Q-point is unstable and beta-dependent",
-            "Requires three independent DC power supply batteries",
-            "Cannot conduct direct current through collector terminal",
-            "Possesses zero input impedance under all bias conditions"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In Fixed-Bias, base current is fixed (I_B ≈ V_CC / R_B), making collector current directly dependent on beta: I_C = beta * I_B. Because beta varies widely with temperature (doubling over 50°C) and unit-to-unit manufacturing, the Q-point drifts severely toward saturation or cutoff.\n• Why Other Choices are Incorrect: Fixed-bias uses a single power supply and conducts DC normally."
-    },
-    {
-        "id": 181,
-        "question": "In an Emitter-Stabilized Bias circuit, how does the addition of the emitter resistor RE provide negative feedback to stabilize the Q-point?",
-        "options": [
-            "If IC increases, VE = IE*RE increases, reducing VBE and thus driving IB and IC back down",
-            "If IC increases, RE bypasses collector current directly to ground",
-            "RE forces the base voltage to increase proportionately with collector voltage",
-            "RE cancels out the collector supply voltage V_CC"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: If temperature causes I_C to increase, emitter current I_E increases, raising the emitter voltage V_E = I_E * R_E. Since V_BE = V_B - V_E, an increase in V_E decreases V_BE, which reduces base current I_B, thereby opposing the increase in I_C and stabilizing the Q-point.\n• Why Other Choices are Incorrect: R_E does not bypass current to ground; it introduces negative degenerative feedback."
-    },
-    {
-        "id": 182,
-        "question": "What is the rule-of-thumb criterion for a Voltage-Divider Bias circuit to be considered 'stiff' (essentially beta-independent)?",
-        "options": [
-            "beta * R_E >= 10 * R_2",
-            "R_2 >= 10 * beta * R_E",
-            "beta * R_C <= R_1",
-            "R_1 = R_2 = R_E"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'beta * R_E >= 10 * R_2' is Correct: If the input resistance looking into the base (R_in ≈ beta * R_E) is at least 10 times larger than the lower divider resistor R_2, the base current loading effect is negligible (< 10%), allowing the base voltage to be calculated simply as V_B ≈ V_CC * R_2 / (R_1 + R_2).\n• Why Other Choices are Incorrect: R_2 must be much smaller than beta * R_E to draw sufficient bleed current."
-    },
-    {
-        "id": 183,
-        "question": "When applying Thevenin's Theorem to the base circuit of a Voltage-Divider biased BJT, what are the equivalent Thevenin resistance (RTH) and voltage (VTH)?",
-        "options": [
-            "Provides negative feedback to stabilize Q-point",
-            "Maximizes transistor small-signal AC voltage gain",
-            "Eliminates need for DC collector power supply source",
-            "Reverses polarity of output voltage signal waveform"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Removing the transistor at the base terminal and shorting the DC supply V_CC to ground puts R_1 and R_2 in parallel: R_TH = R_1 || R_2 = (R_1 * R_2) / (R_1 + R_2). The open-circuit voltage across R_2 is the standard voltage divider: V_TH = V_CC * R_2 / (R_1 + R_2).\n• Why Other Choices are Incorrect: The resistors are in parallel to ground, not series."
-    },
-    {
-        "id": 184,
-        "question": "In a Collector-Feedback Bias circuit, how does the feedback resistor RF connected between collector and base provide bias stabilization?",
-        "options": [
-            "Voltage-Divider Bias",
-            "Fixed-Base Bias",
-            "Emitter-Feedback Bias",
-            "Collector-Feedback Bias"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Collector-Feedback utilizes negative voltage feedback. If I_C increases, the voltage drop across R_C increases, causing collector voltage V_C = V_CC - I_C' * R_C to drop. Because the base resistor R_F is tied directly to V_C, a lower V_C reduces base current I_B = (V_C - V_BE) / R_F, opposing the original rise in I_C.\n• Why Other Choices are Incorrect: The feedback is negative (degenerative), not positive."
-    },
-    {
-        "id": 185,
-        "question": "For a standard Common-Emitter Fixed-Bias configuration, what is the expression for the maximum collector saturation current (ICsat)?",
-        "options": [
-            "I_Csat = V_CC / R_B",
-            "I_Csat ≈ V_CC / R_C",
-            "I_Csat = V_BE / R_C",
-            "I_Csat = beta * V_CC"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'I_Csat ≈ V_CC / R_C' is Correct: At saturation, the transistor acts as a closed switch between collector and emitter, making V_CE ≈ 0 V (or V_CE(sat) ≈ 0.2 V). Applying Ohm's law to the collector resistor yields I_Csat = (V_CC - V_CE(sat)) / R_C ≈ V_CC / R_C.\n• Why Other Choices are Incorrect: R_B limits base current, not collector saturation current."
-    },
-    {
-        "id": 186,
-        "question": "When a Common-Emitter BJT circuit is driven into the Cutoff state, what are the theoretical values of collector current (IC) and collector-to-emitter voltage (VCE)?",
-        "options": [
-            "I_C = I_Csat, and V_CE = 0 V",
-            "I_C ≈ 0 mA, and V_CE = V_CC",
-            "I_C = V_CC / R_C, and V_CE = 0.7 V",
-            "I_C = beta * I_B, and V_CE = V_CC / 2"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'I_C ≈ 0 mA, and V_CE = V_CC' is Correct: In cutoff, the base-emitter junction is reverse-biased so I_B = 0 and I_C ≈ 0 mA (only negligible leakage I_CEO flows). With no current through collector resistor R_C, the voltage drop I_C * R_C is zero, causing V_CE to rise to the full supply voltage: V_CE = V_CC - (0)*R_C = V_CC.\n• Why Other Choices are Incorrect: I_C = I_Csat and V_CE ≈ 0 V describes Saturation."
-    },
-    {
-        "id": 187,
-        "question": "The word 'Transistor' is an engineering portmanteau (combination) of which two words describing its mode of operation during early development?",
-        "options": [
-            "Transmission and Varistor",
-            "Transfer and Resistor (or Varistor)",
-            "Transformer and Transistor",
-            "Transit and Capacitor"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: The word 'Transistor' was coined by John R. Pierce at Bell Labs as a combination of 'Transfer' and 'Resistor' (or Transfer Varistor). It describes the fundamental device property of transferring an input signal current from a low-resistance forward-biased circuit to a high-resistance reverse-biased output circuit.\n• Why Other Choices are Incorrect: It does not originate from transmission, transformer, or transit."
-    },
-    {
-        "id": 188,
-        "question": "On the circuit schematic symbol for both NPN and PNP transistors, what universal rule governs the direction of the arrow on the emitter terminal relative to semiconductor material types?",
-        "options": [
-            "It always points from the negative N-type region to the positive P-type region",
-            "It always points from the positive P-type region to the negative N-type region",
-            "It always points towards the external circuit ground",
-            "It always points toward the terminal with the largest physical surface area"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: The arrow in the transistor circuit symbol always indicates the direction of conventional current flow through the base-emitter junction and ALWAYS points from the positive P-type region to the negative N-type region—exactly the same as the arrow in a standard PN junction diode symbol.\n• Why Other Choices are Incorrect: Electron flow is from N to P, but schematic arrows indicate conventional current (P to N)."
-    },
-    {
-        "id": 189,
-        "question": "When operating a BJT in the linear active region, the base-emitter junction is forward-biased while the base-collector junction is reverse-biased. What is this specific standard biasing condition formally called?",
-        "options": [
-            "Reverse-forward bias",
-            "Dual forward bias",
-            "Forward-reverse bias",
-            "Complementary bias"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Forward-reverse bias' is Correct: Because the base-emitter junction must be forward-biased to inject carriers and the base-collector junction must be reverse-biased to collect them, this operational state is formally designated in textbook literature as 'forward-reverse bias'.\n• Why Other Choices are Incorrect: 'Reverse-forward bias' operates the transistor in inverted mode; 'dual forward bias' establishes saturation."
-    },
-    {
-        "id": 190,
-        "question": "What is the primary operational relationship between an NPN transistor and a PNP transistor?",
-        "options": [
-            "Beta-independent (universal bias)",
-            "Extremely sensitive to transistor beta",
-            "Requires dual symmetrical power supplies",
-            "Operates only in deep saturation mode"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: The principle of operation for PNP and NPN transistors is fundamentally identical. The only difference lies in their external biasing voltages and the polarity of their power supplies, which reverse current directions because electrons are majority carriers in NPN while holes are majority carriers in PNP.\n• Why Other Choices are Incorrect: Both are bipolar devices that amplify both AC and DC signals."
-    },
-    {
-        "id": 191,
-        "question": "In terms of semiconductor layer architecture, how are the three doped regions arranged in an NPN transistor versus a PNP transistor?",
-        "options": [
-            "NPN consists of two p regions separated by an n region; PNP consists of two n regions separated by a p region",
-            "NPN consists of two n regions separated by a p region; PNP consists of two p regions separated by an n region",
-            "NPN consists of three n regions in series; PNP consists of three p regions in series",
-            "NPN and PNP both contain identical layers of intrinsic semiconductor material"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: An NPN transistor is constructed from two N-type semiconductor regions (Emitter and Collector) separated by a thin central P-type Base layer. Conversely, a PNP transistor is constructed from two P-type regions separated by a thin central N-type Base layer.\n• Why Other Choices are Incorrect: An NPN has P in the middle; a PNP has N in the middle."
-    },
-    {
-        "id": 192,
-        "question": "What are the specific technical designations of the two internal PN junctions within any Bipolar Junction Transistor structure?",
-        "options": [
-            "The gate-source junction and the drain-source junction",
-            "The base-emitter junction and the base-collector junction",
-            "The anode-cathode junction and the gate junction",
-            "The primary forward junction and the secondary barrier junction"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'The base-emitter junction and the base-collector junction' is Correct: The PN junction joining the base region and the emitter region is called the base-emitter junction. The PN junction connecting the base region and the collector region is called the base-collector junction.\n• Why Other Choices are Incorrect: Gate, source, and drain apply to Field-Effect Transistors; anode and cathode apply to diodes and SCRs."
-    },
-    {
-        "id": 193,
-        "question": "Why are Bipolar Junction Transistors fundamentally described as 'current regulating devices' acting like current-controlled switches?",
-        "options": [
-            "Active (linear) region",
-            "Saturation region",
-            "Cutoff region",
-            "Breakdown region"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Bipolar transistors are current-regulating devices. The amount of current flowing through them from Emitter to Collector is directly proportional to the small biasing current injected into the base terminal (I_C = beta * I_B), allowing a small base signal to control a large load current like a sensitive electronic switch.\n• Why Other Choices are Incorrect: BJTs are solid-state semiconductor amplifiers without mechanical contacts or optical conversion."
-    },
-    {
-        "id": 194,
-        "question": "What common educational mnemonic is used to remember that the emitter schematic arrow of an NPN transistor points outwards away from the base?",
-        "options": [
-            "'Pointing iN Proudly' (PNP)",
-            "'Not Pointing iN' (NPN)",
-            "'Negative Positive Negative' (NPN)",
-            "'Never Pull Negative' (NPN)"
-        ],
-        "answer": 1,
-        "explanation": "• Why ''Not Pointing iN' (NPN)' is Correct: A widely used mnemonic for the NPN transistor symbol is 'Not Pointing iN', reminding learners that the arrow points outward on the emitter lead away from the base line. For the PNP transistor, the mnemonic is 'Pointing iN Proudly', where the arrow points inward toward the base.\n• Why Other Choices are Incorrect: 'Pointing iN Proudly' is the mnemonic for PNP."
-    },
-    {
-        "id": 195,
-        "question": "For a PNP transistor operating under active forward-reverse bias, what are the required terminal voltage relationships?",
-        "options": [
-            "The Collector must be more positive than the Base, and the Emitter must be more negative than the Base",
-            "The Emitter must be more positive than the Base (V_EB > 0), and the Collector must be more negative than the Base (V_CB < 0)",
-            "All three terminals must be maintained at the exact same ground voltage",
-            "The Base must be at the highest positive potential of all three terminals"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: In a PNP transistor, the Emitter is P-type and Base is N-type, so forward-biasing the Base-Emitter junction requires the Emitter to be at a higher potential than the Base (V_EB ≈ 0.7 V). The Collector is P-type, so reverse-biasing the Base-Collector junction requires the Collector to be more negative than the Base (V_CB < 0 V).\n• Why Other Choices are Incorrect: Setting Base higher than Emitter reverse-biases the PNP emitter junction into cutoff."
-    },
-    {
-        "id": 196,
-        "question": "What component physically establishes the external electrical connection between each of the three internal semiconductor regions of a BJT and the external circuit?",
-        "options": [
-            "Base-Emitter forward; Base-Collector reverse",
-            "Base-Emitter reverse; Base-Collector forward",
-            "Both junctions forward-biased",
-            "Both junctions reverse-biased"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Base-Emitter forward; Base-Collector reverse' is Correct: A wire lead connects directly to each of the three doped regions (Emitter, Base, Collector) to form the external terminal pins of the transistor package.\n• Why Other Choices are Incorrect: BJTs are three-terminal electronic devices connected by metallic wire leads, not optical or capacitive elements."
-    },
-    {
-        "id": 197,
-        "question": "Which of the following statements correctly summarizes the fundamental gain characteristics of the Common Base (CB) transistor configuration?",
-        "options": [
-            "It has both Current and Voltage Gain",
-            "It has Current Gain but no Voltage Gain",
-            "It has Voltage Gain but no Current Gain",
-            "It has neither Voltage Gain nor Current Gain"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'It has Voltage Gain but no Current Gain' is Correct: In the Common Base configuration, output current is collector current and input is emitter current. Since alpha = IC / IE < 1, there is no current amplification (Current Gain is Low / < 1), but it provides High Voltage Gain.\n• Why Other Choices are Incorrect: Common Emitter has both current and voltage gain; Common Collector has current gain but no voltage gain."
-    },
-    {
-        "id": 198,
-        "question": "Which BJT amplifier configuration is uniquely capable of providing BOTH current gain and voltage gain simultaneously?",
-        "options": [
-            "Common Base (CB)",
-            "Common Emitter (CE)",
-            "Common Collector (CC)",
-            "Cascode amplifier only"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Common Emitter (CE)' is Correct: The Common Emitter configuration provides medium-to-high voltage gain (Av = -RC / re) AND medium-to-high current gain (Ai ≈ beta). Because it amplifies both current and voltage, it produces the highest overall Power Gain of all three configurations.\n• Why Other Choices are Incorrect: Common Base lacks current gain; Common Collector lacks voltage gain."
-    },
-    {
-        "id": 199,
-        "question": "Which BJT configuration is characterized as having 'Current Gain but no Voltage Gain'?",
-        "options": [
-            "Both junctions forward-biased",
-            "Both junctions reverse-biased",
-            "Base-Emitter forward; Base-Collector reverse",
-            "Base-Emitter reverse; Base-Collector forward"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Both junctions forward-biased' is Correct: The Common Collector configuration has a voltage gain of approximately unity (Av ≤ 1, hence 'no voltage gain'), but offers high current gain (Ai ≈ beta + 1), making it ideal as a current amplifier and buffer.\n• Why Other Choices are Incorrect: Common Base has voltage gain but no current gain."
-    },
-    {
-        "id": 200,
-        "question": "According to the comparative characteristics of transistor configurations, which configuration delivers the highest overall Power Gain?",
-        "options": [
-            "Common Base (Low power gain)",
-            "Common Collector (Medium power gain)",
-            "Common Emitter (Very High power gain)",
-            "All three configurations deliver identical power gain"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Common Emitter (Very High power gain)' is Correct: Power gain is the product of voltage gain and current gain (Ap = Av * Ai). Because the Common Emitter configuration provides substantial gain for both voltage and current, its overall power gain is rated as 'Very High' (typically 10,000 to 50,000+), exceeding CB (Low) and CC (Medium).\n• Why Other Choices are Incorrect: CB lacks current gain and CC lacks voltage gain, so their power gains are substantially lower."
-    },
-    {
-        "id": 201,
-        "question": "Which transistor configuration exhibits the lowest input impedance and the highest output impedance?",
-        "options": [
-            "Common Base (Low input Z, Very High output Z)",
-            "Common Emitter (Medium input Z, High output Z)",
-            "Common Collector (High input Z, Low output Z)",
-            "Emitter-Follower (High input Z, Low output Z)"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Common Base' is Correct: In Common Base, the input is the forward-biased base-emitter junction (yielding Low input impedance, Zin ≈ re ≈ 10 to 50 ohms) and the output is the reverse-biased collector-base junction (yielding Very High output impedance, Zout ≈ 1 MΩ to 2 MΩ).\n• Why Other Choices are Incorrect: Common Collector has high input Z and low output Z."
-    },
-    {
-        "id": 202,
-        "question": "Which BJT configuration exhibits a High input impedance and a Low output impedance, making it optimal for impedance matching between circuit stages?",
-        "options": [
-            "Both junctions reverse-biased",
-            "Both junctions forward-biased",
-            "Base-Emitter forward; Base-Collector reverse",
-            "Base-Emitter reverse; Base-Collector forward"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Both junctions reverse-biased' is Correct: The Common Collector configuration presents a High input impedance (Zin ≈ beta * RE) and a Low output impedance (Zout ≈ re + RS / beta), allowing it to match high-impedance signal sources to low-impedance loads without signal attenuation.\n• Why Other Choices are Incorrect: Common Base has low input and high output impedance."
-    },
-    {
-        "id": 203,
-        "question": "What is the signal phase shift between input and output AC waveforms for each of the three BJT configurations (Common Base, Common Emitter, Common Collector)?",
-        "options": [
-            "CB: 180°, CE: 0°, CC: 180°",
-            "CB: 0°, CE: 180°, CC: 0°",
-            "CB: 90°, CE: 180°, CC: 90°",
-            "CB: 0°, CE: 0°, CC: 0°"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'CB: 0°, CE: 180°, CC: 0°' is Correct: The Common Emitter is the only inverting configuration, producing a 180° phase inversion between base input and collector output. Both Common Base and Common Collector are non-inverting, producing a 0° phase shift between input and output.\n• Why Other Choices are Incorrect: CE is always 180°, never 0°."
-    },
-    {
-        "id": 204,
-        "question": "How do the voltage gains of the three transistor configurations rank relative to one another in the comparative characteristics table?",
-        "options": [
-            "Common Base: High, Common Emitter: Medium, Common Collector: Low",
-            "Common Base: Low, Common Emitter: High, Common Collector: Medium",
-            "Common Base: Medium, Common Emitter: Low, Common Collector: High",
-            "All three configurations have identical voltage gain"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In the standard textbook characteristics table: Common Base has High voltage gain; Common Emitter has Medium voltage gain; and Common Collector has Low voltage gain (Av ≤ 1).\n• Why Other Choices are Incorrect: Common Collector never provides high voltage gain."
-    },
-    {
-        "id": 205,
-        "question": "How do the current gains of the three transistor configurations rank relative to one another in the comparative characteristics table?",
-        "options": [
-            "Common Base: High, Common Emitter: Medium, Common Collector: Low",
-            "Common Base: Low, Common Emitter: Medium, Common Collector: High",
-            "Common Base: Medium, Common Emitter: High, Common Collector: Low",
-            "Common Base: Low, Common Emitter: Low, Common Collector: Medium"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: Common Base current gain is Low (alpha < 1); Common Emitter current gain is Medium (beta, typically 50 to 300); and Common Collector current gain is High (beta + 1, the largest current gain of all three).\n• Why Other Choices are Incorrect: Common Base has the lowest current gain, not the highest."
-    },
-    {
-        "id": 206,
-        "question": "How does the output impedance rank across the three bipolar transistor configurations?",
-        "options": [
-            "Common Collector (Low), Common Emitter (High), Common Base (Very High)",
-            "Common Collector (High), Common Emitter (Low), Common Base (Very High)",
-            "Common Collector (Very High), Common Emitter (High), Common Base (Low)",
-            "Common Collector (Medium), Common Emitter (Medium), Common Base (Medium)"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Output impedance ranks as: Common Collector = Low (tens of ohms), Common Emitter = High (tens of kilohms), and Common Base = Very High (hundreds of kilohms to megohms).\n• Why Other Choices are Incorrect: Common Collector has the lowest output impedance, which is why it drives low-impedance loads effectively."
-    },
-    {
-        "id": 207,
-        "question": "How does input impedance rank across the three bipolar transistor configurations?",
-        "options": [
-            "Common Base (Low), Common Emitter (Medium), Common Collector (High)",
-            "Common Base (High), Common Emitter (Medium), Common Collector (Low)",
-            "Common Base (Medium), Common Emitter (Low), Common Collector (High)",
-            "Common Base (Very High), Common Emitter (High), Common Collector (Low)"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Input impedance ranks as: Common Base = Low (10-50 Ω), Common Emitter = Medium (1-2 kΩ), and Common Collector = High (100-300+ kΩ).\n• Why Other Choices are Incorrect: Common Base input is a forward-biased junction to ground, giving it the lowest input impedance."
-    },
-    {
-        "id": 208,
-        "question": "Why is the Common Collector configuration commonly referred to as the 'Emitter-Follower'?",
-        "options": [
-            "Closed switch with V_CE(sat) ≈ 0.2 V",
-            "Open switch with zero collector current",
-            "Linear amplifier with infinite gain factor",
-            "Variable capacitor tuned to input signal"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In Common Collector, the load is connected to the emitter. Since V_E = V_B - V_BE, the emitter AC voltage closely tracks (follows) the input base AC voltage with zero phase shift and nearly unity gain (Av ≈ 1), giving rise to the name 'Emitter-Follower'.\n• Why Other Choices are Incorrect: It has nothing to do with physical breadboard layout or negative rails."
-    },
-    {
-        "id": 209,
-        "question": "If an NPN transistor is replaced with a PNP transistor in a Common Emitter amplifier circuit, what happens to the gain calculations and AC phase inversion?",
-        "options": [
-            "Open switch with I_C ≈ 0 and V_CE ≈ V_CC",
-            "Closed switch with maximum collector current",
-            "Active linear amplifier with minimum distortion",
-            "Constant current source supplying rated power"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Both NPN and PNP BJTs obey identical small-signal AC equations. A PNP Common Emitter amplifier still produces a 180° phase inversion between base and collector and provides the same voltage, current, and power gains. The only practical difference is that DC power supplies and biasing voltages must be reversed in polarity.\n• Why Other Choices are Incorrect: AC signal behavior and amplification magnitude are identical."
-    },
-    {
-        "id": 210,
-        "question": "Which of the three BJT configurations is most suitable for driving an 8-ohm audio loudspeaker from a preceding high-impedance voltage amplifier stage?",
-        "options": [
-            "Destructive cycle: rising temperature increases I_C, causing more heat",
-            "Beneficial stabilization of bias point through internal emitter resistance",
-            "Gradual reduction of collector leakage current at elevated temperatures",
-            "Electromechanical oscillation caused by acoustic vibrations on circuit board"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: An 8-ohm loudspeaker is a very low-impedance load. Connecting it directly to a high-impedance voltage stage would cause massive signal loading and attenuation. A Common Collector stage acts as an impedance-matching buffer with low output impedance and high current gain to drive the speaker efficiently.\n• Why Other Choices are Incorrect: Common Base has very high output impedance, which would cause severe mismatch."
-    },
-    {
-        "id": 211,
-        "question": "Why does a BJT circuit require one terminal to be 'common' between the input and output circuit ports?",
-        "options": [
-            "Ratio of collector current to base current (I_C / I_B)",
-            "Ratio of collector current to emitter current (I_C / I_E)",
-            "Ratio of base current to emitter current (I_B / I_E)",
-            "Ratio of output voltage to input voltage (V_o / V_i)"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Any standard electronic two-port network requires four connection points (two for input, two for output). Because a BJT is a three-terminal device, one terminal must be designated as 'common' (shared) between the input and output loops to complete both circuits.\n• Why Other Choices are Incorrect: A two-port network simply requires sharing one terminal to form input and output pairs."
-    },
-    {
-        "id": 212,
-        "question": "In the Common Emitter (CE) configuration, where are the input signal applied and the output signal taken from?",
-        "options": [
-            "Input is applied between Base and Collector; Output is taken between Emitter and Collector",
-            "Input is applied between Base and Emitter; Output is taken between Collector and Emitter",
-            "Input is applied between Collector and Emitter; Output is taken between Base and Emitter",
-            "Input is applied between Base and Ground; Output is taken from the power supply rail"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: In the Common Emitter (grounded emitter) configuration, the input signal is injected between the Base and Emitter, while the amplified output signal is extracted across the Collector and Emitter.\n• Why Other Choices are Incorrect: Connecting input to Collector and Base represents Common Collector or inverted configurations."
-    },
-    {
-        "id": 213,
-        "question": "Why is the Common Emitter configuration regarded as the 'normal' and most widely used circuit arrangement for bipolar transistor amplifiers?",
-        "options": [
-            "Ratio of collector current to emitter current (I_C / I_E)",
-            "Ratio of collector current to base current (I_C / I_B)",
-            "Ratio of emitter current to base current (I_E / I_B)",
-            "Product of beta and base-emitter forward voltage"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: The Common Emitter configuration is the industry standard 'workhorse' amplifier because it is the only configuration capable of delivering both current and voltage amplification simultaneously, yielding the highest overall power gain of all three topologies.\n• Why Other Choices are Incorrect: It requires DC power and produces a 180° phase inversion."
-    },
-    {
-        "id": 214,
-        "question": "What is the physical carrier interpretation if a bipolar transistor has a DC current gain Beta (β) equal to 100?",
-        "options": [
-            "100 electrons flow from the base terminal for every 1 electron flowing between emitter and collector",
-            "One electron will flow from the base terminal for every 100 electrons flowing between the emitter-collector terminal",
-            "The collector voltage is exactly 100 times larger than the base voltage",
-            "The base resistance is 100 times smaller than the emitter resistance"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: Since Beta = I_C / I_B = 100, for every 1 unit of base current (e.g., 1 electron flowing into the base to recombine), 100 units of current (100 electrons) successfully cross from emitter to collector.\n• Why Other Choices are Incorrect: Base current is 100 times smaller than collector current, not 100 times larger."
-    },
-    {
-        "id": 215,
-        "question": "What is the typical range of current gain Beta (β) for most general-purpose small-signal bipolar junction transistors?",
-        "options": [
-            "β = α / (1 - α)",
-            "β = α / (1 + α)",
-            "β = (1 - α) / α",
-            "β = 1 / (1 - α)"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'β = α / (1 - α)' is Correct: For standard general-purpose silicon BJTs (such as the 2N3904 or BC547), DC Beta (h_FE) typically ranges between 20 and 200, frequently reaching 300 to 400 under optimum collector current levels.\n• Why Other Choices are Incorrect: Values below 1 describe alpha; values above 1,000 are typical of Darlington pairs."
-    },
-    {
-        "id": 216,
-        "question": "(Canvas LMS Example 1) A bipolar NPN transistor has a DC current gain Beta of 200. What base current Ib is required to switch a resistive collector load current of 4 mA?",
-        "options": [
-            "2 μA",
-            "20 μA",
-            "50 μA",
-            "800 μA"
-        ],
-        "answer": 1,
-        "explanation": "• Why '20 μA' is Correct: Using the relationship I_C = beta * I_B, solve for base current: I_B = I_C / beta = 4 mA / 200 = 0.020 mA = 20 μA.\n• Why Other Choices are Incorrect: 4 mA * 200 = 800 mA (multiplying instead of dividing); 4 mA / 20 = 200 μA."
-    },
-    {
-        "id": 217,
-        "question": "For a standard Silicon NPN transistor in a Common Emitter circuit to conduct collector current, what condition must be satisfied regarding Collector voltage (Vc) relative to Emitter voltage (Ve)?",
-        "options": [
-            "Vc must be equal to Ve",
-            "Vc must be more negative than Ve",
-            "Vc must be greater and positive with respect to Ve (V_CE > 0)",
-            "Vc must be at ground potential while Ve is connected to +V_CC"
-        ],
-        "answer": 2,
-        "explanation": "• Why this is Correct: To maintain forward-reverse bias in an NPN transistor, the Collector (N-type) must be at a higher positive potential than the Emitter (N-type) and Base (P-type), ensuring V_CE > 0 to sweep electrons across the reverse-biased collector junction.\n• Why Other Choices are Incorrect: If Vc is negative with respect to Ve, the collector junction is forward-biased and the transistor will not operate in active mode."
-    },
-    {
-        "id": 218,
-        "question": "What is the minimum threshold voltage that must be applied to the Base terminal of a Silicon NPN transistor for it to begin conducting base current?",
-        "options": [
-            "Always slightly less than 1 (0.95 to 0.998)",
-            "Typically between 50 and 400 in magnitude",
-            "Exactly equal to 0 under all bias points",
-            "Infinite in ideal transistor devices"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Always slightly less than 1 (0.95 to 0.998)' is Correct: Because the input characteristics of an NPN transistor correspond to a forward-biased silicon PN diode, the base-to-emitter voltage (V_BE) must exceed the built-in barrier potential of approximately 0.7 V for significant base current to flow.\n• Why Other Choices are Incorrect: 0.3 V is the threshold for Germanium devices; 0.1 V is for Schottky diodes."
-    },
-    {
-        "id": 219,
-        "question": "In a base-biased Common Emitter circuit with base supply voltage Vb, input base resistor Rb, and silicon base-emitter drop Vbe (≈ 0.7 V), which formula calculates base current Ib?",
-        "options": [
-            "I_B = (V_b + V_be) / R_b",
-            "I_B = (V_b - V_be) / R_b",
-            "I_B = V_b / (R_b * V_be)",
-            "I_B = R_b / (V_b - V_be)"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'I_B = (V_b - V_be) / R_b' is Correct: Applying Kirchhoff's Voltage Law to the base-emitter input loop: V_b - I_B * R_b - V_be = 0. Solving for base current gives I_B = (V_b - V_be) / R_b.\n• Why Other Choices are Incorrect: Adding V_be or multiplying violates Ohm's law and KVL."
-    },
-    {
-        "id": 220,
-        "question": "(Canvas LMS Example 2) An NPN transistor circuit has a DC base bias voltage Vb = 10 V and an input base resistor Rb = 100 kΩ. Assuming a standard silicon Vbe = 0.7 V, what is the base current Ib entering the transistor?",
-        "options": [
-            "100 μA",
-            "93 μA",
-            "10.7 μA",
-            "0.93 mA"
-        ],
-        "answer": 1,
-        "explanation": "• Why '93 μA' is Correct: Using I_B = (V_b - V_be) / R_b: I_B = (10 V - 0.7 V) / 100 kΩ = 9.3 V / 100,000 Ω = 0.000093 A = 0.093 mA = 93 μA.\n• Why Other Choices are Incorrect: 10 V / 100 kΩ = 100 μA ignores the 0.7 V diode drop; (10 + 0.7) / 100 kΩ = 107 μA adds rather than subtracts."
-    },
-    {
-        "id": 221,
-        "question": "If the transistor in Example 2 (with Ib = 93 μA) has a current gain Beta = 100, what will be the resulting collector current Ic in the linear active region?",
-        "options": [
-            "0.93 mA",
-            "9.3 mA",
-            "93 mA",
-            "930 mA"
-        ],
-        "answer": 1,
-        "explanation": "• Why '9.3 mA' is Correct: Using I_C = beta * I_B: I_C = 100 * 93 μA = 9,300 μA = 9.3 mA.\n• Why Other Choices are Incorrect: 93 μA / 100 = 0.93 μA; 93 mA corresponds to beta = 1000."
-    },
-    {
-        "id": 222,
-        "question": "How do base-emitter voltage (Vbe) and collector current (Ic) behave as base current (Ib) is gradually increased in a conducting BJT?",
-        "options": [
-            "High voltage and current gains with medium input impedance",
-            "Voltage gain approximately equal to 1 with very high input impedance",
-            "Current gain approximately equal to 1 with very low input impedance",
-            "Zero voltage gain combined with infinite output terminal impedance"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Because the base-emitter junction has exponential PN-junction diode characteristics, as I_B increases, V_be increases only slightly (clamped around 0.7 V), while collector current I_C = I_S * exp(V_be / V_T) rises exponentially with small changes in V_be.\n• Why Other Choices are Incorrect: Diode voltage does not increase linearly; it clamps logarithmically near 0.7 V."
-    },
-    {
-        "id": 223,
-        "question": "In a Common Emitter amplifier circuit, where is the external load resistance (RL or RC) connected?",
-        "options": [
-            "In series with the Base terminal",
-            "In series with the Collector terminal",
-            "Directly between Base and Emitter",
-            "In parallel with the input AC signal source only"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'In series with the Collector terminal' is Correct: In a Common Emitter amplifier, the collector load resistor (R_C or R_L) is connected in series between the DC positive supply (V_CC) and the collector terminal, converting the amplified collector current variations into an output voltage swing.\n• Why Other Choices are Incorrect: Resistors in the base branch are current-limiting bias resistors, not collector load resistors."
-    },
-    {
-        "id": 224,
-        "question": "Comparing the Common Emitter (CE) configuration with the Common Base (CB) configuration, which statement accurately reflects their relative performance?",
-        "options": [
-            "Current gain ≈ 1 with low input impedance",
-            "High current gain with very high input impedance",
-            "180° phase inversion between input and output terminals",
-            "Voltage gain strictly equal to 1 under all load variations"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Common Emitter has a higher input impedance (Medium vs Low), significantly higher current gain (beta vs alpha < 1), and much higher power gain (Very High vs Low) than Common Base, though its voltage gain is somewhat lower than the extremely high voltage gain of CB.\n• Why Other Choices are Incorrect: CB has lower input impedance and higher voltage gain than CE."
-    },
-    {
-        "id": 225,
-        "question": "An NPN transistor with beta = 150 has a measured emitter current IE = 3.02 mA. What is the approximate base current IB?",
-        "options": [
-            "20 μA",
-            "30 μA",
-            "200 μA",
-            "450 μA"
-        ],
-        "answer": 0,
-        "explanation": "• Why '20 μA' is Correct: Since I_E = (beta + 1) * I_B: I_B = I_E / (beta + 1) = 3.02 mA / 151 = 0.020 mA = 20 μA.\n• Why Other Choices are Incorrect: 3.02 mA / 100 = 30 μA; direct division gives exactly 20 μA."
-    },
-    {
-        "id": 226,
-        "question": "Why does a 180° phase inversion occur in a Common Emitter amplifier when the input AC voltage increases positively?",
-        "options": [
-            "High-frequency RF applications due to minimal Miller effect",
-            "Audio power amplifier output stages driving low-ohm speakers",
-            "High-gain multi-stage voltage amplification preamplifiers",
-            "Direct-current motor speed regulation power switches"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: When input base voltage increases, base current I_B rises, causing collector current I_C to increase. The larger I_C creates a greater voltage drop across the collector resistor (V_RC = I_C * R_C). Since V_C = V_CC - I_C * R_C, this pulls collector output voltage downward toward ground, creating an inverted (180° out-of-phase) output waveform.\n• Why Other Choices are Incorrect: V_CC does not reverse polarity, and the transistor does not turn off."
-    },
-    {
-        "id": 227,
-        "question": "In the Common Base (CB) configuration, where is the input AC signal injected and from where is the output signal extracted?",
-        "options": [
-            "Input is applied between Base and Collector; Output is taken between Emitter and Collector",
-            "Input is applied between Base and Emitter; Output is taken between Base and Collector",
-            "Input is applied between Emitter and Collector; Output is taken between Base and Emitter",
-            "Input is applied to the Collector; Output is taken from the Base"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: In the Common Base (grounded base) configuration, the input signal is applied between the Base and Emitter terminals, while the amplified output signal is taken between the Base and Collector terminals, with the Base serving as the common reference point.\n• Why Other Choices are Incorrect: Taking output from the emitter corresponds to Common Collector."
-    },
-    {
-        "id": 228,
-        "question": "Why does the Common Base transistor configuration have a current gain of unity (1) or less (α ≤ 1)?",
-        "options": [
-            "0 degrees (in-phase)",
-            "180 degrees (inverted)",
-            "90 degrees leading",
-            "270 degrees lagging"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In Common Base, input current is emitter current and output current is collector current. Since I_E = I_C + I_B, collector current is slightly less than emitter current by the small amount of base recombination current (I_B), yielding alpha = I_C / I_E < 1 (typically 0.95 to 0.998). Thus, the circuit attenuates current.\n• Why Other Choices are Incorrect: Base current absorbs only 1-5% of carriers, not 90%."
-    },
-    {
-        "id": 229,
-        "question": "What is the phase relationship between input voltage (Vin) and output voltage (Vout) in a Common Base amplifier?",
-        "options": [
-            "Vin and Vout are 180° out-of-phase (inverted)",
-            "Vin and Vout are in-phase (0° phase shift)",
-            "Vin and Vout are 90° out-of-phase",
-            "Vin and Vout are 270° out-of-phase"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Vin and Vout are in-phase (0° phase shift)' is Correct: The Common Base configuration is a non-inverting voltage amplifier. When the input voltage at the emitter rises positively, V_EB decreases, reducing I_E and I_C. The decreased I_C reduces the drop across load resistor R_L, causing collector voltage V_C to swing positively, exactly in-phase (0° shift) with the input.\n• Why Other Choices are Incorrect: Only Common Emitter inverts by 180°."
-    },
-    {
-        "id": 230,
-        "question": "According to the Canvas LMS lecture module, what semiconductor device analogy best describes the output characteristics of a Common Base transistor?",
-        "options": [
-            "A forward-biased Zener diode",
-            "An illuminated photo-diode",
-            "A backward diode",
-            "A light-emitting diode (LED)"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'An illuminated photo-diode' is Correct: In the Common Base configuration, the input characteristics resemble a forward-biased PN diode, while the output characteristics (IC vs VCB curves for fixed IE values) closely resemble an illuminated photo-diode, functioning as a constant current source where collector current is determined by injected emitter current rather than collector voltage.\n• Why Other Choices are Incorrect: Zener diodes maintain constant breakdown voltage; LEDs emit light under forward bias."
-    },
-    {
-        "id": 231,
-        "question": "What is the term given to the ratio of load resistance (RL) to input resistance (Rin) in a Common Base amplifier circuit?",
-        "options": [
-            "Current Gain",
-            "Resistance Gain",
-            "Transconductance Gain",
-            "Impedance Reflection Factor"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Resistance Gain' is Correct: In Common Base analysis, the ratio of the output load resistance to the input resistance (R_L / R_in) is formally termed the 'Resistance Gain'. Because R_in is very small (~20 Ω) and R_L is large (~kΩ), this ratio is very large.\n• Why Other Choices are Incorrect: Current gain is alpha; transconductance is gm."
-    },
-    {
-        "id": 232,
-        "question": "How is the overall voltage gain (Av) of a Common Base amplifier mathematically expressed in terms of current gain and resistance gain?",
-        "options": [
-            "Collector-to-emitter leakage with base open",
-            "Collector-to-base leakage with emitter open",
-            "Base-to-emitter leakage with collector open",
-            "Reverse saturation current in a zener diode"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Voltage gain is defined as V_out / V_in = (I_c * R_L) / (I_e * R_in) = (I_c / I_e) * (R_L / R_in) = alpha * (Resistance Gain). Even though alpha < 1, the massive Resistance Gain produces a very high voltage gain.\n• Why Other Choices are Incorrect: Voltage gain is the product of current gain and resistance ratio, not sum or quotient."
-    },
-    {
-        "id": 233,
-        "question": "A Common Base amplifier has an input resistance Rin = 20 Ω, a collector load resistor RL = 5 kΩ, and a common-base current gain α = 0.98. What is the voltage gain Av?",
-        "options": [
-            "2.45",
-            "25",
-            "245",
-            "250"
-        ],
-        "answer": 2,
-        "explanation": "• Why '245' is Correct: First calculate the resistance gain: R_L / R_in = 5,000 Ω / 20 Ω = 250. Then calculate voltage gain: A_v = alpha * (R_L / R_in) = 0.98 * 250 = 245.\n• Why Other Choices are Incorrect: 250 ignores alpha; 2.45 has an incorrect decimal placement."
-    },
-    {
-        "id": 234,
-        "question": "Why is the Common Base configuration widely utilized in radio frequency (RF) and VHF/UHF amplifier circuits?",
-        "options": [
-            "I_CEO = (β + 1) * I_CBO",
-            "I_CEO = I_CBO / (β + 1)",
-            "I_CEO = β * I_CBO / α",
-            "I_CEO = I_CBO - I_B"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In Common Base, the grounded base separates the input and output circuits, acting as an electrostatic shield. This virtually eliminates collector-to-emitter capacitive feedback (the Miller effect), preventing self-oscillation and giving the CB amplifier superior high-frequency bandwidth.\n• Why Other Choices are Incorrect: CB has no current gain, so it is not used for current amplification."
-    },
-    {
-        "id": 235,
-        "question": "Which of the following is another classic practical application of the Common Base amplifier circuit mentioned in the Canvas LMS module?",
-        "options": [
-            "Silicon has much lower leakage current than Germanium",
-            "Germanium has higher breakdown voltage than Silicon",
-            "Silicon has higher electron mobility than Germanium",
-            "Germanium is more abundant and cheaper than Silicon"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Dynamic moving-coil microphones typically have very low output impedance (around 20-50 Ω). Because the Common Base configuration has an inherently low input impedance (Z_in ≈ r_e ≈ 10-50 Ω), it matches the low impedance of the microphone without requiring a transformer.\n• Why Other Choices are Incorrect: Driving speakers requires low output impedance (Common Collector)."
-    },
-    {
-        "id": 236,
-        "question": "If a Common Base amplifier has Rin = 25 Ω and RL = 10 kΩ, what is the value of its 'Resistance Gain'?",
-        "options": [
-            "25",
-            "40",
-            "400",
-            "2,500"
-        ],
-        "answer": 2,
-        "explanation": "• Why '400' is Correct: Resistance Gain is defined as R_L / R_in = 10,000 Ω / 25 Ω = 400.\n• Why Other Choices are Incorrect: 10,000 / 250 = 40; 25 * 100 = 2,500."
-    },
-    {
-        "id": 237,
-        "question": "Why is the Common Base configuration rarely used as a general-purpose voltage amplifier in multi-stage audio systems?",
-        "options": [
-            "Low input impedance severely loads prior stages and lacks current gain",
-            "It can only amplify the negative half-cycles of incoming audio AC signals",
-            "It produces severe non-linear 180° phase inversion distortion at low audio",
-            "Its maximum continuous junction operating temperature cannot exceed 0°C"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: General audio amplifiers require moderate-to-high input impedance to avoid loading prior voltage stages. The very low input impedance of CB (10-50 Ω) and lack of current gain (α < 1) mean cascading multiple CB stages directly yields poor overall gain.\n• Why Other Choices are Incorrect: CB has zero phase shift (non-inverting) and handles full AC cycles normally."
-    },
-    {
-        "id": 238,
-        "question": "In a Common Base circuit, if the emitter current IE is measured at 5.0 mA and alpha is 0.99, what are the collector current IC and base current IB?",
-        "options": [
-            "IC = 4.95 mA, and IB = 0.05 mA (50 μA)",
-            "IC = 5.05 mA, and IB = 0.5 mA",
-            "IC = 0.05 mA, and IB = 4.95 mA",
-            "IC = 4.95 mA, and IB = 0 mA"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'IC = 4.95 mA, and IB = 0.05 mA (50 μA)' is Correct: I_C = alpha * I_E = 0.99 * 5.0 mA = 4.95 mA. Then from KCL: I_B = I_E - I_C = 5.0 mA - 4.95 mA = 0.05 mA = 50 μA.\n• Why Other Choices are Incorrect: I_C cannot exceed I_E; I_B cannot be zero in an active BJT."
-    },
-    {
-        "id": 239,
-        "question": "What is the physical connection of the Base terminal in a practical Common Base circuit?",
-        "options": [
-            "Connected to ground or AC-grounded through a bypass capacitor",
-            "Left floating without any physical or electrical DC connection",
-            "Wired directly in parallel with the main output collector load",
-            "Connected in series with the high-voltage AC input signal source"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In Common Base circuits, the base terminal is connected directly to circuit ground (in dual-supply circuits) or held at a fixed DC reference voltage with a bypass capacitor connecting it to ground for AC signals.\n• Why Other Choices are Incorrect: A floating base places the transistor in cutoff; connecting base to the signal generator forms Common Emitter or Common Collector."
-    },
-    {
-        "id": 240,
-        "question": "How does the Common Base circuit behave with respect to signal currents versus signal voltages?",
-        "options": [
-            "High voltage amplifier with unity current gain",
-            "High current amplifier with attenuated voltage gain",
-            "Attenuates both signal current and signal voltage",
-            "Amplifies both signal current and signal voltage equally"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Because alpha < 1, output current is slightly smaller than input current (current attenuation). However, because output resistance is vastly higher than input resistance, it acts as a very high voltage amplifier.\n• Why Other Choices are Incorrect: CE amplifies both; CC amplifies current while attenuating voltage."
-    },
-    {
-        "id": 241,
-        "question": "Comparing all three BJT configurations, which one provides the best high-frequency performance and why?",
-        "options": [
-            "Common Base (eliminates capacitive Miller feedback)",
-            "Common Collector (because it has unity voltage gain)",
-            "Common Emitter (because of 180° phase inversion)",
-            "All three configurations have identical high-frequency cutoffs"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Common Base (eliminates capacitive Miller feedback)' is Correct: In Common Emitter, the collector-base capacitance is amplified by the voltage gain (Miller Effect), severely limiting high-frequency bandwidth. In Common Base, the base is grounded, shielding the input emitter from output collector capacitance, giving CB the highest cutoff frequency and best RF performance.\n• Why Other Choices are Incorrect: Common Emitter suffers from the Miller effect at high frequencies."
-    },
-    {
-        "id": 242,
-        "question": "In the Common Collector (CC) circuit configuration, how are the input and output AC signals connected to the transistor?",
-        "options": [
-            "Input at Base; Output taken from Emitter",
-            "Input at Emitter; Output taken from Collector",
-            "Input at Collector; Output taken from Base",
-            "Both input and output connected to Base"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In the Common Collector configuration, the input AC signal is fed directly into the Base terminal, and the output signal is taken across the Emitter load resistance (RE or RL), with the Collector being common to both via the DC power supply.\n• Why Other Choices are Incorrect: Taking output from the collector is Common Emitter or Common Base."
-    },
-    {
-        "id": 243,
-        "question": "Why is the Collector terminal considered 'common' to both the input and output in a Common Collector circuit even if it is connected to a positive supply rail (VCC)?",
-        "options": [
-            "DC supply rail acts as an effective AC ground (zero AC potential)",
-            "The collector is physically welded to chassis ground in production",
-            "No direct-current DC voltage is permitted on the collector pin",
-            "The collector is completely disconnected and left in floating state"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In small-signal AC analysis, ideal DC power supplies (V_CC) present zero internal impedance, acting as an AC ground. Since the collector is connected directly to V_CC, it is at AC ground potential and serves as the common return terminal for both input and output loops.\n• Why Other Choices are Incorrect: The collector is not physically connected to earth ground, but AC grounded through V_CC."
-    },
-    {
-        "id": 244,
-        "question": "By what two popular alternative names is the Common Collector (CC) transistor amplifier widely known?",
-        "options": [
-            "Current Mirror or Cascode Circuit",
-            "Voltage Follower or Emitter Follower",
-            "Darlington Pair or Schmitt Trigger",
-            "Phase Inverter or Push-Pull Driver"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Voltage Follower or Emitter Follower' is Correct: Because the voltage at the emitter terminal tracks (follows) the input base voltage in both amplitude (Av ≈ 1) and phase (0°), this circuit is universally called an Emitter Follower or Voltage Follower.\n• Why Other Choices are Incorrect: A phase inverter produces 180° shift; a Cascode is a CE-CB combination."
-    },
-    {
-        "id": 245,
-        "question": "What is the approximate voltage gain (Av) of a Common Collector (Emitter Follower) amplifier circuit?",
-        "options": [
-            "Av is extremely high (> 500)",
-            "Av is negative and inverted (-100)",
-            "Av is approximately 1 (unity gain, Av ≤ 1)",
-            "Av is exactly 0"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Av is approximately 1 (unity gain, Av ≤ 1)' is Correct: Because V_out = V_E = V_B - V_BE, changes in emitter output voltage almost exactly equal changes in base input voltage (typically Av = 0.98 to 0.999). Thus, the Common Collector provides unity voltage gain.\n• Why Other Choices are Incorrect: It provides no voltage amplification."
-    },
-    {
-        "id": 246,
-        "question": "Why can the Common Collector configuration be considered and utilized as a 'voltage-buffer' circuit?",
-        "options": [
-            "Av ≈ 1 with high input impedance and low output impedance",
-            "It stores electrical energy in internal junction battery reserves",
-            "It inverts input voltage by 180° to cancel external supply ripple",
-            "It completely eliminates all current flow through the active load"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: A voltage buffer transfers a voltage signal from a high-impedance source to a low-impedance load without loading or attenuating the signal voltage (unity gain) while delivering the required load current.\n• Why Other Choices are Incorrect: Buffers do not invert voltage or store chemical energy."
-    },
-    {
-        "id": 247,
-        "question": "What is the signal phase relationship between input voltage (Vin) and output voltage (Vout) in a Common Collector circuit?",
-        "options": [
-            "180° out-of-phase (inverted)",
-            "In-phase (0° phase shift)",
-            "90° lagging",
-            "45° leading"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'In-phase (0° phase shift)' is Correct: The Common Collector is a non-inverting circuit. When the input voltage applied to the base rises positively, the emitter voltage rises positively in unison, keeping Vin and Vout in-phase (0° phase shift).\n• Why Other Choices are Incorrect: Common Emitter is the only inverting (180°) configuration."
-    },
-    {
-        "id": 248,
-        "question": "In a Common Collector amplifier, what currents flow through the external emitter load resistance (RL or RE)?",
-        "options": [
-            "Emitter current: I_E = I_C + I_B",
-            "Base current I_B only",
-            "Collector current I_C only",
-            "Zero current flows through resistor"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Because the load resistance is connected in series with the emitter terminal, the current flowing through it is the emitter current: I_E = I_C + I_B. Thus, the load receives the full sum of both collector and base currents.\n• Why Other Choices are Incorrect: Load current in CE is only IC; load current in CC is IE."
-    },
-    {
-        "id": 249,
-        "question": "Which mathematical expression correctly represents the AC current gain (Ai) of the Common Collector configuration?",
-        "options": [
-            "Ai = β + 1",
-            "Ai = α",
-            "Ai = 1 / β",
-            "Ai = β"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Ai = β + 1' is Correct: Current gain is the ratio of output current (I_E) to input current (I_B): A_i = I_E / I_B = (I_C + I_B) / I_B = (I_C / I_B) + 1 = beta + 1. It provides the highest current gain of all three configurations.\n• Why Other Choices are Incorrect: beta is CE current gain; alpha is CB current gain."
-    },
-    {
-        "id": 250,
-        "question": "A transistor used in a Common Collector amplifier circuit has a DC current gain Beta (β) of 149. What is the current gain (Ai) of this circuit?",
-        "options": [
-            "0.993",
-            "149",
-            "150",
-            "298"
-        ],
-        "answer": 2,
-        "explanation": "• Why '150' is Correct: In the Common Collector configuration, current gain is Ai = beta + 1 = 149 + 1 = 150.\n• Why Other Choices are Incorrect: 149 is beta (CE gain); 0.993 is alpha (CB gain)."
-    },
-    {
-        "id": 251,
-        "question": "What are the typical impedance characteristics of the Common Collector (Emitter Follower) amplifier?",
-        "options": [
-            "High input impedance and low output impedance",
-            "Low input impedance and high output impedance",
-            "Equal input and output impedance of 600 Ω",
-            "Zero input impedance and infinite output impedance"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: The Common Collector features very high input impedance (Zin ≈ beta * RE, often 100 kΩ to 500 kΩ) and low output impedance (Zout ≈ re + RS / beta, typically 10 Ω to 50 Ω), making it an outstanding impedance-matching buffer.\n• Why Other Choices are Incorrect: Low input and high output impedance describes Common Base."
-    },
-    {
-        "id": 252,
-        "question": "Why is the Common Collector configuration exceptionally useful in audio and instrumentation systems for 'impedance matching'?",
-        "options": [
-            "Voltage-Divider Bias",
-            "Fixed-Base Bias",
-            "Collector-Feedback Bias",
-            "Emitter-Follower Bias"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: High-impedance transducers (such as piezo pickups or high-gain voltage stages) suffer severe signal voltage drops if connected directly to low-impedance cables or speakers. Placing a CC buffer between them prevents loading (due to high Zin) and drives the load efficiently (due to low Zout).\n• Why Other Choices are Incorrect: CC does not amplify voltage or invert phase."
-    },
-    {
-        "id": 253,
-        "question": "In an Emitter Follower circuit, a base current of IB = 40 μA is applied to a transistor with Beta = 99. What total load current IE flows through the emitter resistor?",
-        "options": [
-            "0.4 mA",
-            "3.96 mA",
-            "4.0 mA",
-            "40 mA"
-        ],
-        "answer": 2,
-        "explanation": "• Why '4.0 mA' is Correct: In Common Collector, the load current is the emitter current: I_E = (beta + 1) * I_B = (99 + 1) * 40 μA = 100 * 40 μA = 4,000 μA = 4.0 mA.\n• Why Other Choices are Incorrect: 3.96 mA is collector current alone (99 * 40 μA); 0.4 mA is an order of magnitude error."
-    },
-    {
-        "id": 254,
-        "question": "How does the Power Gain of the Common Collector configuration compare to the other two configurations?",
-        "options": [
-            "Base voltage is fixed by divider; Emitter voltage VE = VB - VBE is constant",
-            "Collector current is completely independent of the DC supply voltage VCC",
-            "Base current is forced to zero under all operating temperature levels",
-            "Emitter resistor value is dynamically adjusted by internal feedback diodes"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Power gain is Ap = Av * Ai. Since Av ≈ 1 and Ai ≈ beta + 1, Ap ≈ beta + 1, which represents 'Medium' power gain (e.g., 50 to 200). Common Emitter has 'Very High' power gain (Av * beta), while Common Base has 'Low' power gain.\n• Why Other Choices are Incorrect: CE has the highest power gain; CC power gain is medium, not zero."
-    },
-    {
-        "id": 255,
-        "question": "In summary, the Common Collector amplifier is best characterized as providing which of the following performance combinations?",
-        "options": [
-            "β * R_E ≥ 10 * R_2",
-            "R_2 ≥ 10 * β * R_E",
-            "β * R_E ≤ R_2 / 10",
-            "R_1 = R_2 * β"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: As explicitly summarized in the Canvas LMS module: The load resistance receives both base and collector currents giving a large current gain, therefore providing good current amplification with very little voltage gain (Av ≈ 1).\n• Why Other Choices are Incorrect: Common Collector is a current amplifier, not a high voltage amplifier."
-    },
-    {
-        "id": 256,
-        "question": "Which table entry correctly pairs each transistor configuration with its core operational summary?",
-        "options": [
-            "CB: Has Current Gain but no Voltage Gain; CE: Has Voltage Gain but no Current Gain; CC: Has both gains",
-            "CB: Has Voltage Gain but no Current Gain; CE: Has both Current and Voltage Gain; CC: Has Current Gain but no Voltage Gain",
-            "CB: Inverting amplifier; CE: Non-inverting; CC: Inverting",
-            "CB: High input Z; CE: Medium input Z; CC: Low input Z"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: • Common Base: Has Voltage Gain but no Current Gain (Ai < 1).\n• Common Emitter: Has both Current and Voltage Gain (highest power gain).\n• Common Collector: Has Current Gain but no Voltage Gain (Av ≈ 1).\n• Why Other Choices are Incorrect: Common Emitter is the only inverting amplifier; Common Collector has the highest input impedance."
-    },
-    {
-        "id": 257,
-        "question": "When a Bipolar Junction Transistor is operated as an ON/OFF solid-state switch, between which two distinct operating regions on its I-V characteristics curve is it driven?",
-        "options": [
-            "Bleeder current through R2 is much larger than base current IB",
-            "Base-emitter forward voltage drop becomes identically zero",
-            "Collector resistor RC is disconnected from the positive rail",
-            "Emitter bypass capacitor open-circuits under direct current"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Bleeder current through R2 is much larger than base current IB' is Correct: Transistor solid-state switches operate at the two extremes of the characteristic curves: fully-OFF in the Cut-off region (open switch) and fully-ON in the Saturation region (closed switch), bypassing the active region required for linear amplifiers.\n• Why Other Choices are Incorrect: Linear active region is used for amplifiers, not steady-state switching."
-    },
-    {
-        "id": 258,
-        "question": "What type of mechanical switch equivalent does a single bipolar transistor operating in cut-off and saturation emulate?",
-        "options": [
-            "Double-pole double-throw (DPDT) switch",
-            "Single-pole single-throw (SPST) solid-state switch",
-            "Rotary multi-wafer switch",
-            "Momentary push-button normally closed switch only"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Single-pole single-throw (SPST) solid-state switch' is Correct: With zero base drive, the transistor is an open switch (zero collector current); with positive base drive, it closes like a single-pole single-throw (SPST) solid-state switch to conduct maximum circuit current.\n• Why Other Choices are Incorrect: A single BJT provides a single make-or-break path between collector and emitter (SPST)."
-    },
-    {
-        "id": 259,
-        "question": "Which set of electrical conditions accurately characterizes the Cut-off (fully-OFF) region of an NPN transistor switch?",
-        "options": [
-            "V_TH = V_CC * R_2 / (R_1 + R_2)",
-            "V_TH = V_CC * R_1 / (R_1 + R_2)",
-            "V_TH = V_CC * (R_1 + R_2) / R_2",
-            "V_TH = V_CC - (I_B * R_1)"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In cut-off: Base input is grounded (0 V), V_BE < 0.7 V (both junctions reverse-biased), no collector current flows (I_C = 0), and output voltage equals full supply voltage (V_OUT = V_CE = V_CC = logic '1'), acting as an open circuit.\n• Why Other Choices are Incorrect: V_CE ≈ 0 V characterizes saturation; V_CE = V_CC / 2 characterizes active-region biasing."
-    },
-    {
-        "id": 260,
-        "question": "Which set of electrical conditions characterizes the Saturation (fully-ON) region of an NPN transistor switch?",
-        "options": [
-            "R_TH = R_1 || R_2",
-            "R_TH = R_1 + R_2",
-            "R_TH = R_1 * R_2",
-            "R_TH = R_1 - R_2"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In saturation: Base is driven with ample positive voltage (V_BE > 0.7 V), both junctions are forward-biased, collector current reaches circuit maximum limit (I_C = V_CC / R_L), and collector-emitter voltage drops to its minimum (ideally V_CE = 0 V, logic '0'), acting as a closed switch.\n• Why Other Choices are Incorrect: Reverse bias describes cutoff."
-    },
-    {
-        "id": 261,
-        "question": "Why is the internal power dissipation (PD = VCE * IC) of a transistor switch at its absolute minimum in both the Cut-off and Saturation states?",
-        "options": [
-            "I_B = (V_TH - V_BE) / [R_TH + (β + 1) * R_E]",
-            "I_B = (V_CC - V_BE) / [R_B + (β + 1) * R_E]",
-            "I_B = (V_TH + V_BE) / [R_TH + (β + 1) * R_E]",
-            "I_B = V_TH / [R_TH + β * (R_C + R_E)]"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Power dissipation is P = V_CE * I_C. In cut-off, I_C = 0 so P = 0. In saturation, V_CE ≈ 0 so P ≈ 0. Significant power dissipation only occurs momentarily during the rapid switching transitions between ON and OFF.\n• Why Other Choices are Incorrect: Supply voltage remains constant; the zero-power states are due to zero current or zero voltage."
-    },
-    {
-        "id": 262,
-        "question": "When an NPN transistor is connected with its Emitter grounded and its Collector connected to an external load, what technical function does the open-collector output perform?",
-        "options": [
-            "Fixed-Base Bias",
-            "Voltage-Divider Bias",
-            "Emitter-Stabilized Bias",
-            "Collector-Feedback Bias"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: With emitter grounded, the open-collector transistor acts as a 'current sink'. When turned ON, it pulls (sinks) the bottom terminal of the load down to ground, completing the current path from the external DC power supply through the load to ground.\n• Why Other Choices are Incorrect: Sourcing current is performed by PNP transistors connected to positive rails."
-    },
-    {
-        "id": 263,
-        "question": "When switching inductive loads such as relays, solenoids, or DC motors with a transistor, what is the crucial purpose of placing a 'flywheel' (freewheeling) diode across the load?",
-        "options": [
-            "Rising IC increases VRC drop, reducing VCE and VBE to oppose current increase",
-            "Excessive current causes the collector resistor to heat up and increase resistance",
-            "The collector-base junction capacitance shorts AC signals to ground at saturation",
-            "Base current increases exponentially to push the transistor out of the active region"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Inductors resist sudden changes in current. When the transistor abruptly switches OFF, the collapsing magnetic field in the coil generates a high-voltage reverse inductive kick (back-EMF: V = -L di/dt) that can exceed the transistor's V_CEO rating and destroy it. The flywheel diode provides a safe closed-loop freewheeling path to recirculate and dissipate the stored inductive energy.\n• Why Other Choices are Incorrect: It does not speed up the motor or generate AC."
-    },
-    {
-        "id": 264,
-        "question": "(Canvas LMS Switch Example 1) An NPN transistor has β = 200 and switches a load current IC = 4 mA with an input base current Ib = 20 μA. If the input control voltage exceeds Vin = 2.5 V and Vbe = 0.7 V, what is the calculated value of the Base resistor (Rb)?",
-        "options": [
-            "9.0 kΩ",
-            "45 kΩ",
-            "90 kΩ",
-            "125 kΩ"
-        ],
-        "answer": 2,
-        "explanation": "• Why '90 kΩ' is Correct: Apply Ohm's law to the base resistor: R_b = (V_in - V_be) / I_b = (2.5 V - 0.7 V) / 20 μA = 1.8 V / 0.000020 A = 90,000 Ω = 90 kΩ.\n• Why Other Choices are Incorrect: 2.5 V / 20 μA = 125 kΩ ignores the 0.7 V diode drop; 9.0 kΩ has an incorrect factor of 10."
-    },
-    {
-        "id": 265,
-        "question": "In Canvas Example 1 where the calculated base resistance is 90 kΩ, why do circuit designers intentionally select the next lowest preferred standard value (82 kΩ)?",
-        "options": [
-            "I_B = (V_CC - V_BE) / [R_B + β * (R_C + R_E)]",
-            "I_B = (V_CC - V_BE) / (R_B + R_C)",
-            "I_B = V_CC / (R_B + β * R_C)",
-            "I_B = (V_CC + V_BE) / [R_B + (β + 1) * R_C]"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Choosing the next lowest standard resistor (82 kΩ instead of 91 kΩ or 100 kΩ) increases base current slightly (I_B = 1.8 V / 82 kΩ ≈ 22 μA > 20 μA). This ensures an overdrive condition, guaranteeing that the transistor enters deep saturation even if beta drops with temperature or component aging.\n• Why Other Choices are Incorrect: A lower resistor increases base current, ensuring saturation rather than linear mode."
-    },
-    {
-        "id": 266,
-        "question": "(Canvas LMS Switch Example 2) A transistor with β = 200 must switch a heavy load requiring IC = 200 mA when input control voltage is 5.0 V. What is the minimum Base current (Ib) required to turn the transistor fully ON (saturated)?",
-        "options": [
-            "0.1 mA (100 μA)",
-            "1.0 mA (1000 μA)",
-            "10 mA",
-            "40 mA"
-        ],
-        "answer": 1,
-        "explanation": "• Why '1.0 mA' is Correct: To reach saturation, minimum base current is I_b(min) = I_C / beta = 200 mA / 200 = 1.0 mA (or 1000 μA).\n• Why Other Choices are Incorrect: 200 mA / 20 = 10 mA; 200 mA * 200 = 40,000 mA."
-    },
-    {
-        "id": 267,
-        "question": "(Canvas LMS Switch Example 2 Continued) With an input voltage Vin = 5.0 V, Vbe = 0.7 V, and the required minimum base current Ib = 1.0 mA, what is the calculated value of the Base resistor (Rb)?",
-        "options": [
-            "430 Ω",
-            "4.3 kΩ",
-            "5.0 kΩ",
-            "43 kΩ"
-        ],
-        "answer": 1,
-        "explanation": "• Why '4.3 kΩ' is Correct: Using Ohm's law across R_b: R_b = (V_in - V_be) / I_b = (5.0 V - 0.7 V) / 1.0 mA = 4.3 V / 0.001 A = 4,300 Ω = 4.3 kΩ.\n• Why Other Choices are Incorrect: 5.0 V / 1.0 mA = 5.0 kΩ ignores V_be; 430 Ω is an order of magnitude error."
-    },
-    {
-        "id": 268,
-        "question": "How does an NPN Common Emitter switching circuit function as a digital logic inverter (NOT gate)?",
-        "options": [
-            "Plot of I_C versus V_CE between saturation and cutoff on output curves",
-            "Plot of base current IB against base-emitter voltage VBE at constant temperature",
-            "Curve representing the frequency response of the amplifier at high frequencies",
-            "Locus of points where transistor internal power dissipation exceeds rated limits"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: When input is high (logic '1'), base current saturates the BJT, pulling V_CE to ~0 V (logic '0'). When input is low (logic '0'), the BJT cuts off and collector resistor pulls V_CE up to V_CC (logic '1'). Thus, output is always the inverted logic level of the input.\n• Why Other Choices are Incorrect: Inverting digital logic means swapping high and low states, not reversing DC supply polarity."
-    },
-    {
-        "id": 269,
-        "question": "What is the primary advantage of using a BJT solid-state switch to interface a low-voltage digital microcontroller (+5 V or +3.3 V) with a high-power device (+12 V or +24 V motor)?",
-        "options": [
-            "V_CE = 0 and I_C = V_CC / (R_C + R_E)",
-            "V_CE = V_CC and I_C = 0",
-            "V_CE = V_CC / 2 and I_C = V_CC / 2RC",
-            "V_CE = 0.7 V and I_C = β * I_B"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Microcontroller GPIO pins can only deliver tens of milliamperes at 3.3 V or 5 V. Transistor switches act as electronic buffers, using microamperes of logic current to switch amperes of current at 12 V, 24 V, or higher without damaging the microcontroller.\n• Why Other Choices are Incorrect: Transistors switch much faster than mechanical switches and do not eliminate wiring."
-    },
-    {
-        "id": 270,
-        "question": "How is Pulse Width Modulation (PWM) utilized with BJT solid-state switches to control the speed of a DC motor efficiently?",
-        "options": [
-            "V_CE = V_CC and I_C = 0",
-            "V_CE = 0 and I_C = V_CC / R_C",
-            "V_CE = V_CC / 2 and I_C = 0",
-            "V_CE = 0.7 V and I_C = I_CEO"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In PWM, the transistor is driven only into cutoff (zero current) and saturation (zero voltage drop), where power dissipation is virtually zero. By adjusting the duty cycle (percentage of time ON vs OFF), average power and speed delivered to the motor can be smoothly controlled with very high electrical efficiency (>90%).\n• Why Other Choices are Incorrect: Operating in the linear active region wastes massive power as heat."
-    },
-    {
-        "id": 271,
-        "question": "What is 'overdrive factor' or 'forced beta' (βforced) in transistor switching circuit design?",
-        "options": [
-            "The DC operating point (V_CEQ, I_CQ) on the load line with no AC signal",
-            "The maximum frequency at which the amplifier can operate without distortion",
-            "The internal quality factor Q of the resonant tank circuit in the collector",
-            "The ratio of AC output power to DC input power dissipated by the transistor"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: To guarantee that a transistor switch turns fully ON under all temperature conditions, production variations, and aging, engineers design with 'forced beta' (typically beta_forced = 10, or 2 to 5 times more base current than minimum: I_B = 2 to 5 * I_C / beta). This is called overdriving the base into hard saturation.\n• Why Other Choices are Incorrect: Overdrive does not exceed maximum ratings; it ensures reliable saturation."
-    },
-    {
-        "id": 272,
-        "question": "What is the primary function of the Base resistor (Rb) when a digital logic gate (such as TTL or CMOS) drives a transistor switch?",
-        "options": [
-            "Center of the active region on the DC load line",
-            "Directly on the saturation boundary line",
-            "Inside the deep cutoff region near zero current",
-            "At the maximum permissible collector breakdown voltage"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Digital logic ICs have maximum rated source and sink output current limits (typically 4 mA to 20 mA). The base resistor R_b limits the current flowing out of the logic pin to prevent damaging the IC while delivering the exact base current needed to saturate the transistor.\n• Why Other Choices are Incorrect: Resistors dissipate power rather than amplify voltage or convert DC to AC."
-    },
-    {
-        "id": 273,
-        "question": "How is the load connected in a PNP transistor switching circuit, and what is the primary role of the PNP transistor?",
-        "options": [
-            "Q-point moves upward along the DC load line toward saturation",
-            "Q-point moves downward along the DC load line toward cutoff",
-            "Q-point remains completely stationary at its exact coordinates",
-            "The load line rotates by 90 degrees around the origin"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In a PNP switch, the Emitter is tied to the positive DC rail (+VCC) and the load is connected between the Collector and ground (0 V). Turning the PNP transistor ON connects the load to +VCC, acting as a 'high-side' current sourcing switch.\n• Why Other Choices are Incorrect: Connecting load between collector and ground is high-side switching; NPN switches the ground side."
-    },
-    {
-        "id": 274,
-        "question": "To switch a PNP transistor switch 'ON' into saturation, what voltage level must be applied to its Base terminal?",
-        "options": [
-            "Both saturation and cutoff clipping will occur symmetrically on signal peaks",
-            "The amplifier will operate with maximum possible efficiency and zero distortion",
-            "The transistor will immediately enter thermal runaway and burn out its junction",
-            "The AC voltage gain of the amplifier will increase to infinity"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Both saturation and cutoff clipping will occur symmetrically on signal peaks' is Correct: For a PNP transistor, the emitter is connected to +VCC. To forward-bias the base-emitter junction, the base must be made more negative than the emitter by at least 0.7 V. Grounding the base (LOW / 0 V) creates a positive VEB drop, turning the PNP switch fully ON.\n• Why Other Choices are Incorrect: Applying +VCC makes VEB = 0 V, which cuts off the PNP transistor."
-    },
-    {
-        "id": 275,
-        "question": "What is the key electrical distinction between an NPN transistor switch and a PNP transistor switch regarding current flow?",
-        "options": [
-            "NPN transistors source current (switches power), while PNP transistors sink current (switches ground)",
-            "NPN transistors sink current (switches ground), while PNP transistors source current (switches power)",
-            "NPN transistors only conduct AC current, while PNP transistors only conduct DC current",
-            "NPN switches have zero resistance, while PNP switches have infinite resistance"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: As emphasized in the Canvas lecture module: NPN transistors switch the ground path (current sinking, open-collector pull-down), while PNP transistors switch the positive supply path (current sourcing, high-side pull-up to VCC).\n• Why Other Choices are Incorrect: Reversing the roles is incorrect; both handle DC and AC identically in magnitude."
-    },
-    {
-        "id": 276,
-        "question": "What is the formal technical name for the two-transistor compound arrangement commonly known as the 'Darlington Configuration'?",
-        "options": [
-            "Stability factor S(ICO) = ∂IC / ∂ICO measures Q-point sensitivity to leakage",
-            "Stability factor measures the ratio of AC output voltage to DC supply voltage",
-            "Stability factor is the maximum mechanical vibration the transistor can survive",
-            "Stability factor indicates the frequency bandwidth of the collector circuit"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Stability factor S(ICO) = ∂IC / ∂ICO measures Q-point sensitivity to leakage' is Correct: The formal engineering designation for the Darlington configuration is the 'Complementary Gain Compounding Configuration', where the current gain of the first transistor is compounded with (multiplied by) the current gain of the second transistor.\n• Why Other Choices are Incorrect: Push-pull uses complementary NPN/PNP; Cascode uses CE and CB stages."
-    },
-    {
-        "id": 277,
-        "question": "How are the two individual bipolar transistors physically interconnected in an NPN Darlington transistor pair?",
-        "options": [
-            "The Emitters are tied together, and the Collector of Q1 connects to the Base of Q2",
-            "The Collectors are tied together, and the Emitter of Q1 is connected directly to the Base of Q2 (IE1 = IB2)",
-            "The Bases are tied together, and the Collectors are connected in series with the Emitters",
-            "The Emitter of Q2 is tied to the Collector of Q1"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: In an NPN Darlington pair, the Collectors of both transistors are tied together to a common terminal. The Emitter of the smaller input transistor (Q1) is connected directly to the Base of the larger output transistor (Q2), so the emitter current of Q1 becomes the base drive current for Q2 (IB2 = IE1).\n• Why Other Choices are Incorrect: In a Darlington pair, collectors are tied together, not emitters."
-    },
-    {
-        "id": 278,
-        "question": "What is the mathematical relationship for the total overall current gain (βtotal or hFE(total)) of a Darlington transistor pair?",
-        "options": [
-            "S(I_CO) = β + 1",
-            "S(I_CO) = 1",
-            "S(I_CO) = 0",
-            "S(I_CO) = 1 / β"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'S(I_CO) = β + 1' is Correct: Because Q1 amplifies the base current by β1 and feeds its output into the base of Q2 which amplifies it again by β2, the overall current amplification factor is the product of the two individual gains: βtotal = β1 * β2.\n• Why Other Choices are Incorrect: Gains multiply rather than add; adding gains would only give 150 instead of 5,000."
-    },
-    {
-        "id": 279,
-        "question": "(Canvas LMS Darlington Example) A Darlington switch consists of an input transistor with current gain β1 = 100 and a second switching transistor with current gain β2 = 50. What is the total current gain (βtotal) of the Darlington device?",
-        "options": [
-            "150",
-            "500",
-            "5,000",
-            "50,000"
-        ],
-        "answer": 2,
-        "explanation": "• Why '5,000' is Correct: Multiplying the two individual gains: beta_total = beta_1 * beta_2 = 100 * 50 = 5,000.\n• Why Other Choices are Incorrect: 100 + 50 = 150 (adding instead of multiplying); 500 is a factor of 10 error."
-    },
-    {
-        "id": 280,
-        "question": "(Canvas LMS Darlington Example Continued) If the load current to be switched is IC = 200 mA and the Darlington total current gain is βtotal = 5,000, what is the required input base current (IB)?",
-        "options": [
-            "4 μA",
-            "40 μA",
-            "400 μA",
-            "1.0 mA"
-        ],
-        "answer": 1,
-        "explanation": "• Why '40 μA' is Correct: Using I_B = I_C / beta_total = 200 mA / 5,000 = 0.04 mA = 40 μA.\n• Why Other Choices are Incorrect: For a single transistor with beta = 200, I_B was 1.0 mA (1,000 μA); the Darlington reduces this requirement to just 40 μA."
-    },
-    {
-        "id": 281,
-        "question": "Comparing a single BJT switch (requiring 1.0 mA base current for a 200 mA load) to the Darlington pair (requiring 40 μA), what is the key practical advantage?",
-        "options": [
-            "S(I_CO) approaches 1 (ideal stability)",
-            "S(I_CO) approaches infinity (unstable)",
-            "S(I_CO) drops to negative values",
-            "S(I_CO) becomes equal to β squared"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Drawing only 40 μA from a microcontroller or logic gate is well within the drive capacity of any low-power digital output pin, whereas 1.0 mA or more might overload sensitive logic families or battery-powered devices.\n• Why Other Choices are Incorrect: Load power depends on the load itself; collector connections remain essential."
-    },
-    {
-        "id": 282,
-        "question": "What is the total Base-Emitter turn-on input voltage threshold (VBE(total)) for a standard Silicon Darlington pair, and why?",
-        "options": [
-            "V_CE(sat) ≈ 0.2 V",
-            "V_CE(sat) = V_CC",
-            "V_CE(sat) = 0.7 V",
-            "V_CE(sat) = 0 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'V_CE(sat) ≈ 0.2 V' is Correct: Because the Emitter of Q1 connects directly to the Base of Q2, the input voltage from the external Base to the external Emitter must overcome both forward-biased PN junctions in series: V_BE(total) = V_BE1 + V_BE2 ≈ 0.7 V + 0.7 V = 1.4 V.\n• Why Other Choices are Incorrect: A single silicon junction requires 0.7 V; two in series require ~1.4 V."
-    },
-    {
-        "id": 283,
-        "question": "A Darlington switch is driven by a 5.0 V logic gate to switch a load with IB = 40 μA. If VBE(total) = 1.4 V, what is the calculated value of the Base resistor (Rb)?",
-        "options": [
-            "36 kΩ",
-            "90 kΩ",
-            "107.5 kΩ",
-            "125 kΩ"
-        ],
-        "answer": 1,
-        "explanation": "• Why '90 kΩ' is Correct: Apply Ohm's law taking the 1.4 V double-junction drop into account: R_b = (V_in - V_BE(total)) / I_B = (5.0 V - 1.4 V) / 40 μA = 3.6 V / 0.000040 A = 90,000 Ω = 90 kΩ.\n• Why Other Choices are Incorrect: (5.0 - 0.7) / 40 μA = 107.5 kΩ uses only a single diode drop; 5.0 V / 40 μA = 125 kΩ ignores junction drops."
-    },
-    {
-        "id": 284,
-        "question": "What is the primary operational trade-off or drawback of using a Darlington pair switch instead of a single BJT switch?",
-        "options": [
-            "I_B ≥ I_C(sat) / β_min",
-            "I_B ≤ I_C(sat) / β_min",
-            "I_B = 0",
-            "I_B = I_C(sat) * β_min"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In a Darlington pair, Q1 cannot be driven into deeper saturation than V_CE1 = V_BE2 ≈ 0.7 V. Therefore, V_CE(sat) of the pair is V_CE1(sat) + V_BE2 ≈ 0.2 V + 0.7 V = 0.9 V (or at minimum ~0.7 V). This higher V_CE(sat) dissipates significantly more power (heat) in high-current applications than a single saturated transistor (V_CE(sat) ≈ 0.2 V).\n• Why Other Choices are Incorrect: Current gain is vastly higher, not lower."
-    },
-    {
-        "id": 285,
-        "question": "Which of the following represents a typical practical application for a Darlington Transistor Switch as highlighted in the Canvas lecture module?",
-        "options": [
-            "Storage time t_s",
-            "Delay time t_d",
-            "Rise time t_r",
-            "Fall time t_f"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Due to their high current gains and high switching speeds, Darlington switches are widely used in DC motor and stepper motor control, high-current relay/solenoid drivers, power inverters, and automotive lighting circuits.\n• Why Other Choices are Incorrect: Microwave antennas and audio filters use other specialized components."
-    },
-    {
-        "id": 286,
-        "question": "How does a 'Sziklai Pair' (Complementary Feedback Pair) compare to a standard Darlington Pair?",
-        "options": [
-            "t_off = t_s + t_f",
-            "t_off = t_d + t_r",
-            "t_off = t_s - t_f",
-            "t_off = t_s * t_f"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: The Sziklai pair (also called the Complementary Darlington) connects an NPN and a PNP transistor together. It provides total current gain approximately equal to beta1 * beta2, but requires only a single forward diode drop at the input (V_BE ≈ 0.7 V) and achieves a lower saturation voltage (~0.3 V) than a Darlington pair.\n• Why Other Choices are Incorrect: Sziklai uses complementary transistors (NPN + PNP), not two identical ones."
-    },
-    {
-        "id": 287,
-        "question": "(Midterm Seatwork 2) What does BJT stand for in electronics?",
-        "options": [
-            "Bipolar Junction Transistor",
-            "Basic Junction Technology",
-            "Binary Junction Transformer",
-            "Base Joint Transducer"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Bipolar Junction Transistor' is Correct: BJT stands for Bipolar Junction Transistor. It is called 'bipolar' because it utilizes both electron and hole conduction, and 'junction' because it consists of two PN junctions separating three doped regions.\n• Why Other Choices are Incorrect: BJT does not stand for Technology, Transformer, or Transducer."
-    },
-    {
-        "id": 288,
-        "question": "(Midterm Seatwork 2) In a BJT, what are the three layers formed by the P-type and N-type semiconductor materials?",
-        "options": [
-            "Emitter, Base, Collector",
-            "Anode, Cathode, Gate",
-            "Source, Drain, Gate",
-            "Channel, Substrate, Body"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Emitter, Base, Collector' is Correct: The three functional semiconductor layers of a BJT are the Emitter (injects carriers), the Base (controls carrier flow), and the Collector (collects carriers).\n• Why Other Choices are Incorrect: Anode, Cathode, and Gate belong to thyristors (SCRs); Source, Drain, and Gate belong to FETs."
-    },
-    {
-        "id": 289,
-        "question": "(Midterm Seatwork 2) Which terminal of the BJT is responsible for the majority charge carriers injection into the base region?",
-        "options": [
-            "Collector",
-            "Base",
-            "Emitter",
-            "Substrate"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Emitter' is Correct: As its name implies, the Emitter is heavily doped and responsible for emitting (injecting) majority charge carriers across the forward-biased base-emitter junction into the base region.\n• Why Other Choices are Incorrect: The Collector collects carriers; the Base controls their transit."
-    },
-    {
-        "id": 290,
-        "question": "(Midterm Seatwork 2) What is the purpose of the thin base region in a BJT?",
-        "options": [
-            "To provide mechanical strength",
-            "To control the flow of majority charge carriers",
-            "To enhance thermal conductivity",
-            "To increase voltage handling capacity"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'To control the flow of majority charge carriers' is Correct: The Base is physically ultra-thin and lightly doped so that it allows small base currents to modulate and control the vast majority of carriers diffusing from emitter to collector with minimal recombination.\n• Why Other Choices are Incorrect: The base does not provide structural strength or heat dissipation (heat dissipation is handled by the collector)."
-    },
-    {
-        "id": 291,
-        "question": "(Midterm Seatwork 2) What type of charge carriers dominate the current flow in the emitter and collector regions of an NPN BJT?",
-        "options": [
-            "Electrons",
-            "Holes",
-            "Protons",
-            "Neutrons"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Electrons' is Correct: In an NPN transistor, the Emitter and Collector are both composed of N-type semiconductor material, where negatively charged free electrons are the majority charge carriers.\n• Why Other Choices are Incorrect: Holes dominate in P-type regions (PNP transistors); protons and neutrons are fixed subatomic particles in the nucleus."
-    },
-    {
-        "id": 292,
-        "question": "(Midterm Seatwork 2) What type of charge carriers dominate the current flow in the emitter and collector regions of a PNP BJT?",
-        "options": [
-            "Electrons",
-            "Holes",
-            "Proton",
-            "Neutrons"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Holes' is Correct: In a PNP transistor, the Emitter and Collector are composed of P-type semiconductor material, where positively charged holes (deficiencies of electrons in valence bonds) are the majority charge carriers.\n• Why Other Choices are Incorrect: Electrons dominate in N-type material (NPN transistors)."
-    },
-    {
-        "id": 293,
-        "question": "(Midterm Seatwork 2) What is the function of the collector terminal in a BJT?",
-        "options": [
-            "To inject majority carriers into the base",
-            "To collect majority carriers emitted from the base",
-            "To control the base current",
-            "To provide mechanical support"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'To collect majority carriers emitted from the base' is Correct: The primary function of the Collector terminal is to collect the majority charge carriers that were injected by the emitter and have traversed across the base region.\n• Why Other Choices are Incorrect: Injecting carriers is the role of the emitter; controlling current is the function of the base."
-    },
-    {
-        "id": 294,
-        "question": "Which of the three semiconductor regions in a Bipolar Junction Transistor possesses the highest impurity doping concentration?",
-        "options": [
-            "Base region",
-            "Collector region",
-            "Emitter region",
-            "All three regions have identical doping concentrations"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Emitter region' is Correct: The Emitter is the most heavily doped layer in the BJT (typically 10^19 atoms/cm^3) to ensure a massive injection of majority charge carriers into the base.\n• Why Other Choices are Incorrect: Base is the most lightly doped (10^15 - 10^16 atoms/cm^3); collector is moderately doped."
-    },
-    {
-        "id": 295,
-        "question": "Which of the three semiconductor regions in a Bipolar Junction Transistor has the lowest impurity doping concentration?",
-        "options": [
-            "Emitter region",
-            "Collector region",
-            "Base region",
-            "Package substrate"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Base region' is Correct: The Base is deliberately engineered with the lowest doping concentration among all three layers to minimize recombination of minority carriers diffusing through it.\n• Why Other Choices are Incorrect: Emitter is heavily doped; collector is moderately doped."
-    },
-    {
-        "id": 296,
-        "question": "Which semiconductor region in a BJT is manufactured with the physically largest surface area and volume, and why?",
-        "options": [
-            "Collector (dissipates largest heat at CB junction)",
-            "Emitter (to store larger quantity of free electrons)",
-            "Base (to provide wide mechanical contact area)",
-            "All three regions have identical physical dimensions"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Collector (dissipates largest heat at CB junction)' is Correct: The Collector region operates under high reverse-bias voltage (V_CE) and conducts full load current, generating significant heat (P = V_CE * I_C). It is manufactured with the largest physical size to transfer this thermal energy safely to the case or heat sink.\n• Why Other Choices are Incorrect: Base is the thinnest; emitter is smaller than the collector."
-    },
-    {
-        "id": 297,
-        "question": "In Malvino's 'First (Ideal) Approximation' of a conducting transistor, what value is assumed for the base-emitter junction voltage (VBE)?",
-        "options": [
-            "V_BE = 0 V",
-            "V_BE = 0.7 V",
-            "V_BE = 0.3 V",
-            "V_BE = 1.0 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'V_BE = 0 V' is Correct: In the first (ideal) approximation, the forward-biased emitter diode is treated as an ideal diode with zero threshold voltage (VBE = 0 V). This allows quick mental estimates for troubleshooting.\n• Why Other Choices are Incorrect: 0.7 V is the second approximation; 0.3 V is for Germanium."
-    },
-    {
-        "id": 298,
-        "question": "In Malvino's 'Second Approximation' of a silicon transistor, what value is assumed for the base-emitter voltage (VBE)?",
-        "options": [
-            "V_BE = 0.7 V",
-            "V_BE = 0 V",
-            "V_BE = 0.3 V",
-            "V_BE = 1.4 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'V_BE = 0.7 V' is Correct: The second approximation provides the best practical compromise between speed and accuracy by including the built-in barrier potential of the silicon PN junction (VBE = 0.7 V).\n• Why Other Choices are Incorrect: 0 V is the ideal approximation; 1.4 V is for a Darlington pair."
-    },
-    {
-        "id": 299,
-        "question": "What additional physical circuit parameter is incorporated in the 'Third Approximation' of a transistor?",
-        "options": [
-            "Bulk resistances (r'e and r'b) of semiconductor regions",
-            "External collector load resistor tolerance variations",
-            "Internal series resistance of the DC power supply battery",
-            "Stray parasitic capacitance of external breadboard wiring"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: The third approximation accounts for the bulk internal resistance of the semiconductor material (r'e and r'b), meaning VBE = 0.7 V + IB*r'b, which becomes important at high currents where VBE can exceed 0.8 V to 1.0 V.\n• Why Other Choices are Incorrect: External resistors are not internal transistor parameters."
-    },
-    {
-        "id": 300,
-        "question": "On a transistor's collector characteristic curves, what is the voltage called that marks the boundary where the curve transitions from the rising saturation region to the flat active region?",
-        "options": [
-            "Knee voltage (V_knee)",
-            "Breakdown voltage (BV_CEO)",
-            "Pinch-off threshold voltage",
-            "Early modulation voltage"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Knee voltage (V_knee)' is Correct: The knee voltage (Vknee) is the collector-emitter voltage where collector current levels off and becomes constant. Above Vknee, the collector junction is reverse-biased and the transistor operates in the active region.\n• Why Other Choices are Incorrect: Breakdown voltage occurs at the far right of the curves."
-    },
-    {
-        "id": 301,
-        "question": "On the Common Emitter output characteristics (IC vs VCE), what are the two intercept points that define the DC load line?",
-        "options": [
-            "Cutoff (V_CE = V_CC, I_C = 0) and Saturation (V_CE = 0, I_C = V_CC/R_C)",
-            "Active linear Q-point coordinates and Early voltage horizontal intercept",
-            "Avalanche breakdown voltage and gate-source pinch-off threshold level",
-            "Origin coordinates (0 V, 0 mA) and maximum knee saturation voltage point"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: The DC load line represents KVL: VCE = VCC - IC*RC. When IC = 0, VCE = VCC (cutoff point on the voltage axis). When VCE = 0, IC = VCC / RC (saturation point on the current axis). Connecting these two points forms the load line.\n• Why Other Choices are Incorrect: The load line connects cutoff and saturation extremes."
-    },
-    {
-        "id": 302,
-        "question": "What is the technical definition of the 'Quiescent Operating Point' (Q-point) of a transistor amplifier?",
-        "options": [
-            "DC operating point (V_CEQ, I_CQ) on load line with no AC signal",
-            "Maximum frequency threshold at which the transistor oscillates",
-            "Operating point where internal junction temperature reaches 200°C",
-            "Point of maximum volume and output power on an audio amplifier"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: The term 'quiescent' means quiet or at rest. The Q-point represents the steady-state DC current (ICQ) and voltage (VCEQ) established by the DC biasing network with zero input signal applied.\n• Why Other Choices are Incorrect: Q-point is a DC bias condition, not a frequency or temperature rating."
-    },
-    {
-        "id": 303,
-        "question": "(Mehta Example 8.22) For a transistor circuit with supply voltage VCC = 12.5 V and collector load resistor RC = 2.5 kΩ, what are the two end points of the DC load line?",
-        "options": [
-            "Cutoff: 12.5 V; Saturation: 5.0 mA",
-            "Cutoff: 2.5 V; Saturation: 12.5 mA",
-            "Cutoff: 10 V; Saturation: 2.5 mA",
-            "Cutoff: 25 V; Saturation: 50 mA"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Cutoff: 12.5 V; Saturation: 5.0 mA' is Correct: Cutoff voltage is VCE(cutoff) = VCC = 12.5 V (point on VCE axis). Saturation current is IC(sat) = VCC / RC = 12.5 V / 2.5 kΩ = 5.0 mA (point on IC axis).\n• Why Other Choices are Incorrect: 12.5 / 2.5 = 5.0 mA directly."
-    },
-    {
-        "id": 304,
-        "question": "(Mehta Example 8.23) In a CE circuit with VCC = 12 V, RC = 6 kΩ, IB = 20 μA, and β = 50, what are the coordinates of the operating Q-point (VCE, IC)?",
-        "options": [
-            "VCE = 6 V, IC = 1 mA",
-            "VCE = 12 V, IC = 2 mA",
-            "VCE = 3 V, IC = 1.5 mA",
-            "VCE = 0 V, IC = 2 mA"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'VCE = 6 V, IC = 1 mA' is Correct: First calculate collector current: IC = beta * IB = 50 * 0.02 mA = 1.0 mA. Then apply KVL for VCE: VCE = VCC - IC*RC = 12 V - (1.0 mA * 6 kΩ) = 12 V - 6 V = 6 V. The Q-point is (6 V, 1 mA).\n• Why Other Choices are Incorrect: 12 V is cutoff; 0 V is saturation."
-    },
-    {
-        "id": 305,
-        "question": "(Malvino Example 6-11) A 2N3904 transistor operates with VCE = 10 V and IC = 20 mA. What is its internal power dissipation PD?",
-        "options": [
-            "20 mW",
-            "200 mW",
-            "2 W",
-            "0.5 W"
-        ],
-        "answer": 1,
-        "explanation": "• Why '200 mW' is Correct: Power dissipation is PD = VCE * IC = 10 V * 20 mA = 200 mW (0.2 W).\n• Why Other Choices are Incorrect: 10 * 20 = 200, not 20 or 2,000."
-    },
-    {
-        "id": 306,
-        "question": "(Malvino Example 6-12) A transistor is rated for PD(max) = 625 mW at 25°C with a derating factor of 5 mW/°C. What is its maximum allowable power dissipation at an ambient temperature of 100°C?",
-        "options": [
-            "625 mW",
-            "500 mW",
-            "375 mW",
-            "250 mW"
-        ],
-        "answer": 3,
-        "explanation": "• Why '250 mW' is Correct: Calculate temperature rise above 25°C: Delta_T = 100°C - 25°C = 75°C. Power reduction: Delta_P = 75°C * 5 mW/°C = 375 mW. Derated maximum power: PD(max) = 625 mW - 375 mW = 250 mW.\n• Why Other Choices are Incorrect: 375 mW is the reduction amount, so the remaining rating is 250 mW."
-    },
-    {
-        "id": 307,
-        "question": "In conservative commercial electronic design, why do engineers typically adopt a 'safety factor of 2' on transistor power dissipation ratings?",
-        "options": [
-            "Operate below half P_D(max) to ensure reliability and avoid thermal runaway",
-            "Because alternating current power cycles reverse direction twice per AC cycle",
-            "Because transistor amplification stages only operate half of the duty cycle",
-            "To deliberately reduce the required DC battery supply voltage by exactly half"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Operating a transistor at or near its maximum rating significantly shortens its lifespan and increases the risk of thermal failure. A safety factor of 2 means designing for PD <= PD(max) / 2 (e.g. 125 mW for a 250 mW rating), ensuring highly reliable continuous operation.\n• Why Other Choices are Incorrect: Safety factors are thermal design margins, not related to AC frequency."
-    },
-    {
-        "id": 308,
-        "question": "Under the European Pro-Electron semiconductor numbering system (e.g., BC147 or AC125), what does the first letter indicate?",
-        "options": [
-            "Semiconductor material (A = Germanium, B = Silicon)",
-            "Year of initial commercial device manufacture",
-            "Maximum reverse collector voltage breakdown rating",
-            "Standard mechanical transistor package styling"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In Pro-Electron codes, the first letter denotes the semiconductor material: 'A' represents materials with bandgap 0.6-1.0 eV (Germanium), 'B' represents bandgap 1.0-1.3 eV (Silicon), and 'C' represents bandgap >= 1.3 eV (Gallium Arsenide). Thus, BC147 is a Silicon device.\n• Why Other Choices are Incorrect: It does not denote year or package style."
-    },
-    {
-        "id": 309,
-        "question": "In the Pro-Electron transistor code BC547, what does the second letter 'C' signify?",
-        "options": [
-            "Collector lead location",
-            "Audio frequency (AF) low-power transistor",
-            "High-power industrial thyristor",
-            "Zener diode regulator"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: The second letter describes the circuit function: 'C' signifies an Audio Frequency (AF) small-signal / low-power transistor. 'D' signifies an AF power transistor, 'F' an RF low-power transistor, and 'Z' a Zener diode.\n• Why Other Choices are Incorrect: C denotes AF small-signal transistor, not collector terminal."
-    },
-    {
-        "id": 310,
-        "question": "Under the EIA/JEDEC semiconductor naming standard, what does the prefix '2N' (such as in 2N3904 or 2N2222) denote?",
-        "options": [
-            "A semiconductor device with two PN junctions (a transistor)",
-            "A transistor designed strictly for two volts nominal operation",
-            "A commercial device fabricated exclusively by two manufacturers",
-            "A second-generation monolithic integrated circuit processor"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In JEDEC notation, the leading digit indicates the number of PN junctions: '1N' indicates one junction (two-terminal diode), '2N' indicates two junctions (three-terminal transistor or FET), and '3N' indicates three junctions (four-terminal dual-gate MOSFET or SCR).\n• Why Other Choices are Incorrect: 2N specifies junction count, not voltage or manufacturer."
-    },
-    {
-        "id": 311,
-        "question": "(Malvino Table 6-1 Troubleshooting) In a common-emitter circuit, if the base resistor (RB) becomes open-circuited, what will be the measured collector voltage VC?",
-        "options": [
-            "V_C = V_CC (transistor is in cutoff)",
-            "V_C = 0 V (transistor is in saturation)",
-            "V_C = 0.7 V (base-emitter diode drop)",
-            "V_C = V_CC / 2 (linear active center)"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: When RB opens, no base current can flow (IB = 0). The transistor enters cutoff, causing collector current to drop to zero (IC = 0). With no current through collector resistor RC, there is zero voltage drop across RC, so VC rises to full VCC.\n• Why Other Choices are Incorrect: VC = 0 V occurs when RC is open or in dead saturation."
-    },
-    {
-        "id": 312,
-        "question": "(Malvino Table 6-1 Troubleshooting) If the base resistor (RB) becomes accidentally shorted directly across a 10 V base supply, what will occur?",
-        "options": [
-            "Full voltage forces excessive current, destroying base-emitter junction",
-            "Collector terminal voltage drops instantaneously to negative 10 volts",
-            "The transistor immediately drops into permanent non-conducting cutoff",
-            "The circuit begins oscillating as an unmodulated radio transmitter"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: The base-emitter junction cannot sustain 10 V forward bias without a current-limiting resistor; it clamps around 0.7 V. Shorting RB dumps massive current through the junction, causing instantaneous thermal destruction ('transistor blown').\n• Why Other Choices are Incorrect: Shorting RB drives excessive current, destroying the junction."
-    },
-    {
-        "id": 313,
-        "question": "(Malvino Table 6-1 Troubleshooting) If the collector resistor (RC) becomes open-circuited, what is the measured collector voltage (VC)?",
-        "options": [
-            "V_C = 0 V (disconnected from V_CC)",
-            "V_C = V_CC (full supply voltage)",
-            "V_C = 0.7 V (diode barrier drop)",
-            "V_C = -0.7 V (reverse polarity drop)"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'V_C = 0 V (disconnected from V_CC)' is Correct: If RC is open, the collector terminal is completely disconnected from the positive power supply VCC. Therefore, the measured collector voltage with respect to ground is 0 V.\n• Why Other Choices are Incorrect: If RC is open, no voltage from VCC can reach the collector."
-    },
-    {
-        "id": 314,
-        "question": "What is the most common internal electrical failure mode in a power BJT subjected to severe overcurrent or excessive thermal dissipation?",
-        "options": [
-            "Base terminal disconnection",
-            "Collector-to-emitter internal short circuit (VCE = 0 V)",
-            "Spontaneous transformation into a tunnel diode",
-            "Complete demagnetization of copper leads"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: As noted in Malvino and Boylestad, because the collector junction dissipates the vast majority of internal power (PD = VCE * IC), extreme temperatures melt the thin semiconductor crystal lattice between collector and emitter, causing an internal collector-to-emitter short circuit (VCE ≈ 0 V).\n• Why Other Choices are Incorrect: Collector-to-emitter short is the primary physical breakdown mechanism."
-    },
-    {
-        "id": 315,
-        "question": "How does the maximum collector-to-emitter breakdown rating (BVCEO) compare to the collector-to-base breakdown rating (BVCBO)?",
-        "options": [
-            "BV_CEO is significantly lower than BV_CBO",
-            "BV_CEO is much higher than BV_CBO in all transistors",
-            "BV_CEO and BV_CBO are always mathematically identical",
-            "BV_CEO cannot be experimentally measured with instruments"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In the common-emitter configuration with base open, any initial thermal or avalanche carrier generated at the reverse-biased collector junction is amplified by the transistor gain beta, triggering breakdown at a much lower voltage than when the emitter is open (BVCBO). Thus, BVCEO is typically roughly half of BVCBO.\n• Why Other Choices are Incorrect: CE breakdown is lower due to internal beta multiplication."
-    },
-    {
-        "id": 316,
-        "question": "What is the phenomenon called 'Punch-Through' in a bipolar junction transistor?",
-        "options": [
-            "CB depletion layer expands across base to touch emitter depletion layer",
-            "Physical punching of chassis mounting holes into an aluminum heat sink",
-            "Switching of a phototransistor triggered by incoming laser light pulses",
-            "Destruction of internal semiconductor bond wires by acoustic vibration"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Punch-through (or reach-through) occurs at high collector reverse voltages when the depletion layer extends completely across the ultra-thin base region, directly linking the collector and emitter depletion layers and causing massive breakdown current.\n• Why Other Choices are Incorrect: It is a semiconductor depletion layer reach-through phenomenon."
-    },
-    {
-        "id": 317,
-        "question": "Why do common-emitter collector characteristic curves (IC vs VCE) exhibit a slight upward slope rather than remaining perfectly flat in the active region?",
-        "options": [
-            "Base-width modulation (Early Effect) narrows base as V_CE increases",
-            "Electromagnetic coupling with the external power supply transformer",
-            "Silicon crystal atoms losing valence electrons at elevated voltages",
-            "Collector current decreasing linearly with applied collector voltage"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: As VCE increases, the reverse bias on the collector-base junction increases, causing its depletion region to expand further into the lightly doped base. This narrows the effective base width (WB), reducing carrier recombination and causing IC to rise slightly with VCE.\n• Why Other Choices are Incorrect: This upward slope is the classical Early Effect."
-    },
-    {
-        "id": 318,
-        "question": "How is the AC common-emitter current gain (hfe or βac) formally evaluated from a family of collector characteristic curves at an operating point?",
-        "options": [
-            "βac = IC / IB at the origin",
-            "βac = (Delta_IC / Delta_IB) evaluated along a vertical line of constant VCE",
-            "βac = Delta_VCE / Delta_IC along a horizontal line of constant IC",
-            "βac = VCE / VBE"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: By definition, ac beta is the ratio of a small change in collector current to the corresponding change in base current while holding collector-to-emitter voltage constant: beta_ac = Delta_IC / Delta_IB |_VCE=constant.\n• Why Other Choices are Incorrect: Holding VCE constant requires reading Delta_IC vertically between neighboring IB curves."
-    },
-    {
-        "id": 319,
-        "question": "In a well-designed modern BJT, approximately what fraction of the majority carriers injected by the emitter recombine in the base to form base current (IB)?",
-        "options": [
-            "Less than 5% (typically 1% to 2%)",
-            "Approximately 50% of injected carriers",
-            "Exactly 100% of injected carriers",
-            "Zero percent under all bias conditions"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Less than 5% (typically 1% to 2%)' is Correct: Because the base is made physically ultra-thin and lightly doped, over 95% to 99% of injected carriers diffuse directly across into the collector without recombining, leaving less than 5% to constitute the base current.\n• Why Other Choices are Incorrect: If 50% recombined, current gain beta would be only 1."
-    },
-    {
-        "id": 320,
-        "question": "Which equation relates the collector-to-emitter leakage current with base open (ICEO) to the reverse saturation current with emitter open (ICBO)?",
-        "options": [
-            "I_CEO = (β + 1) * I_CBO",
-            "I_CEO = I_CBO / (β + 1)",
-            "I_CEO = I_CBO - β",
-            "I_CEO = α * I_CBO"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'I_CEO = (β + 1) * I_CBO' is Correct: With the base open, the tiny reverse leakage current ICBO flowing across the collector junction enters the base and is internally amplified by beta, yielding ICEO = (beta + 1)*ICBO ≈ beta*ICBO.\n• Why Other Choices are Incorrect: Leakage is multiplied by beta + 1, making ICEO much larger than ICBO."
-    },
-    {
-        "id": 321,
-        "question": "Why is the reverse leakage current (ICBO and ICEO) such a critical factor in high-temperature BJT circuit stability?",
-        "options": [
-            "Leakage doubles every 10°C, risking thermal runaway if unstabilized",
-            "Leakage current decreases toward zero at elevated junction temperatures",
-            "Leakage current inverts the polarity of the external DC power supply",
-            "Leakage current chemically converts silicon into germanium over time"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Thermally generated minority carriers double approximately every 10°C. At high temperatures, this multiplied leakage current increases total collector current, raising internal temperature further and potentially causing destructive thermal runaway.\n• Why Other Choices are Incorrect: Leakage increases exponentially with temperature, rather than decreasing."
-    },
-    {
-        "id": 322,
-        "question": "In a Common Emitter circuit with collector load resistor RC and supply VCC, what is the fundamental Kirchhoff's Voltage Law relationship for VCE?",
-        "options": [
-            "VCE = VCC + IC*RC",
-            "VCE = VCC - IC*RC",
-            "VCE = IC*RC - VCC",
-            "VCE = VCC / (IC*RC)"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'VCE = VCC - IC*RC' is Correct: Applying KVL around the collector-emitter loop: VCC - IC*RC - VCE = 0. Solving for collector-emitter voltage gives VCE = VCC - IC*RC.\n• Why Other Choices are Incorrect: The voltage drop across RC subtracts from the supply voltage VCC."
-    },
-    {
-        "id": 323,
-        "question": "Why is the collector circuit of an active BJT commonly modeled in equivalent circuits as a constant current source?",
-        "options": [
-            "I_C is controlled by I_B and is almost independent of V_CE",
-            "The collector terminal can deliver infinite current to any load",
-            "The transistor operates without any external power supply source",
-            "Internal dynamic resistance of the collector circuit is zero ohms"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In the active region, the characteristic curves are almost horizontal, meaning collector current depends on base current (IC = beta*IB) and changes negligibly with VCE. This is the exact definition of a current-controlled current source.\n• Why Other Choices are Incorrect: Ideal current sources have infinite internal resistance, not zero."
-    },
-    {
-        "id": 324,
-        "question": "When comparing the SOT-223 surface-mount transistor package to the miniature SOT-23 package, why can the SOT-223 dissipate significantly higher power (approx. 1 Watt)?",
-        "options": [
-            "Large soldered collector heat-sink tab conducts heat into PCB copper",
-            "Fabricated from pure synthetic diamond crystals with zero resistance",
-            "Operates without any internal DC power dissipation during conduction",
-            "Cooled by miniature internal liquid-nitrogen microfluidic channels"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: SOT-223 has a larger surface area and features an extended metal collector tab on one side that solders directly to PCB copper planes, acting as an effective heat sink to dissipate up to 1 Watt (compared to ~350 mW for SOT-23).\n• Why Other Choices are Incorrect: The extra collector tab and larger area provide enhanced thermal dissipation."
-    },
-    {
-        "id": 325,
-        "question": "What is the primary distinguishing physical feature of the popular TO-220 power transistor package?",
-        "options": [
-            "Lead nearest tab is Base, center is Collector, right is Emitter",
-            "Three terminals are arranged randomly in manufacturing batches",
-            "Center terminal is always ground and outer terminals are tied",
-            "Lead nearest tab is Emitter, center is Base, right is Collector"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: The TO-220 is a widely used power package featuring a heavy copper/metal tab with a mounting hole, allowing the package to be firmly clamped or bolted to an aluminum heat sink with thermal grease.\n• Why Other Choices are Incorrect: TO-92 is all-plastic; TO-18 is a round top-hat can; DIP-14 is an IC package."
-    },
-    {
-        "id": 326,
-        "question": "In the heavy-duty TO-3 (TO-204AA) diamond-shaped power transistor package, which terminal is electrically connected directly to the outer metal case?",
-        "options": [
-            "Base terminal",
-            "Emitter terminal",
-            "Collector terminal",
-            "No terminal (the case is completely insulated)"
-        ],
-        "answer": 2,
-        "explanation": "• Why 'Collector terminal' is Correct: In the TO-3 package, the collector is internally bonded to the heavy metal case. This provides maximum thermal conductivity from the high-power collector junction directly into the chassis or external heat sink.\n• Why Other Choices are Incorrect: The two insulated pins on the bottom are Base and Emitter."
-    },
-    {
-        "id": 327,
-        "question": "When checking a suspected BJT using a digital multimeter (DMM) set to Diode Test mode, what reading across a junction indicates that it has failed short-circuited?",
-        "options": [
-            "Provides an AC bypass path around RE to maximize AC voltage gain",
-            "Eliminates the DC collector power supply battery from the circuit",
-            "Blocks all alternating-current AC signals from entering the base",
-            "Forces the transistor to operate exclusively in deep saturation mode"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: A healthy junction reads ~0.6-0.7 V forward and OL reverse. A dead short reads 0.00 V (and often beeps continuously) in both directions, confirming junction breakdown and melting.\n• Why Other Choices are Incorrect: OL in both directions indicates an open circuit."
-    },
-    {
-        "id": 328,
-        "question": "When testing an NPN transistor with an analog ohmmeter, connecting the meter leads across the Base-Emitter junction in forward bias produces what typical resistance reading?",
-        "options": [
-            "Capacitors act as open circuits (infinite impedance)",
-            "Capacitors act as short circuits (zero impedance)",
-            "Capacitors double their nominal capacitance value",
-            "Capacitors invert the polarity of the DC voltage"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Capacitors act as open circuits (infinite impedance)' is Correct: An analog ohmmeter applies an internal battery potential. In forward bias, the junction conducts, registering a relatively low resistance between 100 Ω and 1 kΩ. In reverse bias, it registers a very high resistance (> 100 kΩ).\n• Why Other Choices are Incorrect: Infinite resistance indicates an open junction."
-    },
-    {
-        "id": 329,
-        "question": "In a single-stage CE amplifier where AC output is taken from the collector via a coupling capacitor, what does the negative sign in the expression vout = -ic*RC represent?",
-        "options": [
-            "Capacitors act as short circuits (zero impedance)",
-            "Capacitors act as open circuits (infinite impedance)",
-            "Capacitors introduce a 180° phase lag on DC voltages",
-            "Capacitors amplify DC currents by a factor of beta"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: The negative sign is mathematical shorthand denoting phase reversal: an increase in input signal voltage causes an inverted (negative-going) output voltage swing across the collector load.\n• Why Other Choices are Incorrect: It represents phase inversion, not power loss or negative supply rails."
-    },
-    {
-        "id": 330,
-        "question": "When a common-emitter amplifier drives a subsequent amplifier stage having an input resistance Ri, how is the effective AC collector load resistance (Rac) calculated?",
-        "options": [
-            "Av drops significantly due to unbypassed emitter negative feedback",
-            "Av increases to infinity because emitter resistance becomes zero ohms",
-            "Av remains completely unchanged regardless of bypass capacitor presence",
-            "The amplifier immediately breaks into parasitic high-frequency oscillation"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'Av drops significantly due to unbypassed emitter negative feedback' is Correct: Because the coupling capacitor acts as an AC short circuit, the second stage's input resistance Ri appears in parallel with the collector resistor RC for AC signals: Rac = RC || Ri.\n• Why Other Choices are Incorrect: Parallel combination reduces total AC load resistance."
-    },
-    {
-        "id": 331,
-        "question": "(Mehta Example 8.30) A single-stage transistor amplifier has a collector load RC = 2 kΩ, input resistance Ri = 1 kΩ, and current gain β = 50. What is the overall voltage gain (Av)?",
-        "options": [
-            "25",
-            "50",
-            "100",
-            "200"
-        ],
-        "answer": 2,
-        "explanation": "• Why '100' is Correct: Voltage gain is Av = beta * (RC / Ri) = 50 * (2 kΩ / 1 kΩ) = 50 * 2 = 100.\n• Why Other Choices are Incorrect: 50 * (1 / 2) = 25 (inverting ratio); direct calculation gives 100."
-    },
-    {
-        "id": 332,
-        "question": "How is the signal AC power gain (Ap) of a common-emitter amplifier expressed in terms of current gain and circuit resistances?",
-        "options": [
-            "r_e = 26 mV / I_E",
-            "r_e = I_E / 26 mV",
-            "r_e = 26 mV * I_E",
-            "r_e = V_BE / I_B"
-        ],
-        "answer": 0,
-        "explanation": "• Why 'r_e = 26 mV / I_E' is Correct: Power gain is the product of voltage gain and current gain: Ap = Av * Ai = (beta * RC / Ri) * beta = beta^2 * (RC / Ri).\n• Why Other Choices are Incorrect: Power gain involves current gain squared."
-    },
-    {
-        "id": 333,
-        "question": "As the operating junction temperature of a transistor increases, how does the forward voltage drop (VBE) across its base-emitter junction change?",
-        "options": [
-            "Z_i = R_1 || R_2 || (β * r_e)",
-            "Z_i = R_1 || R_2 || (β * R_C)",
-            "Z_i = R_1 + R_2 + (β * r_e)",
-            "Z_i = (R_1 || R_2) / (β * r_e)"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: All silicon PN junctions have a negative temperature coefficient of barrier potential: VBE decreases by roughly 2 mV to 2.5 mV for every 1°C increase in temperature (dVBE/dT ≈ -2.2 mV/°C).\n• Why Other Choices are Incorrect: Barrier potential decreases with temperature, not increases."
-    },
-    {
-        "id": 334,
-        "question": "What is the engineering phenomenon known as 'Thermal Runaway' in a BJT amplifier?",
-        "options": [
-            "Z_o = R_C",
-            "Z_o = R_1 || R_2",
-            "Z_o = r_e",
-            "Z_o = 0 Ω"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Thermal runaway is a catastrophic thermal feedback loop: Higher temperature -> higher leakage current and beta -> higher collector current -> higher power dissipation (PD = VCE*IC) -> higher junction temperature. Without negative feedback stabilization (like RE), the transistor burns itself out.\n• Why Other Choices are Incorrect: It is a destructive positive thermal feedback loop."
-    },
-    {
-        "id": 335,
-        "question": "What is the primary function of attaching an extruded aluminum heat sink to a power transistor?",
-        "options": [
-            "A_v = -R_C / r_e",
-            "A_v = +R_C / r_e",
-            "A_v = -r_e / R_C",
-            "A_v = β * R_C"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Heat sinks possess large surface areas and fins that rapidly transfer thermal energy from the transistor case into the surrounding air via conduction and convection, preventing internal junction temperature from exceeding maximum limits (150°C - 200°C).\n• Why Other Choices are Incorrect: Heat sinks are thermal dissipation elements, not electrical shields."
-    },
-    {
-        "id": 336,
-        "question": "In summary, in which operational region does a BJT exhibit proportional linear amplification where IC = β*IB, VBE ≈ 0.7 V, and VCE > VCE(sat)?",
-        "options": [
-            "Cutoff Region",
-            "Linear Active Region",
-            "Saturation Region",
-            "Avalanche Breakdown Region"
-        ],
-        "answer": 1,
-        "explanation": "• Why 'Linear Active Region' is Correct: In the Active Region, the Base-Emitter junction is forward-biased (VBE ≈ 0.7 V) and the Collector-Base junction is reverse-biased (VCE > VCE(sat)), yielding the linear relationship IC = beta*IB with minimum waveform distortion.\n• Why Other Choices are Incorrect: Cutoff has IC = 0; Saturation has VCE ≈ 0.2 V; Breakdown destroys the device."
-    },
-    {
-        "id": 337,
-        "question": "On December 23, 1947, who demonstrated the amplifying action of the first transistor at Bell Telephone Laboratories?",
-        "options": [
-            "Thomas Edison, Nikola Tesla, and Lee de Forest",
-            "Dr. S. William Shockley, Walter H. Brattain, and John Bardeen",
-            "Jack Kilby, Robert Noyce, and Gordon Moore",
-            "Guglielmo Marconi, Heinrich Hertz, and Michael Faraday"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: As stated verbatim in the Midterm lecture slides (Slide 4), Dr. S. William Shockley, Walter H. Brattain, and John Bardeen demonstrated the amplifying action of the first point-contact transistor at Bell Telephone Laboratories on December 23, 1947, which initiated the modern solid-state revolution.\n• Why Other Choices are Incorrect: Edison and Tesla worked on early electrical power; Kilby and Noyce co-invented the integrated circuit in 1958; Marconi and Hertz were pioneers of wireless radio waves."
-    },
-    {
-        "id": 338,
-        "question": "According to the course syllabus, what are the two broad application areas in which the Bipolar Junction Transistor (BJT) is primarily employed?",
-        "options": [
-            "Linear amplifier and electronic switch",
-            "High-voltage transformer and AC alternator",
-            "Optical photodetector and chemical transducer",
-            "Electromagnetic relay and inductive choke"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Lecture Slide 5 explicitly specifies that the BJT is used in two broad areas: (1) linear amplifier (operating in the active region to amplify analog signals with minimal distortion) and (2) electronic switch (operating between saturation and cut-off in digital/switching circuits).\n• Why Other Choices are Incorrect: Transformers and alternators are magnetic AC machines; photodetectors and chemical transducers are sensors; relays are mechanical switching devices."
-    },
-    {
-        "id": 339,
-        "question": "Structurally, a BJT is constructed with three doped regions separated by two PN junctions. How are the layers arranged in NPN and PNP configurations?",
-        "options": [
-            "NPN consists of two P regions separated by an N region; PNP consists of two N regions separated by a P region",
-            "NPN consists of two N regions separated by a P region; PNP consists of two P regions separated by an N region",
-            "Both NPN and PNP consist of three identical N-type layers with varying impurity levels",
-            "NPN has one junction with three terminals; PNP has three junctions with two terminals"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: Slide 6 defines the basic BJT structure: NPN consists of two N-type regions separated by a thin P region, while PNP consists of two P-type regions separated by a thin N region.\n• Why Other Choices are Incorrect: Reversing the roles is incorrect; layers in a BJT must alternate doping types (N-P-N or P-N-P) to produce two opposing PN junctions."
-    },
-    {
-        "id": 340,
-        "question": "In the basic epitaxial planar BJT structure illustrated in the lecture slides, what layer passivates and protects the semiconductor surface beneath the metalized contacts?",
-        "options": [
-            "Silicon dioxide (Oxide) layer",
-            "Copper clad substrate",
-            "Gallium arsenide substrate",
-            "Polysilicon gate dielectric"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 7 illustrates the cross-section of a basic epitaxial planar BJT, showing an oxide (SiO2) insulating layer grown on top of the substrate with openings etched for the metalized ohmic contacts to the emitter, base, and collector.\n• Why Other Choices are Incorrect: The substrate is semiconductor silicon; copper cladding is used on printed circuit boards; polysilicon gate dielectrics are used in MOS devices."
-    },
-    {
-        "id": 341,
-        "question": "For a BJT to operate in its linear or active operating region for amplification, what specific biasing condition must be established across its two PN junctions?",
-        "options": [
-            "Base-Emitter forward-biased (~0.7 V) and Base-Collector reverse-biased",
-            "Base-Emitter junction reverse-biased and Base-Collector reverse-biased",
-            "Base-Emitter junction forward-biased and Base-Collector forward-biased",
-            "Base-Emitter junction zero-biased and Base-Collector forward-biased"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slides 11 and 25 highlight that for linear/active amplification, the base-emitter (BE) junction must be forward-biased (resulting in ~0.6 V to 0.7 V for Si) and the base-collector (BC) junction must be reverse-biased. The slides explicitly refer to this condition as 'forward reverse bias'.\n• Why Other Choices are Incorrect: Both junctions reverse-biased results in cutoff; both junctions forward-biased forces saturation; zero-bias leaves the transistor off."
-    },
-    {
-        "id": 342,
-        "question": "Which fundamental relationship between BJT terminal currents is always true based on Kirchhoff's Current Law, regardless of configuration?",
-        "options": [
-            "IE = IC + IB  and  IE = (β + 1)IB",
-            "IB = IC + IE  and  IB = (β + 1)IC",
-            "IC = IE + IB  and  IC = (β + 1)IE",
-            "IE = IC - IB  and  IE = (β - 1)IB"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: As shown on Slide 12, applying KCL to the transistor package yields IE = IC + IB. Substituting IC = β·IB gives IE = β·IB + IB = (β + 1)IB.\n• Why Other Choices are Incorrect: The emitter current is the sum of both collector and base currents; base current is much smaller than collector current, not the sum."
-    },
-    {
-        "id": 343,
-        "question": "How is the common-base DC current gain alpha (α) formally defined, and what is its typical numerical range in practical transistors?",
-        "options": [
-            "α = I_C / I_E (typically 0.95 to 0.998)",
-            "α = I_B / I_C (ranging between 10 and 500)",
-            "α = I_E / I_C (ranging between 1.05 and 1.50)",
-            "α = V_CE / V_BE (ranging between 0.1 and 0.7)"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 13 defines alpha as α = IC / IE (the ratio of collector current to emitter current). It typically ranges from 0.95 to 0.99 or greater, but is always slightly less than 1 because a small fraction of emitter carriers recombines in the base (IB).\n• Why Other Choices are Incorrect: IB / IC is 1/β; IE / IC is greater than 1; VCE / VBE is a voltage ratio, not current gain."
-    },
-    {
-        "id": 344,
-        "question": "(Slide 13 Example) Determine beta (β) and IE for a transistor whose base current IB = 50 μA and collector current IC = 3.65 mA.",
-        "options": [
-            "β = 73,  IE = 3.7 mA",
-            "β = 13.7,  IE = 53.65 mA",
-            "β = 730,  IE = 4.15 mA",
-            "β = 0.0137,  IE = 3.60 mA"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Following the exact calculation on Slide 13: β = IC / IB = 3.65 mA / 50 μA = 3.65 mA / 0.050 mA = 73. Then IE = IB + IC = 0.050 mA + 3.65 mA = 3.7 mA.\n• Why Other Choices are Incorrect: 13.7 comes from mistakenly dividing 50 by 3.65; 730 is an order of magnitude error; 0.0137 inverts the formula."
-    },
-    {
-        "id": 345,
-        "question": "Which mathematical expressions correctly relate the common-base current gain alpha (α) and common-emitter current gain beta (β)?",
-        "options": [
-            "α = β / (β + 1)  and  β = α / (1 - α)",
-            "α = (β + 1) / β  and  β = (1 - α) / α",
-            "α = β · (β + 1)  and  β = α · (1 - α)",
-            "α = 1 - β  and  β = 1 + α"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slides 13 and 14 establish that α = IC / IE = (β·IB) / [(β + 1)·IB] = β / (β + 1) = 1 / (1 + 1/β). Rearranging for β gives β = α / (1 - α).\n• Why Other Choices are Incorrect: (β+1)/β is always > 1, which violates the physical limit of α < 1; multiplicative and linear subtraction relations are algebraically false."
-    },
-    {
-        "id": 346,
-        "question": "Which of the three BJT configurations (CE, CB, CC) is the most frequently used in electronic circuits, and what is its ground reference?",
-        "options": [
-            "Common Base (CB), with the base terminal at ground potential",
-            "Common Emitter (CE), with the emitter terminal common to both input and output",
-            "Common Collector (CC), with the collector terminal connected directly to the input signal",
-            "Darlington Pair, with both collectors floating"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: Slides 15 and 16 state that the Common Emitter (CE) configuration is the 'most frequently transistor configuration' because the emitter is common to both the input (base-emitter) and output (collector-emitter) circuits, providing high voltage, current, and power gain.\n• Why Other Choices are Incorrect: Common Base has current gain < 1 and very low input impedance; Common Collector has voltage gain < 1 and is used as a buffer."
-    },
-    {
-        "id": 347,
-        "question": "According to the DC Biasing lecture introduction (Slide 23), what is the source of any increase in AC output signal voltage, current, or power in an amplifier?",
-        "options": [
-            "Energy created by the internal crystalline lattice of the silicon",
-            "A transfer of energy from the applied DC power supplies",
-            "Thermal energy absorbed from the surrounding ambient air",
-            "Electromagnetic radiation captured by the coupling capacitors"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: Slide 23 explicitly notes: 'In actuality, any increase in AC voltage, current, or power is the result of a transfer of energy from the applied DC supplies.' Amplification is the process of converting DC power into AC signal power controlled by the input.\n• Why Other Choices are Incorrect: Silicon crystals do not generate power; ambient heat cannot provide coherent signal power; coupling capacitors block DC and pass AC without adding energy."
-    },
-    {
-        "id": 348,
-        "question": "In a Fixed-Bias Common-Emitter NPN circuit, what are the standard equations for quiescent base current (IB) and collector-to-emitter voltage (VCE)?",
-        "options": [
-            "IB = (VCC - VBE) / RB   and   VCE = VCC - IC·RC",
-            "IB = VCC / (RB + RC)   and   VCE = VCC + IC·RC",
-            "IB = (VCC + VBE) / RC   and   VCE = IC·RB",
-            "IB = VBE / RB   and   VCE = VCC - IB·RB"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 27 shows that KVL around the base-emitter loop gives VCC - IB·RB - VBE = 0, so IB = (VCC - VBE) / RB. KVL around the collector-emitter loop gives VCC - IC·RC - VCE = 0, so VCE = VCC - IC·RC.\n• Why Other Choices are Incorrect: RC is in the collector branch, not the base loop; IC·RC subtracts from VCC, not adds; VBE is a forward drop of ~0.7 V subtracted from VCC."
-    },
-    {
-        "id": 349,
-        "question": "(Slide 28–29 Fixed Bias Example) For a fixed-bias circuit with VCC = +12 V, RB = 240 kΩ, RC = 2.2 kΩ, and β = 50, calculate the quiescent base current (IBQ) and collector current (ICQ).",
-        "options": [
-            "IBQ = 47.08 μA,  ICQ = 2.35 mA",
-            "IBQ = 50.00 μA,  ICQ = 2.50 mA",
-            "IBQ = 4.71 μA,   ICQ = 0.24 mA",
-            "IBQ = 47.08 mA,  ICQ = 2.35 A"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: As shown on Slide 29: IBQ = (VCC - VBE) / RB = (12 V - 0.7 V) / 240 kΩ = 11.3 V / 240 kΩ = 47.08 μA. Then ICQ = β·IBQ = 50 × 47.08 μA = 2.354 mA ≅ 2.35 mA.\n• Why Other Choices are Incorrect: 50.00 μA ignores the 0.7 V diode drop (12/240k); 4.71 μA has a decimal point error; 47.08 mA is off by three orders of magnitude."
-    },
-    {
-        "id": 350,
-        "question": "(Slide 30–31 Fixed Bias Example) For the same circuit (VCC = 12 V, RC = 2.2 kΩ, ICQ = 2.35 mA, VBE = 0.7 V), what are the voltages VCE and VBC?",
-        "options": [
-            "VCE = 6.83 V,  VBC = -6.13 V (reverse-biased)",
-            "VCE = 5.17 V,  VBC = +6.13 V (forward-biased)",
-            "VCE = 12.00 V, VBC = 0.00 V",
-            "VCE = 6.83 V,  VBC = +7.53 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: From Slides 30–31: VCEQ = VCC - IC·RC = 12 V - (2.35 mA × 2.2 kΩ) = 12 V - 5.17 V = 6.83 V. Since the emitter is grounded, VC = VCE = 6.83 V and VB = VBE = 0.7 V. Therefore, VBC = VB - VC = 0.7 V - 6.83 V = -6.13 V. The negative sign confirms the BC junction is reverse-biased as required for active-region linear amplification.\n• Why Other Choices are Incorrect: 5.17 V is the voltage dropped across RC (VRC), not VCE; a positive VBC would imply forward bias (saturation)."
-    },
-    {
-        "id": 351,
-        "question": "What is the technical definition of 'Transistor Saturation' on Slide 32, and what is the collector saturation current (IC,sat) in a fixed-bias network?",
-        "options": [
-            "Saturation occurs when levels have reached their maximum values; IC,sat = VCC / RC",
-            "Saturation occurs when current drops to zero; IC,sat = 0 mA",
-            "Saturation is when VCE = VCC; IC,sat = VCC / RB",
-            "Saturation is when the base current equals the collector current; IC,sat = β·VCC"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 32 states: 'The term saturation is applied to any system where levels have reached their maximum values. Saturation conditions are normally avoided [in amplifiers] because the base-collector junction is no longer reverse-biased and the output amplified signal will be distorted.' For fixed bias, with VCE ≈ 0 V: IC,sat = VCC / RC.\n• Why Other Choices are Incorrect: Zero current defines cut-off; VCE = VCC occurs in cut-off, not saturation; IC does not equal IB in saturation."
-    },
-    {
-        "id": 352,
-        "question": "Why is an emitter resistor (RE) included in an Emitter-Bias (or emitter-stabilized) configuration (Slide 34)?",
-        "options": [
-            "Provides negative feedback to stabilize Q-point against temperature",
-            "Increases the maximum DC collector saturation current capability",
-            "Reduces the input impedance of the amplifier to near zero ohms",
-            "Completely eliminates the requirement for a DC power supply rail"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 34 emphasizes: 'The DC bias network contains an emitter resistor to improve the stability level over that of the fixed bias configuration. The more stable a configuration, the less its response will change due to undesirable changes in temperature and parameter variations.'\n• Why Other Choices are Incorrect: Adding RE reduces saturation current; RE actually increases input impedance by (β+1)RE; DC power is still strictly required."
-    },
-    {
-        "id": 353,
-        "question": "In the base-emitter loop of an Emitter-Bias circuit (Slide 35 & 37), what is the effective input resistance (Ri) looking into the base due to the presence of the emitter resistor RE?",
-        "options": [
-            "Ri = RE / (β + 1)",
-            "Ri = (β + 1)RE",
-            "Ri = RB + RE",
-            "Ri = β · RC"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: In the input loop, IE flows through RE. Since IE = (β + 1)IB, the voltage drop across RE is (β + 1)IB·RE. Looking into the base, this appears as an equivalent reflected resistance of Ri = (β + 1)RE (Slide 37).\n• Why Other Choices are Incorrect: RE / (β+1) is the resistance seen looking into the emitter from the output side; RB is in series externally, not the reflected base impedance."
-    },
-    {
-        "id": 354,
-        "question": "(Slide 38–40 Emitter Bias Example) Given VCC = +20 V, RB = 430 kΩ, RC = 2 kΩ, RE = 1 kΩ, and β = 50. Calculate the base current (IB) and collector current (IC).",
-        "options": [
-            "IB = 40.1 μA,  IC ≅ 2.01 mA",
-            "IB = 44.9 μA,  IC = 2.25 mA",
-            "IB = 19.3 μA,  IC = 0.97 mA",
-            "IB = 40.1 mA,  IC = 2.01 A"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: As calculated on Slides 39–40: IB = (VCC - VBE) / [RB + (β + 1)RE] = (20 V - 0.7 V) / [430 kΩ + (51)(1 kΩ)] = 19.3 V / 481 kΩ = 40.1 μA. Then IC = β·IB = 50 × 40.1 μA = 2.005 mA ≅ 2.01 mA.\n• Why Other Choices are Incorrect: 44.9 μA neglects the reflected emitter resistance (19.3/430k); 19.3 μA mistakes the numerator voltage for current; 40.1 mA has incorrect units."
-    },
-    {
-        "id": 355,
-        "question": "(Slide 41–43 Emitter Bias Example) In the same network (VCC = 20 V, RC = 2 kΩ, RE = 1 kΩ, IC ≅ 2.01 mA), what are VCE, VC, and VE?",
-        "options": [
-            "VCE = 13.97 V,  VC = 15.98 V,  VE = 2.01 V",
-            "VCE = 20.00 V,  VC = 20.00 V,  VE = 0.00 V",
-            "VCE = 6.03 V,   VC = 13.97 V,  VE = 1.00 V",
-            "VCE = 15.98 V,  VC = 18.00 V,  VE = 2.01 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: From Slides 41–43: VCE = VCC - IC(RC + RE) = 20 V - (2.01 mA)(2 kΩ + 1 kΩ) = 20 V - 6.03 V = 13.97 V. VC = VCC - IC·RC = 20 V - (2.01 mA)(2 kΩ) = 20 V - 4.02 V = 15.98 V. VE = IE·RE ≅ (2.01 mA)(1 kΩ) = 2.01 V (or VE = VC - VCE = 15.98 V - 13.97 V = 2.01 V).\n• Why Other Choices are Incorrect: 20 V represents cutoff; 6.03 V is the combined voltage dropped across RC and RE; VC and VCE are distinct because VE is not zero."
-    },
-    {
-        "id": 356,
-        "question": "How does the addition of an emitter resistor RE affect the collector saturation current compared to a fixed-bias circuit using the same collector resistor RC (Slide 44)?",
-        "options": [
-            "It increases saturation current to IC,sat = VCC / (RC - RE)",
-            "It reduces the collector saturation level to IC,sat = VCC / (RC + RE)",
-            "It has absolutely no effect because RE is shorted at saturation",
-            "It causes saturation current to become dependent on β"
-        ],
-        "answer": 1,
-        "explanation": "• Why this is Correct: Slide 44 clearly points out: 'The addition of the emitter resistor reduces the collector saturation level below that obtained with a fixed bias configuration using the same collector resistor: IC,sat = VCC / (RC + RE).' The total loop resistance is now RC + RE instead of just RC.\n• Why Other Choices are Incorrect: Resistances in series add, not subtract; RE is in series with the collector-emitter path and carries saturation current; IC,sat remains independent of β."
-    },
-    {
-        "id": 357,
-        "question": "In the exact analysis of a Voltage-Divider Bias network using Thévenin's theorem (Slide 46), what are the Thévenin resistance (RTh) and voltage (ETh)?",
-        "options": [
-            "R_TH = R_1 || R_2   and   E_TH = (R_2·V_CC) / (R_1 + R_2)",
-            "R_TH = R_1 + R_2   and   E_TH = (R_1·V_CC) / (R_1 + R_2)",
-            "R_TH = R_1 || R_C   and   E_TH = V_CC - V_BE",
-            "R_TH = (R_1·R_2) / R_E   and   E_TH = V_CC / 2"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 46 defines the exact Thévenin equivalent looking into the base: looking back into the divider with VCC grounded, R1 and R2 are in parallel: RTh = R1 || R2. The open-circuit voltage across R2 is the voltage divider formula: ETh = VR2 = (R2·VCC) / (R1 + R2).\n• Why Other Choices are Incorrect: R1 and R2 are in parallel from the base node to AC ground, not in series; RC is in the collector branch, not the base divider."
-    },
-    {
-        "id": 358,
-        "question": "(Slide 47–48 Voltage-Divider Exact Example) Given VCC = +22 V, R1 = 39 kΩ, R2 = 3.9 kΩ, RC = 10 kΩ, RE = 1.5 kΩ, and β = 100. What are the Thévenin values RTh and ETh, and base current IB?",
-        "options": [
-            "RTh = 3.55 kΩ,  ETh = 2 V,  IB = 8.38 μA",
-            "RTh = 42.9 kΩ,  ETh = 4 V,  IB = 12.5 μA",
-            "RTh = 3.90 kΩ,  ETh = 2.2 V, IB = 15.0 μA",
-            "RTh = 35.5 kΩ,  ETh = 20 V, IB = 83.8 μA"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: From Slide 48: RTh = (39 kΩ × 3.9 kΩ) / (39 kΩ + 3.9 kΩ) = 3.55 kΩ. ETh = (3.9 kΩ × 22 V) / (39 kΩ + 3.9 kΩ) = 2 V. Then IB = (ETh - VBE) / [RTh + (β + 1)RE] = (2 V - 0.7 V) / [3.55 kΩ + (101)(1.5 kΩ)] = 1.3 V / (3.55 kΩ + 151.5 kΩ) = 1.3 V / 155.05 kΩ = 8.38 μA.\n• Why Other Choices are Incorrect: 42.9 kΩ is R1 + R2 in series; 3.90 kΩ ignores R1; 35.5 kΩ has an arithmetic decimal error."
-    },
-    {
-        "id": 359,
-        "question": "(Slide 48 Voltage-Divider Exact Example) In the same circuit (VCC = 22 V, RC = 10 kΩ, RE = 1.5 kΩ, β = 100, IB = 8.38 μA), calculate IC and VCE.",
-        "options": [
-            "IC = 0.84 mA,  VCE = 12.34 V",
-            "IC = 1.50 mA,  VCE = 15.00 V",
-            "IC = 0.84 mA,  VCE = 9.66 V",
-            "IC = 8.38 mA,  VCE = 4.25 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 48 shows: IC = β·IB = (100)(8.38 μA) = 0.838 mA ≅ 0.84 mA. Then VCE = VCC - IC(RC + RE) = 22 V - (0.84 mA)(10 kΩ + 1.5 kΩ) = 22 V - (0.84 mA)(11.5 kΩ) = 22 V - 9.66 V = 12.34 V.\n• Why Other Choices are Incorrect: 9.66 V is the total voltage dropped across RC and RE, not VCE; 8.38 mA incorrectly uses β = 1000."
-    },
-    {
-        "id": 360,
-        "question": "What test condition must be satisfied to use the Approximate Analysis method for Voltage-Divider Bias (Slide 49)?",
-        "options": [
-            "β·RE ≥ 10·R2",
-            "β·RE ≤ R2 / 10",
-            "R1 ≥ 10·RC",
-            "RC ≥ 10·RE"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 49 establishes the approximate rule: β·RE ≥ 10·R2. When the input impedance looking into the base (Ri ≅ β·RE) is at least 10 times larger than the divider resistor R2, the base current IB is negligible compared to the divider current (I1 ≅ I2), allowing VB to be calculated simply as VB = [R2 / (R1 + R2)]·VCC.\n• Why Other Choices are Incorrect: β·RE ≤ R2/10 would cause heavy base loading; R1 and RC relationships do not govern divider stiffness."
-    },
-    {
-        "id": 361,
-        "question": "When the approximate condition β·RE ≥ 10·R2 is satisfied, what are the sequence of equations used to find the Q-point (Slide 49)?",
-        "options": [
-            "VB = [R2·VCC]/(R1+R2),  VE = VB - VBE,  IE = VE / RE ≅ IC,  VCEQ = VCC - IC(RC + RE)",
-            "VB = VCC - VBE,  VE = VB / 2,  IC = β·IB,  VCEQ = VCC / 2",
-            "VB = [R1·VCC]/(R1+R2),  VE = VB + VBE,  IE = VE / RC,  VCEQ = VCC",
-            "VB = VBE,  VE = 0 V,  IC = VCC / RC,  VCEQ = 0 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 49 lists the exact approximate sequence: (1) VB = [R2·VCC] / (R1 + R2); (2) VE = VB - VBE; (3) IE = VE / RE ≅ ICQ; (4) VCEQ = VCC - IC(RC + RE). Notice that this procedure makes IC completely independent of β!\n• Why Other Choices are Incorrect: VB is set by the R1-R2 divider, not VCC - VBE; VE is VB - 0.7 V, not VB + VBE; VE / RC is dimensionally wrong since RE is in the emitter."
-    },
-    {
-        "id": 362,
-        "question": "What is the primary operational advantage and mechanism of the Collector-Feedback Bias configuration (Slide 52)?",
-        "options": [
-            "Negative feedback from collector to base stabilizes against β changes",
-            "Increases collector saturation current to infinite levels",
-            "Turns off the transistor during alternating-current signal peaks",
-            "Converts the bipolar transistor into a junction field-effect device"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 52 states: 'An improved level of stability can also be obtained by introducing a feedback path from collector to base.' If temperature rises and pushes IC higher, the drop across RC increases, lowering VC. Since the base resistor RF is connected to the collector, a drop in VC lowers base current IB, which counteracts the original increase in IC.\n• Why Other Choices are Incorrect: It provides negative feedback, not infinite saturation; it keeps the transistor active and conducting; BJTs and FETs are fundamentally different devices."
-    },
-    {
-        "id": 363,
-        "question": "In a Collector-Feedback configuration with feedback resistor RF, collector resistor RC, and emitter resistor RE, what is the base current formula (Slide 52 & 53)?",
-        "options": [
-            "IB = (VCC - VBE) / [RF + β(RC + RE)]",
-            "IB = (VCC - VBE) / (RF + RC)",
-            "IB = VCC / [RF + (β + 1)RE]",
-            "IB = (VCC + VBE) / [β·(RC + RE)]"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slides 52 and 53 derive the base-emitter loop KVL: VCC - I'C·RC - IB·RF - VBE - IE·RE = 0. Since I'C ≅ β·IB and IE ≅ β·IB, factoring IB gives VCC - VBE - IB[RF + β(RC + RE)] = 0. Solving for IB yields IB = (VCC - VBE) / [RF + β(RC + RE)].\n• Why Other Choices are Incorrect: Neglecting β(RC + RE) ignores the heavy negative feedback through RC and RE; VBE is subtracted, not added."
-    },
-    {
-        "id": 364,
-        "question": "(Slide 55–56 Collector Feedback Example) For a collector-feedback circuit with VCC = 10 V, RC = 4.7 kΩ, RF = 250 kΩ, RE = 1.2 kΩ, and β = 90, determine IB, ICQ, and VCEQ.",
-        "options": [
-            "IB = 11.91 μA,  ICQ = 1.07 mA,  VCEQ = 3.69 V",
-            "IB = 37.20 μA,  ICQ = 3.35 mA,  VCEQ = -9.77 V",
-            "IB = 8.89 μA,   ICQ = 1.20 mA,  VCEQ = 2.92 V",
-            "IB = 11.91 mA,  ICQ = 1.07 A,   VCEQ = 6.31 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Following Slide 56: Denominator = RF + β(RC + RE) = 250 kΩ + 90(4.7 kΩ + 1.2 kΩ) = 250 kΩ + 531 kΩ = 781 kΩ. IB = (10 V - 0.7 V) / 781 kΩ = 9.3 V / 781 kΩ = 11.91 μA. Then ICQ = β·IB = 90 × 11.91 μA = 1.07 mA. VCEQ = VCC - IC(RC + RE) = 10 V - (1.07 mA)(5.9 kΩ) = 10 V - 6.31 V = 3.69 V.\n• Why Other Choices are Incorrect: 37.2 μA ignores the β(RC + RE) term (9.3/250k); 8.89 μA is the result when β = 135 (Slide 58); 6.31 V is the drop across RC + RE."
-    },
-    {
-        "id": 365,
-        "question": "(Slide 57–58 'On Your Own') Repeat the collector feedback calculation using a higher beta of β = 135 (with VCC = 10 V, RC = 4.7 kΩ, RF = 250 kΩ, RE = 1.2 kΩ). What are the new ICQ and VCEQ?",
-        "options": [
-            "IB = 8.89 μA,  ICQ = 1.2 mA,  VCEQ = 2.92 V",
-            "IB = 11.91 μA, ICQ = 1.61 mA, VCEQ = 0.50 V",
-            "IB = 6.45 μA,  ICQ = 0.87 mA, VCEQ = 4.87 V",
-            "IB = 8.89 mA,  ICQ = 1.2 A,   VCEQ = 7.08 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Following Slide 58: Denominator = 250 kΩ + (135)(5.9 kΩ) = 250 kΩ + 796.5 kΩ = 1046.5 kΩ. IB = 9.3 V / 1046.5 kΩ = 8.89 μA. ICQ = (135)(8.89 μA) = 1.20 mA. VCEQ = 10 V - (1.2 mA)(5.9 kΩ) = 10 V - 7.08 V = 2.92 V.\n• Why Other Choices are Incorrect: 1.61 mA assumes IB remained constant at 11.91 μA (neglecting negative feedback); 7.08 V is the drop across (RC + RE)."
-    },
-    {
-        "id": 366,
-        "question": "What critical engineering insight is demonstrated by comparing the Collector-Feedback results from Slide 56 (β = 90) and Slide 58 (β = 135)?",
-        "options": [
-            "A 50% increase in β caused only ~12% rise in I_C (strong stability)",
-            "A 50% increase in β doubled the quiescent collector current I_CQ",
-            "Collector feedback circuits become unstable when β exceeds 100",
-            "Collector current remains 100% unchanged under all conditions"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: When β jumped by 50% (from 90 to 135), IC only shifted from 1.07 mA to 1.20 mA (an increase of only (1.20 - 1.07)/1.07 = 12.1%). This clearly demonstrates how the collector feedback mechanism provides outstanding stability against transistor parameter variations.\n• Why Other Choices are Incorrect: In fixed bias, IC would have increased by 50%; negative feedback stabilizes against oscillation; passive feedback cannot achieve 100% zero change."
-    },
-    {
-        "id": 367,
-        "question": "In an Emitter-Follower (Common Collector) DC bias circuit where the collector is grounded, base is tied to ground through RB, and emitter is returned to -VEE through RE (Slide 60 & 61), what is IB?",
-        "options": [
-            "IB = (VEE - VBE) / [RB + (β + 1)RE]",
-            "IB = (VEE + VBE) / (RB + RE)",
-            "IB = VEE / [β·(RB + RE)]",
-            "IB = (VCC - VEE) / RB"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slides 60 and 61 show the KVL input loop: -IB·RB - VBE - IE·RE + VEE = 0. Using IE = (β + 1)IB: IB·RB + (β + 1)IB·RE = VEE - VBE. Solving for IB yields IB = (VEE - VBE) / [RB + (β + 1)RE].\n• Why Other Choices are Incorrect: VBE is a drop of 0.7 V subtracted from VEE; the emitter resistance is multiplied by (β + 1) when reflected into the base circuit."
-    },
-    {
-        "id": 368,
-        "question": "In the same Emitter-Follower circuit (Slide 60 & 61), what equation results from applying KVL to the collector-emitter output loop?",
-        "options": [
-            "VCE = VEE - IE·RE",
-            "VCE = VEE + IE·RE",
-            "VCE = -VEE - IC·RC",
-            "VCE = VBE + IE·RE"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 61 shows that applying KVL around the output loop gives -VCE - IE·RE + VEE = 0, which directly simplifies to VCE = VEE - IE·RE.\n• Why Other Choices are Incorrect: IE·RE is a potential drop across the emitter resistor subtracted from the source VEE; there is no RC in a common collector circuit."
-    },
-    {
-        "id": 369,
-        "question": "(Slide 62–63 Emitter-Follower Example) Given RB = 240 kΩ, RE = 2 kΩ, VEE = 20 V (negative rail -20 V), and β = 90. Determine the quiescent base current (IB), emitter current (IEQ), and VCEQ.",
-        "options": [
-            "IB = 45.73 μA,  IEQ = 4.16 mA,  VCEQ = 11.68 V",
-            "IB = 80.42 μA,  IEQ = 7.24 mA,  VCEQ = 5.52 V",
-            "IB = 45.73 μA,  IEQ = 4.16 mA,  VCEQ = 8.32 V",
-            "IB = 4.57 μA,   IEQ = 0.42 mA,  VCEQ = 19.16 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: From Slide 63: IB = (VEE - VBE) / [RB + (β + 1)RE] = (20 V - 0.7 V) / [240 kΩ + (91)(2 kΩ)] = 19.3 V / 422 kΩ = 45.73 μA. Then IEQ = (β + 1)IB = (91)(45.73 μA) = 4.16 mA. Output voltage: VCEQ = VEE - IE·RE = 20 V - (4.16 mA)(2 kΩ) = 20 V - 8.32 V = 11.68 V.\n• Why Other Choices are Incorrect: 8.32 V is the drop across RE (VERE), not VCEQ; 80.42 μA neglects (β+1)RE."
-    },
-    {
-        "id": 370,
-        "question": "In a Common-Base DC bias configuration with the base grounded, emitter biased by -VEE through RE, and collector biased by +VCC through RC (Slide 65 & 66), what are the equations for IE and VCB?",
-        "options": [
-            "IE = (VEE - VBE) / RE   and   VCB = VCC - IC·RC",
-            "IE = (VEE + VBE) / (RE + RC)   and   VCB = VCC + IC·RC",
-            "IE = VEE / (β·RE)   and   VCB = VCC - VBE",
-            "IE = (VCC - VEE) / RE   and   VCB = IC·RC"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slides 65 and 66 derive the Common Base relations: KVL on input: -VEE + IE·RE + VBE = 0 ⇒ IE = (VEE - VBE) / RE. KVL on collector output: VCB + IC·RC - VCC = 0 ⇒ VCB = VCC - IC·RC.\n• Why Other Choices are Incorrect: The base is at ground potential (0 V), so only RE appears in the input loop; IC·RC subtracts from the positive rail VCC."
-    },
-    {
-        "id": 371,
-        "question": "(Slide 67–68 Common Base Example) Given RE = 1.2 kΩ, VEE = 4 V, RC = 2.4 kΩ, VCC = 10 V, and β = 60. Calculate emitter current (IE) and base current (IB).",
-        "options": [
-            "IE = 2.75 mA,  IB = 45.08 μA",
-            "IE = 3.33 mA,  IB = 55.50 μA",
-            "IE = 2.75 mA,  IB = 45.83 μA",
-            "IE = 27.5 mA,  IB = 450.8 μA"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: From Slide 68: IE = (VEE - VBE) / RE = (4 V - 0.7 V) / 1.2 kΩ = 3.3 V / 1.2 kΩ = 2.75 mA. Base current: IB = IE / (β + 1) = 2.75 mA / (60 + 1) = 2.75 mA / 61 = 45.08 μA.\n• Why Other Choices are Incorrect: 3.33 mA ignores the 0.7 V VBE drop (4/1.2k); 45.83 μA divides by β (60) instead of β + 1 (61)."
-    },
-    {
-        "id": 372,
-        "question": "(Slide 68 Common Base Example) For the same Common Base circuit (IE = 2.75 mA, IB = 45.08 μA, β = 60, RC = 2.4 kΩ, VCC = 10 V, VEE = 4 V), what are VCE and VCB?",
-        "options": [
-            "VCE = 4.1 V,   VCB = 3.51 V",
-            "VCE = 14.0 V,  VCB = 10.0 V",
-            "VCE = 9.9 V,   VCB = 6.49 V",
-            "VCE = 4.1 V,   VCB = -3.51 V"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: From Slide 68: VCE = VEE + VCC - IE(RC + RE) = 4 V + 10 V - (2.75 mA)(2.4 kΩ + 1.2 kΩ) = 14 V - (2.75 mA)(3.6 kΩ) = 14 V - 9.9 V = 4.1 V. Then VCB = VCC - IC·RC = VCC - β·IB·RC = 10 V - (60 × 45.08 μA × 2.4 kΩ) = 10 V - 6.49 V = 3.51 V.\n• Why Other Choices are Incorrect: 9.9 V and 6.49 V are the voltage drops across resistors, not the junction voltages; VCB is positive for NPN common-base reverse bias."
-    },
-    {
-        "id": 373,
-        "question": "When analyzing PNP transistor DC bias circuits (Slide 69), how do the voltage supplies and current directions compare to NPN circuits?",
-        "options": [
-            "All polarities and currents reversed (negative V_CC, currents flow out)",
-            "All voltage polarities remain identical to NPN transistor circuits",
-            "PNP transistors require positive base voltage to turn on active mode",
-            "Current flows from collector to emitter inside conducting PNP devices"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 69 shows that PNP transistors are biased using negative supply voltages (-VCC). Current flows into the emitter and out of both the base and collector terminals (IE = IC + IB). All terminal voltage polarities (VBE, VCE, VBC) are inverted compared to NPN.\n• Why Other Choices are Incorrect: Polarities are opposite; PNP requires base to be more negative than emitter; current flows from emitter to collector in PNP."
-    },
-    {
-        "id": 374,
-        "question": "Across Emitter Bias, Voltage-Divider Bias, and Collector Feedback Bias configurations, what general formula defines the collector saturation current (Slides 44, 51, 59)?",
-        "options": [
-            "IC,sat = VCC / (RC + RE)",
-            "IC,sat = VCC / RC",
-            "IC,sat = (VCC - VBE) / RE",
-            "IC,sat = β · VCC / RC"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In all circuits having both a collector resistor RC and an emitter resistor RE, setting VCE,sat ≈ 0 V gives a total loop resistance of RC + RE. Hence, IC,sat = IC,max = VCC / (RC + RE) (Slides 44, 51, 59).\n• Why Other Choices are Incorrect: VCC / RC applies only to fixed bias where the emitter is connected directly to ground (RE = 0); (VCC - VBE)/RE neglects RC."
-    },
-    {
-        "id": 375,
-        "question": "Why is the Common Collector (Emitter Follower) circuit primarily used for impedance matching applications (Slides 20 & 21)?",
-        "options": [
-            "It has high input impedance and low output impedance",
-            "It has low input impedance and high output impedance",
-            "It provides the highest voltage gain among all configurations",
-            "It produces a 180° phase inversion between input and output"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slides 20 and 21 state: 'used primarily for impedance matching purposes since it has a high input impedance and low output impedance.' This allows a high-impedance signal source to drive a low-impedance load without signal attenuation (loading effect).\n• Why Other Choices are Incorrect: Low input / high output impedance describes Common Base; Common Collector has voltage gain Av < 1 (no voltage amplification) and 0° phase shift."
-    },
-    {
-        "id": 376,
-        "question": "What defines the Cutoff region on a BJT's output characteristics (Slides 17 & 24), and what are the resulting terminal current levels?",
-        "options": [
-            "Both BE and BC junctions are reverse-biased; IB = 0, IC = ICEO ≈ 0, and VCE ≈ VCC",
-            "Both BE and BC junctions are forward-biased; IC is at maximum and VCE = 0 V",
-            "BE is forward-biased and BC is reverse-biased; IC = β·IB",
-            "The collector is shorted directly to the base"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In the cutoff region, the base-emitter junction does not have enough forward voltage (VBE < 0.7 V), so both junctions are reverse-biased. The transistor acts as an open switch: IB = 0, IC = ICEO ≈ 0, and VCE reaches its maximum level VCC.\n• Why Other Choices are Incorrect: Both junctions forward-biased defines saturation; BE forward and BC reverse defines the active/linear amplification region."
-    },
-    {
-        "id": 377,
-        "question": "What is the formal definition of a 'Transistor Model' in AC small-signal analysis according to Lecture Slide 72?",
-        "options": [
-            "Circuit elements chosen to approximate device behavior under test conditions",
-            "Physical three-dimensional plastic scale miniature of a transistor",
-            "Mathematical theoretical proof that semiconductor devices violate Ohm's law",
-            "Computer-aided CAD graphical layout of the microscopic silicon crystal mask"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 72 provides the exact definition: 'A model is a combination of circuit elements, properly chosen, that best approximates the actual behavior of a semiconductor device under specific operating conditions.'\n• Why Other Choices are Incorrect: It is an electrical equivalent circuit (resistors, dependent sources), not a physical scale model, proof of law violations, or CAD mask."
-    },
-    {
-        "id": 378,
-        "question": "According to Slide 75, what are the four sequential steps required to obtain the AC Equivalent of a transistor network?",
-        "options": [
-            "1) Set all DC sources to zero (short-circuit / ground); 2) Replace capacitors with short circuits; 3) Remove bypassed elements; 4) Redraw network logically",
-            "1) Remove all transistors; 2) Replace resistors with open circuits; 3) Connect all pins to VCC; 4) Disconnect ground",
-            "1) Set AC signals to zero; 2) Open-circuit all capacitors; 3) Calculate DC Q-point; 4) Measure temperature",
-            "1) Increase frequency to infinity; 2) Replace inductors with open circuits; 3) Invert transistor polarity; 4) Short collector to base"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 75 lists the exact four rules: (1) Setting all DC sources to zero and replacing them by a short-circuit equivalent; (2) Replacing all capacitors by a short-circuit equivalent; (3) Removing all elements bypassed by the short-circuit equivalents; (4) Redrawing the network in a more convenient and logical form.\n• Why Other Choices are Incorrect: Setting AC to zero and opening capacitors is the DC equivalent procedure, not the AC equivalent; removing transistors destroys the amplifier."
-    },
-    {
-        "id": 379,
-        "question": "In the re transistor model (Slide 76, 80, 82), how is the AC dynamic emitter resistance re calculated from DC operating parameters at room temperature (25°C)?",
-        "options": [
-            "re = 26 mV / IE",
-            "re = 26 mV × IE",
-            "re = VCC / IC",
-            "re = β / 26 mV"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: In the small-signal re model derived from the Shockley diode equation at 25°C (thermal voltage VT = kT/q ≅ 26 mV), the dynamic AC emitter resistance is re = 26 mV / IE (Slides 76, 80, 82).\n• Why Other Choices are Incorrect: Multiplying by IE is dimensionally incorrect (volts × amps = watts, not ohms); VCC / IC is the DC load resistance; β/26 mV is not resistance."
-    },
-    {
-        "id": 380,
-        "question": "In a Common Emitter Fixed Bias AC equivalent circuit with transistor output resistance ro = ∞ (Slide 80), what are the formulas for input impedance (Zi), output impedance (Zo), and voltage gain (Av)?",
-        "options": [
-            "Zi = RB || β·re,   Zo = RC,   Av = -RC / re",
-            "Zi = RB + β·re,   Zo = RC || ro,   Av = +RC / re",
-            "Zi = β·re,   Zo = 0 Ω,   Av = -β·RC",
-            "Zi = RB,   Zo = RC,   Av = -re / RC"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 80 shows that at the input, RB is in parallel with the base resistance Zb = β·re, so Zi = RB || β·re. Looking into the output with vi = 0 (ib = 0), the current source is open, so Zo = RC. Voltage gain Av = Vo / Vi = (-β·ib·RC) / (ib·β·re) = -RC / re. The negative sign represents 180° phase inversion.\n• Why Other Choices are Incorrect: RB is in parallel, not in series; CE has 180° phase inversion, so Av is negative, not positive; Av is RC / re, not re / RC."
-    },
-    {
-        "id": 381,
-        "question": "(Slide 81–82 CE Fixed Bias AC Example) Given VCC = 12 V, RB = 470 kΩ, RC = 3 kΩ, β = 100, and ro = ∞. DC analysis gives IE = 2.428 mA. Calculate re, Zi, and Av.",
-        "options": [
-            "re = 10.71 Ω,  Zi = 1.07 kΩ,  Av = -280.11",
-            "re = 26.00 Ω,  Zi = 2.60 kΩ,  Av = -115.38",
-            "re = 10.71 Ω,  Zi = 470 kΩ,   Av = +280.11",
-            "re = 1.07 Ω,   Zi = 107 Ω,    Av = -2801.1"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Following Slide 82: re = 26 mV / IE = 26 mV / 2.428 mA = 10.71 Ω. Base resistance β·re = 100 × 10.71 Ω = 1.071 kΩ. Input impedance Zi = RB || β·re = 470 kΩ || 1.071 kΩ = 1.07 kΩ. Voltage gain Av = -RC / re = -3000 Ω / 10.71 Ω = -280.11.\n• Why Other Choices are Incorrect: 26 Ω assumes IE = 1 mA; 470 kΩ ignores β·re in parallel; a positive gain ignores the CE 180° phase inversion."
-    },
-    {
-        "id": 382,
-        "question": "(Slide 82 CE Fixed Bias AC Example) For the same circuit when ro = 50 kΩ is taken into account, what are the updated output impedance (Zo) and voltage gain (Av)?",
-        "options": [
-            "Zo = 2.83 kΩ,  Av = -264.24",
-            "Zo = 3.00 kΩ,  Av = -280.11",
-            "Zo = 50.0 kΩ,  Av = -500.00",
-            "Zo = 1.50 kΩ,  Av = -140.00"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: From Slide 82: When ro is finite, Zo = ro || RC = 50 kΩ || 3 kΩ = (50 × 3) / (50 + 3) = 150 / 53 = 2.83 kΩ. Then Av = -(ro || RC) / re = -2.83 kΩ / 10.71 Ω = -264.24 (compared to -280.11 when ro = ∞).\n• Why Other Choices are Incorrect: 3.00 kΩ and -280.11 assume ro = ∞; 50 kΩ ignores RC in parallel; 1.5 kΩ is an arbitrary division."
-    },
-    {
-        "id": 383,
-        "question": "(Slide 86–87 Voltage Divider AC with Bypassed RE) Given VCC = 22 V, R1 = 56 kΩ, R2 = 8.2 kΩ, RC = 6.8 kΩ, RE = 1.5 kΩ (bypassed by CE), and β = 90. DC analysis yields IE = 1.41 mA. For ro = ∞, calculate re, Zi, and Av.",
-        "options": [
-            "re = 18.44 Ω,  Zi = 1.35 kΩ,  Av = -368.76",
-            "re = 22.00 Ω,  Zi = 7.15 kΩ,  Av = -309.09",
-            "re = 18.44 Ω,  Zi = 56.0 kΩ,  Av = +368.76",
-            "re = 1.84 Ω,   Zi = 135 Ω,    Av = -3687.6"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Following Slide 87: re = 26 mV / 1.41 mA = 18.44 Ω. Divider parallel resistance R' = R1 || R2 = 56 kΩ || 8.2 kΩ = 7.15 kΩ. Base input resistance β·re = 90 × 18.44 Ω = 1.66 kΩ. Total input impedance Zi = R' || β·re = 7.15 kΩ || 1.66 kΩ = 1.35 kΩ. With RE bypassed to ground by CE: Av = -RC / re = -6.8 kΩ / 18.44 Ω = -368.76.\n• Why Other Choices are Incorrect: 7.15 kΩ is R' alone, forgetting β·re; positive gain ignores phase inversion; 22 Ω is an uncalculated approximation."
-    },
-    {
-        "id": 384,
-        "question": "(Slide 87 Voltage Divider AC Example) For the same circuit with ro = 50 kΩ, Zo = 5.98 kΩ and Av = -324.3. Why did finite ro produce a measurable difference in Zo and Av compared to the ideal case?",
-        "options": [
-            "Because the condition ro ≥ 10·RC was NOT satisfied (50 kΩ < 68 kΩ)",
-            "Because the bypass capacitor failed to short the emitter at signal frequencies",
-            "Because the transistor entered saturation during the AC cycle",
-            "Because β dropped below 10 at high signal levels"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 87 explicitly states: 'There was a measurable difference in the results for Zo and Av, because the condition ro ≥ 10·RC was not satisfied.' Here 10·RC = 10 × 6.8 kΩ = 68 kΩ, but ro = 50 kΩ < 68 kΩ, meaning ro significantly loads the collector output.\n• Why Other Choices are Incorrect: The bypass capacitor is assumed ideal (short); small-signal analysis operates strictly in the linear active region without saturation; β is constant."
-    },
-    {
-        "id": 385,
-        "question": "In a Common Emitter amplifier where the emitter resistor RE is UNBYPASSED (no bypass capacitor CE, Slide 88), what is the input impedance looking into the base (Zb) and total input impedance (Zi)?",
-        "options": [
-            "Zb ≅ β(re + RE) ≈ β·RE,   and   Zi = RB || Zb",
-            "Zb = β·re,   and   Zi = RB + RE",
-            "Zb = re + RE,   and   Zi = RB || RE",
-            "Zb = RE / β,   and   Zi = RB"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 88 shows that without a bypass capacitor, AC emitter current ie flows through RE. Since vi = ib·β·re + ie·RE = ib·β·re + (β + 1)ib·RE ≅ ib·β(re + RE). Thus, base impedance Zb ≅ β(re + RE) ≈ β·RE (since RE >> re). Total input impedance Zi = RB || Zb.\n• Why Other Choices are Incorrect: β·re applies only when RE is completely bypassed; RE is reflected by factor β, not 1 or 1/β; RB and RE are not in series."
-    },
-    {
-        "id": 386,
-        "question": "For the Common Emitter UNBYPASSED configuration (Slide 88), what is the voltage gain (Av), and what is its primary engineering benefit?",
-        "options": [
-            "A_v ≈ -R_C / R_E (gain is stabilized and independent of β)",
-            "A_v = -R_C / r_e (achieves highest possible voltage gain)",
-            "A_v = +R_C / R_E (provides zero phase shift across terminals)",
-            "A_v = -(β·R_C) / R_E (gain is highly sensitive to beta changes)"
-        ],
-        "answer": 0,
-        "explanation": "• Why this is Correct: Slide 88 shows that Av = Vo / Vi ≅ -β·ib·RC / [ib·β(re + RE)] = -RC / (re + RE). Since RE >> re in practice, this simplifies to Av ≈ -RC / RE. The crucial engineering advantage is that the gain depends almost solely on passive resistor ratios, making it exceptionally stable, linear, and immune to temperature changes in re and unit-to-unit variations in β!\n• Why Other Choices are Incorrect: -RC / re is for the bypassed case (which has higher gain but poor stability); CE unbypassed still has 180° phase inversion (negative sign); gain is independent of β, not multiplied by β."
-    }
-]
+      {
+            "id": 1,
+            "question": "What is the name of Niels Bohr's 1913 atomic model?",
+            "options": [
+                  "Solid Sphere Model",
+                  "Plum Pudding Model",
+                  "Nuclear Model",
+                  "Planetary Model"
+            ],
+            "answer": 3,
+            "explanation": "\u2022 Why 'Planetary Model' is Correct: Niels Bohr proposed the Planetary Model in 1913, in which electrons orbit a dense positive nucleus in discrete energy levels, similar to planets orbiting the sun.\n\u2022 Why Other Choices are Incorrect: Dalton proposed the Solid Sphere Model (1803), Thomson proposed the Plum Pudding Model (1897), and Rutherford proposed the Nuclear Model (1911)."
+      },
+      {
+            "id": 2,
+            "question": "Which of the following best defines a semiconductor?",
+            "options": [
+                  "Zero electrical resistance at standard room temperature and pressure",
+                  "Conductivity between a good conductor and an insulator",
+                  "Complete blockage of electrical current conduction under all bias voltages",
+                  "Conduction carried exclusively by trivalent positive metallic ions"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'A material having electrical conductivity between a good conductor and an insulator' is Correct: Semiconductors are a special class of elements whose conductivity lies between conductors (like copper) and insulators (like rubber).\n\u2022 Why Other Choices are Incorrect: Superconductors have zero resistance, while insulators completely block current."
+      },
+      {
+            "id": 3,
+            "question": "How many valence electrons does a pure semiconductor atom (such as Silicon or Germanium) have?",
+            "options": [
+                  "2",
+                  "3",
+                  "4",
+                  "5"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why '4' is Correct: Pure semiconductor atoms like Silicon (Si) and Germanium (Ge) belong to Group IV of the periodic table and have 4 valence electrons (tetravalent).\n\u2022 Why Other Choices are Incorrect: Trivalent elements have 3 valence electrons (acceptors like Boron), while pentavalent elements have 5 valence electrons (donors like Phosphorus)."
+      },
+      {
+            "id": 4,
+            "question": "What is the term for a pure semiconductor that has not been subjected to doping?",
+            "options": [
+                  "Extrinsic semiconductor",
+                  "Intrinsic semiconductor",
+                  "N-type semiconductor",
+                  "P-type semiconductor"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Intrinsic semiconductor' is Correct: An intrinsic semiconductor is an pure, un-doped semiconductor crystal where thermal excitation alone creates equal numbers of free electrons and holes.\n\u2022 Why Other Choices are Incorrect: Extrinsic semiconductors are semiconductors that have been intentionally doped with impurities to form N-type or P-type materials."
+      },
+      {
+            "id": 5,
+            "question": "Calculate the loop current (I) in a forward-biased diode circuit using the Third Approximation (Piecewise Approximation). Given: Supply Voltage = 10 V, Silicon Diode (V_B = 0.7 V, internal resistance R_B = 0.2 \u03a9), and Load Resistor R_L = 1 k\u03a9 (1000 \u03a9).",
+            "options": [
+                  "9.300 mA",
+                  "9.298 mA",
+                  "10.00 mA",
+                  "9.600 mA"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '9.298 mA' is Correct: In the Third Approximation, I = (V_S - V_B) / (R_L + R_B) = (10 V - 0.7 V) / (1000 \u03a9 + 0.2 \u03a9) = 9.3 V / 1000.2 \u03a9 = 0.00929814 A = 9.298 mA.\n\u2022 Why Other Choices are Incorrect: 9.300 mA is obtained using the Second Approximation (ignoring internal resistance R_B = 0.2 \u03a9), and 10.00 mA is obtained using the First (Ideal) Approximation."
+      },
+      {
+            "id": 6,
+            "question": "Who discovered static electricity in ancient times by rubbing amber against fur?",
+            "options": [
+                  "Ancient Egyptians",
+                  "Ancient Greeks",
+                  "Romans",
+                  "Babylonians"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Ancient Greeks' is Correct: The ancient Greeks discovered static electricity when rubbing amber (Greek: elektron) against fur attracted light objects.\n\u2022 Why Other Choices are Incorrect: Ancient Egyptians utilized electric fish to alleviate pain, but did not discover amber static electricity."
+      },
+      {
+            "id": 7,
+            "question": "The Leyden jar, invented in 1745, was a landmark historical device because it was capable of:",
+            "options": [
+                  "Generating alternating current",
+                  "Storing an electric charge",
+                  "Measuring magnetic flux",
+                  "Amplifying radio signals"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Storing an electric charge' is Correct: The Leyden jar (1745) was the earliest form of a capacitor, designed to store static electrical charge.\n\u2022 Why Other Choices are Incorrect: Generators produce AC, magnetometers measure flux, and vacuum tubes/transistors amplify signals."
+      },
+      {
+            "id": 8,
+            "question": "In 1820, Hans Christian Oersted discovered which foundational physical phenomenon?",
+            "options": [
+                  "Photoelectric effect",
+                  "Electromagnetism",
+                  "Thermionic emission",
+                  "Quantum entanglement"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Electromagnetism' is Correct: Oersted noticed a compass needle deflected near a current-carrying wire in 1820, establishing the field of electromagnetism.\n\u2022 Why Other Choices are Incorrect: Faraday discovered induction (1831), Edison discovered thermionic emission (1883), and Einstein explained photoelectric effect (1905)."
+      },
+      {
+            "id": 9,
+            "question": "Michael Faraday's discovery of electromagnetic induction in 1831 led directly to the development of:",
+            "options": [
+                  "Electric motors and generators",
+                  "Vacuum tubes",
+                  "Microprocessors",
+                  "Leyden jars"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Electric motors and generators' is Correct: Faraday showed that a changing magnetic field induces an electric current, enabling mechanical-to-electrical energy conversion in electric generators.\n\u2022 Why Other Choices are Incorrect: Vacuum tubes were invented by Fleming (1904), microprocessors by Intel (1971), and Leyden jars in 1745."
+      },
+      {
+            "id": 10,
+            "question": "Who invented the first vacuum tube (diode / Fleming valve) in 1904?",
+            "options": [
+                  "Thomas Edison",
+                  "John Ambrose Fleming",
+                  "Lee de Forest",
+                  "Nikola Tesla"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'John Ambrose Fleming' is Correct: John Ambrose Fleming invented the two-electrode thermionic vacuum tube (diode valve) in 1904 based on the Edison effect.\n\u2022 Why Other Choices are Incorrect: Thomas Edison discovered the Edison effect (1883), Lee de Forest added a grid to create the triode (1906), and Tesla pioneered AC power."
+      },
+      {
+            "id": 11,
+            "question": "The transistor was invented in 1947 at Bell Laboratories by which team of scientists?",
+            "options": [
+                  "Jack Kilby, Robert Noyce, and Ted Hoff",
+                  "John Bardeen, Walter Brattain, and William Shockley",
+                  "Thomas Edison, Nikola Tesla, and Alexander Graham Bell",
+                  "J.J. Thomson, Ernest Rutherford, and Niels Bohr"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'John Bardeen, Walter Brattain, and William Shockley' is Correct: Bardeen, Brattain, and Shockley co-invented the point-contact and junction transistor at Bell Labs in December 1947.\n\u2022 Why Other Choices are Incorrect: Kilby, Noyce, and Hoff developed integrated circuits and microprocessors."
+      },
+      {
+            "id": 12,
+            "question": "Integrated Circuits (ICs) were independently invented in the late 1950s by:",
+            "options": [
+                  "Jack Kilby and Robert Noyce",
+                  "John Bardeen and Walter Brattain",
+                  "Ted Hoff and Federico Faggin",
+                  "John Ambrose Fleming and Lee de Forest"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Jack Kilby and Robert Noyce' is Correct: Jack Kilby (Texas Instruments) and Robert Noyce (Fairchild Semiconductor) independently invented planar integrated circuits in 1958-1959.\n\u2022 Why Other Choices are Incorrect: Bardeen & Brattain invented the transistor; Hoff & Faggin created the Intel 4004 microprocessor."
+      },
+      {
+            "id": 13,
+            "question": "Which atomic model introduced the concept of electrons embedded in a positively charged sphere, known as the 'Plum Pudding Model'?",
+            "options": [
+                  "John Dalton (1803)",
+                  "J.J. Thomson (1897)",
+                  "Ernest Rutherford (1911)",
+                  "Erwin Schr\u00f6dinger (1926)"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'J.J. Thomson (1897)' is Correct: J.J. Thomson discovered the electron in 1897 and proposed the Plum Pudding Model, where negative electrons were embedded in a positive sphere.\n\u2022 Why Other Choices are Incorrect: Dalton proposed solid sphere, Rutherford proposed nuclear model, and Schr\u00f6dinger developed the quantum wave model."
+      },
+      {
+            "id": 14,
+            "question": "Erwin Schr\u00f6dinger's 1926 contribution to atomic theory is known as the:",
+            "options": [
+                  "Solid Sphere Model",
+                  "Nuclear Model",
+                  "Planetary Model",
+                  "Quantum Model"
+            ],
+            "answer": 3,
+            "explanation": "\u2022 Why 'Quantum Model' is Correct: Schr\u00f6dinger formulated wave mechanics in 1926, defining electron positions probabilistically in 3D electron clouds (orbitals).\n\u2022 Why Other Choices are Incorrect: Dalton (solid sphere), Rutherford (nuclear), and Bohr (planetary) were earlier classical models."
+      },
+      {
+            "id": 15,
+            "question": "Which of the following is a key advantage of Silicon over Germanium in semiconductor device manufacturing?",
+            "options": [
+                  "Higher reverse leakage current and lower thermal breakdown threshold",
+                  "Higher thermal stability and lower reverse leakage current",
+                  "Lower forward barrier voltage of 0.1 V requiring less turn-on energy",
+                  "Greater sensitivity to ambient temperature variations than Germanium"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Silicon is thermally stable, more abundant, cost-effective, and has low leakage current' is Correct: Silicon (Si) outperforms Germanium (Ge) because Si handles higher operating temperatures, has lower reverse leakage current, and is abundant in sand (SiO2).\n\u2022 Why Other Choices are Incorrect: Germanium is temperature sensitive, expensive, less abundant, and has high leakage current."
+      },
+      {
+            "id": 16,
+            "question": "What are the typical forward barrier (knee) voltages for Germanium (Ge) and Silicon (Si) diodes at room temperature?",
+            "options": [
+                  "Germanium = 0.7 V, Silicon = 0.3 V",
+                  "Germanium = 0.3 V, Silicon = 0.7 V",
+                  "Germanium = 1.1 V, Silicon = 1.5 V",
+                  "Germanium = 0.0 V, Silicon = 0.0 V"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Germanium = 0.3 V, Silicon = 0.7 V' is Correct: At 25 \u00b0C, a Germanium PN junction requires approx 0.3 V to turn on in forward bias, while Silicon requires approx 0.7 V.\n\u2022 Why Other Choices are Incorrect: Reversing the values is a common mistake; Ge has smaller bandgap energy than Si."
+      },
+      {
+            "id": 17,
+            "question": "Which of the following is an example of a Compound Semiconductor?",
+            "options": [
+                  "Silicon (Si)",
+                  "Germanium (Ge)",
+                  "Gallium Arsenide (GaAs)",
+                  "Carbon (C)"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Gallium Arsenide (GaAs)' is Correct: Gallium Arsenide (GaAs) and Cadmium Sulfide (CdS) are compound semiconductors formed by combining elements from different periodic table groups.\n\u2022 Why Other Choices are Incorrect: Silicon and Germanium are single-crystal elemental semiconductors."
+      },
+      {
+            "id": 18,
+            "question": "What type of chemical bonding is formed between semiconductor atoms in a crystal lattice by sharing valence electrons?",
+            "options": [
+                  "Ionic bonding",
+                  "Covalent bonding",
+                  "Metallic bonding",
+                  "Hydrogen bonding"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Covalent bonding' is Correct: Semiconductor atoms achieve an 8-electron stable valence octet by sharing valence electrons with four neighboring atoms in covalent bonds.\n\u2022 Why Other Choices are Incorrect: Ionic bonds involve complete electron transfer, while metallic bonds feature a sea of delocalized electrons."
+      },
+      {
+            "id": 19,
+            "question": "Adding donor impurities (such as Phosphorus or Arsenic) to an intrinsic semiconductor produces which type of material?",
+            "options": [
+                  "P-type semiconductor with excess holes",
+                  "N-type semiconductor with excess free electrons",
+                  "Insulator with high resistance",
+                  "Superconductor"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'N-type semiconductor with excess free electrons' is Correct: Pentavalent donor atoms (5 valence electrons) donate extra free electrons, creating an N-type (negative carrier) semiconductor.\n\u2022 Why Other Choices are Incorrect: Acceptor impurities (trivalent like Boron) produce P-type semiconductors with excess holes."
+      },
+      {
+            "id": 20,
+            "question": "In a P-type semiconductor, which charge carriers are the majority carriers and minority carriers?",
+            "options": [
+                  "Majority: Electrons, Minority: Holes",
+                  "Majority: Holes, Minority: Electrons",
+                  "Majority: Positive Ions, Minority: Negative Ions",
+                  "Majority: Photons, Minority: Neutrons"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Majority: Holes, Minority: Electrons' is Correct: P-type semiconductors are doped with trivalent acceptors (Boron), creating a abundance of positive holes (majority carriers) and few thermally generated electrons (minority carriers).\n\u2022 Why Other Choices are Incorrect: N-type materials have electrons as majority carriers and holes as minority carriers."
+      },
+      {
+            "id": 21,
+            "question": "In the First (Ideal) Approximation of a diode, how does the diode behave under forward bias and reverse bias conditions?",
+            "options": [
+                  "Open switch (forward); Closed switch (reverse)",
+                  "Closed switch (forward); Open switch (reverse)",
+                  "0.7 V battery source; High-value parallel resistor",
+                  "Variable dynamic capacitor; Constant inducting coil"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Forward bias: Closed switch (0 V drop); Reverse bias: Open switch (0 current)' is Correct: The Ideal (First) Approximation treats the diode as a perfect binary switch with zero forward voltage drop when ON and zero leakage current when OFF.\n\u2022 Why Other Choices are Incorrect: 0.7 V battery model corresponds to the Practical (Second) Approximation."
+      },
+      {
+            "id": 22,
+            "question": "In the Second (Practical) Approximation, a forward-biased diode is modeled as a switch in series with a:",
+            "options": [
+                  "Variable dynamic series resistance",
+                  "Constant voltage battery of 0.7 V",
+                  "Parallel junction storage capacitor",
+                  "Constant current saturation source"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Constant voltage battery (V_B = 0.7 V for Si)' is Correct: The Second Approximation accounts for barrier potential by modeling the diode as a switch in series with an opposing DC battery equal to the barrier voltage (0.7 V for Si, 0.3 V for Ge).\n\u2022 Why Other Choices are Incorrect: Adding a bulk resistor corresponds to the Third (Piecewise) Approximation."
+      },
+      {
+            "id": 23,
+            "question": "What is the region near the PN junction called where free electrons and holes recombine, leaving unneutralized donor and acceptor ions?",
+            "options": [
+                  "Conduction region",
+                  "Depletion region",
+                  "Saturation region",
+                  "Substrate region"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Depletion region' is Correct: When a PN junction is formed, mobile charge carriers diffuse across and recombine, depleting the junction of free carriers and forming a depletion region of fixed ions.\n\u2022 Why Other Choices are Incorrect: Conduction region refers to energy bands, while saturation region refers to transistor operation."
+      },
+      {
+            "id": 24,
+            "question": "Under Reverse-Bias conditions, what happens to the depletion region width of a PN junction diode?",
+            "options": [
+                  "Shrinks to zero, enabling unrestricted electron flow",
+                  "Widens, increasing internal barrier potential",
+                  "Remains completely unchanged across all reverse voltages",
+                  "Converts immediately into a low-resistance ohmic conductor"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'It widens, increasing the internal barrier potential' is Correct: Reverse bias pulls majority carriers away from the PN junction, widening the depletion layer and preventing forward current flow.\n\u2022 Why Other Choices are Incorrect: Forward bias shrinks the depletion region width."
+      },
+      {
+            "id": 25,
+            "question": "Which diode approximation incorporates the diode's internal bulk resistance (R_B) in series with the barrier voltage battery and switch?",
+            "options": [
+                  "First (Ideal) Approximation",
+                  "Second (Practical) Approximation",
+                  "Third (Piecewise Linear) Approximation",
+                  "Fourth (Small-Signal) Approximation"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Third (Piecewise Linear) Approximation' is Correct: The Third Approximation includes the internal bulk resistance of the semiconductor material (R_B) in series with the barrier battery (V_B) and switch.\n\u2022 Why Other Choices are Incorrect: First approximation has no voltage drop or resistance; Second approximation includes barrier voltage V_B but assumes R_B = 0."
+      },
+
+      {
+            "id": 26,
+            "question": "Which scientist and inventor is famous for discovering and pioneering Alternating Current (AC) power transmission systems?",
+            "options": [
+                  "Nikola Tesla",
+                  "Alessandro Volta",
+                  "Thomas Edison",
+                  "James Clerk Maxwell"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Nikola Tesla' is Correct: Nikola Tesla pioneered polyphase Alternating Current (AC) power systems, AC induction motors, and high-voltage AC transmission lines.\n\u2022 Why Other Choices are Incorrect: Alessandro Volta invented the battery, Thomas Edison advocated for Direct Current (DC), and Maxwell formulated electromagnetic theory."
+      },
+      {
+            "id": 27,
+            "question": "Who invented the first practical battery (the Voltaic Pile) in 1800, providing the world with its first source of continuous direct electric current?",
+            "options": [
+                  "Guglielmo Marconi",
+                  "Alessandro Volta",
+                  "Samuel Morse",
+                  "Michael Faraday"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Alessandro Volta' is Correct: Alessandro Volta created the Voltaic Pile in 1800 (alternating discs of zinc and copper separated by brine-soaked cloth), producing the first chemical battery.\n\u2022 Why Other Choices are Incorrect: Marconi pioneered wireless radio, Morse developed telegraphy, and Faraday discovered electromagnetic induction."
+      },
+      {
+            "id": 28,
+            "question": "Who is credited with pioneering work in long-distance radio transmission and developing practical wireless telegraphy?",
+            "options": [
+                  "Tim Berners-Lee",
+                  "Jack Kilby",
+                  "Guglielmo Marconi",
+                  "Alexander Graham Bell"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Guglielmo Marconi' is Correct: Guglielmo Marconi sent the first transatlantic radio signal in 1901 and won the Nobel Prize for pioneering wireless radio communication.\n\u2022 Why Other Choices are Incorrect: Tim Berners-Lee created the World Wide Web, Jack Kilby co-invented the integrated circuit, and Bell invented the telephone."
+      },
+      {
+            "id": 29,
+            "question": "Which theoretical physicist is renowned for the formulation of classical electromagnetic theory (Maxwell's Equations), unifying electricity, magnetism, and light?",
+            "options": [
+                  "James Clerk Maxwell",
+                  "Nikola Tesla",
+                  "Samuel Morse",
+                  "Heinrich Hertz"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'James Clerk Maxwell' is Correct: James Clerk Maxwell published his four unified field equations in 1865, proving that light is an electromagnetic wave.\n\u2022 Why Other Choices are Incorrect: Tesla pioneered AC power systems, Morse invented single-wire telegraphy, and Hertz experimentally demonstrated radio waves."
+      },
+      {
+            "id": 30,
+            "question": "Jack Kilby and Robert Noyce are celebrated in electronics history for which revolutionary breakthrough in the late 1950s?",
+            "options": [
+                  "Discovery of thermionic emission",
+                  "Introduction of the Integrated Circuit",
+                  "Development of the World Wide Web",
+                  "Invention of the single-wire electric telegraph"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Introduction of the Integrated Circuit' is Correct: Jack Kilby (Texas Instruments) and Robert Noyce (Fairchild Semiconductor) independently invented the Integrated Circuit (IC), fabricating complete circuits on a single semiconductor chip.\n\u2022 Why Other Choices are Incorrect: Edison discovered thermionic emission, Berners-Lee created WWW, and Morse invented the telegraph."
+      },
+      {
+            "id": 31,
+            "question": "Which computer scientist is renowned for the development of the World Wide Web (WWW) in 1989 while working at CERN?",
+            "options": [
+                  "Alan Turing",
+                  "Tim Berners-Lee",
+                  "Steve Wozniak",
+                  "Dennis Ritchie"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Tim Berners-Lee' is Correct: Sir Tim Berners-Lee invented the World Wide Web (WWW), HTML, HTTP, and the first browser at CERN in 1989.\n\u2022 Why Other Choices are Incorrect: Alan Turing developed theoretical computer science, Wozniak co-founded Apple, and Ritchie created C/Unix."
+      },
+      {
+            "id": 32,
+            "question": "Who developed the first successful single-wire electric telegraph and co-created the dot-and-dash signaling code named after him?",
+            "options": [
+                  "Samuel Morse",
+                  "Alexander Graham Bell",
+                  "Guglielmo Marconi",
+                  "Thomas Edison"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Samuel Morse' is Correct: Samuel Morse patented the single-wire electric telegraph in 1837 and created Morse Code for long-distance telecommunication.\n\u2022 Why Other Choices are Incorrect: Bell invented the telephone, Marconi developed radio transmission, and Edison invented the incandescent bulb."
+      },
+      {
+            "id": 33,
+            "question": "In a review matching historical pioneers with their legacies, which of the following pairings is INCORRECT?",
+            "options": [
+                  "Alessandro Volta \u2014 First Practical Battery",
+                  "Guglielmo Marconi \u2014 Pioneering work in wireless radio transmission",
+                  "Tim Berners-Lee \u2014 Development of the World Wide Web",
+                  "Nikola Tesla \u2014 Invention of the vacuum tube Fleming valve"
+            ],
+            "answer": 3,
+            "explanation": "\u2022 Why 'Nikola Tesla \u2014 Invention of the vacuum tube Fleming valve' is Correct (as the INCORRECT match): The vacuum tube (Fleming valve) was invented by John Ambrose Fleming in 1904. Nikola Tesla is famous for discovering and pioneering Alternating Current (AC) power systems.\n\u2022 Why Other Choices are Valid Matches: Volta created the first battery (1800), Marconi pioneered radio, and Berners-Lee invented the World Wide Web (1989)."
+      },
+
+      {
+            "id": 34,
+            "question": "What is the unique structural construction of a Schottky diode compared to a traditional Positive-Negative (PN) junction diode?",
+            "options": [
+                  "It joins a metal Anode to an N-type semiconductor Cathode with no P-type material",
+                  "It joins a P-type semiconductor to a metal Cathode",
+                  "It consists of two intrinsic semiconductor layers without any metal contact",
+                  "It combines three alternating layers of P-type and N-type materials"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'It joins a metal Anode to an N-type semiconductor Cathode with no P-type material' is Correct: A Schottky diode is a metal-semiconductor junction formed by bonding a metal (like gold, silver, or platinum) as the Anode to an N-type silicon Cathode, completely omitting P-type semiconductor material.\n\u2022 Why Other Choices are Incorrect: Traditional diodes use P-N semiconductor junctions; Schottky diodes rely on metal-N semiconductor junctions."
+      },
+      {
+            "id": 35,
+            "question": "What is the typical forward voltage drop across a Schottky diode when conducting current?",
+            "options": [
+                  "0.15 V to 0.45 V",
+                  "0.60 V to 0.70 V",
+                  "1.20 V to 1.50 V",
+                  "2.00 V to 3.00 V"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why '0.15 V to 0.45 V' is Correct: The metal-semiconductor Schottky barrier potential is significantly lower than a standard PN junction, resulting in a low forward voltage drop of 0.15 V to 0.45 V.\n\u2022 Why Other Choices are Incorrect: Standard silicon PN diodes have a 0.6 V \u2013 0.7 V drop, while Light-Emitting Diodes (LEDs) require 1.5 V \u2013 3.0 V."
+      },
+      {
+            "id": 36,
+            "question": "Why do Schottky diodes exhibit extremely fast switching speeds with virtually zero reverse recovery time?",
+            "options": [
+                  "Conduction involves only majority carriers without minority carrier storage",
+                  "Because they operate using high thermal dissipation",
+                  "Because they possess a thick depletion region that stores positive holes",
+                  "Because they rely on mechanical switch contacts"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Conduction involves only majority carriers without minority carrier storage' is Correct: In Schottky diodes, current is carried almost exclusively by majority carriers (electrons). Since there are no stored minority carriers to clear out during turn-off, reverse recovery time is negligible (a few nanoseconds).\n\u2022 Why Other Choices are Incorrect: Standard PN diodes suffer from slow switching due to minority carrier storage in the depletion region."
+      },
+      {
+            "id": 37,
+            "question": "Which of the following is a main limitation or disadvantage of a Schottky diode compared to a standard Silicon PN junction diode?",
+            "options": [
+                  "Higher reverse leakage and lower breakdown voltage",
+                  "Sluggish switching speed during high-frequency cycles",
+                  "Excessive forward barrier voltage drop exceeding 1.5 V",
+                  "Total inability to conduct forward majority carrier current"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Higher reverse leakage current and lower reverse breakdown voltage' is Correct: Because of the thin metal barrier, Schottky diodes experience higher reverse leakage current and lower reverse breakdown voltages, making them unsuitable for high-voltage circuits.\n\u2022 Why Other Choices are Incorrect: Schottky diodes excel in fast switching speed and low forward voltage drop."
+      },
+      {
+            "id": 38,
+            "question": "In a forward-biased Schottky diode, what is the direction of conventional current flow?",
+            "options": [
+                  "Metal Anode to N-type semiconductor Cathode",
+                  "N-type semiconductor Cathode to metal Anode",
+                  "External Cathode terminal to external Anode",
+                  "Zero current conduction in either direction"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'From the metal Anode to the N-type semiconductor Cathode' is Correct: Forward bias connects the positive terminal to the Metal (Anode) and negative to N-type (Cathode), directing conventional current from Metal to N-type semiconductor.\n\u2022 Why Other Choices are Incorrect: Electron flow is in the opposite direction (N-type to Metal)."
+      },
+      {
+            "id": 39,
+            "question": "Which electronic system widely uses Schottky diodes due to their high efficiency and fast switching capabilities?",
+            "options": [
+                  "Smartphone chargers and laptop power bricks",
+                  "High-voltage AC overhead transmission power networks",
+                  "Incandescent lamp tungsten filaments and heater units",
+                  "Cathode ray tube high-voltage electron gun assemblies"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Smartphone chargers, laptop power bricks, and computer motherboards' is Correct: Low forward voltage drop and fast switching speed minimize power loss and heat, making Schottky diodes ideal for high-frequency switch-mode power supplies and digital chargers.\n\u2022 Why Other Choices are Incorrect: High-voltage AC lines require high-breakdown silicon rectifiers, not Schottky diodes."
+      },
+      {
+            "id": 40,
+            "question": "Unlike a standard PN junction diode, a Zener diode is specifically designed and heavily doped to operate safely in which region?",
+            "options": [
+                  "Reverse-Bias breakdown region",
+                  "Forward-bias saturation region",
+                  "Cut-off region only",
+                  "Thermal breakdown destruction region"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Reverse-Bias breakdown region' is Correct: Zener diodes are manufactured with heavy doping to operate continuously and safely in reverse breakdown without causing permanent device damage.\n\u2022 Why Other Choices are Incorrect: Standard diodes overheat and fail if driven into reverse breakdown; Zener diodes are designed for it."
+      },
+      {
+            "id": 41,
+            "question": "What key electrical characteristic makes Zener diodes ideal for voltage regulation circuits?",
+            "options": [
+                  "Constant reverse breakdown voltage",
+                  "Linearly increasing voltage with rising current",
+                  "Complete current blockage under both polarities",
+                  "High-frequency sinusoidal oscillation output"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Maintaining a nearly constant voltage (Zener voltage V_Z) across its terminals during reverse breakdown' is Correct: Once the reverse breakdown voltage (Zener Voltage V_Z) is reached, the voltage across the Zener diode remains virtually constant even as reverse current varies widely.\n\u2022 Why Other Choices are Incorrect: Resistors and standard components change voltage with current, unlike Zener regulators."
+      },
+      {
+            "id": 42,
+            "question": "Why does a Zener diode have an extremely thin depletion layer?",
+            "options": [
+                  "Heavy doping in both P-type and N-type regions",
+                  "Pure metallic construction without semiconductor",
+                  "Operation strictly restricted to absolute zero",
+                  "Complete absence of an internal junction boundary"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Because both P-type and N-type regions are heavily doped with impurity atoms' is Correct: Heavy doping increases impurity ion density at the junction, creating an intense electric field across an extremely narrow depletion layer.\n\u2022 Why Other Choices are Incorrect: Light doping creates a wide depletion layer with high breakdown voltage."
+      },
+      {
+            "id": 43,
+            "question": "What are the primary practical applications of a Zener diode in electronic circuits?",
+            "options": [
+                  "Voltage regulation and reference points",
+                  "Light emission, optical display, and infrared transmission",
+                  "Audio frequency power amplification and loudspeaker driving",
+                  "Mechanical energy storage and rotational speed governors"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Voltage regulation, surge protection, and stable voltage reference points' is Correct: The constant reverse breakdown voltage property enables Zener diodes to clamp overvoltages and regulate DC power supply rails.\n\u2022 Why Other Choices are Incorrect: LEDs emit light, BJTs amplify audio signals, and capacitors/batteries store energy."
+      },
+      {
+            "id": 44,
+            "question": "A Tunnel diode (Esaki diode) operates at ultra-high switching speeds due to which quantum mechanical phenomenon?",
+            "options": [
+                  "Quantum Tunneling",
+                  "Thermionic emission",
+                  "Photoelectric absorption",
+                  "Secondary emission"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Quantum Tunneling' is Correct: Quantum tunneling allows valence electrons to pass directly through an ultra-thin potential barrier at nearly the speed of light rather than climbing over the barrier.\n\u2022 Why Other Choices are Incorrect: Thermionic emission involves heating filaments, and photoelectric absorption involves photon energy."
+      },
+      {
+            "id": 45,
+            "question": "How does the doping concentration of a Tunnel diode compare to a standard Positive-Negative (PN) junction diode?",
+            "options": [
+                  "Heavily doped up to 1,000 times higher than standard diodes",
+                  "Completely un-doped intrinsic silicon without any impurities",
+                  "Lightly doped to maximize internal bulk semiconductor ohms",
+                  "Symmetrically doped with equal numbers of metal gold atoms"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'It is heavily doped up to 1,000 times higher than a standard junction diode' is Correct: Ultra-heavy doping (~1000x standard levels) shrinks the depletion layer down to less than 10 nanometers, enabling quantum tunneling.\n\u2022 Why Other Choices are Incorrect: Light doping prevents tunneling by creating a wide barrier."
+      },
+      {
+            "id": 46,
+            "question": "What unique operational characteristic occurs on the forward V-I curve of a Tunnel diode between the peak current point and valley point?",
+            "options": [
+                  "Negative Resistance Region",
+                  "Infinite positive resistance",
+                  "Zero voltage drop at all currents",
+                  "Constant current saturation regardless of voltage"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Negative Resistance Region' is Correct: As forward voltage increases past the peak point, energy bands misalign and reduce electron tunneling, causing current to fall as voltage increases (negative resistance).\n\u2022 Why Other Choices are Incorrect: Ordinary resistors obey Ohm's Law where current increases with voltage."
+      },
+      {
+            "id": 47,
+            "question": "Because of its ultra-thin depletion layer (< 10 nanometers), what happens when a small reverse bias voltage is applied to a Tunnel diode?",
+            "options": [
+                  "Large reverse current conducted immediately by tunneling",
+                  "Destructive thermal runaway occurs instantaneously at zero volts",
+                  "Depletion layer expands into several millimeters of insulation",
+                  "Zero reverse current flows under all applied negative voltages"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Valence electrons easily tunnel from P-side to N-side, conducting large reverse current immediately' is Correct: Due to heavy doping and energy band overlap, small reverse bias immediately initiates heavy electron tunneling, making it conduct heavily in reverse.\n\u2022 Why Other Choices are Incorrect: Standard diodes block reverse current until breakdown voltage is reached."
+      },
+      {
+            "id": 48,
+            "question": "Which semiconductor materials are most commonly used in the fabrication of Tunnel diodes?",
+            "options": [
+                  "Germanium and Gallium Arsenide",
+                  "Copper and Aluminum",
+                  "Pure Carbon and Diamond",
+                  "Silicon Dioxide and Glass"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Germanium and Gallium Arsenide' is Correct: Germanium and Gallium Arsenide have high electron mobility and suitable bandgap energies for high-efficiency quantum tunneling.\n\u2022 Why Other Choices are Incorrect: Copper and Aluminum are metals; Silicon Dioxide is an insulator."
+      },
+      {
+            "id": 49,
+            "question": "Which electronic applications take advantage of the negative resistance and ultra-fast response of a Tunnel diode?",
+            "options": [
+                  "Relaxation oscillators, high-speed switches, and FM receivers",
+                  "Low-frequency power transformers, line filters, and chokes",
+                  "Incandescent lighting filaments, flash tubes, and arc lamps",
+                  "Electro-mechanical heavy-duty relays, solenoids, and contactors"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Relaxation oscillators, high-speed switches, and FM receivers' is Correct: Negative dynamic resistance cancels circuit losses in high-frequency oscillators and enables sub-nanosecond pulse switching.\n\u2022 Why Other Choices are Incorrect: Transformers and relays are heavy magnetic/mechanical components."
+      },
+
+      {
+            "id": 50,
+            "question": "What is the primary operating bias condition for a Photodiode during light-sensing operation?",
+            "options": [
+                  "Reverse-Bias condition",
+                  "Forward-Bias condition above 1.5 V",
+                  "Thermal breakdown bias",
+                  "Direct AC bias"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Reverse-Bias condition' is Correct: Photodiodes operate in Reverse-Bias (or zero bias) to widen the depletion region and establish a strong internal electric field that efficiently separates light-generated electron-hole pairs.\n\u2022 Why Other Choices are Incorrect: Forward biasing a photodiode conducts large forward current, masking photo-generated current and potentially damaging the sensor."
+      },
+      {
+            "id": 51,
+            "question": "What fundamental physical energy conversion takes place inside a Photodiode when exposed to light?",
+            "options": [
+                  "Converts light energy into electrical current",
+                  "Converts electrical energy into mechanical movement",
+                  "Converts acoustic sound waves into voltage",
+                  "Converts magnetic flux into thermal heat"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Converts light energy into electrical current' is Correct: When incoming photons with energy greater than the semiconductor bandgap strike the depletion region, they excite bound electrons to create free electron-hole pairs, producing measurable photocurrent.\n\u2022 Why Other Choices are Incorrect: Solar cells also use this photoelectric principle for power generation, whereas LEDs do the reverse (electrical energy to light)."
+      },
+      {
+            "id": 52,
+            "question": "How does the generated output photocurrent (I_p) of a Photodiode respond to changes in incoming light intensity (Lux)?",
+            "options": [
+                  "Photocurrent is directly proportional to light intensity",
+                  "Photocurrent decreases exponentially as light intensity increases",
+                  "Photocurrent remains completely constant regardless of light level",
+                  "Photocurrent is inversely proportional to light intensity squared"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Photocurrent is directly proportional to light intensity' is Correct: The Current-Light (I-L) relationship of a photodiode is highly linear: higher light intensity delivers more photons per second, creating more electron-hole pairs and higher photocurrent.\n\u2022 Why Other Choices are Incorrect: Inverse or exponential responses would distort linear light measurement."
+      },
+      {
+            "id": 53,
+            "question": "What is 'Dark Current' in a Photodiode?",
+            "options": [
+                  "A small reverse leakage current that flows even when no light is present",
+                  "The maximum forward current that destroys the photodiode",
+                  "The light emitted by the photodiode when operating in total darkness",
+                  "The AC ripple current from power supplies"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'A small reverse leakage current that flows even when no light is present' is Correct: Dark current is the minor reverse saturation current caused by thermal generation of electron-hole pairs when the photodiode is completely shielded from light.\n\u2022 Why Other Choices are Incorrect: Photodiodes do not emit light, and dark current is a tiny DC leakage current."
+      },
+      {
+            "id": 54,
+            "question": "Which layer of a photodiode active region is coated with an Anti-Reflective (AR) layer or glass lens?",
+            "options": [
+                  "P+ active surface region to maximize light absorption",
+                  "Bottom metal Cathode contact to reflect incoming light",
+                  "Outer protective black casing to block ambient photons",
+                  "Internal battery terminals to eliminate reverse bias"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'The P+ active surface region to maximize light absorption' is Correct: An Anti-Reflective (AR) coating or optical glass lens is placed over the active junction surface to reduce optical reflection losses and maximize photon entry into the depletion region.\n\u2022 Why Other Choices are Incorrect: The remaining body is coated in opaque black layer to block unwanted stray light."
+      },
+      {
+            "id": 55,
+            "question": "Which of the following semiconductor materials is commonly used in fabricating Photodiodes for optical communications?",
+            "options": [
+                  "Silicon, Germanium, and InGaAs",
+                  "Pure Copper, Aluminum, and Silver conductors",
+                  "Sodium Chloride, Calcium, and Potassium salts",
+                  "Polyethylene, Polystyrene, and Teflon plastics"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Silicon, Germanium, and Indium Gallium Arsenide' is Correct: Silicon (visible light), Germanium, and Indium Gallium Arsenide (InGaAs for long-wavelength infrared fiber optics) have suitable bandgaps for absorbing target light wavelengths.\n\u2022 Why Other Choices are Incorrect: Metals and plastics lack semiconductor bandgaps necessary for photon absorption."
+      },
+      {
+            "id": 56,
+            "question": "A Light-Emitting Diode (LED) emits visible or infrared light when operated under which bias condition?",
+            "options": [
+                  "Forward-Bias condition",
+                  "Reverse-Bias condition",
+                  "Zero bias condition",
+                  "High-voltage reverse breakdown"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Forward-Bias condition' is Correct: In Forward Bias, external voltage pushes electrons from the N-region and holes from the P-region into the active junction layer, where they recombine and release energy as photons.\n\u2022 Why Other Choices are Incorrect: In Reverse Bias, the depletion region widens, blocking current and keeping the LED completely OFF."
+      },
+      {
+            "id": 57,
+            "question": "Inside the structure of a Light-Emitting Diode (LED), which layer is responsible for producing light through electron-hole recombination?",
+            "options": [
+                  "The active layer",
+                  "The outer plastic epoxy lens",
+                  "The bottom metal Cathode wire lead",
+                  "The external series resistor"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'The active layer' is Correct: The Active layer sandwiched between the P-type and N-type semiconductor layers provides the optimum energy bandgap region where injected electrons and holes recombine to emit photons.\n\u2022 Why Other Choices are Incorrect: The epoxy lens focuses the emitted light, while leads supply current."
+      },
+      {
+            "id": 58,
+            "question": "On an electronic schematic symbol for a Light-Emitting Diode (LED), what do the two small outward-pointing arrows indicate?",
+            "options": [
+                  "Light emission when current flows through the diode",
+                  "Direction of conventional current flow",
+                  "Direction of electron movement",
+                  "Maximum reverse breakdown voltage limit"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Light emission when current flows through the diode' is Correct: The two outward-pointing arrows distinguish an LED from a standard diode, symbolizing light energy radiating outward upon forward conduction.\n\u2022 Why Other Choices are Incorrect: Inward-pointing arrows represent a Photodiode (absorbing incoming light)."
+      },
+      {
+            "id": 59,
+            "question": "What is the typical forward voltage (V_F) required to turn ON a standard Red Light-Emitting Diode (LED)?",
+            "options": [
+                  "1.8 V to 2.2 V",
+                  "0.3 V to 0.4 V",
+                  "5.0 V to 12.0 V",
+                  "0.0 V"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why '1.8 V to 2.2 V' is Correct: Red LEDs typically require a minimum forward voltage (V_F) of 1.8 V to 2.2 V to initiate electroluminescence.\n\u2022 Why Other Choices are Incorrect: 0.3 V is for Germanium diodes, 0.7 V is for Silicon diodes, while Green LEDs require 2.0 V \u2013 3.2 V and Blue LEDs require 3.0 V \u2013 3.5 V."
+      },
+      {
+            "id": 60,
+            "question": "What is the typical recommended continuous forward current (I_F) range for operating standard indicator Light-Emitting Diodes (LEDs)?",
+            "options": [
+                  "10 mA to 20 mA",
+                  "1 A to 5 A",
+                  "100 A to 500 A",
+                  "1 \u00b5A to 5 \u00b5A"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why '10 mA to 20 mA' is Correct: Standard commercial indicator LEDs achieve bright, reliable illumination at continuous forward currents of 10 mA to 20 mA.\n\u2022 Why Other Choices are Incorrect: Operating above 30\u201350 mA without heat sinking causes thermal destruction, while microamps are too low to illuminate standard LEDs."
+      },
+      {
+            "id": 61,
+            "question": "What formula is used to calculate the required resistance value of a Current-Limiting Resistor (R) connected in series with a Light-Emitting Diode (LED)?",
+            "options": [
+                  "R = (V_S - V_F) / I_F",
+                  "R = V_S * V_F * I_F",
+                  "R = (V_S + V_F) / I_F^2",
+                  "R = I_F / (V_S - V_F)"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'R = (V_S - V_F) / I_F' is Correct: By Kirchhoff's Voltage Law, the resistor voltage is V_R = V_S - V_F. Applying Ohm's Law yields R = (V_S - V_F) / I_F to prevent overcurrent damage to the LED.\n\u2022 Why Other Choices are Incorrect: Multiplying or adding forward voltage violates Ohm's Law."
+      },
+      {
+            "id": 62,
+            "question": "What is the typical maximum safe Reverse Voltage rating (V_R) for most standard Light-Emitting Diodes (LEDs)?",
+            "options": [
+                  "3 V to 5 V",
+                  "100 V to 1000 V",
+                  "500 V to 2000 V",
+                  "50 V to 100 V"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why '3 V to 5 V' is Correct: LEDs have relatively low reverse breakdown voltage ratings (typically 3 V to 5 V). Applying higher reverse voltage can damage the delicate PN junction.\n\u2022 Why Other Choices are Incorrect: Standard power rectifiers handle 100 V \u2013 1000 V reverse ratings, but LEDs cannot."
+      },
+      {
+            "id": 63,
+            "question": "Which key advantage distinguishes a Light-Emitting Diode (LED) over a standard semiconductor PN junction diode?",
+            "options": [
+                  "High efficiency and long lifespan",
+                  "High-voltage AC power rectification and surge suppression",
+                  "Ultra-slow switching response and high thermal energy loss",
+                  "Zero forward barrier potential required for active turn-ON"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Emits visible or infrared light efficiently with a long operational lifespan' is Correct: LEDs convert electrical energy directly into light via electroluminescence, offering high energy efficiency, low heat generation, and tens of thousands of operating hours.\n\u2022 Why Other Choices are Incorrect: Standard diodes dissipate energy as heat rather than light."
+      },
+      {
+            "id": 64,
+            "question": "Which of the following is a common application of Infrared (IR) Photodiodes and Light-Emitting Diodes working together as an optical pair?",
+            "options": [
+                  "TV remote controls and optical encoder sensors",
+                  "High-power AC step-down electrical transformers",
+                  "Incandescent illumination and halogen floodlights",
+                  "Hydraulic fluid pumps and pneumatic air pistons"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'TV and Air Conditioner remote controls and optical encoders' is Correct: An Infrared LED transmitter sends pulsed light signals to an Infrared Photodiode receiver, forming an optical communication link.\n\u2022 Why Other Choices are Incorrect: Transformers and pumps use magnetic or mechanical energy, not optoelectronic light pairs."
+      },
+
+      {
+            "id": 65,
+            "question": "Tunnel diodes are mainly used in:",
+            "options": [
+                  "Rectifiers",
+                  "Oscillators and high-speed switches",
+                  "Voltage regulators",
+                  "Signal clippers"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Oscillators and high-speed switches' is Correct: Tunnel diodes possess negative dynamic resistance and an ultra-thin depletion layer, allowing them to switch in picoseconds and sustain high-frequency oscillations.\n\u2022 Why Other Choices are Incorrect: Standard diodes act as rectifiers and signal clippers, while Zener diodes serve as voltage regulators."
+      },
+      {
+            "id": 66,
+            "question": "Light-Emitting Diodes (LEDs) emit light because of:",
+            "options": [
+                  "Thermal heating of a metallic tungsten filament",
+                  "Electron-hole recombination releasing photons",
+                  "Secondary electron collision with mercury vapor",
+                  "Nuclear decay of radioactive impurity atoms"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Electron-hole recombination releasing photons' is Correct: When forward-biased, injected electrons from the N-region and holes from the P-region recombine in the active junction layer, releasing excess bandgap energy as photons (Electroluminescence).\n\u2022 Why Other Choices are Incorrect: Avalanche breakdown occurs in reverse breakdown, thermal energy causes heating, and tunneling effect powers Tunnel diodes."
+      },
+      {
+            "id": 67,
+            "question": "The forward voltage drop of a Light-Emitting Diode (LED) is typically in the range of:",
+            "options": [
+                  "0.3 \u2013 0.7 V",
+                  "1 \u2013 3 V",
+                  "5 \u2013 10 V",
+                  "0.1 \u2013 0.2 V"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '1 \u2013 3 V' is Correct: Because LEDs are fabricated from wide-bandgap compound semiconductors (like Gallium Arsenide and Gallium Phosphide), their forward barrier voltage drop ranges from 1.8 V to 3.5 V (commonly specified as 1 \u2013 3 V).\n\u2022 Why Other Choices are Incorrect: 0.3 \u2013 0.7 V applies to standard Germanium and Silicon PN diodes, while 0.1 \u2013 0.2 V applies to Schottky diodes."
+      },
+      {
+            "id": 68,
+            "question": "Which material is commonly used to make Light-Emitting Diodes (LEDs)?",
+            "options": [
+                  "Silicon",
+                  "Germanium",
+                  "Gallium compounds",
+                  "Carbon"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Gallium compounds' is Correct: Direct bandgap compound semiconductors such as Gallium Arsenide (GaAs) and Gallium Phosphide (GaP) allow efficient photon emission during carrier recombination.\n\u2022 Why Other Choices are Incorrect: Elemental Silicon and Germanium are indirect bandgap semiconductors that dissipate recombination energy as heat rather than light."
+      },
+      {
+            "id": 69,
+            "question": "An Light-Emitting Diode (LED) usually operates with a forward current in the range of:",
+            "options": [
+                  "0.1 \u2013 1 mA",
+                  "10 \u2013 100 mA",
+                  "1 \u2013 10 A",
+                  "1 \u2013 10 \u00b5A"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '10 \u2013 100 mA' is Correct: Standard illumination and indicator LEDs operate with forward currents in the 10 mA to 100 mA range (typically 10 \u2013 20 mA for standard indicators).\n\u2022 Why Other Choices are Incorrect: Microamps are too small to excite visible emission, while 1 \u2013 10 Amperes causes rapid thermal burnout."
+      },
+
+      {
+            "id": 70,
+            "question": "A photodiode is normally operated under:",
+            "options": [
+                  "Forward bias",
+                  "Reverse bias",
+                  "Zero bias",
+                  "Breakdown condition"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Reverse bias' is Correct: Operating a photodiode under Reverse bias widens the depletion layer, creating a strong internal electric field that efficiently separates light-generated electron-hole pairs into photocurrent.\n\u2022 Why Other Choices are Incorrect: Forward bias allows heavy conventional current that masks light detection, while breakdown condition causes uncontrolled reverse avalanche."
+      },
+      {
+            "id": 71,
+            "question": "The output current of a photodiode is directly proportional to:",
+            "options": [
+                  "Forward voltage",
+                  "Illumination intensity",
+                  "Junction temperature only",
+                  "Doping concentration"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Illumination intensity' is Correct: Higher illumination intensity delivers more photons per second into the depletion region, generating a linearly proportional increase in free electron-hole pairs and output photocurrent.\n\u2022 Why Other Choices are Incorrect: Forward voltage is not applied during photodiode operation, while temperature and doping affect noise rather than linear light response."
+      },
+      {
+            "id": 72,
+            "question": "Dark current in a photodiode is:",
+            "options": [
+                  "Reverse current with no light",
+                  "Forward current under strong light",
+                  "Current only at breakdown",
+                  "Peak current under illumination"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Reverse current with no light' is Correct: Dark current is the minor reverse saturation current generated by ambient thermal energy when the photodiode is completely shielded from light.\n\u2022 Why Other Choices are Incorrect: It is a reverse leakage current (not forward), and occurs specifically under zero light illumination."
+      },
+      {
+            "id": 73,
+            "question": "The tunnel diode exhibits which unique property?",
+            "options": [
+                  "Positive resistance",
+                  "Negative resistance",
+                  "Zero resistance",
+                  "Infinite resistance"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Negative resistance' is Correct: On its forward V-I characteristic curve between the peak point and valley point, increasing the forward voltage reduces energy band overlap, causing current to fall as voltage increases (Negative Dynamic Resistance).\n\u2022 Why Other Choices are Incorrect: Standard resistors exhibit positive resistance where current increases with voltage."
+      },
+
+      {
+            "id": 74,
+            "question": "A varactor diode behaves as a:",
+            "options": [
+                  "Voltage-controlled current source",
+                  "Voltage-controlled capacitor",
+                  "Voltage amplifier",
+                  "Light source"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Voltage-controlled capacitor' is Correct: A varactor diode operates under reverse bias where its depletion layer acts as a variable dielectric insulator between conductive P and N regions, creating a capacitance that varies with applied voltage.\n\u2022 Why Other Choices are Incorrect: Transistors act as current sources/amplifiers, while LEDs act as light sources."
+      },
+      {
+            "id": 75,
+            "question": "As reverse bias on a varactor increases, its capacitance:",
+            "options": [
+                  "Increases",
+                  "Decreases",
+                  "Remains constant",
+                  "Becomes infinite"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Decreases' is Correct: Increasing reverse bias voltage widens the depletion layer (increasing plate separation d in C = \u03b5A/d), which causes junction capacitance to decrease.\n\u2022 Why Other Choices are Incorrect: Decreasing reverse bias shrinks the depletion layer, which increases capacitance."
+      },
+      {
+            "id": 76,
+            "question": "The resonance frequency of an Inductor-Capacitor (LC) circuit with a varactor diode is given by:",
+            "options": [
+                  "f = 1 / (2 * pi * sqrt(L * C))",
+                  "f = 2 * pi * sqrt(L * C)",
+                  "f = (L * C) / (2 * pi)",
+                  "f = 1 / (L * C)"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'f = 1 / (2 * pi * sqrt(L * C))' is Correct: The fundamental resonance frequency formula for an LC tuned circuit is f = 1 / (2\u03c0\u221a(LC)). Adjusting the varactor reverse voltage alters capacitance C, directly tuning the resonant frequency f.\n\u2022 Why Other Choices differ: Alternative formulas do not satisfy the required mathematical derivation for LC resonance."
+      },
+      {
+            "id": 77,
+            "question": "The Shockley diode is a:",
+            "options": [
+                  "Two-layer device",
+                  "Three-layer device",
+                  "Four-layer PNPN device",
+                  "Metal-semiconductor junction"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Four-layer PNPN device' is Correct: A Shockley diode is a four-layer (P-N-P-N) semiconductor thyristor featuring two terminals (Anode and Cathode) and three PN junctions.\n\u2022 Why Other Choices are Incorrect: Standard diodes have 2 layers (PN), BJTs have 3 layers (NPN/PNP), and Schottky diodes are metal-semiconductor junctions."
+      },
+      {
+            "id": 78,
+            "question": "Which condition turns ON a Shockley diode?",
+            "options": [
+                  "Reverse bias",
+                  "Applied voltage exceeds breakover voltage",
+                  "Applied current less than holding current",
+                  "Thermal excitation"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Applied voltage exceeds breakover voltage' is Correct: A Shockley diode remains OFF in forward blocking mode until the applied forward voltage exceeds its characteristic breakover voltage (V_BO), causing it to switch into heavy conduction (ON state).\n\u2022 Why Other Choices are Incorrect: Dropping below holding current turns the diode OFF, while reverse bias blocks current."
+      },
+
+      {
+            "id": 79,
+            "question": "Typical forward voltage drop of a Schottky diode is:",
+            "options": [
+                  "0.7 V",
+                  "0.3 V",
+                  "0.25 V",
+                  "1.0 V"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '0.3 V' is Correct: Schottky metal-semiconductor diodes feature a significantly lower barrier potential than standard silicon diodes, with a typical nominal forward voltage drop of approx 0.3 V (ranging between 0.15 V and 0.45 V).\n\u2022 Why Other Choices are Incorrect: 0.7 V is the forward drop of a standard Silicon PN diode, while 1.0 V is typical for power rectifiers under heavy load."
+      },
+      {
+            "id": 80,
+            "question": "(Problem) A 6 V supply is connected across a 330 \u03a9 resistor in series with a Light-Emitting Diode (LED) of 2 V forward drop. Calculate the current through the LED.",
+            "options": [
+                  "6 mA",
+                  "12 mA",
+                  "20 mA",
+                  "40 mA"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '12 mA' is Correct: By Kirchhoff's Voltage Law, resistor voltage V_R = V_S - V_F = 6 V - 2 V = 4 V. Applying Ohm's Law gives I = V_R / R = 4 V / 330 \u03a9 = 0.01212 A = 12.12 mA \u2248 12 mA.\n\u2022 Why Other Choices are Incorrect: 6 mA neglects the 2 V LED drop (using 2 V / 330 \u03a9), while 20 mA and 40 mA are arbitrary values."
+      },
+      {
+            "id": 81,
+            "question": "(Problem) A 10 pF varactor diode is used with a 100 \u00b5H coil. Find the resonant frequency.",
+            "options": [
+                  "1.6 MHz",
+                  "500 kHz",
+                  "5 MHz",
+                  "160 MHz"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why '5 MHz' is Correct: Resonant frequency f = 1 / (2\u03c0\u221a(L * C)). Substituting L = 100 \u00b5H = 100 x 10^-6 H and C = 10 pF = 10 x 10^-12 F gives \u221a(L * C) = \u221a(10^-15) = 3.162 x 10^-8 s. Thus f = 1 / (2 * \u03c0 * 3.162 x 10^-8) = 5,032,921 Hz \u2248 5.03 MHz \u2248 5 MHz.\n\u2022 Why Other Choices differ: Alternative choices result from unit conversion errors (e.g. omitting 10^-12 for pico or 10^-6 for micro)."
+      },
+      {
+            "id": 82,
+            "question": "(Problem) A Schottky diode bridge rectifier is used in a 5 V DC supply. If each diode drops 0.25 V, what is the total voltage drop across two conducting diodes?",
+            "options": [
+                  "0.25 V",
+                  "0.5 V",
+                  "1.4 V",
+                  "2.0 V"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '0.5 V' is Correct: In a full-wave bridge rectifier circuit, two diodes conduct simultaneously in series during each half-cycle. Total forward voltage drop V_total = 2 x V_diode = 2 x 0.25 V = 0.5 V.\n\u2022 Why Other Choices are Incorrect: 0.25 V counts only one diode, while 1.4 V is the drop across two standard silicon diodes (2 x 0.7 V)."
+      },
+      {
+            "id": 83,
+            "question": "Which special-purpose diode is known for its fast switching speed and low forward voltage drop?",
+            "options": [
+                  "Zener diode",
+                  "Light-emitting diode",
+                  "Schottky diode",
+                  "Tunnel diode"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Schottky diode' is Correct: A Schottky metal-semiconductor diode exhibits extremely fast switching speed (nanosecond reverse recovery time) and low forward voltage drop (0.15 V to 0.45 V).\n\u2022 Why Other Choices are Incorrect: Zener diodes are for voltage regulation, LEDs emit light, and Tunnel diodes exhibit negative resistance."
+      },
+
+      {
+            "id": 84,
+            "question": "In what type of electronic circuit would you commonly find a Schottky diode?",
+            "options": [
+                  "Audio amplifiers",
+                  "Power supplies",
+                  "High-frequency rectifiers",
+                  "Voltage regulators"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'High-frequency rectifiers' is Correct: Because Schottky diodes feature metal-semiconductor junctions with virtually zero reverse recovery time, they excel at rectifying high-frequency Alternating Current (AC) signals without switching losses.\n\u2022 Why Other Choices are Incorrect: Audio amplifiers use transistors, low-frequency power supplies use Silicon PN rectifiers, and Zener diodes handle voltage regulation."
+      },
+      {
+            "id": 85,
+            "question": "What is the primary application of a Schottky diode?",
+            "options": [
+                  "Voltage regulation",
+                  "Rectification of AC signals",
+                  "High-frequency applications",
+                  "Light detection"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'High-frequency applications' is Correct: Due to majority-carrier conduction, Schottky diodes switch in nanoseconds, making high-frequency Radio Frequency (RF) and switched-mode power supplies their primary application.\n\u2022 Why Other Choices are Incorrect: Zener diodes perform voltage regulation, standard diodes perform 60Hz AC rectification, and photodiodes perform light detection."
+      },
+      {
+            "id": 86,
+            "question": "Which type of diode is designed to emit light when forward-biased?",
+            "options": [
+                  "Zener diode",
+                  "Photodiode",
+                  "Light-emitting diode",
+                  "Schottky diode"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Light-emitting diode' is Correct: When forward-biased, a Light-Emitting Diode (LED) recombines electrons and holes in its active junction layer, directly releasing excess energy as visible or infrared photons.\n\u2022 Why Other Choices are Incorrect: Zener diodes regulate voltage, photodiodes absorb light to create current, and Schottky diodes are fast rectifiers."
+      },
+      {
+            "id": 87,
+            "question": "Which special-purpose diode is used for frequency multiplication and frequency synthesis in communication systems?",
+            "options": [
+                  "Gunn diode",
+                  "Zener diode",
+                  "Varactor diode",
+                  "Tunnel diode"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Varactor diode' is Correct: Varying reverse voltage on a Varactor diode alters its junction capacitance, making it the primary tuning element in Voltage-Controlled Oscillators (VCOs) for frequency synthesis and multiplication.\n\u2022 Why Other Choices are Incorrect: Gunn diodes generate microwave signals, Zener diodes regulate DC voltage, and Tunnel diodes act as high-speed switches."
+      },
+      {
+            "id": 88,
+            "question": "Which special-purpose diode is commonly used for voltage regulation in electronic circuits?",
+            "options": [
+                  "Varactor diode",
+                  "Schottky diode",
+                  "Zener diode",
+                  "Tunnel diode"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Zener diode' is Correct: Zener diodes maintain a constant reverse breakdown voltage (V_Z) across their terminals over a wide current range, making them ideal for DC voltage regulation.\n\u2022 Why Other Choices are Incorrect: Varactor diodes are variable capacitors, Schottky diodes are fast rectifiers, and Tunnel diodes are high-speed switches."
+      },
+
+      {
+            "id": 89,
+            "question": "What is the primary function of a Photodiode?",
+            "options": [
+                  "Electron emission caused by heating a metallic cathode filament",
+                  "Electron release induced by applying an intense electric field",
+                  "Electron emission caused by incident electromagnetic radiation",
+                  "Electron release produced by bombarding atoms with alpha rays"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why 'Detect light and convert it into a current' is Correct: A photodiode operates under reverse bias where incoming optical photons generate electron-hole pairs, producing a photocurrent proportional to light intensity.\n\u2022 Why Other Choices are Incorrect: LEDs emit light, standard PN diodes rectify AC signals, and Varactor diodes provide variable capacitance."
+      },
+      {
+            "id": 90,
+            "question": "In which application would a Tunnel diode be most suitable?",
+            "options": [
+                  "High-frequency oscillators",
+                  "Voltage regulation",
+                  "Light detection",
+                  "Rectification of low-frequency signals"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'High-frequency oscillators' is Correct: Tunnel diodes possess a negative dynamic resistance region and ultra-fast quantum tunneling speed, making them ideal for high-frequency microwave oscillators.\n\u2022 Why Other Choices are Incorrect: Zener diodes perform voltage regulation, photodiodes perform light detection, and standard diodes rectify low-frequency signals."
+      },
+      {
+            "id": 91,
+            "question": "Which special-purpose diode is designed to exhibit a varying capacitance with reverse bias voltage and is often used in tuning circuits?",
+            "options": [
+                  "Varactor diode",
+                  "Tunnel diode",
+                  "Photodiode",
+                  "Schottky diode"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Varactor diode' is Correct: A Varactor diode (varicap) operates in reverse bias, using its variable depletion layer width to act as a voltage-controlled capacitor in electronic tuning circuits.\n\u2022 Why Other Choices are Incorrect: Tunnel diodes exhibit negative resistance, photodiodes sense light, and Schottky diodes are fast rectifiers."
+      },
+      {
+            "id": 92,
+            "question": "What is the unique characteristic of a Varactor diode?",
+            "options": [
+                  "Emission of light",
+                  "Variable capacitance with voltage",
+                  "High-speed switching",
+                  "Rectification of signals"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Variable capacitance with voltage' is Correct: The fundamental feature of a Varactor diode is that its junction capacitance varies inversely with applied reverse bias voltage.\n\u2022 Why Other Choices are Incorrect: LEDs emit light, Schottky diodes perform high-speed switching, and standard diodes rectify signals."
+      },
+      {
+            "id": 93,
+            "question": "What is the primary application of a Gunn diode?",
+            "options": [
+                  "Voltage regulation",
+                  "Microwave oscillators",
+                  "Light detection",
+                  "Rectification of AC signals"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why 'Microwave oscillators' is Correct: Gunn diodes utilize the Gunn effect (transferred electron effect in bulk N-type Gallium Arsenide) to generate high-frequency microwave oscillations in RF transmitters and radar systems.\n\u2022 Why Other Choices are Incorrect: Zener diodes perform voltage regulation, photodiodes perform light detection, and PN junction diodes rectify AC signals."
+      },
+
+      {
+            "id": 94,
+            "question": "(Problem) An AC voltage with peak value V_p = 20 V is connected in series with a silicon diode (forward voltage drop V_D = 0.7 V, forward bulk resistance R_f = 10 \u03a9) and a load resistor R_L = 500 \u03a9. Find the peak current through the diode.",
+            "options": [
+                  "37.84 mA",
+                  "40.00 mA",
+                  "38.60 mA",
+                  "35.20 mA"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why '37.84 mA' is Correct: By Kirchhoff's Voltage Law, V_p - V_D = I * (R_f + R_L). Substituting values: 20 V - 0.7 V = I * (10 \u03a9 + 500 \u03a9) => 19.3 V = 510 \u03a9 * I. Therefore, peak current I_peak = 19.3 V / 510 \u03a9 = 0.037843 A = 37.84 mA.\n\u2022 Why Other Choices are Incorrect: 40.00 mA assumes an ideal diode (20 V / 500 \u03a9), while 38.60 mA ignores the 10 \u03a9 internal diode resistance."
+      },
+      {
+            "id": 95,
+            "question": "(Problem) For the silicon diode circuit in Problem 94 (V_p = 20 V, V_D = 0.7 V, R_f = 10 \u03a9, R_L = 500 \u03a9), calculate the peak output voltage V_out measured across the 500 \u03a9 load resistor.",
+            "options": [
+                  "18.92 V",
+                  "20.00 V",
+                  "19.30 V",
+                  "17.50 V"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why '18.92 V' is Correct: The peak output voltage across the load resistor is V_out = I_peak * R_L = (0.037843 A) * 500 \u03a9 = 18.9215 V \u2248 18.92 V.\n\u2022 Why Other Choices are Incorrect: 20.00 V assumes an ideal diode with zero voltage drop, while 19.30 V neglects the 10 \u03a9 internal diode resistance."
+      },
+      {
+            "id": 96,
+            "question": "(Problem) If the silicon diode in Problem 94 (V_p = 20 V, R_L = 500 \u03a9) is assumed to be ideal (V_D = 0 V, R_f = 0 \u03a9), what are the values of peak current and peak output voltage?",
+            "options": [
+                  "Peak Current = 40.00 mA, Peak Output Voltage = 20.00 V",
+                  "Peak Current = 37.84 mA, Peak Output Voltage = 18.92 V",
+                  "Peak Current = 38.60 mA, Peak Output Voltage = 19.30 V",
+                  "Peak Current = 50.00 mA, Peak Output Voltage = 25.00 V"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Peak Current = 40.00 mA, Peak Output Voltage = 20.00 V' is Correct: For an ideal diode, forward voltage drop V_D = 0 V and internal resistance R_f = 0 \u03a9. Thus I_peak = 20 V / 500 \u03a9 = 40 mA, and V_out = 20 V.\n\u2022 Why Other Choices differ: 37.84 mA / 18.92 V corresponds to the practical diode model with 0.7 V drop and 10 \u03a9 forward resistance."
+      },
+      {
+            "id": 97,
+            "question": "(Problem) A 20 V DC source is connected to a parallel combination of a Silicon diode (V_D = 0.7 V) and a Germanium diode (V_D = 0.3 V), connected in series with a 3 k\u03a9 load resistor. Using practical diode models, what is the node voltage V_A across the 3 k\u03a9 resistor?",
+            "options": [
+                  "19.70 V",
+                  "19.30 V",
+                  "20.00 V",
+                  "0.40 V"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why '19.70 V' is Correct: Germanium (Ge) turns ON at 0.3 V, which is lower than Silicon's 0.7 V turn-on threshold. The Germanium diode conducts first and clamps the diode voltage drop to 0.3 V, keeping the Silicon diode OFF. Thus V_A = 20 V - 0.3 V = 19.70 V.\n\u2022 Why Other Choices are Incorrect: 19.30 V assumes the Silicon diode conducts (20 V - 0.7 V), but Silicon remains cut off because Germanium clamps the node first."
+      },
+      {
+            "id": 98,
+            "question": "(Problem) Calculate the current I through the 3 k\u03a9 resistor for the parallel Silicon/Germanium diode circuit in Problem 97 (V_S = 20 V, Germanium drop = 0.3 V, R = 3 k\u03a9).",
+            "options": [
+                  "6.57 mA",
+                  "5.90 mA",
+                  "6.43 mA",
+                  "6.67 mA"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why '6.57 mA' is Correct: The voltage across the 3 k\u03a9 load resistor is V_A = 20 V - 0.3 V = 19.7 V. Applying Ohm's Law gives I = V_A / R = 19.7 V / 3000 \u03a9 = 0.0065667 A \u2248 6.57 mA.\n\u2022 Why Other Choices differ: 5.90 mA occurs if an additional 2 V drop is subtracted, while 6.43 mA occurs if Silicon's 0.7 V drop is used."
+      },
+      {
+            "id": 99,
+            "question": "Which special-purpose diode symbol is identified by a bent cathode bar resembling the letter 'Z'?",
+            "options": [
+                  "Zener diode",
+                  "Schottky diode",
+                  "Tunnel diode",
+                  "Varactor diode"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Zener diode' is Correct: The Zener diode schematic symbol features diagonal bent ends on its cathode bar, forming a characteristic 'Z' shape.\n\u2022 Why Other Choices differ: Schottky diodes have S-like bent ends, Tunnel diodes have bracketed ends, and Varactor diodes feature parallel capacitor lines."
+      },
+      {
+            "id": 100,
+            "question": "Which special-purpose diode symbol features two outward-pointing arrows radiating from the diode triangle?",
+            "options": [
+                  "Light-Emitting Diode",
+                  "Photodiode",
+                  "Tunnel diode",
+                  "Zener diode"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Light-Emitting Diode' is Correct: Two outward-pointing arrows symbolize light emission from the active junction of a Light-Emitting Diode (LED).\n\u2022 Why Other Choices differ: Inward-pointing arrows symbolize light absorption in a Photodiode."
+      },
+
+      {
+            "id": 101,
+            "question": "Which type of electron emission occurs when a metal is heated to a high temperature (around 2500 \u00b0C) so that free electrons gain sufficient kinetic energy to escape from the surface?",
+            "options": [
+                  "Thermionic emission",
+                  "Field emission",
+                  "Photoelectric emission",
+                  "Secondary emission"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Thermionic emission' is Correct: Thermionic emission relies on thermal energy (heating a metal cathode to high temperatures) to impart kinetic energy to electrons so they overcome the surface barrier and emit into space, as used in vacuum tubes.\n\u2022 Why Other Choices are Incorrect: Field emission uses high electric fields, photoelectric emission uses light photons, and secondary emission uses electron bombardment."
+      },
+      {
+            "id": 102,
+            "question": "What is the term for the minimum amount of energy required for an electron to escape from a metal's surface into surrounding space?",
+            "options": [
+                  "Work function",
+                  "Ionization potential",
+                  "Bandgap energy",
+                  "Breakover voltage"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Work function' is Correct: The Work Function (\u03a6) defines the minimum energy required to liberate an electron from the attractive nuclear forces at a metal surface.\n\u2022 Why Other Choices are Incorrect: Bandgap energy is the forbidden energy gap between valence and conduction bands in crystals."
+      },
+      {
+            "id": 103,
+            "question": "In electronics, 1 Electron-Volt (1 eV) is equivalent to how many Joules (J) of energy?",
+            "options": [
+                  "1.602 x 10^-19 J",
+                  "9.109 x 10^-31 J",
+                  "6.022 x 10^23 J",
+                  "1.000 x 10^-6 J"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why '1.602 x 10^-19 J' is Correct: By definition, 1 electron-volt (1 eV) is the kinetic energy gained by a single electron moving through a potential difference of 1 volt, equal to 1.602 x 10^-19 Joules.\n\u2022 Why Other Choices differ: 9.109 x 10^-31 kg is electron mass, and 6.022 x 10^23 is Avogadro's number."
+      },
+      {
+            "id": 104,
+            "question": "Which electron emission process occurs when high-speed primary electrons strike a metal surface and transfer kinetic energy to eject secondary electrons?",
+            "options": [
+                  "Secondary emission",
+                  "Thermionic emission",
+                  "Field emission",
+                  "Photoelectric emission"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Secondary emission' is Correct: Secondary emission occurs when high-velocity primary electrons bombard a metal surface, transferring momentum to knock bound electrons out of the metal.\n\u2022 Why Other Choices are Incorrect: Thermionic uses heat, field uses high voltage, and photoelectric uses light photons."
+      },
+      {
+            "id": 105,
+            "question": "Which fundamental quantum physics rule states that no two electrons in an atom can occupy the exact same quantum state simultaneously?",
+            "options": [
+                  "Pauli Exclusion Principle",
+                  "Heisenberg Uncertainty Principle",
+                  "Bohr Magneton Law",
+                  "Coulomb Law"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Pauli Exclusion Principle' is Correct: Wolfgang Pauli's Exclusion Principle dictates that no two identical fermions (electrons) can occupy the same quantum state, establishing atomic electron shell structures.\n\u2022 Why Other Choices differ: Heisenberg's uncertainty principle limits simultaneous measurement of position and momentum."
+      },
+      {
+            "id": 106,
+            "question": "What is the energy bandgap (E_g) equation defining the forbidden zone between the conduction band (E_C) and valence band (E_V)?",
+            "options": [
+                  "E_g = E_C - E_V",
+                  "E_g = E_C + E_V",
+                  "E_g = E_C * E_V",
+                  "E_g = E_V / E_C"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'E_g = E_C - E_V' is Correct: The bandgap energy (E_g) represents the energy difference between the bottom of the conduction band (E_C) and the top of the valence band (E_V).\n\u2022 Why Other Choices differ: Adding, multiplying, or dividing band energies violates solid-state energy band definitions."
+      },
+      {
+            "id": 107,
+            "question": "Which type of electron emission occurs when an extremely strong external electric field pulls free electrons out of a cold metal surface via electrostatic attraction?",
+            "options": [
+                  "Field emission",
+                  "Thermionic emission",
+                  "Photoelectric emission",
+                  "Secondary emission"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Field emission' is Correct: Field emission applies an intense positive electric field at a metal surface to lower the potential barrier, allowing electrons to tunnel out without thermal heating.\n\u2022 Why Other Choices are Incorrect: Thermionic emission requires heating the cathode to high temperatures."
+      },
+      {
+            "id": 108,
+            "question": "Why do good conductors (such as copper and silver) conduct electricity easily with almost zero electrical resistance?",
+            "options": [
+                  "Overlapping valence and conduction bands with zero bandgap",
+                  "Valence bands that remain completely empty at absolute zero",
+                  "Extremely wide forbidden energy bandgap exceeding 5 to 6 eV",
+                  "Exclusive reliance on positive hole conduction mechanisms"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Because their valence and conduction energy bands overlap with no significant forbidden bandgap' is Correct: In metallic conductors, the highest filled valence band overlaps directly with the conduction band (E_g \u2248 0), allowing free electrons to move freely upon applying a voltage.\n\u2022 Why Other Choices are Incorrect: Wide bandgaps (>5 eV) characterize insulators, not conductors."
+      },
+      {
+            "id": 109,
+            "question": "Which chemical stability rule states that atoms are most chemically stable when their outermost valence shell contains eight electrons?",
+            "options": [
+                  "Octet Rule",
+                  "Ohm Law",
+                  "Faraday Law",
+                  "Kepler Law"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Octet Rule' is Correct: The Octet Rule dictates that atoms achieve maximum chemical stability by gaining, losing, or sharing electrons (covalent bonding) to fill their valence shell with 8 electrons.\n\u2022 Why Other Choices are Incorrect: Ohm's Law relates V, I, and R; Faraday's Law governs induction."
+      },
+      {
+            "id": 110,
+            "question": "Reviewing the special diodes summary table, match each diode to its primary operational characteristic:",
+            "options": [
+                  "Zener = Voltage regulation, Schottky = Fast switching, Tunnel = Negative resistance, Varactor = Variable capacitance",
+                  "Zener = Light emission, Schottky = Voltage regulation, Tunnel = Variable capacitance, Varactor = Fast switching",
+                  "Zener = Fast switching, Schottky = Light emission, Tunnel = Voltage regulation, Varactor = Negative resistance",
+                  "Zener = Negative resistance, Schottky = Variable capacitance, Tunnel = Fast switching, Varactor = Light emission"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Zener = Voltage regulation, Schottky = Fast switching, Tunnel = Negative resistance, Varactor = Variable capacitance' is Correct: This summarizes core diode functions: Zener operates in reverse breakdown for voltage regulation; Schottky has zero reverse recovery for fast switching; Tunnel exhibits negative resistance via quantum tunneling; Varactor acts as a voltage-controlled variable capacitor.\n\u2022 Why Other Choices are Incorrect: Swapping functions confuses diode device physics."
+      },
+
+      {
+            "id": 111,
+            "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Zener Diode?",
+            "image": "images/diode_symbols.png",
+            "options": [
+                  "Diode with a bent 'Z' cathode bar",
+                  "Diode with two outward-pointing arrows",
+                  "Diode with S-shaped bent cathode bar",
+                  "Diode with parallel capacitor lines"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Diode with a bent Z cathode bar' is Correct: The Zener diode symbol features diagonal bent ends on its cathode bar, forming a distinct 'Z' shape to indicate operation in reverse breakdown voltage regulation.\n\u2022 Why Other Choices differ: Two outward arrows represent an LED, S-shaped cathode represents a Schottky diode, and parallel capacitor lines represent a Varicap/Varactor diode."
+      },
+      {
+            "id": 112,
+            "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Light-Emitting Diode (LED)?",
+            "image": "images/diode_symbols.png",
+            "options": [
+                  "Diode with two outward-pointing arrows",
+                  "Diode with two inward-pointing arrows",
+                  "Diode with bracket-shaped cathode bar",
+                  "Diode with bent 'Z' cathode bar"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Diode with two outward-pointing arrows' is Correct: The Light-Emitting Diode (LED) symbol uses two outward-pointing arrows to signify photon emission during electron-hole recombination under forward bias.\n\u2022 Why Other Choices differ: Inward-pointing arrows signify light absorption in a Photo Diode."
+      },
+      {
+            "id": 113,
+            "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Photo Diode?",
+            "image": "images/diode_symbols.png",
+            "options": [
+                  "Diode with two inward-pointing arrows",
+                  "Diode with two outward-pointing arrows",
+                  "Diode with S-shaped bent cathode bar",
+                  "Diode with parallel capacitor lines"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Diode with two inward-pointing arrows' is Correct: The Photo Diode symbol features two inward-pointing arrows to represent incoming optical photons that generate photocurrent under reverse bias.\n\u2022 Why Other Choices differ: Outward arrows represent LED light emission."
+      },
+      {
+            "id": 114,
+            "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Schottky Diode?",
+            "image": "images/diode_symbols.png",
+            "options": [
+                  "Diode with S-shaped bent cathode bar",
+                  "Diode with bent 'Z' cathode bar",
+                  "Diode with bracket-shaped cathode bar",
+                  "Diode with parallel capacitor lines"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Diode with S-shaped bent cathode bar' is Correct: The Schottky diode symbol features an S-like curved cathode bar representing its metal-semiconductor junction with zero reverse recovery time.\n\u2022 Why Other Choices differ: Z-shaped bar represents Zener, bracket represents Tunnel diode."
+      },
+      {
+            "id": 115,
+            "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Tunnel Diode?",
+            "image": "images/diode_symbols.png",
+            "options": [
+                  "Diode with bracket-shaped cathode bar",
+                  "Diode with S-shaped bent cathode bar",
+                  "Diode with two inward-pointing arrows",
+                  "Diode with bent 'Z' cathode bar"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Diode with bracket-shaped cathode bar' is Correct: The Tunnel diode symbol features right-angled square brackets on its cathode bar, symbolizing quantum tunneling and negative dynamic resistance.\n\u2022 Why Other Choices differ: S-shaped bar represents Schottky, Z-shaped bar represents Zener."
+      },
+      {
+            "id": 116,
+            "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Varicap (Varactor) Diode?",
+            "image": "images/diode_symbols.png",
+            "options": [
+                  "Diode with parallel capacitor lines at cathode",
+                  "Diode with two outward-pointing arrows",
+                  "Diode with bent 'Z' cathode bar",
+                  "Diode with bracket-shaped cathode bar"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why 'Diode with parallel capacitor lines at cathode' is Correct: The Varicap/Varactor diode symbol combines a standard diode triangle with a parallel capacitor plate at its cathode, denoting voltage-controlled variable capacitance.\n\u2022 Why Other Choices differ: Outward arrows represent LED, Z-bar represents Zener, bracket represents Tunnel diode."
+      },
+
+      {
+            "id": 117,
+            "question": "Statement: Germanium diodes begin conducting at a higher forward voltage threshold than Silicon diodes.",
+            "options": [
+                  "a. True, because Germanium has a wider bandgap energy than Silicon.",
+                  "b. True, because Germanium exhibits lower thermal stability under direct current bias.",
+                  "c. False, because Germanium has a lower potential barrier compared to Silicon.",
+                  "d. False, because both materials possess identical potential barriers of 0.5 V at room temperature."
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why Choice C is Correct: Germanium (Ge) has a lower barrier potential (approx 0.3 V) compared to Silicon (Si, approx 0.7 V). Therefore, Germanium begins conducting at a lower forward voltage threshold, making the statement False.\n\u2022 Why Other Choices are Incorrect: Germanium has a smaller bandgap (~0.67 eV vs Si 1.1 eV), and Germanium's potential barrier is 0.3 V, not equal to 0.7 V."
+      },
+      {
+            "id": 118,
+            "question": "Statement: Doping a semiconductor with trivalent impurities produces donor atoms that increase the concentration of free electrons.",
+            "options": [
+                  "a. True, trivalent atoms donate three extra electrons to lattice",
+                  "b. True, trivalent impurities increase negative charge density",
+                  "c. False, trivalent impurities are acceptors creating excess holes",
+                  "d. False, trivalent impurities form metallic insulating bonds"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why Choice C is Correct: Trivalent impurities (e.g. Boron, Gallium, Indium) have 3 valence electrons and act as acceptor atoms that accept electrons to create excess holes, forming P-type material. Pentavalent impurities are donors that create free electrons.\n\u2022 Why Other Choices are Incorrect: Trivalent atoms create holes, not free electron donors."
+      },
+      {
+            "id": 119,
+            "question": "Statement: In the First Approximation (Ideal Diode Model), a forward-biased diode is treated as a closed switch with zero voltage drop.",
+            "options": [
+                  "a. True, because the ideal model neglects the barrier potential and internal forward resistance.",
+                  "b. True, because ideal diodes convert all applied forward voltage directly into heat energy.",
+                  "c. False, because the ideal model includes a fixed 0.7 V battery drop across the terminals.",
+                  "d. False, because ideal diodes offer infinite resistance regardless of polarity."
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why Choice A is Correct: The First Approximation (Ideal Diode) simplifies forward bias to a closed switch (V_D = 0 V, R_f = 0 \u03a9) and reverse bias to an open switch, completely neglecting barrier potential and internal resistance.\n\u2022 Why Other Choices are Incorrect: The ideal model has 0 V drop, unlike the practical second approximation which includes a 0.7 V drop."
+      },
+      {
+            "id": 120,
+            "question": "Statement: A reverse-biased practical diode permits zero electrical current to pass through its PN junction under all operational conditions.",
+            "options": [
+                  "a. True, depletion region forms absolute barrier to charge flow",
+                  "b. True, minority charge carriers cannot exist in doped silicon",
+                  "c. False, thermally generated minority carriers form leakage current",
+                  "d. False, forward current and reverse current are always equal"
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why Choice C is Correct: In reverse bias, a small reverse saturation leakage current (I_S) flows due to thermally generated minority carriers crossing the junction. Therefore, the statement claiming zero current is False.\n\u2022 Why Other Choices are Incorrect: Minority carriers are generated by thermal energy and produce reverse leakage current."
+      },
+      {
+            "id": 121,
+            "question": "Statement: The Second Approximation of a diode models the device as an ideal switch in series with a DC voltage source equal to its barrier potential.",
+            "options": [
+                  "a. True, accounts for knee voltage while ignoring bulk resistance",
+                  "b. True, includes internal forward resistance and capacitance",
+                  "c. False, ignores barrier potential and only models resistance",
+                  "d. False, applies strictly to reverse-bias operating analysis"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why Choice A is Correct: The Second Approximation (Practical Diode) models forward bias as a closed switch in series with a 0.7 V battery (for Si) or 0.3 V (for Ge), representing barrier knee voltage while omitting bulk resistance.\n\u2022 Why Other Choices are Incorrect: Bulk resistance is only added in the third approximation."
+      },
+      {
+            "id": 122,
+            "question": "Statement: The Third Approximation of a diode is also referred to as the Piecewise Linear Model.",
+            "options": [
+                  "a. True, because it combines the barrier voltage with the internal forward resistance of the semiconductor.",
+                  "b. True, because it treats the diode as a variable AC voltage generator under steady-state DC conditions.",
+                  "c. False, because the piecewise linear model applies only to the First (Ideal) Approximation.",
+                  "d. False, because the third approximation assumes zero internal resistance during conduction."
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why Choice A is Correct: The Third Approximation incorporates the threshold voltage V_D and internal bulk resistance r_f into a two-segment linear I-V curve, which is officially named the Piecewise Linear Model.\n\u2022 Why Other Choices are Incorrect: The piecewise linear model specifically includes internal resistance r_f."
+      },
+      {
+            "id": 123,
+            "question": "Statement: GaAs is a single-crystal elemental semiconductor like Silicon and Germanium.",
+            "options": [
+                  "a. True, because GaAs is composed of a single element from Group IV of the periodic table.",
+                  "b. True, because GaAs possess identical electronic properties to pure Silicon crystals.",
+                  "c. False, because GaAs is a compound semiconductor made from Gallium and Arsenic.",
+                  "d. False, because GaAs is a synthetic ceramic insulator incapable of conducting current."
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why Choice C is Correct: Gallium Arsenide (GaAs) is a Group III-V compound semiconductor formed chemically by Gallium and Arsenic, unlike Silicon and Germanium which are single-element single-crystal semiconductors.\n\u2022 Why Other Choices are Incorrect: GaAs is not a single element."
+      },
+      {
+            "id": 124,
+            "question": "Statement: Applying a forward bias to a PN junction diode lowers the internal potential barrier across the depletion region.",
+            "options": [
+                  "a. True, because the external voltage opposes the built-in electric field, narrowing the depletion region.",
+                  "b. True, because the external voltage forces minority carriers to widen the depletion region.",
+                  "c. False, because forward biasing increases the internal potential barrier to prevent breakdown.",
+                  "d. False, because external voltage bias has no physical effect on depletion region width."
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why Choice A is Correct: Forward bias applies positive voltage to the P-side and negative to the N-side, opposing the internal junction field, narrowing the depletion region, and lowering the barrier potential.\n\u2022 Why Other Choices are Incorrect: Reverse bias widens the depletion region, while forward bias thins it."
+      },
+      {
+            "id": 125,
+            "question": "Statement: Increasing the temperature of a semiconductor material increases its electrical resistance.",
+            "options": [
+                  "a. True, because thermal vibration impairs covalent bonding, reducing the number of charge carriers.",
+                  "b. True, because semiconductors have a positive temperature coefficient of resistance like copper.",
+                  "c. False, because thermal energy generates additional electron-hole pairs, decreasing electrical resistance.",
+                  "d. False, because temperature changes affect electrical insulators exclusively."
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why Choice C is Correct: Semiconductors have a Negative Temperature Coefficient (NTC). As temperature rises, thermal energy breaks covalent bonds and creates additional electron-hole pairs, increasing conductivity and decreasing resistance.\n\u2022 Why Other Choices are Incorrect: Metals have a positive temperature coefficient, but semiconductors have a negative temperature coefficient."
+      },
+      {
+            "id": 126,
+            "question": "Statement: Under zero bias conditions, an electrical current flows spontaneously through an isolated PN junction diode due to concentration gradients.",
+            "options": [
+                  "a. True, because diffusion of majority carriers creates a continuous closed-loop direct current.",
+                  "b. True, because the built-in voltage acts as an internal DC power supply.",
+                  "c. False, because carrier diffusion is counterbalanced by drift current in equilibrium, resulting in zero net current.",
+                  "d. False, because charge carriers cannot move within semiconductor materials without external light exposure."
+            ],
+            "answer": 2,
+            "explanation": "\u2022 Why Choice C is Correct: At thermal equilibrium (zero bias), the forward diffusion current of majority carriers is exactly equal and opposite to the reverse drift current of thermally generated minority carriers, making net current zero.\n\u2022 Why Other Choices are Incorrect: No net current flows without an external energy source."
+      },
+      {
+            "id": 127,
+            "question": "(Problem) A Silicon diode is connected in a simple series circuit with a 1.2 k\u03a9 load resistor and a DC source V_S = 12 V. Using the Second Approximation, calculate the total circuit current I_D in milliamperes (mA).",
+            "options": [
+                  "a. 9.4167 mA",
+                  "b. 10.0 mA",
+                  "c. 8.8333 mA",
+                  "d. 9.15 mA"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why '9.4167 mA' is Correct: By the Second Approximation, Silicon forward voltage V_D = 0.7 V. Voltage across load resistor V_R = V_S - V_D = 12 V - 0.7 V = 11.3 V. By Ohm's Law, I_D = V_R / R_L = 11.3 V / 1200 \u03a9 = 0.00941667 A = 9.4167 mA.\n\u2022 Why Other Choices are Incorrect: 10.0 mA assumes an ideal diode (12 V / 1200 \u03a9), while 8.8333 mA assumes an incorrect drop."
+      },
+      {
+            "id": 128,
+            "question": "(Problem) For the same series circuit described in Item 11 (V_S = 12 V, Silicon diode V_D = 0.7 V, R_L = 1.2 k\u03a9, I_D = 9.4167 mA), calculate the power dissipated by the Silicon diode (P_D) in milliwatts (mW) using the Second Approximation.",
+            "options": [
+                  "a. 7.1 mW",
+                  "b. 6.5917 mW",
+                  "c. 6.1833 mW",
+                  "d. 8.4 mW"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '6.5917 mW' is Correct: Power dissipated by diode P_D = V_D * I_D = 0.7 V * 9.416667 mA = 6.591667 mW \u2248 6.5917 mW.\n\u2022 Why Other Choices are Incorrect: 7.1 mW and 6.1833 mW use incorrect current or voltage values."
+      },
+      {
+            "id": 129,
+            "question": "(Problem) A Germanium diode exhibits an internal forward resistance r_f = 15 \u03a9. It is connected in series with a load resistor R_L = 470 \u03a9 and a 9 V DC supply. Using the Third Approximation, calculate the total current in milliamperes (mA).",
+            "options": [
+                  "a. 18.5106 mA",
+                  "b. 17.9381 mA",
+                  "c. 19.1489 mA",
+                  "d. 17.3913 mA"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '17.9381 mA' is Correct: Third Approximation for Germanium: V_D = 0.3 V, internal resistance r_f = 15 \u03a9. Total circuit resistance R_total = r_f + R_L = 15 \u03a9 + 470 \u03a9 = 485 \u03a9. Current I = (V_S - V_D) / R_total = (9 V - 0.3 V) / 485 \u03a9 = 8.7 V / 485 \u03a9 = 0.01793814 A = 17.9381 mA.\n\u2022 Why Other Choices are Incorrect: 18.5106 mA ignores internal resistance r_f (8.7 V / 470 \u03a9)."
+      },
+      {
+            "id": 130,
+            "question": "(Problem) Using the parameters and results from Item 13 (V_S = 9 V, Germanium V_D = 0.3 V, r_f = 15 \u03a9, R_L = 470 \u03a9, I = 17.9381 mA), calculate the actual terminal voltage drop across the Germanium diode in volts using the Third Approximation.",
+            "options": [
+                  "a. 0.3 V",
+                  "b. 0.5691 V",
+                  "c. 0.2691 V",
+                  "d. 0.45 V"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '0.5691 V' is Correct: Actual diode terminal voltage V_terminal = V_D + (I * r_f) = 0.3 V + (0.01793814 A * 15 \u03a9) = 0.3 V + 0.269072 V = 0.569072 V \u2248 0.5691 V.\n\u2022 Why Other Choices are Incorrect: 0.3 V is only the knee voltage without internal resistance voltage drop."
+      },
+      {
+            "id": 131,
+            "question": "(Problem) A Gallium Arsenide (GaAs) diode (V_F = 1.2 V) is connected across a 15 V DC source in series with a 2.2 k\u03a9 resistor. Using the Second Approximation, determine the voltage across the load resistor V_L in volts (V).",
+            "options": [
+                  "a. 15 V",
+                  "b. 13.8 V",
+                  "c. 1.2 V",
+                  "d. 14.3 V"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '13.8 V' is Correct: GaAs forward barrier voltage V_F = 1.2 V. By Kirchhoff's Voltage Law, voltage across load resistor V_L = V_S - V_F = 15 V - 1.2 V = 13.8 V.\n\u2022 Why Other Choices are Incorrect: 15 V neglects diode drop, 1.2 V is the diode drop itself, and 14.3 V assumes 0.7 V drop."
+      },
+      {
+            "id": 132,
+            "question": "(Problem) Two identical Silicon diodes are connected in series with a 680 \u03a9 load resistor and a 10 V DC voltage supply. Using the Second Approximation, calculate the total circuit current in milliamperes (mA).",
+            "options": [
+                  "a. 13.6765 mA",
+                  "b. 12.6471 mA",
+                  "c. 14.7059 mA",
+                  "d. 11.6176 mA"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '12.6471 mA' is Correct: Two series Silicon diodes drop V_total = 2 * 0.7 V = 1.4 V. Resistor voltage V_R = 10 V - 1.4 V = 8.6 V. Circuit current I = 8.6 V / 680 \u03a9 = 0.01264706 A = 12.6471 mA.\n\u2022 Why Other Choices are Incorrect: 13.6765 mA counts only one diode drop (9.3 V / 680 \u03a9)."
+      },
+      {
+            "id": 133,
+            "question": "(Problem) For a series circuit with a 10 V DC source and a single Silicon diode (V_D = 0.7 V) connected across a 330 \u03a9 load resistor, calculate the load voltage V_L across the 330 \u03a9 resistor in volts (V).",
+            "options": [
+                  "a. 9.3 V",
+                  "b. 4.3 V",
+                  "c. 10.0 V",
+                  "d. 7.9 V"
+            ],
+            "answer": 0,
+            "explanation": "\u2022 Why '9.3 V' is Correct: By KVL, load voltage V_L = V_S - V_D = 10 V - 0.7 V = 9.3 V.\n\u2022 Why Other Choices are Incorrect: 4.3 V corresponds to a 5 V source (5 V - 0.7 V), while 10.0 V ignores diode barrier drop."
+      },
+      {
+            "id": 134,
+            "question": "(Problem) Two Silicon diodes are connected in parallel with each other in the forward direction. This parallel branch is placed in series with a 330 \u03a9 resistor and a 5 V DC supply. Assuming equal current sharing, calculate the current through each individual diode in milliamperes (mA) using the Second Approximation.",
+            "options": [
+                  "a. 13.0303 mA",
+                  "b. 6.5152 mA",
+                  "c. 7.5758 mA",
+                  "d. 3.2576 mA"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '6.5152 mA' is Correct: Parallel Silicon diodes clamp the branch voltage to V_D = 0.7 V. Resistor voltage V_R = 5 V - 0.7 V = 4.3 V. Total supply current I_total = 4.3 V / 330 \u03a9 = 13.0303 mA. Since current divides equally between two parallel diodes: I_diode = 13.0303 mA / 2 = 6.51515 mA \u2248 6.5152 mA.\n\u2022 Why Other Choices are Incorrect: 13.0303 mA is total circuit current before dividing by 2."
+      },
+      {
+            "id": 135,
+            "question": "(Problem) An ideal Silicon diode is connected in reverse bias across a 24 V DC supply in series with a 1 k\u03a9 resistor. Calculate the terminal voltage across the reverse-biased diode V_D in volts (V).",
+            "options": [
+                  "a. 0 V",
+                  "b. 24 V",
+                  "c. 12 V",
+                  "d. 0.7 V"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '24 V' is Correct: In reverse bias, an ideal diode acts as an open circuit (I = 0). With zero current flowing through the resistor (V_R = 0 V), the full 24 V supply voltage drops across the open diode terminals.\n\u2022 Why Other Choices are Incorrect: 0 V occurs across an ideal diode in forward bias, not reverse bias."
+      },
+      {
+            "id": 136,
+            "question": "(Problem) A Silicon diode and a Germanium diode are connected in parallel (facing the same forward conduction path) in series with a 1.5 k\u03a9 load resistor and a 12 V DC source. Using the Second Approximation, determine the total current drawn from the supply in milliamperes (mA).",
+            "options": [
+                  "a. 7.5333 mA",
+                  "b. 7.8000 mA",
+                  "c. 7.2667 mA",
+                  "d. 8.0000 mA"
+            ],
+            "answer": 1,
+            "explanation": "\u2022 Why '7.8000 mA' is Correct: Germanium turns ON at 0.3 V, which is lower than Silicon's 0.7 V threshold. Germanium conducts first and clamps the node voltage to 0.3 V, keeping Silicon OFF. Resistor voltage V_R = 12 V - 0.3 V = 11.7 V. Total current I = 11.7 V / 1500 \u03a9 = 0.0078 A = 7.8 mA.\n\u2022 Why Other Choices are Incorrect: 7.5333 mA assumes Silicon conducts (11.3 V / 1500 \u03a9 = 7.533 mA), but Silicon remains OFF."
+      },
+{
+            "id": 137,
+            "question": "A Bipolar Junction Transistor (BJT) is structurally formed by joining two PN junctions in series. How many semiconductor layers, junctions, and terminals does a BJT possess?",
+            "options": [
+                "Two layers, one junction, and two terminals",
+                "Three layers, two junctions, and three terminals",
+                "Three layers, three junctions, and three terminals",
+                "Four layers, three junctions, and two terminals"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Three layers, two junctions, and three terminals' is Correct: A BJT is constructed from three alternating layers of semiconductor material (N-P-N or P-N-P), creating two internal PN junctions (Base-Emitter and Base-Collector) and three accessible external terminals (Emitter, Base, and Collector).\n• Why Other Choices are Incorrect: A simple diode has two layers and one junction. An SCR (thyristor) has four layers and three junctions."
+        },
+{
+            "id": 138,
+            "question": "Why is the Bipolar Junction Transistor designated as a 'bipolar' device?",
+            "options": [
+                "Because it has exactly two external power supply polarity connections",
+                "Its operation depends on the movement of both electrons and holes",
+                "Because it possesses two identical PN junctions that share equal physical dimensions",
+                "Because it operates exclusively with dual positive and negative voltage rails"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In a BJT, conduction involves both electrons and holes acting as charge carriers across the junctions, making it 'bipolar'. In contrast, Field-Effect Transistors (FETs) are 'unipolar' because conduction relies on only one type of charge carrier (either electrons or holes).\n• Why Other Choices are Incorrect: The term 'bipolar' does not refer to power supply rails or symmetrical junction sizing."
+        },
+{
+            "id": 139,
+            "question": "If two discrete signal diodes are connected back-to-back such that their anodes are tied together to a common terminal, which type of BJT structure does this model?",
+            "options": [
+                "PNP Transistor",
+                "NPN Transistor",
+                "Junction Field-Effect Transistor (JFET)",
+                "Metal-Oxide-Semiconductor FET (MOSFET)"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'NPN Transistor' is Correct: In the back-to-back diode analogy of an NPN transistor, the two P-type anodes are fused together to form the common Base (P-type), while the two N-type cathodes form the Emitter and Collector (N-type).\n• Why Other Choices are Incorrect: For a PNP transistor, the two cathodes (N-type) are connected together to form the shared Base, with the anodes acting as Emitter and Collector."
+        },
+{
+            "id": 140,
+            "question": "If two signal diodes are connected back-to-back sharing a common N-type cathode terminal, which transistor type is represented?",
+            "options": [
+                "NPN Transistor",
+                "PNP Transistor",
+                "Unijunction Transistor (UJT)",
+                "Silicon Controlled Rectifier (SCR)"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'PNP Transistor' is Correct: A PNP transistor consists of two P-type regions separated by an N-type base. In the diode analogy, the two diodes have their cathodes connected back-to-back to form the shared central N-type base terminal.\n• Why Other Choices are Incorrect: Connecting anodes forms an NPN transistor."
+        },
+{
+            "id": 141,
+            "question": "Transistors are classified as active circuit components rather than passive components. What fundamentally characterizes an 'active' device?",
+            "options": [
+                  "Dissipates electrical energy solely as thermal heat like a resistor",
+                  "Controls electron flow to produce power or voltage amplification",
+                  "Requires zero external DC biasing power supplies during operation",
+                  "Obeys Ohm's law linearly across all operating frequencies and levels"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Active devices are electronic components that can control the flow of electricity, inject energy into a circuit, and produce amplification using external DC power. Resistors, capacitors, and inductors are passive devices because they cannot amplify.\n• Why Other Choices are Incorrect: Passive devices dissipate or store energy, whereas active devices can amplify signals."
+        },
+{
+            "id": 142,
+            "question": "The ability of a transistor to change between an insulating state and a conducting state enables it to perform which two fundamental engineering functions?",
+            "options": [
+                "Rectification and Filtering",
+                "Switching and Amplification",
+                "Modulation and Demodulation exclusively",
+                "Inductance and Capacitance"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Switching and Amplification' is Correct: Transistors have two foundational functions: (1) Switching in digital electronics (fully OFF in cutoff or fully ON in saturation), and (2) Amplification in analogue electronics (operating in the linear active region to enlarge input signals).\n• Why Other Choices are Incorrect: Rectification is primarily the function of diodes."
+        },
+{
+            "id": 143,
+            "question": "When a BJT is utilized as a digital switch (logic inverter or driver), between which two operational regions does it transition?",
+            "options": [
+                "Active region and Breakdown region",
+                "Cutoff region and Saturation region",
+                "Active region and Cutoff region only",
+                "Saturation region and Active region only"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Cutoff region and Saturation region' is Correct: In digital switching, the transistor operates as an open switch in the Cutoff region (zero current, maximum voltage across terminals) and as a closed switch in the Saturation region (maximum current, near-zero voltage drop across terminals).\n• Why Other Choices are Incorrect: The active region is avoided during steady-state switching to minimize power dissipation."
+        },
+{
+            "id": 144,
+            "question": "For linear, undistorted analogue signal amplification, in which region must a BJT be biased?",
+            "options": [
+                "Saturation region",
+                "Cutoff region",
+                "Active region",
+                "Avalanche breakdown region"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Active region' is Correct: In the Active region, collector current is proportional to base current (IC = beta * IB), providing linear input-to-output amplification without clipping waveform peaks.\n• Why Other Choices are Incorrect: Saturation and cutoff clip the waveform peaks, resulting in severe non-linear distortion."
+        },
+{
+            "id": 145,
+            "question": "What are the exact PN junction biasing conditions required for a BJT to operate in the Active (linear amplification) region?",
+            "options": [
+                "Base-Emitter forward-biased and Base-Collector forward-biased",
+                "Base-Emitter reverse-biased and Base-Collector forward-biased",
+                "Base-Emitter forward-biased and Base-Collector reverse-biased",
+                "Base-Emitter reverse-biased and Base-Collector reverse-biased"
+            ],
+            "answer": 2,
+            "explanation": "• Why this is Correct: In the active region, the Base-Emitter (input) junction is forward-biased to permit carrier injection into the base, and the Base-Collector (output) junction is reverse-biased to sweep carriers into the collector.\n• Why Other Choices are Incorrect: Forward-forward corresponds to Saturation, reverse-reverse corresponds to Cutoff, and reverse-forward corresponds to Inverted Active."
+        },
+{
+            "id": 146,
+            "question": "What junction biasing states place a BJT into the Cutoff region (OFF state)?",
+            "options": [
+                "Base-Emitter forward-biased and Base-Collector reverse-biased",
+                "Both Base-Emitter and Base-Collector junctions reverse-biased",
+                "Both Base-Emitter and Base-Collector junctions forward-biased",
+                "Base-Emitter reverse-biased and Base-Collector forward-biased"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In the cutoff region, both junctions are reverse-biased. No majority carriers are injected into the base, resulting in near-zero terminal currents (only negligible reverse saturation leakage I_CEO flows).\n• Why Other Choices are Incorrect: Forward-biasing either junction allows substantial current to flow."
+        },
+{
+            "id": 147,
+            "question": "What junction biasing states define the Saturation region (fully ON state)?",
+            "options": [
+                "Both Base-Emitter and Base-Collector junctions forward-biased",
+                "Both Base-Emitter and Base-Collector junctions reverse-biased",
+                "Base-Emitter forward-biased and Base-Collector reverse-biased",
+                "Base-Emitter reverse-biased and Base-Collector forward-biased"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: When both junctions are forward-biased, the transistor enters saturation. Collector current reaches its maximum external circuit limit (I_C(sat) ≈ V_CC / R_C) and V_CE drops to its minimum saturation voltage (V_CE(sat) ≈ 0.2 V).\n• Why Other Choices are Incorrect: Reverse-biasing the collector-base junction establishes the active region."
+        },
+{
+            "id": 148,
+            "question": "How is the Emitter region of a BJT physically engineered with respect to impurity doping concentration?",
+            "options": [
+                  "Lightly doped to minimize reverse junction leakage currents",
+                  "Moderately doped to match collector impurity concentrations",
+                  "Heavily doped to inject maximum majority carriers into the base",
+                  "Completely undoped intrinsic silicon without metal contacts"
+            ],
+            "answer": 2,
+            "explanation": "• Why this is Correct: The Emitter region is the most heavily doped layer. Its primary role is to emit (inject) a massive concentration of majority carriers (electrons in NPN, holes in PNP) across the forward-biased emitter junction into the thin base layer.\n• Why Other Choices are Incorrect: Lightly doped regions cannot supply sufficient carriers for high current gain."
+        },
+{
+            "id": 149,
+            "question": "What are the two primary structural characteristics of the BJT Base layer that are essential for effective transistor operation?",
+            "options": [
+                "Extremely thick and heavily doped",
+                "Extremely thin and lightly doped",
+                "Thick and moderately doped",
+                "Equal in thickness and doping to the collector"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Making the base very thin and lightly doped ensures that over 95% to 99% of carriers injected from the emitter diffuse directly across into the collector without recombining in the base. This keeps base current I_B tiny and maximizes current gain beta.\n• Why Other Choices are Incorrect: A thick or heavily doped base would cause excessive carrier recombination, destroying transistor action."
+        },
+{
+            "id": 150,
+            "question": "Why is the Collector region physically manufactured with the largest surface area among the three semiconductor layers?",
+            "options": [
+                  "Maximizes electrostatic capacitance across transistor terminals",
+                  "Dissipates heat generated at reverse-biased collector junction",
+                  "Ensures highest bulk electrical resistance within the collector",
+                  "Enables easier mechanical wire lead attachment during packaging"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The Collector region operates under reverse bias with a relatively large voltage drop (V_CE) and conducts almost the full emitter current (I_C ≈ I_E). The resulting power dissipation (P = V_CE * I_C) is highest at the collector junction, requiring a larger physical volume and surface area to safely dissipate heat.\n• Why Other Choices are Incorrect: Minimizing capacitance is desirable, and large physical size does not increase resistance."
+        },
+{
+            "id": 151,
+            "question": "According to Kirchhoff's Current Law (KCL), what is the universal relationship between the three terminal currents of any BJT?",
+            "options": [
+                "I_C = I_B + I_E",
+                "I_E = I_B + I_C",
+                "I_B = I_E + I_C",
+                "I_E = I_C - I_B"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'I_E = I_B + I_C' is Correct: By applying KCL to the transistor package as a single node, total current leaving or entering the emitter must equal the sum of collector current and base current: I_E = I_B + I_C. Since I_B is very small, I_E ≈ I_C.\n• Why Other Choices are Incorrect: Emitter current is always the largest terminal current."
+        },
+{
+            "id": 152,
+            "question": "In an NPN transistor operating in the active region, which charge carriers constitute the majority carriers injected from emitter to collector?",
+            "options": [
+                "Holes",
+                "Electrons",
+                "Positrons",
+                "Photons"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Electrons' is Correct: In an NPN transistor, the Emitter is N-type, meaning its majority carriers are electrons. When forward-biased, these electrons are injected into the P-type base and swept into the N-type collector.\n• Why Other Choices are Incorrect: In a PNP transistor, holes are the injected majority carriers."
+        },
+{
+            "id": 153,
+            "question": "What is the definition of the DC current gain beta (h_FE) in the common-emitter configuration?",
+            "options": [
+                "beta = I_B / I_C",
+                "beta = I_C / I_B",
+                "beta = I_C / I_E",
+                "beta = I_E / I_B"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'beta = I_C / I_B' is Correct: The common-emitter DC current gain, designated as beta (or h_FE on datasheets), is defined as the ratio of output DC collector current to input DC base current: beta = I_C / I_B. Typical values range from 50 to 400.\n• Why Other Choices are Incorrect: I_C / I_E is alpha; I_B / I_C is the reciprocal of beta."
+        },
+{
+            "id": 154,
+            "question": "What is the common-base DC current amplification factor alpha (α) defined as?",
+            "options": [
+                "alpha = I_C / I_E",
+                "alpha = I_E / I_C",
+                "alpha = I_B / I_E",
+                "alpha = I_C / I_B"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: alpha (α) is defined as the ratio of collector current to emitter current in the common-base configuration: alpha = I_C / I_E.\n• Why Other Choices are Incorrect: I_C / I_B is beta; I_E / I_C is the reciprocal of alpha."
+        },
+{
+            "id": 155,
+            "question": "Which mathematical formula correctly converts common-emitter gain beta to common-base gain alpha?",
+            "options": [
+                "alpha = beta / (beta + 1)",
+                "alpha = (beta + 1) / beta",
+                "alpha = beta / (beta - 1)",
+                "alpha = beta * (beta + 1)"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'alpha = beta / (beta + 1)' is Correct: Since I_E = I_B + I_C = (I_C / beta) + I_C = I_C * ((1 + beta) / beta), solving for alpha = I_C / I_E yields alpha = beta / (beta + 1).\n• Why Other Choices are Incorrect: (beta + 1) / beta would yield a value greater than 1."
+        },
+{
+            "id": 156,
+            "question": "If a transistor has a common-emitter current gain beta = 199, what is its corresponding common-base current gain alpha?",
+            "options": [
+                "0.950",
+                "0.990",
+                "0.995",
+                "1.005"
+            ],
+            "answer": 2,
+            "explanation": "• Why '0.995' is Correct: Using alpha = beta / (beta + 1) = 199 / (199 + 1) = 199 / 200 = 0.995.\n• Why Other Choices are Incorrect: Direct calculation yields exactly 0.995."
+        },
+{
+            "id": 157,
+            "question": "On a standard transistor schematic symbol, what does the arrow located on the Emitter terminal indicate?",
+            "options": [
+                  "Direction of electron drift under heavy reverse-bias conditions",
+                  "Direction of conventional current through forward-biased emitter",
+                  "Polarity of external direct current collector supply voltages",
+                  "Location of maximum parasitic capacitive coupling in the base"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The arrow on the emitter symbol always points in the direction of conventional current (positive charge flow) through the forward-biased Base-Emitter junction: pointing OUT of the base for NPN ('Not Pointing iN') and pointing INTO the base for PNP ('Pointing iN Proudly').\n• Why Other Choices are Incorrect: It does not indicate electron drift direction (which is opposite to conventional current)."
+        },
+{
+            "id": 158,
+            "question": "In an NPN transistor schematic symbol, how is the arrow oriented on the emitter lead?",
+            "options": [
+                "Pointing inward toward the base",
+                "Pointing outward away from the base",
+                "Pointing horizontally toward the collector",
+                "There is no arrow on an NPN transistor"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Pointing outward away from the base' is Correct: In an NPN transistor, conventional current flows from Base to Emitter, so the arrow points outward away from the base line.\n• Why Other Choices are Incorrect: An arrow pointing inward toward the base represents a PNP transistor."
+        },
+{
+            "id": 159,
+            "question": "What is the typical forward-bias voltage drop across the Base-Emitter junction (V_BE) for a conducting Silicon BJT at room temperature?",
+            "options": [
+                "0.1 V to 0.2 V",
+                "0.3 V",
+                "0.7 V",
+                "1.4 V"
+            ],
+            "answer": 2,
+            "explanation": "• Why '0.7 V' is Correct: Like standard silicon PN junction diodes, the Base-Emitter junction of a silicon BJT has a built-in barrier potential of approximately 0.7 V (0.6 V to 0.7 V) when conducting.\n• Why Other Choices are Incorrect: 0.3 V is typical for Germanium; 0.1 V is typical for Schottky."
+        },
+{
+            "id": 160,
+            "question": "What is the primary difference between a BJT and a Field-Effect Transistor (FET) in terms of control mechanism?",
+            "options": [
+                "A BJT is a current-controlled device, whereas a FET is a voltage-controlled device",
+                "A BJT is a voltage-controlled device, whereas a FET is a current-controlled device",
+                "A BJT can only conduct AC signals, whereas a FET only conducts DC",
+                "A BJT does not require any semiconductor doping"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: In a BJT, output current (I_C) is controlled by the input current (I_B), making it a current-controlled current source. In a FET, the gate draws negligible current and electric field voltage (V_GS) controls drain current, making it voltage-controlled.\n• Why Other Choices are Incorrect: Both handle AC and DC, and both are doped semiconductors."
+        },
+{
+            "id": 161,
+            "question": "In the back-to-back diode analogy of a BJT, why can't two discrete physical signal diodes wired back-to-back function as a real transistor?",
+            "options": [
+                  "Signal diodes cannot conduct conventional current in forward bias",
+                  "Discrete diodes lack the shared, ultra-thin base layer",
+                  "Signal diodes only operate at cryogenic temperatures near zero K",
+                  "Connecting two diodes in series causes destructive breakdown"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: While the two-diode model helps explain polarity and junction biasing, real transistor action requires a continuous single crystal lattice where the base is physically thinner than the diffusion length of minority carriers, allowing carriers injected from the emitter to reach the collector before recombining.\n• Why Other Choices are Incorrect: Discrete diodes operate normally at room temperature and do not break down when connected back-to-back."
+        },
+{
+            "id": 162,
+            "question": "Who demonstrated the amplifying action of the first point-contact transistor at Bell Telephone Laboratories on December 23, 1947?",
+            "options": [
+                "Thomas Edison, Nikola Tesla, and George Westinghouse",
+                "Dr. William Shockley, Walter H. Brattain, and John Bardeen",
+                "Jack Kilby, Robert Noyce, and Gordon Moore",
+                "Heinrich Hertz, Guglielmo Marconi, and Lee de Forest"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The amplifying action of the first transistor was demonstrated by Dr. William Shockley, Walter H. Brattain, and John Bardeen at Bell Telephone Laboratories on December 23, 1947. They were jointly awarded the 1956 Nobel Prize in Physics for their discovery.\n• Why Other Choices are Incorrect: Kilby and Noyce invented the integrated circuit; Lee de Forest invented the Audion vacuum tube triode."
+        },
+{
+            "id": 163,
+            "question": "A transistor operating in the active region has a measured base current IB = 50 μA and collector current IC = 3.65 mA. What is the total emitter current IE?",
+            "options": [
+                "3.60 mA",
+                "3.70 mA",
+                "7.30 mA",
+                "53.65 mA"
+            ],
+            "answer": 1,
+            "explanation": "• Why '3.70 mA' is Correct: First convert I_B to milliamperes: 50 μA = 0.050 mA. Using KCL: I_E = I_C + I_B = 3.65 mA + 0.050 mA = 3.70 mA.\n• Why Other Choices are Incorrect: Forgetting to convert μA to mA or subtracting instead of adding produces incorrect values."
+        },
+{
+            "id": 164,
+            "question": "Which mathematical equation correctly expresses the common-emitter current gain beta in terms of the common-base current gain alpha?",
+            "options": [
+                "beta = alpha / (1 - alpha)",
+                "beta = (1 - alpha) / alpha",
+                "beta = alpha / (alpha + 1)",
+                "beta = 1 / (1 - alpha)"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'beta = alpha / (1 - alpha)' is Correct: Starting from alpha = beta / (beta + 1), cross-multiplying gives alpha * beta + alpha = beta. Rearranging yields beta * (1 - alpha) = alpha, so beta = alpha / (1 - alpha).\n• Why Other Choices are Incorrect: alpha / (alpha + 1) converts beta to alpha; 1 / (1 - alpha) is equal to beta + 1."
+        },
+{
+            "id": 165,
+            "question": "If a transistor has a common-base current gain alpha = 0.98, what is its common-emitter current gain beta?",
+            "options": [
+                "49",
+                "50",
+                "98",
+                "100"
+            ],
+            "answer": 0,
+            "explanation": "• Why '49' is Correct: Using beta = alpha / (1 - alpha) = 0.98 / (1 - 0.98) = 0.98 / 0.02 = 49.\n• Why Other Choices are Incorrect: beta + 1 = 50, but beta alone equals 49."
+        },
+{
+            "id": 166,
+            "question": "In a Common-Emitter (CE) voltage amplifier, what is the phase relationship between the input AC voltage applied at the base and the output AC voltage taken at the collector?",
+            "options": [
+                "0 degrees (in-phase)",
+                "90 degrees out-of-phase",
+                "180 degrees out-of-phase (inverted)",
+                "270 degrees out-of-phase"
+            ],
+            "answer": 2,
+            "explanation": "• Why '180 degrees out-of-phase' is Correct: A Common-Emitter amplifier produces a 180° phase inversion between input and output. When the input voltage increases, I_B and I_C increase, causing a larger voltage drop across R_C, which pulls the collector voltage V_C downward.\n• Why Other Choices are Incorrect: Common-Base and Common-Collector amplifiers have a 0° phase shift (in-phase)."
+        },
+{
+            "id": 167,
+            "question": "Which BJT amplifier configuration is characterized by a voltage gain approximately equal to 1, high current gain, very high input impedance, and low output impedance?",
+            "options": [
+                  "Common Emitter",
+                  "Common Base",
+                  "Common Collector",
+                  "Cascode Pair"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Common-Collector' is Correct: The Common-Collector (also called Emitter-Follower) configuration features unity voltage gain (A_v ≈ 1), high current gain (A_i ≈ beta + 1), very high input impedance (Z_in ≈ beta * R_E), and very low output impedance (Z_out ≈ r_e), making the emitter voltage closely follow the base voltage.\n• Why Other Choices are Incorrect: Common-Emitter has high voltage and current gain; Common-Base has low input impedance and unity current gain."
+        },
+{
+            "id": 168,
+            "question": "What is the primary practical engineering application of a Common-Collector (Emitter-Follower) amplifier?",
+            "options": [
+                  "High-frequency radio RF voltage amplification stages",
+                  "Impedance matching and buffering between source and load",
+                  "High-voltage pulse generation and switching networks",
+                  "Precision full-wave rectification in power supplies"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Because the Emitter-Follower presents a high input impedance and a low output impedance with unity voltage gain, it is widely used as a buffer amplifier to prevent signal loading when connecting high-impedance signal sources to low-impedance loads (such as speakers or cables).\n• Why Other Choices are Incorrect: Common-Collector provides no voltage amplification, so it cannot amplify weak RF signals."
+        },
+{
+            "id": 169,
+            "question": "Which BJT configuration exhibits low input impedance, high output impedance, unity current gain (alpha < 1), high voltage gain, and zero phase inversion?",
+            "options": [
+                "Common-Base (CB)",
+                "Common-Emitter (CE)",
+                "Common-Collector (CC)",
+                "Darlington Pair"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'Common-Base' is Correct: The Common-Base configuration has input at the emitter and output at the collector. It provides unity current gain (I_C / I_E = alpha < 1), very low input impedance (Z_in ≈ r_e), high output impedance, excellent high-frequency response (minimizing the Miller effect), and no phase inversion.\n• Why Other Choices are Incorrect: Common-Emitter provides high current gain and inverts phase."
+        },
+{
+            "id": 170,
+            "question": "What does the reverse saturation leakage current parameter ICBO represent on a BJT specification datasheet?",
+            "options": [
+                "Collector-to-Base leakage current with the Emitter Open",
+                "Collector-to-Emitter leakage current with the Base Open",
+                "Base-to-Emitter leakage current with the Collector Open",
+                "Breakdown current at the Output terminal"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'Collector-to-Base leakage current with the Emitter Open' is Correct: By JEDEC standard notation, I_CBO represents the Collector-to-Base current when the Emitter terminal is Open (unconnected) under reverse bias. It is composed of thermally generated minority charge carriers.\n• Why Other Choices are Incorrect: Collector-to-Emitter leakage with Base Open is designated as I_CEO."
+        },
+{
+            "id": 171,
+            "question": "How is the Collector-to-Emitter leakage current with Base open (ICEO) mathematically related to the Collector-to-Base leakage current with Emitter open (ICBO)?",
+            "options": [
+                "I_CEO = I_CBO / beta",
+                "I_CEO = (beta + 1) * I_CBO",
+                "I_CEO = I_CBO - beta",
+                "I_CEO = I_CBO / (beta + 1)"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'I_CEO = (beta + 1) * I_CBO' is Correct: With the base open (I_B = 0), the reverse leakage I_CBO entering the base is internally amplified by the transistor action, resulting in I_CEO = (beta + 1) * I_CBO ≈ beta * I_CBO. Consequently, I_CEO is orders of magnitude larger than I_CBO.\n• Why Other Choices are Incorrect: Leakage is amplified by beta + 1, not divided."
+        },
+{
+            "id": 172,
+            "question": "As ambient operating temperature increases, approximately by what factor do the reverse saturation leakage currents (ICBO and ICEO) increase for silicon BJTs?",
+            "options": [
+                "They decrease by 50% for every 10°C rise",
+                "They double for approximately every 10°C rise",
+                "They remain constant regardless of temperature",
+                "They increase by 10x for every 1°C rise"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Thermal generation of electron-hole pairs across the depletion region increases exponentially with temperature. As a standard semiconductor rule of thumb, reverse saturation leakage currents approximately double for every 10°C increase in junction temperature.\n• Why Other Choices are Incorrect: Leakage current increases, rather than decreases or stays constant."
+        },
+{
+            "id": 173,
+            "question": "What is the phenomenon known as the 'Early Effect' (or Base-Width Modulation) in a BJT?",
+            "options": [
+                  "Switching on of a transistor before input signal arrivals",
+                  "Base narrowing as reverse collector-base voltage increases",
+                  "Melting of the emitter wire lead under excess collector current",
+                  "Reduction in beta at cryogenic temperatures near zero Kelvin"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Discovered by James M. Early, the Early Effect occurs because increasing reverse bias on the collector-base junction widens the depletion region into the lightly doped base. This narrows the effective neutral base width (W_B), reducing recombination and causing collector current to slightly increase with V_CE.\n• Why Other Choices are Incorrect: It has nothing to do with timing or destruction."
+        },
+{
+            "id": 174,
+            "question": "On the Common-Emitter output characteristics curves (IC vs VCE), if the active-region curve slopes are extrapolated backward into negative VCE, where do they intersect?",
+            "options": [
+                "At the origin (0 V, 0 mA)",
+                "At the negative Early Voltage (-V_A) on the voltage axis",
+                "At the collector supply voltage V_CC",
+                "They never intersect because they are perfectly horizontal"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'At the negative Early Voltage (-V_A)' is Correct: Extrapolating the active-region output characteristic lines backward intersects the horizontal voltage axis at a common point known as the Early Voltage (-V_A), typically between 50 V and 150 V.\n• Why Other Choices are Incorrect: Due to base-width modulation, the curves have a positive slope and do not remain horizontal."
+        },
+{
+            "id": 175,
+            "question": "How does the Early Effect affect the dynamic output resistance ro of a BJT in the common-emitter configuration?",
+            "options": [
+                  "Infinite resistance (ideal source)",
+                  "Finite resistance ro ≈ V_A / I_C",
+                  "Zero ohms output dynamic resistance",
+                  "Negative incremental resistance drop"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Because the I_C vs V_CE curves have a non-zero slope (dI_C / dV_CE), the BJT acts as a practical current source with finite dynamic output resistance: r_o = (V_A + V_CE) / I_C ≈ V_A / I_C.\n• Why Other Choices are Incorrect: An ideal current source has infinite r_o; the Early Effect makes it finite."
+        },
+{
+            "id": 176,
+            "question": "How is the maximum collector power dissipation rating (PCmax) of a transistor defined and plotted on the output characteristics?",
+            "options": [
+                "P_Cmax = V_CE + I_C, plotted as a straight line",
+                "P_Cmax = V_CE * I_C, plotted as a hyperbola curve",
+                "P_Cmax = V_BE * I_B, plotted as an exponential curve",
+                "P_Cmax = I_C^2 * R_B, plotted as a parabola"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'P_Cmax = V_CE * I_C, plotted as a hyperbola curve' is Correct: Transistor collector dissipation is the product of collector-emitter voltage and collector current: P_C = V_CE * I_C. Plotting this constant maximum power limit on the I_C vs V_CE plane forms a hyperbolic curve.\n• Why Other Choices are Incorrect: Power is the product of voltage and current, forming a hyperbola."
+        },
+{
+            "id": 177,
+            "question": "What is the 'Safe Operating Area' (SOA) of a power BJT?",
+            "options": [
+                  "Temperature range inside a refrigerated electronics rack",
+                  "Region bounded by I_Cmax, V_CEmax, and P_Cmax limits",
+                  "Physical board clearance required between nearby components",
+                  "Frequency band where input capacitance cancels inductance"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The Safe Operating Area (SOA) defines the voltage and current boundary conditions over which the transistor can operate without self-destruction or degradation. It is bounded by maximum collector current, maximum breakdown voltage, maximum power dissipation, and the second breakdown limit.\n• Why Other Choices are Incorrect: SOA is an electrical operating envelope on the characteristic curves."
+        },
+{
+            "id": 178,
+            "question": "Which classic transistor package consists of a heavy metal diamond-shaped case with two protruding leads, where the metal case itself serves as the Collector terminal for direct heat sinking?",
+            "options": [
+                "TO-92",
+                "TO-3",
+                "TO-18",
+                "SOT-23"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'TO-3' is Correct: The TO-3 is a high-power metal package shaped like a diamond with two mounting screw holes. It has two base/emitter pins on the bottom, while the heavy metal case serves as the Collector connection to facilitate heat transfer to an external heat sink.\n• Why Other Choices are Incorrect: TO-92 is a small plastic case; TO-18 is a miniature metal can; SOT-23 is surface-mount."
+        },
+{
+            "id": 179,
+            "question": "When testing a functioning Silicon NPN transistor using the 'Diode Check' function of a Digital Multimeter (DMM), what reading is expected when connecting the RED (+) lead to the Base and the BLACK (-) lead to the Emitter?",
+            "options": [
+                  "OL (Open Circuit)",
+                  "0.6 V to 0.7 V drop",
+                  "Zero ohms (short)",
+                  "Negative -0.7 V"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The Base-Emitter junction of an NPN transistor is a PN diode with P on the Base and N on the Emitter. Connecting the positive (red) meter lead to Base and negative (black) lead to Emitter forward-biases the junction, displaying its built-in forward potential of ~0.6 V to 0.7 V.\n• Why Other Choices are Incorrect: Reversing the leads produces OL (reverse bias); 0 V indicates a shorted junction."
+        },
+{
+            "id": 180,
+            "question": "Why is the Fixed-Bias BJT configuration rarely used in commercial linear amplifier designs?",
+            "options": [
+                  "Requires three separate independent DC power supplies",
+                  "Unstable Q-point sensitive to temperature and beta",
+                  "Cannot conduct direct current under practical voltages",
+                  "Input impedance is strictly zero at audio frequencies"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In Fixed-Bias, base current is fixed (I_B ≈ V_CC / R_B), making collector current directly dependent on beta: I_C = beta * I_B. Because beta varies widely with temperature (doubling over 50°C) and unit-to-unit manufacturing, the Q-point drifts severely toward saturation or cutoff.\n• Why Other Choices are Incorrect: Fixed-bias uses a single power supply and conducts DC normally."
+        },
+{
+            "id": 181,
+            "question": "In an Emitter-Stabilized Bias circuit, how does the addition of the emitter resistor RE provide negative feedback to stabilize the Q-point?",
+            "options": [
+                "If IC increases, VE = IE*RE increases, reducing VBE and thus driving IB and IC back down",
+                "If IC increases, RE bypasses collector current directly to ground",
+                "RE forces the base voltage to increase proportionately with collector voltage",
+                "RE cancels out the collector supply voltage V_CC"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: If temperature causes I_C to increase, emitter current I_E increases, raising the emitter voltage V_E = I_E * R_E. Since V_BE = V_B - V_E, an increase in V_E decreases V_BE, which reduces base current I_B, thereby opposing the increase in I_C and stabilizing the Q-point.\n• Why Other Choices are Incorrect: R_E does not bypass current to ground; it introduces negative degenerative feedback."
+        },
+{
+            "id": 182,
+            "question": "What is the rule-of-thumb criterion for a Voltage-Divider Bias circuit to be considered 'stiff' (essentially beta-independent)?",
+            "options": [
+                "beta * R_E >= 10 * R_2",
+                "R_2 >= 10 * beta * R_E",
+                "beta * R_C <= R_1",
+                "R_1 = R_2 = R_E"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'beta * R_E >= 10 * R_2' is Correct: If the input resistance looking into the base (R_in ≈ beta * R_E) is at least 10 times larger than the lower divider resistor R_2, the base current loading effect is negligible (< 10%), allowing the base voltage to be calculated simply as V_B ≈ V_CC * R_2 / (R_1 + R_2).\n• Why Other Choices are Incorrect: R_2 must be much smaller than beta * R_E to draw sufficient bleed current."
+        },
+{
+            "id": 183,
+            "question": "When applying Thevenin's Theorem to the base circuit of a Voltage-Divider biased BJT, what are the equivalent Thevenin resistance (RTH) and voltage (VTH)?",
+            "options": [
+                  "R_TH = R_1 + R_2, V_TH = V_CC * R_1 / (R_1 + R_2)",
+                  "R_TH = R_1 || R_2, V_TH = V_CC * R_2 / (R_1 + R_2)",
+                  "R_TH = R_1 - R_2, V_TH = V_CC * R_2 / (R_1 - R_2)",
+                  "R_TH = R_C || R_E, V_TH = V_BE * R_2 / (R_1 + R_2)"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Removing the transistor at the base terminal and shorting the DC supply V_CC to ground puts R_1 and R_2 in parallel: R_TH = R_1 || R_2 = (R_1 * R_2) / (R_1 + R_2). The open-circuit voltage across R_2 is the standard voltage divider: V_TH = V_CC * R_2 / (R_1 + R_2).\n• Why Other Choices are Incorrect: The resistors are in parallel to ground, not series."
+        },
+{
+            "id": 184,
+            "question": "In a Collector-Feedback Bias circuit, how does the feedback resistor RF connected between collector and base provide bias stabilization?",
+            "options": [
+                  "Rising IC drops VC, reducing IB to stabilize IC",
+                  "RF provides positive feedback driving saturation",
+                  "RF disconnects collector from supply when hot",
+                  "RF forces base current equal to collector current"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: Collector-Feedback utilizes negative voltage feedback. If I_C increases, the voltage drop across R_C increases, causing collector voltage V_C = V_CC - I_C' * R_C to drop. Because the base resistor R_F is tied directly to V_C, a lower V_C reduces base current I_B = (V_C - V_BE) / R_F, opposing the original rise in I_C.\n• Why Other Choices are Incorrect: The feedback is negative (degenerative), not positive."
+        },
+{
+            "id": 185,
+            "question": "For a standard Common-Emitter Fixed-Bias configuration, what is the expression for the maximum collector saturation current (ICsat)?",
+            "options": [
+                "I_Csat = V_CC / R_B",
+                "I_Csat ≈ V_CC / R_C",
+                "I_Csat = V_BE / R_C",
+                "I_Csat = beta * V_CC"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'I_Csat ≈ V_CC / R_C' is Correct: At saturation, the transistor acts as a closed switch between collector and emitter, making V_CE ≈ 0 V (or V_CE(sat) ≈ 0.2 V). Applying Ohm's law to the collector resistor yields I_Csat = (V_CC - V_CE(sat)) / R_C ≈ V_CC / R_C.\n• Why Other Choices are Incorrect: R_B limits base current, not collector saturation current."
+        },
+{
+            "id": 186,
+            "question": "When a Common-Emitter BJT circuit is driven into the Cutoff state, what are the theoretical values of collector current (IC) and collector-to-emitter voltage (VCE)?",
+            "options": [
+                "I_C = I_Csat, and V_CE = 0 V",
+                "I_C ≈ 0 mA, and V_CE = V_CC",
+                "I_C = V_CC / R_C, and V_CE = 0.7 V",
+                "I_C = beta * I_B, and V_CE = V_CC / 2"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'I_C ≈ 0 mA, and V_CE = V_CC' is Correct: In cutoff, the base-emitter junction is reverse-biased so I_B = 0 and I_C ≈ 0 mA (only negligible leakage I_CEO flows). With no current through collector resistor R_C, the voltage drop I_C * R_C is zero, causing V_CE to rise to the full supply voltage: V_CE = V_CC - (0)*R_C = V_CC.\n• Why Other Choices are Incorrect: I_C = I_Csat and V_CE ≈ 0 V describes Saturation."
+        },
+{
+            "id": 187,
+            "question": "The word 'Transistor' is an engineering portmanteau (combination) of which two words describing its mode of operation during early development?",
+            "options": [
+                "Transmission and Varistor",
+                "Transfer and Resistor",
+                "Transformer and Transistor",
+                "Transit and Capacitor"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The word 'Transistor' was coined by John R. Pierce at Bell Labs as a combination of 'Transfer' and 'Resistor' (or Transfer Varistor). It describes the fundamental device property of transferring an input signal current from a low-resistance forward-biased circuit to a high-resistance reverse-biased output circuit.\n• Why Other Choices are Incorrect: It does not originate from transmission, transformer, or transit."
+        },
+{
+            "id": 188,
+            "question": "On the circuit schematic symbol for both NPN and PNP transistors, what universal rule governs the direction of the arrow on the emitter terminal relative to semiconductor material types?",
+            "options": [
+                "It always points from the negative N-type region to the positive P-type region",
+                "It always points from the positive P-type region to the negative N-type region",
+                "It always points towards the external circuit ground",
+                "It always points toward the terminal with the largest physical surface area"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The arrow in the transistor circuit symbol always indicates the direction of conventional current flow through the base-emitter junction and ALWAYS points from the positive P-type region to the negative N-type region—exactly the same as the arrow in a standard PN junction diode symbol.\n• Why Other Choices are Incorrect: Electron flow is from N to P, but schematic arrows indicate conventional current (P to N)."
+        },
+{
+            "id": 189,
+            "question": "When operating a BJT in the linear active region, the base-emitter junction is forward-biased while the base-collector junction is reverse-biased. What is this specific standard biasing condition formally called?",
+            "options": [
+                "Reverse-forward bias",
+                "Dual forward bias",
+                "Forward-reverse bias",
+                "Complementary bias"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Forward-reverse bias' is Correct: Because the base-emitter junction must be forward-biased to inject carriers and the base-collector junction must be reverse-biased to collect them, this operational state is formally designated in textbook literature as 'forward-reverse bias'.\n• Why Other Choices are Incorrect: 'Reverse-forward bias' operates the transistor in inverted mode; 'dual forward bias' establishes saturation."
+        },
+{
+            "id": 190,
+            "question": "What is the primary operational relationship between an NPN transistor and a PNP transistor?",
+            "options": [
+                  "NPN amplifies AC signals, PNP amplifies DC only",
+                  "Same principles; inverted DC supply polarities",
+                  "NPN is unipolar, whereas PNP is a bipolar unit",
+                  "PNP does not require a forward-biased base diode"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The principle of operation for PNP and NPN transistors is fundamentally identical. The only difference lies in their external biasing voltages and the polarity of their power supplies, which reverse current directions because electrons are majority carriers in NPN while holes are majority carriers in PNP.\n• Why Other Choices are Incorrect: Both are bipolar devices that amplify both AC and DC signals."
+        },
+{
+            "id": 191,
+            "question": "In terms of semiconductor layer architecture, how are the three doped regions arranged in an NPN transistor versus a PNP transistor?",
+            "options": [
+                "NPN consists of two p regions separated by an n region; PNP consists of two n regions separated by a p region",
+                "NPN consists of two n regions separated by a p region; PNP consists of two p regions separated by an n region",
+                "NPN consists of three n regions in series; PNP consists of three p regions in series",
+                "NPN and PNP both contain identical layers of intrinsic semiconductor material"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: An NPN transistor is constructed from two N-type semiconductor regions (Emitter and Collector) separated by a thin central P-type Base layer. Conversely, a PNP transistor is constructed from two P-type regions separated by a thin central N-type Base layer.\n• Why Other Choices are Incorrect: An NPN has P in the middle; a PNP has N in the middle."
+        },
+{
+            "id": 192,
+            "question": "What are the specific technical designations of the two internal PN junctions within any Bipolar Junction Transistor structure?",
+            "options": [
+                "The gate-source junction and the drain-source junction",
+                "The base-emitter junction and the base-collector junction",
+                "The anode-cathode junction and the gate junction",
+                "The primary forward junction and the secondary barrier junction"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'The base-emitter junction and the base-collector junction' is Correct: The PN junction joining the base region and the emitter region is called the base-emitter junction. The PN junction connecting the base region and the collector region is called the base-collector junction.\n• Why Other Choices are Incorrect: Gate, source, and drain apply to Field-Effect Transistors; anode and cathode apply to diodes and SCRs."
+        },
+{
+            "id": 193,
+            "question": "Why are Bipolar Junction Transistors fundamentally described as 'current regulating devices' acting like current-controlled switches?",
+            "options": [
+                  "Internal mechanical contacts regulate junction voltage",
+                  "Small base current controls larger collector current",
+                  "Electrostatic charge stores in proportion to frequency",
+                  "Alternating currents convert directly into radio waves"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Bipolar transistors are current-regulating devices. The amount of current flowing through them from Emitter to Collector is directly proportional to the small biasing current injected into the base terminal (I_C = beta * I_B), allowing a small base signal to control a large load current like a sensitive electronic switch.\n• Why Other Choices are Incorrect: BJTs are solid-state semiconductor amplifiers without mechanical contacts or optical conversion."
+        },
+{
+            "id": 194,
+            "question": "What common educational mnemonic is used to remember that the emitter schematic arrow of an NPN transistor points outwards away from the base?",
+            "options": [
+                "'Pointing iN Proudly' (PNP)",
+                "'Not Pointing iN' (NPN)",
+                "'Negative Positive Negative' (NPN)",
+                "'Never Pull Negative' (NPN)"
+            ],
+            "answer": 1,
+            "explanation": "• Why ''Not Pointing iN' (NPN)' is Correct: A widely used mnemonic for the NPN transistor symbol is 'Not Pointing iN', reminding learners that the arrow points outward on the emitter lead away from the base line. For the PNP transistor, the mnemonic is 'Pointing iN Proudly', where the arrow points inward toward the base.\n• Why Other Choices are Incorrect: 'Pointing iN Proudly' is the mnemonic for PNP."
+        },
+{
+            "id": 195,
+            "question": "For a PNP transistor operating under active forward-reverse bias, what are the required terminal voltage relationships?",
+            "options": [
+                  "Collector positive to Base, Emitter negative to Base",
+                  "Emitter positive to Base, Collector negative to Base",
+                  "All three terminals maintained at equal ground volts",
+                  "Base at highest positive potential of all terminals"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In a PNP transistor, the Emitter is P-type and Base is N-type, so forward-biasing the Base-Emitter junction requires the Emitter to be at a higher potential than the Base (V_EB ≈ 0.7 V). The Collector is P-type, so reverse-biasing the Base-Collector junction requires the Collector to be more negative than the Base (V_CB < 0 V).\n• Why Other Choices are Incorrect: Setting Base higher than Emitter reverse-biases the PNP emitter junction into cutoff."
+        },
+{
+            "id": 196,
+            "question": "What component physically establishes the external electrical connection between each of the three internal semiconductor regions of a BJT and the external circuit?",
+            "options": [
+                  "Optical waveguides",
+                  "Ohmic wire leads",
+                  "Capacitive plates",
+                  "Inductive coils"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Ohmic wire leads connected to each of the three regions' is Correct: A wire lead connects directly to each of the three doped regions (Emitter, Base, Collector) to form the external terminal pins of the transistor package.\n• Why Other Choices are Incorrect: BJTs are three-terminal electronic devices connected by metallic wire leads, not optical or capacitive elements."
+        },
+{
+            "id": 197,
+            "question": "Which of the following statements correctly summarizes the fundamental gain characteristics of the Common Base (CB) transistor configuration?",
+            "options": [
+                "It has both Current and Voltage Gain",
+                "It has Current Gain but no Voltage Gain",
+                "It has Voltage Gain but no Current Gain",
+                "It has neither Voltage Gain nor Current Gain"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'It has Voltage Gain but no Current Gain' is Correct: In the Common Base configuration, output current is collector current and input is emitter current. Since alpha = IC / IE < 1, there is no current amplification (Current Gain is Low / < 1), but it provides High Voltage Gain.\n• Why Other Choices are Incorrect: Common Emitter has both current and voltage gain; Common Collector has current gain but no voltage gain."
+        },
+{
+            "id": 198,
+            "question": "Which BJT amplifier configuration is uniquely capable of providing BOTH current gain and voltage gain simultaneously?",
+            "options": [
+                "Common Base (CB)",
+                "Common Emitter (CE)",
+                "Common Collector (CC)",
+                "Cascode amplifier only"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Common Emitter (CE)' is Correct: The Common Emitter configuration provides medium-to-high voltage gain (Av = -RC / re) AND medium-to-high current gain (Ai ≈ beta). Because it amplifies both current and voltage, it produces the highest overall Power Gain of all three configurations.\n• Why Other Choices are Incorrect: Common Base lacks current gain; Common Collector lacks voltage gain."
+        },
+{
+            "id": 199,
+            "question": "Which BJT configuration is characterized as having 'Current Gain but no Voltage Gain'?",
+            "options": [
+                  "Common Emitter",
+                  "Common Base",
+                  "Common Collector",
+                  "Common Gate"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Common Collector (CC / Emitter-Follower)' is Correct: The Common Collector configuration has a voltage gain of approximately unity (Av ≤ 1, hence 'no voltage gain'), but offers high current gain (Ai ≈ beta + 1), making it ideal as a current amplifier and buffer.\n• Why Other Choices are Incorrect: Common Base has voltage gain but no current gain."
+        },
+{
+            "id": 200,
+            "question": "According to the comparative characteristics of transistor configurations, which configuration delivers the highest overall Power Gain?",
+            "options": [
+                "Common Base (Low power gain)",
+                "Common Collector (Medium power gain)",
+                "Common Emitter (Very High power gain)",
+                "All three configurations deliver identical power gain"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Common Emitter (Very High power gain)' is Correct: Power gain is the product of voltage gain and current gain (Ap = Av * Ai). Because the Common Emitter configuration provides substantial gain for both voltage and current, its overall power gain is rated as 'Very High' (typically 10,000 to 50,000+), exceeding CB (Low) and CC (Medium).\n• Why Other Choices are Incorrect: CB lacks current gain and CC lacks voltage gain, so their power gains are substantially lower."
+        },
+{
+            "id": 201,
+            "question": "Which transistor configuration exhibits the lowest input impedance and the highest output impedance?",
+            "options": [
+                "Common Base (Low input Z, Very High output Z)",
+                "Common Emitter (Medium input Z, High output Z)",
+                "Common Collector (High input Z, Low output Z)",
+                "Emitter-Follower (High input Z, Low output Z)"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'Common Base' is Correct: In Common Base, the input is the forward-biased base-emitter junction (yielding Low input impedance, Zin ≈ re ≈ 10 to 50 ohms) and the output is the reverse-biased collector-base junction (yielding Very High output impedance, Zout ≈ 1 MΩ to 2 MΩ).\n• Why Other Choices are Incorrect: Common Collector has high input Z and low output Z."
+        },
+{
+            "id": 202,
+            "question": "Which BJT configuration exhibits a High input impedance and a Low output impedance, making it optimal for impedance matching between circuit stages?",
+            "options": [
+                "Common Base",
+                "Common Emitter",
+                "Common Collector",
+                "Inverted Active Base"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Common Collector' is Correct: The Common Collector configuration presents a High input impedance (Zin ≈ beta * RE) and a Low output impedance (Zout ≈ re + RS / beta), allowing it to match high-impedance signal sources to low-impedance loads without signal attenuation.\n• Why Other Choices are Incorrect: Common Base has low input and high output impedance."
+        },
+{
+            "id": 203,
+            "question": "What is the signal phase shift between input and output AC waveforms for each of the three BJT configurations (Common Base, Common Emitter, Common Collector)?",
+            "options": [
+                "CB: 180°, CE: 0°, CC: 180°",
+                "CB: 0°, CE: 180°, CC: 0°",
+                "CB: 90°, CE: 180°, CC: 90°",
+                "CB: 0°, CE: 0°, CC: 0°"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'CB: 0°, CE: 180°, CC: 0°' is Correct: The Common Emitter is the only inverting configuration, producing a 180° phase inversion between base input and collector output. Both Common Base and Common Collector are non-inverting, producing a 0° phase shift between input and output.\n• Why Other Choices are Incorrect: CE is always 180°, never 0°."
+        },
+{
+            "id": 204,
+            "question": "How do the voltage gains of the three transistor configurations rank relative to one another in the comparative characteristics table?",
+            "options": [
+                "Common Base: High, Common Emitter: Medium, Common Collector: Low",
+                "Common Base: Low, Common Emitter: High, Common Collector: Medium",
+                "Common Base: Medium, Common Emitter: Low, Common Collector: High",
+                "All three configurations have identical voltage gain"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: In the standard textbook characteristics table: Common Base has High voltage gain; Common Emitter has Medium voltage gain; and Common Collector has Low voltage gain (Av ≤ 1).\n• Why Other Choices are Incorrect: Common Collector never provides high voltage gain."
+        },
+{
+            "id": 205,
+            "question": "How do the current gains of the three transistor configurations rank relative to one another in the comparative characteristics table?",
+            "options": [
+                "Common Base: High, Common Emitter: Medium, Common Collector: Low",
+                "Common Base: Low, Common Emitter: Medium, Common Collector: High",
+                "Common Base: Medium, Common Emitter: High, Common Collector: Low",
+                "Common Base: Low, Common Emitter: Low, Common Collector: Medium"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Common Base current gain is Low (alpha < 1); Common Emitter current gain is Medium (beta, typically 50 to 300); and Common Collector current gain is High (beta + 1, the largest current gain of all three).\n• Why Other Choices are Incorrect: Common Base has the lowest current gain, not the highest."
+        },
+{
+            "id": 206,
+            "question": "How does the output impedance rank across the three bipolar transistor configurations?",
+            "options": [
+                "Common Collector (Low), Common Emitter (High), Common Base (Very High)",
+                "Common Collector (High), Common Emitter (Low), Common Base (Very High)",
+                "Common Collector (Very High), Common Emitter (High), Common Base (Low)",
+                "Common Collector (Medium), Common Emitter (Medium), Common Base (Medium)"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: Output impedance ranks as: Common Collector = Low (tens of ohms), Common Emitter = High (tens of kilohms), and Common Base = Very High (hundreds of kilohms to megohms).\n• Why Other Choices are Incorrect: Common Collector has the lowest output impedance, which is why it drives low-impedance loads effectively."
+        },
+{
+            "id": 207,
+            "question": "How does input impedance rank across the three bipolar transistor configurations?",
+            "options": [
+                "Common Base (Low), Common Emitter (Medium), Common Collector (High)",
+                "Common Base (High), Common Emitter (Medium), Common Collector (Low)",
+                "Common Base (Medium), Common Emitter (Low), Common Collector (High)",
+                "Common Base (Very High), Common Emitter (High), Common Collector (Low)"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: Input impedance ranks as: Common Base = Low (10-50 Ω), Common Emitter = Medium (1-2 kΩ), and Common Collector = High (100-300+ kΩ).\n• Why Other Choices are Incorrect: Common Base input is a forward-biased junction to ground, giving it the lowest input impedance."
+        },
+{
+            "id": 208,
+            "question": "Why is the Common Collector configuration commonly referred to as the 'Emitter-Follower'?",
+            "options": [
+                  "Collector physically follows base across breadboard layout",
+                  "Emitter output voltage follows base input (Av ≈ 1, 0° phase)",
+                  "Emitter current follows negative DC power supply rails only",
+                  "Emitter connects in series with collector load resistance"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In Common Collector, the load is connected to the emitter. Since V_E = V_B - V_BE, the emitter AC voltage closely tracks (follows) the input base AC voltage with zero phase shift and nearly unity gain (Av ≈ 1), giving rise to the name 'Emitter-Follower'.\n• Why Other Choices are Incorrect: It has nothing to do with physical breadboard layout or negative rails."
+        },
+{
+            "id": 209,
+            "question": "If an NPN transistor is replaced with a PNP transistor in a Common Emitter amplifier circuit, what happens to the gain calculations and AC phase inversion?",
+            "options": [
+                  "AC phase shift becomes 0° and all circuit gains drop to zero",
+                  "Transistor ceases AC amplification and blocks all signals",
+                  "Identical AC gains and 180° inversion; reversed DC polarities",
+                  "Voltage gain doubles while current gain drops by fifty percent"
+            ],
+            "answer": 2,
+            "explanation": "• Why this is Correct: Both NPN and PNP BJTs obey identical small-signal AC equations. A PNP Common Emitter amplifier still produces a 180° phase inversion between base and collector and provides the same voltage, current, and power gains. The only practical difference is that DC power supplies and biasing voltages must be reversed in polarity.\n• Why Other Choices are Incorrect: AC signal behavior and amplification magnitude are identical."
+        },
+{
+            "id": 210,
+            "question": "Which of the three BJT configurations is most suitable for driving an 8-ohm audio loudspeaker from a preceding high-impedance voltage amplifier stage?",
+            "options": [
+                "Common Base, due to its very high output impedance",
+                "Common Collector, due to its low output impedance",
+                "Common Emitter without an emitter resistor",
+                "Direct connection to the power supply without any transistor"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: An 8-ohm loudspeaker is a very low-impedance load. Connecting it directly to a high-impedance voltage stage would cause massive signal loading and attenuation. A Common Collector stage acts as an impedance-matching buffer with low output impedance and high current gain to drive the speaker efficiently.\n• Why Other Choices are Incorrect: Common Base has very high output impedance, which would cause severe mismatch."
+        },
+{
+            "id": 211,
+            "question": "Why does a BJT circuit require one terminal to be 'common' between the input and output circuit ports?",
+            "options": [
+                  "One terminal acts as shared reference for input and output ports",
+                  "Four-terminal transistors are prohibited by IEEE design rules",
+                  "Collector and emitter must always connect directly in parallel",
+                  "Base terminal can never conduct alternating current signals"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: Any standard electronic two-port network requires four connection points (two for input, two for output). Because a BJT is a three-terminal device, one terminal must be designated as 'common' (shared) between the input and output loops to complete both circuits.\n• Why Other Choices are Incorrect: A two-port network simply requires sharing one terminal to form input and output pairs."
+        },
+{
+            "id": 212,
+            "question": "In the Common Emitter (CE) configuration, where are the input signal applied and the output signal taken from?",
+            "options": [
+                "Input is applied between Base and Collector; Output is taken between Emitter and Collector",
+                "Input is applied between Base and Emitter; Output is taken between Collector and Emitter",
+                "Input is applied between Collector and Emitter; Output is taken between Base and Emitter",
+                "Input is applied between Base and Ground; Output is taken from the power supply rail"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In the Common Emitter (grounded emitter) configuration, the input signal is injected between the Base and Emitter, while the amplified output signal is extracted across the Collector and Emitter.\n• Why Other Choices are Incorrect: Connecting input to Collector and Base represents Common Collector or inverted configurations."
+        },
+{
+            "id": 213,
+            "question": "Why is the Common Emitter configuration regarded as the 'normal' and most widely used circuit arrangement for bipolar transistor amplifiers?",
+            "options": [
+                  "Only configuration operating without semiconductor doping",
+                  "Provides both voltage and current gain for highest power gain",
+                  "Eliminates the requirement for external DC collector voltage",
+                  "Produces zero phase shift with no harmonic distortion output"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The Common Emitter configuration is the industry standard 'workhorse' amplifier because it is the only configuration capable of delivering both current and voltage amplification simultaneously, yielding the highest overall power gain of all three topologies.\n• Why Other Choices are Incorrect: It requires DC power and produces a 180° phase inversion."
+        },
+{
+            "id": 214,
+            "question": "What is the physical carrier interpretation if a bipolar transistor has a DC current gain Beta (β) equal to 100?",
+            "options": [
+                  "100 base electrons flow for every 1 collector electron",
+                  "1 base electron flows for every 100 collector electrons",
+                  "Collector voltage is 100 times larger than base voltage",
+                  "Base resistance is 100 times smaller than emitter ohms"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Since Beta = I_C / I_B = 100, for every 1 unit of base current (e.g., 1 electron flowing into the base to recombine), 100 units of current (100 electrons) successfully cross from emitter to collector.\n• Why Other Choices are Incorrect: Base current is 100 times smaller than collector current, not 100 times larger."
+        },
+{
+            "id": 215,
+            "question": "What is the typical range of current gain Beta (β) for most general-purpose small-signal bipolar junction transistors?",
+            "options": [
+                "0.1 to 0.99",
+                "1 to 5",
+                "20 to 200 (or up to 300-400)",
+                "1,000 to 10,000"
+            ],
+            "answer": 2,
+            "explanation": "• Why '20 to 200 (or up to 300-400)' is Correct: For standard general-purpose silicon BJTs (such as the 2N3904 or BC547), DC Beta (h_FE) typically ranges between 20 and 200, frequently reaching 300 to 400 under optimum collector current levels.\n• Why Other Choices are Incorrect: Values below 1 describe alpha; values above 1,000 are typical of Darlington pairs."
+        },
+{
+            "id": 216,
+            "question": "(Canvas LMS Example 1) A bipolar NPN transistor has a DC current gain Beta of 200. What base current Ib is required to switch a resistive collector load current of 4 mA?",
+            "options": [
+                "2 μA",
+                "20 μA",
+                "50 μA",
+                "800 μA"
+            ],
+            "answer": 1,
+            "explanation": "• Why '20 μA' is Correct: Using the relationship I_C = beta * I_B, solve for base current: I_B = I_C / beta = 4 mA / 200 = 0.020 mA = 20 μA.\n• Why Other Choices are Incorrect: 4 mA * 200 = 800 mA (multiplying instead of dividing); 4 mA / 20 = 200 μA."
+        },
+{
+            "id": 217,
+            "question": "For a standard Silicon NPN transistor in a Common Emitter circuit to conduct collector current, what condition must be satisfied regarding Collector voltage (Vc) relative to Emitter voltage (Ve)?",
+            "options": [
+                "Vc must be equal to Ve",
+                "Vc must be more negative than Ve",
+                "Vc must be greater and positive with respect to Ve (V_CE > 0)",
+                "Vc must be at ground potential while Ve is connected to +V_CC"
+            ],
+            "answer": 2,
+            "explanation": "• Why this is Correct: To maintain forward-reverse bias in an NPN transistor, the Collector (N-type) must be at a higher positive potential than the Emitter (N-type) and Base (P-type), ensuring V_CE > 0 to sweep electrons across the reverse-biased collector junction.\n• Why Other Choices are Incorrect: If Vc is negative with respect to Ve, the collector junction is forward-biased and the transistor will not operate in active mode."
+        },
+{
+            "id": 218,
+            "question": "What is the minimum threshold voltage that must be applied to the Base terminal of a Silicon NPN transistor for it to begin conducting base current?",
+            "options": [
+                "Approximately 0.1 V",
+                "Approximately 0.3 V",
+                "Approximately 0.7 V",
+                "Approximately 2.0 V"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Approximately 0.7 V' is Correct: Because the input characteristics of an NPN transistor correspond to a forward-biased silicon PN diode, the base-to-emitter voltage (V_BE) must exceed the built-in barrier potential of approximately 0.7 V for significant base current to flow.\n• Why Other Choices are Incorrect: 0.3 V is the threshold for Germanium devices; 0.1 V is for Schottky diodes."
+        },
+{
+            "id": 219,
+            "question": "In a base-biased Common Emitter circuit with base supply voltage Vb, input base resistor Rb, and silicon base-emitter drop Vbe (≈ 0.7 V), which formula calculates base current Ib?",
+            "options": [
+                "I_B = (V_b + V_be) / R_b",
+                "I_B = (V_b - V_be) / R_b",
+                "I_B = V_b / (R_b * V_be)",
+                "I_B = R_b / (V_b - V_be)"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'I_B = (V_b - V_be) / R_b' is Correct: Applying Kirchhoff's Voltage Law to the base-emitter input loop: V_b - I_B * R_b - V_be = 0. Solving for base current gives I_B = (V_b - V_be) / R_b.\n• Why Other Choices are Incorrect: Adding V_be or multiplying violates Ohm's law and KVL."
+        },
+{
+            "id": 220,
+            "question": "(Canvas LMS Example 2) An NPN transistor circuit has a DC base bias voltage Vb = 10 V and an input base resistor Rb = 100 kΩ. Assuming a standard silicon Vbe = 0.7 V, what is the base current Ib entering the transistor?",
+            "options": [
+                "100 μA",
+                "93 μA",
+                "10.7 μA",
+                "0.93 mA"
+            ],
+            "answer": 1,
+            "explanation": "• Why '93 μA' is Correct: Using I_B = (V_b - V_be) / R_b: I_B = (10 V - 0.7 V) / 100 kΩ = 9.3 V / 100,000 Ω = 0.000093 A = 0.093 mA = 93 μA.\n• Why Other Choices are Incorrect: 10 V / 100 kΩ = 100 μA ignores the 0.7 V diode drop; (10 + 0.7) / 100 kΩ = 107 μA adds rather than subtracts."
+        },
+{
+            "id": 221,
+            "question": "If the transistor in Example 2 (with Ib = 93 μA) has a current gain Beta = 100, what will be the resulting collector current Ic in the linear active region?",
+            "options": [
+                "0.93 mA",
+                "9.3 mA",
+                "93 mA",
+                "930 mA"
+            ],
+            "answer": 1,
+            "explanation": "• Why '9.3 mA' is Correct: Using I_C = beta * I_B: I_C = 100 * 93 μA = 9,300 μA = 9.3 mA.\n• Why Other Choices are Incorrect: 93 μA / 100 = 0.93 μA; 93 mA corresponds to beta = 1000."
+        },
+{
+            "id": 222,
+            "question": "How do base-emitter voltage (Vbe) and collector current (Ic) behave as base current (Ib) is gradually increased in a conducting BJT?",
+            "options": [
+                  "V_be rises linearly while I_C remains strictly fixed",
+                  "V_be approaches ~0.7 V while I_C rises exponentially",
+                  "V_be drops to zero volts while I_C decreases steadily",
+                  "Both V_be and I_C remain completely unchanged at all levels"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Because the base-emitter junction has exponential PN-junction diode characteristics, as I_B increases, V_be increases only slightly (clamped around 0.7 V), while collector current I_C = I_S * exp(V_be / V_T) rises exponentially with small changes in V_be.\n• Why Other Choices are Incorrect: Diode voltage does not increase linearly; it clamps logarithmically near 0.7 V."
+        },
+{
+            "id": 223,
+            "question": "In a Common Emitter amplifier circuit, where is the external load resistance (RL or RC) connected?",
+            "options": [
+                "In series with the Base terminal",
+                "In series with the Collector terminal",
+                "Directly between Base and Emitter",
+                "In parallel with the input AC signal source only"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'In series with the Collector terminal' is Correct: In a Common Emitter amplifier, the collector load resistor (R_C or R_L) is connected in series between the DC positive supply (V_CC) and the collector terminal, converting the amplified collector current variations into an output voltage swing.\n• Why Other Choices are Incorrect: Resistors in the base branch are current-limiting bias resistors, not collector load resistors."
+        },
+{
+            "id": 224,
+            "question": "Comparing the Common Emitter (CE) configuration with the Common Base (CB) configuration, which statement accurately reflects their relative performance?",
+            "options": [
+                  "CE has lower input impedance and higher voltage gain than CB",
+                  "CE has higher input impedance and power gain than CB",
+                  "CE has lower power gain and higher output impedance than CB",
+                  "CE and CB have identical input impedance and phase shift"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Common Emitter has a higher input impedance (Medium vs Low), significantly higher current gain (beta vs alpha < 1), and much higher power gain (Very High vs Low) than Common Base, though its voltage gain is somewhat lower than the extremely high voltage gain of CB.\n• Why Other Choices are Incorrect: CB has lower input impedance and higher voltage gain than CE."
+        },
+{
+            "id": 225,
+            "question": "An NPN transistor with beta = 150 has a measured emitter current IE = 3.02 mA. What is the approximate base current IB?",
+            "options": [
+                "20 μA",
+                "30 μA",
+                "200 μA",
+                "450 μA"
+            ],
+            "answer": 0,
+            "explanation": "• Why '20 μA' is Correct: Since I_E = (beta + 1) * I_B: I_B = I_E / (beta + 1) = 3.02 mA / 151 = 0.020 mA = 20 μA.\n• Why Other Choices are Incorrect: 3.02 mA / 100 = 30 μA; direct division gives exactly 20 μA."
+        },
+{
+            "id": 226,
+            "question": "Why does a 180° phase inversion occur in a Common Emitter amplifier when the input AC voltage increases positively?",
+            "options": [
+                  "Rising IB and IC increase RC drop, pulling VC downward",
+                  "AC input signal bypasses transistor directly through emitter",
+                  "Collector supply voltage reverses polarity on positive cycles",
+                  "Transistor turns completely off during every positive cycle"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: When input base voltage increases, base current I_B rises, causing collector current I_C to increase. The larger I_C creates a greater voltage drop across the collector resistor (V_RC = I_C * R_C). Since V_C = V_CC - I_C * R_C, this pulls collector output voltage downward toward ground, creating an inverted (180° out-of-phase) output waveform.\n• Why Other Choices are Incorrect: V_CC does not reverse polarity, and the transistor does not turn off."
+        },
+{
+            "id": 227,
+            "question": "In the Common Base (CB) configuration, where is the input AC signal injected and from where is the output signal extracted?",
+            "options": [
+                "Input is applied between Base and Collector; Output is taken between Emitter and Collector",
+                "Input is applied between Base and Emitter; Output is taken between Base and Collector",
+                "Input is applied between Emitter and Collector; Output is taken between Base and Emitter",
+                "Input is applied to the Collector; Output is taken from the Base"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In the Common Base (grounded base) configuration, the input signal is applied between the Base and Emitter terminals, while the amplified output signal is taken between the Base and Collector terminals, with the Base serving as the common reference point.\n• Why Other Choices are Incorrect: Taking output from the emitter corresponds to Common Collector."
+        },
+{
+            "id": 228,
+            "question": "Why does the Common Base transistor configuration have a current gain of unity (1) or less (α ≤ 1)?",
+            "options": [
+                  "Collector current is mathematically the sum of Ie and Ib",
+                  "Ie = Ic + Ib, so output Ic is strictly less than input Ie",
+                  "Base terminal absorbs 90% of injected charge carriers",
+                  "Collector terminal is held fixed at zero volts DC ground"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In Common Base, input current is emitter current and output current is collector current. Since I_E = I_C + I_B, collector current is slightly less than emitter current by the small amount of base recombination current (I_B), yielding alpha = I_C / I_E < 1 (typically 0.95 to 0.998). Thus, the circuit attenuates current.\n• Why Other Choices are Incorrect: Base current absorbs only 1-5% of carriers, not 90%."
+        },
+{
+            "id": 229,
+            "question": "What is the phase relationship between input voltage (Vin) and output voltage (Vout) in a Common Base amplifier?",
+            "options": [
+                "Vin and Vout are 180° out-of-phase (inverted)",
+                "Vin and Vout are in-phase (0° phase shift)",
+                "Vin and Vout are 90° out-of-phase",
+                "Vin and Vout are 270° out-of-phase"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Vin and Vout are in-phase (0° phase shift)' is Correct: The Common Base configuration is a non-inverting voltage amplifier. When the input voltage at the emitter rises positively, V_EB decreases, reducing I_E and I_C. The decreased I_C reduces the drop across load resistor R_L, causing collector voltage V_C to swing positively, exactly in-phase (0° shift) with the input.\n• Why Other Choices are Incorrect: Only Common Emitter inverts by 180°."
+        },
+{
+            "id": 230,
+            "question": "According to the Canvas LMS lecture module, what semiconductor device analogy best describes the output characteristics of a Common Base transistor?",
+            "options": [
+                "A forward-biased Zener diode",
+                "An illuminated photo-diode",
+                "A backward diode",
+                "A light-emitting diode (LED)"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'An illuminated photo-diode' is Correct: In the Common Base configuration, the input characteristics resemble a forward-biased PN diode, while the output characteristics (IC vs VCB curves for fixed IE values) closely resemble an illuminated photo-diode, functioning as a constant current source where collector current is determined by injected emitter current rather than collector voltage.\n• Why Other Choices are Incorrect: Zener diodes maintain constant breakdown voltage; LEDs emit light under forward bias."
+        },
+{
+            "id": 231,
+            "question": "What is the term given to the ratio of load resistance (RL) to input resistance (Rin) in a Common Base amplifier circuit?",
+            "options": [
+                "Current Gain",
+                "Resistance Gain",
+                "Transconductance Gain",
+                "Impedance Reflection Factor"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Resistance Gain' is Correct: In Common Base analysis, the ratio of the output load resistance to the input resistance (R_L / R_in) is formally termed the 'Resistance Gain'. Because R_in is very small (~20 Ω) and R_L is large (~kΩ), this ratio is very large.\n• Why Other Choices are Incorrect: Current gain is alpha; transconductance is gm."
+        },
+{
+            "id": 232,
+            "question": "How is the overall voltage gain (Av) of a Common Base amplifier mathematically expressed in terms of current gain and resistance gain?",
+            "options": [
+                  "Av = alpha + (RL / Rin)",
+                  "Av = alpha * (RL / Rin)",
+                  "Av = (Rin / RL) / alpha",
+                  "Av = beta * (Rin / RL)"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Voltage gain is defined as V_out / V_in = (I_c * R_L) / (I_e * R_in) = (I_c / I_e) * (R_L / R_in) = alpha * (Resistance Gain). Even though alpha < 1, the massive Resistance Gain produces a very high voltage gain.\n• Why Other Choices are Incorrect: Voltage gain is the product of current gain and resistance ratio, not sum or quotient."
+        },
+{
+            "id": 233,
+            "question": "A Common Base amplifier has an input resistance Rin = 20 Ω, a collector load resistor RL = 5 kΩ, and a common-base current gain α = 0.98. What is the voltage gain Av?",
+            "options": [
+                "2.45",
+                "25",
+                "245",
+                "250"
+            ],
+            "answer": 2,
+            "explanation": "• Why '245' is Correct: First calculate the resistance gain: R_L / R_in = 5,000 Ω / 20 Ω = 250. Then calculate voltage gain: A_v = alpha * (R_L / R_in) = 0.98 * 250 = 245.\n• Why Other Choices are Incorrect: 250 ignores alpha; 2.45 has an incorrect decimal placement."
+        },
+{
+            "id": 234,
+            "question": "Why is the Common Base configuration widely utilized in radio frequency (RF) and VHF/UHF amplifier circuits?",
+            "options": [
+                  "Provides the highest current amplification of all topologies",
+                  "Grounded base shields input from output, eliminating Miller effect",
+                  "Operates without any external DC biasing electrical supply",
+                  "Converts RF signals directly into mechanical sound waves"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In Common Base, the grounded base separates the input and output circuits, acting as an electrostatic shield. This virtually eliminates collector-to-emitter capacitive feedback (the Miller effect), preventing self-oscillation and giving the CB amplifier superior high-frequency bandwidth.\n• Why Other Choices are Incorrect: CB has no current gain, so it is not used for current amplification."
+        },
+{
+            "id": 235,
+            "question": "Which of the following is another classic practical application of the Common Base amplifier circuit mentioned in the Canvas LMS module?",
+            "options": [
+                "Microphone pre-amplifier",
+                "High-power audio speaker output stage",
+                "Computer digital clock memory storage",
+                "DC battery charger regulator"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: Dynamic moving-coil microphones typically have very low output impedance (around 20-50 Ω). Because the Common Base configuration has an inherently low input impedance (Z_in ≈ r_e ≈ 10-50 Ω), it matches the low impedance of the microphone without requiring a transformer.\n• Why Other Choices are Incorrect: Driving speakers requires low output impedance (Common Collector)."
+        },
+{
+            "id": 236,
+            "question": "If a Common Base amplifier has Rin = 25 Ω and RL = 10 kΩ, what is the value of its 'Resistance Gain'?",
+            "options": [
+                "25",
+                "40",
+                "400",
+                "2,500"
+            ],
+            "answer": 2,
+            "explanation": "• Why '400' is Correct: Resistance Gain is defined as R_L / R_in = 10,000 Ω / 25 Ω = 400.\n• Why Other Choices are Incorrect: 10,000 / 250 = 40; 25 * 100 = 2,500."
+        },
+{
+            "id": 237,
+            "question": "Why is the Common Base configuration rarely used as a general-purpose voltage amplifier in multi-stage audio systems?",
+            "options": [
+                  "Low input impedance loads sources; lack of current gain limits cascading",
+                  "Only amplifies negative half-cycles of alternating current signals",
+                  "Produces excessive 180° phase inversion distortion at all levels",
+                  "Maximum operating junction temperature is limited to zero degrees C"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: General audio amplifiers require moderate-to-high input impedance to avoid loading prior voltage stages. The very low input impedance of CB (10-50 Ω) and lack of current gain (α < 1) mean cascading multiple CB stages directly yields poor overall gain.\n• Why Other Choices are Incorrect: CB has zero phase shift (non-inverting) and handles full AC cycles normally."
+        },
+{
+            "id": 238,
+            "question": "In a Common Base circuit, if the emitter current IE is measured at 5.0 mA and alpha is 0.99, what are the collector current IC and base current IB?",
+            "options": [
+                "IC = 4.95 mA, and IB = 0.05 mA (50 μA)",
+                "IC = 5.05 mA, and IB = 0.5 mA",
+                "IC = 0.05 mA, and IB = 4.95 mA",
+                "IC = 4.95 mA, and IB = 0 mA"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'IC = 4.95 mA, and IB = 0.05 mA (50 μA)' is Correct: I_C = alpha * I_E = 0.99 * 5.0 mA = 4.95 mA. Then from KCL: I_B = I_E - I_C = 5.0 mA - 4.95 mA = 0.05 mA = 50 μA.\n• Why Other Choices are Incorrect: I_C cannot exceed I_E; I_B cannot be zero in an active BJT."
+        },
+{
+            "id": 239,
+            "question": "What is the physical connection of the Base terminal in a practical Common Base circuit?",
+            "options": [
+                  "Common Collector (CC)",
+                  "Common Emitter (CE)",
+                  "Common Base (CB)",
+                  "Cascode Pair (CP)"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In Common Base circuits, the base terminal is connected directly to circuit ground (in dual-supply circuits) or held at a fixed DC reference voltage with a bypass capacitor connecting it to ground for AC signals.\n• Why Other Choices are Incorrect: A floating base places the transistor in cutoff; connecting base to the signal generator forms Common Emitter or Common Collector."
+        },
+{
+            "id": 240,
+            "question": "How does the Common Base circuit behave with respect to signal currents versus signal voltages?",
+            "options": [
+                "It acts as a current amplifier and voltage attenuator",
+                "It acts as a current buffer and a high voltage amplifier",
+                "It attenuates both current and voltage signals",
+                "It amplifies both current and voltage equally"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Because alpha < 1, output current is slightly smaller than input current (current attenuation). However, because output resistance is vastly higher than input resistance, it acts as a very high voltage amplifier.\n• Why Other Choices are Incorrect: CE amplifies both; CC amplifies current while attenuating voltage."
+        },
+{
+            "id": 241,
+            "question": "Comparing all three BJT configurations, which one provides the best high-frequency performance and why?",
+            "options": [
+                  "Low input impedance and high output impedance voltage booster",
+                  "High input impedance and low output impedance",
+                  "Extremely high voltage gain with zero current amplification",
+                  "Identical input and output impedance with 180° phase inversion"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Common Base' is Correct: In Common Emitter, the collector-base capacitance is amplified by the voltage gain (Miller Effect), severely limiting high-frequency bandwidth. In Common Base, the base is grounded, shielding the input emitter from output collector capacitance, giving CB the highest cutoff frequency and best RF performance.\n• Why Other Choices are Incorrect: Common Emitter suffers from the Miller effect at high frequencies."
+        },
+{
+            "id": 242,
+            "question": "In the Common Collector (CC) circuit configuration, how are the input and output AC signals connected to the transistor?",
+            "options": [
+                  "Base bias (fixed)",
+                  "Voltage-divider bias",
+                  "Collector feedback",
+                  "Emitter feedback bias"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In the Common Collector configuration, the input AC signal is fed directly into the Base terminal, and the output signal is taken across the Emitter load resistance (RE or RL), with the Collector being common to both via the DC power supply.\n• Why Other Choices are Incorrect: Taking output from the collector is Common Emitter or Common Base."
+        },
+{
+            "id": 243,
+            "question": "Why is the Collector terminal considered 'common' to both the input and output in a Common Collector circuit even if it is connected to a positive supply rail (VCC)?",
+            "options": [
+                "DC supply rails act as an effective AC ground, making collector common for AC signals",
+                "Because the collector is physically melted to the chassis ground during manufacture",
+                "Because no DC voltage is allowed on the collector lead",
+                "Because the collector terminal is left floating without any wire connection"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: In small-signal AC analysis, ideal DC power supplies (V_CC) present zero internal impedance, acting as an AC ground. Since the collector is connected directly to V_CC, it is at AC ground potential and serves as the common return terminal for both input and output loops.\n• Why Other Choices are Incorrect: The collector is not physically connected to earth ground, but AC grounded through V_CC."
+        },
+{
+            "id": 244,
+            "question": "By what two popular alternative names is the Common Collector (CC) transistor amplifier widely known?",
+            "options": [
+                "Current Mirror or Cascode Circuit",
+                "Voltage Follower or Emitter Follower",
+                "Darlington Pair or Schmitt Trigger",
+                "Phase Inverter or Push-Pull Driver"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Voltage Follower or Emitter Follower' is Correct: Because the voltage at the emitter terminal tracks (follows) the input base voltage in both amplitude (Av ≈ 1) and phase (0°), this circuit is universally called an Emitter Follower or Voltage Follower.\n• Why Other Choices are Incorrect: A phase inverter produces 180° shift; a Cascode is a CE-CB combination."
+        },
+{
+            "id": 245,
+            "question": "What is the approximate voltage gain (Av) of a Common Collector (Emitter Follower) amplifier circuit?",
+            "options": [
+                "Av is extremely high (> 500)",
+                "Av is negative and inverted (-100)",
+                "Av is approximately 1 (unity gain, Av ≤ 1)",
+                "Av is exactly 0"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Av is approximately 1 (unity gain, Av ≤ 1)' is Correct: Because V_out = V_E = V_B - V_BE, changes in emitter output voltage almost exactly equal changes in base input voltage (typically Av = 0.98 to 0.999). Thus, the Common Collector provides unity voltage gain.\n• Why Other Choices are Incorrect: It provides no voltage amplification."
+        },
+{
+            "id": 246,
+            "question": "Why can the Common Collector configuration be considered and utilized as a 'voltage-buffer' circuit?",
+            "options": [
+                  "VCE = VCC and IC = 0 A (horizontal axis intercept)",
+                  "VCE = 0 V and IC = VCC / RC (vertical axis saturation)",
+                  "VCE = VCC / 2 and IC = IC(sat) / 2 (center active point)",
+                  "VCE = -VCC and IC = -10 mA (negative breakdown limit)"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: A voltage buffer transfers a voltage signal from a high-impedance source to a low-impedance load without loading or attenuating the signal voltage (unity gain) while delivering the required load current.\n• Why Other Choices are Incorrect: Buffers do not invert voltage or store chemical energy."
+        },
+{
+            "id": 247,
+            "question": "What is the signal phase relationship between input voltage (Vin) and output voltage (Vout) in a Common Collector circuit?",
+            "options": [
+                "180° out-of-phase (inverted)",
+                "In-phase (0° phase shift)",
+                "90° lagging",
+                "45° leading"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'In-phase (0° phase shift)' is Correct: The Common Collector is a non-inverting circuit. When the input voltage applied to the base rises positively, the emitter voltage rises positively in unison, keeping Vin and Vout in-phase (0° phase shift).\n• Why Other Choices are Incorrect: Common Emitter is the only inverting (180°) configuration."
+        },
+{
+            "id": 248,
+            "question": "In a Common Collector amplifier, what currents flow through the external emitter load resistance (RL or RE)?",
+            "options": [
+                  "Maximum instantaneous AC voltage peak on the load line",
+                  "Breakdown voltage where collector current runs away",
+                  "Point where base current curve intersects the DC load line",
+                  "Intersection where collector voltage drops below zero"
+            ],
+            "answer": 2,
+            "explanation": "• Why this is Correct: Because the load resistance is connected in series with the emitter terminal, the current flowing through it is the emitter current: I_E = I_C + I_B. Thus, the load receives the full sum of both collector and base currents.\n• Why Other Choices are Incorrect: Load current in CE is only IC; load current in CC is IE."
+        },
+{
+            "id": 249,
+            "question": "Which mathematical expression correctly represents the AC current gain (Ai) of the Common Collector configuration?",
+            "options": [
+                  "VCE = VCC and IC = 0 A (horizontal cutoff intercept)",
+                  "VCE = 0 V and IC = VCC / RC (vertical axis intercept)",
+                  "VCE = VCC / 2 and IC = 0 A (midpoint cutoff voltage)",
+                  "VCE = 0.7 V and IC = beta * IB (knee active point)"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Ai = IE / IB = (IC + IB) / IB = beta + 1' is Correct: Current gain is the ratio of output current (I_E) to input current (I_B): A_i = I_E / I_B = (I_C + I_B) / I_B = (I_C / I_B) + 1 = beta + 1. It provides the highest current gain of all three configurations.\n• Why Other Choices are Incorrect: beta is CE current gain; alpha is CB current gain."
+        },
+{
+            "id": 250,
+            "question": "A transistor used in a Common Collector amplifier circuit has a DC current gain Beta (β) of 149. What is the current gain (Ai) of this circuit?",
+            "options": [
+                "0.993",
+                "149",
+                "150",
+                "298"
+            ],
+            "answer": 2,
+            "explanation": "• Why '150' is Correct: In the Common Collector configuration, current gain is Ai = beta + 1 = 149 + 1 = 150.\n• Why Other Choices are Incorrect: 149 is beta (CE gain); 0.993 is alpha (CB gain)."
+        },
+{
+            "id": 251,
+            "question": "What are the typical impedance characteristics of the Common Collector (Emitter Follower) amplifier?",
+            "options": [
+                  "Exact cutoff point on horizontal axis (VCE = VCC, IC = 0)",
+                  "Midpoint of the DC load line (VCEQ ≈ VCC/2, ICQ ≈ IC(sat)/2)",
+                  "Exact saturation point on vertical axis (VCE = 0, IC = IC(sat))",
+                  "Negative saturation region with reversed supply polarity"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The Common Collector features very high input impedance (Zin ≈ beta * RE, often 100 kΩ to 500 kΩ) and low output impedance (Zout ≈ re + RS / beta, typically 10 Ω to 50 Ω), making it an outstanding impedance-matching buffer.\n• Why Other Choices are Incorrect: Low input and high output impedance describes Common Base."
+        },
+{
+            "id": 252,
+            "question": "Why is the Common Collector configuration exceptionally useful in audio and instrumentation systems for 'impedance matching'?",
+            "options": [
+                  "VCE drops to near zero (~0.2 V) as IC reaches saturation limit",
+                  "VCE rises to maximum DC supply voltage VCC with zero current",
+                  "Transistor burns out instantaneously due to open circuit",
+                  "Collector-base junction becomes heavily reverse-biased"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: High-impedance transducers (such as piezo pickups or high-gain voltage stages) suffer severe signal voltage drops if connected directly to low-impedance cables or speakers. Placing a CC buffer between them prevents loading (due to high Zin) and drives the load efficiently (due to low Zout).\n• Why Other Choices are Incorrect: CC does not amplify voltage or invert phase."
+        },
+{
+            "id": 253,
+            "question": "In an Emitter Follower circuit, a base current of IB = 40 μA is applied to a transistor with Beta = 99. What total load current IE flows through the emitter resistor?",
+            "options": [
+                "0.4 mA",
+                "3.96 mA",
+                "4.0 mA",
+                "40 mA"
+            ],
+            "answer": 2,
+            "explanation": "• Why '4.0 mA' is Correct: In Common Collector, the load current is the emitter current: I_E = (beta + 1) * I_B = (99 + 1) * 40 μA = 100 * 40 μA = 4,000 μA = 4.0 mA.\n• Why Other Choices are Incorrect: 3.96 mA is collector current alone (99 * 40 μA); 0.4 mA is an order of magnitude error."
+        },
+{
+            "id": 254,
+            "question": "How does the Power Gain of the Common Collector configuration compare to the other two configurations?",
+            "options": [
+                  "Fixed-bias circuits require three separate DC power sources",
+                  "Beta varies widely with manufacturing tolerances and temperature",
+                  "Base resistors cannot dissipate direct current heat energy",
+                  "Transistors permanently lose amplification when biased"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Power gain is Ap = Av * Ai. Since Av ≈ 1 and Ai ≈ beta + 1, Ap ≈ beta + 1, which represents 'Medium' power gain (e.g., 50 to 200). Common Emitter has 'Very High' power gain (Av * beta), while Common Base has 'Low' power gain.\n• Why Other Choices are Incorrect: CE has the highest power gain; CC power gain is medium, not zero."
+        },
+{
+            "id": 255,
+            "question": "In summary, the Common Collector amplifier is best characterized as providing which of the following performance combinations?",
+            "options": [
+                "High voltage gain with zero current gain",
+                "Good current amplification with unity voltage gain",
+                "High voltage gain with negative current gain",
+                "Zero power gain and zero current gain"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: As explicitly summarized in the Canvas LMS module: The load resistance receives both base and collector currents giving a large current gain, therefore providing good current amplification with very little voltage gain (Av ≈ 1).\n• Why Other Choices are Incorrect: Common Collector is a current amplifier, not a high voltage amplifier."
+        },
+{
+            "id": 256,
+            "question": "Which table entry correctly pairs each transistor configuration with its core operational summary?",
+            "options": [
+                  "Immediate destructive breakdown and thermal melting",
+                  "Inverted active mode with low current gain",
+                  "Normal operation with unchanged electrical parameters",
+                  "Pure bidirectional metallic ohmic conduction state"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: • Common Base: Has Voltage Gain but no Current Gain (Ai < 1).\n• Common Emitter: Has both Current and Voltage Gain (highest power gain).\n• Common Collector: Has Current Gain but no Voltage Gain (Av ≈ 1).\n• Why Other Choices are Incorrect: Common Emitter is the only inverting amplifier; Common Collector has the highest input impedance."
+        },
+{
+            "id": 257,
+            "question": "When a Bipolar Junction Transistor is operated as an ON/OFF solid-state switch, between which two distinct operating regions on its I-V characteristics curve is it driven?",
+            "options": [
+                "Linear Active region and Breakdown region",
+                "Cut-off region and Saturation region",
+                "Active region and Cut-off region only",
+                "Saturation region and Active region only"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Cut-off region and Saturation region' is Correct: Transistor solid-state switches operate at the two extremes of the characteristic curves: fully-OFF in the Cut-off region (open switch) and fully-ON in the Saturation region (closed switch), bypassing the active region required for linear amplifiers.\n• Why Other Choices are Incorrect: Linear active region is used for amplifiers, not steady-state switching."
+        },
+{
+            "id": 258,
+            "question": "What type of mechanical switch equivalent does a single bipolar transistor operating in cut-off and saturation emulate?",
+            "options": [
+                "Double-pole double-throw (DPDT) switch",
+                "Single-pole single-throw (SPST) solid-state switch",
+                "Rotary multi-wafer switch",
+                "Momentary push-button normally closed switch only"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Single-pole single-throw (SPST) solid-state switch' is Correct: With zero base drive, the transistor is an open switch (zero collector current); with positive base drive, it closes like a single-pole single-throw (SPST) solid-state switch to conduct maximum circuit current.\n• Why Other Choices are Incorrect: A single BJT provides a single make-or-break path between collector and emitter (SPST)."
+        },
+{
+            "id": 259,
+            "question": "Which set of electrical conditions accurately characterizes the Cut-off (fully-OFF) region of an NPN transistor switch?",
+            "options": [
+                  "Positive feedback: rising IC increases base current IB",
+                  "Negative feedback: rising IC increases VE, reducing VBE and IB",
+                  "RE disconnects the emitter when ambient temperature rises",
+                  "RE forces collector voltage to remain equal to zero volts"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In cut-off: Base input is grounded (0 V), V_BE < 0.7 V (both junctions reverse-biased), no collector current flows (I_C = 0), and output voltage equals full supply voltage (V_OUT = V_CE = V_CC = logic '1'), acting as an open circuit.\n• Why Other Choices are Incorrect: V_CE ≈ 0 V characterizes saturation; V_CE = V_CC / 2 characterizes active-region biasing."
+        },
+{
+            "id": 260,
+            "question": "Which set of electrical conditions characterizes the Saturation (fully-ON) region of an NPN transistor switch?",
+            "options": [
+                  "RTh = R1 || R2,  VTh = VCC * R2 / (R1 + R2)",
+                  "RTh = R1 + R2,  VTh = VCC * R1 / (R1 + R2)",
+                  "RTh = R1 - R2,  VTh = VCC * R2 / (R1 - R2)",
+                  "RTh = RC || RE,  VTh = VBE * R2 / (R1 + R2)"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: In saturation: Base is driven with ample positive voltage (V_BE > 0.7 V), both junctions are forward-biased, collector current reaches circuit maximum limit (I_C = V_CC / R_L), and collector-emitter voltage drops to its minimum (ideally V_CE = 0 V, logic '0'), acting as a closed switch.\n• Why Other Choices are Incorrect: Reverse bias describes cutoff."
+        },
+{
+            "id": 261,
+            "question": "Why is the internal power dissipation (PD = VCE * IC) of a transistor switch at its absolute minimum in both the Cut-off and Saturation states?",
+            "options": [
+                  "beta * RE <= R2 / 10",
+                  "beta * RE >= 10 * R2",
+                  "beta * RC >= 10 * RE",
+                  "R1 * R2 >= 10 * beta"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Power dissipation is P = V_CE * I_C. In cut-off, I_C = 0 so P = 0. In saturation, V_CE ≈ 0 so P ≈ 0. Significant power dissipation only occurs momentarily during the rapid switching transitions between ON and OFF.\n• Why Other Choices are Incorrect: Supply voltage remains constant; the zero-power states are due to zero current or zero voltage."
+        },
+{
+            "id": 262,
+            "question": "When an NPN transistor is connected with its Emitter grounded and its Collector connected to an external load, what technical function does the open-collector output perform?",
+            "options": [
+                  "Fixed-base bias with unbypassed emitter resistor",
+                  "Collector feedback bias from VC to base",
+                  "Two-battery emitter bias with split DC rails",
+                  "Diode-clamped voltage multiplier bias network"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: With emitter grounded, the open-collector transistor acts as a 'current sink'. When turned ON, it pulls (sinks) the bottom terminal of the load down to ground, completing the current path from the external DC power supply through the load to ground.\n• Why Other Choices are Incorrect: Sourcing current is performed by PNP transistors connected to positive rails."
+        },
+{
+            "id": 263,
+            "question": "When switching inductive loads such as relays, solenoids, or DC motors with a transistor, what is the crucial purpose of placing a 'flywheel' (freewheeling) diode across the load?",
+            "options": [
+                  "Biased at the exact linear active center of the DC load line",
+                  "Fully-ON in saturation or fully-OFF in cutoff",
+                  "Operated continuously in reverse avalanche breakdown mode",
+                  "Biased to conduct current exclusively on negative AC cycles"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Inductors resist sudden changes in current. When the transistor abruptly switches OFF, the collapsing magnetic field in the coil generates a high-voltage reverse inductive kick (back-EMF: V = -L di/dt) that can exceed the transistor's V_CEO rating and destroy it. The flywheel diode provides a safe closed-loop freewheeling path to recirculate and dissipate the stored inductive energy.\n• Why Other Choices are Incorrect: It does not speed up the motor or generate AC."
+        },
+{
+            "id": 264,
+            "question": "(Canvas LMS Switch Example 1) An NPN transistor has β = 200 and switches a load current IC = 4 mA with an input base current Ib = 20 μA. If the input control voltage exceeds Vin = 2.5 V and Vbe = 0.7 V, what is the calculated value of the Base resistor (Rb)?",
+            "options": [
+                "9.0 kΩ",
+                "45 kΩ",
+                "90 kΩ",
+                "125 kΩ"
+            ],
+            "answer": 2,
+            "explanation": "• Why '90 kΩ' is Correct: Apply Ohm's law to the base resistor: R_b = (V_in - V_be) / I_b = (2.5 V - 0.7 V) / 20 μA = 1.8 V / 0.000020 A = 90,000 Ω = 90 kΩ.\n• Why Other Choices are Incorrect: 2.5 V / 20 μA = 125 kΩ ignores the 0.7 V diode drop; 9.0 kΩ has an incorrect factor of 10."
+        },
+{
+            "id": 265,
+            "question": "In Canvas Example 1 where the calculated base resistance is 90 kΩ, why do circuit designers intentionally select the next lowest preferred standard value (82 kΩ)?",
+            "options": [
+                  "Transistors draw zero current from the load when saturated",
+                  "Power dissipation is near zero in both cutoff and saturation states",
+                  "Transistors generate electric power when switched at high speeds",
+                  "Transistors eliminate the need for an external circuit power supply"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Choosing the next lowest standard resistor (82 kΩ instead of 91 kΩ or 100 kΩ) increases base current slightly (I_B = 1.8 V / 82 kΩ ≈ 22 μA > 20 μA). This ensures an overdrive condition, guaranteeing that the transistor enters deep saturation even if beta drops with temperature or component aging.\n• Why Other Choices are Incorrect: A lower resistor increases base current, ensuring saturation rather than linear mode."
+        },
+{
+            "id": 266,
+            "question": "(Canvas LMS Switch Example 2) A transistor with β = 200 must switch a heavy load requiring IC = 200 mA when input control voltage is 5.0 V. What is the minimum Base current (Ib) required to turn the transistor fully ON (saturated)?",
+            "options": [
+                "0.1 mA (100 μA)",
+                "1.0 mA (1000 μA)",
+                "10 mA",
+                "40 mA"
+            ],
+            "answer": 1,
+            "explanation": "• Why '1.0 mA' is Correct: To reach saturation, minimum base current is I_b(min) = I_C / beta = 200 mA / 200 = 1.0 mA (or 1000 μA).\n• Why Other Choices are Incorrect: 200 mA / 20 = 10 mA; 200 mA * 200 = 40,000 mA."
+        },
+{
+            "id": 267,
+            "question": "(Canvas LMS Switch Example 2 Continued) With an input voltage Vin = 5.0 V, Vbe = 0.7 V, and the required minimum base current Ib = 1.0 mA, what is the calculated value of the Base resistor (Rb)?",
+            "options": [
+                "430 Ω",
+                "4.3 kΩ",
+                "5.0 kΩ",
+                "43 kΩ"
+            ],
+            "answer": 1,
+            "explanation": "• Why '4.3 kΩ' is Correct: Using Ohm's law across R_b: R_b = (V_in - V_be) / I_b = (5.0 V - 0.7 V) / 1.0 mA = 4.3 V / 0.001 A = 4,300 Ω = 4.3 kΩ.\n• Why Other Choices are Incorrect: 5.0 V / 1.0 mA = 5.0 kΩ ignores V_be; 430 Ω is an order of magnitude error."
+        },
+{
+            "id": 268,
+            "question": "How does an NPN Common Emitter switching circuit function as a digital logic inverter (NOT gate)?",
+            "options": [
+                  "Transistor drops into cutoff, acting as an open switch",
+                  "Transistor driven into saturation, conducting maximum load current",
+                  "Transistor oscillates at ultra-high radio frequencies",
+                  "Collector voltage drops to negative DC supply potential"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: When input is high (logic '1'), base current saturates the BJT, pulling V_CE to ~0 V (logic '0'). When input is low (logic '0'), the BJT cuts off and collector resistor pulls V_CE up to V_CC (logic '1'). Thus, output is always the inverted logic level of the input.\n• Why Other Choices are Incorrect: Inverting digital logic means swapping high and low states, not reversing DC supply polarity."
+        },
+{
+            "id": 269,
+            "question": "What is the primary advantage of using a BJT solid-state switch to interface a low-voltage digital microcontroller (+5 V or +3.3 V) with a high-power device (+12 V or +24 V motor)?",
+            "options": [
+                  "Base voltage exceeding 100 V to initiate avalanche conduction",
+                  "Sufficient base current to drive transistor into saturation (VCE ≈ 0.2 V)",
+                  "Zero base current to prevent heating and keep transistor OFF",
+                  "Negative base voltage to reverse-bias the base-emitter junction"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Microcontroller GPIO pins can only deliver tens of milliamperes at 3.3 V or 5 V. Transistor switches act as electronic buffers, using microamperes of logic current to switch amperes of current at 12 V, 24 V, or higher without damaging the microcontroller.\n• Why Other Choices are Incorrect: Transistors switch much faster than mechanical switches and do not eliminate wiring."
+        },
+{
+            "id": 270,
+            "question": "How is Pulse Width Modulation (PWM) utilized with BJT solid-state switches to control the speed of a DC motor efficiently?",
+            "options": [
+                  "By varying DC supply voltage through a motor-driven rheostat",
+                  "By switching between saturation and cutoff, modulating duty cycle",
+                  "By maintaining the transistor at mid-point linear active bias",
+                  "By absorbing motor back-EMF energy in high-wattage resistors"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In PWM, the transistor is driven only into cutoff (zero current) and saturation (zero voltage drop), where power dissipation is virtually zero. By adjusting the duty cycle (percentage of time ON vs OFF), average power and speed delivered to the motor can be smoothly controlled with very high electrical efficiency (>90%).\n• Why Other Choices are Incorrect: Operating in the linear active region wastes massive power as heat."
+        },
+{
+            "id": 271,
+            "question": "What is 'overdrive factor' or 'forced beta' (βforced) in transistor switching circuit design?",
+            "options": [
+                  "Flyback diode across inductive load to suppress high-voltage spikes",
+                  "Series capacitor to block all DC current from entering the coil",
+                  "Zener diode across the base resistor to prevent gate loading",
+                  "Thermal fuse in series with emitter to disconnect circuit ground"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: To guarantee that a transistor switch turns fully ON under all temperature conditions, production variations, and aging, engineers design with 'forced beta' (typically beta_forced = 10, or 2 to 5 times more base current than minimum: I_B = 2 to 5 * I_C / beta). This is called overdriving the base into hard saturation.\n• Why Other Choices are Incorrect: Overdrive does not exceed maximum ratings; it ensures reliable saturation."
+        },
+{
+            "id": 272,
+            "question": "What is the primary function of the Base resistor (Rb) when a digital logic gate (such as TTL or CMOS) drives a transistor switch?",
+            "options": [
+                  "Amplifies the logic gate's power supply voltage to high levels",
+                  "Limits logic gate output current to safe levels and sets base drive",
+                  "Converts direct current gate outputs into high-frequency AC",
+                  "Eliminates the base-emitter junction barrier potential drop"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Digital logic ICs have maximum rated source and sink output current limits (typically 4 mA to 20 mA). The base resistor R_b limits the current flowing out of the logic pin to prevent damaging the IC while delivering the exact base current needed to saturate the transistor.\n• Why Other Choices are Incorrect: Resistors dissipate power rather than amplify voltage or convert DC to AC."
+        },
+{
+            "id": 273,
+            "question": "How is the load connected in a PNP transistor switching circuit, and what is the primary role of the PNP transistor?",
+            "options": [
+                  "Load connects between collector and ground, PNP sources current",
+                  "Load connects between base and collector directly to ground",
+                  "Load connects in series with input base current limiting resistor",
+                  "Load replaces the internal base-emitter PN junction completely"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: In a PNP switch, the Emitter is tied to the positive DC rail (+VCC) and the load is connected between the Collector and ground (0 V). Turning the PNP transistor ON connects the load to +VCC, acting as a 'high-side' current sourcing switch.\n• Why Other Choices are Incorrect: Connecting load between collector and ground is high-side switching; NPN switches the ground side."
+        },
+{
+            "id": 274,
+            "question": "To switch a PNP transistor switch 'ON' into saturation, what voltage level must be applied to its Base terminal?",
+            "options": [
+                  "A high positive voltage equal to or greater than DC supply VCC",
+                  "A LOW voltage (0 V / ground) to forward-bias base-emitter junction",
+                  "An alternating sine wave voltage exceeding peak supply volts",
+                  "The base terminal must be left completely disconnected and floating"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'A LOW voltage (ground / 0 V)' is Correct: For a PNP transistor, the emitter is connected to +VCC. To forward-bias the base-emitter junction, the base must be made more negative than the emitter by at least 0.7 V. Grounding the base (LOW / 0 V) creates a positive VEB drop, turning the PNP switch fully ON.\n• Why Other Choices are Incorrect: Applying +VCC makes VEB = 0 V, which cuts off the PNP transistor."
+        },
+{
+            "id": 275,
+            "question": "What is the key electrical distinction between an NPN transistor switch and a PNP transistor switch regarding current flow?",
+            "options": [
+                "NPN transistors source current (switches power), while PNP transistors sink current (switches ground)",
+                "NPN transistors sink current (switches ground), while PNP transistors source current (switches power)",
+                "NPN transistors only conduct AC current, while PNP transistors only conduct DC current",
+                "NPN switches have zero resistance, while PNP switches have infinite resistance"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: As emphasized in the Canvas lecture module: NPN transistors switch the ground path (current sinking, open-collector pull-down), while PNP transistors switch the positive supply path (current sourcing, high-side pull-up to VCC).\n• Why Other Choices are Incorrect: Reversing the roles is incorrect; both handle DC and AC identically in magnitude."
+        },
+{
+            "id": 276,
+            "question": "What is the formal technical name for the two-transistor compound arrangement commonly known as the 'Darlington Configuration'?",
+            "options": [
+                  "Darlington Pair Configuration",
+                  "Symmetrical Push-Pull Topology",
+                  "Differential Cascode Network",
+                  "Current Mirror Steering Array"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'Complementary Gain Compounding Configuration' is Correct: The formal engineering designation for the Darlington configuration is the 'Complementary Gain Compounding Configuration', where the current gain of the first transistor is compounded with (multiplied by) the current gain of the second transistor.\n• Why Other Choices are Incorrect: Push-pull uses complementary NPN/PNP; Cascode uses CE and CB stages."
+        },
+{
+            "id": 277,
+            "question": "How are the two individual bipolar transistors physically interconnected in an NPN Darlington transistor pair?",
+            "options": [
+                  "Emitters tied together; Collector of Q1 connects to Base of Q2",
+                  "Collectors tied together; Emitter of Q1 connects to Base of Q2",
+                  "Bases tied together; Collectors connected in series with Emitters",
+                  "Emitter of Q2 tied directly to Collector terminal of Q1"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In an NPN Darlington pair, the Collectors of both transistors are tied together to a common terminal. The Emitter of the smaller input transistor (Q1) is connected directly to the Base of the larger output transistor (Q2), so the emitter current of Q1 becomes the base drive current for Q2 (IB2 = IE1).\n• Why Other Choices are Incorrect: In a Darlington pair, collectors are tied together, not emitters."
+        },
+{
+            "id": 278,
+            "question": "What is the mathematical relationship for the total overall current gain (βtotal or hFE(total)) of a Darlington transistor pair?",
+            "options": [
+                  "βtotal = β1 + β2",
+                  "βtotal ≈ β1 * β2",
+                  "βtotal = (β1 * β2) / (β1 + β2)",
+                  "βtotal = β1 / β2"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'βtotal = β1 * β2' is Correct: Because Q1 amplifies the base current by β1 and feeds its output into the base of Q2 which amplifies it again by β2, the overall current amplification factor is the product of the two individual gains: βtotal = β1 * β2.\n• Why Other Choices are Incorrect: Gains multiply rather than add; adding gains would only give 150 instead of 5,000."
+        },
+{
+            "id": 279,
+            "question": "(Canvas LMS Darlington Example) A Darlington switch consists of an input transistor with current gain β1 = 100 and a second switching transistor with current gain β2 = 50. What is the total current gain (βtotal) of the Darlington device?",
+            "options": [
+                "150",
+                "500",
+                "5,000",
+                "50,000"
+            ],
+            "answer": 2,
+            "explanation": "• Why '5,000' is Correct: Multiplying the two individual gains: beta_total = beta_1 * beta_2 = 100 * 50 = 5,000.\n• Why Other Choices are Incorrect: 100 + 50 = 150 (adding instead of multiplying); 500 is a factor of 10 error."
+        },
+{
+            "id": 280,
+            "question": "(Canvas LMS Darlington Example Continued) If the load current to be switched is IC = 200 mA and the Darlington total current gain is βtotal = 5,000, what is the required input base current (IB)?",
+            "options": [
+                "4 μA",
+                "40 μA",
+                "400 μA",
+                "1.0 mA"
+            ],
+            "answer": 1,
+            "explanation": "• Why '40 μA' is Correct: Using I_B = I_C / beta_total = 200 mA / 5,000 = 0.04 mA = 40 μA.\n• Why Other Choices are Incorrect: For a single transistor with beta = 200, I_B was 1.0 mA (1,000 μA); the Darlington reduces this requirement to just 40 μA."
+        },
+{
+            "id": 281,
+            "question": "Comparing a single BJT switch (requiring 1.0 mA base current for a 200 mA load) to the Darlington pair (requiring 40 μA), what is the key practical advantage?",
+            "options": [
+                  "Consumes zero electrical power across the switched load",
+                  "Allows micro-power logic pins to switch heavy load currents",
+                  "Reduces circuit supply voltage to zero volts during conduction",
+                  "Eliminates the requirement for a physical collector connection"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Drawing only 40 μA from a microcontroller or logic gate is well within the drive capacity of any low-power digital output pin, whereas 1.0 mA or more might overload sensitive logic families or battery-powered devices.\n• Why Other Choices are Incorrect: Load power depends on the load itself; collector connections remain essential."
+        },
+{
+            "id": 282,
+            "question": "What is the total Base-Emitter turn-on input voltage threshold (VBE(total)) for a standard Silicon Darlington pair, and why?",
+            "options": [
+                  "Approximately 0.2 V (reduced saturation drop)",
+                  "Approximately 0.7 V (single junction conduction)",
+                  "Approximately 1.4 V (two series VBE diode drops)",
+                  "Approximately 5.0 V (matching standard TTL rails)"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Approximately 1.4 V' is Correct: Because the Emitter of Q1 connects directly to the Base of Q2, the input voltage from the external Base to the external Emitter must overcome both forward-biased PN junctions in series: V_BE(total) = V_BE1 + V_BE2 ≈ 0.7 V + 0.7 V = 1.4 V.\n• Why Other Choices are Incorrect: A single silicon junction requires 0.7 V; two in series require ~1.4 V."
+        },
+{
+            "id": 283,
+            "question": "A Darlington switch is driven by a 5.0 V logic gate to switch a load with IB = 40 μA. If VBE(total) = 1.4 V, what is the calculated value of the Base resistor (Rb)?",
+            "options": [
+                "36 kΩ",
+                "90 kΩ",
+                "107.5 kΩ",
+                "125 kΩ"
+            ],
+            "answer": 1,
+            "explanation": "• Why '90 kΩ' is Correct: Apply Ohm's law taking the 1.4 V double-junction drop into account: R_b = (V_in - V_BE(total)) / I_B = (5.0 V - 1.4 V) / 40 μA = 3.6 V / 0.000040 A = 90,000 Ω = 90 kΩ.\n• Why Other Choices are Incorrect: (5.0 - 0.7) / 40 μA = 107.5 kΩ uses only a single diode drop; 5.0 V / 40 μA = 125 kΩ ignores junction drops."
+        },
+{
+            "id": 284,
+            "question": "What is the primary operational trade-off or drawback of using a Darlington pair switch instead of a single BJT switch?",
+            "options": [
+                  "Overall current gain is lower than a single transistor (beta < 10)",
+                  "Saturation voltage VCE(sat) is higher (0.7 V to 0.9 V)",
+                  "Total inability to switch direct current electrical loads (AC only)",
+                  "Requires dual complementary negative power supply rails (-VCC)"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In a Darlington pair, Q1 cannot be driven into deeper saturation than V_CE1 = V_BE2 ≈ 0.7 V. Therefore, V_CE(sat) of the pair is V_CE1(sat) + V_BE2 ≈ 0.2 V + 0.7 V = 0.9 V (or at minimum ~0.7 V). This higher V_CE(sat) dissipates significantly more power (heat) in high-current applications than a single saturated transistor (V_CE(sat) ≈ 0.2 V).\n• Why Other Choices are Incorrect: Current gain is vastly higher, not lower."
+        },
+{
+            "id": 285,
+            "question": "Which of the following represents a typical practical application for a Darlington Transistor Switch as highlighted in the Canvas lecture module?",
+            "options": [
+                  "Motor drivers, relay controllers, and power inverters",
+                  "Direct microwave radio antenna transmission circuits",
+                  "High-frequency FM demodulation and mixing stages only",
+                  "Passive audio bandpass filter frequency shaping networks"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: Due to their high current gains and high switching speeds, Darlington switches are widely used in DC motor and stepper motor control, high-current relay/solenoid drivers, power inverters, and automotive lighting circuits.\n• Why Other Choices are Incorrect: Microwave antennas and audio filters use other specialized components."
+        },
+{
+            "id": 286,
+            "question": "How does a 'Sziklai Pair' (Complementary Feedback Pair) compare to a standard Darlington Pair?",
+            "options": [
+                  "Two identical NPN transistors with 10x higher saturation voltage",
+                  "Complementary NPN-PNP pair with high gain but single VBE drop (0.7 V)",
+                  "Specialized topology restricted solely to RF radio transmitters",
+                  "Experimental circuit eliminating the external collector terminal"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The Sziklai pair (also called the Complementary Darlington) connects an NPN and a PNP transistor together. It provides total current gain approximately equal to beta1 * beta2, but requires only a single forward diode drop at the input (V_BE ≈ 0.7 V) and achieves a lower saturation voltage (~0.3 V) than a Darlington pair.\n• Why Other Choices are Incorrect: Sziklai uses complementary transistors (NPN + PNP), not two identical ones."
+        },
+{
+            "id": 287,
+            "question": "(Midterm Seatwork 2) What does BJT stand for in electronics?",
+            "options": [
+                "Bipolar Junction Transistor",
+                "Basic Junction Technology",
+                "Binary Junction Transformer",
+                "Base Joint Transducer"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'Bipolar Junction Transistor' is Correct: BJT stands for Bipolar Junction Transistor. It is called 'bipolar' because it utilizes both electron and hole conduction, and 'junction' because it consists of two PN junctions separating three doped regions.\n• Why Other Choices are Incorrect: BJT does not stand for Technology, Transformer, or Transducer."
+        },
+{
+            "id": 288,
+            "question": "(Midterm Seatwork 2) In a BJT, what are the three layers formed by the P-type and N-type semiconductor materials?",
+            "options": [
+                "Emitter, Base, Collector",
+                "Anode, Cathode, Gate",
+                "Source, Drain, Gate",
+                "Channel, Substrate, Body"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'Emitter, Base, Collector' is Correct: The three functional semiconductor layers of a BJT are the Emitter (injects carriers), the Base (controls carrier flow), and the Collector (collects carriers).\n• Why Other Choices are Incorrect: Anode, Cathode, and Gate belong to thyristors (SCRs); Source, Drain, and Gate belong to FETs."
+        },
+{
+            "id": 289,
+            "question": "(Midterm Seatwork 2) Which terminal of the BJT is responsible for the majority charge carriers injection into the base region?",
+            "options": [
+                "Collector",
+                "Base",
+                "Emitter",
+                "Substrate"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Emitter' is Correct: As its name implies, the Emitter is heavily doped and responsible for emitting (injecting) majority charge carriers across the forward-biased base-emitter junction into the base region.\n• Why Other Choices are Incorrect: The Collector collects carriers; the Base controls their transit."
+        },
+{
+            "id": 290,
+            "question": "(Midterm Seatwork 2) What is the purpose of the thin base region in a BJT?",
+            "options": [
+                "To provide mechanical strength",
+                "To control the flow of majority charge carriers",
+                "To enhance thermal conductivity",
+                "To increase voltage handling capacity"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'To control the flow of majority charge carriers' is Correct: The Base is physically ultra-thin and lightly doped so that it allows small base currents to modulate and control the vast majority of carriers diffusing from emitter to collector with minimal recombination.\n• Why Other Choices are Incorrect: The base does not provide structural strength or heat dissipation (heat dissipation is handled by the collector)."
+        },
+{
+            "id": 291,
+            "question": "(Midterm Seatwork 2) What type of charge carriers dominate the current flow in the emitter and collector regions of an NPN BJT?",
+            "options": [
+                "Electrons",
+                "Holes",
+                "Protons",
+                "Neutrons"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'Electrons' is Correct: In an NPN transistor, the Emitter and Collector are both composed of N-type semiconductor material, where negatively charged free electrons are the majority charge carriers.\n• Why Other Choices are Incorrect: Holes dominate in P-type regions (PNP transistors); protons and neutrons are fixed subatomic particles in the nucleus."
+        },
+{
+            "id": 292,
+            "question": "(Midterm Seatwork 2) What type of charge carriers dominate the current flow in the emitter and collector regions of a PNP BJT?",
+            "options": [
+                "Electrons",
+                "Holes",
+                "Proton",
+                "Neutrons"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Holes' is Correct: In a PNP transistor, the Emitter and Collector are composed of P-type semiconductor material, where positively charged holes (deficiencies of electrons in valence bonds) are the majority charge carriers.\n• Why Other Choices are Incorrect: Electrons dominate in N-type material (NPN transistors)."
+        },
+{
+            "id": 293,
+            "question": "(Midterm Seatwork 2) What is the function of the collector terminal in a BJT?",
+            "options": [
+                "To inject majority carriers into the base",
+                "To collect majority carriers emitted from the base",
+                "To control the base current",
+                "To provide mechanical support"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'To collect majority carriers emitted from the base' is Correct: The primary function of the Collector terminal is to collect the majority charge carriers that were injected by the emitter and have traversed across the base region.\n• Why Other Choices are Incorrect: Injecting carriers is the role of the emitter; controlling current is the function of the base."
+        },
+{
+            "id": 294,
+            "question": "Which of the three semiconductor regions in a Bipolar Junction Transistor possesses the highest impurity doping concentration?",
+            "options": [
+                "Base region",
+                "Collector region",
+                "Emitter region",
+                "All three regions have identical doping concentrations"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Emitter region' is Correct: The Emitter is the most heavily doped layer in the BJT (typically 10^19 atoms/cm^3) to ensure a massive injection of majority charge carriers into the base.\n• Why Other Choices are Incorrect: Base is the most lightly doped (10^15 - 10^16 atoms/cm^3); collector is moderately doped."
+        },
+{
+            "id": 295,
+            "question": "Which of the three semiconductor regions in a Bipolar Junction Transistor has the lowest impurity doping concentration?",
+            "options": [
+                "Emitter region",
+                "Collector region",
+                "Base region",
+                "Package substrate"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Base region' is Correct: The Base is deliberately engineered with the lowest doping concentration among all three layers to minimize recombination of minority carriers diffusing through it.\n• Why Other Choices are Incorrect: Emitter is heavily doped; collector is moderately doped."
+        },
+{
+            "id": 296,
+            "question": "Which semiconductor region in a BJT is manufactured with the physically largest surface area and volume, and why?",
+            "options": [
+                  "Emitter, to maximize electron storage capacity inside silicon",
+                  "Base, to establish wide surface area for input signal control",
+                  "Collector, to dissipate heat generated at reverse-biased junction",
+                  "All three regions are manufactured with identical volume cubes"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Collector' is Correct: The Collector region operates under high reverse-bias voltage (V_CE) and conducts full load current, generating significant heat (P = V_CE * I_C). It is manufactured with the largest physical size to transfer this thermal energy safely to the case or heat sink.\n• Why Other Choices are Incorrect: Base is the thinnest; emitter is smaller than the collector."
+        },
+{
+            "id": 297,
+            "question": "In Malvino's 'First (Ideal) Approximation' of a conducting transistor, what value is assumed for the base-emitter junction voltage (VBE)?",
+            "options": [
+                "VBE = 0 V",
+                "VBE = 0.7 V",
+                "VBE = 0.3 V",
+                "VBE = 1.0 V"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'VBE = 0 V' is Correct: In the first (ideal) approximation, the forward-biased emitter diode is treated as an ideal diode with zero threshold voltage (VBE = 0 V). This allows quick mental estimates for troubleshooting.\n• Why Other Choices are Incorrect: 0.7 V is the second approximation; 0.3 V is for Germanium."
+        },
+{
+            "id": 298,
+            "question": "In Malvino's 'Second Approximation' of a silicon transistor, what value is assumed for the base-emitter voltage (VBE)?",
+            "options": [
+                  "VBE = 0.0 V",
+                  "VBE = 0.3 V",
+                  "VBE = 0.7 V",
+                  "VBE = 1.4 V"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'VBE = 0.7 V' is Correct: The second approximation provides the best practical compromise between speed and accuracy by including the built-in barrier potential of the silicon PN junction (VBE = 0.7 V).\n• Why Other Choices are Incorrect: 0 V is the ideal approximation; 1.4 V is for a Darlington pair."
+        },
+{
+            "id": 299,
+            "question": "What additional physical circuit parameter is incorporated in the 'Third Approximation' of a transistor?",
+            "options": [
+                  "Bulk resistances r'e and r'b, causing VBE to rise at high currents",
+                  "External load resistor resistance value connected to collector",
+                  "Internal output impedance of the DC bench power supply source",
+                  "Parasitic stray capacitance of prototype breadboard wiring"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: The third approximation accounts for the bulk internal resistance of the semiconductor material (r'e and r'b), meaning VBE = 0.7 V + IB*r'b, which becomes important at high currents where VBE can exceed 0.8 V to 1.0 V.\n• Why Other Choices are Incorrect: External resistors are not internal transistor parameters."
+        },
+{
+            "id": 300,
+            "question": "On a transistor's collector characteristic curves, what is the voltage called that marks the boundary where the curve transitions from the rising saturation region to the flat active region?",
+            "options": [
+                  "Reverse avalanche breakdown voltage",
+                  "Knee voltage (Vknee ≈ 0.7 V to 1.0 V)",
+                  "Threshold pinch-off depletion voltage",
+                  "Extrapolated negative Early voltage"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Knee voltage' is Correct: The knee voltage (Vknee) is the collector-emitter voltage where collector current levels off and becomes constant. Above Vknee, the collector junction is reverse-biased and the transistor operates in the active region.\n• Why Other Choices are Incorrect: Breakdown voltage occurs at the far right of the curves."
+        },
+{
+            "id": 301,
+            "question": "On the Common Emitter output characteristics (IC vs VCE), what are the two intercept points that define the DC load line?",
+            "options": [
+                  "Cutoff (VCE = VCC, IC = 0) and Saturation (VCE = 0, IC = VCC/RC)",
+                  "Active Q-point and extrapolated negative Early voltage intercept",
+                  "Reverse breakdown voltage and forward threshold turn-on voltage",
+                  "Origin (0 V, 0 mA) and minimum collector transition knee point"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: The DC load line represents KVL: VCE = VCC - IC*RC. When IC = 0, VCE = VCC (cutoff point on the voltage axis). When VCE = 0, IC = VCC / RC (saturation point on the current axis). Connecting these two points forms the load line.\n• Why Other Choices are Incorrect: The load line connects cutoff and saturation extremes."
+        },
+{
+            "id": 302,
+            "question": "What is the technical definition of the 'Quiescent Operating Point' (Q-point) of a transistor amplifier?",
+            "options": [
+                  "Maximum unity-gain cutoff frequency where transistor oscillates",
+                  "DC point at intersection of DC load line and base current curve",
+                  "Operating point where transistor reaches maximum junction heat",
+                  "Point of maximum audio output volume before signal clipping"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The term 'quiescent' means quiet or at rest. The Q-point represents the steady-state DC current (ICQ) and voltage (VCEQ) established by the DC biasing network with zero input signal applied.\n• Why Other Choices are Incorrect: Q-point is a DC bias condition, not a frequency or temperature rating."
+        },
+{
+            "id": 303,
+            "question": "(Mehta Example 8.22) For a transistor circuit with supply voltage VCC = 12.5 V and collector load resistor RC = 2.5 kΩ, what are the two end points of the DC load line?",
+            "options": [
+                "Cutoff: 12.5 V; Saturation: 5.0 mA",
+                "Cutoff: 2.5 V; Saturation: 12.5 mA",
+                "Cutoff: 10 V; Saturation: 2.5 mA",
+                "Cutoff: 25 V; Saturation: 50 mA"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'Cutoff: 12.5 V; Saturation: 5.0 mA' is Correct: Cutoff voltage is VCE(cutoff) = VCC = 12.5 V (point on VCE axis). Saturation current is IC(sat) = VCC / RC = 12.5 V / 2.5 kΩ = 5.0 mA (point on IC axis).\n• Why Other Choices are Incorrect: 12.5 / 2.5 = 5.0 mA directly."
+        },
+{
+            "id": 304,
+            "question": "(Mehta Example 8.23) In a CE circuit with VCC = 12 V, RC = 6 kΩ, IB = 20 μA, and β = 50, what are the coordinates of the operating Q-point (VCE, IC)?",
+            "options": [
+                "VCE = 6 V, IC = 1 mA",
+                "VCE = 12 V, IC = 2 mA",
+                "VCE = 3 V, IC = 1.5 mA",
+                "VCE = 0 V, IC = 2 mA"
+            ],
+            "answer": 0,
+            "explanation": "• Why 'VCE = 6 V, IC = 1 mA' is Correct: First calculate collector current: IC = beta * IB = 50 * 0.02 mA = 1.0 mA. Then apply KVL for VCE: VCE = VCC - IC*RC = 12 V - (1.0 mA * 6 kΩ) = 12 V - 6 V = 6 V. The Q-point is (6 V, 1 mA).\n• Why Other Choices are Incorrect: 12 V is cutoff; 0 V is saturation."
+        },
+{
+            "id": 305,
+            "question": "(Malvino Example 6-11) A 2N3904 transistor operates with VCE = 10 V and IC = 20 mA. What is its internal power dissipation PD?",
+            "options": [
+                "20 mW",
+                "200 mW",
+                "2 W",
+                "0.5 W"
+            ],
+            "answer": 1,
+            "explanation": "• Why '200 mW' is Correct: Power dissipation is PD = VCE * IC = 10 V * 20 mA = 200 mW (0.2 W).\n• Why Other Choices are Incorrect: 10 * 20 = 200, not 20 or 2,000."
+        },
+{
+            "id": 306,
+            "question": "(Malvino Example 6-12) A transistor is rated for PD(max) = 625 mW at 25°C with a derating factor of 5 mW/°C. What is its maximum allowable power dissipation at an ambient temperature of 100°C?",
+            "options": [
+                "625 mW",
+                "500 mW",
+                "375 mW",
+                "250 mW"
+            ],
+            "answer": 3,
+            "explanation": "• Why '250 mW' is Correct: Calculate temperature rise above 25°C: Delta_T = 100°C - 25°C = 75°C. Power reduction: Delta_P = 75°C * 5 mW/°C = 375 mW. Derated maximum power: PD(max) = 625 mW - 375 mW = 250 mW.\n• Why Other Choices are Incorrect: 375 mW is the reduction amount, so the remaining rating is 250 mW."
+        },
+{
+            "id": 307,
+            "question": "In conservative commercial electronic design, why do engineers typically adopt a 'safety factor of 2' on transistor power dissipation ratings?",
+            "options": [
+                  "Limits power dissipation below 50% of maximum rated PD",
+                  "Because transistors conduct alternating current only half the time",
+                  "Because alternating current waveforms reverse polarity every cycle",
+                  "To reduce internal battery power supply voltage by fifty percent"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: Operating a transistor at or near its maximum rating significantly shortens its lifespan and increases the risk of thermal failure. A safety factor of 2 means designing for PD <= PD(max) / 2 (e.g. 125 mW for a 250 mW rating), ensuring highly reliable continuous operation.\n• Why Other Choices are Incorrect: Safety factors are thermal design margins, not related to AC frequency."
+        },
+{
+            "id": 308,
+            "question": "Under the European Pro-Electron semiconductor numbering system (e.g., BC147 or AC125), what does the first letter indicate?",
+            "options": [
+                  "Calendar year and manufacturing plant location code",
+                  "Semiconductor material (A = Germanium, B = Silicon, C = GaAs)",
+                  "Maximum collector-to-emitter breakdown voltage rating",
+                  "Physical casing style and lead configuration standard"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In Pro-Electron codes, the first letter denotes the semiconductor material: 'A' represents materials with bandgap 0.6-1.0 eV (Germanium), 'B' represents bandgap 1.0-1.3 eV (Silicon), and 'C' represents bandgap >= 1.3 eV (Gallium Arsenide). Thus, BC147 is a Silicon device.\n• Why Other Choices are Incorrect: It does not denote year or package style."
+        },
+{
+            "id": 309,
+            "question": "In the Pro-Electron transistor code BC547, what does the second letter 'C' signify?",
+            "options": [
+                "Collector lead location",
+                "Audio frequency low-power transistor",
+                "High-power industrial thyristor",
+                "Zener diode regulator"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The second letter describes the circuit function: 'C' signifies an Audio Frequency (AF) small-signal / low-power transistor. 'D' signifies an AF power transistor, 'F' an RF low-power transistor, and 'Z' a Zener diode.\n• Why Other Choices are Incorrect: C denotes AF small-signal transistor, not collector terminal."
+        },
+{
+            "id": 310,
+            "question": "Under the EIA/JEDEC semiconductor naming standard, what does the prefix '2N' (such as in 2N3904 or 2N2222) denote?",
+            "options": [
+                "Two volts nominal operating voltage",
+                "A semiconductor device having two PN junctions",
+                "A device produced exclusively by two manufacturers",
+                "A second-generation integrated circuit"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In JEDEC notation, the leading digit indicates the number of PN junctions: '1N' indicates one junction (two-terminal diode), '2N' indicates two junctions (three-terminal transistor or FET), and '3N' indicates three junctions (four-terminal dual-gate MOSFET or SCR).\n• Why Other Choices are Incorrect: 2N specifies junction count, not voltage or manufacturer."
+        },
+{
+            "id": 311,
+            "question": "(Malvino Table 6-1 Troubleshooting) In a common-emitter circuit, if the base resistor (RB) becomes open-circuited, what will be the measured collector voltage VC?",
+            "options": [
+                  "VC = 0 V (transistor is heavily saturated)",
+                  "VC = VCC (transistor is in cutoff since IB = 0)",
+                  "VC = 0.7 V (emitter junction barrier drop)",
+                  "VC = VCC / 2 (operating at mid-loadline)"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: When RB opens, no base current can flow (IB = 0). The transistor enters cutoff, causing collector current to drop to zero (IC = 0). With no current through collector resistor RC, there is zero voltage drop across RC, so VC rises to full VCC.\n• Why Other Choices are Incorrect: VC = 0 V occurs when RC is open or in dead saturation."
+        },
+{
+            "id": 312,
+            "question": "(Malvino Table 6-1 Troubleshooting) If the base resistor (RB) becomes accidentally shorted directly across a 10 V base supply, what will occur?",
+            "options": [
+                  "Collector voltage drops instantly to negative 10 volts",
+                  "Excessive current into base-emitter diode burns the transistor",
+                  "Transistor turns completely off into deep cutoff state",
+                  "Circuit begins oscillating as an ultra-high RF oscillator"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The base-emitter junction cannot sustain 10 V forward bias without a current-limiting resistor; it clamps around 0.7 V. Shorting RB dumps massive current through the junction, causing instantaneous thermal destruction ('transistor blown').\n• Why Other Choices are Incorrect: Shorting RB drives excessive current, destroying the junction."
+        },
+{
+            "id": 313,
+            "question": "(Malvino Table 6-1 Troubleshooting) If the collector resistor (RC) becomes open-circuited, what is the measured collector voltage (VC)?",
+            "options": [
+                "VC = VCC",
+                "VC = 0 V",
+                "VC = 0.7 V",
+                "VC = -0.7 V"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'VC = 0 V' is Correct: If RC is open, the collector terminal is completely disconnected from the positive power supply VCC. Therefore, the measured collector voltage with respect to ground is 0 V.\n• Why Other Choices are Incorrect: If RC is open, no voltage from VCC can reach the collector."
+        },
+{
+            "id": 314,
+            "question": "What is the most common internal electrical failure mode in a power BJT subjected to severe overcurrent or excessive thermal dissipation?",
+            "options": [
+                "Base terminal disconnection",
+                "Collector-to-emitter internal short circuit (VCE = 0 V)",
+                "Spontaneous transformation into a tunnel diode",
+                "Complete demagnetization of copper leads"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: As noted in Malvino and Boylestad, because the collector junction dissipates the vast majority of internal power (PD = VCE * IC), extreme temperatures melt the thin semiconductor crystal lattice between collector and emitter, causing an internal collector-to-emitter short circuit (VCE ≈ 0 V).\n• Why Other Choices are Incorrect: Collector-to-emitter short is the primary physical breakdown mechanism."
+        },
+{
+            "id": 315,
+            "question": "How does the maximum collector-to-emitter breakdown rating (BVCEO) compare to the collector-to-base breakdown rating (BVCBO)?",
+            "options": [
+                "BVCEO is much higher than BVCBO",
+                "BVCEO is significantly lower than BVCBO",
+                "BVCEO and BVCBO are always mathematically identical",
+                "BVCEO cannot be measured"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: In the common-emitter configuration with base open, any initial thermal or avalanche carrier generated at the reverse-biased collector junction is amplified by the transistor gain beta, triggering breakdown at a much lower voltage than when the emitter is open (BVCBO). Thus, BVCEO is typically roughly half of BVCBO.\n• Why Other Choices are Incorrect: CE breakdown is lower due to internal beta multiplication."
+        },
+{
+            "id": 316,
+            "question": "What is the phenomenon called 'Punch-Through' in a bipolar junction transistor?",
+            "options": [
+                  "Physical punching of mounting holes into an extruded aluminum heat sink",
+                  "CB depletion layer widens across base, contacting emitter depletion layer",
+                  "Switching on of a transistor by high-intensity optical laser pulses",
+                  "Mechanical destruction of internal bonding wire leads by vibration"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Punch-through (or reach-through) occurs at high collector reverse voltages when the depletion layer extends completely across the ultra-thin base region, directly linking the collector and emitter depletion layers and causing massive breakdown current.\n• Why Other Choices are Incorrect: It is a semiconductor depletion layer reach-through phenomenon."
+        },
+{
+            "id": 317,
+            "question": "Why do common-emitter collector characteristic curves (IC vs VCE) exhibit a slight upward slope rather than remaining perfectly flat in the active region?",
+            "options": [
+                  "Base-width modulation narrows effective base as VCE increases",
+                  "Magnetic coupling with external power supply transformer coils",
+                  "Silicon atoms permanently losing valence electrons at high voltage",
+                  "Collector current decreasing linearly with applied collector volts"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: As VCE increases, the reverse bias on the collector-base junction increases, causing its depletion region to expand further into the lightly doped base. This narrows the effective base width (WB), reducing carrier recombination and causing IC to rise slightly with VCE.\n• Why Other Choices are Incorrect: This upward slope is the classical Early Effect."
+        },
+{
+            "id": 318,
+            "question": "How is the AC common-emitter current gain (hfe or βac) formally evaluated from a family of collector characteristic curves at an operating point?",
+            "options": [
+                "βac = IC / IB at the origin",
+                "βac = (Delta_IC / Delta_IB) evaluated along a vertical line of constant VCE",
+                "βac = Delta_VCE / Delta_IC along a horizontal line of constant IC",
+                "βac = VCE / VBE"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: By definition, ac beta is the ratio of a small change in collector current to the corresponding change in base current while holding collector-to-emitter voltage constant: beta_ac = Delta_IC / Delta_IB |_VCE=constant.\n• Why Other Choices are Incorrect: Holding VCE constant requires reading Delta_IC vertically between neighboring IB curves."
+        },
+{
+            "id": 319,
+            "question": "In a well-designed modern BJT, approximately what fraction of the majority carriers injected by the emitter recombine in the base to form base current (IB)?",
+            "options": [
+                "About 50%",
+                "Less than 5% (typically 1% to 2%)",
+                "Exactly 100%",
+                "Zero percent"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Less than 5% (typically 1% to 2%)' is Correct: Because the base is made physically ultra-thin and lightly doped, over 95% to 99% of injected carriers diffuse directly across into the collector without recombining, leaving less than 5% to constitute the base current.\n• Why Other Choices are Incorrect: If 50% recombined, current gain beta would be only 1."
+        },
+{
+            "id": 320,
+            "question": "Which equation relates the collector-to-emitter leakage current with base open (ICEO) to the reverse saturation current with emitter open (ICBO)?",
+            "options": [
+                  "ICEO = ICBO / (beta + 1)",
+                  "ICEO = (beta + 1) * ICBO",
+                  "ICEO = ICBO - beta",
+                  "ICEO = alpha * ICBO"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'ICEO = (beta + 1) * ICBO' is Correct: With the base open, the tiny reverse leakage current ICBO flowing across the collector junction enters the base and is internally amplified by beta, yielding ICEO = (beta + 1)*ICBO ≈ beta*ICBO.\n• Why Other Choices are Incorrect: Leakage is multiplied by beta + 1, making ICEO much larger than ICBO."
+        },
+{
+            "id": 321,
+            "question": "Why is the reverse leakage current (ICBO and ICEO) such a critical factor in high-temperature BJT circuit stability?",
+            "options": [
+                  "Leakage current decreases to zero at elevated junction temperatures",
+                  "Leakage doubles every 10°C, risking destructive thermal runaway",
+                  "Leakage current reverses the polarity of the DC power supply source",
+                  "Leakage current permanently converts silicon atoms into germanium"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Thermally generated minority carriers double approximately every 10°C. At high temperatures, this multiplied leakage current increases total collector current, raising internal temperature further and potentially causing destructive thermal runaway.\n• Why Other Choices are Incorrect: Leakage increases exponentially with temperature, rather than decreasing."
+        },
+{
+            "id": 322,
+            "question": "In a Common Emitter circuit with collector load resistor RC and supply VCC, what is the fundamental Kirchhoff's Voltage Law relationship for VCE?",
+            "options": [
+                "VCE = VCC + IC*RC",
+                "VCE = VCC - IC*RC",
+                "VCE = IC*RC - VCC",
+                "VCE = VCC / (IC*RC)"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'VCE = VCC - IC*RC' is Correct: Applying KVL around the collector-emitter loop: VCC - IC*RC - VCE = 0. Solving for collector-emitter voltage gives VCE = VCC - IC*RC.\n• Why Other Choices are Incorrect: The voltage drop across RC subtracts from the supply voltage VCC."
+        },
+{
+            "id": 323,
+            "question": "Why is the collector circuit of an active BJT commonly modeled in equivalent circuits as a constant current source?",
+            "options": [
+                  "Collector current is set by base current (IC = beta*IB), independent of VCE",
+                  "Collector terminal can deliver infinite current to any load resistance",
+                  "Transistor operates without any external electrical DC power supply",
+                  "Internal output resistance between collector and emitter is zero ohms"
+            ],
+            "answer": 0,
+            "explanation": "• Why this is Correct: In the active region, the characteristic curves are almost horizontal, meaning collector current depends on base current (IC = beta*IB) and changes negligibly with VCE. This is the exact definition of a current-controlled current source.\n• Why Other Choices are Incorrect: Ideal current sources have infinite internal resistance, not zero."
+        },
+{
+            "id": 324,
+            "question": "When comparing the SOT-223 surface-mount transistor package to the miniature SOT-23 package, why can the SOT-223 dissipate significantly higher power (approx. 1 Watt)?",
+            "options": [
+                  "Constructed entirely from synthetic industrial diamond crystals",
+                  "Larger body and wide collector tab soldered to PCB copper for cooling",
+                  "Inability to conduct direct current signals under room temperature",
+                  "Operates exclusively when submerged in liquid nitrogen cryogenics"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: SOT-223 has a larger surface area and features an extended metal collector tab on one side that solders directly to PCB copper planes, acting as an effective heat sink to dissipate up to 1 Watt (compared to ~350 mW for SOT-23).\n• Why Other Choices are Incorrect: The extra collector tab and larger area provide enhanced thermal dissipation."
+        },
+{
+            "id": 325,
+            "question": "What is the primary distinguishing physical feature of the popular TO-220 power transistor package?",
+            "options": [
+                  "Small glass bead enclosure with axial metal connection leads",
+                  "Plastic body with heavy metal tab and mounting hole for heat sinks",
+                  "Round top-hat metal can package featuring three gold-plated pins",
+                  "Flat rectangular dual-in-line surface package containing 14 pins"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The TO-220 is a widely used power package featuring a heavy copper/metal tab with a mounting hole, allowing the package to be firmly clamped or bolted to an aluminum heat sink with thermal grease.\n• Why Other Choices are Incorrect: TO-92 is all-plastic; TO-18 is a round top-hat can; DIP-14 is an IC package."
+        },
+{
+            "id": 326,
+            "question": "In the heavy-duty TO-3 (TO-204AA) diamond-shaped power transistor package, which terminal is electrically connected directly to the outer metal case?",
+            "options": [
+                "Base terminal",
+                "Emitter terminal",
+                "Collector terminal",
+                "No terminal (the case is completely insulated)"
+            ],
+            "answer": 2,
+            "explanation": "• Why 'Collector terminal' is Correct: In the TO-3 package, the collector is internally bonded to the heavy metal case. This provides maximum thermal conductivity from the high-power collector junction directly into the chassis or external heat sink.\n• Why Other Choices are Incorrect: The two insulated pins on the bottom are Base and Emitter."
+        },
+{
+            "id": 327,
+            "question": "When checking a suspected BJT using a digital multimeter (DMM) set to Diode Test mode, what reading across a junction indicates that it has failed short-circuited?",
+            "options": [
+                  "Reading of OL (open loop) across both polarity tests",
+                  "0.000 V (dead short) in both forward and reverse directions",
+                  "Reading of exactly 0.700 V in forward check mode only",
+                  "Unstable resistance reading that fluctuates with light"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: A healthy junction reads ~0.6-0.7 V forward and OL reverse. A dead short reads 0.00 V (and often beeps continuously) in both directions, confirming junction breakdown and melting.\n• Why Other Choices are Incorrect: OL in both directions indicates an open circuit."
+        },
+{
+            "id": 328,
+            "question": "When testing an NPN transistor with an analog ohmmeter, connecting the meter leads across the Base-Emitter junction in forward bias produces what typical resistance reading?",
+            "options": [
+                "Infinite resistance (> 10 MΩ)",
+                "Low resistance (typically 100 Ω to 1 kΩ)",
+                "Zero ohms exactly",
+                "Negative resistance"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Low resistance (typically 100 Ω to 1 kΩ)' is Correct: An analog ohmmeter applies an internal battery potential. In forward bias, the junction conducts, registering a relatively low resistance between 100 Ω and 1 kΩ. In reverse bias, it registers a very high resistance (> 100 kΩ).\n• Why Other Choices are Incorrect: Infinite resistance indicates an open junction."
+        },
+{
+            "id": 329,
+            "question": "In a single-stage CE amplifier where AC output is taken from the collector via a coupling capacitor, what does the negative sign in the expression vout = -ic*RC represent?",
+            "options": [
+                  "Negative DC power supply voltage required at collector",
+                  "180° phase inversion between input and output AC voltages",
+                  "Net loss of electrical signal power through the stage",
+                  "Negative incremental internal semiconductor resistance"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: The negative sign is mathematical shorthand denoting phase reversal: an increase in input signal voltage causes an inverted (negative-going) output voltage swing across the collector load.\n• Why Other Choices are Incorrect: It represents phase inversion, not power loss or negative supply rails."
+        },
+{
+            "id": 330,
+            "question": "When a common-emitter amplifier drives a subsequent amplifier stage having an input resistance Ri, how is the effective AC collector load resistance (Rac) calculated?",
+            "options": [
+                  "Rac = RC + Ri",
+                  "Rac = RC || Ri",
+                  "Rac = RC - Ri",
+                  "Rac = RC / Ri"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Rac = RC || Ri' is Correct: Because the coupling capacitor acts as an AC short circuit, the second stage's input resistance Ri appears in parallel with the collector resistor RC for AC signals: Rac = RC || Ri.\n• Why Other Choices are Incorrect: Parallel combination reduces total AC load resistance."
+        },
+{
+            "id": 331,
+            "question": "(Mehta Example 8.30) A single-stage transistor amplifier has a collector load RC = 2 kΩ, input resistance Ri = 1 kΩ, and current gain β = 50. What is the overall voltage gain (Av)?",
+            "options": [
+                "25",
+                "50",
+                "100",
+                "200"
+            ],
+            "answer": 2,
+            "explanation": "• Why '100' is Correct: Voltage gain is Av = beta * (RC / Ri) = 50 * (2 kΩ / 1 kΩ) = 50 * 2 = 100.\n• Why Other Choices are Incorrect: 50 * (1 / 2) = 25 (inverting ratio); direct calculation gives 100."
+        },
+{
+            "id": 332,
+            "question": "How is the signal AC power gain (Ap) of a common-emitter amplifier expressed in terms of current gain and circuit resistances?",
+            "options": [
+                "Ap = beta * (RC / Ri)",
+                "Ap = beta^2 * (RC / Ri) = Av * Ai",
+                "Ap = beta / (RC * Ri)",
+                "Ap = (RC / Ri)^2"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Ap = beta^2 * (RC / Ri) = Av * Ai' is Correct: Power gain is the product of voltage gain and current gain: Ap = Av * Ai = (beta * RC / Ri) * beta = beta^2 * (RC / Ri).\n• Why Other Choices are Incorrect: Power gain involves current gain squared."
+        },
+{
+            "id": 333,
+            "question": "As the operating junction temperature of a transistor increases, how does the forward voltage drop (VBE) across its base-emitter junction change?",
+            "options": [
+                "It increases by +2.5 mV/°C",
+                "It decreases by approximately -2.0 mV/°C to -2.5 mV/°C",
+                "It remains fixed at exactly 0.700 V regardless of temperature",
+                "It drops instantly to zero volts"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: All silicon PN junctions have a negative temperature coefficient of barrier potential: VBE decreases by roughly 2 mV to 2.5 mV for every 1°C increase in temperature (dVBE/dT ≈ -2.2 mV/°C).\n• Why Other Choices are Incorrect: Barrier potential decreases with temperature, not increases."
+        },
+{
+            "id": 334,
+            "question": "What is the engineering phenomenon known as 'Thermal Runaway' in a BJT amplifier?",
+            "options": [
+                  "Transistor cooling rapidly due to forced-air chassis fans",
+                  "Rising temperature increases IC, increasing heat until burnout",
+                  "Rapid evaporation of printed circuit board tin solder pads",
+                  "Physical expansion of copper lead frames at freezing temps"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Thermal runaway is a catastrophic thermal feedback loop: Higher temperature -> higher leakage current and beta -> higher collector current -> higher power dissipation (PD = VCE*IC) -> higher junction temperature. Without negative feedback stabilization (like RE), the transistor burns itself out.\n• Why Other Choices are Incorrect: It is a destructive positive thermal feedback loop."
+        },
+{
+            "id": 335,
+            "question": "What is the primary function of attaching an extruded aluminum heat sink to a power transistor?",
+            "options": [
+                  "Increases circuit inductive reactance at high frequencies",
+                  "Increases surface area to reduce thermal resistance to air",
+                  "Shields transistor semiconductor die from ambient RF noise",
+                  "Prevents bench power supply direct current fluctuations"
+            ],
+            "answer": 1,
+            "explanation": "• Why this is Correct: Heat sinks possess large surface areas and fins that rapidly transfer thermal energy from the transistor case into the surrounding air via conduction and convection, preventing internal junction temperature from exceeding maximum limits (150°C - 200°C).\n• Why Other Choices are Incorrect: Heat sinks are thermal dissipation elements, not electrical shields."
+        },
+{
+            "id": 336,
+            "question": "In summary, in which operational region does a BJT exhibit proportional linear amplification where IC = β*IB, VBE ≈ 0.7 V, and VCE > VCE(sat)?",
+            "options": [
+                "Cutoff Region",
+                "Linear Active Region",
+                "Saturation Region",
+                "Avalanche Breakdown Region"
+            ],
+            "answer": 1,
+            "explanation": "• Why 'Linear Active Region' is Correct: In the Active Region, the Base-Emitter junction is forward-biased (VBE ≈ 0.7 V) and the Collector-Base junction is reverse-biased (VCE > VCE(sat)), yielding the linear relationship IC = beta*IB with minimum waveform distortion.\n• Why Other Choices are Incorrect: Cutoff has IC = 0; Saturation has VCE ≈ 0.2 V; Breakdown destroys the device."
+        },
+{
+                    "id": 337,
+                    "question": "On December 23, 1947, who demonstrated the amplifying action of the first transistor at Bell Telephone Laboratories?",
+                    "options": [
+                                "Thomas Edison, Nikola Tesla, and Lee de Forest",
+                                "Dr. S. William Shockley, Walter H. Brattain, and John Bardeen",
+                                "Jack Kilby, Robert Noyce, and Gordon Moore",
+                                "Guglielmo Marconi, Heinrich Hertz, and Michael Faraday"
+                    ],
+                    "answer": 1,
+                    "explanation": "• Why this is Correct: As stated verbatim in the Midterm lecture slides (Slide 4), Dr. S. William Shockley, Walter H. Brattain, and John Bardeen demonstrated the amplifying action of the first point-contact transistor at Bell Telephone Laboratories on December 23, 1947, which initiated the modern solid-state revolution.\n• Why Other Choices are Incorrect: Edison and Tesla worked on early electrical power; Kilby and Noyce co-invented the integrated circuit in 1958; Marconi and Hertz were pioneers of wireless radio waves."
+        },
+{
+                    "id": 338,
+                    "question": "According to the course syllabus, what are the two broad application areas in which the Bipolar Junction Transistor (BJT) is primarily employed?",
+                    "options": [
+                                "Linear amplifier and electronic switch",
+                                "High-voltage transformer and AC alternator",
+                                "Optical photodetector and chemical transducer",
+                                "Electromagnetic relay and inductive choke"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Lecture Slide 5 explicitly specifies that the BJT is used in two broad areas: (1) linear amplifier (operating in the active region to amplify analog signals with minimal distortion) and (2) electronic switch (operating between saturation and cut-off in digital/switching circuits).\n• Why Other Choices are Incorrect: Transformers and alternators are magnetic AC machines; photodetectors and chemical transducers are sensors; relays are mechanical switching devices."
+        },
+{
+                    "id": 339,
+                    "question": "Structurally, a BJT is constructed with three doped regions separated by two PN junctions. How are the layers arranged in NPN and PNP configurations?",
+                    "options": [
+                                "NPN consists of two P regions separated by an N region; PNP consists of two N regions separated by a P region",
+                                "NPN consists of two N regions separated by a P region; PNP consists of two P regions separated by an N region",
+                                "Both NPN and PNP consist of three identical N-type layers with varying impurity levels",
+                                "NPN has one junction with three terminals; PNP has three junctions with two terminals"
+                    ],
+                    "answer": 1,
+                    "explanation": "• Why this is Correct: Slide 6 defines the basic BJT structure: NPN consists of two N-type regions separated by a thin P region, while PNP consists of two P-type regions separated by a thin N region.\n• Why Other Choices are Incorrect: Reversing the roles is incorrect; layers in a BJT must alternate doping types (N-P-N or P-N-P) to produce two opposing PN junctions."
+        },
+{
+                    "id": 340,
+                    "question": "In the basic epitaxial planar BJT structure illustrated in the lecture slides, what layer passivates and protects the semiconductor surface beneath the metalized contacts?",
+                    "options": [
+                                "Silicon dioxide layer",
+                                "Copper clad substrate",
+                                "Gallium arsenide substrate",
+                                "Polysilicon gate dielectric"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 7 illustrates the cross-section of a basic epitaxial planar BJT, showing an oxide (SiO2) insulating layer grown on top of the substrate with openings etched for the metalized ohmic contacts to the emitter, base, and collector.\n• Why Other Choices are Incorrect: The substrate is semiconductor silicon; copper cladding is used on printed circuit boards; polysilicon gate dielectrics are used in MOS devices."
+        },
+{
+                    "id": 341,
+                    "question": "For a BJT to operate in its linear or active operating region for amplification, what specific biasing condition must be established across its two PN junctions?",
+                    "options": [
+                  "Both BE and BC junctions reverse-biased (cutoff)",
+                  "BE forward-biased (~0.7 V) and BC reverse-biased",
+                  "Both BE and BC junctions forward-biased (saturation)",
+                  "BE junction zero-biased and BC forward-biased"
+            ],
+                    "answer": 1,
+                    "explanation": "• Why this is Correct: Slides 11 and 25 highlight that for linear/active amplification, the base-emitter (BE) junction must be forward-biased (resulting in ~0.6 V to 0.7 V for Si) and the base-collector (BC) junction must be reverse-biased. The slides explicitly refer to this condition as 'forward reverse bias'.\n• Why Other Choices are Incorrect: Both junctions reverse-biased results in cutoff; both junctions forward-biased forces saturation; zero-bias leaves the transistor off."
+        },
+{
+                    "id": 342,
+                    "question": "Which fundamental relationship between BJT terminal currents is always true based on Kirchhoff's Current Law, regardless of configuration?",
+                    "options": [
+                                "IE = IC + IB  and  IE = (β + 1)IB",
+                                "IB = IC + IE  and  IB = (β + 1)IC",
+                                "IC = IE + IB  and  IC = (β + 1)IE",
+                                "IE = IC - IB  and  IE = (β - 1)IB"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: As shown on Slide 12, applying KCL to the transistor package yields IE = IC + IB. Substituting IC = β·IB gives IE = β·IB + IB = (β + 1)IB.\n• Why Other Choices are Incorrect: The emitter current is the sum of both collector and base currents; base current is much smaller than collector current, not the sum."
+        },
+{
+                    "id": 343,
+                    "question": "How is the common-base DC current gain alpha (α) formally defined, and what is its typical numerical range in practical transistors?",
+                    "options": [
+                  "α = IB / IC (typically ranging between 10 and 500)",
+                  "α = IC / IE (typically 0.95 to 0.99, strictly < 1)",
+                  "α = IE / IC (typically ranging from 1.05 to 1.50)",
+                  "α = VCE / VBE (typically ranging from 0.1 to 0.7)"
+            ],
+                    "answer": 1,
+                    "explanation": "• Why this is Correct: Slide 13 defines alpha as α = IC / IE (the ratio of collector current to emitter current). It typically ranges from 0.95 to 0.99 or greater, but is always slightly less than 1 because a small fraction of emitter carriers recombines in the base (IB).\n• Why Other Choices are Incorrect: IB / IC is 1/β; IE / IC is greater than 1; VCE / VBE is a voltage ratio, not current gain."
+        },
+{
+                    "id": 344,
+                    "question": "(Slide 13 Example) Determine beta (β) and IE for a transistor whose base current IB = 50 μA and collector current IC = 3.65 mA.",
+                    "options": [
+                                "β = 73,  IE = 3.7 mA",
+                                "β = 13.7,  IE = 53.65 mA",
+                                "β = 730,  IE = 4.15 mA",
+                                "β = 0.0137,  IE = 3.60 mA"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Following the exact calculation on Slide 13: β = IC / IB = 3.65 mA / 50 μA = 3.65 mA / 0.050 mA = 73. Then IE = IB + IC = 0.050 mA + 3.65 mA = 3.7 mA.\n• Why Other Choices are Incorrect: 13.7 comes from mistakenly dividing 50 by 3.65; 730 is an order of magnitude error; 0.0137 inverts the formula."
+        },
+{
+                    "id": 345,
+                    "question": "Which mathematical expressions correctly relate the common-base current gain alpha (α) and common-emitter current gain beta (β)?",
+                    "options": [
+                                "α = β / (β + 1)  and  β = α / (1 - α)",
+                                "α = (β + 1) / β  and  β = (1 - α) / α",
+                                "α = β · (β + 1)  and  β = α · (1 - α)",
+                                "α = 1 - β  and  β = 1 + α"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slides 13 and 14 establish that α = IC / IE = (β·IB) / [(β + 1)·IB] = β / (β + 1) = 1 / (1 + 1/β). Rearranging for β gives β = α / (1 - α).\n• Why Other Choices are Incorrect: (β+1)/β is always > 1, which violates the physical limit of α < 1; multiplicative and linear subtraction relations are algebraically false."
+        },
+{
+                    "id": 346,
+                    "question": "Which of the three BJT configurations (CE, CB, CC) is the most frequently used in electronic circuits, and what is its ground reference?",
+                    "options": [
+                                "Common Base (CB), with the base terminal at ground potential",
+                                "Common Emitter (CE), with the emitter terminal common to both input and output",
+                                "Common Collector (CC), with the collector terminal connected directly to the input signal",
+                                "Darlington Pair, with both collectors floating"
+                    ],
+                    "answer": 1,
+                    "explanation": "• Why this is Correct: Slides 15 and 16 state that the Common Emitter (CE) configuration is the 'most frequently transistor configuration' because the emitter is common to both the input (base-emitter) and output (collector-emitter) circuits, providing high voltage, current, and power gain.\n• Why Other Choices are Incorrect: Common Base has current gain < 1 and very low input impedance; Common Collector has voltage gain < 1 and is used as a buffer."
+        },
+{
+                    "id": 347,
+                    "question": "According to the DC Biasing lecture introduction (Slide 23), what is the source of any increase in AC output signal voltage, current, or power in an amplifier?",
+                    "options": [
+                                "Energy created by the internal crystalline lattice of the silicon",
+                                "A transfer of energy from the applied DC power supplies",
+                                "Thermal energy absorbed from the surrounding ambient air",
+                                "Electromagnetic radiation captured by the coupling capacitors"
+                    ],
+                    "answer": 1,
+                    "explanation": "• Why this is Correct: Slide 23 explicitly notes: 'In actuality, any increase in AC voltage, current, or power is the result of a transfer of energy from the applied DC supplies.' Amplification is the process of converting DC power into AC signal power controlled by the input.\n• Why Other Choices are Incorrect: Silicon crystals do not generate power; ambient heat cannot provide coherent signal power; coupling capacitors block DC and pass AC without adding energy."
+        },
+{
+                    "id": 348,
+                    "question": "In a Fixed-Bias Common-Emitter NPN circuit, what are the standard equations for quiescent base current (IB) and collector-to-emitter voltage (VCE)?",
+                    "options": [
+                                "IB = (VCC - VBE) / RB   and   VCE = VCC - IC·RC",
+                                "IB = VCC / (RB + RC)   and   VCE = VCC + IC·RC",
+                                "IB = (VCC + VBE) / RC   and   VCE = IC·RB",
+                                "IB = VBE / RB   and   VCE = VCC - IB·RB"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 27 shows that KVL around the base-emitter loop gives VCC - IB·RB - VBE = 0, so IB = (VCC - VBE) / RB. KVL around the collector-emitter loop gives VCC - IC·RC - VCE = 0, so VCE = VCC - IC·RC.\n• Why Other Choices are Incorrect: RC is in the collector branch, not the base loop; IC·RC subtracts from VCC, not adds; VBE is a forward drop of ~0.7 V subtracted from VCC."
+        },
+{
+                    "id": 349,
+                    "question": "(Slide 28–29 Fixed Bias Example) For a fixed-bias circuit with VCC = +12 V, RB = 240 kΩ, RC = 2.2 kΩ, and β = 50, calculate the quiescent base current (IBQ) and collector current (ICQ).",
+                    "options": [
+                                "IBQ = 47.08 μA,  ICQ = 2.35 mA",
+                                "IBQ = 50.00 μA,  ICQ = 2.50 mA",
+                                "IBQ = 4.71 μA,   ICQ = 0.24 mA",
+                                "IBQ = 47.08 mA,  ICQ = 2.35 A"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: As shown on Slide 29: IBQ = (VCC - VBE) / RB = (12 V - 0.7 V) / 240 kΩ = 11.3 V / 240 kΩ = 47.08 μA. Then ICQ = β·IBQ = 50 × 47.08 μA = 2.354 mA ≅ 2.35 mA.\n• Why Other Choices are Incorrect: 50.00 μA ignores the 0.7 V diode drop (12/240k); 4.71 μA has a decimal point error; 47.08 mA is off by three orders of magnitude."
+        },
+{
+                    "id": 350,
+                    "question": "(Slide 30–31 Fixed Bias Example) For the same circuit (VCC = 12 V, RC = 2.2 kΩ, ICQ = 2.35 mA, VBE = 0.7 V), what are the voltages VCE and VBC?",
+                    "options": [
+                                "VCE = 6.83 V,  VBC = -6.13 V (reverse-biased)",
+                                "VCE = 5.17 V,  VBC = +6.13 V (forward-biased)",
+                                "VCE = 12.00 V, VBC = 0.00 V",
+                                "VCE = 6.83 V,  VBC = +7.53 V"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: From Slides 30–31: VCEQ = VCC - IC·RC = 12 V - (2.35 mA × 2.2 kΩ) = 12 V - 5.17 V = 6.83 V. Since the emitter is grounded, VC = VCE = 6.83 V and VB = VBE = 0.7 V. Therefore, VBC = VB - VC = 0.7 V - 6.83 V = -6.13 V. The negative sign confirms the BC junction is reverse-biased as required for active-region linear amplification.\n• Why Other Choices are Incorrect: 5.17 V is the voltage dropped across RC (VRC), not VCE; a positive VBC would imply forward bias (saturation)."
+        },
+{
+                    "id": 351,
+                    "question": "What is the technical definition of 'Transistor Saturation' on Slide 32, and what is the collector saturation current (IC,sat) in a fixed-bias network?",
+                    "options": [
+                                "Saturation occurs when levels have reached their maximum values; IC,sat = VCC / RC",
+                                "Saturation occurs when current drops to zero; IC,sat = 0 mA",
+                                "Saturation is when VCE = VCC; IC,sat = VCC / RB",
+                                "Saturation is when the base current equals the collector current; IC,sat = β·VCC"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 32 states: 'The term saturation is applied to any system where levels have reached their maximum values. Saturation conditions are normally avoided [in amplifiers] because the base-collector junction is no longer reverse-biased and the output amplified signal will be distorted.' For fixed bias, with VCE ≈ 0 V: IC,sat = VCC / RC.\n• Why Other Choices are Incorrect: Zero current defines cut-off; VCE = VCC occurs in cut-off, not saturation; IC does not equal IB in saturation."
+        },
+{
+                    "id": 352,
+                    "question": "Why is an emitter resistor (RE) included in an Emitter-Bias (or emitter-stabilized) configuration (Slide 34)?",
+                    "options": [
+                  "Increases maximum saturation collector current to infinite level",
+                  "Improves Q-point stability against temperature and beta variations",
+                  "Reduces input impedance of the amplifier stage to near zero ohms",
+                  "Completely eliminates the requirement for a DC power supply rail"
+            ],
+                    "answer": 1,
+                    "explanation": "• Why this is Correct: Slide 34 emphasizes: 'The DC bias network contains an emitter resistor to improve the stability level over that of the fixed bias configuration. The more stable a configuration, the less its response will change due to undesirable changes in temperature and parameter variations.'\n• Why Other Choices are Incorrect: Adding RE reduces saturation current; RE actually increases input impedance by (β+1)RE; DC power is still strictly required."
+        },
+{
+                    "id": 353,
+                    "question": "In the base-emitter loop of an Emitter-Bias circuit (Slide 35 & 37), what is the effective input resistance (Ri) looking into the base due to the presence of the emitter resistor RE?",
+                    "options": [
+                                "Ri = RE / (β + 1)",
+                                "Ri = (β + 1)RE",
+                                "Ri = RB + RE",
+                                "Ri = β · RC"
+                    ],
+                    "answer": 1,
+                    "explanation": "• Why this is Correct: In the input loop, IE flows through RE. Since IE = (β + 1)IB, the voltage drop across RE is (β + 1)IB·RE. Looking into the base, this appears as an equivalent reflected resistance of Ri = (β + 1)RE (Slide 37).\n• Why Other Choices are Incorrect: RE / (β+1) is the resistance seen looking into the emitter from the output side; RB is in series externally, not the reflected base impedance."
+        },
+{
+                    "id": 354,
+                    "question": "(Slide 38–40 Emitter Bias Example) Given VCC = +20 V, RB = 430 kΩ, RC = 2 kΩ, RE = 1 kΩ, and β = 50. Calculate the base current (IB) and collector current (IC).",
+                    "options": [
+                                "IB = 40.1 μA,  IC ≅ 2.01 mA",
+                                "IB = 44.9 μA,  IC = 2.25 mA",
+                                "IB = 19.3 μA,  IC = 0.97 mA",
+                                "IB = 40.1 mA,  IC = 2.01 A"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: As calculated on Slides 39–40: IB = (VCC - VBE) / [RB + (β + 1)RE] = (20 V - 0.7 V) / [430 kΩ + (51)(1 kΩ)] = 19.3 V / 481 kΩ = 40.1 μA. Then IC = β·IB = 50 × 40.1 μA = 2.005 mA ≅ 2.01 mA.\n• Why Other Choices are Incorrect: 44.9 μA neglects the reflected emitter resistance (19.3/430k); 19.3 μA mistakes the numerator voltage for current; 40.1 mA has incorrect units."
+        },
+{
+                    "id": 355,
+                    "question": "(Slide 41–43 Emitter Bias Example) In the same network (VCC = 20 V, RC = 2 kΩ, RE = 1 kΩ, IC ≅ 2.01 mA), what are VCE, VC, and VE?",
+                    "options": [
+                                "VCE = 13.97 V,  VC = 15.98 V,  VE = 2.01 V",
+                                "VCE = 20.00 V,  VC = 20.00 V,  VE = 0.00 V",
+                                "VCE = 6.03 V,   VC = 13.97 V,  VE = 1.00 V",
+                                "VCE = 15.98 V,  VC = 18.00 V,  VE = 2.01 V"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: From Slides 41–43: VCE = VCC - IC(RC + RE) = 20 V - (2.01 mA)(2 kΩ + 1 kΩ) = 20 V - 6.03 V = 13.97 V. VC = VCC - IC·RC = 20 V - (2.01 mA)(2 kΩ) = 20 V - 4.02 V = 15.98 V. VE = IE·RE ≅ (2.01 mA)(1 kΩ) = 2.01 V (or VE = VC - VCE = 15.98 V - 13.97 V = 2.01 V).\n• Why Other Choices are Incorrect: 20 V represents cutoff; 6.03 V is the combined voltage dropped across RC and RE; VC and VCE are distinct because VE is not zero."
+        },
+{
+                    "id": 356,
+                    "question": "How does the addition of an emitter resistor RE affect the collector saturation current compared to a fixed-bias circuit using the same collector resistor RC (Slide 44)?",
+                    "options": [
+                                "It increases saturation current to IC,sat = VCC / (RC - RE)",
+                                "It reduces the collector saturation level to IC,sat = VCC / (RC + RE)",
+                                "It has absolutely no effect because RE is shorted at saturation",
+                                "It causes saturation current to become dependent on β"
+                    ],
+                    "answer": 1,
+                    "explanation": "• Why this is Correct: Slide 44 clearly points out: 'The addition of the emitter resistor reduces the collector saturation level below that obtained with a fixed bias configuration using the same collector resistor: IC,sat = VCC / (RC + RE).' The total loop resistance is now RC + RE instead of just RC.\n• Why Other Choices are Incorrect: Resistances in series add, not subtract; RE is in series with the collector-emitter path and carries saturation current; IC,sat remains independent of β."
+        },
+{
+                    "id": 357,
+                    "question": "In the exact analysis of a Voltage-Divider Bias network using Thévenin's theorem (Slide 46), what are the Thévenin resistance (RTh) and voltage (ETh)?",
+                    "options": [
+                  "RTh = R1 || R2,  ETh = R2 * VCC / (R1 + R2)",
+                  "RTh = R1 + R2,  ETh = R1 * VCC / (R1 + R2)",
+                  "RTh = R1 || RC,  ETh = VCC - VBE",
+                  "RTh = (R1 * R2) / RE,  ETh = VCC / 2"
+            ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 46 defines the exact Thévenin equivalent looking into the base: looking back into the divider with VCC grounded, R1 and R2 are in parallel: RTh = R1 || R2. The open-circuit voltage across R2 is the voltage divider formula: ETh = VR2 = (R2·VCC) / (R1 + R2).\n• Why Other Choices are Incorrect: R1 and R2 are in parallel from the base node to AC ground, not in series; RC is in the collector branch, not the base divider."
+        },
+{
+                    "id": 358,
+                    "question": "(Slide 47–48 Voltage-Divider Exact Example) Given VCC = +22 V, R1 = 39 kΩ, R2 = 3.9 kΩ, RC = 10 kΩ, RE = 1.5 kΩ, and β = 100. What are the Thévenin values RTh and ETh, and base current IB?",
+                    "options": [
+                                "RTh = 3.55 kΩ,  ETh = 2 V,  IB = 8.38 μA",
+                                "RTh = 42.9 kΩ,  ETh = 4 V,  IB = 12.5 μA",
+                                "RTh = 3.90 kΩ,  ETh = 2.2 V, IB = 15.0 μA",
+                                "RTh = 35.5 kΩ,  ETh = 20 V, IB = 83.8 μA"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: From Slide 48: RTh = (39 kΩ × 3.9 kΩ) / (39 kΩ + 3.9 kΩ) = 3.55 kΩ. ETh = (3.9 kΩ × 22 V) / (39 kΩ + 3.9 kΩ) = 2 V. Then IB = (ETh - VBE) / [RTh + (β + 1)RE] = (2 V - 0.7 V) / [3.55 kΩ + (101)(1.5 kΩ)] = 1.3 V / (3.55 kΩ + 151.5 kΩ) = 1.3 V / 155.05 kΩ = 8.38 μA.\n• Why Other Choices are Incorrect: 42.9 kΩ is R1 + R2 in series; 3.90 kΩ ignores R1; 35.5 kΩ has an arithmetic decimal error."
+        },
+{
+                    "id": 359,
+                    "question": "(Slide 48 Voltage-Divider Exact Example) In the same circuit (VCC = 22 V, RC = 10 kΩ, RE = 1.5 kΩ, β = 100, IB = 8.38 μA), calculate IC and VCE.",
+                    "options": [
+                                "IC = 0.84 mA,  VCE = 12.34 V",
+                                "IC = 1.50 mA,  VCE = 15.00 V",
+                                "IC = 0.84 mA,  VCE = 9.66 V",
+                                "IC = 8.38 mA,  VCE = 4.25 V"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 48 shows: IC = β·IB = (100)(8.38 μA) = 0.838 mA ≅ 0.84 mA. Then VCE = VCC - IC(RC + RE) = 22 V - (0.84 mA)(10 kΩ + 1.5 kΩ) = 22 V - (0.84 mA)(11.5 kΩ) = 22 V - 9.66 V = 12.34 V.\n• Why Other Choices are Incorrect: 9.66 V is the total voltage dropped across RC and RE, not VCE; 8.38 mA incorrectly uses β = 1000."
+        },
+{
+                    "id": 360,
+                    "question": "What test condition must be satisfied to use the Approximate Analysis method for Voltage-Divider Bias (Slide 49)?",
+                    "options": [
+                                "β·RE ≥ 10·R2",
+                                "β·RE ≤ R2 / 10",
+                                "R1 ≥ 10·RC",
+                                "RC ≥ 10·RE"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 49 establishes the approximate rule: β·RE ≥ 10·R2. When the input impedance looking into the base (Ri ≅ β·RE) is at least 10 times larger than the divider resistor R2, the base current IB is negligible compared to the divider current (I1 ≅ I2), allowing VB to be calculated simply as VB = [R2 / (R1 + R2)]·VCC.\n• Why Other Choices are Incorrect: β·RE ≤ R2/10 would cause heavy base loading; R1 and RC relationships do not govern divider stiffness."
+        },
+{
+                    "id": 361,
+                    "question": "When the approximate condition β·RE ≥ 10·R2 is satisfied, what are the sequence of equations used to find the Q-point (Slide 49)?",
+                    "options": [
+                  "VB = R2*VCC/(R1+R2), VE = VB - VBE, VCE = VCC - IC(RC + RE)",
+                  "VB = [VCC - VBE] / 2, VE = VB / 2, VCE = VCC / 2 - IC*RC",
+                  "VB = [R1*VCC]/(R1+R2), VE = VB + VBE, VCE = VCC - IC*RE",
+                  "VB = VBE, VE = 0 V, IC = VCC / RC, VCE = VCC / (RC + RE)"
+            ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 49 lists the exact approximate sequence: (1) VB = [R2·VCC] / (R1 + R2); (2) VE = VB - VBE; (3) IE = VE / RE ≅ ICQ; (4) VCEQ = VCC - IC(RC + RE). Notice that this procedure makes IC completely independent of β!\n• Why Other Choices are Incorrect: VB is set by the R1-R2 divider, not VCC - VBE; VE is VB - 0.7 V, not VB + VBE; VE / RC is dimensionally wrong since RE is in the emitter."
+        },
+{
+                    "id": 362,
+                    "question": "What is the primary operational advantage and mechanism of the Collector-Feedback Bias configuration (Slide 52)?",
+                    "options": [
+                  "Collector-to-base negative feedback stabilizes Q-point",
+                  "Maximizes collector saturation current to infinite level",
+                  "Turns off the transistor completely during AC input peaks",
+                  "Converts bipolar junction transistor into a unipolar JFET"
+            ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 52 states: 'An improved level of stability can also be obtained by introducing a feedback path from collector to base.' If temperature rises and pushes IC higher, the drop across RC increases, lowering VC. Since the base resistor RF is connected to the collector, a drop in VC lowers base current IB, which counteracts the original increase in IC.\n• Why Other Choices are Incorrect: It provides negative feedback, not infinite saturation; it keeps the transistor active and conducting; BJTs and FETs are fundamentally different devices."
+        },
+{
+                    "id": 363,
+                    "question": "In a Collector-Feedback configuration with feedback resistor RF, collector resistor RC, and emitter resistor RE, what is the base current formula (Slide 52 & 53)?",
+                    "options": [
+                                "IB = (VCC - VBE) / [RF + β(RC + RE)]",
+                                "IB = (VCC - VBE) / (RF + RC)",
+                                "IB = VCC / [RF + (β + 1)RE]",
+                                "IB = (VCC + VBE) / [β·(RC + RE)]"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slides 52 and 53 derive the base-emitter loop KVL: VCC - I'C·RC - IB·RF - VBE - IE·RE = 0. Since I'C ≅ β·IB and IE ≅ β·IB, factoring IB gives VCC - VBE - IB[RF + β(RC + RE)] = 0. Solving for IB yields IB = (VCC - VBE) / [RF + β(RC + RE)].\n• Why Other Choices are Incorrect: Neglecting β(RC + RE) ignores the heavy negative feedback through RC and RE; VBE is subtracted, not added."
+        },
+{
+                    "id": 364,
+                    "question": "(Slide 55–56 Collector Feedback Example) For a collector-feedback circuit with VCC = 10 V, RC = 4.7 kΩ, RF = 250 kΩ, RE = 1.2 kΩ, and β = 90, determine IB, ICQ, and VCEQ.",
+                    "options": [
+                                "IB = 11.91 μA,  ICQ = 1.07 mA,  VCEQ = 3.69 V",
+                                "IB = 37.20 μA,  ICQ = 3.35 mA,  VCEQ = -9.77 V",
+                                "IB = 8.89 μA,   ICQ = 1.20 mA,  VCEQ = 2.92 V",
+                                "IB = 11.91 mA,  ICQ = 1.07 A,   VCEQ = 6.31 V"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Following Slide 56: Denominator = RF + β(RC + RE) = 250 kΩ + 90(4.7 kΩ + 1.2 kΩ) = 250 kΩ + 531 kΩ = 781 kΩ. IB = (10 V - 0.7 V) / 781 kΩ = 9.3 V / 781 kΩ = 11.91 μA. Then ICQ = β·IB = 90 × 11.91 μA = 1.07 mA. VCEQ = VCC - IC(RC + RE) = 10 V - (1.07 mA)(5.9 kΩ) = 10 V - 6.31 V = 3.69 V.\n• Why Other Choices are Incorrect: 37.2 μA ignores the β(RC + RE) term (9.3/250k); 8.89 μA is the result when β = 135 (Slide 58); 6.31 V is the drop across RC + RE."
+        },
+{
+                    "id": 365,
+                    "question": "(Slide 57–58 'On Your Own') Repeat the collector feedback calculation using a higher beta of β = 135 (with VCC = 10 V, RC = 4.7 kΩ, RF = 250 kΩ, RE = 1.2 kΩ). What are the new ICQ and VCEQ?",
+                    "options": [
+                                "IB = 8.89 μA,  ICQ = 1.2 mA,  VCEQ = 2.92 V",
+                                "IB = 11.91 μA, ICQ = 1.61 mA, VCEQ = 0.50 V",
+                                "IB = 6.45 μA,  ICQ = 0.87 mA, VCEQ = 4.87 V",
+                                "IB = 8.89 mA,  ICQ = 1.2 A,   VCEQ = 7.08 V"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Following Slide 58: Denominator = 250 kΩ + (135)(5.9 kΩ) = 250 kΩ + 796.5 kΩ = 1046.5 kΩ. IB = 9.3 V / 1046.5 kΩ = 8.89 μA. ICQ = (135)(8.89 μA) = 1.20 mA. VCEQ = 10 V - (1.2 mA)(5.9 kΩ) = 10 V - 7.08 V = 2.92 V.\n• Why Other Choices are Incorrect: 1.61 mA assumes IB remained constant at 11.91 μA (neglecting negative feedback); 7.08 V is the drop across (RC + RE)."
+        },
+{
+                    "id": 366,
+                    "question": "What critical engineering insight is demonstrated by comparing the Collector-Feedback results from Slide 56 (β = 90) and Slide 58 (β = 135)?",
+                    "options": [
+                  "50% beta increase caused only ~12% IC rise, proving feedback stability",
+                  "50% beta increase doubled quiescent collector current to saturation",
+                  "Collector feedback circuits become unstable and oscillate above beta 100",
+                  "Quiescent collector current remains 100% unchanged under all conditions"
+            ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: When β jumped by 50% (from 90 to 135), IC only shifted from 1.07 mA to 1.20 mA (an increase of only (1.20 - 1.07)/1.07 = 12.1%). This clearly demonstrates how the collector feedback mechanism provides outstanding stability against transistor parameter variations.\n• Why Other Choices are Incorrect: In fixed bias, IC would have increased by 50%; negative feedback stabilizes against oscillation; passive feedback cannot achieve 100% zero change."
+        },
+{
+                    "id": 367,
+                    "question": "In an Emitter-Follower (Common Collector) DC bias circuit where the collector is grounded, base is tied to ground through RB, and emitter is returned to -VEE through RE (Slide 60 & 61), what is IB?",
+                    "options": [
+                                "IB = (VEE - VBE) / [RB + (β + 1)RE]",
+                                "IB = (VEE + VBE) / (RB + RE)",
+                                "IB = VEE / [β·(RB + RE)]",
+                                "IB = (VCC - VEE) / RB"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slides 60 and 61 show the KVL input loop: -IB·RB - VBE - IE·RE + VEE = 0. Using IE = (β + 1)IB: IB·RB + (β + 1)IB·RE = VEE - VBE. Solving for IB yields IB = (VEE - VBE) / [RB + (β + 1)RE].\n• Why Other Choices are Incorrect: VBE is a drop of 0.7 V subtracted from VEE; the emitter resistance is multiplied by (β + 1) when reflected into the base circuit."
+        },
+{
+                    "id": 368,
+                    "question": "In the same Emitter-Follower circuit (Slide 60 & 61), what equation results from applying KVL to the collector-emitter output loop?",
+                    "options": [
+                                "VCE = VEE - IE·RE",
+                                "VCE = VEE + IE·RE",
+                                "VCE = -VEE - IC·RC",
+                                "VCE = VBE + IE·RE"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 61 shows that applying KVL around the output loop gives -VCE - IE·RE + VEE = 0, which directly simplifies to VCE = VEE - IE·RE.\n• Why Other Choices are Incorrect: IE·RE is a potential drop across the emitter resistor subtracted from the source VEE; there is no RC in a common collector circuit."
+        },
+{
+                    "id": 369,
+                    "question": "(Slide 62–63 Emitter-Follower Example) Given RB = 240 kΩ, RE = 2 kΩ, VEE = 20 V (negative rail -20 V), and β = 90. Determine the quiescent base current (IB), emitter current (IEQ), and VCEQ.",
+                    "options": [
+                                "IB = 45.73 μA,  IEQ = 4.16 mA,  VCEQ = 11.68 V",
+                                "IB = 80.42 μA,  IEQ = 7.24 mA,  VCEQ = 5.52 V",
+                                "IB = 45.73 μA,  IEQ = 4.16 mA,  VCEQ = 8.32 V",
+                                "IB = 4.57 μA,   IEQ = 0.42 mA,  VCEQ = 19.16 V"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: From Slide 63: IB = (VEE - VBE) / [RB + (β + 1)RE] = (20 V - 0.7 V) / [240 kΩ + (91)(2 kΩ)] = 19.3 V / 422 kΩ = 45.73 μA. Then IEQ = (β + 1)IB = (91)(45.73 μA) = 4.16 mA. Output voltage: VCEQ = VEE - IE·RE = 20 V - (4.16 mA)(2 kΩ) = 20 V - 8.32 V = 11.68 V.\n• Why Other Choices are Incorrect: 8.32 V is the drop across RE (VERE), not VCEQ; 80.42 μA neglects (β+1)RE."
+        },
+{
+                    "id": 370,
+                    "question": "In a Common-Base DC bias configuration with the base grounded, emitter biased by -VEE through RE, and collector biased by +VCC through RC (Slide 65 & 66), what are the equations for IE and VCB?",
+                    "options": [
+                                "IE = (VEE - VBE) / RE   and   VCB = VCC - IC·RC",
+                                "IE = (VEE + VBE) / (RE + RC)   and   VCB = VCC + IC·RC",
+                                "IE = VEE / (β·RE)   and   VCB = VCC - VBE",
+                                "IE = (VCC - VEE) / RE   and   VCB = IC·RC"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slides 65 and 66 derive the Common Base relations: KVL on input: -VEE + IE·RE + VBE = 0 ⇒ IE = (VEE - VBE) / RE. KVL on collector output: VCB + IC·RC - VCC = 0 ⇒ VCB = VCC - IC·RC.\n• Why Other Choices are Incorrect: The base is at ground potential (0 V), so only RE appears in the input loop; IC·RC subtracts from the positive rail VCC."
+        },
+{
+                    "id": 371,
+                    "question": "(Slide 67–68 Common Base Example) Given RE = 1.2 kΩ, VEE = 4 V, RC = 2.4 kΩ, VCC = 10 V, and β = 60. Calculate emitter current (IE) and base current (IB).",
+                    "options": [
+                                "IE = 2.75 mA,  IB = 45.08 μA",
+                                "IE = 3.33 mA,  IB = 55.50 μA",
+                                "IE = 2.75 mA,  IB = 45.83 μA",
+                                "IE = 27.5 mA,  IB = 450.8 μA"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: From Slide 68: IE = (VEE - VBE) / RE = (4 V - 0.7 V) / 1.2 kΩ = 3.3 V / 1.2 kΩ = 2.75 mA. Base current: IB = IE / (β + 1) = 2.75 mA / (60 + 1) = 2.75 mA / 61 = 45.08 μA.\n• Why Other Choices are Incorrect: 3.33 mA ignores the 0.7 V VBE drop (4/1.2k); 45.83 μA divides by β (60) instead of β + 1 (61)."
+        },
+{
+                    "id": 372,
+                    "question": "(Slide 68 Common Base Example) For the same Common Base circuit (IE = 2.75 mA, IB = 45.08 μA, β = 60, RC = 2.4 kΩ, VCC = 10 V, VEE = 4 V), what are VCE and VCB?",
+                    "options": [
+                                "VCE = 4.1 V,   VCB = 3.51 V",
+                                "VCE = 14.0 V,  VCB = 10.0 V",
+                                "VCE = 9.9 V,   VCB = 6.49 V",
+                                "VCE = 4.1 V,   VCB = -3.51 V"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: From Slide 68: VCE = VEE + VCC - IE(RC + RE) = 4 V + 10 V - (2.75 mA)(2.4 kΩ + 1.2 kΩ) = 14 V - (2.75 mA)(3.6 kΩ) = 14 V - 9.9 V = 4.1 V. Then VCB = VCC - IC·RC = VCC - β·IB·RC = 10 V - (60 × 45.08 μA × 2.4 kΩ) = 10 V - 6.49 V = 3.51 V.\n• Why Other Choices are Incorrect: 9.9 V and 6.49 V are the voltage drops across resistors, not the junction voltages; VCB is positive for NPN common-base reverse bias."
+        },
+{
+                    "id": 373,
+                    "question": "When analyzing PNP transistor DC bias circuits (Slide 69), how do the voltage supplies and current directions compare to NPN circuits?",
+                    "options": [
+                                "All DC voltage polarities and current directions are inverted",
+                                "All voltage polarities remain identical to NPN circuits",
+                                "PNP transistors require positive base voltage to turn ON",
+                                "Current flows from collector to emitter inside a conducting PNP transistor"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 69 shows that PNP transistors are biased using negative supply voltages (-VCC). Current flows into the emitter and out of both the base and collector terminals (IE = IC + IB). All terminal voltage polarities (VBE, VCE, VBC) are inverted compared to NPN.\n• Why Other Choices are Incorrect: Polarities are opposite; PNP requires base to be more negative than emitter; current flows from emitter to collector in PNP."
+        },
+{
+                    "id": 374,
+                    "question": "Across Emitter Bias, Voltage-Divider Bias, and Collector Feedback Bias configurations, what general formula defines the collector saturation current (Slides 44, 51, 59)?",
+                    "options": [
+                                "IC,sat = VCC / (RC + RE)",
+                                "IC,sat = VCC / RC",
+                                "IC,sat = (VCC - VBE) / RE",
+                                "IC,sat = β · VCC / RC"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: In all circuits having both a collector resistor RC and an emitter resistor RE, setting VCE,sat ≈ 0 V gives a total loop resistance of RC + RE. Hence, IC,sat = IC,max = VCC / (RC + RE) (Slides 44, 51, 59).\n• Why Other Choices are Incorrect: VCC / RC applies only to fixed bias where the emitter is connected directly to ground (RE = 0); (VCC - VBE)/RE neglects RC."
+        },
+{
+                    "id": 375,
+                    "question": "Why is the Common Collector (Emitter Follower) circuit primarily used for impedance matching applications (Slides 20 & 21)?",
+                    "options": [
+                                "It has high input impedance and low output impedance",
+                                "It has low input impedance and high output impedance",
+                                "It provides the highest voltage gain among all configurations",
+                                "It produces a 180° phase inversion between input and output"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slides 20 and 21 state: 'used primarily for impedance matching purposes since it has a high input impedance and low output impedance.' This allows a high-impedance signal source to drive a low-impedance load without signal attenuation (loading effect).\n• Why Other Choices are Incorrect: Low input / high output impedance describes Common Base; Common Collector has voltage gain Av < 1 (no voltage amplification) and 0° phase shift."
+        },
+{
+                    "id": 376,
+                    "question": "What defines the Cutoff region on a BJT's output characteristics (Slides 17 & 24), and what are the resulting terminal current levels?",
+                    "options": [
+                                "Both BE and BC junctions are reverse-biased; IB = 0, IC = ICEO ≈ 0, and VCE ≈ VCC",
+                                "Both BE and BC junctions are forward-biased; IC is at maximum and VCE = 0 V",
+                                "BE is forward-biased and BC is reverse-biased; IC = β·IB",
+                                "The collector is shorted directly to the base"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: In the cutoff region, the base-emitter junction does not have enough forward voltage (VBE < 0.7 V), so both junctions are reverse-biased. The transistor acts as an open switch: IB = 0, IC = ICEO ≈ 0, and VCE reaches its maximum level VCC.\n• Why Other Choices are Incorrect: Both junctions forward-biased defines saturation; BE forward and BC reverse defines the active/linear amplification region."
+        },
+{
+                    "id": 377,
+                    "question": "What is the formal definition of a 'Transistor Model' in AC small-signal analysis according to Lecture Slide 72?",
+                    "options": [
+                  "Circuit elements approximating actual device behavior under AC conditions",
+                  "Physical three-dimensional miniature plastic scale model of a transistor",
+                  "Mathematical proof proving that solid-state transistors violate Ohm's law",
+                  "Computer graphic CAD drawing displaying photolithography silicon masks"
+            ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 72 provides the exact definition: 'A model is a combination of circuit elements, properly chosen, that best approximates the actual behavior of a semiconductor device under specific operating conditions.'\n• Why Other Choices are Incorrect: It is an electrical equivalent circuit (resistors, dependent sources), not a physical scale model, proof of law violations, or CAD mask."
+        },
+{
+                    "id": 378,
+                    "question": "According to Slide 75, what are the four sequential steps required to obtain the AC Equivalent of a transistor network?",
+                    "options": [
+                                "1) Zero all DC sources; 2) Short-circuit capacitors; 3) Remove bypassed elements; 4) Redraw network logically",
+                                "1) Remove all transistors; 2) Replace resistors with open circuits; 3) Connect all pins to VCC; 4) Disconnect ground",
+                                "1) Set AC signals to zero; 2) Open-circuit all capacitors; 3) Calculate DC Q-point; 4) Measure temperature",
+                                "1) Increase frequency to infinity; 2) Replace inductors with open circuits; 3) Invert transistor polarity; 4) Short collector to base"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 75 lists the exact four rules: (1) Setting all DC sources to zero and replacing them by a short-circuit equivalent; (2) Replacing all capacitors by a short-circuit equivalent; (3) Removing all elements bypassed by the short-circuit equivalents; (4) Redrawing the network in a more convenient and logical form.\n• Why Other Choices are Incorrect: Setting AC to zero and opening capacitors is the DC equivalent procedure, not the AC equivalent; removing transistors destroys the amplifier."
+        },
+{
+                    "id": 379,
+                    "question": "In the re transistor model (Slide 76, 80, 82), how is the AC dynamic emitter resistance re calculated from DC operating parameters at room temperature (25°C)?",
+                    "options": [
+                                "re = 26 mV / IE",
+                                "re = 26 mV × IE",
+                                "re = VCC / IC",
+                                "re = β / 26 mV"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: In the small-signal re model derived from the Shockley diode equation at 25°C (thermal voltage VT = kT/q ≅ 26 mV), the dynamic AC emitter resistance is re = 26 mV / IE (Slides 76, 80, 82).\n• Why Other Choices are Incorrect: Multiplying by IE is dimensionally incorrect (volts × amps = watts, not ohms); VCC / IC is the DC load resistance; β/26 mV is not resistance."
+        },
+{
+                    "id": 380,
+                    "question": "In a Common Emitter Fixed Bias AC equivalent circuit with transistor output resistance ro = ∞ (Slide 80), what are the formulas for input impedance (Zi), output impedance (Zo), and voltage gain (Av)?",
+                    "options": [
+                                "Zi = RB || β·re,   Zo = RC,   Av = -RC / re",
+                                "Zi = RB + β·re,   Zo = RC || ro,   Av = +RC / re",
+                                "Zi = β·re,   Zo = 0 Ω,   Av = -β·RC",
+                                "Zi = RB,   Zo = RC,   Av = -re / RC"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 80 shows that at the input, RB is in parallel with the base resistance Zb = β·re, so Zi = RB || β·re. Looking into the output with vi = 0 (ib = 0), the current source is open, so Zo = RC. Voltage gain Av = Vo / Vi = (-β·ib·RC) / (ib·β·re) = -RC / re. The negative sign represents 180° phase inversion.\n• Why Other Choices are Incorrect: RB is in parallel, not in series; CE has 180° phase inversion, so Av is negative, not positive; Av is RC / re, not re / RC."
+        },
+{
+                    "id": 381,
+                    "question": "(Slide 81–82 CE Fixed Bias AC Example) Given VCC = 12 V, RB = 470 kΩ, RC = 3 kΩ, β = 100, and ro = ∞. DC analysis gives IE = 2.428 mA. Calculate re, Zi, and Av.",
+                    "options": [
+                                "re = 10.71 Ω,  Zi = 1.07 kΩ,  Av = -280.11",
+                                "re = 26.00 Ω,  Zi = 2.60 kΩ,  Av = -115.38",
+                                "re = 10.71 Ω,  Zi = 470 kΩ,   Av = +280.11",
+                                "re = 1.07 Ω,   Zi = 107 Ω,    Av = -2801.1"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Following Slide 82: re = 26 mV / IE = 26 mV / 2.428 mA = 10.71 Ω. Base resistance β·re = 100 × 10.71 Ω = 1.071 kΩ. Input impedance Zi = RB || β·re = 470 kΩ || 1.071 kΩ = 1.07 kΩ. Voltage gain Av = -RC / re = -3000 Ω / 10.71 Ω = -280.11.\n• Why Other Choices are Incorrect: 26 Ω assumes IE = 1 mA; 470 kΩ ignores β·re in parallel; a positive gain ignores the CE 180° phase inversion."
+        },
+{
+                    "id": 382,
+                    "question": "(Slide 82 CE Fixed Bias AC Example) For the same circuit when ro = 50 kΩ is taken into account, what are the updated output impedance (Zo) and voltage gain (Av)?",
+                    "options": [
+                                "Zo = 2.83 kΩ,  Av = -264.24",
+                                "Zo = 3.00 kΩ,  Av = -280.11",
+                                "Zo = 50.0 kΩ,  Av = -500.00",
+                                "Zo = 1.50 kΩ,  Av = -140.00"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: From Slide 82: When ro is finite, Zo = ro || RC = 50 kΩ || 3 kΩ = (50 × 3) / (50 + 3) = 150 / 53 = 2.83 kΩ. Then Av = -(ro || RC) / re = -2.83 kΩ / 10.71 Ω = -264.24 (compared to -280.11 when ro = ∞).\n• Why Other Choices are Incorrect: 3.00 kΩ and -280.11 assume ro = ∞; 50 kΩ ignores RC in parallel; 1.5 kΩ is an arbitrary division."
+        },
+{
+                    "id": 383,
+                    "question": "(Slide 86–87 Voltage Divider AC with Bypassed RE) Given VCC = 22 V, R1 = 56 kΩ, R2 = 8.2 kΩ, RC = 6.8 kΩ, RE = 1.5 kΩ (bypassed by CE), and β = 90. DC analysis yields IE = 1.41 mA. For ro = ∞, calculate re, Zi, and Av.",
+                    "options": [
+                                "re = 18.44 Ω,  Zi = 1.35 kΩ,  Av = -368.76",
+                                "re = 22.00 Ω,  Zi = 7.15 kΩ,  Av = -309.09",
+                                "re = 18.44 Ω,  Zi = 56.0 kΩ,  Av = +368.76",
+                                "re = 1.84 Ω,   Zi = 135 Ω,    Av = -3687.6"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Following Slide 87: re = 26 mV / 1.41 mA = 18.44 Ω. Divider parallel resistance R' = R1 || R2 = 56 kΩ || 8.2 kΩ = 7.15 kΩ. Base input resistance β·re = 90 × 18.44 Ω = 1.66 kΩ. Total input impedance Zi = R' || β·re = 7.15 kΩ || 1.66 kΩ = 1.35 kΩ. With RE bypassed to ground by CE: Av = -RC / re = -6.8 kΩ / 18.44 Ω = -368.76.\n• Why Other Choices are Incorrect: 7.15 kΩ is R' alone, forgetting β·re; positive gain ignores phase inversion; 22 Ω is an uncalculated approximation."
+        },
+{
+                    "id": 384,
+                    "question": "(Slide 87 Voltage Divider AC Example) For the same circuit with ro = 50 kΩ, Zo = 5.98 kΩ and Av = -324.3. Why did finite ro produce a measurable difference in Zo and Av compared to the ideal case?",
+                    "options": [
+                                "Because the condition ro ≥ 10·RC was NOT satisfied (50 kΩ < 68 kΩ)",
+                                "Because the bypass capacitor failed to short the emitter at signal frequencies",
+                                "Because the transistor entered saturation during the AC cycle",
+                                "Because β dropped below 10 at high signal levels"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 87 explicitly states: 'There was a measurable difference in the results for Zo and Av, because the condition ro ≥ 10·RC was not satisfied.' Here 10·RC = 10 × 6.8 kΩ = 68 kΩ, but ro = 50 kΩ < 68 kΩ, meaning ro significantly loads the collector output.\n• Why Other Choices are Incorrect: The bypass capacitor is assumed ideal (short); small-signal analysis operates strictly in the linear active region without saturation; β is constant."
+        },
+{
+                    "id": 385,
+                    "question": "In a Common Emitter amplifier where the emitter resistor RE is UNBYPASSED (no bypass capacitor CE, Slide 88), what is the input impedance looking into the base (Zb) and total input impedance (Zi)?",
+                    "options": [
+                                "Zb ≅ β(re + RE) ≈ β·RE,   and   Zi = RB || Zb",
+                                "Zb = β·re,   and   Zi = RB + RE",
+                                "Zb = re + RE,   and   Zi = RB || RE",
+                                "Zb = RE / β,   and   Zi = RB"
+                    ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 88 shows that without a bypass capacitor, AC emitter current ie flows through RE. Since vi = ib·β·re + ie·RE = ib·β·re + (β + 1)ib·RE ≅ ib·β(re + RE). Thus, base impedance Zb ≅ β(re + RE) ≈ β·RE (since RE >> re). Total input impedance Zi = RB || Zb.\n• Why Other Choices are Incorrect: β·re applies only when RE is completely bypassed; RE is reflected by factor β, not 1 or 1/β; RB and RE are not in series."
+        },
+{
+                    "id": 386,
+                    "question": "For the Common Emitter UNBYPASSED configuration (Slide 88), what is the voltage gain (Av), and what is its primary engineering benefit?",
+                    "options": [
+                  "Av ≈ -RC / RE; stabilized gain independent of beta and temperature",
+                  "Av = -RC / re; achieves maximum possible open-loop voltage gain",
+                  "Av = +RC / RE; provides zero phase shift between input and output",
+                  "Av = -(beta * RC) / RE; makes voltage gain heavily sensitive to beta"
+            ],
+                    "answer": 0,
+                    "explanation": "• Why this is Correct: Slide 88 shows that Av = Vo / Vi ≅ -β·ib·RC / [ib·β(re + RE)] = -RC / (re + RE). Since RE >> re in practice, this simplifies to Av ≈ -RC / RE. The crucial engineering advantage is that the gain depends almost solely on passive resistor ratios, making it exceptionally stable, linear, and immune to temperature changes in re and unit-to-unit variations in β!\n• Why Other Choices are Incorrect: -RC / re is for the bypassed case (which has higher gain but poor stability); CE unbypassed still has 180° phase inversion (negative sign); gain is independent of β, not multiplied by β."
+        }
+    ]
   },
 
   fluid_mechanics: {
@@ -4742,7 +4755,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       { id: 85, question: "Which of the following turbine is different from the others?", options: ["Fourneyron turbine", "Francis turbine", "Kaplan turbine", "Pelton wheel"], answer: 3, explanation: "• Why 'Pelton wheel' is Correct: Pelton wheel is impulse.\n• Why Other Choices differ: Alternative options (Fourneyron turbine, Francis turbine, Kaplan turbine) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
       { id: 86, question: "Running away speed of a Pelton wheel gives:", options: ["Actual operating speed", "No load speed", "Full load speed", "No load speed when governor mechanism fails"], answer: 3, explanation: "• Why 'No load speed when governor mechanism fails' is Correct: Maximum speed at zero load when governor fails.\n• Why Other Choices differ: Alternative options (Actual operating speed, No load speed, Full load speed) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
       { id: 87, question: "Which of the following turbine is different from the others?", options: ["Pelton wheel", "Banki turbine", "Jonval turbine", "Kaplan turbine"], answer: 3, explanation: "• Why 'Kaplan turbine' is Correct: Kaplan is reaction.\n• Why Other Choices differ: Alternative options (Pelton wheel, Banki turbine, Jonval turbine) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
-      { id: 88, question: "The characteristic length of the Reynolds number used to calculate the friction in noncircular full running pipes is based on the __________.", options: ["Run length", "Pipe length", "Hydraulic diameter (the equivalent diameter)", "Wetted circumference"], answer: 2, explanation: "• Why 'Hydraulic diameter (the equivalent diameter)' is Correct: Hydraulic diameter Dh.\n• Why Other Choices differ: Alternative options (Run length, Pipe length, Wetted circumference) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
+      { id: 88, question: "The characteristic length of the Reynolds number used to calculate the friction in noncircular full running pipes is based on the __________.", options: ["Run length", "Pipe length", "Hydraulic diameter", "Wetted circumference"], answer: 2, explanation: "• Why 'Hydraulic diameter' is Correct: Hydraulic diameter Dh.\n• Why Other Choices differ: Alternative options (Run length, Pipe length, Wetted circumference) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
       { id: 89, question: "The hydraulic radius of noncircular pipe is:", options: ["The square root of the flow area", "The ratio of the area to the wetted perimeter", "The radius of a pipe of equivalent area", "None of the above"], answer: 1, explanation: "• Why 'The ratio of the area to the wetted perimeter' is Correct: Ratio of area to wetted perimeter.\n• Why Other Choices differ: Alternative options (The square root of the flow area, The radius of a pipe of equivalent area, None of the above) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
       { id: 90, question: "The Darcy equation can be used for all liquids and flows except:", options: ["Water", "Alcohol", "Gasoline", "Air flowing supersonically"], answer: 3, explanation: "• Why 'Air flowing supersonically' is Correct: Inapplicable to supersonic compressible flow.\n• Why Other Choices differ: Alternative options (Water, Alcohol, Gasoline) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
       { id: 91, question: "The Hazen – Williams formula for head loss due to friction is based upon:", options: ["Rigorous mathematical derivation", "Empirical data", "Semi-empirical analysis", "Serendipity"], answer: 1, explanation: "• Why 'Empirical data' is Correct: Empirical field data.\n• Why Other Choices differ: Alternative options (Rigorous mathematical derivation, Semi-empirical analysis, Serendipity) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
@@ -5174,7 +5187,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       { id: 37, question: "A reservoir that absorbs energy in the form of heat is called:", options: ["Source", "Sink", "Cold reservoir", "Heat reservoir"], answer: 1, explanation: "• Why 'Sink' is Correct: Heat sink.\n• Why Other Choices differ: Alternative options (Source, Cold reservoir, Heat reservoir) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
       { id: 38, question: "When the entire heat exchanger is selected as control volume, net heat transfer becomes:", options: ["Unity", "Zero", "Undefined", "Indeterminate"], answer: 1, explanation: "• Why 'Zero' is Correct: If insulated overall control volume, net Q_ext = 0.\n• Why Other Choices differ: Alternative options (Unity, Undefined, Indeterminate) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
       { id: 39, question: "Heat is conducted in the direction of:", options: ["Increasing temperature", "Decreasing temperature", "Increasing and decreasing temperature", "Constant temperature"], answer: 1, explanation: "• Why 'Decreasing temperature' is Correct: Heat flows down temperature gradient (decreasing T).\n• Why Other Choices differ: Alternative options (Increasing temperature, Increasing and decreasing temperature, Constant temperature) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
-      { id: 40, question: "The heat transfer term in the first law of thermodynamics may be due to any of the following except:", options: ["Conduction", "Convection", "Radiation", "Internal heat generation (e.g., chemical reaction)"], answer: 3, explanation: "• Why 'Internal heat generation (e.g., chemical reaction)' is Correct: Internal heat generation is a source term, not heat transfer across boundaries.\n• Why Other Choices differ: Alternative options (Conduction, Convection, Radiation) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
+      { id: 40, question: "The heat transfer term in the first law of thermodynamics may be due to any of the following except:", options: ["Conduction", "Convection", "Radiation", "Internal heat generation"], answer: 3, explanation: "• Why 'Internal heat generation' is Correct: Internal heat generation is a source term, not heat transfer across boundaries.\n• Why Other Choices differ: Alternative options (Conduction, Convection, Radiation) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
       { id: 41, question: "All heat transfer processes require a medium of energy exchange except:", options: ["Conduction", "Natural convection", "Forced convection", "Radiation"], answer: 3, explanation: "• Why 'Radiation' is Correct: Radiation propagates through vacuum.\n• Why Other Choices differ: Alternative options (Conduction, Natural convection, Forced convection) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
       { id: 42, question: "Thermal conduction is described by:", options: ["Newton's law", "The logarithmic mean temperature difference", "The Stefan-Boltzmann law", "Fourier's law"], answer: 3, explanation: "• Why 'Fourier's law' is Correct: Fourier's Law q = -k A (dT/dx).\n• Why Other Choices differ: Alternative options (Newton's law, The logarithmic mean temperature difference, The Stefan-Boltzmann law) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
       { id: 43, question: "Convection is described by which of the following laws?", options: ["Newton's law", "The logarithmic mean temperature difference", "The Stefan-Boltzmann law", "Fourier's law"], answer: 0, explanation: "• Why 'Newton's law' is Correct: Newton's Law of Cooling q = h A (T_s - T_inf).\n• Why Other Choices differ: Alternative options (The logarithmic mean temperature difference, The Stefan-Boltzmann law, Fourier's law) do not satisfy the required governing physical principles or mathematical relations for this specific problem condition." },
@@ -6216,13 +6229,13 @@ var SUBJECT_DATA = {  basic_electronics: {
         {
             "question": "In a 3-phase star-connected alternator, which harmonic components are completely absent from the line-to-line terminal voltages?",
             "options": [
-                "Triplen harmonics (3rd, 9th, 15th)",
+                "Triplen harmonics",
                 "Fundamental frequency power component",
                 "All odd space and time harmonics",
                 "Even symmetrical harmonic orders"
             ],
             "answer": 0,
-            "explanation": "• Why 'Triplen harmonics (3rd, 9th, 15th)' is Correct: In a balanced 3-phase system, triplen harmonics in all three phases are identical in magnitude and in phase with each other. Taking the difference between line terminals (VL = VR - VY) causes them to cancel out completely.\n• Why Other Choices are Incorrect: 5th and 7th harmonics are not in phase with each other and appear in line voltages unless suppressed by chording.",
+            "explanation": "• Why 'Triplen harmonics' is Correct: In a balanced 3-phase system, triplen harmonics in all three phases are identical in magnitude and in phase with each other. Taking the difference between line terminals (VL = VR - VY) causes them to cancel out completely.\n• Why Other Choices are Incorrect: 5th and 7th harmonics are not in phase with each other and appear in line voltages unless suppressed by chording.",
             "id": 22
         },
         {
@@ -6312,13 +6325,13 @@ var SUBJECT_DATA = {  basic_electronics: {
         {
             "question": "In the power output equation of a salient-pole alternator, P = [EV/Xd]*sin(δ) + [(V²/2)*(1/Xq - 1/Xd)]*sin(2δ), what is the origin of the second term?",
             "options": [
-                "Reluctance power due to rotor saliency (difference between Xd and Xq)",
+                "Reluctance power due to rotor magnetic saliency",
                 "Electromagnetic excitation power developed directly by the DC rotor field flux",
                 "Armature winding copper loss dissipated as heat in the stator slots",
                 "Friction and windage losses caused by high-speed rotor rotation in air"
             ],
             "answer": 0,
-            "explanation": "• Why 'Reluctance power due to rotor saliency (difference between Xd and Xq)' is Correct: The second term arises entirely from the difference in magnetic reluctance between the d-axis and q-axis. It is independent of field excitation E and vanishes in cylindrical machines where Xd = Xq.\n• Why Other Choices are Incorrect: The first term [EV/Xd]*sin(δ) is excitation power.",
+            "explanation": "• Why 'Reluctance power due to rotor magnetic saliency' is Correct: The second term arises entirely from the difference in magnetic reluctance between the d-axis and q-axis. It is independent of field excitation E and vanishes in cylindrical machines where Xd = Xq.\n• Why Other Choices are Incorrect: The first term [EV/Xd]*sin(δ) is excitation power.",
             "id": 30
         },
         {
@@ -6516,13 +6529,13 @@ var SUBJECT_DATA = {  basic_electronics: {
         {
             "question": "[PROBLEM 6.5] What will be the number of poles of a 3-phase, 50 Hz synchronous generator running at a speed of 187.5 rpm, and what type of prime mover is appropriate?",
             "options": [
-                "32 poles; Water turbine (hydraulic) with salient-pole rotor",
+                "32 poles; Water turbine with salient-pole rotor",
                 "16 poles; High-speed steam turbine with non-salient rotor",
                 "24 poles; Closed-cycle gas turbine with cylindrical-drum rotor",
                 "8 poles; Heavy-duty diesel engine with laminated-spider rotor"
             ],
             "answer": 0,
-            "explanation": "• Why '32 poles; Water turbine (hydraulic) with salient-pole rotor' is Correct: P = 120f / Ns = (120 * 50) / 187.5 = 32 poles. Because 187.5 rpm is a very low speed and the pole count is large (32 poles), a hydraulic water turbine coupled to a salient-pole alternator is the appropriate engineering choice.\n• Why Other Choices are Incorrect: Steam turbines operate at high speeds (1500 to 3600 rpm) with 2 or 4 poles and cylindrical rotors.",
+            "explanation": "• Why '32 poles; Water turbine with salient-pole rotor' is Correct: P = 120f / Ns = (120 * 50) / 187.5 = 32 poles. Because 187.5 rpm is a very low speed and the pole count is large (32 poles), a hydraulic water turbine coupled to a salient-pole alternator is the appropriate engineering choice.\n• Why Other Choices are Incorrect: Steam turbines operate at high speeds (1500 to 3600 rpm) with 2 or 4 poles and cylindrical rotors.",
             "id": 47
         },
         {
@@ -7080,25 +7093,25 @@ var SUBJECT_DATA = {  basic_electronics: {
         {
             "question": "How can the operating speed of a synchronous motor be varied under steady-state conditions?",
             "options": [
-                "Only by varying the supply frequency (f) using a variable-frequency drive",
+                "Only by varying the supply frequency using a variable-frequency drive",
                 "By adjusting the DC field excitation rheostat in the rotor winding circuit",
                 "By increasing or decreasing the mechanical shaft load coupled to the motor",
                 "By adding external resistance in series with the rotating damper bar circuit"
             ],
             "answer": 0,
-            "explanation": "• Why 'Only by varying the supply frequency (f) using a variable-frequency drive' is Correct: Since Ns = 120*f / P, the synchronous speed is strictly locked to supply frequency. Changes in load or field current only change torque angle δ and power factor cos φ, not speed.\n• Why Other Choices are Incorrect: Field current changes power factor, not speed.",
+            "explanation": "• Why 'Only by varying the supply frequency using a variable-frequency drive' is Correct: Since Ns = 120*f / P, the synchronous speed is strictly locked to supply frequency. Changes in load or field current only change torque angle δ and power factor cos φ, not speed.\n• Why Other Choices are Incorrect: Field current changes power factor, not speed.",
             "id": 94
         },
         {
             "question": "What is the primary industrial application of an unloaded, over-excited synchronous motor?",
             "options": [
-                "Power factor correction at factory substations (acting as a synchronous condenser)",
+                "Power factor correction at factory substations as a synchronous condenser",
                 "Driving high-impact constant-speed metal rolling mills and reciprocating stone crushers",
                 "Generating high-voltage direct current for electrochemical aluminum smelting plants",
                 "Starting high-inertia heavy-duty industrial gas turbines from standstill to firing speed"
             ],
             "answer": 0,
-            "explanation": "• Why 'Power factor correction at factory substations (acting as a synchronous condenser)' is Correct: Synchronous condensers supply leading kVAR to offset the lagging reactive power drawn by thousands of induction motors in an industrial facility, eliminating utility power factor penalties.\n• Why Other Choices are Incorrect: At no load, the machine performs electrical reactive compensation rather than mechanical work.",
+            "explanation": "• Why 'Power factor correction at factory substations as a synchronous condenser' is Correct: Synchronous condensers supply leading kVAR to offset the lagging reactive power drawn by thousands of induction motors in an industrial facility, eliminating utility power factor penalties.\n• Why Other Choices are Incorrect: At no load, the machine performs electrical reactive compensation rather than mechanical work.",
             "id": 95
         },
         {
