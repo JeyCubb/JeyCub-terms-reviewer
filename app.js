@@ -2922,28 +2922,69 @@ function formatMathTypography(str) {
   if (str === null || str === undefined) return '';
   let s = String(str);
 
-  // 1. Scientific notation and carets: 10^-3 -> 10<sup>-3</sup>, 10^6 -> 10<sup>6</sup>
+  const mathTokens = [];
+
+  // Helper to safely render KaTeX with HTML entity unescaping
+  function renderKaTeX(tex, isDisplay) {
+    if (typeof katex !== 'undefined' && typeof katex.renderToString === 'function') {
+      try {
+        const cleanTex = tex.trim()
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&amp;/g, '&');
+        return katex.renderToString(cleanTex, {
+          displayMode: isDisplay,
+          throwOnError: false
+        });
+      } catch (err) {
+        console.warn('KaTeX render error:', err);
+      }
+    }
+    return isDisplay ? `<div class="katex-fallback">${tex}</div>` : `<span class="katex-fallback">${tex}</span>`;
+  }
+
+  // 1. Extract and protect Display Math: $$...$$
+  s = s.replace(/\$\$([\s\S]+?)\$\$/g, (match, tex) => {
+    const token = `@@KATEX_DISP_${mathTokens.length}@@`;
+    mathTokens.append = mathTokens.push({ token, html: renderKaTeX(tex, true) });
+    return token;
+  });
+
+  // 2. Extract and protect Inline Math: $...$
+  s = s.replace(/\$([^$\n]+?)\$/g, (match, tex) => {
+    const token = `@@KATEX_INL_${mathTokens.length}@@`;
+    mathTokens.push({ token, html: renderKaTeX(tex, false) });
+    return token;
+  });
+
+  // 3. Fallback typography for text outside of KaTeX:
+  // Scientific notation and carets: 10^-3 -> 10<sup>-3</sup>, 10^6 -> 10<sup>6</sup>
   s = s.replace(/(\b10)\^(-?\d+)/g, '$1<sup>$2</sup>');
 
-  // 2. Inverse trigonometric functions: tan^-1, sin^-1, cos^-1
+  // Inverse trigonometric functions: tan^-1, sin^-1, cos^-1
   s = s.replace(/\b(sin|cos|tan|cot|sec|csc)\^(-1|-1)\b/g, '$1<sup>-1</sup>');
 
-  // 3. Units and variables with exponents: m^2 -> m<sup>2</sup>, cm^3 -> cm<sup>3</sup>, ft^2, (Ri)^2
+  // Units and variables with exponents: m^2 -> m<sup>2</sup>, cm^3 -> cm<sup>3</sup>, ft^2, (Ri)^2
   s = s.replace(/([a-zA-Z\)])\^([+-]?\d+)/g, '$1<sup>$2</sup>');
 
-  // 4. Electrical and mechanical theta angles: θ_e -> θ<sub>e</sub>, θ_m -> θ<sub>m</sub>
+  // Electrical and mechanical theta angles: θ_e -> θ<sub>e</sub>, θ_m -> θ<sub>m</sub>
   s = s.replace(/θ_e\b/g, 'θ<sub>e</sub>');
   s = s.replace(/θ_m\b/g, 'θ<sub>m</sub>');
   s = s.replace(/θ_([a-zA-Z0-9]+)\b/g, 'θ<sub>$1</sub>');
 
-  // 5. Greek variables with subscripts: e.g. δ_max, η_max, etc.
+  // Greek variables with subscripts: e.g. δ_max, η_max, etc.
   s = s.replace(/([θδγηλωΩ])_([A-Za-z0-9]+)\b/g, '$1<sub>$2</sub>');
 
-  // 6. Latin variables with subscripts: e.g. V_CE, I_B, I_C, R_1, T_2, E_ph, X_s, R_a, V_t, I_a, etc.
+  // Latin variables with subscripts: e.g. V_CE, I_B, I_C, R_1, T_2, E_ph, X_s, R_a, V_t, I_a, etc.
   s = s.replace(/\b([A-Za-z]{1,4})_([A-Za-z0-9]{1,4})\b/g, '$1<sub>$2</sub>');
 
-  // 7. Multiplication asterisk between spaces -> middle dot: " * " -> " · "
+  // Multiplication asterisk between spaces -> middle dot: " * " -> " · "
   s = s.replace(/(\s)\*(\s)/g, '$1·$2');
+
+  // 4. Restore rendered KaTeX math tokens
+  mathTokens.forEach(item => {
+    s = s.replace(item.token, item.html);
+  });
 
   return s;
 }
@@ -3189,6 +3230,16 @@ function prepareTextForSpeech(text) {
 
   // Strip HTML tags if any
   s = s.replace(/<[^>]*>/g, ' ');
+
+  // Clean LaTeX expressions for natural speech synthesis
+  s = s.replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '$1 over $2');
+  s = s.replace(/\\sqrt\{([^}]+)\}/g, 'square root of $1');
+  s = s.replace(/\\left|\\right/g, '');
+  s = s.replace(/\\sin\b/g, ' sine ');
+  s = s.replace(/\\cos\b/g, ' cosine ');
+  s = s.replace(/\\tan\b/g, ' tangent ');
+  s = s.replace(/\\cdot|\\times/g, ' times ');
+  s = s.replace(/\$+/g, ' ');
 
   // Symbols and Greek letters
     s = s.replace(/θ[ₑe]|θ_e\b/g, 'theta electrical');

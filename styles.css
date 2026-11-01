@@ -4706,3 +4706,34 @@ sup {
   vertical-align: 0.4em;
   font-family: inherit;
 }
+
+/* ==========================================================================
+   KaTeX Mathematical Typography
+   ========================================================================== */
+.katex {
+  font-size: 1.06em !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+}
+
+.katex-display {
+  margin: 0.75rem 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+
+.option-text .katex {
+  font-size: 1.08em;
+  vertical-align: middle;
+}
+
+.option-text .katex-display {
+  margin: 0.35rem 0 !important;
+}
+
+.pdf-opt-text .katex,
+.pdf-q-text .katex {
+  font-size: 1.02em;
+}
+

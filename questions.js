@@ -2217,10 +2217,10 @@ var SUBJECT_DATA = {  basic_electronics: {
             "id": 183,
             "question": "When applying Thevenin's Theorem to the base circuit of a Voltage-Divider biased BJT, what are the equivalent Thevenin resistance (RTH) and voltage (VTH)?",
             "options": [
-                  "R_TH = R_1 + R_2, V_TH = V_CC * R_1 / (R_1 + R_2)",
-                  "R_TH = R_1 || R_2, V_TH = V_CC * R_2 / (R_1 + R_2)",
-                  "R_TH = R_1 - R_2, V_TH = V_CC * R_2 / (R_1 - R_2)",
-                  "R_TH = R_C || R_E, V_TH = V_BE * R_2 / (R_1 + R_2)"
+                  "$R_{TH} = R_1 + R_2$, $V_{TH} = \\frac{V_{CC} \\cdot R_1}{R_1 + R_2}$",
+                  "$R_{TH} = R_1 \\parallel R_2$, $V_{TH} = \\frac{V_{CC} \\cdot R_2}{R_1 + R_2}$",
+                  "$R_{TH} = R_1 - R_2$, $V_{TH} = \\frac{V_{CC} \\cdot R_2}{R_1 - R_2}$",
+                  "$R_{TH} = R_C \\parallel R_E$, $V_{TH} = \\frac{V_{BE} \\cdot R_2}{R_1 + R_2}$"
             ],
             "answer": 1,
             "explanation": "• Why this is Correct: Removing the transistor at the base terminal and shorting the DC supply V_CC to ground puts R_1 and R_2 in parallel: R_TH = R_1 || R_2 = (R_1 * R_2) / (R_1 + R_2). The open-circuit voltage across R_2 is the standard voltage divider: V_TH = V_CC * R_2 / (R_1 + R_2).\n• Why Other Choices are Incorrect: The resistors are in parallel to ground, not series."
@@ -2805,10 +2805,10 @@ var SUBJECT_DATA = {  basic_electronics: {
             "id": 232,
             "question": "How is the overall voltage gain (Av) of a Common Base amplifier mathematically expressed in terms of current gain and resistance gain?",
             "options": [
-                  "Av = alpha + (RL / Rin)",
-                  "Av = alpha * (RL / Rin)",
-                  "Av = (Rin / RL) / alpha",
-                  "Av = beta * (Rin / RL)"
+                  "$A_v = \\alpha + \\left(\\frac{R_L}{R_{\\text{in}}}\\right)$",
+                  "$A_v = \\alpha \\cdot \\left(\\frac{R_L}{R_{\\text{in}}}\\right)$",
+                  "$A_v = \\frac{R_{\\text{in}} / R_L}{\\alpha}$",
+                  "$A_v = \\beta \\cdot \\left(\\frac{R_{\\text{in}}}{R_L}\\right)$"
             ],
             "answer": 1,
             "explanation": "• Why this is Correct: Voltage gain is defined as V_out / V_in = (I_c * R_L) / (I_e * R_in) = (I_c / I_e) * (R_L / R_in) = alpha * (Resistance Gain). Even though alpha < 1, the massive Resistance Gain produces a very high voltage gain.\n• Why Other Choices are Incorrect: Voltage gain is the product of current gain and resistance ratio, not sum or quotient."
@@ -3141,7 +3141,7 @@ var SUBJECT_DATA = {  basic_electronics: {
             "id": 260,
             "question": "Which set of electrical conditions characterizes the Saturation (fully-ON) region of an NPN transistor switch?",
             "options": [
-                  "RTh = R1 || R2,  VTh = VCC * R2 / (R1 + R2)",
+                  "$R_{Th} = R_1 \\parallel R_2$, $V_{Th} = \\frac{V_{CC} \\cdot R_2}{R_1 + R_2}$",
                   "RTh = R1 + R2,  VTh = VCC * R1 / (R1 + R2)",
                   "RTh = R1 - R2,  VTh = VCC * R2 / (R1 - R2)",
                   "RTh = RC || RE,  VTh = VBE * R2 / (R1 + R2)"
@@ -3153,10 +3153,10 @@ var SUBJECT_DATA = {  basic_electronics: {
             "id": 261,
             "question": "Why is the internal power dissipation (PD = VCE * IC) of a transistor switch at its absolute minimum in both the Cut-off and Saturation states?",
             "options": [
-                  "beta * RE <= R2 / 10",
-                  "beta * RE >= 10 * R2",
-                  "beta * RC >= 10 * RE",
-                  "R1 * R2 >= 10 * beta"
+                  "$\\beta \\cdot R_E \\le \\frac{R_2}{10}$",
+                  "$\\beta \\cdot R_E \\ge 10 \\cdot R_2$",
+                  "$\\beta \\cdot R_C \\ge 10 \\cdot R_E$",
+                  "$R_1 \\cdot R_2 \\ge 10 \\cdot \\beta$"
             ],
             "answer": 1,
             "explanation": "• Why this is Correct: Power dissipation is P = V_CE * I_C. In cut-off, I_C = 0 so P = 0. In saturation, V_CE ≈ 0 so P ≈ 0. Significant power dissipation only occurs momentarily during the rapid switching transitions between ON and OFF.\n• Why Other Choices are Incorrect: Supply voltage remains constant; the zero-power states are due to zero current or zero voltage."
@@ -3357,10 +3357,10 @@ var SUBJECT_DATA = {  basic_electronics: {
             "id": 278,
             "question": "What is the mathematical relationship for the total overall current gain (βtotal or hFE(total)) of a Darlington transistor pair?",
             "options": [
-                  "βtotal = β1 + β2",
-                  "βtotal ≈ β1 * β2",
-                  "βtotal = (β1 * β2) / (β1 + β2)",
-                  "βtotal = β1 / β2"
+                  "$\\beta_{\\text{total}} = \\beta_1 + \\beta_2$",
+                  "$\\beta_{\\text{total}} \\approx \\beta_1 \\cdot \\beta_2$",
+                  "$\\beta_{\\text{total}} = \\frac{\\beta_1 \\cdot \\beta_2}{\\beta_1 + \\beta_2}$",
+                  "$\\beta_{\\text{total}} = \\frac{\\beta_1}{\\beta_2}$"
             ],
             "answer": 1,
             "explanation": "• Why 'βtotal = β1 * β2' is Correct: Because Q1 amplifies the base current by β1 and feeds its output into the base of Q2 which amplifies it again by β2, the overall current amplification factor is the product of the two individual gains: βtotal = β1 * β2.\n• Why Other Choices are Incorrect: Gains multiply rather than add; adding gains would only give 150 instead of 5,000."
@@ -3861,10 +3861,10 @@ var SUBJECT_DATA = {  basic_electronics: {
             "id": 320,
             "question": "Which equation relates the collector-to-emitter leakage current with base open (ICEO) to the reverse saturation current with emitter open (ICBO)?",
             "options": [
-                  "ICEO = ICBO / (beta + 1)",
-                  "ICEO = (beta + 1) * ICBO",
-                  "ICEO = ICBO - beta",
-                  "ICEO = alpha * ICBO"
+                  "$I_{CEO} = \\frac{I_{CBO}}{\\beta + 1}$",
+                  "$I_{CEO} = (\\beta + 1)I_{CBO}$",
+                  "$I_{CEO} = I_{CBO} - \\beta$",
+                  "$I_{CEO} = \\alpha \\cdot I_{CBO}$"
             ],
             "answer": 1,
             "explanation": "• Why 'ICEO = (beta + 1) * ICBO' is Correct: With the base open, the tiny reverse leakage current ICBO flowing across the collector junction enters the base and is internally amplified by beta, yielding ICEO = (beta + 1)*ICBO ≈ beta*ICBO.\n• Why Other Choices are Incorrect: Leakage is multiplied by beta + 1, making ICEO much larger than ICBO."
@@ -3981,10 +3981,10 @@ var SUBJECT_DATA = {  basic_electronics: {
             "id": 330,
             "question": "When a common-emitter amplifier drives a subsequent amplifier stage having an input resistance Ri, how is the effective AC collector load resistance (Rac) calculated?",
             "options": [
-                  "Rac = RC + Ri",
-                  "Rac = RC || Ri",
-                  "Rac = RC - Ri",
-                  "Rac = RC / Ri"
+                  "$R_{ac} = R_C + R_i$",
+                  "$R_{ac} = R_C \\parallel R_i$",
+                  "$R_{ac} = R_C - R_i$",
+                  "$R_{ac} = \\frac{R_C}{R_i}$"
             ],
             "answer": 1,
             "explanation": "• Why 'Rac = RC || Ri' is Correct: Because the coupling capacitor acts as an AC short circuit, the second stage's input resistance Ri appears in parallel with the collector resistor RC for AC signals: Rac = RC || Ri.\n• Why Other Choices are Incorrect: Parallel combination reduces total AC load resistance."
@@ -4137,10 +4137,10 @@ var SUBJECT_DATA = {  basic_electronics: {
                     "id": 343,
                     "question": "How is the common-base DC current gain alpha (α) formally defined, and what is its typical numerical range in practical transistors?",
                     "options": [
-                  "α = IB / IC (typically ranging between 10 and 500)",
-                  "α = IC / IE (typically 0.95 to 0.99, strictly < 1)",
-                  "α = IE / IC (typically ranging from 1.05 to 1.50)",
-                  "α = VCE / VBE (typically ranging from 0.1 to 0.7)"
+                  "$\\alpha = \\frac{I_B}{I_C}$ (typically ranging between 10 and 500)",
+                  "$\\alpha = \\frac{I_C}{I_E}$ (typically 0.95 to 0.99, strictly $< 1$)",
+                  "$\\alpha = \\frac{I_E}{I_C}$ (typically ranging from 1.05 to 1.50)",
+                  "$\\alpha = \\frac{V_{CE}}{V_{BE}}$ (typically ranging from 0.1 to 0.7)"
             ],
                     "answer": 1,
                     "explanation": "• Why this is Correct: Slide 13 defines alpha as α = IC / IE (the ratio of collector current to emitter current). It typically ranges from 0.95 to 0.99 or greater, but is always slightly less than 1 because a small fraction of emitter carriers recombines in the base (IB).\n• Why Other Choices are Incorrect: IB / IC is 1/β; IE / IC is greater than 1; VCE / VBE is a voltage ratio, not current gain."
@@ -4305,7 +4305,7 @@ var SUBJECT_DATA = {  basic_electronics: {
                     "id": 357,
                     "question": "In the exact analysis of a Voltage-Divider Bias network using Thévenin's theorem (Slide 46), what are the Thévenin resistance (RTh) and voltage (ETh)?",
                     "options": [
-                  "RTh = R1 || R2,  ETh = R2 * VCC / (R1 + R2)",
+                  "$R_{Th} = R_1 \\parallel R_2$, $E_{Th} = \\frac{R_2 \\cdot V_{CC}}{R_1 + R_2}$",
                   "RTh = R1 + R2,  ETh = R1 * VCC / (R1 + R2)",
                   "RTh = R1 || RC,  ETh = VCC - VBE",
                   "RTh = (R1 * R2) / RE,  ETh = VCC / 2"
@@ -4653,10 +4653,10 @@ var SUBJECT_DATA = {  basic_electronics: {
                     "id": 386,
                     "question": "For the Common Emitter UNBYPASSED configuration (Slide 88), what is the voltage gain (Av), and what is its primary engineering benefit?",
                     "options": [
-                  "Av ≈ -RC / RE; stabilized gain independent of beta and temperature",
-                  "Av = -RC / re; achieves maximum possible open-loop voltage gain",
-                  "Av = +RC / RE; provides zero phase shift between input and output",
-                  "Av = -(beta * RC) / RE; makes voltage gain heavily sensitive to beta"
+                  "$A_v \\approx -\\frac{R_C}{R_E}$; stabilized gain independent of $\\beta$ and temperature",
+                  "$A_v = -\\frac{R_C}{r_e}$; achieves maximum possible open-loop voltage gain",
+                  "$A_v = +\\frac{R_C}{R_E}$; provides zero phase shift between input and output",
+                  "$A_v = -\\frac{\\beta R_C}{R_E}$; makes voltage gain heavily sensitive to $\\beta$"
             ],
                     "answer": 0,
                     "explanation": "• Why this is Correct: Slide 88 shows that Av = Vo / Vi ≅ -β·ib·RC / [ib·β(re + RE)] = -RC / (re + RE). Since RE >> re in practice, this simplifies to Av ≈ -RC / RE. The crucial engineering advantage is that the gain depends almost solely on passive resistor ratios, making it exceptionally stable, linear, and immune to temperature changes in re and unit-to-unit variations in β!\n• Why Other Choices are Incorrect: -RC / re is for the bypassed case (which has higher gain but poor stability); CE unbypassed still has 180° phase inversion (negative sign); gain is independent of β, not multiplied by β."
@@ -5975,7 +5975,7 @@ var SUBJECT_DATA = {  basic_electronics: {
     "chapter": "Final Exam Scope: Chapters 6 & 8 (Alternators & Synchronous Motors)",
     "questions": [
         {
-            "question": "[IDENTIFICATION] What is the term for an AC machine that converts mechanical power into electrical power and rotates only at synchronous speed Ns = 120f/P?",
+            "question": "[IDENTIFICATION] What is the term for an AC machine that converts mechanical power into electrical power and rotates only at synchronous speed $N_s = \\frac{120f}{P}$?",
             "options": [
                 "Alternator",
                 "Induction motor",
@@ -5983,7 +5983,7 @@ var SUBJECT_DATA = {  basic_electronics: {
                 "Synchronous inverter"
             ],
             "answer": 0,
-            "explanation": "• Why 'Alternator' is Correct: A synchronous generator or alternator is an AC electro-mechanical machine that converts mechanical power to AC electrical power, operating strictly at synchronous speed Ns = 120f/P.\n• Why Other Choices are Incorrect: Induction machines operate with slip (N < Ns); rotary converters convert AC to DC.",
+            "explanation": "• Why 'Alternator' is Correct: A synchronous generator or alternator is an AC electro-mechanical machine that converts mechanical power to AC electrical power, operating strictly at synchronous speed $N_s = \\frac{120f}{P}$.\n• Why Other Choices are Incorrect: Induction machines operate with slip (N < Ns); rotary converters convert AC to DC.",
             "id": 1
         },
         {
@@ -6301,10 +6301,10 @@ var SUBJECT_DATA = {  basic_electronics: {
         {
             "question": "In a salient-pole synchronous machine, how does quadrature-axis reactance Xq compare to direct-axis reactance Xd?",
             "options": [
-                "Xq < Xd",
-                "Xq > Xd due to reduced interpolar magnetic core reluctance",
-                "Xq = Xd because magnetic symmetry is maintained around the rotor",
-                "Xq = 0 because quadrature flux is completely shielded by damper bars"
+                "$X_q < X_d$",
+                "$X_q > X_d$ due to reduced interpolar magnetic core reluctance",
+                "$X_q = X_d$ because magnetic symmetry is maintained around the rotor",
+                "$X_q = 0$ because quadrature flux is completely shielded by damper bars"
             ],
             "answer": 0,
             "explanation": "• Why 'Xq < Xd' is Correct: Along the quadrature axis (interpolar space), the air gap is much larger than along the pole core (d-axis). Higher reluctance results in lower inductance and lower reactance: Xq < Xd.\n• Why Other Choices are Incorrect: Only in smooth cylindrical rotors is Xq = Xd.",
@@ -6313,17 +6313,17 @@ var SUBJECT_DATA = {  basic_electronics: {
         {
             "question": "How are direct-axis reactance Xd and quadrature-axis reactance Xq calculated from slip test oscillograph readings?",
             "options": [
-                "Xd = Vmax / Imin and Xq = Vmin / Imax",
-                "Xd = Vmin / Imax and Xq = Vmax / Imin",
-                "Xd = Vmax / Imax and Xq = Vmin / Imin",
-                "Xd = (Vmax + Vmin) / 2 and Xq = (Imax + Imin) / 2"
+                "$X_d = \\frac{V_{\\max}}{I_{\\min}}$ and $X_q = \\frac{V_{\\min}}{I_{\\max}}$",
+                "$X_d = \\frac{V_{\\min}}{I_{\\max}}$ and $X_q = \\frac{V_{\\max}}{I_{\\min}}$",
+                "$X_d = \\frac{V_{\\max}}{I_{\\max}}$ and $X_q = \\frac{V_{\\min}}{I_{\\min}}$",
+                "$X_d = \\frac{V_{\\max} + V_{\\min}}{2}$ and $X_q = \\frac{I_{\\max} + I_{\\min}}{2}$"
             ],
             "answer": 0,
             "explanation": "• Why 'Xd = Vmax / Imin and Xq = Vmin / Imax' is Correct: When the stator MMF aligns with the d-axis (minimum reluctance, maximum inductance), impedance is highest: voltage is maximum and current is minimum (Xd = Vmax/Imin). When aligned with the q-axis, impedance is lowest (Xq = Vmin/Imax).\n• Why Other Choices are Incorrect: Minimum current corresponds to maximum impedance.",
             "id": 29
         },
         {
-            "question": "In the power output equation of a salient-pole alternator, P = [EV/Xd]*sin(δ) + [(V²/2)*(1/Xq - 1/Xd)]*sin(2δ), what is the origin of the second term?",
+            "question": "In the power output equation of a salient-pole alternator, $P = \\left[\\frac{EV}{X_d}\\right]\\sin\\delta + \\left[\\frac{V^2}{2}\\left(\\frac{1}{X_q} - \\frac{1}{X_d}\\right)\\right]\\sin(2\\delta)$, what is the origin of the second term?",
             "options": [
                 "Reluctance power due to rotor magnetic saliency",
                 "Electromagnetic excitation power developed directly by the DC rotor field flux",
@@ -6337,10 +6337,10 @@ var SUBJECT_DATA = {  basic_electronics: {
         {
             "question": "What is the relationship between the three transient reactances of a synchronous machine following a sudden fault?",
             "options": [
-                "Xd'' < Xd' < Xd",
-                "Xd < Xd' < Xd''",
-                "Xd' < Xd'' < Xd",
-                "Xd'' = Xd' = Xd"
+                "$X_d'' < X_d' < X_d$",
+                "$X_d < X_d' < X_d''$",
+                "$X_d' < X_d'' < X_d$",
+                "$X_d'' = X_d' = X_d$"
             ],
             "answer": 0,
             "explanation": "• Why 'Xd'' < Xd' < Xd (Subtransient < Transient < Synchronous)' is Correct: Immediately after a short circuit, trapped flux linkages in both damper bars and field windings restrict flux movement, presenting minimum reactance Xd'' (highest current). After damper currents decay, Xd' acts, and finally steady-state Xd takes over.\n• Why Other Choices are Incorrect: Fault current decreases over time as reactance transitions from Xd'' to Xd' to Xd.",
@@ -6361,10 +6361,10 @@ var SUBJECT_DATA = {  basic_electronics: {
         {
             "question": "In a cylindrical rotor alternator neglecting armature resistance, at what load angle δ does maximum power output occur?",
             "options": [
-                "δ = 90 electrical degrees",
-                "δ = 0 electrical degrees",
-                "δ = 45 electrical degrees",
-                "δ = 180 electrical degrees"
+                "$\\delta = 90^\\circ$ electrical degrees",
+                "$\\delta = 0^\\circ$ electrical degrees",
+                "$\\delta = 45^\\circ$ electrical degrees",
+                "$\\delta = 180^\\circ$ electrical degrees"
             ],
             "answer": 0,
             "explanation": "• Why 'δ = 90 electrical degrees' is Correct: Neglecting Ra, P = (EV/Xs)*sin(δ). The function sin(δ) reaches its mathematical peak of 1.0 at δ = 90°. Beyond 90°, power decreases, representing the steady-state stability limit.\n• Why Other Choices are Incorrect: In salient-pole machines, maximum power occurs at δ < 90° (typically around 60° to 75°) due to the reluctance power sin(2δ) component.",
@@ -6443,12 +6443,12 @@ var SUBJECT_DATA = {  basic_electronics: {
             "id": 39
         },
         {
-            "question": "What is the relationship between electrical degrees (θ_e) and mechanical degrees (θ_m) in a synchronous machine with P poles?",
+            "question": "What is the relationship between electrical degrees ($\\theta_e$) and mechanical degrees ($\\theta_m$) in a synchronous machine with $P$ poles?",
             "options": [
-                "θ_e = (P / 2) * θ_m",
-                "θ_e = (2 / P) * θ_m",
-                "θ_e = P * θ_m",
-                "θ_e = θ_m / (2 * P)"
+                "$\\theta_e = \\left(\\frac{P}{2}\\right) \\theta_m$",
+                "$\\theta_e = \\left(\\frac{2}{P}\\right) \\theta_m$",
+                "$\\theta_e = P \\cdot \\theta_m$",
+                "$\\theta_e = \\frac{\\theta_m}{2P}$"
             ],
             "answer": 0,
             "explanation": "• Why 'θ_e = (P / 2) * θ_m' is Correct: Passing one pair of magnetic poles (North and South) constitutes 360 electrical degrees (one complete AC cycle). Since there are P/2 pole pairs in 360 mechanical degrees of rotation, θ_e = (P / 2) * θ_m.\n• Why Other Choices are Incorrect: For a 2-pole machine (P = 2), electrical degrees equal mechanical degrees; for P > 2, electrical degrees always exceed mechanical degrees.",
@@ -6779,7 +6779,7 @@ var SUBJECT_DATA = {  basic_electronics: {
             "id": 67
         },
         {
-            "question": "[IDENTIFICATION] What is the term for an AC machine that converts electrical power into mechanical power and runs strictly at constant synchronous speed Ns = 120f/P?",
+            "question": "[IDENTIFICATION] What is the term for an AC machine that converts electrical power into mechanical power and runs strictly at constant synchronous speed $N_s = \\frac{120f}{P}$?",
             "options": [
                 "Synchronous motor",
                 "Asynchronous induction motor",
@@ -6979,7 +6979,7 @@ var SUBJECT_DATA = {  basic_electronics: {
                 "Armature current drops to zero and the motor operates as an open-circuit voltage source"
             ],
             "answer": 0,
-            "explanation": "• Why 'Current first decreases to minimum at unity pf, then increases with leading pf' is Correct: This describes the V-curve: beginning under-excited (lagging pf, high current), increasing excitation improves pf toward 1.0 (minimum current), and further excitation pushes the motor into over-excited leading pf (increasing current).\n• Why Other Choices are Incorrect: Synchronous motor speed is fixed at Ns = 120f/P regardless of excitation.",
+            "explanation": "• Why 'Current first decreases to minimum at unity pf, then increases with leading pf' is Correct: This describes the V-curve: beginning under-excited (lagging pf, high current), increasing excitation improves pf toward 1.0 (minimum current), and further excitation pushes the motor into over-excited leading pf (increasing current).\n• Why Other Choices are Incorrect: Synchronous motor speed is fixed at $N_s = \\frac{120f}{P}$ regardless of excitation.",
             "id": 84
         },
         {
@@ -7033,10 +7033,10 @@ var SUBJECT_DATA = {  basic_electronics: {
         {
             "question": "In the equivalent circuit and phasor diagram of a synchronous motor, how is excitation EMF E related to supply voltage V and armature drop I*Zs?",
             "options": [
-                "V = E + I*Zs",
-                "E = V + I*Zs",
-                "V = E * I*Zs",
-                "E = V / (I*Zs)"
+                "$V = E + I \\cdot Z_s$",
+                "$E = V + I \\cdot Z_s$",
+                "$V = E \\cdot (I \\cdot Z_s)$",
+                "$E = \\frac{V}{I \\cdot Z_s}$"
             ],
             "answer": 0,
             "explanation": "• Why 'V = E + I*Zs' is Correct: In a motor, electrical power is supplied at terminal voltage V. V must overcome internal back EMF E and internal impedance drop I*Zs. Thus, V = E + I*Zs.\n• Why Other Choices are Incorrect: In an alternator (generator), generated EMF E exceeds terminal voltage: E = V + I*Zs.",
