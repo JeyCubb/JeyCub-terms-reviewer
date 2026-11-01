@@ -401,8 +401,12 @@ function getFilteredPracticeQuestions() {
     });
     // Stably sort by question ID so questions never jump or bump around when a mistake is made!
     return pool.sort((a, b) => a.id - b.id);
+  } else if (state.practiceFilter === 'semiconductors_diodes') {
+    return allQs.filter(q => q.id >= 1 && q.id <= 116);
   } else if (state.practiceFilter === 'prelim_exam') {
     return allQs.filter(q => q.id >= 117 && q.id <= 136);
+  } else if (state.practiceFilter === 'bjt_fundamentals') {
+    return allQs.filter(q => (q.id >= 137 && q.id <= 236) || (q.id >= 294 && q.id <= 296) || (q.id >= 337 && q.id <= 346));
   } else if (state.practiceFilter === 'seatwork2_bjt') {
     return allQs.filter(q => q.id >= 287 && q.id <= 293);
   } else if (state.practiceFilter === 'bjt_dc_bias') {
@@ -694,7 +698,9 @@ function triggerOptionSelection(displayedIdx) {
 
 const SUBJECT_FILTERS = {
   basic_electronics: [
+    { value: 'semiconductors_diodes', id: 'opt-filter-semi-diodes', label: '🔬 Semiconductors & Diodes (Q1–Q116)' },
     { value: 'prelim_exam', id: 'opt-filter-prelim', label: '📝 TIP Prelim Exam (Q117–Q136)' },
+    { value: 'bjt_fundamentals', id: 'opt-filter-bjt-fund', label: '💡 BJT Principles & Configs (Q137–Q236)' },
     { value: 'seatwork2_bjt', id: 'opt-filter-seatwork2', label: '📝 Canvas Midterm Seatwork 2: BJT (Q287–Q293)' },
     { value: 'bjt_dc_bias', id: 'opt-filter-bjt-dc', label: '⚡ BJT DC Biasing (Q237–Q286 & Q347–Q376)' },
     { value: 'bjt_ac_analysis', id: 'opt-filter-bjt-ac', label: '📶 BJT AC Analysis & re Modeling (Q297–Q336 & Q377–Q386)' }
