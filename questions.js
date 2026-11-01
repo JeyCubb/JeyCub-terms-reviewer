@@ -1423,7 +1423,7 @@ var SUBJECT_DATA = {  basic_electronics: {
 
       {
             "id": 117,
-            "question": "1. Statement: Germanium diodes begin conducting at a higher forward voltage threshold than Silicon diodes.",
+            "question": "Statement: Germanium diodes begin conducting at a higher forward voltage threshold than Silicon diodes.",
             "options": [
                   "a. True, because Germanium has a wider bandgap energy than Silicon.",
                   "b. True, because Germanium exhibits lower thermal stability under direct current bias.",
@@ -1435,7 +1435,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 118,
-            "question": "2. Statement: Doping a semiconductor with trivalent impurities produces donor atoms that increase the concentration of free electrons.",
+            "question": "Statement: Doping a semiconductor with trivalent impurities produces donor atoms that increase the concentration of free electrons.",
             "options": [
                   "a. True, because trivalent atoms donate three extra electrons to the crystal lattice.",
                   "b. True, because trivalent impurities increase total negative charge density.",
@@ -1447,7 +1447,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 119,
-            "question": "3. Statement: In the First Approximation (Ideal Diode Model), a forward-biased diode is treated as a closed switch with zero voltage drop.",
+            "question": "Statement: In the First Approximation (Ideal Diode Model), a forward-biased diode is treated as a closed switch with zero voltage drop.",
             "options": [
                   "a. True, because the ideal model neglects the barrier potential and internal forward resistance.",
                   "b. True, because ideal diodes convert all applied forward voltage directly into heat energy.",
@@ -1459,7 +1459,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 120,
-            "question": "4. Statement: A reverse-biased practical diode permits zero electrical current to pass through its PN junction under all operational conditions.",
+            "question": "Statement: A reverse-biased practical diode permits zero electrical current to pass through its PN junction under all operational conditions.",
             "options": [
                   "a. True, because the depletion region forms an absolute physical barrier to charge flow.",
                   "b. True, because minority charge carriers cannot exist in P-type or N-type materials.",
@@ -1471,7 +1471,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 121,
-            "question": "5. Statement: The Second Approximation of a diode models the device as an ideal switch in series with a DC voltage source equal to its barrier potential.",
+            "question": "Statement: The Second Approximation of a diode models the device as an ideal switch in series with a DC voltage source equal to its barrier potential.",
             "options": [
                   "a. True, because it accounts for the threshold knee voltage required to initiate forward conduction while ignoring bulk resistance.",
                   "b. True, because it includes the internal forward resistance alongside the junction capacitance.",
@@ -1483,7 +1483,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 122,
-            "question": "6. Statement: The Third Approximation of a diode is also referred to as the Piecewise Linear Model.",
+            "question": "Statement: The Third Approximation of a diode is also referred to as the Piecewise Linear Model.",
             "options": [
                   "a. True, because it combines the barrier voltage with the internal forward resistance of the semiconductor.",
                   "b. True, because it treats the diode as a variable AC voltage generator under steady-state DC conditions.",
@@ -1495,7 +1495,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 123,
-            "question": "7. Statement: GaAs is a single-crystal elemental semiconductor like Silicon and Germanium.",
+            "question": "Statement: GaAs is a single-crystal elemental semiconductor like Silicon and Germanium.",
             "options": [
                   "a. True, because GaAs is composed of a single element from Group IV of the periodic table.",
                   "b. True, because GaAs possess identical electronic properties to pure Silicon crystals.",
@@ -1507,7 +1507,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 124,
-            "question": "8. Statement: Applying a forward bias to a PN junction diode lowers the internal potential barrier across the depletion region.",
+            "question": "Statement: Applying a forward bias to a PN junction diode lowers the internal potential barrier across the depletion region.",
             "options": [
                   "a. True, because the external voltage opposes the built-in electric field, narrowing the depletion region.",
                   "b. True, because the external voltage forces minority carriers to widen the depletion region.",
@@ -1519,7 +1519,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 125,
-            "question": "9. Statement: Increasing the temperature of a semiconductor material increases its electrical resistance.",
+            "question": "Statement: Increasing the temperature of a semiconductor material increases its electrical resistance.",
             "options": [
                   "a. True, because thermal vibration impairs covalent bonding, reducing the number of charge carriers.",
                   "b. True, because semiconductors have a positive temperature coefficient of resistance like copper.",
@@ -1531,7 +1531,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 126,
-            "question": "10. Statement: Under zero bias conditions, an electrical current flows spontaneously through an isolated PN junction diode due to concentration gradients.",
+            "question": "Statement: Under zero bias conditions, an electrical current flows spontaneously through an isolated PN junction diode due to concentration gradients.",
             "options": [
                   "a. True, because diffusion of majority carriers creates a continuous closed-loop direct current.",
                   "b. True, because the built-in voltage acts as an internal DC power supply.",
@@ -1543,7 +1543,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 127,
-            "question": "11. (Problem) A Silicon diode is connected in a simple series circuit with a 1.2 k\u03a9 load resistor and a DC source V_S = 12 V. Using the Second Approximation, calculate the total circuit current I_D in milliamperes (mA).",
+            "question": "(Problem) A Silicon diode is connected in a simple series circuit with a 1.2 k\u03a9 load resistor and a DC source V_S = 12 V. Using the Second Approximation, calculate the total circuit current I_D in milliamperes (mA).",
             "options": [
                   "a. 9.4167 mA",
                   "b. 10.0 mA",
@@ -1555,7 +1555,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 128,
-            "question": "12. (Problem) For the same series circuit described in Item 11 (V_S = 12 V, Silicon diode V_D = 0.7 V, R_L = 1.2 k\u03a9, I_D = 9.4167 mA), calculate the power dissipated by the Silicon diode (P_D) in milliwatts (mW) using the Second Approximation.",
+            "question": "(Problem) For the same series circuit described in Item 11 (V_S = 12 V, Silicon diode V_D = 0.7 V, R_L = 1.2 k\u03a9, I_D = 9.4167 mA), calculate the power dissipated by the Silicon diode (P_D) in milliwatts (mW) using the Second Approximation.",
             "options": [
                   "a. 7.1 mW",
                   "b. 6.5917 mW",
@@ -1567,7 +1567,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 129,
-            "question": "13. (Problem) A Germanium diode exhibits an internal forward resistance r_f = 15 \u03a9. It is connected in series with a load resistor R_L = 470 \u03a9 and a 9 V DC supply. Using the Third Approximation, calculate the total current in milliamperes (mA).",
+            "question": "(Problem) A Germanium diode exhibits an internal forward resistance r_f = 15 \u03a9. It is connected in series with a load resistor R_L = 470 \u03a9 and a 9 V DC supply. Using the Third Approximation, calculate the total current in milliamperes (mA).",
             "options": [
                   "a. 18.5106 mA",
                   "b. 17.9381 mA",
@@ -1579,7 +1579,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 130,
-            "question": "14. (Problem) Using the parameters and results from Item 13 (V_S = 9 V, Germanium V_D = 0.3 V, r_f = 15 \u03a9, R_L = 470 \u03a9, I = 17.9381 mA), calculate the actual terminal voltage drop across the Germanium diode in volts using the Third Approximation.",
+            "question": "(Problem) Using the parameters and results from Item 13 (V_S = 9 V, Germanium V_D = 0.3 V, r_f = 15 \u03a9, R_L = 470 \u03a9, I = 17.9381 mA), calculate the actual terminal voltage drop across the Germanium diode in volts using the Third Approximation.",
             "options": [
                   "a. 0.3 V",
                   "b. 0.5691 V",
@@ -1591,7 +1591,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 131,
-            "question": "15. (Problem) A Gallium Arsenide (GaAs) diode (V_F = 1.2 V) is connected across a 15 V DC source in series with a 2.2 k\u03a9 resistor. Using the Second Approximation, determine the voltage across the load resistor V_L in volts (V).",
+            "question": "(Problem) A Gallium Arsenide (GaAs) diode (V_F = 1.2 V) is connected across a 15 V DC source in series with a 2.2 k\u03a9 resistor. Using the Second Approximation, determine the voltage across the load resistor V_L in volts (V).",
             "options": [
                   "a. 15 V",
                   "b. 13.8 V",
@@ -1603,7 +1603,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 132,
-            "question": "16. (Problem) Two identical Silicon diodes are connected in series with a 680 \u03a9 load resistor and a 10 V DC voltage supply. Using the Second Approximation, calculate the total circuit current in milliamperes (mA).",
+            "question": "(Problem) Two identical Silicon diodes are connected in series with a 680 \u03a9 load resistor and a 10 V DC voltage supply. Using the Second Approximation, calculate the total circuit current in milliamperes (mA).",
             "options": [
                   "a. 13.6765 mA",
                   "b. 12.6471 mA",
@@ -1615,7 +1615,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 133,
-            "question": "17. (Problem) For a series circuit with a 10 V DC source and a single Silicon diode (V_D = 0.7 V) connected across a 330 \u03a9 load resistor, calculate the load voltage V_L across the 330 \u03a9 resistor in volts (V).",
+            "question": "(Problem) For a series circuit with a 10 V DC source and a single Silicon diode (V_D = 0.7 V) connected across a 330 \u03a9 load resistor, calculate the load voltage V_L across the 330 \u03a9 resistor in volts (V).",
             "options": [
                   "a. 9.3 V",
                   "b. 4.3 V",
@@ -1627,7 +1627,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 134,
-            "question": "18. (Problem) Two Silicon diodes are connected in parallel with each other in the forward direction. This parallel branch is placed in series with a 330 \u03a9 resistor and a 5 V DC supply. Assuming equal current sharing, calculate the current through each individual diode in milliamperes (mA) using the Second Approximation.",
+            "question": "(Problem) Two Silicon diodes are connected in parallel with each other in the forward direction. This parallel branch is placed in series with a 330 \u03a9 resistor and a 5 V DC supply. Assuming equal current sharing, calculate the current through each individual diode in milliamperes (mA) using the Second Approximation.",
             "options": [
                   "a. 13.0303 mA",
                   "b. 6.5152 mA",
@@ -1639,7 +1639,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 135,
-            "question": "19. (Problem) An ideal Silicon diode is connected in reverse bias across a 24 V DC supply in series with a 1 k\u03a9 resistor. Calculate the terminal voltage across the reverse-biased diode V_D in volts (V).",
+            "question": "(Problem) An ideal Silicon diode is connected in reverse bias across a 24 V DC supply in series with a 1 k\u03a9 resistor. Calculate the terminal voltage across the reverse-biased diode V_D in volts (V).",
             "options": [
                   "a. 0 V",
                   "b. 24 V",
@@ -1651,7 +1651,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       },
       {
             "id": 136,
-            "question": "20. (Problem) A Silicon diode and a Germanium diode are connected in parallel (facing the same forward conduction path) in series with a 1.5 k\u03a9 load resistor and a 12 V DC source. Using the Second Approximation, determine the total current drawn from the supply in milliamperes (mA).",
+            "question": "(Problem) A Silicon diode and a Germanium diode are connected in parallel (facing the same forward conduction path) in series with a 1.5 k\u03a9 load resistor and a 12 V DC source. Using the Second Approximation, determine the total current drawn from the supply in milliamperes (mA).",
             "options": [
                   "a. 7.5333 mA",
                   "b. 7.8000 mA",
