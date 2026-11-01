@@ -443,6 +443,14 @@ function getFilteredPracticeQuestions() {
     return allQs.filter(q => q.id >= 259 && q.id <= 276);
   } else if (state.practiceFilter === 'ht_mod_hx') {
     return allQs.filter(q => q.id >= 277 && q.id <= 310);
+  } else if (state.practiceFilter === 'ac_gen') {
+    return allQs.filter(q => q.id >= 1 && q.id <= 49);
+  } else if (state.practiceFilter === 'ac_parallel') {
+    return allQs.filter(q => q.id >= 50 && q.id <= 68);
+  } else if (state.practiceFilter === 'ac_motor') {
+    return allQs.filter(q => q.id >= 69 && q.id <= 92);
+  } else if (state.practiceFilter === 'ac_induction') {
+    return allQs.filter(q => q.id >= 93 && q.id <= 110);
   }
   return allQs;
 }
@@ -725,6 +733,12 @@ const SUBJECT_FILTERS = {
     { value: 'ht_assignment_conv', id: 'opt-filter-ht-assign-conv', label: '📝 Assignment: Convection & Lagging (Q249–Q258)' },
     { value: 'ht_mod4_rad', id: 'opt-filter-ht-mod4-rad', label: '☀️ Module 4.1: Radiation & Sample Problems (Q259–Q276)' },
     { value: 'ht_mod_hx', id: 'opt-filter-ht-mod-hx', label: '🔄 Module 13: Heat Exchangers, Flow Types, U-Value & LMTD (Q277–Q310)' }
+  ],
+  ac_dc_machinery: [
+    { value: 'ac_gen', id: 'opt-filter-ac-gen', label: '⚡ Synchronous Generators (Alternators) (Q1–Q49)' },
+    { value: 'ac_parallel', id: 'opt-filter-ac-parallel', label: '🔄 Parallel Operation & Synchronizing (Q50–Q68)' },
+    { value: 'ac_motor', id: 'opt-filter-ac-motor', label: '🏎️ Synchronous Motors & V-Curves (Q69–Q92)' },
+    { value: 'ac_induction', id: 'opt-filter-ac-induction', label: '🌀 Three-Phase Induction Motors (Q93–Q110)' }
   ]
 };
 
