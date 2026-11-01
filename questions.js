@@ -6443,15 +6443,15 @@ var SUBJECT_DATA = {  basic_electronics: {
             "id": 39
         },
         {
-            "question": "What is the relationship between the number of poles (P), rotational speed (N in rpm), and electrical frequency (f in Hz)?",
+            "question": "What is the relationship between electrical degrees (θ_e) and mechanical degrees (θ_m) in a synchronous machine with P poles?",
             "options": [
-                "f = P * N / 120",
-                "f = 120 * N / P",
-                "f = P * N / 60",
-                "f = 60 * P / N"
+                "θ_e = (P / 2) * θ_m",
+                "θ_e = (2 / P) * θ_m",
+                "θ_e = P * θ_m",
+                "θ_e = θ_m / (2 * P)"
             ],
             "answer": 0,
-            "explanation": "• Why 'f = P * N / 120' is Correct: One cycle of AC EMF is generated per revolution for every pair of poles (P/2). In N/60 revolutions per second, total cycles per second is f = (P/2) * (N/60) = P*N / 120.\n• Why Other Choices are Incorrect: At 60 Hz, a 4-pole machine runs at N = 120*60/4 = 1800 rpm; at 50 Hz, it runs at 1500 rpm.",
+            "explanation": "• Why 'θ_e = (P / 2) * θ_m' is Correct: Passing one pair of magnetic poles (North and South) constitutes 360 electrical degrees (one complete AC cycle). Since there are P/2 pole pairs in 360 mechanical degrees of rotation, θ_e = (P / 2) * θ_m.\n• Why Other Choices are Incorrect: For a 2-pole machine (P = 2), electrical degrees equal mechanical degrees; for P > 2, electrical degrees always exceed mechanical degrees.",
             "id": 40
         },
         {

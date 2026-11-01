@@ -4691,3 +4691,18 @@ math-field::part(placeholder-focused) {
     box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
   }
 }
+
+
+/* Clean proportional mathematical subscripts and superscripts */
+sub {
+  font-size: 0.78em;
+  line-height: 0;
+  vertical-align: -0.25em;
+  font-family: inherit;
+}
+sup {
+  font-size: 0.78em;
+  line-height: 0;
+  vertical-align: 0.4em;
+  font-family: inherit;
+}

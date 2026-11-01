@@ -2275,7 +2275,7 @@ function renderCurrentPracticeQuestion() {
   }
 
   // Question Text
-  if (qText) qText.textContent = `Problem #${q.id}: ${q.question || ''}`;
+  if (qText) qText.innerHTML = formatMathTypography(escapeHTML(`Problem #${q.id}: ${q.question || ''}`));
 
   // Question Image (Diagram)
   const imgContainer = document.getElementById('q-image-container');
@@ -2322,28 +2322,28 @@ function renderCurrentPracticeQuestion() {
             btn.classList.add('selected-correct');
             btn.innerHTML = `
               <span class="option-letter"><i class="fa-solid fa-check"></i></span>
-              <span class="option-text">${escapeHTML(optText)}</span>
+              <span class="option-text">${formatMathTypography(escapeHTML(optText))}</span>
               <span class="opt-badge-tag correct-tag"><i class="fa-solid fa-circle-check"></i> Correct</span>
             `;
           } else if (origIdx === chosenIndex) {
             btn.classList.add('selected-incorrect');
             btn.innerHTML = `
               <span class="option-letter"><i class="fa-solid fa-xmark"></i></span>
-              <span class="option-text">${escapeHTML(optText)}</span>
+              <span class="option-text">${formatMathTypography(escapeHTML(optText))}</span>
               <span class="opt-badge-tag incorrect-tag"><i class="fa-solid fa-circle-xmark"></i> Your Choice</span>
             `;
           } else {
             btn.classList.add('other-incorrect');
             btn.innerHTML = `
               <span class="option-letter">${letter}</span>
-              <span class="option-text">${escapeHTML(optText)}</span>
+              <span class="option-text">${formatMathTypography(escapeHTML(optText))}</span>
               <span class="opt-badge-tag dimmed-tag">Incorrect</span>
             `;
           }
         } else {
           btn.innerHTML = `
             <span class="option-letter">${letter}</span>
-            <span class="option-text">${escapeHTML(optText)}</span>
+            <span class="option-text">${formatMathTypography(escapeHTML(optText))}</span>
           `;
         }
 
@@ -2367,7 +2367,7 @@ function renderCurrentPracticeQuestion() {
     }
 
     if (expText) {
-      expText.innerHTML = getAmbiguousHint(q, showFullSolution);
+      expText.innerHTML = formatMathTypography(getAmbiguousHint(q, showFullSolution));
     }
   }
 
@@ -2464,7 +2464,7 @@ function revealCurrentSolution() {
   }
   const expText = document.getElementById('q-explanation-text');
   if (expText) {
-    expText.innerHTML = getAmbiguousHint(q, true);
+    expText.innerHTML = formatMathTypography(getAmbiguousHint(q, true));
   }
 }
 
@@ -2842,7 +2842,7 @@ function filterAllQuestions() {
     if (q.options && Array.isArray(q.options)) {
       q.options.forEach((opt, idx) => {
         const isCorrectOpt = idx === q.answer;
-        optionsHtml += `<div class="item-opt ${isCorrectOpt ? 'correct-opt' : ''}">${String.fromCharCode(65 + idx)}. ${escapeHTML(opt)}</div>`;
+        optionsHtml += `<div class="item-opt ${isCorrectOpt ? 'correct-opt' : ''}">${String.fromCharCode(65 + idx)}. ${formatMathTypography(escapeHTML(opt))}</div>`;
       });
     }
 
@@ -2854,12 +2854,12 @@ function filterAllQuestions() {
           ${isBookmarked ? '<span style="color: var(--color-warning); font-size: 0.8rem; font-weight: 700; background: var(--color-warning-bg); padding: 2px 8px; border-radius: var(--radius-sm);"><i class="fa-solid fa-star"></i> Class Bookmarked</span>' : ''}
         </div>
       </div>
-      <div class="item-q-text">${escapeHTML(q.question || '')}</div>
+      <div class="item-q-text">${formatMathTypography(escapeHTML(q.question || ''))}</div>
       ${q.image ? `<div class="question-image-container"><img src="${escapeHTML(q.image)}" alt="Quiz Diagram" class="quiz-question-img"></div>` : ''}
       <div class="item-options">${optionsHtml}</div>
       <div class="explanation-box" style="margin: 0; padding: 0.85rem;">
         <div class="explanation-header"><i class="fa-solid fa-lightbulb"></i> Hint & Concept:</div>
-        <div class="explanation-text">${escapeHTML(q.explanation || 'Standard engineering principle.').replace(/\n/g, '<br>')}</div>
+        <div class="explanation-text">${formatMathTypography(escapeHTML(q.explanation || 'Standard engineering principle.').replace(/\n/g, '<br>'))}</div>
       </div>
     `;
 
@@ -2918,6 +2918,33 @@ function escapeHTML(str) {
   );
 }
 
+function formatMathTypography(str) {
+  if (str === null || str === undefined) return '';
+  let s = String(str);
+
+  // 1. Scientific notation and carets: 10^-3 -> 10<sup>-3</sup>, 10^6 -> 10<sup>6</sup>
+  s = s.replace(/(\b10)\^(-?\d+)/g, '$1<sup>$2</sup>');
+
+  // 2. Inverse trigonometric functions: tan^-1, sin^-1, cos^-1
+  s = s.replace(/\b(sin|cos|tan|cot|sec|csc)\^(-1|-1)\b/g, '$1<sup>-1</sup>');
+
+  // 3. Units and variables with exponents: m^2 -> m<sup>2</sup>, cm^3 -> cm<sup>3</sup>, ft^2, (Ri)^2
+  s = s.replace(/([a-zA-Z\)])\^([+-]?\d+)/g, '$1<sup>$2</sup>');
+
+  // 4. Electrical and mechanical theta angles: θ_e -> θ<sub>e</sub>, θ_m -> θ<sub>m</sub>
+  s = s.replace(/\bθ_e\b/g, 'θ<sub>e</sub>');
+  s = s.replace(/\bθ_m\b/g, 'θ<sub>m</sub>');
+
+  // 5. Variables with subscripts: e.g. V_CE, I_B, I_C, R_1, T_2, E_ph, etc.
+  // 1-3 letters / Greek symbols followed by underscore and 1-4 alphanumeric chars
+  s = s.replace(/\b([A-Za-z\u0370-\u03ff]{1,3})_([A-Za-z0-9]{1,4})\b/g, '$1<sub>$2</sub>');
+
+  // 6. Multiplication asterisk between spaces -> middle dot: " * " -> " · "
+  s = s.replace(/(\s)\*(\s)/g, '$1·$2');
+
+  return s;
+}
+
 /* ==========================================================================
    Printable PDF Export - 2 Columns, 0.05" Margins, Simple Heading, Multiple Choice, Randomized
    ========================================================================== */
@@ -2944,13 +2971,13 @@ function downloadSubjectPdf() {
     if (q.options && q.options.length > 0) {
       optionsHtml = q.options.map((opt, oIdx) => {
         const letter = optionLetters[oIdx] || String.fromCharCode(65 + oIdx);
-        return `<div class="pdf-opt"><span class="pdf-opt-label">${letter}.</span> <span class="pdf-opt-text">${escapeHTML(opt)}</span></div>`;
+        return `<div class="pdf-opt"><span class="pdf-opt-label">${letter}.</span> <span class="pdf-opt-text">${formatMathTypography(escapeHTML(opt))}</span></div>`;
       }).join('');
     }
 
     questionsHtml += `
       <div class="pdf-q-item">
-        <div class="pdf-q-text"><strong>${idx + 1}.</strong> ${escapeHTML(q.question)}</div>
+        <div class="pdf-q-text"><strong>${idx + 1}.</strong> ${formatMathTypography(escapeHTML(q.question))}</div>
         <div class="pdf-q-options">${optionsHtml}</div>
       </div>
     `;
@@ -3161,6 +3188,8 @@ function prepareTextForSpeech(text) {
   s = s.replace(/<[^>]*>/g, ' ');
 
   // Symbols and Greek letters
+    s = s.replace(/θ[ₑe]|θ_e\b/g, 'theta electrical');
+  s = s.replace(/θ[ₘm]|θ_m\b/g, 'theta mechanical');
   s = s.replace(/σ_h\b/g, 'sigma h');
   s = s.replace(/σ_L\b/g, 'sigma L');
   s = s.replace(/σ\b/g, 'sigma');
