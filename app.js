@@ -653,7 +653,7 @@ function initKeyboardShortcuts() {
     } else if (e.key === '\\' || key === '\\' || code === 'backslash') {
       e.preventDefault();
       toggleBookmarkCurrent(true); // Pass true to trigger toast notification!
-    } else if (key === 'n' || code === 'keyn') {
+    } else if (key === 'm' || key === 'n' || code === 'keym' || code === 'keyn') {
       e.preventDefault();
       toggleNarration();
     } else if (e.key === 'ArrowRight' || code === 'arrowright') {
