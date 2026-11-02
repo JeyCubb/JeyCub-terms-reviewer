@@ -146,8 +146,7 @@
             <select id="practice-filter-select" onchange="changePracticeFilter(this.value)">
               <option value="all">📚 All Questions</option>
               <option value="weak">⚠️ Weak Questions</option>
-              <option value="bookmarked">⭐ Bookmarked</option>
-            </select>
+                          </select>
           </div>
 
           <!-- Random Toggle Button -->
@@ -155,10 +154,7 @@
             <i class="fa-solid fa-shuffle"></i> Random: OFF
           </button>
 
-          <!-- Bookmark Button -->
-          <button class="bookmark-btn" id="q-bookmark-btn" onclick="toggleBookmarkCurrent()" title="Bookmark question">
-            <i class="fa-regular fa-star" id="bookmark-icon"></i> Bookmark
-          </button>
+
         </div>
       </div>
     </section>
@@ -174,8 +170,7 @@
           <select id="filter-status-select" onchange="filterAllQuestions()">
             <option value="all">All Statuses</option>
             <option value="weak">⚠️ Class Weak Questions</option>
-            <option value="bookmarked">⭐ Bookmarked Only</option>
-            <option value="correct">✓ Correctly Answered</option>
+                        <option value="correct">✓ Correctly Answered</option>
             <option value="incorrect">✗ Incorrectly Answered</option>
           </select>
           <span class="search-count-label" id="search-count-badge">Showing questions</span>
@@ -518,6 +513,6 @@
 
   <script src="formulas.js?v=6.0"></script>
   <script src="questions.js?v=76.0"></script>
-  <script src="app.js?v=90.0"></script>
+  <script src="app.js?v=91.0"></script>
 </body>
 </html>

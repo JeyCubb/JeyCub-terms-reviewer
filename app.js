@@ -403,12 +403,7 @@ function getActiveSubjectInfo() {
 /* Returns practice questions filtered by shared class pools (All, Weak, Bookmarked) */
 function getFilteredPracticeQuestions() {
   const allQs = getActiveQuestions();
-  if (state.practiceFilter === 'bookmarked') {
-    return allQs.filter(q => {
-      const key = `${state.currentSubject}_q${q.id}`;
-      return state.bookmarks.has(key);
-    });
-  } else if (state.practiceFilter === 'weak') {
+  if (state.practiceFilter === 'weak') {
     const pool = allQs.filter(q => {
       const key = `${state.currentSubject}_q${q.id}`;
       return (state.groupMistakes[key] || 0) > 0;
@@ -485,7 +480,7 @@ function changePracticeFilter(filterVal) {
   if (select) select.blur();
 
   // Reset transient pool session answers so Weak and Bookmarked pools present questions fresh & unanswered
-  if (filterVal === 'weak' || filterVal === 'bookmarked') {
+  if (filterVal === 'weak') {
     state.sessionPoolAnswers = {};
   }
 
@@ -793,7 +788,7 @@ function updateSubjectUI() {
   const filterSelect = document.getElementById('practice-filter-select');
   if (filterSelect) {
     const subjectOpts = SUBJECT_FILTERS[state.currentSubject] || [];
-    const validValues = ['all', 'weak', 'bookmarked', ...subjectOpts.map(o => o.value)];
+    const validValues = ['all', 'weak', ...subjectOpts.map(o => o.value)];
 
     // Reset filter to 'all' if active filter does not belong to the newly selected subject
     if (!validValues.includes(state.practiceFilter)) {
@@ -2376,17 +2371,7 @@ function renderCurrentPracticeQuestion() {
   const totNum = document.getElementById('q-total-num');
   if (totNum) totNum.textContent = questions.length;
 
-  // Bookmark Status
-  const bookmarkBtn = document.getElementById('q-bookmark-btn');
-  if (bookmarkBtn) {
-    if (state.bookmarks.has(key)) {
-      bookmarkBtn.classList.add('active');
-      bookmarkBtn.innerHTML = `<i class="fa-solid fa-star" id="bookmark-icon"></i> Bookmarked`;
-    } else {
-      bookmarkBtn.classList.remove('active');
-      bookmarkBtn.innerHTML = `<i class="fa-regular fa-star" id="bookmark-icon"></i> Bookmark`;
-    }
-  }
+
 
   // Question Text
   if (qText) qText.innerHTML = formatMathTypography(escapeHTML(`${q.id}.) ${q.question || ''}`));
@@ -2968,7 +2953,7 @@ function filterAllQuestions() {
         <span class="item-num">${q.id}.)</span>
         <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
           ${mistakeCount > 0 ? `<span style="color: var(--color-error); font-size: 0.8rem; font-weight: 700; background: var(--color-error-bg); padding: 2px 8px; border-radius: var(--radius-sm);"><i class="fa-solid fa-triangle-exclamation"></i> ${mistakeCount} class ${mistakeCount === 1 ? 'mistake' : 'mistakes'}</span>` : ''}
-          ${isBookmarked ? '<span style="color: var(--color-warning); font-size: 0.8rem; font-weight: 700; background: var(--color-warning-bg); padding: 2px 8px; border-radius: var(--radius-sm);"><i class="fa-solid fa-star"></i> Class Bookmarked</span>' : ''}
+          
         </div>
       </div>
       <div class="item-q-text">${formatMathTypography(escapeHTML(q.question || ''))}</div>
