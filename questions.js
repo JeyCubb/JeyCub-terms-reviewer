@@ -5971,1307 +5971,743 @@ var SUBJECT_DATA = {  basic_electronics: {
     ]
   },
   ac_dc_machinery: {
-    "title": "AC/DC Machinery",
-    "chapter": "Final Exam Scope: Chapters 6 & 8 (Alternators & Synchronous Motors)",
-    "questions": [
-        {
-            "question": "[IDENTIFICATION] What is the term for an AC machine that converts mechanical power into electrical power and rotates only at synchronous speed $N_s = \\frac{120f}{P}$?",
-            "options": [
-                "Alternator",
-                "Induction motor",
-                "Rotary converter",
-                "Synchronous inverter"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Alternator' is Correct: A synchronous generator or alternator is an AC electro-mechanical machine that converts mechanical power to AC electrical power, operating strictly at synchronous speed $N_s = \\frac{120f}{P}$.\n• Why Other Choices are Incorrect: Induction machines operate with slip (N < Ns); rotary converters convert AC to DC.",
-            "id": 1
-        },
-        {
-            "question": "[IDENTIFICATION] What is the term for the projected rotor poles construction with large diameter and short axial length, coupled to low-speed hydraulic turbines?",
-            "options": [
-                "Salient-pole rotor",
-                "Cylindrical rotor",
-                "Squirrel-cage rotor",
-                "Solid-drum rotor"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Salient-pole rotor' is Correct: Salient-pole rotors feature projected magnetic poles bolted to a central cast-iron spider, suited for low to medium speeds (100–375 rpm) with large diameters to accommodate many poles.\n• Why Other Choices are Incorrect: Non-salient (cylindrical) rotors are unprojected, high-speed (1500–3000 rpm) rotors with long axial lengths and small diameters.",
-            "id": 2
-        },
-        {
-            "question": "[IDENTIFICATION] What is the term for the heavy, smooth solid-forged steel rotor construction with small diameter and long axial length used in high-speed steam turbo-alternators?",
-            "options": [
-                "Cylindrical rotor",
-                "Salient-pole spider rotor",
-                "Laminated wound rotor",
-                "Cast-iron segment rotor"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Cylindrical rotor' is Correct: Cylindrical (non-salient) rotors are solid steel forgings with milled slots for distributed field coils, designed to withstand intense centrifugal stresses at 1500 to 3000 rpm.\n• Why Other Choices are Incorrect: Salient poles cannot withstand the mechanical stresses of high-speed steam turbines.",
-            "id": 3
-        },
-        {
-            "question": "[IDENTIFICATION] What is the term for the short-circuited copper bars embedded in the pole shoes of a synchronous machine to suppress rotor oscillations?",
-            "options": [
-                "Damper winding",
-                "Compensating winding",
-                "Tertiary winding",
-                "Equalizer winding"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Damper winding' is Correct: Damper bars shorted at both ends by conducting rings develop induction currents that produce damping torque whenever the rotor hunts or oscillates about its synchronous equilibrium position.\n• Why Other Choices are Incorrect: Compensating windings neutralize DC armature reaction; equalizer rings balance armature paths in lap-wound DC machines.",
-            "id": 4
-        },
-        {
-            "question": "[IDENTIFICATION] What is the ratio of induced EMF in a chorded (short-pitched) coil to the induced EMF in a full-pitch coil, given by Kc = cos(β/2)?",
-            "options": [
-                "Pitch factor",
-                "Distribution factor",
-                "Form factor",
-                "Breadth factor"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Pitch factor' is Correct: Pitch factor Kc (or kp) = cos(β/2) accounts for the phasor addition of EMFs in the two sides of a coil that span less than 180° electrical by chording angle β.\n• Why Other Choices are Incorrect: Distribution factor accounts for coils being spread across multiple slots.",
-            "id": 5
-        },
-        {
-            "question": "[IDENTIFICATION] What is the ratio of the phasor sum of EMFs induced in distributed coils of a phase group to their arithmetic sum, given by Kd = sin(mα/2) / [m sin(α/2)]?",
-            "options": [
-                "Distribution factor",
-                "Coil span factor",
-                "Winding chording factor",
-                "Air-gap form factor"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Distribution factor' is Correct: Kd = sin(mα/2) / [m sin(α/2)] represents the reduction in fundamental voltage when coils are distributed in m slots per pole per phase separated by slot pitch α.\n• Why Other Choices are Incorrect: Total winding factor is the product Kw = Kc * Kd.",
-            "id": 6
-        },
-        {
-            "question": "[IDENTIFICATION] What is the term for the electromagnetic effect of armature current flux on the main rotor field flux in the air gap?",
-            "options": [
-                "Armature reaction",
-                "Leakage reactance",
-                "Skin effect",
-                "Ferranti effect"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Armature reaction' is Correct: Armature reaction is the reaction of the armature MMF on the main field MMF. Depending on load power factor, it cross-magnetizes, demagnetizes, or magnetizes the air gap flux.\n• Why Other Choices are Incorrect: Leakage reactance involves flux that links only the armature without crossing to the rotor.",
-            "id": 7
-        },
-        {
-            "question": "[IDENTIFICATION] What is the fictitious combined reactance equal to the sum of armature leakage reactance (XL) and armature reaction reactance (Xa)?",
-            "options": [
-                "Synchronous reactance",
-                "Potier leakage reactance",
-                "Direct-axis transient reactance",
-                "Negative sequence reactance"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Synchronous reactance' is Correct: Synchronous reactance Xs = XL + Xa combines physical leakage reactance XL and equivalent armature reaction drop Xa into a single fictitious lumped parameter.\n• Why Other Choices are Incorrect: Synchronous impedance is Zs = sqrt(Ra² + Xs²).",
-            "id": 8
-        },
-        {
-            "question": "[IDENTIFICATION] What is the percentage change in alternator terminal voltage when rated full-load is thrown off, with speed and field excitation held constant?",
-            "options": [
-                "Voltage regulation",
-                "Short-circuit ratio",
-                "Efficiency percentage",
-                "Speed regulation"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Voltage regulation' is Correct: Voltage regulation is defined as [(E0 - V) / V] * 100%, expressing the no-load terminal voltage rise relative to rated terminal voltage V.\n• Why Other Choices are Incorrect: Speed regulation measures speed droop from no-load to full load.",
-            "id": 9
-        },
-        {
-            "question": "[IDENTIFICATION] What is the ratio of field current required to produce rated open-circuit voltage to the field current required to circulate rated short-circuit armature current?",
-            "options": [
-                "Short-Circuit Ratio",
-                "Synchronous Impedance Ratio",
-                "Form Factor Ratio",
-                "Coil Pitch Ratio"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Short-Circuit Ratio' is Correct: SCR = If(open-circuit rated voltage) / If(short-circuit rated current) = 1 / Xs(pu). It is an essential figure of merit for machine stability and size.\n• Why Other Choices are Incorrect: High SCR indicates a stiffer machine with a larger air gap.",
-            "id": 10
-        },
-        {
-            "question": "[IDENTIFICATION] In Blondel's Two-Reaction Theory, what is the axis of magnetic symmetry aligned directly with the center of the rotor field poles?",
-            "options": [
-                "Direct axis",
-                "Quadrature axis",
-                "Neutral axis",
-                "Interpolar axis"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Direct axis' is Correct: The direct axis (d-axis) coincides with the centerline of the rotor field pole core, presenting minimum air gap reluctance in salient-pole machines.\n• Why Other Choices are Incorrect: The quadrature axis (q-axis) passes through the center of the interpolar space where the air gap is largest.",
-            "id": 11
-        },
-        {
-            "question": "[IDENTIFICATION] What is the experimental test used to measure the direct-axis reactance (Xd) and quadrature-axis reactance (Xq) of a salient-pole alternator?",
-            "options": [
-                "Slip test",
-                "Open-circuit test",
-                "Blocked-rotor test",
-                "Heat-run test"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Slip test' is Correct: In the slip test, low balanced 3-phase AC is applied to the stator while the unexcited rotor is driven mechanically at a tiny slip (s < 1%), yielding Xd = Vmax/Imin and Xq = Vmin/Imax.\n• Why Other Choices are Incorrect: Blocked-rotor test is used for induction motors; heat-run tests check temperature rise.",
-            "id": 12
-        },
-        {
-            "question": "[IDENTIFICATION] What is the geometric triangle constructed on the OCC and Zero Power Factor Characteristic (ZPFC) to separate leakage reactance from armature reaction MMF?",
-            "options": [
-                "Potier triangle",
-                "Blondel triangle",
-                "Steinmetz triangle",
-                "Kapp triangle"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Potier triangle' is Correct: The Potier triangle (triangle BFD) isolates the vertical leakage reactance voltage drop (DF = I*XL) and the horizontal armature reaction excitation (BF = Fa) on the saturation curve.\n• Why Other Choices are Incorrect: The Potier method is the zero-power-factor method of voltage regulation.",
-            "id": 13
-        },
-        {
-            "question": "[IDENTIFICATION] What is the effective reactance that limits the initial short-circuit current during the first one or two cycles of a sudden 3-phase alternator fault?",
-            "options": [
-                "Subtransient reactance",
-                "Direct-axis transient reactance",
-                "Steady-state synchronous reactance",
-                "Quadrature-axis reactance"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Direct-axis subtransient reactance (Xd'')' is Correct: During the initial subtransient period (0.01–0.05 s), damper bars and field windings maintain constant flux linkages, resulting in the smallest reactance Xd'' and largest initial fault current.\n• Why Other Choices are Incorrect: After damper currents decay, transient reactance Xd' takes over, followed finally by steady-state Xd.",
-            "id": 14
-        },
-        {
-            "question": "[IDENTIFICATION] What is the low-density, high-thermal-conductivity gas utilized in a closed circuit to cool large high-speed turbo-alternators?",
-            "options": [
-                "Hydrogen gas",
-                "Helium gas",
-                "Nitrogen gas",
-                "Sulfur hexafluoride"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Hydrogen gas' is Correct: Hydrogen has 7 times the thermal conductivity of air, 1/14th the density (reducing windage loss by 90%), and eliminates corona ozone formation, making it ideal for cooling large alternators.\n• Why Other Choices are Incorrect: Helium is too expensive; SF6 is used for arc interruption in switchgear.",
-            "id": 15
-        },
-        {
-            "question": "Why is the synchronous impedance (EMF) method of determining alternator regulation regarded as pessimistic?",
-            "options": [
-                "It predicts a higher regulation than actual value due to constant unsaturated Zs",
-                "It under-estimates saturation by assuming air-gap reluctance drops to zero under heavy reactive loads",
-                "It ignores armature reaction entirely and calculates regulation solely from stator resistance drops",
-                "It is mathematically derived for salient-pole rotors and fails completely on cylindrical machines"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'It predicts a higher regulation than actual value due to constant unsaturated Zs' is Correct: The EMF method takes synchronous impedance from the unsaturated region of the OCC. In normal loaded operation, saturation reduces Xs, so the EMF method overestimates voltage drop and regulation.\n• Why Other Choices are Incorrect: Methods that underestimate regulation are optimistic (e.g. MMF method).",
-            "id": 16
-        },
-        {
-            "question": "Why is the ampere-turn (MMF) method of determining alternator regulation called optimistic?",
-            "options": [
-                "It predicts a lower regulation than actual value by obtaining armature MMF from the unsaturated region",
-                "It predicts that terminal voltage drops to zero under all lagging loads due to severe core saturation",
-                "It completely ignores the DC field winding excitation required to generate rated no-load open-circuit voltage",
-                "It assumes that air-gap reluctance is infinite and magnetic flux leakage is totally eliminated"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'It predicts a lower regulation than actual value by obtaining armature MMF from the unsaturated region' is Correct: The MMF method combines leakage reactance with armature reaction on the short-circuit (unsaturated) test, underestimating the actual field current required on load and predicting lower regulation.\n• Why Other Choices are Incorrect: Synchronous impedance = pessimistic (higher); MMF = optimistic (lower); Potier = most accurate.",
-            "id": 17
-        },
-        {
-            "question": "What is the nature of armature reaction when a 3-phase alternator supplies a load at unity power factor?",
-            "options": [
-                "Purely cross-magnetizing",
-                "Purely demagnetizing, which severely reduces main flux",
-                "Purely magnetizing, which boosts terminal voltage",
-                "Completely zero, having no magnetic interaction whatsoever"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Purely cross-magnetizing' is Correct: At unity power factor, armature current is in phase with induced EMF, placing the armature MMF in space quadrature (90° electrical) with the main pole axis, causing cross-magnetization.\n• Why Other Choices are Incorrect: Pure demagnetization occurs at zero pf lagging; pure magnetization occurs at zero pf leading.",
-            "id": 18
-        },
-        {
-            "question": "What is the effect of armature reaction when an alternator supplies a load at zero power factor lagging?",
-            "options": [
-                "Purely demagnetizing",
-                "Purely magnetizing, which boosts terminal voltage",
-                "Purely cross-magnetizing, which distorts field flux",
-                "Completely zero, having no magnetic interaction whatsoever"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Purely demagnetizing' is Correct: When current lags induced EMF by 90°, the peak armature current occurs directly under the main field poles in opposite polarity, directly opposing and demagnetizing the main field flux.\n• Why Other Choices are Incorrect: This demagnetizing action causes a large voltage drop at lagging inductive loads.",
-            "id": 19
-        },
-        {
-            "question": "What is the effect of armature reaction when an alternator supplies a load at zero power factor leading?",
-            "options": [
-                "Purely magnetizing",
-                "Purely demagnetizing, which severely reduces main flux",
-                "Purely cross-magnetizing, which distorts field flux",
-                "Completely zero, having no magnetic interaction whatsoever"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Purely magnetizing' is Correct: Leading current reaches its peak 90° ahead in electrical time, establishing an armature MMF aligned in the same direction as the rotor field MMF, strengthening total flux.\n• Why Other Choices are Incorrect: This magnetizing effect causes terminal voltage on load to exceed no-load voltage.",
-            "id": 20
-        },
-        {
-            "question": "Under which load power factor condition can an alternator exhibit a negative voltage regulation?",
-            "options": [
-                "Leading power factor (capacitive load)",
-                "Lagging power factor (inductive load)",
-                "Unity power factor (purely resistive load)",
-                "Zero power factor lagging (pure inductor load)"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Leading power factor (capacitive load)' is Correct: Because armature reaction is magnetizing under leading power factor, terminal voltage on load (V) can exceed no-load voltage (E0). When load is removed, terminal voltage falls, resulting in (E0 - V) < 0.\n• Why Other Choices are Incorrect: Lagging and unity power factors always yield positive regulation (E0 > V).",
-            "id": 21
-        },
-        {
-            "question": "In a 3-phase star-connected alternator, which harmonic components are completely absent from the line-to-line terminal voltages?",
-            "options": [
-                "Triplen harmonics",
-                "Fundamental frequency power component",
-                "All odd space and time harmonics",
-                "Even symmetrical harmonic orders"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Triplen harmonics' is Correct: In a balanced 3-phase system, triplen harmonics in all three phases are identical in magnitude and in phase with each other. Taking the difference between line terminals (VL = VR - VY) causes them to cancel out completely.\n• Why Other Choices are Incorrect: 5th and 7th harmonics are not in phase with each other and appear in line voltages unless suppressed by chording.",
-            "id": 22
-        },
-        {
-            "question": "How can 5th and 7th space and time harmonics in the induced EMF waveform of an alternator be eliminated?",
-            "options": [
-                "By chording coils by 1/5th or 1/7th of pole pitch",
-                "By driving the rotor at double its synchronous rotational speed",
-                "By using concentrated single-layer full-pitch armature windings",
-                "By eliminating all laminations from the solid stator core structure"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'By chording coils by 1/5th or 1/7th of pole pitch' is Correct: The pitch factor for the n-th harmonic is Kcn = cos(n*β/2). Setting chording angle β = 180°/n makes Kcn = cos(90°) = 0, completely eliminating that harmonic.\n• Why Other Choices are Incorrect: Concentrated full-pitch windings contain the highest harmonic content.",
-            "id": 23
-        },
-        {
-            "question": "Why are alternators and transformers rated in kVA rather than in kW?",
-            "options": [
-                "Heating depends on copper and iron losses, which are independent of power factor",
-                "AC system loads operate strictly at unity power factor under all operating circumstances",
-                "Active power in kilowatts cannot be converted into heat within electrical machinery",
-                "Terminal voltage and armature current can never be measured simultaneously in alternating current circuits"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Heating depends on copper and iron losses, which are independent of power factor' is Correct: Machine ratings are set by the maximum safe temperature rise of insulation. Copper loss depends on current (I) and core loss depends on voltage (V); neither depends on load power factor cos φ.\n• Why Other Choices are Incorrect: Power-consuming loads are rated in kW, whereas supplying apparatus are rated in kVA.",
-            "id": 24
-        },
-        {
-            "question": "What is the primary advantage of chording (short-pitching) armature coils in an alternator?",
-            "options": [
-                "It saves copper in end-connections and suppresses harmonics",
-                "It increases the fundamental induced phase voltage significantly above the full-pitch value",
-                "It completely eliminates the requirement for DC rotor field excitation current",
-                "It prevents centrifugal mechanical unbalance in high-speed steam turbine rotors"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'It saves copper in end-connections and suppresses harmonics' is Correct: Short-pitch coils have shorter end-turns (saving copper) and significantly improve waveform sinusoidal quality by eliminating specific harmonics.\n• Why Other Choices are Incorrect: Chording slightly reduces fundamental voltage (Kc < 1), which is easily compensated by adding a few turns.",
-            "id": 25
-        },
-        {
-            "question": "Under steady-state balanced operation, what is the speed of the stator rotating magnetic field relative to the rotor?",
-            "options": [
-                "Zero (stationary relative to the rotor)",
-                "Synchronous speed Ns relative to the rotor",
-                "Double synchronous speed 2*Ns relative to the rotor",
-                "Slip speed (s * Ns) relative to the rotor"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Zero (stationary relative to the rotor)' is Correct: The stator RMF rotates at synchronous speed Ns in space, and the rotor also rotates at synchronous speed Ns in the same direction. Therefore, the relative speed between the stator field and rotor is zero.\n• Why Other Choices are Incorrect: If there were relative speed, alternating torques would cause hunting and loss of synchronism.",
-            "id": 26
-        },
-        {
-            "question": "What happens if unbalanced 3-phase currents flow through the stator armature of an alternator?",
-            "options": [
-                "A negative-sequence field creates double-frequency rotor currents, causing heating and vibration",
-                "The prime mover accelerates uncontrollably to double its rated synchronous speed limit",
-                "Stator core eddy current and hysteresis losses are completely eliminated across all three phases",
-                "The DC rotor excitation current reverses polarity and demagnetizes the exciter field"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'A negative-sequence field creates double-frequency rotor currents, causing heating and vibration' is Correct: Unbalanced currents resolve into positive and negative sequence components. The negative sequence field rotates in reverse at Ns, sweeping past the forward-rotating rotor at 2*Ns (double frequency, 100/120 Hz), inducing heavy eddy currents and vibrations.\n• Why Other Choices are Incorrect: Severe rotor overheating is the primary danger of unbalanced loading.",
-            "id": 27
-        },
-        {
-            "question": "In a salient-pole synchronous machine, how does quadrature-axis reactance Xq compare to direct-axis reactance Xd?",
-            "options": [
-                "$X_q < X_d$",
-                "$X_q > X_d$ due to reduced interpolar magnetic core reluctance",
-                "$X_q = X_d$ because magnetic symmetry is maintained around the rotor",
-                "$X_q = 0$ because quadrature flux is completely shielded by damper bars"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Xq < Xd' is Correct: Along the quadrature axis (interpolar space), the air gap is much larger than along the pole core (d-axis). Higher reluctance results in lower inductance and lower reactance: Xq < Xd.\n• Why Other Choices are Incorrect: Only in smooth cylindrical rotors is Xq = Xd.",
-            "id": 28
-        },
-        {
-            "question": "How are direct-axis reactance Xd and quadrature-axis reactance Xq calculated from slip test oscillograph readings?",
-            "options": [
-                "$X_d = \\frac{V_{\\max}}{I_{\\min}}$ and $X_q = \\frac{V_{\\min}}{I_{\\max}}$",
-                "$X_d = \\frac{V_{\\min}}{I_{\\max}}$ and $X_q = \\frac{V_{\\max}}{I_{\\min}}$",
-                "$X_d = \\frac{V_{\\max}}{I_{\\max}}$ and $X_q = \\frac{V_{\\min}}{I_{\\min}}$",
-                "$X_d = \\frac{V_{\\max} + V_{\\min}}{2}$ and $X_q = \\frac{I_{\\max} + I_{\\min}}{2}$"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Xd = Vmax / Imin and Xq = Vmin / Imax' is Correct: When the stator MMF aligns with the d-axis (minimum reluctance, maximum inductance), impedance is highest: voltage is maximum and current is minimum (Xd = Vmax/Imin). When aligned with the q-axis, impedance is lowest (Xq = Vmin/Imax).\n• Why Other Choices are Incorrect: Minimum current corresponds to maximum impedance.",
-            "id": 29
-        },
-        {
-            "question": "In the power output equation of a salient-pole alternator, $P = \\left[\\frac{EV}{X_d}\\right]\\sin\\delta + \\left[\\frac{V^2}{2}\\left(\\frac{1}{X_q} - \\frac{1}{X_d}\\right)\\right]\\sin(2\\delta)$, what is the origin of the second term?",
-            "options": [
-                "Reluctance power due to rotor magnetic saliency",
-                "Electromagnetic excitation power developed directly by the DC rotor field flux",
-                "Armature winding copper loss dissipated as heat in the stator slots",
-                "Friction and windage losses caused by high-speed rotor rotation in air"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Reluctance power due to rotor magnetic saliency' is Correct: The second term arises entirely from the difference in magnetic reluctance between the d-axis and q-axis. It is independent of field excitation E and vanishes in cylindrical machines where Xd = Xq.\n• Why Other Choices are Incorrect: The first term [EV/Xd]*sin(δ) is excitation power.",
-            "id": 30
-        },
-        {
-            "question": "What is the relationship between the three transient reactances of a synchronous machine following a sudden fault?",
-            "options": [
-                "$X_d'' < X_d' < X_d$",
-                "$X_d < X_d' < X_d''$",
-                "$X_d' < X_d'' < X_d$",
-                "$X_d'' = X_d' = X_d$"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Xd'' < Xd' < Xd (Subtransient < Transient < Synchronous)' is Correct: Immediately after a short circuit, trapped flux linkages in both damper bars and field windings restrict flux movement, presenting minimum reactance Xd'' (highest current). After damper currents decay, Xd' acts, and finally steady-state Xd takes over.\n• Why Other Choices are Incorrect: Fault current decreases over time as reactance transitions from Xd'' to Xd' to Xd.",
-            "id": 31
-        },
-        {
-            "question": "Why is Short-Circuit Ratio (SCR) a critical stability metric for synchronous machines?",
-            "options": [
-                "Higher SCR means lower Xs, larger air gap, and higher stability limit",
-                "Higher SCR prevents the synchronous machine from operating in parallel with the infinite bus",
-                "Higher SCR indicates that full-load armature copper losses will exceed machine efficiency limits",
-                "Lower SCR significantly increases synchronous machine stability under transient fault disturbances"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Higher SCR means lower Xs, larger air gap, and higher stability limit' is Correct: Because SCR = 1 / Xs(pu), a high SCR corresponds to a magnetically 'stiff' machine with low Xs, high synchronizing power, and robust stability against load disturbances.\n• Why Other Choices are Incorrect: Low SCR machines are magnetically soft and prone to losing synchronism.",
-            "id": 32
-        },
-        {
-            "question": "In a cylindrical rotor alternator neglecting armature resistance, at what load angle δ does maximum power output occur?",
-            "options": [
-                "$\\delta = 90^\\circ$ electrical degrees",
-                "$\\delta = 0^\\circ$ electrical degrees",
-                "$\\delta = 45^\\circ$ electrical degrees",
-                "$\\delta = 180^\\circ$ electrical degrees"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'δ = 90 electrical degrees' is Correct: Neglecting Ra, P = (EV/Xs)*sin(δ). The function sin(δ) reaches its mathematical peak of 1.0 at δ = 90°. Beyond 90°, power decreases, representing the steady-state stability limit.\n• Why Other Choices are Incorrect: In salient-pole machines, maximum power occurs at δ < 90° (typically around 60° to 75°) due to the reluctance power sin(2δ) component.",
-            "id": 33
-        },
-        {
-            "question": "What is the time constant of the subtransient period (Td'') in a typical synchronous generator compared to the transient time constant (Td')?",
-            "options": [
-                "Td'' is much shorter than Td'",
-                "Td'' is several minutes long while Td' lasts only a few milliseconds during fault clearance",
-                "Td'' is identical in duration to Td' since both transient responses originate in the field",
-                "Td'' is substantially longer than Td' because damper currents decay extremely slowly"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Td'' is very short (around 0.02 to 0.05 seconds), while Td' is much longer (around 0.5 to 1.5 seconds)' is Correct: Damper bars have low leakage inductance and relatively high resistance compared to the massive field winding, so damper currents decay in 1 to 2 cycles (0.02–0.05 s), whereas the large field inductance maintains transient current for 1 second or more.\n• Why Other Choices are Incorrect: Subtransient effects are extremely rapid compared to transient effects.",
-            "id": 34
-        },
-        {
-            "question": "What is the main source of slot harmonics in an alternator's generated voltage?",
-            "options": [
-                "Air-gap reluctance variations as poles sweep past stator teeth and slot openings",
-                "Mechanical torque pulsations transmitted through the prime mover shaft coupling",
-                "Nonlinear contact voltage drops across carbon brushes riding on rotor slip rings",
-                "Differential thermal expansion between armature copper conductors and stator iron"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Air-gap reluctance variations as poles sweep past stator teeth and slot openings' is Correct: Tooth and slot geometry modulates the air-gap reluctance periodically, creating tooth ripple harmonics in the flux density wave that induce slot harmonic voltages.\n• Why Other Choices are Incorrect: Skewing stator slots or rotor pole shoes by one slot pitch effectively eliminates this ripple.",
-            "id": 35
-        },
-        {
-            "question": "What is the primary operational consequence of skewing stator slots or pole shoes by one slot pitch?",
-            "options": [
-                "It suppresses tooth-ripple harmonics, eliminating slot ripples and magnetic hum",
-                "It doubles the rated electrical frequency generated across stator phase terminals",
-                "It completely eliminates stator winding resistance and full-load copper losses",
-                "It converts the salient-pole synchronous generator into a brushless AC exciter"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'It suppresses tooth-ripple harmonics, eliminating slot ripples and magnetic hum' is Correct: Skewing ensures that as one end of a conductor moves over a tooth, the other end moves over a slot, averaging out reluctance variations and smoothing the EMF wave.\n• Why Other Choices are Incorrect: Skewing does not affect fundamental frequency or eliminate ohmic resistance.",
-            "id": 36
-        },
-        {
-            "question": "Why are salient pole alternators constructed with pole shoes that cover only about 2/3 of the pole pitch?",
-            "options": [
-                "To provide space for field coils and shape air-gap flux into a smooth sinusoid",
-                "To reduce machine weight and save expensive cast-iron frame structural material",
-                "To deliberately lower the synchronous rotational speed of low-head hydro turbines",
-                "To allow the rotor to slip continuously behind the stator rotating magnetic field"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'To provide space for field coils and shape air-gap flux into a smooth sinusoid' is Correct: Covering 2/3 of the pole pitch leaves necessary room for field winding coils between poles and, with chamfered tips, shapes the rectangular pole MMF into a near-sinusoidal flux wave.\n• Why Other Choices are Incorrect: Covering 100% of the pitch would cause massive interpolar leakage flux.",
-            "id": 37
-        },
-        {
-            "question": "In an alternator with stationary armature and rotating field, how many slip rings are required on the rotor shaft?",
-            "options": [
-                "Only 2 slip rings",
-                "3 slip rings (one for each AC phase)",
-                "4 slip rings (three phases plus neutral)",
-                "None, slip rings are physically impossible on synchronous machines"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Only 2 slip rings' is Correct: The rotating rotor carries only the DC field winding, which requires just 2 slip rings (+ and -) at low voltage (125 V or 250 V DC), eliminating high-voltage brush gear entirely.\n• Why Other Choices are Incorrect: 3 or 4 slip rings would be needed if the high-voltage 3-phase armature were placed on the rotating member.",
-            "id": 38
-        },
-        {
-            "question": "Why is the air gap of a synchronous generator designed to be significantly larger than that of an equivalent induction motor?",
-            "options": [
-                "To reduce armature reaction, improve stability, and provide higher SCR",
-                "To deliberately increase stator copper losses and reduce fault short-circuit current",
-                "To allow cooling air to circulate around the rotor at supersonic flow velocities",
-                "To reduce the required mechanical horsepower rating of the coupled prime mover"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'To reduce armature reaction, improve stability, and provide higher SCR' is Correct: A large air gap provides high magnetic reluctance for the armature reaction flux, keeping Xs low and SCR high. Since field excitation is supplied separately by DC, the magnetizing penalty of a larger air gap is acceptable.\n• Why Other Choices are Incorrect: In induction motors, large air gaps degrade power factor, so they must be kept as small as possible.",
-            "id": 39
-        },
-        {
-            "question": "What is the relationship between electrical degrees ($\\theta_e$) and mechanical degrees ($\\theta_m$) in a synchronous machine with $P$ poles?",
-            "options": [
-                "$\\theta_e = \\left(\\frac{P}{2}\\right) \\theta_m$",
-                "$\\theta_e = \\left(\\frac{2}{P}\\right) \\theta_m$",
-                "$\\theta_e = P \\cdot \\theta_m$",
-                "$\\theta_e = \\frac{\\theta_m}{2P}$"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'θ_e = (P / 2) * θ_m' is Correct: Passing one pair of magnetic poles (North and South) constitutes 360 electrical degrees (one complete AC cycle). Since there are P/2 pole pairs in 360 mechanical degrees of rotation, θ_e = (P / 2) * θ_m.\n• Why Other Choices are Incorrect: For a 2-pole machine (P = 2), electrical degrees equal mechanical degrees; for P > 2, electrical degrees always exceed mechanical degrees.",
-            "id": 40
-        },
-        {
-            "question": "In a distributed 3-phase armature winding, what is the standard phase spread in electrical degrees?",
-            "options": [
-                "60 electrical degrees",
-                "120 electrical degrees",
-                "180 electrical degrees",
-                "90 electrical degrees"
-            ],
-            "answer": 0,
-            "explanation": "• Why '60 electrical degrees' is Correct: In a conventional 3-phase winding, each pole pitch (180° electrical) is divided equally among the 3 phases: Phase spread = 180° / 3 = 60° electrical (60° phase group).\n• Why Other Choices are Incorrect: 120° phase spread is used only in special winding configurations.",
-            "id": 41
-        },
-        {
-            "question": "What is the primary function of the cast-iron outer frame (stator frame) of an alternator?",
-            "options": [
-                "To support and protect the laminated stator core and internal components",
-                "To carry the main magnetic flux between adjacent rotor field poles in the circuit",
-                "To provide solid electrical insulation between high-voltage three-phase windings",
-                "To act as a high-speed rotating flywheel and dampen torsional drive vibrations"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'To support and protect the laminated stator core and internal components' is Correct: The outer frame does not carry magnetic flux (flux is confined within the laminated stator core yoke). Cast iron or fabricated steel is used strictly for mechanical rigidity and enclosing the machine.\n• Why Other Choices are Incorrect: The laminated core carries magnetic flux, not the outer casing.",
-            "id": 42
-        },
-        {
-            "question": "In the slip test for salient pole machines, why must the applied stator AC voltage be kept at a low, reduced value?",
-            "options": [
-                "To prevent excessive stator currents and overheating in an unexcited machine at slip",
-                "To prevent the unexcited salient-pole rotor from generating high-voltage direct current",
-                "To prevent reverse-power protective relays from tripping the prime mover circuit breaker",
-                "To ensure that the unexcited salient-pole rotor accelerates instantly to rated synchronous speed"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'To prevent excessive stator currents and overheating in an unexcited machine at slip' is Correct: During the slip test, the machine has no back-EMF from rotor excitation. Applying full rated voltage would draw destructive overcurrents; a reduced voltage (around 20% to 25% rated) safely limits current.\n• Why Other Choices are Incorrect: Slip test requires low voltage for electrical thermal safety.",
-            "id": 43
-        },
-        {
-            "question": "What is the voltage regulation of an ideal alternator having zero internal synchronous impedance?",
-            "options": [
-                "Exactly 0%",
-                "Positive 100%",
-                "Negative 100%",
-                "Infinite percentage"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Exactly 0%' is Correct: If synchronous impedance Zs = 0, no internal voltage drop occurs under load (E0 = V). When load is thrown off, terminal voltage does not change, resulting in [(V - V)/V] * 100% = 0% regulation.\n• Why Other Choices are Incorrect: Zero regulation means perfectly constant terminal voltage across all loads.",
-            "id": 44
-        },
-        {
-            "question": "What does the knee-point of the Open Circuit Characteristic (OCC) curve represent?",
-            "options": [
-                "The onset of magnetic saturation in the machine's iron core",
-                "The point of maximum mechanical resonance in the rotor shaft assembly",
-                "The catastrophic dielectric breakdown voltage of armature slot insulation",
-                "The maximum continuous thermal operating temperature of the field winding"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'The onset of magnetic saturation in the machine's iron circuit' is Correct: Below the knee-point, the OCC is nearly linear (air-gap line) because air gap reluctance dominates. Beyond the knee, the iron core begins to saturate, causing the curve to flatten.\n• Why Other Choices are Incorrect: The knee-point is a magnetic saturation boundary.",
-            "id": 45
-        },
-        {
-            "question": "[PROBLEM 6.2] A single-layer, full-pitch, distributed lap-winding is designed for a 3-phase, 4-pole, 24-slot armature. What is the slot pitch α in electrical degrees, and what is the slot gap between the start of Phase 1 and Phase 2?",
-            "options": [
-                "Slot pitch α = 30° electrical; Phase 2 starts 4 slots after Phase 1",
-                "Slot pitch α = 15° electrical; Phase 2 starts 8 slots after Phase 1",
-                "Slot pitch α = 60° electrical; Phase 2 starts 2 slots after Phase 1",
-                "Slot pitch α = 45° electrical; Phase 2 starts 3 slots after Phase 1"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Slots per pole = S / P = 24 / 4 = 6 slots.\n2. Slot pitch α = 180° / (Slots per pole) = 180° / 6 = 30° electrical.\n3. The 3 phases must be displaced by 120° electrical in space.\n4. Slot gap between phases = 120° / α = 120° / 30° = 4 slots.\n5. Therefore, Phase 1 starts in Slot 1, and Phase 2 starts in Slot 1 + 4 = Slot 5.",
-            "id": 46
-        },
-        {
-            "question": "[PROBLEM 6.5] What will be the number of poles of a 3-phase, 50 Hz synchronous generator running at a speed of 187.5 rpm, and what type of prime mover is appropriate?",
-            "options": [
-                "32 poles; Water turbine with salient-pole rotor",
-                "16 poles; High-speed steam turbine with non-salient rotor",
-                "24 poles; Closed-cycle gas turbine with cylindrical-drum rotor",
-                "8 poles; Heavy-duty diesel engine with laminated-spider rotor"
-            ],
-            "answer": 0,
-            "explanation": "• Why '32 poles; Water turbine with salient-pole rotor' is Correct: P = 120f / Ns = (120 * 50) / 187.5 = 32 poles. Because 187.5 rpm is a very low speed and the pole count is large (32 poles), a hydraulic water turbine coupled to a salient-pole alternator is the appropriate engineering choice.\n• Why Other Choices are Incorrect: Steam turbines operate at high speeds (1500 to 3600 rpm) with 2 or 4 poles and cylindrical rotors.",
-            "id": 47
-        },
-        {
-            "question": "[PROBLEM 6.6] The armature coils of a 3-phase, 4-pole, 24-slot alternator are short-pitched by 1 slot. What are the distribution factor (Kd) and pitch factor (Kc)?",
-            "options": [
-                "Kd = 0.9659, Kc = 0.9659",
-                "Kd = 0.9598, Kc = 0.9848",
-                "Kd = 1.0000, Kc = 0.9659",
-                "Kd = 0.9238, Kc = 0.9238"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Slots per pole = 24 / 4 = 6; Slots/pole/phase m = 6 / 3 = 2.\n2. Slot pitch α = 180° / 6 = 30° electrical.\n3. Distribution factor Kd = sin(m*α / 2) / [m * sin(α / 2)] = sin(2 * 30° / 2) / [2 * sin(30° / 2)] = sin(30°) / [2 * sin(15°)] = 0.5 / (2 * 0.2588) = 0.9659.\n4. Chording angle β = 1 slot * 30° = 30° electrical.\n5. Pitch factor Kc = cos(β / 2) = cos(30° / 2) = cos(15°) = 0.9659.",
-            "id": 48
-        },
-        {
-            "question": "[PROBLEM 6.7] Determine the distribution factor (Kd) and pitch factor (Kc) of a 4-pole, 3-phase alternator having 36 slots which carries a short-pitched winding with a coil span of 8 slots.",
-            "options": [
-                "Kd = 0.9598, Kc = 0.9848",
-                "Kd = 0.9659, Kc = 0.9659",
-                "Kd = 0.9848, Kc = 0.9598",
-                "Kd = 0.9567, Kc = 1.0000"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Pole pitch = S / P = 36 / 4 = 9 slots.\n2. Slots/pole/phase m = 9 / 3 = 3.\n3. Slot pitch α = 180° / 9 = 20° electrical.\n4. Distribution factor Kd = sin(3 * 20° / 2) / [3 * sin(20° / 2)] = sin(30°) / [3 * sin(10°)] = 0.5 / (3 * 0.1736) = 0.9598.\n5. Coil is short-pitched by: Pole pitch - Coil span = 9 - 8 = 1 slot.\n6. Chording angle β = 1 * α = 20° electrical.\n7. Pitch factor Kc = cos(β / 2) = cos(20° / 2) = cos(10°) = 0.9848.",
-            "id": 49
-        },
-        {
-            "question": "[PROBLEM 6.8] A 3-phase, 20-pole, 50 Hz alternator has single-layer winding with full-pitch coils (180 slots, 6 turns per coil, 60° phase groups). If the flux per pole is 0.025 Wb, determine the RMS induced EMF per phase.",
-            "options": [
-                "1917.7 V",
-                "2436.3 V",
-                "1108.5 V",
-                "3321.4 V"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Full-pitch coils: Kc = 1.0.\n2. Slots per pole = 180 / 20 = 9; m = 9 / 3 = 3 slots/pole/phase.\n3. Slot pitch α = 180° / 9 = 20° electrical; Kd = sin(30°) / [3 * sin(10°)] = 0.9598.\n4. Total coils = 180 slots / 2 = 90 coils; Coils/phase = 90 / 3 = 30 coils.\n5. Turns per phase Tph = 30 coils * 6 turns/coil = 180 (or Tph = (180 * 6) / 3 = 360 turns if 180 coils in single-layer with 6 turns = 360 turns).\n6. Eph = 4.44 * Kc * Kd * Φ * f * Tph = 4.44 * 1 * 0.9598 * 0.025 * 50 * 360 = 1917.7 V.",
-            "id": 50
-        },
-        {
-            "question": "[PROBLEM 6.9] An 8-pole, 750 rpm, 3-phase star-connected alternator has 72 slots with 10 conductors per slot, sinusoidally distributed flux per pole of 55 mWb, and distribution factor Kd = 0.96 (full pitch). What is the no-load line terminal voltage?",
-            "options": [
-                "2436.3 V",
-                "1406.6 V",
-                "4160.0 V",
-                "1732.0 V"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Frequency f = P * Ns / 120 = (8 * 750) / 120 = 50 Hz.\n2. Total conductors = 72 * 10 = 720; Conductors/phase Zph = 720 / 3 = 240.\n3. Turns per phase Tph = Zph / 2 = 240 / 2 = 120 turns.\n4. Full pitch: Kc = 1.0; Kd = 0.96.\n5. Phase EMF Eph = 4.44 * 1.0 * 0.96 * (55 * 10^-3) * 50 * 120 = 1406.6 V.\n6. For star connection, Line Voltage EL = sqrt(3) * Eph = 1.732 * 1406.6 = 2436.3 V.",
-            "id": 51
-        },
-        {
-            "question": "[PROBLEM 6.10] Calculate the phase voltage for a 3-phase, 1500 rpm, 4-pole alternator having a double-layer winding with 16 turns per coil, 8 slots/pole/phase, coil span of 20 slots, and flux per pole of 25.8 mWb.",
-            "options": [
-                "2706.77 V",
-                "1562.80 V",
-                "3810.50 V",
-                "4688.20 V"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Pole pitch = m * 3 = 8 * 3 = 24 slots.\n2. Coil is short-pitched by 24 - 20 = 4 slots.\n3. Slot pitch α = 180° / 24 = 7.5° electrical; Chording angle β = 4 * 7.5° = 30°.\n4. Pitch factor Kc = cos(30° / 2) = cos(15°) = 0.9659.\n5. Distribution factor Kd = sin(8 * 7.5° / 2) / [8 * sin(7.5° / 2)] = sin(30°) / [8 * sin(3.75°)] = 0.5 / (8 * 0.0654) = 0.9556.\n6. Total slots = 4 poles * 24 slots/pole = 96 slots; In double-layer, coils = slots = 96.\n7. Coils per phase = 96 / 3 = 32 coils; Turns/phase Tph = 32 * 16 = 512 turns.\n8. Supply frequency f = (4 * 1500) / 120 = 50 Hz.\n9. Eph = 4.44 * 0.9659 * 0.9556 * 50 * (25.8 * 10^-3) * 512 = 2706.77 V.",
-            "id": 52
-        },
-        {
-            "question": "[PROBLEM 6.11] A 3-phase, 6-pole, star-connected alternator has 90 slots and 8 conductors per slot, with flux per pole of 0.04 Wb, rotating at 1000 rpm (full pitch). What are the phase EMF and line EMF?",
-            "options": [
-                "Eph = 1019.4 V, EL = 1765.7 V",
-                "Eph = 1406.6 V, EL = 2436.3 V",
-                "Eph = 588.6 V, EL = 1019.4 V",
-                "Eph = 2038.8 V, EL = 3531.4 V"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Frequency f = (6 * 1000) / 120 = 50 Hz.\n2. Slots/pole/phase m = 90 / (6 * 3) = 5 slots; Slot pitch α = 180° / (90/6) = 180° / 15 = 12° electrical.\n3. Distribution factor Kd = sin(5 * 12° / 2) / [5 * sin(12° / 2)] = sin(30°) / [5 * sin(6°)] = 0.5 / (5 * 0.1045) = 0.9567.\n4. Total conductors = 90 * 8 = 720; Zph = 720 / 3 = 240; Tph = 120 turns. Kc = 1.0.\n5. Phase EMF Eph = 4.44 * 1 * 0.9567 * 0.04 * 50 * 120 = 1019.4 V.\n6. Line EMF EL = sqrt(3) * 1019.4 = 1765.7 V.",
-            "id": 53
-        },
-        {
-            "question": "[PROBLEM 6.13] A 3-phase, 16-pole, 50 Hz star-connected alternator has 144 slots with 10 conductors per slot, flux per pole of 24.8 mWb, and coil pitch 2 slots short of full pitch. What are synchronous speed (Ns) and line EMF (EL)?",
-            "options": [
-                "Ns = 375 rpm, EL = 2064.2 V",
-                "Ns = 750 rpm, EL = 1191.8 V",
-                "Ns = 375 rpm, EL = 3575.3 V",
-                "Ns = 500 rpm, EL = 2064.2 V"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Synchronous speed Ns = 120 * f / P = (120 * 50) / 16 = 375 rpm.\n2. Slots/pole = 144 / 16 = 9 slots; Slot pitch α = 180° / 9 = 20° electrical.\n3. Short-pitched by 2 slots: β = 2 * 20° = 40°; Kc = cos(40° / 2) = cos(20°) = 0.9397.\n4. m = 9 / 3 = 3; Kd = sin(30°) / [3 * sin(10°)] = 0.9598.\n5. Total conductors = 1440; Tph = 1440 / (2 * 3) = 240 turns.\n6. Eph = 4.44 * 0.9397 * 0.9598 * (24.8 * 10^-3) * 50 * 240 = 1191.75 V.\n7. Line EMF EL = sqrt(3) * 1191.75 = 2064.2 V.",
-            "id": 54
-        },
-        {
-            "question": "[PROBLEM 6.14] A 10 MVA, 11 kV, 50 Hz, 3-phase star-connected alternator runs at 300 rpm (360 slots, 6 conductors/slot, 5/6 pitch). Calculate the required flux per pole (Φ) and full-load current per conductor (I).",
-            "options": [
-                "Φ = 86 mWb, I = 524.86 A",
-                "Φ = 55 mWb, I = 300.00 A",
-                "Φ = 120 mWb, I = 909.10 A",
-                "Φ = 86 mWb, I = 909.10 A"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Full-load line current I = (10 * 10^6) / [sqrt(3) * 11000] = 524.86 A.\n2. Poles P = 120 * 50 / 300 = 20 poles; Slots/pole = 360 / 20 = 18 slots.\n3. Coil span = 5/6 * 18 = 15 slots; Short-pitch β = (18 - 15) * (180°/18) = 30°; Kc = cos(15°) = 0.9659.\n4. m = 18 / 3 = 6 slots/pole/phase; α = 10°; Kd = sin(30°) / [6 * sin(5°)] = 0.9561.\n5. Phase voltage Vph = 11000 / sqrt(3) = 6350.8 V; Tph = (360 * 6) / (2 * 3) = 360 turns.\n6. Flux per pole Φ = Eph / [4.44 * Kc * Kd * f * Tph] = 6350.8 / [4.44 * 0.9659 * 0.9561 * 50 * 360] = 0.086 Wb = 86 mWb.",
-            "id": 55
-        },
-        {
-            "question": "[PROBLEM 6.16] A 1-phase 60 kVA, 220 V, 50 Hz alternator has effective armature leakage reactance XL = 0.07 Ω and negligible resistance. Calculate the internal induced voltage E0 at full load 0.7 power factor lagging.",
-            "options": [
-                "234 V",
-                "220 V",
-                "254 V",
-                "210 V"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Full load current I = 60,000 / 220 = 272.72 A.\n2. cos φ = 0.7 lag -> sin φ = sqrt(1 - 0.7²) = 0.7141.\n3. Leakage reactance drop I*XL = 272.72 * 0.07 = 19.09 V.\n4. Induced EMF E0 = sqrt[(V*cos φ)² + (V*sin φ + I*XL)²] (since Ra = 0).\n5. V*cos φ = 220 * 0.7 = 154 V; V*sin φ + I*XL = 220 * 0.7141 + 19.09 = 157.10 + 19.09 = 176.19 V.\n6. E0 = sqrt(154² + 176.19²) = sqrt(23716 + 31043) = sqrt(54759) = 234 V.",
-            "id": 56
-        },
-        {
-            "question": "[PROBLEM 6.17] A single-phase 100 kVA, 600 V alternator has Ra = 0.072 Ω and XL = 0.18 Ω. What is the induced EMF at full load 0.75 power factor leading?",
-            "options": [
-                "590 V",
-                "629 V",
-                "612.7 V",
-                "650 V"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Full load current I = 100,000 / 600 = 166.67 A.\n2. cos φ = 0.75 lead -> sin φ = 0.6614.\n3. I*Ra = 166.67 * 0.072 = 12.0 V; I*XL = 166.67 * 0.18 = 30.0 V.\n4. For leading power factor: E0 = sqrt[(V*cos φ + I*Ra)² + (V*sin φ - I*XL)²].\n5. V*cos φ + I*Ra = 600 * 0.75 + 12 = 450 + 12 = 462 V.\n6. V*sin φ - I*XL = 600 * 0.6614 - 30 = 396.84 - 30 = 366.84 V.\n7. E0 = sqrt(462² + 366.84²) = sqrt(213444 + 134571) = sqrt(348015) = 590 V.",
-            "id": 57
-        },
-        {
-            "question": "[PROBLEM 6.18] A single-phase 50 kVA, 500 V alternator produces short-circuit current Isc = 170 A and open-circuit EMF E = 425 V at field current 15 A. If Ra = 0.2 Ω, calculate full-load percentage regulation at 0.8 pf lagging.",
-            "options": [
-                "34.35%",
-                "15.33%",
-                "24.81%",
-                "42.10%"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Synchronous impedance Zs = E / Isc = 425 / 170 = 2.5 Ω.\n2. Synchronous reactance Xs = sqrt(Zs² - Ra²) = sqrt(2.5² - 0.2²) = sqrt(6.25 - 0.04) = 2.492 Ω.\n3. Full-load current I = 50,000 / 500 = 100 A.\n4. I*Ra = 100 * 0.2 = 20 V; I*Xs = 100 * 2.492 = 249.2 V.\n5. E0 = sqrt[(V*cos φ + I*Ra)² + (V*sin φ + I*Xs)²] = sqrt[(500*0.8 + 20)² + (500*0.6 + 249.2)²] = sqrt(420² + 549.2²) = sqrt(176400 + 301621) = 671.62 V.\n6. % Regulation = [(E0 - V) / V] * 100 = [(671.62 - 500) / 500] * 100 = 34.35%.",
-            "id": 58
-        },
-        {
-            "question": "[PROBLEM 6.20] A 3-phase star-connected 1200 kVA, 3300 V, 50 Hz alternator has Ra = 0.25 Ω/phase. At field current 40 A, Isc = 200 A and open-circuit line EMF = 1100 V. Calculate regulation on full-load 0.8 pf lagging by EMF method.",
-            "options": [
-                "25.98%",
-                "13.46%",
-                "34.55%",
-                "18.22%"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Terminal phase voltage V = 3300 / sqrt(3) = 1905.2 V.\n2. Open-circuit phase voltage Eph = 1100 / sqrt(3) = 635.1 V.\n3. Synchronous impedance Zs = 635.1 / 200 = 3.175 Ω; Xs ≈ sqrt(3.175² - 0.25²) = 3.165 Ω.\n4. Full load phase current I = (1200 * 10^3) / [sqrt(3) * 3300] = 210 A.\n5. E0 = sqrt[(1905.2*0.8 + 210*0.25)² + (1905.2*0.6 + 210*3.165)²] = sqrt(1576.66² + 1807.77²) = 2400 V.\n6. % Regulation = [(2400 - 1905.2) / 1905.2] * 100 = 25.98%.",
-            "id": 59
-        },
-        {
-            "question": "[PROBLEM 6.23] A 3-phase star-connected 10 kVA, 230 V alternator has Ra = 0.5 Ω and Xs = 1.2 Ω per phase. At what leading power factor does voltage regulation become exactly zero at full load?",
-            "options": [
-                "0.8692 leading",
-                "0.8000 leading",
-                "0.9250 leading",
-                "0.7070 leading"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Phase voltage V = 230 / sqrt(3) = 132.8 V; Full load current I = 10,000 / [sqrt(3) * 230] = 25.1 A.\n2. Synchronous impedance Zs = 0.5 + j1.2 = 1.3 ∠67.38° Ω.\n3. Voltage drop I*Zs = 25.1 * 1.3 = 32.63 V.\n4. For zero regulation, |E0| = |V| = 132.8 V.\n5. Using (132.8)² = [132.8 + 32.63*cos(φ + 67.38°)]² + [32.63*sin(φ + 67.38°)]² leads to cos(φ + 67.38°) = -32.63 / (2 * 132.8) = -0.12285 = cos(97°).\n6. φ = 97° - 67.38° = 29.62° leading; cos(29.62°) = 0.8692 leading.",
-            "id": 60
-        },
-        {
-            "question": "[PROBLEM 6.24] A 3-phase star-connected 10 kVA, 400 V, 50 Hz alternator has Ra = 0.5 Ω/phase and Xs = 10 Ω/phase. Determine its torque angle (δ) and voltage regulation in per-unit at rated load 0.8 pf lagging.",
-            "options": [
-                "δ = 18.9° leading, Regulation = 0.4798 pu",
-                "δ = 11.2° leading, Regulation = 0.2598 pu",
-                "δ = 25.5° leading, Regulation = 0.6120 pu",
-                "δ = 15.5° leading, Regulation = 0.3400 pu"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Phase voltage V = 400 / sqrt(3) = 230.9 V ∠0°.\n2. Full load current I = 10,000 / [sqrt(3) * 400] = 14.4 A ∠-36.87°.\n3. Zs = 0.5 + j10 = 10.012 ∠87° Ω.\n4. E0 = V + I*Zs = 230.9 + (14.4 ∠-36.87°)(10.012 ∠87°) = 230.9 + 144.2 ∠50.13° = 230.9 + 92.4 + j110.6 = 323.3 + j110.6 = 341.7 ∠18.9° V.\n5. Torque angle δ = 18.9° (E0 leads V).\n6. Per-unit regulation = (E0 - V) / V = (341.7 - 230.9) / 230.9 = 110.8 / 230.9 = 0.4798 pu (47.98%).",
-            "id": 61
-        },
-        {
-            "question": "[PROBLEM 6.32] A 762 kVA, 2200 V, 50 Hz, 3-phase star alternator has Ra = 0.6 Ω/phase. Field current If = 30 A gives full-load current on SC (200 A) and line EMF 1039 V on OC. What are its power angle (δ) at full load 0.8 pf lagging and its Short-Circuit Ratio (SCR)?",
-            "options": [
-                "δ = 15.47°, SCR = 0.34",
-                "δ = 11.17°, SCR = 0.55",
-                "δ = 20.51°, SCR = 0.65",
-                "δ = 18.90°, SCR = 0.48"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Vph = 2200 / sqrt(3) = 1270 V; Eoc(ph) = 1039 / sqrt(3) = 600 V.\n2. Zs = 600 / 200 = 3.0 Ω; Xs = sqrt(3² - 0.6²) = 2.94 Ω.\n3. E0 = sqrt[(1270*0.8 + 200*0.6)² + (1270*0.6 + 200*2.94)²] = sqrt(1136² + 1350²) = 1764 V.\n4. Power per phase P = (762 * 1000 * 0.8) / 3 = 203,200 W.\n5. P = [E0 * V / Xs] * sin(δ) -> sin(δ) = (203200 * 2.94) / (1764 * 1270) = 0.267.\n6. δ = sin^-1(0.267) = 15.47°.\n7. In per-unit base impedance Zb = Vph / I = 1270 / 200 = 6.35 Ω; Xs(pu) = 2.94 / (1270/200) or simply SCR = 1 / Xs(pu) = 0.34.",
-            "id": 62
-        },
-        {
-            "question": "[PROBLEM 6.33] A 3-phase star-connected salient pole synchronous generator undergoes a low-voltage slip test. Voltmeter line readings vary between 2810 V and 2830 V; line current varies between 280 A and 365 A. What are Xd and Xq per phase?",
-            "options": [
-                "Xd = 5.83 Ω, Xq = 4.44 Ω",
-                "Xd = 4.44 Ω, Xq = 5.83 Ω",
-                "Xd = 10.10 Ω, Xq = 7.70 Ω",
-                "Xd = 5.83 Ω, Xq = 5.83 Ω"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Maximum phase voltage Vmax(ph) = 2830 / sqrt(3) = 1633.9 V.\n2. Minimum phase voltage Vmin(ph) = 2810 / sqrt(3) = 1622.4 V.\n3. Direct-axis reactance Xd = Vmax(ph) / Imin = (2830 / sqrt(3)) / 280 = 5.83 Ω.\n4. Quadrature-axis reactance Xq = Vmin(ph) / Imax = (2810 / sqrt(3)) / 365 = 4.44 Ω.\n5. Ratio Xq / Xd = 4.44 / 5.83 = 0.76 (consistent with typical salient-pole machines).",
-            "id": 63
-        },
-        {
-            "question": "[PROBLEM 6.36] A 3-phase salient-pole alternator has Xd = 1.0 pu and Xq = 0.65 pu per phase. When operating at full load (1.0 pu) at 0.8 pf lagging, what are the load angle (δ) and per-unit no-load EMF (E0)?",
-            "options": [
-                "δ = 20.51°, E0 = 1.7789 pu",
-                "δ = 15.30°, E0 = 1.4500 pu",
-                "δ = 25.85°, E0 = 2.1000 pu",
-                "δ = 18.90°, E0 = 1.6200 pu"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. V = 1.0 pu, I = 1.0 pu, cos φ = 0.8 lag (φ = 36.87°).\n2. tan(θ) = [V*sin φ + I*Xq] / [V*cos φ] = [1.0*0.6 + 1.0*0.65] / [1.0*0.8] = 1.25 / 0.8 = 1.5625.\n3. θ = tan^-1(1.5625) = 57.38°.\n4. Load angle δ = θ - φ = 57.38° - 36.87° = 20.51°.\n5. Direct axis current Id = I * sin(θ) = 1.0 * sin(57.38°) = 0.8423 pu.\n6. No-load EMF E0 = V*cos(δ) + Id*Xd = 1.0*cos(20.51°) + 0.8423 * 1.0 = 0.9366 + 0.8423 = 1.7789 pu.",
-            "id": 64
-        },
-        {
-            "question": "[PROBLEM 6.37] A 3-phase, 6.6 kV, 4 MVA salient pole alternator has Xd = 9 Ω and Xq = 6 Ω. What is the maximum power this alternator can supply at rated terminal voltage if the rotor field excitation becomes completely open-circuited (E = 0)?",
-            "options": [
-                "1.21 MW",
-                "2.50 MW",
-                "0.85 MW",
-                "3.63 MW"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. With field open (E = 0), excitation power is zero and the machine develops only reluctance power.\n2. Reluctance power per phase P = (V²/2) * (1/Xq - 1/Xd) * sin(2δ).\n3. For all 3 phases: Total P = 3 * (Vph²/2) * (1/Xq - 1/Xd) * sin(2δ) = (VL²/2) * (1/Xq - 1/Xd) * sin(2δ).\n4. Maximum reluctance power occurs when sin(2δ) = 1 (δ = 45°).\n5. Pmax = (6600² / 2) * (1/6 - 1/9) = (43,560,000 / 2) * (1/18) = 21,780,000 / 18 = 1,210,000 W = 1.21 MW.",
-            "id": 65
-        },
-        {
-            "question": "[PROBLEM 6.38] A 3-phase star-connected 10 kVA, 400 V salient-pole alternator with Xd = 15 Ω and Xq = 8 Ω delivers full load at 0.8 pf lagging. Neglecting resistance, what are the load angle (δ) and line-to-line excitation EMF (E0L)?",
-            "options": [
-                "δ = 17.1°, E0L = 686 V",
-                "δ = 20.5°, E0L = 550 V",
-                "δ = 15.3°, E0L = 720 V",
-                "δ = 11.2°, E0L = 400 V"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Vph = 400 / sqrt(3) = 231 V; I = 10,000 / [sqrt(3) * 400] = 14.43 A; cos φ = 0.8 lag (φ = 36.87°).\n2. tan(δ) = [I*Xq*cos φ] / [V + I*Xq*sin φ] = [14.43 * 8 * 0.8] / [231 + 14.43 * 8 * 0.6] = 92.35 / (231 + 69.26) = 92.35 / 300.26 = 0.3076.\n3. δ = tan^-1(0.3076) = 17.1°.\n4. θ = δ + φ = 17.1° + 36.87° = 53.97°.\n5. Id = I * sin(θ) = 14.43 * sin(53.97°) = 11.67 A.\n6. E0(ph) = V*cos(δ) + Id*Xd = 231*cos(17.1°) + 11.67 * 15 = 220.8 + 175.05 = 396 V.\n7. Line excitation EMF E0L = sqrt(3) * 396 = 686 V.",
-            "id": 66
-        },
-        {
-            "question": "[PROBLEM 6.40] An 11 kV, 100 MVA alternator running at rated voltage develops a symmetrical 3-phase fault at its terminals (Xd'' = 0.15 pu, Xd' = 0.25 pu, Xd = 1.0 pu). What is the initial AC subtransient current (I'') in amperes?",
-            "options": [
-                "34,991 A (6.667 pu)",
-                "20,994 A (4.000 pu)",
-                "5,248.6 A (1.000 pu)",
-                "62,983 A (12.00 pu)"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Base full-load current I_base = (100 * 10^6) / [sqrt(3) * 11,000] = 5248.6 A.\n2. Subtransient current in per-unit: I'' = E / Xd'' = 1.0 / 0.15 = 6.667 pu.\n3. Subtransient current in amperes: I'' = 6.667 * 5248.6 A = 34,991 A.\n4. (For comparison: Transient current I' = 1.0 / 0.25 = 4.0 pu = 20,994 A; Steady-state current Isc = 1.0 / 1.0 = 1.0 pu = 5248.6 A).",
-            "id": 67
-        },
-        {
-            "question": "[IDENTIFICATION] What is the term for an AC machine that converts electrical power into mechanical power and runs strictly at constant synchronous speed $N_s = \\frac{120f}{P}$?",
-            "options": [
-                "Synchronous motor",
-                "Asynchronous induction motor",
-                "Fractional-horsepower universal motor",
-                "Permanent-magnet hysteresis motor"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Synchronous motor' is Correct: A synchronous motor is a doubly-excited AC machine (AC stator, DC rotor) that runs at strictly constant synchronous speed independent of load up to pull-out torque.\n• Why Other Choices are Incorrect: Induction motor speed drops with load (slip); universal motors have high variable series speed.",
-            "id": 68
-        },
-        {
-            "question": "[IDENTIFICATION] What is the electromagnetic phenomenon where stator rotating magnetic poles drag rotor DC poles continuously at identical speed?",
-            "options": [
-                "Magnetic locking",
-                "Magnetic levitation",
-                "Stator slot cogging",
-                "Subharmonic crawling"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Magnetic locking' is Correct: Unlike magnetic poles of stator and rotor attract each other. Once pulled into synchronism, they lock magnetically, forcing the rotor to revolve in lockstep with the stator RMF.\n• Why Other Choices are Incorrect: Cogging is magnetic locking at standstill in induction motors; crawling is sub-synchronous harmonic running.",
-            "id": 69
-        },
-        {
-            "question": "[IDENTIFICATION] What is the speed regulation of an ideal synchronous motor operating within its stability limit?",
-            "options": [
-                "Zero percent (0%)",
-                "Three to five percent (3-5%)",
-                "Negative five percent (-5%)",
-                "One hundred percent (100%)"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Zero percent (0%)' is Correct: Speed regulation = [(No-load speed - Full-load speed) / No-load speed] * 100%. Because synchronous speed Ns is maintained from no-load to pull-out, speed regulation is identically zero.\n• Why Other Choices are Incorrect: Induction motors have 2% to 5% speed regulation.",
-            "id": 70
-        },
-        {
-            "question": "[IDENTIFICATION] What is the maximum torque that a synchronous motor can develop at rated voltage and frequency without losing synchronism?",
-            "options": [
-                "Pull-out torque",
-                "Pull-in torque",
-                "Locked-rotor torque",
-                "Accelerating torque"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Pull-out torque' is Correct: Pull-out torque is the peak torque a synchronous motor can sustain. Exceeding it causes torque angle δ to exceed the stability limit, breaking magnetic lock and stalling the motor (typically 1.5 to 3.5x full load).\n• Why Other Choices are Incorrect: Pull-in torque is the torque under which the motor transitions from induction to synchronous operation.",
-            "id": 71
-        },
-        {
-            "question": "[IDENTIFICATION] What is the maximum constant torque under which a synchronous motor will pull into synchronism when DC excitation is applied during starting?",
-            "options": [
-                "Pull-in torque",
-                "Pull-out torque",
-                "Locked-rotor torque",
-                "Reluctance torque"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Pull-in torque' is Correct: Synchronous motors start as induction motors (via damper windings). Pull-in torque is the maximum mechanical load torque against which the rotor can successfully accelerate from ~95% speed into magnetic lock when field excitation is switched on.\n• Why Other Choices are Incorrect: Locked-rotor torque applies at zero speed.",
-            "id": 72
-        },
-        {
-            "question": "[IDENTIFICATION] What is the minimum torque developed by a synchronous motor with the rotor locked at standstill when rated voltage is applied?",
-            "options": [
-                "Locked-rotor torque",
-                "Breakdown pull-out torque",
-                "Synchronous operating torque",
-                "High-slip accelerating torque"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Locked-rotor torque' is Correct: Locked-rotor torque is the starting torque provided exclusively by the rotor damper windings while the shaft is stationary (at standstill).\n• Why Other Choices are Incorrect: Synchronous motors have zero intrinsic starting torque without damper windings.",
-            "id": 73
-        },
-        {
-            "question": "[IDENTIFICATION] What is an over-excited synchronous motor operated at no-load solely to supply leading reactive power for system power factor correction?",
-            "options": [
-                "Synchronous condenser",
-                "Asynchronous induction generator",
-                "Electromechanical rotary converter",
-                "Static var solid-state compensator"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Synchronous condenser' is Correct: An over-excited synchronous motor with zero shaft load draws current leading voltage by nearly 90°, acting as a variable, high-capacity dynamic capacitor.\n• Why Other Choices are Incorrect: Rotary converters convert AC to DC power.",
-            "id": 74
-        },
-        {
-            "question": "[IDENTIFICATION] What is the curve obtained by plotting armature current (Ia) on the y-axis against field excitation current (If) on the x-axis for constant mechanical load?",
-            "options": [
-                "V-curve",
-                "Inverted V-curve",
-                "Open-circuit characteristic",
-                "Torque-slip curve"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'V-curve' is Correct: Armature current is minimum at unity power factor and increases for both under-excitation (lagging) and over-excitation (leading), creating distinct 'V' shaped curves.\n• Why Other Choices are Incorrect: Inverted V-curves plot power factor versus field current.",
-            "id": 75
-        },
-        {
-            "question": "[IDENTIFICATION] What is the curve obtained by plotting power factor (cos φ) on the y-axis against field current (If) on the x-axis for a synchronous motor?",
-            "options": [
-                "Inverted V-curve",
-                "Standard V-curve",
-                "Potier regulation curve",
-                "Magnetic saturation curve"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Inverted V-curve' is Correct: Power factor reaches its maximum of 1.0 (unity) at normal excitation and slopes downward on both sides (lagging at low excitation, leading at high excitation), resembling an inverted letter 'V'.\n• Why Other Choices are Incorrect: Ia versus If gives the standard V-curve.",
-            "id": 76
-        },
-        {
-            "question": "[IDENTIFICATION] What is a small auxiliary induction motor coupled to the main synchronous motor shaft to bring it up to near-synchronous speed before synchronizing?",
-            "options": [
-                "Pony motor",
-                "Exciter dynamo",
-                "Booster motor",
-                "Pilot generator"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Pony motor' is Correct: A pony motor is an auxiliary starting induction motor, usually having one pair of poles fewer than the synchronous motor so that its top induction speed reaches the synchronous motor's synchronous speed.\n• Why Other Choices are Incorrect: An exciter provides DC current, not mechanical starting torque.",
-            "id": 77
-        },
-        {
-            "question": "[IDENTIFICATION] What is the unit of torque defined as the torque which, at synchronous speed, would develop a mechanical power of exactly one watt?",
-            "options": [
-                "Synchronous watt",
-                "Horsepower unit",
-                "Newton-meter unit",
-                "Joule per cycle"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Synchronous watt' is Correct: Synchronous watt is a convenient torque unit: Torque in syn. watts = Mechanical power developed in watts = (2π*Ns/60) * T.\n• Why Other Choices are Incorrect: Newton-meter is the standard SI unit of torque.",
-            "id": 78
-        },
-        {
-            "question": "[IDENTIFICATION] What is the spatial angular displacement between the rotor magnetic pole axis and the stator rotating magnetic field axis under load?",
-            "options": [
-                "Torque angle",
-                "Power factor angle",
-                "Stator slot angle",
-                "Internal impedance angle"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Torque angle' is Correct: In a motor, as mechanical load increases, the rotor poles fall back behind the stator RMF poles by torque angle δ. Developed torque is directly proportional to sin(δ).\n• Why Other Choices are Incorrect: Power factor angle φ is the phase angle between terminal voltage V and armature current I.",
-            "id": 79
-        },
-        {
-            "question": "[IDENTIFICATION] What is the excitation condition where a synchronous motor draws current at a lagging power factor and behaves as an inductor?",
-            "options": [
-                "Under-excitation",
-                "Over-excitation",
-                "Critical excitation",
-                "Compounded excitation"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Under-excitation' is Correct: When rotor field current is reduced below normal (under-excited), internal back-EMF E < V. The motor must draw magnetizing lagging reactive current from the AC lines to support the air gap field.\n• Why Other Choices are Incorrect: Over-excitation makes the motor operate at leading power factor.",
-            "id": 80
-        },
-        {
-            "question": "[IDENTIFICATION] What is the excitation condition where a synchronous motor operates at exactly unity power factor (cos φ = 1.0) and draws minimum armature current?",
-            "options": [
-                "Normal excitation",
-                "Zero field excitation",
-                "Under-excitation limit",
-                "Critical over-excitation"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Normal excitation' is Correct: At normal excitation, back EMF E and terminal voltage V are balanced such that armature current I is perfectly in phase with V (cos φ = 1.0), minimizing I²R losses.\n• Why Other Choices are Incorrect: Any deviation above or below normal excitation increases armature current.",
-            "id": 81
-        },
-        {
-            "question": "[IDENTIFICATION] What is the tendency of a synchronous motor rotor to oscillate about its synchronous equilibrium position due to sudden load or voltage changes?",
-            "options": [
-                "Hunting",
-                "Crawling",
-                "Cogging",
-                "Phase-swinging runaway"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Hunting' is Correct: When load changes abruptly, rotor inertia causes the rotor to swing past the new steady-state load angle δ, setting up mechanical oscillations around equilibrium called hunting.\n• Why Other Choices are Incorrect: Hunting is suppressed by damper windings in the rotor pole shoes.",
-            "id": 82
-        },
-        {
-            "question": "Why is a 3-phase synchronous motor not self-starting?",
-            "options": [
-                "Torque reverses direction every half-cycle due to high rotor inertia",
-                "The balanced 3-phase stator winding fails to produce a rotating magnetic field in the air gap",
-                "The DC rotor field poles carry zero magnetic flux until the machine reaches full synchronous speed",
-                "Synchronous motor stator windings must always be energized from a single-phase AC supply"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Torque reverses direction every half-cycle due to high rotor inertia' is Correct: The stator RMF rotates at synchronous speed (50 or 60 rev/s). Due to rotor inertia, the stationary rotor cannot accelerate in time, so opposite torques cancel out every half-cycle, resulting in zero average starting torque.\n• Why Other Choices are Incorrect: Stator windings produce a perfect 1.5 Φm RMF; starting failure is strictly due to mechanical inertia vs high field speed.",
-            "id": 83
-        },
-        {
-            "question": "When a synchronous motor is operating at constant mechanical shaft load and its DC field current is increased, what happens to the armature current and power factor?",
-            "options": [
-                "Current first decreases to minimum at unity pf, then increases with leading pf",
-                "Armature current increases continuously while maintaining a strictly lagging power factor",
-                "Motor rotational speed increases in direct proportion to the DC rotor field current",
-                "Armature current drops to zero and the motor operates as an open-circuit voltage source"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Current first decreases to minimum at unity pf, then increases with leading pf' is Correct: This describes the V-curve: beginning under-excited (lagging pf, high current), increasing excitation improves pf toward 1.0 (minimum current), and further excitation pushes the motor into over-excited leading pf (increasing current).\n• Why Other Choices are Incorrect: Synchronous motor speed is fixed at $N_s = \\frac{120f}{P}$ regardless of excitation.",
-            "id": 84
-        },
-        {
-            "question": "How does a synchronous motor adjust its electromagnetic torque to balance an increased mechanical shaft load without changing speed?",
-            "options": [
-                "Rotor retards in space, increasing torque angle δ, resultant EMF Er, and current I",
-                "The rotor speed drops permanently to establish a steady-state induction motor slip",
-                "The DC excitation voltage E automatically increases to generate more air-gap flux",
-                "The stator electrical supply frequency decreases to match the increased shaft torque"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Rotor retards in space, increasing torque angle δ, resultant EMF Er, and current I' is Correct: Running speed remains strictly Ns. Increasing load causes the rotor to fall back in angle (δ increases). This widens the phasor difference Er = V - E, drawing more current and generating higher torque T = (VE/Xs)*sin(δ).\n• Why Other Choices are Incorrect: Speed does not drop permanently; slip is always zero.",
-            "id": 85
-        },
-        {
-            "question": "What happens if a synchronous motor is loaded beyond its pull-out torque limit?",
-            "options": [
-                "The rotor loses magnetic synchronism and immediately stalls to a standstill",
-                "The motor automatically operates as an induction motor at high continuous slip",
-                "The motor speed doubles to develop greater kinetic energy and overcome the load",
-                "The field excitation current instantly drops to zero to prevent winding burn-out"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'The rotor loses magnetic synchronism and immediately stalls to a standstill' is Correct: When load exceeds pull-out torque (torque angle δ > 90°), magnetic locking between stator and rotor breaks. The motor cannot develop synchronous torque and quickly comes to a complete standstill.\n• Why Other Choices are Incorrect: Without external starting circuitry or damper sizing, the motor cannot run stably as an induction machine under full pull-out load.",
-            "id": 86
-        },
-        {
-            "question": "Why must the rotor field winding be short-circuited across a discharge resistor while starting a synchronous motor via damper windings?",
-            "options": [
-                "To prevent dangerously high induced voltages that could puncture field insulation",
-                "To maximize AC line voltage across the stator armature winding during start-up",
-                "To prevent the rotor from accelerating until full DC excitation is switched on",
-                "To allow DC current from the exciter to circulate through the stator winding phases"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'To prevent dangerously high induced voltages that could puncture field insulation' is Correct: At start, stator RMF cuts the high-turn field winding at 100% slip (50/60 Hz), inducing several thousand volts by transformer action. Shorting the field through a resistor limits this voltage safely and provides additional starting torque.\n• Why Other Choices are Incorrect: Leaving the field open-circuited causes catastrophic dielectric breakdown.",
-            "id": 87
-        },
-        {
-            "question": "If a synchronous motor operating at full-load with unity power factor has its mechanical shaft load completely disconnected, what will its new operating power factor become?",
-            "options": [
-                "Damper windings create induction motor starting torque and suppress hunting oscillations",
-                "Damper windings eliminate the need for DC field excitation during normal steady-state operation",
-                "Damper windings convert 3-phase alternating current into direct current on the rotor shaft",
-                "Damper windings increase the synchronous speed of the motor above 120f/P"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Damper windings create induction motor starting torque and suppress hunting oscillations' is Correct: The excitation required for unity pf at full load is higher than that needed for unity pf at no load. When the load is removed while excitation remains at full-load level, the motor becomes over-excited for no-load conditions, causing it to operate at leading power factor.\n• Why Other Choices are Incorrect: The inverted V-curves show this shift directly: full-load unity excitation corresponds to the leading region at no-load.",
-            "id": 88
-        },
-        {
-            "question": "In the equivalent circuit and phasor diagram of a synchronous motor, how is excitation EMF E related to supply voltage V and armature drop I*Zs?",
-            "options": [
-                "$V = E + I \\cdot Z_s$",
-                "$E = V + I \\cdot Z_s$",
-                "$V = E \\cdot (I \\cdot Z_s)$",
-                "$E = \\frac{V}{I \\cdot Z_s}$"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'V = E + I*Zs' is Correct: In a motor, electrical power is supplied at terminal voltage V. V must overcome internal back EMF E and internal impedance drop I*Zs. Thus, V = E + I*Zs.\n• Why Other Choices are Incorrect: In an alternator (generator), generated EMF E exceeds terminal voltage: E = V + I*Zs.",
-            "id": 89
-        },
-        {
-            "question": "What is the physical significance of the torque angle (δ) being negative (or E lagging V) in a synchronous motor?",
-            "options": [
-                "It indicates that electrical power is flowing into the machine to drive mechanical load",
-                "It indicates that the synchronous machine is generating active power into the supply grid",
-                "It indicates that the rotor is spinning in the reverse direction of the stator magnetic field",
-                "It indicates that the synchronous motor is operating with negative internal phase resistance"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'It indicates that electrical power is flowing into the machine to drive mechanical load' is Correct: When E lags V by δ, electrical power input P = (V*E/Xs)*sin(δ) is positive into the machine, meaning electrical energy is being converted to mechanical torque.\n• Why Other Choices are Incorrect: In generators, E leads V (positive δ) and power flows outward.",
-            "id": 90
-        },
-        {
-            "question": "How does the air gap length of a synchronous motor compare to that of an induction motor of the same physical dimensions?",
-            "options": [
-                "Synchronous motor has a much larger air gap than the induction motor",
-                "Synchronous motor has a much smaller air gap to maximize magnetizing current",
-                "Both machines have identically sized air gaps governed by NEMA frame standards",
-                "Synchronous motors require zero air gap because rotor and stator rotate synchronously"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Synchronous motor has a much larger air gap than the induction motor' is Correct: Because field excitation is provided by a separate DC source on the rotor, a large air gap can be used to reduce armature reaction and improve stability. In induction motors, the air gap must be minimal to avoid huge lagging magnetizing currents.\n• Why Other Choices are Incorrect: Small air gaps in synchronous motors would cause severe armature distortion.",
-            "id": 91
-        },
-        {
-            "question": "Which of the following is NOT an advantage of a synchronous motor over an induction motor?",
-            "options": [
-                "Under-excited synchronous motor draws lagging current; over-excited draws leading current",
-                "Over-excited synchronous motor draws lagging current; under-excited draws leading current",
-                "Synchronous motor power factor is always 1.0 regardless of the DC field excitation level",
-                "Under-excited motor operates as a synchronous condenser while over-excited motor stalls"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Under-excited synchronous motor draws lagging current; over-excited draws leading current' is Correct: A synchronous motor is more expensive than an induction motor because it requires DC excitation, slip rings/brushes, a rotor field winding, and starting equipment.\n• Why Other Choices are Incorrect: Power factor control, constant speed, and high low-speed efficiency are major advantages of synchronous motors.",
-            "id": 92
-        },
-        {
-            "question": "What is the breakdown (maximum) torque of a cylindrical synchronous motor proportional to with respect to applied terminal voltage V?",
-            "options": [
-                "Directly proportional to voltage (Tmax ∝ V)",
-                "Proportional to the square of voltage (Tmax ∝ V²)",
-                "Inversely proportional to voltage (Tmax ∝ 1/V)",
-                "Completely independent of applied terminal voltage"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Directly proportional to voltage (Tmax ∝ V)' is Correct: For a synchronous motor, Pmax = V*E / Xs. Since torque T = P / ωs, maximum torque is directly proportional to applied voltage V. (In contrast, an induction motor breakdown torque is proportional to V²).\n• Why Other Choices are Incorrect: Induction motor torque varies as V², whereas synchronous motor torque varies linearly with V.",
-            "id": 93
-        },
-        {
-            "question": "How can the operating speed of a synchronous motor be varied under steady-state conditions?",
-            "options": [
-                "Only by varying the supply frequency using a variable-frequency drive",
-                "By adjusting the DC field excitation rheostat in the rotor winding circuit",
-                "By increasing or decreasing the mechanical shaft load coupled to the motor",
-                "By adding external resistance in series with the rotating damper bar circuit"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Only by varying the supply frequency using a variable-frequency drive' is Correct: Since Ns = 120*f / P, the synchronous speed is strictly locked to supply frequency. Changes in load or field current only change torque angle δ and power factor cos φ, not speed.\n• Why Other Choices are Incorrect: Field current changes power factor, not speed.",
-            "id": 94
-        },
-        {
-            "question": "What is the primary industrial application of an unloaded, over-excited synchronous motor?",
-            "options": [
-                "Power factor correction at factory substations as a synchronous condenser",
-                "Driving high-impact constant-speed metal rolling mills and reciprocating stone crushers",
-                "Generating high-voltage direct current for electrochemical aluminum smelting plants",
-                "Starting high-inertia heavy-duty industrial gas turbines from standstill to firing speed"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Power factor correction at factory substations as a synchronous condenser' is Correct: Synchronous condensers supply leading kVAR to offset the lagging reactive power drawn by thousands of induction motors in an industrial facility, eliminating utility power factor penalties.\n• Why Other Choices are Incorrect: At no load, the machine performs electrical reactive compensation rather than mechanical work.",
-            "id": 95
-        },
-        {
-            "question": "In a salient-pole synchronous motor with direct-axis reactance Xd and quadrature-axis reactance Xq, what torque exists even when field excitation is completely lost (E = 0)?",
-            "options": [
-                "High starting torque without auxiliary starting equipment",
-                "Ability to operate at leading, lagging, or unity power factor",
-                "Strictly constant rotational speed independent of mechanical load variations",
-                "Higher operating efficiency at low speeds compared to equivalent induction motors"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'High starting torque without auxiliary starting equipment' is Correct: Rotor saliency creates a difference in reluctance between axes (Xd ≠ Xq). The rotor seeks the position of minimum reluctance, developing reluctance torque Prel = [(V²/2)*(1/Xq - 1/Xd)]*sin(2δ), which peaks at δ = 45°.\n• Why Other Choices are Incorrect: Reluctance motors operate on this exact principle without any DC field excitation.",
-            "id": 96
-        },
-        {
-            "question": "What type of load is ideally suited for drive by a 3-phase synchronous motor?",
-            "options": [
-                "Continuous constant-speed equipment like compressors, pumps, and motor-generator sets",
-                "Elevators and electric locomotives requiring frequent starts and wide speed variations",
-                "Small portable domestic appliances like food processors, vacuum cleaners, and hair dryers",
-                "High-precision metalworking machine tools requiring rapid and frequent rotational reversals"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Continuous constant-speed equipment like compressors, pumps, and motor-generator sets' is Correct: Synchronous motors excel in high-power, continuous-duty, constant-speed applications where they can simultaneously drive heavy loads and provide power factor correction for the plant.\n• Why Other Choices are Incorrect: Synchronous motors are not suited for variable speed or frequent start-stop duty.",
-            "id": 97
-        },
-        {
-            "question": "[PROBLEM 8.1] A 2.3 kV, 3-phase star-connected synchronous motor has Zs = (0.2 + j2.2) Ω/phase. The motor operates at 0.5 power factor leading with line current of 200 A. Determine the induced back EMF per phase (E) and torque angle (δ).",
-            "options": [
-                "E = 1708 V, δ = 8.58° lagging",
-                "E = 1328 V, δ = 15.00° lagging",
-                "E = 2100 V, δ = 6.20° lagging",
-                "E = 1442 V, δ = 12.40° lagging"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Phase voltage V = 2300 / sqrt(3) = 1328 V ∠0°.\n2. cos φ = 0.5 lead -> φ = +60°; I = 200 ∠60° A.\n3. Zs = 0.2 + j2.2 = 2.21 ∠84.8° Ω.\n4. Voltage drop I*Zs = (200 ∠60°)(2.21 ∠84.8°) = 442 ∠144.8° = -361.16 + j254.77 V.\n5. Back EMF E = V - I*Zs = 1328 - (-361.16 + j254.77) = 1689.16 - j254.77 V.\n6. Magnitude |E| = sqrt(1689.16² + 254.77²) = 1708 V.\n7. Torque angle δ = tan^-1(-254.77 / 1689.16) = -8.58° (E lags V by 8.58°).",
-            "id": 98
-        },
-        {
-            "question": "[PROBLEM 8.2] A 3-phase, 400 V synchronous motor takes 60 A at 0.8 power factor leading. If impedance per phase is Zs = (0.25 + j3.2) Ω, calculate the phase and line back-EMF.",
-            "options": [
-                "Eph = 371.2 V, EL = 643 V",
-                "Eph = 231.0 V, EL = 400 V",
-                "Eph = 450.0 V, EL = 779 V",
-                "Eph = 310.5 V, EL = 538 V"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Supply phase voltage V = 400 / sqrt(3) = 231 V.\n2. cos φ = 0.8 lead -> sin φ = 0.6.\n3. For leading pf: E² = (V*cos φ - I*Ra)² + (V*sin φ + I*Xs)².\n4. V*cos φ - I*Ra = 231 * 0.8 - 60 * 0.25 = 184.8 - 15 = 169.8 ≈ 170 V.\n5. V*sin φ + I*Xs = 231 * 0.6 + 60 * 3.2 = 138.6 + 192 = 330.6 ≈ 330 V.\n6. E = sqrt(170² + 330²) = sqrt(28900 + 108900) = sqrt(137800) = 371.2 V per phase.\n7. Line back EMF EL = sqrt(3) * 371.2 = 643 V.",
-            "id": 99
-        },
-        {
-            "question": "[PROBLEM 8.3] A 3-phase synchronous motor of 10 kW output at 1100 V has synchronous reactance Xs = 8 Ω/phase and efficiency η = 0.8 (neglect Ra). Find the minimum armature line current and corresponding induced EMF.",
-            "options": [
-                "I_min = 6.56 A (at unity pf), E = 637.25 V/phase",
-                "I_min = 9.12 A (at 0.8 lag), E = 600.00 V/phase",
-                "I_min = 12.50 A (at 0.8 lead), E = 720.00 V/phase",
-                "I_min = 5.25 A (at unity pf), E = 635.00 V/phase"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Motor input power Pi = Pout / η = 10 kW / 0.8 = 12.5 kW = 12,500 W.\n2. Armature current is minimum when power factor is unity (cos φ = 1.0).\n3. I_min = Pi / [sqrt(3) * VL * cos φ] = 12,500 / [sqrt(3) * 1100 * 1.0] = 6.56 A.\n4. Phase voltage V = 1100 / sqrt(3) = 635 V.\n5. For unity pf with Ra = 0: E = sqrt[V² + (I*Xs)²] = sqrt[635² + (6.56 * 8)²] = sqrt(403225 + 2754) = sqrt(405979) = 637.25 V per phase.",
-            "id": 100
-        },
-        {
-            "question": "[PROBLEM 8.4] A 6600 V, 3-phase star synchronous motor draws 80 A at 0.8 pf leading (Ra = 2.2 Ω, Xs = 22 Ω/phase, stray loss = 3200 W). What are the line induced EMF and motor efficiency?",
-            "options": [
-                "EL = 8594 V, Efficiency η = 93.79%",
-                "EL = 6600 V, Efficiency η = 88.50%",
-                "EL = 7200 V, Efficiency η = 91.20%",
-                "EL = 9150 V, Efficiency η = 95.00%"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Phase voltage V = 6600 / sqrt(3) = 3810.6 V.\n2. Input power Pin = sqrt(3) * 6600 * 80 * 0.8 = 731,618 W.\n3. Total copper loss = 3 * I² * Ra = 3 * 80² * 2.2 = 42,240 W.\n4. Output power Pout = Pin - Copper losses - Stray loss = 731618 - 42240 - 3200 = 686,178 W.\n5. Efficiency η = Pout / Pin = 686178 / 731618 = 0.9379 pu = 93.79%.\n6. For leading pf: E = (V - I*Ra*cos φ + I*Xs*sin φ) - j(I*Xs*cos φ + I*Ra*sin φ) = 4725.8 - j1513.6 = 4962 ∠-17.76° V/phase.\n7. Line EMF EL = sqrt(3) * 4962 = 8594 V.",
-            "id": 101
-        },
-        {
-            "question": "[PROBLEM 8.6] A 3000 V, 1500 rpm 3-phase synchronous motor has Xs = 5 Ω/phase (Ra neglected). If excitation is kept constant at no-load voltage (E = V) while armature current is 200 A, what are the power factor and torque developed?",
-            "options": [
-                "Power factor = 0.9574 lagging, Torque = 7712.5 Nm",
-                "Power factor = 0.8000 lagging, Torque = 6500.0 Nm",
-                "Power factor = 0.9574 leading, Torque = 8500.0 Nm",
-                "Power factor = 1.0000 unity, Torque = 5000.0 Nm"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Phase voltage V = 3000 / sqrt(3) = 1732 V; E = 1732 V.\n2. Voltage drop I*Xs = 200 * 5 = 1000 V.\n3. In phasor triangle: E² = V² + (I*Xs)² - 2*V*(I*Xs)*cos(90° - φ) -> 1732² = 1732² + 1000² - 2*1732*1000*sin φ.\n4. sin φ = 1000² / (2 * 1732 * 1000) = 1000 / 3464 = 0.2887 -> φ = 16.78°.\n5. cos φ = cos(16.78°) = 0.9574 lagging.\n6. Power input Pi = sqrt(3) * 3000 * 200 * 0.9574 = 994,959 W.\n7. Torque T = (Pi * 60) / (2π * Ns) = (994959 * 60) / (2π * 1500) = 7712.5 Nm.",
-            "id": 102
-        },
-        {
-            "question": "[PROBLEM 8.7] A 3-phase star 6600 V synchronous motor has Xs = 20 Ω/phase (Ra = 0). The input is 900 kW at rated voltage, and induced line EMF is 8500 V. Determine the line current and operating power factor.",
-            "options": [
-                "Current I = 89.17 A, Power factor = 0.8829 leading",
-                "Current I = 78.73 A, Power factor = 0.8000 lagging",
-                "Current I = 105.20 A, Power factor = 0.7070 leading",
-                "Current I = 89.17 A, Power factor = 0.9500 lagging"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Phase voltage V = 6600 / sqrt(3) = 3810.5 V; Phase back-EMF E = 8500 / sqrt(3) = 4907.5 V.\n2. Because E > V (over-excited), the motor operates at a leading power factor.\n3. Input power Pi = sqrt(3) * VL * I * cos φ = 900,000 W -> I*cos φ = 900,000 / [sqrt(3) * 6600] = 78.73 A.\n4. Using E² = (V + Xs*I*sin φ)² + (Xs*I*cos φ)² -> 4907.5² = (3810.5 + 20*I*sin φ)² + (20 * 78.73)².\n5. (3810.5 + 20*I*sin φ)² = 4907.5² - 1574.6² = 21,605,188 -> 3810.5 + 20*I*sin φ = 4648.1 V.\n6. I*sin φ = (4648.1 - 3810.5) / 20 = 41.88 A.\n7. I = sqrt(78.73² + 41.88²) = sqrt(6198 + 1754) = 89.17 A.\n8. cos φ = 78.73 / 89.17 = 0.8829 leading.",
-            "id": 103
-        },
-        {
-            "question": "[PROBLEM 8.12] A 2200 V, 3-phase star-connected, 8-pole synchronous motor has Zs = (0.4 + j6) Ω/phase and is excited such that E = V at no-load. When loaded, the rotor retards by 3° mechanical. What is the torque angle δ in electrical degrees, and what is the maximum power the motor can supply without falling out of step?",
-            "options": [
-                "δ = 12° electrical, Pmax = 250.46 kW",
-                "δ = 3° electrical, Pmax = 165.78 kW",
-                "δ = 24° electrical, Pmax = 310.00 kW",
-                "δ = 6° electrical, Pmax = 200.00 kW"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Pole pairs p = P / 2 = 8 / 2 = 4.\n2. Torque angle δ = p * δ_mech = 4 * 3° = 12° electrical.\n3. Phase voltage V = E = 2200 / sqrt(3) = 1270.2 V; Zs = sqrt(0.4² + 6²) = 6.0133 Ω.\n4. Maximum power output formula: Pmax = [V*E / Zs] - [(E² / Zs²) * Ra].\n5. V*E / Zs = (1270.2 * 1270.2) / 6.0133 = 268,306 W.\n6. (E² / Zs²) * Ra = [(1270.2 / 6.0133)²] * 0.4 = 44,619 * 0.4 = 17,847 W.\n7. Total maximum 3-phase power Pmax(3φ) = 3 * (268306 - 17847) = 3 * 250,459 W / 3 = 250,459 W ≈ 250.46 kW.",
-            "id": 104
-        },
-        {
-            "question": "[PROBLEM 8.16] An 11 kV, 5000 kVA, 50 Hz, 1000 rpm star synchronous motor has Xs = 60% (14.52 Ω, Ra = 0). At full load 0.8 pf leading (E = 9159 V/phase, δ = 19.44°), calculate the synchronizing power and torque per mechanical degree.",
-            "options": [
-                "Psyn = 593.4 kW/mech degree, Tsyn = 5666.6 Nm/mech degree",
-                "Psyn = 1042 kW/mech degree, Tsyn = 9950 Nm/mech degree",
-                "Psyn = 350.0 kW/mech degree, Tsyn = 3340 Nm/mech degree",
-                "Psyn = 850.5 kW/mech degree, Tsyn = 8120 Nm/mech degree"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Number of poles P = 120 * 50 / 1000 = 6 poles; Pole pairs p = 3.\n2. 1 mechanical degree = p * 1° = 3 electrical degrees = 3 * (π / 180) radians.\n3. Vph = 11,000 / sqrt(3) = 6351 V; E = 9159 V; δ = 19.44°.\n4. Total 3-phase synchronizing power Psyn = [3 * V * E / Xs] * cos(δ) * [p * π / 180].\n5. Psyn = [(3 * 6351 * 9159) / 14.52] * cos(19.44°) * (3π / 180) = (12,018,349) * 0.9430 * 0.05236 = 593,404 W = 593.4 kW per mechanical degree.\n6. Synchronizing torque Tsyn = Psyn / (2π * Ns / 60) = 593404 / (2π * 1000 / 60) = 593404 / 104.72 = 5666.6 Nm per mechanical degree.",
-            "id": 105
-        },
-        {
-            "question": "[PROBLEM 8.19] An 11 kV, 3-phase star salient-pole synchronous motor has Xd = 10 Ω and Xq = 5 Ω/phase (Ra = 0). If field excitation drops to zero (E = 0), what is the maximum total reluctance power the motor can develop?",
-            "options": [
-                "6050 kW (at δ = 45°)",
-                "3025 kW (at δ = 90°)",
-                "12,100 kW (at δ = 30°)",
-                "Zero kW, the motor cannot develop power without excitation"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. With E = 0, excitation power is zero; the motor runs purely on reluctance power.\n2. Reluctance power per phase: P = (V²/2) * (1/Xq - 1/Xd) * sin(2δ).\n3. Maximum reluctance power occurs when sin(2δ) = 1 (δ = 45°).\n4. Vph = 11,000 / sqrt(3) = 6351 V.\n5. Pmax(ph) = (6351² / 2) * (1/5 - 1/10) = (40,335,201 / 2) * (0.1) = 2,016,760 W = 2016.8 kW per phase.\n6. Total 3-phase maximum power = 3 * 2016.8 kW = 6050 kW.",
-            "id": 106
-        },
-        {
-            "question": "[PROBLEM 8.21] An industrial factory load of 500 kW operates at 0.8 pf lagging. A 3-phase synchronous motor carrying a mechanical load of 125 kW (including losses) is connected in parallel to raise the overall system power factor to 0.9 lagging. What are the kVA input to the motor and its operating power factor?",
-            "options": [
-                "Motor kVA = 144.4 kVA, Motor pf = 0.8656 leading",
-                "Motor kVA = 125.0 kVA, Motor pf = 1.0000 unity",
-                "Motor kVA = 180.2 kVA, Motor pf = 0.7070 leading",
-                "Motor kVA = 150.0 kVA, Motor pf = 0.9000 leading"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Factory reactive power Q_L = P_L * tan(cos^-1 0.8) = 500 * 0.75 = 375 kVAR lagging.\n2. Total plant active power P_total = 500 + 125 = 625 kW.\n3. Desired overall pf = 0.9 lagging -> tan(cos^-1 0.9) = 0.4843.\n4. Desired total reactive power Q_total = 625 * 0.4843 = 302.7 kVAR lagging.\n5. Reactive power supplied by motor Q_m = 302.7 - 375 = -72.3 kVAR (leading).\n6. Motor apparent power S_m = sqrt(P_m² + Q_m²) = sqrt(125² + 72.3²) = sqrt(15625 + 5227) = 144.4 kVA.\n7. Motor operating power factor = P_m / S_m = 125 / 144.4 = 0.8656 leading.",
-            "id": 107
-        },
-        {
-            "question": "[PROBLEM 8.23] A factory load of 250 kW operates at 0.8 pf lagging. A 3-phase synchronous motor taking 50 kW is connected in parallel to improve the overall power factor to 0.9 lagging. What are the leading kVAR supplied by the motor and its operating power factor?",
-            "options": [
-                "Leading kVAR = 42.2 kVAR, Motor pf = 0.764 leading",
-                "Leading kVAR = 72.3 kVAR, Motor pf = 0.866 leading",
-                "Leading kVAR = 35.0 kVAR, Motor pf = 0.820 leading",
-                "Leading kVAR = 50.0 kVAR, Motor pf = 0.707 leading"
-            ],
-            "answer": 0,
-            "explanation": "• Step-by-Step Solution:\n1. Factory reactive power Q_L = 250 * tan(cos^-1 0.8) = 250 * 0.75 = 187.5 kVAR lagging.\n2. Total active power P = 250 + 50 = 300 kW.\n3. Target system pf = 0.9 lag (φ = 25.84°) -> Total Q = 300 * tan(25.84°) = 300 * 0.4843 = 145.3 kVAR lagging.\n4. Leading kVAR required from motor Q_m = 187.5 - 145.3 = 42.2 kVAR leading.\n5. Motor apparent power S_m = sqrt(50² + 42.2²) = sqrt(2500 + 1780.84) = 65.43 kVA.\n6. Motor operating power factor = 50 / 65.43 = 0.764 leading.",
-            "id": 108
-        }
-    ]
-}
+      "title": "AC/DC Machinery",
+      "chapter": "Theraja Chapters 6 & 8 - Official Multiple Choice Questions (61 Items)",
+      "questions": [
+          {
+              "id": 1,
+              "question": "In an alternator, the eddy current and hysteresis losses occur in:",
+              "options": [
+                  "Iron of field structure only",
+                  "Iron of armature structure only",
+                  "Both iron of field structure and armature structure",
+                  "None of the above"
+              ],
+              "answer": 1,
+              "explanation": "• Why 'Iron of armature structure only' is Correct (Key: b): The armature core is subjected to alternating magnetic flux as rotor magnetic poles sweep past it at synchronous frequency (f = PN/120), producing both hysteresis and eddy current core losses. The field structure carries steady direct current (DC), so its flux is constant and does not induce core losses.\n• Why Other Choices are Incorrect: The DC rotor field experiences no cyclic flux reversals under balanced steady-state operation."
+          },
+          {
+              "id": 2,
+              "question": "Which of the following prime movers is the least efficient?",
+              "options": [
+                  "Gas turbine",
+                  "Petrol engine",
+                  "Steam engine",
+                  "Diesel engine"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'Steam engine' is Correct (Key: c): Reciprocating steam engines have low thermal efficiency (typically 10% to 15%) compared to internal combustion engines (Diesel: 35–40%, Petrol: 25–30%) and modern gas turbines.\n• Why Other Choices are Incorrect: Diesel engines, petrol engines, and gas turbines operate at significantly higher thermodynamic cycle temperatures and efficiencies."
+          },
+          {
+              "id": 3,
+              "question": "The rotors preferred for alternators coupled to hydraulic turbines are:",
+              "options": [
+                  "Salient pole type",
+                  "Cylindrical rotor type",
+                  "Solid rotor type",
+                  "Any of the above"
+              ],
+              "answer": 0,
+              "explanation": "• Why 'Salient pole type' is Correct (Key: a): Hydraulic turbines operate at low speeds (typically 100 to 375 rpm). To generate standard 50 Hz or 60 Hz frequency, a large number of poles is required (P = 120f/N). Salient-pole rotors provide large diameters and short axial lengths to accommodate many projected poles.\n• Why Other Choices are Incorrect: Cylindrical (non-salient) rotors are designed for high-speed steam turbo-alternators (1500 to 3000 rpm) with small diameters to minimize centrifugal stresses."
+          },
+          {
+              "id": 4,
+              "question": "The stator of an alternator consists of:",
+              "options": [
+                  "An iron core",
+                  "Stator winding",
+                  "Both iron core and stator winding",
+                  "None of the above"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'Both iron core and stator winding' is Correct (Key: c): The stationary armature (stator) comprises a laminated silicon-steel magnetic core with internal perimeter slots and insulated copper phase windings placed inside the slots.\n• Why Other Choices are Incorrect: The stator requires both the magnetic iron circuit and the electrical conductor circuit to generate AC voltage."
+          },
+          {
+              "id": 5,
+              "question": "An alternator having 8 poles rotating at 250 rpm will generate a frequency of:",
+              "options": [
+                  "60 Hz",
+                  "50 Hz",
+                  "25 Hz",
+                  "$\\frac{50}{3}\\text{ Hz}$"
+              ],
+              "answer": 3,
+              "explanation": "• Why '50/3 Hz' is Correct (Key: d): Using the fundamental frequency relationship $f = \\frac{P \\cdot N}{120}$:\n$$f = \\frac{8 \\times 250}{120} = \\frac{2000}{120} = \\frac{50}{3}\\text{ Hz} \\approx 16.67\\text{ Hz}$$\n• Why Other Choices are Incorrect: 50 Hz requires 750 rpm for 8 poles; 60 Hz requires 900 rpm; 25 Hz requires 375 rpm."
+          },
+          {
+              "id": 6,
+              "question": "What is the largest size of alternator manufactured in India?",
+              "options": [
+                  "110 MVA",
+                  "210 MVA",
+                  "250 MVA",
+                  "500 MVA"
+              ],
+              "answer": 3,
+              "explanation": "• Why '500 MVA' is Correct (Key: d): Standard large thermal power utility turbo-generators manufactured by BHEL (Bharat Heavy Electricals Limited) reach unit ratings of 500 MW / 500 MVA (and up to 660–800 MW in super-critical units).\n• Why Other Choices are Incorrect: 110 MVA and 210 MVA represent older vintage thermal generation blocks."
+          },
+          {
+              "id": 7,
+              "question": "An exciter used for a synchronous alternator is essentially a:",
+              "options": [
+                  "DC shunt motor",
+                  "DC series motor",
+                  "DC shunt generator",
+                  "DC series generator"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'DC shunt generator' is Correct (Key: c): The field winding of an alternator requires direct current (DC) at nearly constant voltage. A DC shunt (or separately excited compound) generator driven on the main shaft serves as the standard exciter.\n• Why Other Choices are Incorrect: Motors consume electrical power rather than supplying excitation; series generators have variable voltage highly sensitive to load current."
+          },
+          {
+              "id": 8,
+              "question": "The rating of alternators is usually expressed in:",
+              "options": [
+                  "Full load current",
+                  "Horsepower (hp)",
+                  "kVA or MVA",
+                  "kW or MW"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'kVA or MVA' is Correct (Key: c): Like transformers, alternator heating depends on $I^2R$ copper losses (proportional to current) and core losses (proportional to voltage), both of which are independent of load power factor. Hence, rating is governed by apparent power ($S = \\sqrt{3} V_L I_L$ in kVA or MVA).\n• Why Other Choices are Incorrect: kW rating depends on the power factor of the connected load; horsepower is reserved for mechanical outputs."
+          },
+          {
+              "id": 9,
+              "question": "For a 3-phase, 4-pole alternator with armature winding placed in 96 slots, the number of slots per pole per phase ($m$) is:",
+              "options": [
+                  "2",
+                  "4",
+                  "8",
+                  "16"
+              ],
+              "answer": 2,
+              "explanation": "• Why '8' is Correct (Key: c): Slots per pole per phase $m = \\frac{\\text{Total Slots}}{\\text{Poles} \\times \\text{Phases}}$:\n$$m = \\frac{96}{4 \\times 3} = \\frac{96}{12} = 8$$\n• Why Other Choices are Incorrect: Total slots per pole = 96 / 4 = 24; dividing among 3 phases gives exactly 8 slots/pole/phase."
+          },
+          {
+              "id": 10,
+              "question": "The number of electrical degrees completed in one physical revolution of a 6-pole synchronous generator is:",
+              "options": [
+                  "120°",
+                  "360°",
+                  "720°",
+                  "1080°"
+              ],
+              "answer": 3,
+              "explanation": "• Why '1080°' is Correct (Key: d): The relationship between electrical degrees ($\\theta_e$) and mechanical degrees ($\\theta_m$) is:\n$$\\theta_e = \\left(\\frac{P}{2}\\right) \\theta_m = \\left(\\frac{6}{2}\\right) \\times 360^\\circ = 3 \\times 360^\\circ = 1080^\\circ$$\n• Why Other Choices are Incorrect: 360° corresponds to a 2-pole machine; 720° corresponds to a 4-pole machine."
+          },
+          {
+              "id": 11,
+              "question": "The RMS value of generated voltage per phase in an alternator is given by:",
+              "options": [
+                  "$E_{ph} = 4.44 \\cdot K_c \\cdot K_d \\cdot f \\cdot \\Phi \\cdot T_{ph}$",
+                  "$E_{ph} = 4.44 \\cdot K_c \\cdot K_d \\cdot f \\cdot T_{ph}$",
+                  "$E_{ph} = 4.44 \\cdot K_c \\cdot K_d \\cdot f^2 \\cdot \\Phi \\cdot T_{ph}$",
+                  "$E_{ph} = 1.11 \\cdot K_c \\cdot K_d \\cdot f \\cdot \\Phi \\cdot T_{ph}$"
+              ],
+              "answer": 0,
+              "explanation": "• Why 'Eph = 4.44 Kc Kd f Φ Tph' is Correct (Key: a): Average induced EMF per turn is $4f\\Phi$. For $T_{ph}$ turns and a sinusoidal form factor ($K_f = 1.11$), RMS EMF is $4 \\times 1.11 \\cdot f \\Phi T_{ph} = 4.44 f \\Phi T_{ph}$. Accounting for pitch factor ($K_c$) and distribution factor ($K_d$) yields $4.44 K_c K_d f \\Phi T_{ph}$.\n• Why Other Choices are Incorrect: Option b omits magnetic flux $\\Phi$; option c squares frequency; option d uses average instead of RMS."
+          },
+          {
+              "id": 12,
+              "question": "If the rotational speed of an alternator is reduced from 3000 rpm to 1500 rpm, the generated EMF per phase will:",
+              "options": [
+                  "Double",
+                  "Remain unchanged",
+                  "Become half",
+                  "Become one-fourth"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'Become half' is Correct (Key: c): Generated EMF is directly proportional to speed ($E \\propto f \\propto N$) for constant field excitation flux $\\Phi$. Reducing speed by 50% reduces frequency and generated voltage to half ($E_2 / E_1 = 1500 / 3000 = 0.5$).\n• Why Other Choices are Incorrect: Halving speed halves the rate of flux cutting."
+          },
+          {
+              "id": 13,
+              "question": "In which of the following winding configurations will the generated EMF waveform be closest to a pure sine wave?",
+              "options": [
+                  "Distributed winding with short-pitch coils",
+                  "Distributed winding with full-pitch coils",
+                  "Concentrated winding with full-pitch coils",
+                  "Same in all of the above"
+              ],
+              "answer": 0,
+              "explanation": "• Why 'Distributed winding with short-pitch coils' is Correct (Key: a): Distributing the winding across multiple slots eliminates slot harmonics ($K_d < 1$ for harmonics), and chording (short-pitching) coils by angle $\\alpha$ attenuates or completely eliminates selected harmonics ($K_c = \\cos(n\\alpha/2) = 0$), yielding a smooth sinusoidal output.\n• Why Other Choices are Incorrect: Concentrated full-pitch windings generate significant harmonic distortions in their induced EMF."
+          },
+          {
+              "id": 14,
+              "question": "An alternator has its field winding on the rotor and armature on the stator. Under steady-state balanced conditions, its air-gap magnetic field is:",
+              "options": [
+                  "Stationary with respect to the rotor",
+                  "Rotating at synchronous speed in the direction of rotor rotation",
+                  "Rotating at synchronous speed with respect to the rotor",
+                  "Both (a) and (b)"
+              ],
+              "answer": 3,
+              "explanation": "• Why 'Both (a) and (b)' is Correct (Key: d): The rotor field rotates at synchronous speed $N_s$ in space, and balanced 3-phase stator armature currents create a rotating MMF that also travels at $N_s$ in the same direction. Therefore, the resultant air-gap field rotates at synchronous speed relative to the stator (b) and is stationary relative to the rotor (a).\n• Why Other Choices are Incorrect: Both statements (a) and (b) are simultaneously true."
+          },
+          {
+              "id": 15,
+              "question": "When a balanced 3-phase distributed armature winding carries balanced 3-phase currents, the strength of the resultant rotating magnetic field is:",
+              "options": [
+                  "3 times the peak amplitude of each phase pulsating field",
+                  "2 times the peak amplitude of each phase pulsating field",
+                  "Equal to the peak amplitude of each phase pulsating field",
+                  "1.5 times the peak amplitude of each phase pulsating field"
+              ],
+              "answer": 3,
+              "explanation": "• Why '1.5 times the peak amplitude...' is Correct (Key: d): By Ferraris' theorem, three pulsating magnetic fields displaced by 120° in space carrying currents displaced by 120° in time combine to form a constant-magnitude rotating magnetic field of strength:\n$$F_R = \\frac{3}{2} F_m = 1.5 F_m$$\n• Why Other Choices are Incorrect: The resultant amplitude is strictly $\\frac{3}{2}$ or 1.5 times the maximum phase amplitude $F_m$."
+          },
+          {
+              "id": 16,
+              "question": "The synchronous reactance ($X_s$) of an alternator represents:",
+              "options": [
+                  "Armature reaction reactance and armature leakage reactance",
+                  "Armature leakage reactance and field winding reactance",
+                  "Field winding reactance and armature reaction reactance",
+                  "A physical reactance connected externally in series with the generator"
+              ],
+              "answer": 0,
+              "explanation": "• Why 'Armature reaction reactance and leakage reactance' is Correct (Key: a): Synchronous reactance $X_s$ is the total fictitious reactance accounting for both actual magnetic leakage flux ($X_L$) and the voltage drop caused by armature reaction flux ($X_{ar}$), such that $X_s = X_L + X_{ar}$.\n• Why Other Choices are Incorrect: Synchronous reactance does not include rotor field winding reactance."
+          },
+          {
+              "id": 17,
+              "question": "The armature reaction effect in a synchronous machine depends primarily on:",
+              "options": [
+                  "Terminal voltage",
+                  "Power factor of the load",
+                  "Speed of the machine",
+                  "Type of prime-mover"
+              ],
+              "answer": 1,
+              "explanation": "• Why 'Power factor of the load' is Correct (Key: b): At unity power factor, armature reaction is purely cross-magnetizing (distorting the field). At zero power factor lagging, it is purely demagnetizing (reducing main flux). At zero power factor leading, it is purely magnetizing (boosting main flux).\n• Why Other Choices are Incorrect: Speed and prime mover determine frequency and power input, but the nature of armature reaction MMF depends directly on the phase angle between armature current and induced voltage."
+          },
+          {
+              "id": 18,
+              "question": "A leading power factor load connected to an alternator implies that its voltage regulation will be:",
+              "options": [
+                  "Positive",
+                  "Negative",
+                  "Zero",
+                  "Any one of these"
+              ],
+              "answer": 3,
+              "explanation": "• Why 'Any one of these' is Correct (Key: d): With a leading power factor, the armature reaction is magnetizing, causing full-load terminal voltage $V$ to potentially exceed no-load EMF $E_0$ (negative regulation). Depending on the exact load angle and reactance values, voltage regulation $\\frac{E_0 - V}{V} \\times 100\\%$ can be negative, zero, or slightly positive.\n• Why Other Choices are Incorrect: While leading loads often produce negative regulation, zero or small positive regulation can occur depending on the power factor value."
+          },
+          {
+              "id": 19,
+              "question": "Unbalanced 3-phase stator currents in an alternator cause:",
+              "options": [
+                  "Mechanical vibrations",
+                  "Heating of the rotor",
+                  "Double-frequency currents induced in the rotor",
+                  "All of the above"
+              ],
+              "answer": 3,
+              "explanation": "• Why 'All of the above' is Correct (Key: d): Unbalanced currents produce negative-sequence stator currents that create a magnetic field rotating at synchronous speed in the reverse direction relative to the rotor. This sweeps past the rotor at $2N_s$, inducing double-frequency ($2f = 100/120\\text{ Hz}$) currents that cause severe rotor surface heating, harmonic torques, and mechanical vibrations.\n• Why Other Choices are Incorrect: All three listed phenomena occur simultaneously."
+          },
+          {
+              "id": 20,
+              "question": "In a synchronous generator operating on load:",
+              "options": [
+                  "The open-circuit voltage ($E_0$) lags terminal voltage ($V$) by the power angle $\\delta$",
+                  "The open-circuit voltage ($E_0$) leads terminal voltage ($V$) by the power factor angle $\\phi$",
+                  "The open-circuit voltage ($E_0$) leads terminal voltage ($V$) by the power angle $\\delta$",
+                  "The open-circuit voltage ($E_0$) lags terminal voltage ($V$) by the power factor angle $\\phi$"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'E0 leads V by power angle δ' is Correct (Key: c): In an alternator delivering electrical power, the rotor magnetic axis is pulled ahead of the stator terminal voltage phasor by rotor torque, so induced excitation EMF $E_0$ leads terminal voltage $V$ by torque angle $\\delta$.\n• Why Other Choices are Incorrect: In synchronous motors, $E$ lags $V$; in generators, $E_0$ leads $V$."
+          },
+          {
+              "id": 21,
+              "question": "For constructing a Potier diagram, the Zero Power Factor Characteristic (ZPFC) can be obtained by loading the alternator using a:",
+              "options": [
+                  "Lamp load",
+                  "Water rheostat load",
+                  "Synchronous motor as load",
+                  "DC motor as load"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'Synchronous motor as load' is Correct (Key: c): An under-excited synchronous motor running at no load acts as an adjustable pure inductive reactor, drawing pure lagging current at zero power factor ($\\cos\\phi \\approx 0$ lagging) without dissipating large real power.\n• Why Other Choices are Incorrect: Lamp loads and water rheostats operate near unity power factor; DC motors cannot connect directly to 3-phase AC terminals."
+          },
+          {
+              "id": 22,
+              "question": "On the open-circuit and zero-power-factor full-load curves of an alternator, the vertical distance $PQ$ of the Potier triangle gives the voltage drop across the:",
+              "options": [
+                  "Armature leakage reactance ($I_a X_L$)",
+                  "Armature reaction reactance ($I_a X_{ar}$)",
+                  "Synchronous reactance ($I_a X_s$)",
+                  "Potier reactance"
+              ],
+              "answer": 0,
+              "explanation": "• Why 'Armature leakage reactance' is Correct (Key: a): In the Potier triangle, the vertical side $PQ$ represents the armature leakage reactance voltage drop $I_a X_L$ (or Potier leakage drop), while the horizontal side represents field excitation required to overcome armature reaction MMF.\n• Why Other Choices are Incorrect: Armature reaction is represented by the horizontal leg of the Potier triangle in equivalent field amperes."
+          },
+          {
+              "id": 23,
+              "question": "By performing the Slip Test on a salient-pole alternator, we can determine:",
+              "options": [
+                  "Operating slip of the machine",
+                  "Positive-sequence reactance and negative-sequence reactance",
+                  "Direct-axis reactance ($X_d$) and quadrature-axis reactance ($X_q$)",
+                  "Subtransient reactance only"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'Direct-axis and quadrature-axis reactance' is Correct (Key: c): The slip test is conducted by driving a salient-pole machine at a speed slightly differing from synchronous speed with unexcited rotor and balanced low-voltage AC applied to the stator. Measuring maximum and minimum envelopes of voltage and current yields $X_d = V_{\\max}/I_{\\min}$ and $X_q = V_{\\min}/I_{\\max}$.\n• Why Other Choices are Incorrect: The purpose is not to measure slip, but to determine the two-reaction magnetic reactances."
+          },
+          {
+              "id": 24,
+              "question": "In a slip test, the direct-axis synchronous reactance ($X_d$) of a star-connected salient pole alternator is determined by:",
+              "options": [
+                  "$X_d = V_{\\max} / I_{\\max}$",
+                  "$X_d = V_{\\min} / I_{\\max}$",
+                  "$X_d = V_{\\max} / I_{\\min}$",
+                  "$X_d = V_{\\min} / I_{\\min}$"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'Xd = Vmax / Imin' is Correct (Key: c): When the direct axis aligns with the stator MMF wave, magnetic reluctance is minimum, flux linkage is maximum, inductive reactance is highest ($X_d$), terminal voltage reaches $V_{\\max}$, and armature current drops to $I_{\\min}$. Thus $X_d = V_{\\max} / I_{\\min}$.\n• Why Other Choices are Incorrect: $X_q = V_{\\min} / I_{\\max}$ corresponds to the minimum-inductance quadrature axis."
+          },
+          {
+              "id": 25,
+              "question": "When a 3-phase alternator is suddenly short-circuited at its terminals, the initial value of symmetrical short-circuit current is limited by:",
+              "options": [
+                  "Subtransient reactance ($X_d''$)",
+                  "Transient reactance ($X_d'$)",
+                  "Steady-state synchronous reactance ($X_s$)",
+                  "Sum of $X_d''$, $X_d'$, and $X_s$"
+              ],
+              "answer": 0,
+              "explanation": "• Why 'Subtransient reactance Xd''' is Correct (Key: a): During the first few cycles (0.01 to 0.05 seconds) following a sudden fault, damper winding currents oppose flux changes, yielding the lowest reactance $X_d''$ and highest initial symmetrical fault current $I'' = E / X_d''$.\n• Why Other Choices are Incorrect: Transient reactance $X_d'$ governs the intermediate period (0.1 to 1.0 s); steady-state reactance $X_s$ limits sustained short-circuit current after several seconds."
+          },
+          {
+              "id": 26,
+              "question": "If $X_d$, $X_d'$, and $X_d''$ are the steady-state, transient, and subtransient direct-axis reactances of a synchronous machine, their magnitude relationship is:",
+              "options": [
+                  "$X_d < X_d' < X_d''$",
+                  "$X_d'' < X_d' < X_d$",
+                  "$X_d' > X_d'' > X_d$",
+                  "$X_d > X_d'' > X_d'$"
+              ],
+              "answer": 1,
+              "explanation": "• Why 'Xd'' < Xd' < Xd' is Correct (Key: b): Damper windings and field windings trap flux during transients, reducing effective magnetic leakage paths. Hence, subtransient reactance is smallest ($X_d'' \\approx 0.15\\text{ pu}$), transient reactance is intermediate ($X_d' \\approx 0.25\\text{ pu}$), and steady-state synchronous reactance is largest ($X_d \\approx 1.0\\text{ to }1.5\\text{ pu}$).\n• Why Other Choices are Incorrect: Because fault current decreases over time ($I'' > I' > I$), reactances must follow the inverse order $X_d'' < X_d' < X_d$."
+          },
+          {
+              "id": 27,
+              "question": "The phase sequence of a 3-phase AC generator will be reversed if:",
+              "options": [
+                  "The field current is reversed keeping the direction of rotation the same",
+                  "The field current remains the same but the direction of rotation is reversed",
+                  "The field current is reversed and the number of poles is doubled",
+                  "The number of poles is doubled without reversing field current"
+              ],
+              "answer": 1,
+              "explanation": "• Why 'Direction of rotation is reversed' is Correct (Key: b): Phase sequence ($A-B-C$ vs $A-C-B$) is the chronological order in which stator phase coils are swept past by rotor magnetic poles. Reversing physical rotation reverses the order of coil encounter. Reversing field current merely inverts voltage polarity (180° shift) without altering sequence.\n• Why Other Choices are Incorrect: Reversing DC field polarity does not change the physical direction of rotating magnetic field vectors."
+          },
+          {
+              "id": 28,
+              "question": "An alternator is delivering load to an infinite busbar. If its prime mover suddenly shuts down, the alternator will:",
+              "options": [
+                  "Continue to work as a generator but reverse its direction of rotation",
+                  "Come to a complete standstill",
+                  "Continue to run as a synchronous motor in the same direction of rotation",
+                  "Start operating as an induction motor"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'Continue to run as synchronous motor...' is Correct (Key: c): Connected to a live infinite bus, the machine remains magnetically locked into synchronism. When mechanical input is lost, power reverses direction (it draws electrical power from the bus) and develops motoring torque, continuing rotation at synchronous speed $N_s$ in the same direction.\n• Why Other Choices are Incorrect: It cannot reverse rotation because the bus rotating magnetic field continues spinning in the original direction."
+          },
+          {
+              "id": 29,
+              "question": "A synchronous generator is feeding power to an infinite bus at unity power factor (UPF). If its field excitation is now decreased, it will deliver:",
+              "options": [
+                  "The same active power at leading power factor",
+                  "The same active power at lagging power factor",
+                  "More active power at unity power factor",
+                  "Less active power at unity power factor"
+              ],
+              "answer": 0,
+              "explanation": "• Why 'The same power at leading pf' is Correct (Key: a): Active power $P$ is determined strictly by the prime mover governor. When excitation is reduced below normal (under-excitation, $E_0 < V$), the generator cannot supply reactive power; instead, it absorbs lagging VARs from the bus, which corresponds to delivering active power at a leading power factor.\n• Why Other Choices are Incorrect: Over-excitation causes an alternator to supply lagging current; under-excitation causes it to supply leading current."
+          },
+          {
+              "id": 30,
+              "question": "Synchronous motors are inherently not self-starting because:",
+              "options": [
+                  "Starters cannot be used on synchronous machines",
+                  "Starting winding is not provided on these machines",
+                  "The direction of rotation cannot be reversed",
+                  "The direction of instantaneous torque reverses every half-cycle"
+              ],
+              "answer": 3,
+              "explanation": "• Why 'Direction of instantaneous torque reverses...' is Correct (Key: d): The stator rotating field sweeps past stationary rotor poles at synchronous speed (e.g., 3000 rpm). Due to high rotor inertia, the rotor cannot accelerate instantaneously. During one half-cycle torque is clockwise, and in the next half-cycle it is counter-clockwise, averaging to zero net starting torque.\n• Why Other Choices are Incorrect: Damper windings or auxiliary pony motors are employed specifically to overcome this inertia."
+          },
+          {
+              "id": 31,
+              "question": "A pony motor used for starting a synchronous motor is basically a:",
+              "options": [
+                  "DC series motor",
+                  "DC shunt motor",
+                  "Double-winding AC/DC motor",
+                  "Small induction motor"
+              ],
+              "answer": 3,
+              "explanation": "• Why 'Small induction motor' is Correct (Key: d): A pony motor is a small auxiliary induction motor (usually having one pair of poles fewer than the synchronous machine) coupled to the main shaft to bring the unexcited synchronous motor up to near-synchronous speed before DC excitation is applied.\n• Why Other Choices are Incorrect: Induction motors provide robust, low-maintenance starting without requiring separate DC supplies."
+          },
+          {
+              "id": 32,
+              "question": "A 3-phase synchronous motor can be started by:",
+              "options": [
+                  "Providing damper winding in pole faces",
+                  "Using a pony motor",
+                  "Using a coupled DC machine as a motor",
+                  "Any of the above"
+              ],
+              "answer": 3,
+              "explanation": "• Why 'Any of the above' is Correct (Key: d): Common starting methods include: (1) Damper winding (squirrel-cage amortisseur bars) allowing induction start, (2) Auxiliary pony motor, and (3) Using the coupled DC exciter generator as a DC starting motor.\n• Why Other Choices are Incorrect: All three are standard industrial methods."
+          },
+          {
+              "id": 33,
+              "question": "Compared to an induction motor of the same physical frame size, the air gap in a synchronous motor is:",
+              "options": [
+                  "Less than half",
+                  "Half to three-fourths",
+                  "The same",
+                  "Three to five times larger"
+              ],
+              "answer": 3,
+              "explanation": "• Why 'Three to five times larger' is Correct (Key: d): In an induction motor, a tiny air gap (0.2–1.5 mm) is essential to minimize magnetizing current and maintain a reasonable power factor. In a synchronous motor, excitation is supplied separately by DC on the rotor, so a much larger air gap is used to increase overload pull-out capacity and transient stability.\n• Why Other Choices are Incorrect: Small air gaps in synchronous machines would cause excessive armature reaction and poor stability."
+          },
+          {
+              "id": 34,
+              "question": "A synchronous motor is switched onto the AC supply with its rotor field winding shorted on itself. It will:",
+              "options": [
+                  "Not start at all",
+                  "Start and continue to run as an induction motor",
+                  "Start as an induction motor and then pull into synchronous speed automatically",
+                  "None of the above"
+              ],
+              "answer": 1,
+              "explanation": "• Why 'Start and continue to run as an induction motor' is Correct (Key: b): The closed field winding (along with damper bars) acts like the rotor winding of an induction motor, developing induction torque to reach sub-synchronous slip speed ($N < N_s$). Without DC excitation, it cannot pull into magnetic locking and continues running with slip.\n• Why Other Choices are Incorrect: DC excitation must be applied to create fixed magnetic poles for synchronous pull-in."
+          },
+          {
+              "id": 35,
+              "question": "When $V$ is the applied terminal voltage, the maximum pull-out (breakdown) torque of a synchronous motor varies as:",
+              "options": [
+                  "$V$",
+                  "$\\sqrt{V}$",
+                  "$V^2$",
+                  "$1/V$"
+              ],
+              "answer": 0,
+              "explanation": "• Why 'V' is Correct (Key: a): Maximum power developed by a non-salient synchronous motor is $P_{\\max} = \\frac{E \\cdot V}{X_s}$. Since excitation voltage $E$ and synchronous reactance $X_s$ are constant, pull-out torque varies directly as $V$ (in contrast to induction motors where breakdown torque varies as $V^2$).\n• Why Other Choices are Incorrect: Induction motor torque varies with $V^2$; synchronous motor torque varies linearly with $V$."
+          },
+          {
+              "id": 36,
+              "question": "If one phase of a 3-phase synchronous motor is open-circuited while at standstill, when switched on the motor will:",
+              "options": [
+                  "Not start",
+                  "Run at half of synchronous speed",
+                  "Run with excessive vibrations",
+                  "Develop normal torque"
+              ],
+              "answer": 0,
+              "explanation": "• Why 'Not start' is Correct (Key: a): Single-phase supply to a 3-phase winding produces a pulsating stationary magnetic field rather than a rotating field. Since synchronous motors develop zero starting torque even with a balanced rotating field, under single-phase supply it has no starting torque and cannot start.\n• Why Other Choices are Incorrect: An unstarted motor with an open phase cannot accelerate from standstill."
+          },
+          {
+              "id": 37,
+              "question": "A synchronous motor can develop steady synchronous torque:",
+              "options": [
+                  "Only at synchronous speed",
+                  "While over-excited only",
+                  "When under-loaded only",
+                  "Below or above synchronous speed"
+              ],
+              "answer": 0,
+              "explanation": "• Why 'Only at synchronous speed' is Correct (Key: a): Synchronous torque requires continuous magnetic locking between rotating stator poles and rotor DC poles. If rotor speed differs from $N_s$ by even a tiny slip, the relative motion produces alternating torque that destroys synchronism.\n• Why Other Choices are Incorrect: At any speed other than $N_s = 120f/P$, average synchronous torque is zero."
+          },
+          {
+              "id": 38,
+              "question": "A 3-phase synchronous motor with stationary armature and rotating field will have:",
+              "options": [
+                  "No slip rings",
+                  "Two slip rings",
+                  "Three slip rings",
+                  "Four slip rings"
+              ],
+              "answer": 1,
+              "explanation": "• Why 'Two slip rings' is Correct (Key: b): The rotating field structure requires DC power. Two slip rings (positive and negative) convey direct current from the stationary exciter brushes to the rotating field coils.\n• Why Other Choices are Incorrect: 3-phase stationary armature windings connect directly to terminal bushings without any slip rings."
+          },
+          {
+              "id": 39,
+              "question": "Under normal steady-state synchronous operation, the damper (cage) winding in a synchronous motor carries:",
+              "options": [
+                  "High starting and running current",
+                  "No starting current",
+                  "No running current",
+                  "No starting as well as running current"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'No running current' is Correct (Key: c): At synchronous speed ($N = N_s$), the damper bars rotate at the exact same velocity as the stator rotating magnetic field (relative speed is zero). With zero rate of flux cutting ($e = B l v_{\\text{rel}} = 0$), no current is induced in the damper bars under steady running conditions.\n• Why Other Choices are Incorrect: Damper bars carry large currents during starting and during hunting oscillations."
+          },
+          {
+              "id": 40,
+              "question": "A 'Synchronous Watt' is formally defined as:",
+              "options": [
+                  "A unit to express the rating of synchronous motors",
+                  "kW as applicable to a synchronous motor",
+                  "The torque which at synchronous speed would develop a power of one watt",
+                  "None of the above"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'The torque which at synchronous speed develops one watt' is Correct (Key: c): Synchronous watt is a convenient unit of torque. One synchronous watt is the torque that produces 1 Watt of mechanical power when rotating at synchronous speed: $T_{\\text{sync}} = \\frac{P_{\\text{gross}}}{1\\text{ W}}$.\n• Why Other Choices are Incorrect: It is a unit of torque, not a power rating unit."
+          },
+          {
+              "id": 41,
+              "question": "The slip rings of a standard 3-phase synchronous motor carry:",
+              "options": [
+                  "Direct current (DC)",
+                  "Alternating current (AC)",
+                  "Both AC and DC simultaneously",
+                  "No current under normal operation"
+              ],
+              "answer": 0,
+              "explanation": "• Why 'Direct current (DC)' is Correct (Key: a): The rotor carries the field winding, which requires steady direct current from an external DC exciter or rectifier via carbon brushes riding on two insulated slip rings.\n• Why Other Choices are Incorrect: Alternating current flows strictly in the stationary 3-phase stator armature."
+          },
+          {
+              "id": 42,
+              "question": "The operating efficiency of a properly designed large industrial synchronous motor falls in the range of:",
+              "options": [
+                  "99% to 99.5%",
+                  "85% to 95%",
+                  "75% to 80%",
+                  "60% to 70%"
+              ],
+              "answer": 1,
+              "explanation": "• Why '85% to 95%' is Correct (Key: b): Industrial synchronous motors (hundreds of kW to several MW) achieve typical full-load efficiencies between 88% and 96%, higher than equivalent induction motors due to unity or leading power factor operation and lower stator copper losses.\n• Why Other Choices are Incorrect: 99.5% is unattainable due to windage, core, and copper losses; 60–75% represents small fractional-horsepower machines."
+          },
+          {
+              "id": 43,
+              "question": "A synchronous motor operating on leading power factor at zero mechanical shaft load is known as a:",
+              "options": [
+                  "Synchronous converter",
+                  "Synchronous condenser",
+                  "Synchronous inverter",
+                  "Synchronous compensator"
+              ],
+              "answer": 1,
+              "explanation": "• Why 'Synchronous condenser' is Correct (Key: b): When over-excited at no load, a synchronous motor draws pure leading reactive current, behaving electrically identical to a large bank of static power-factor-correcting capacitors (condensers).\n• Why Other Choices are Incorrect: Converters convert AC to DC; inverters convert DC to AC."
+          },
+          {
+              "id": 44,
+              "question": "The maximum value of torque that a synchronous motor can develop without losing synchronism is called:",
+              "options": [
+                  "Slip torque",
+                  "Pull-out torque",
+                  "Breaking torque",
+                  "Synchronizing torque"
+              ],
+              "answer": 1,
+              "explanation": "• Why 'Pull-out torque' is Correct (Key: b): Pull-out torque is the peak mechanical torque a synchronous motor can deliver at rated voltage and frequency before load angle exceeds maximum ($\\delta = 90^\\circ$ for cylindrical rotors) and the rotor pulls out of step.\n• Why Other Choices are Incorrect: Pull-in torque is the torque developed during transition from induction starting to synchronous locking."
+          },
+          {
+              "id": 45,
+              "question": "The armature current drawn by a synchronous motor for a given constant mechanical load will be minimum when its power factor is:",
+              "options": [
+                  "Zero",
+                  "Unity",
+                  "Leading",
+                  "Lagging"
+              ],
+              "answer": 1,
+              "explanation": "• Why 'Unity' is Correct (Key: b): Input power is $P = \\sqrt{3} V_L I_L \\cos\\phi$. For a constant mechanical load and constant supply voltage, current is $I_L = \\frac{P}{\\sqrt{3} V_L \\cos\\phi}$. Current is minimum when $\\cos\\phi$ reaches its maximum possible value of 1.0 (unity power factor, bottom of the V-curve).\n• Why Other Choices are Incorrect: At leading or lagging power factors, reactive current components increase the total armature current."
+          },
+          {
+              "id": 46,
+              "question": "When the field excitation of a synchronous motor is under-excited ($E < V$), its operating power factor will be:",
+              "options": [
+                  "Zero",
+                  "Unity",
+                  "Lagging",
+                  "Leading"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'Lagging' is Correct (Key: c): When under-excited, the rotor field is insufficient to establish required air-gap flux. The motor draws lagging magnetizing VARs from the AC supply to compensate, resulting in a lagging power factor.\n• Why Other Choices are Incorrect: Over-excitation ($E > V$) results in leading power factor; normal excitation yields unity power factor."
+          },
+          {
+              "id": 47,
+              "question": "The operating rotational speed of a synchronous motor can be changed to a new constant value by:",
+              "options": [
+                  "Changing the mechanical shaft load",
+                  "Changing the applied AC supply voltage",
+                  "Changing the supply frequency",
+                  "Using mechanical brakes"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'Changing frequency' is Correct (Key: c): Synchronous speed is strictly dictated by frequency and poles ($N_s = \\frac{120f}{P}$). Neither load variation nor voltage variation changes synchronous speed; only varying supply frequency $f$ (e.g., via a variable frequency drive) alters steady-state speed.\n• Why Other Choices are Incorrect: Increasing shaft load increases torque angle $\\delta$, but speed remains exactly $N_s$ until pull-out."
+          },
+          {
+              "id": 48,
+              "question": "The back EMF ($E_b$) set up in the stator of a synchronous motor depends on:",
+              "options": [
+                  "Rotor speed only",
+                  "Mechanical shaft load only",
+                  "Rotor field excitation flux",
+                  "Coupling angle only"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'Rotor field excitation' is Correct (Key: c): Since rotor speed is fixed at synchronous speed ($N = N_s$), the magnitude of induced back EMF $E_b = 4.44 K_c K_d f \\Phi T_{ph}$ depends strictly on DC field excitation current controlling flux $\\Phi$.\n• Why Other Choices are Incorrect: Speed is strictly constant at synchronism; shaft load alters the phase angle $\\delta$ between $E_b$ and $V$, but not the magnitude of $E_b$."
+          },
+          {
+              "id": 49,
+              "question": "The percentage slip of a synchronous motor operating in synchronism is:",
+              "options": [
+                  "1%",
+                  "100%",
+                  "0.5%",
+                  "Zero"
+              ],
+              "answer": 3,
+              "explanation": "• Why 'Zero' is Correct (Key: d): Slip is defined as $s = \\frac{N_s - N}{N_s} \\times 100\\%$. Because a synchronous motor rotates strictly at synchronous speed ($N = N_s$), slip is identically zero under all steady operating loads.\n• Why Other Choices are Incorrect: Induction motors require slip to develop torque; synchronous motors operate with zero slip."
+          },
+          {
+              "id": 50,
+              "question": "The speed regulation of a synchronous motor is always:",
+              "options": [
+                  "1%",
+                  "0.5%",
+                  "Positive",
+                  "Zero"
+              ],
+              "answer": 3,
+              "explanation": "• Why 'Zero' is Correct (Key: d): Speed regulation is $\\frac{N_{\\text{no-load}} - N_{\\text{full-load}}}{N_{\\text{full-load}}} \\times 100\\%$. Since speed is strictly synchronous speed $N_s$ from no load to full load, the change in speed is zero, giving 0% speed regulation.\n• Why Other Choices are Incorrect: Synchronous motors are strictly constant-speed machines regardless of load."
+          },
+          {
+              "id": 51,
+              "question": "A synchronous motor can be made self-starting by providing:",
+              "options": [
+                  "Damper winding embedded in rotor pole faces",
+                  "Damper winding on the stator frame",
+                  "Damper winding on both stator and rotor",
+                  "None of the above"
+              ],
+              "answer": 0,
+              "explanation": "• Why 'Damper winding embedded in rotor pole faces' is Correct (Key: a): Copper or bronze bars short-circuited by end rings embedded in the rotor pole shoes form a squirrel-cage cage that develops induction torque, accelerating the motor from standstill to near-synchronous speed.\n• Why Other Choices are Incorrect: The stator already carries the 3-phase AC armature winding; damper bars are placed on the rotor."
+          },
+          {
+              "id": 52,
+              "question": "Synchronous speed ($N_s$) for a synchronous motor is given by:",
+              "options": [
+                  "$N_s = 200f/P$",
+                  "$N_s = 120f/P$",
+                  "$N_s = 120P/f$",
+                  "$N_s = 120f \\cdot P$"
+              ],
+              "answer": 1,
+              "explanation": "• Why 'Ns = 120f/P' is Correct (Key: b): In one electrical cycle, the magnetic field travels past two poles (one pole pair). With $f$ cycles per second and $P$ poles, speed in rpm is $N_s = \\frac{60 \\times 2f}{P} = \\frac{120f}{P}$.\n• Why Other Choices are Incorrect: Standard equation verified across all AC rotating machinery."
+          },
+          {
+              "id": 53,
+              "question": "Rotor hunting and oscillations in a synchronous motor can be damped out by:",
+              "options": [
+                  "Maintaining constant field excitation",
+                  "Running the motor on leading power factor",
+                  "Providing damping bars on the rotor pole faces",
+                  "Oscillations cannot be damped"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'Providing damping bars...' is Correct (Key: c): When sudden load fluctuations cause the rotor to oscillate (hunt) about its equilibrium angle $\\delta$, the relative velocity between rotor and stator field induces currents in the damper bars, developing induction damping torque that extinguishes oscillations.\n• Why Other Choices are Incorrect: Field excitation adjustment does not provide dynamic velocity-proportional damping."
+          },
+          {
+              "id": 54,
+              "question": "If a synchronous motor has its field winding shorted and variable voltage is supplied to the stator, this will result in:",
+              "options": [
+                  "Immediate burning of the rotor",
+                  "Motor running as an induction motor",
+                  "Crawling of the rotor at harmonic speed",
+                  "Magnetic locking of the rotor at standstill"
+              ],
+              "answer": 1,
+              "explanation": "• Why 'Motor running as an induction motor' is Correct (Key: b): The shorted rotor field coils act as a closed polyphase or single-phase induction rotor winding, allowing the motor to start and operate as an induction motor with slip.\n• Why Other Choices are Incorrect: Without DC excitation, synchronous torque cannot develop, but safe induction motor action occurs."
+          },
+          {
+              "id": 55,
+              "question": "The torque angle (or power angle $\\delta$) of a synchronous motor is defined as:",
+              "options": [
+                  "The angle through which the motor lags behind synchronous speed",
+                  "The angle of lag from no-load to full-load conditions",
+                  "The angle between the rotating stator flux axis and the rotor magnetic poles axis",
+                  "None of the above"
+              ],
+              "answer": 2,
+              "explanation": "• Why 'Angle between stator flux and rotor poles' is Correct (Key: c): Torque angle $\\delta$ is the physical displacement in electrical degrees between the stator rotating MMF axis and the rotor DC field axis, representing the tension in magnetic lines of force transmitting shaft power.\n• Why Other Choices are Incorrect: The rotor does not lag behind synchronous speed; it rotates at synchronous speed displaced by angle $\\delta$."
+          },
+          {
+              "id": 56,
+              "question": "A synchronous motor can be used as a synchronous capacitor (condenser) when it is:",
+              "options": [
+                  "Under-loaded",
+                  "Over-loaded",
+                  "Under-excited",
+                  "Over-excited"
+              ],
+              "answer": 3,
+              "explanation": "• Why 'Over-excited' is Correct (Key: d): Over-excitation ($E > V$) forces the synchronous motor to draw leading current from the line, supplying reactive kilovars (kVAR) to the AC network exactly like a static capacitor.\n• Why Other Choices are Incorrect: Under-excitation draws lagging reactive current, behaving as an inductive reactor."
+          },
+          {
+              "id": 57,
+              "question": "Power developed by a non-salient synchronous motor will be maximum when the load angle $\\delta$ is:",
+              "options": [
+                  "0°",
+                  "45°",
+                  "90°",
+                  "120°"
+              ],
+              "answer": 2,
+              "explanation": "• Why '90°' is Correct (Key: c): For a cylindrical rotor machine neglecting armature resistance, electromagnetic power developed is $P = \\frac{E \\cdot V}{X_s} \\sin\\delta$. Power peaks when $\\sin\\delta = 1$, which occurs at $\\delta = 90^\\circ$.\n• Why Other Choices are Incorrect: In salient-pole machines reluctance torque shifts peak power to around 60°–70°, but for non-salient machines it is strictly 90°."
+          },
+          {
+              "id": 58,
+              "question": "A 3-phase induction motor draws 1000 kVA at 0.8 power factor lagging. A synchronous condenser is connected in parallel to draw an additional 750 kVA at 0.6 power factor leading. The resultant power factor of the total load is:",
+              "options": [
+                  "Unity (1.0)",
+                  "Zero",
+                  "0.6 lagging",
+                  "0.707 leading"
+              ],
+              "answer": 0,
+              "explanation": "• Why 'Unity (1.0)' is Correct (Key: a): Active power: $P_1 = 1000 \\times 0.8 = 800\\text{ kW}$, $P_2 = 750 \\times 0.6 = 450\\text{ kW}$. Total $P = 800 + 450 = 1250\\text{ kW}$.\nReactive power: $Q_1 = 1000 \\times 0.6 = +600\\text{ kVAR (lag)}$, $Q_2 = 750 \\times 0.8 = -600\\text{ kVAR (lead)}$. Total $Q = +600 - 600 = 0\\text{ kVAR}$.\nSince net reactive power is zero, resultant power factor is $\\cos\\phi = 1.0$ (Unity).\n• Why Other Choices are Incorrect: The leading kVAR of the synchronous condenser exactly cancels the lagging kVAR of the induction motor."
+          },
+          {
+              "id": 59,
+              "question": "A squirrel-cage (damper) winding is provided on the rotor of a synchronous motor primarily to make it:",
+              "options": [
+                  "Noise-free",
+                  "Self-starting",
+                  "Cheaper to manufacture",
+                  "Quick to stop"
+              ],
+              "answer": 1,
+              "explanation": "• Why 'Self-starting' is Correct (Key: b): The damper bars function as a squirrel-cage induction rotor during starting, developing induction torque to bring the machine from standstill up to synchronous pull-in speed without requiring external auxiliary drive motors.\n• Why Other Choices are Incorrect: It also suppresses hunting during sudden load shifts, but its primary purpose is enabling self-starting."
+          },
+          {
+              "id": 60,
+              "question": "A pony motor used to start a large synchronous machine is basically a:",
+              "options": [
+                  "Small induction motor",
+                  "DC series motor",
+                  "DC shunt motor",
+                  "Double-winding AC/DC motor"
+              ],
+              "answer": 0,
+              "explanation": "• Why 'Small induction motor' is Correct (Key: a): A pony motor is a small industrial induction motor mechanically coupled to the synchronous motor shaft to spin the rotor up to near-synchronous speed prior to applying DC field excitation.\n• Why Other Choices are Incorrect: Repeated from Question 31; textbook question pool reinforces that pony motors are small induction machines."
+          },
+          {
+              "id": 61,
+              "question": "While starting a 3-phase synchronous motor, its DC field winding should be:",
+              "options": [
+                  "Connected to the DC source immediately",
+                  "Short-circuited (or closed through a high resistance)",
+                  "Kept completely open-circuited",
+                  "None of the above"
+              ],
+              "answer": 1,
+              "explanation": "• Why 'Short-circuited (or closed through resistance)' is Correct (Key: b): If left open-circuited, the large number of rotor field turns cutting the high-speed stator rotating field would induce dangerously high voltages (thousands of volts) across the field terminals, destroying insulation and creating lethal shock hazards. Shorting or closing through a discharge resistor eliminates this hazard and adds starting torque.\n• Why Other Choices are Incorrect: Leaving the field open induces destructive breakdown voltages; connecting DC at standstill causes zero starting torque."
+          }
+      ]
+  }
 };
 
 if (typeof module !== 'undefined' && module.exports) {

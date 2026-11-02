@@ -443,18 +443,10 @@ function getFilteredPracticeQuestions() {
     return allQs.filter(q => q.id >= 259 && q.id <= 276);
   } else if (state.practiceFilter === 'ht_mod_hx') {
     return allQs.filter(q => q.id >= 277 && q.id <= 310);
-  } else if (state.practiceFilter === 'ac_ch6_iden') {
-    return allQs.filter(q => q.id >= 1 && q.id <= 15);
   } else if (state.practiceFilter === 'ac_ch6_mcq') {
-    return allQs.filter(q => q.id >= 16 && q.id <= 45);
-  } else if (state.practiceFilter === 'ac_ch6_prob') {
-    return allQs.filter(q => q.id >= 46 && q.id <= 67);
-  } else if (state.practiceFilter === 'ac_ch8_iden') {
-    return allQs.filter(q => q.id >= 68 && q.id <= 82);
+    return allQs.filter(q => q.id >= 1 && q.id <= 29);
   } else if (state.practiceFilter === 'ac_ch8_mcq') {
-    return allQs.filter(q => q.id >= 83 && q.id <= 97);
-  } else if (state.practiceFilter === 'ac_ch8_prob') {
-    return allQs.filter(q => q.id >= 98 && q.id <= 108);
+    return allQs.filter(q => q.id >= 30 && q.id <= 61);
   }
   return allQs;
 }
@@ -739,12 +731,9 @@ const SUBJECT_FILTERS = {
     { value: 'ht_mod_hx', id: 'opt-filter-ht-mod-hx', label: '🔄 Module 13: Heat Exchangers, Flow Types, U-Value & LMTD (Q277–Q310)' }
   ],
   ac_dc_machinery: [
-    { value: 'ac_ch6_iden', id: 'opt-filter-ac-ch6-iden', label: '📝 Ch 6: Terms & Identification (Q1–Q15)' },
-    { value: 'ac_ch6_mcq', id: 'opt-filter-ac-ch6-mcq', label: '💡 Ch 6: Multiple Choice Theory (Q16–Q45)' },
-    { value: 'ac_ch6_prob', id: 'opt-filter-ac-ch6-prob', label: '🔢 Ch 6: Solved Word Problems (Q46–Q67)' },
-    { value: 'ac_ch8_iden', id: 'opt-filter-ac-ch8-iden', label: '📝 Ch 8: Terms & Identification (Q68–Q82)' },
-    { value: 'ac_ch8_mcq', id: 'opt-filter-ac-ch8-mcq', label: '💡 Ch 8: Multiple Choice Theory (Q83–Q97)' },
-    { value: 'ac_ch8_prob', id: 'opt-filter-ac-ch8-prob', label: '🔢 Ch 8: Solved Word Problems (Q98–Q108)' }
+    { value: 'all', id: 'opt-filter-all', label: '⚡ All Official MCQs (61 Items)' },
+    { value: 'ac_ch6_mcq', id: 'opt-filter-ac-ch6-mcq', label: '⚡ Ch 6: Synchronous Generators MCQs (Q1–Q29)' },
+    { value: 'ac_ch8_mcq', id: 'opt-filter-ac-ch8-mcq', label: '🔄 Ch 8: Synchronous Motors MCQs (Q30–Q61)' }
   ]
 };
 
