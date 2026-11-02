@@ -3443,7 +3443,7 @@ function narrateCurrentPracticeQuestion() {
 
       narrationUtterance = new SpeechSynthesisUtterance(fullScript);
       narrationUtterance.lang = 'en-US';
-      narrationUtterance.rate = 0.92; // Slightly more relaxed, comfortable reader pace
+      narrationUtterance.rate = 1.1; // Crisp, brisk reading speed (1.1x)
       narrationUtterance.pitch = 1.0;
 
       const voice = getBestVoice();
