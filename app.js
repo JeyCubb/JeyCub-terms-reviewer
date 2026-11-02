@@ -2922,17 +2922,21 @@ function formatMathTypography(str) {
 
   const mathTokens = [];
 
+  // Decode HTML entities robustly for KaTeX mathematical input
+  function decodeHTMLEntities(text) {
+    if (typeof document === 'undefined') {
+      return text.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#39;/g, "'").replace(/&apos;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+    }
+    const txt = document.createElement('textarea');
+    txt.innerHTML = text;
+    return txt.value;
+  }
+
   // Helper to safely render KaTeX with HTML entity unescaping
   function renderKaTeX(tex, isDisplay) {
     if (typeof katex !== 'undefined' && typeof katex.renderToString === 'function') {
       try {
-        const cleanTex = tex.trim()
-          .replace(/&lt;/g, '<')
-          .replace(/&gt;/g, '>')
-          .replace(/&#39;/g, "'")
-          .replace(/&apos;/g, "'")
-          .replace(/&quot;/g, '"')
-          .replace(/&amp;/g, '&');
+        const cleanTex = decodeHTMLEntities(tex.trim());
         return katex.renderToString(cleanTex, {
           displayMode: isDisplay,
           throwOnError: false
