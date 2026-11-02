@@ -454,16 +454,8 @@ function getFilteredPracticeQuestions() {
     return allQs.filter(q => q.id >= 277 && q.id <= 310);
   } else if (state.practiceFilter === 'ac_all_mcqs') {
     return allQs.filter(q => q.id >= 1 && q.id <= 61);
-  } else if (state.practiceFilter === 'ac_ch6_mcq') {
-    return allQs.filter(q => q.id >= 1 && q.id <= 29);
-  } else if (state.practiceFilter === 'ac_ch8_mcq') {
-    return allQs.filter(q => q.id >= 30 && q.id <= 61);
   } else if (state.practiceFilter === 'ac_solving_all') {
     return allQs.filter(q => q.id >= 62 && q.id <= 93);
-  } else if (state.practiceFilter === 'ac_ch6_solving') {
-    return allQs.filter(q => q.id >= 62 && q.id <= 82);
-  } else if (state.practiceFilter === 'ac_ch8_solving') {
-    return allQs.filter(q => q.id >= 83 && q.id <= 93);
   }
   return allQs;
 }
@@ -762,13 +754,8 @@ const SUBJECT_FILTERS = {
     { value: 'ht_mod_hx', id: 'opt-filter-ht-mod-hx', label: '🔄 Module 13: Heat Exchangers, Flow Types, U-Value & LMTD (Q277–Q310)' }
   ],
   ac_dc_machinery: [
-    { value: 'all', id: 'opt-filter-all', label: '📚 All Questions (93 Items)' },
-    { value: 'ac_all_mcqs', id: 'opt-filter-ac-all-mcqs', label: '⚡ All Official MCQs (61 Items: Q1–Q61)' },
-    { value: 'ac_ch6_mcq', id: 'opt-filter-ac-ch6-mcq', label: '⚡ Ch 6: Synchronous Generators MCQs (Q1–Q29)' },
-    { value: 'ac_ch8_mcq', id: 'opt-filter-ac-ch8-mcq', label: '🔄 Ch 8: Synchronous Motors MCQs (Q30–Q61)' },
-    { value: 'ac_solving_all', id: 'opt-filter-ac-solving-all', label: '🧮 Solving Problems: Ch 6 & Ch 8 Combined (32 Items: Q62–Q93)' },
-    { value: 'ac_ch6_solving', id: 'opt-filter-ac-ch6-solving', label: '📐 Ch 6: Alternator Solving (21 Items: Q62–Q82)' },
-    { value: 'ac_ch8_solving', id: 'opt-filter-ac-ch8-solving', label: '⚙️ Ch 8: Motor Solving (11 Items: Q83–Q93)' }
+    { value: 'ac_all_mcqs', id: 'opt-filter-ac-all-mcqs', label: '⚡ All Official MCQs (61 Items)' },
+    { value: 'ac_solving_all', id: 'opt-filter-ac-solving-all', label: '🧮 All Solving Problems (32 Items)' }
   ]
 };
 
@@ -818,11 +805,6 @@ function updateSubjectUI() {
     optWeak.value = 'weak';
     optWeak.textContent = '⚠️ Weak Questions';
     filterSelect.appendChild(optWeak);
-
-    const optBookmarked = document.createElement('option');
-    optBookmarked.value = 'bookmarked';
-    optBookmarked.textContent = '⭐ Bookmarked';
-    filterSelect.appendChild(optBookmarked);
 
     filterSelect.value = state.practiceFilter;
   }
@@ -2347,9 +2329,7 @@ function renderCurrentPracticeQuestion() {
     if (totNum) totNum.textContent = 0;
 
     if (qText) {
-      if (state.practiceFilter === 'bookmarked') {
-        qText.textContent = "No bookmarked questions in this subject yet! Click 'Bookmark' on any question to star it for all classmates.";
-      } else if (state.practiceFilter === 'weak') {
+      if (state.practiceFilter === 'weak') {
         qText.textContent = "No class weak questions recorded yet! As you and your classmates practice, missed questions will automatically be compiled here.";
       } else {
         qText.textContent = "No questions found.";
@@ -2394,7 +2374,7 @@ function renderCurrentPracticeQuestion() {
 
     // Determine chosen index based on active pool filter
     let chosenIndex;
-    if (state.practiceFilter === 'weak' || state.practiceFilter === 'bookmarked') {
+    if (state.practiceFilter === 'weak') {
       chosenIndex = state.sessionPoolAnswers[key];
     } else {
       chosenIndex = state.userAnswers[key];
@@ -2574,7 +2554,7 @@ function selectPracticeAnswer(key, optionIdx) {
 
   // If already answered, pressing an option button again advances to the Next Question!
   let isAlreadyAnswered = false;
-  if (state.practiceFilter === 'weak' || state.practiceFilter === 'bookmarked') {
+  if (state.practiceFilter === 'weak') {
     isAlreadyAnswered = (state.sessionPoolAnswers[key] !== undefined);
   } else {
     isAlreadyAnswered = (state.userAnswers[key] !== undefined);
@@ -2591,7 +2571,7 @@ function selectPracticeAnswer(key, optionIdx) {
 
   lastAnswerSelectTime = Date.now();
 
-  if (state.practiceFilter === 'weak' || state.practiceFilter === 'bookmarked') {
+  if (state.practiceFilter === 'weak') {
     state.sessionPoolAnswers[key] = optionIdx;
   } else {
     state.userAnswers[key] = optionIdx;
@@ -2925,8 +2905,7 @@ function filterAllQuestions() {
     const isIncorrect = isAnswered && userAnswer !== q.answer;
     const mistakeCount = state.groupMistakes[key] || 0;
 
-    if (filterStatus === 'bookmarked' && !isBookmarked) return;
-    if (filterStatus === 'correct' && !isCorrect) return;
+        if (filterStatus === 'correct' && !isCorrect) return;
     if (filterStatus === 'incorrect' && !isIncorrect) return;
     if (filterStatus === 'weak' && mistakeCount === 0) return;
 
