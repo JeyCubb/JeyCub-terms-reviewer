@@ -221,6 +221,112 @@ body {
 
 }
 
+/* Interactive Pool Reset Confirmation Prompt */
+.pool-reset-prompt {
+  position: fixed;
+  bottom: 2.25rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(18px);
+  background: #1c1511;
+  border: 1.5px solid var(--accent-primary, #ff8c00);
+  color: #fcf6f2;
+  padding: 0.55rem 0.85rem 0.55rem 1.25rem;
+  border-radius: var(--radius-full, 9999px);
+  font-size: 0.92rem;
+  font-weight: 700;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.85), 0 0 20px rgba(255, 140, 0, 0.35);
+  z-index: 999999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  pointer-events: auto;
+  user-select: none;
+  max-width: 95vw;
+  box-sizing: border-box;
+}
+
+.pool-reset-prompt.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+.pool-reset-prompt .prompt-text {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  white-space: nowrap;
+}
+
+.pool-reset-prompt .prompt-icon {
+  color: var(--accent-primary, #ff8c00);
+  font-size: 1.05rem;
+}
+
+.pool-reset-prompt .prompt-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.pool-reset-prompt .prompt-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fcf6f2;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.32rem 0.85rem;
+  border-radius: var(--radius-full, 9999px);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  outline: none;
+  font-family: inherit;
+}
+
+.pool-reset-prompt .prompt-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.32);
+  transform: translateY(-1px);
+}
+
+.pool-reset-prompt .prompt-btn.confirm-btn {
+  background: var(--accent-primary, #ff8c00);
+  border-color: var(--accent-primary, #ff8c00);
+  color: #120e0b;
+  font-weight: 800;
+}
+
+.pool-reset-prompt .prompt-btn.confirm-btn:hover {
+  background: #ffa033;
+  border-color: #ffa033;
+  box-shadow: 0 0 14px rgba(255, 140, 0, 0.5);
+}
+
+.pool-reset-prompt .prompt-btn.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .pool-reset-prompt {
+    bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 18px;
+    flex-direction: column;
+    gap: 0.65rem;
+    text-align: center;
+  }
+  .pool-reset-prompt .prompt-text {
+    white-space: normal;
+  }
+}
+
 /* Main Container - Flex Column for Mode-Dependent Reordering */
 
 .main-container {

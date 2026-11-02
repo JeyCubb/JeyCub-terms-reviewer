@@ -623,6 +623,20 @@ function initKeyboardShortcuts() {
       activeEl.blur();
     }
 
+    // Handle Reset Prompt keyboard confirmation & dismissal
+    if (state.isResetPromptActive) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key.toLowerCase() === 'y') {
+        e.preventDefault();
+        confirmPoolReset();
+        return;
+      }
+      if (e.key === 'Escape' || e.key.toLowerCase() === 'n') {
+        e.preventDefault();
+        dismissPoolResetPrompt();
+        return;
+      }
+    }
+
     // FORMULAS MODE KEYBOARD SHORTCUTS
     if (state.currentMode === 'formulas') {
       const fKey = e.key ? e.key.toLowerCase() : '';
@@ -2187,26 +2201,77 @@ function resetPoolAnswersAndReshuffle(questions) {
   saveData('jt_user_answers', state.userAnswers);
 }
 
-function showPoolResetToast() {
-  let toast = document.getElementById('bookmark-toast');
-  if (!toast) {
-    toast = document.createElement('div');
-    toast.id = 'bookmark-toast';
-    toast.className = 'bookmark-toast';
-    document.body.appendChild(toast);
+function showPoolResetPrompt() {
+  let promptEl = document.getElementById('pool-reset-prompt');
+  if (!promptEl) {
+    promptEl = document.createElement('div');
+    promptEl.id = 'pool-reset-prompt';
+    promptEl.className = 'pool-reset-prompt';
+    document.body.appendChild(promptEl);
   }
 
-  if (toastTimeoutId) clearTimeout(toastTimeoutId);
+  promptEl.innerHTML = `
+    <div class="prompt-text">
+      <i class="fa-solid fa-rotate-right prompt-icon"></i>
+      <span>All questions completed! Reset pool?</span>
+    </div>
+    <div class="prompt-actions">
+      <button type="button" class="prompt-btn confirm-btn" id="btn-prompt-reset" onclick="confirmPoolReset()" title="Reset answers & start fresh cycle [Enter]">
+        <i class="fa-solid fa-check"></i> Reset
+      </button>
+      <button type="button" class="prompt-btn cancel-btn" id="btn-prompt-cancel" onclick="dismissPoolResetPrompt()" title="Keep answers & stay here [Esc]">
+        Cancel
+      </button>
+    </div>
+  `;
 
-  toast.innerHTML = `<i class="fa-solid fa-rotate-right" style="color: var(--accent-primary);"></i> All questions completed! Resetting pool for fresh random cycle.`;
+  promptEl.classList.remove('show');
+  void promptEl.offsetWidth;
+  promptEl.classList.add('show');
+  state.isResetPromptActive = true;
+}
 
-  toast.classList.remove('show');
-  void toast.offsetWidth;
-  toast.classList.add('show');
+function confirmPoolReset() {
+  dismissPoolResetPrompt();
+  const questions = getFilteredPracticeQuestions();
+  if (!questions || questions.length === 0) return;
 
-  toastTimeoutId = setTimeout(() => {
+  resetPoolAnswersAndReshuffle(questions);
+
+  if (state.randomMode) {
+    generateRandomSequence(questions);
+    state.currentIndex = state.randomSequence[0];
+  } else {
+    state.currentIndex = 0;
+  }
+
+  saveCurrentIndex();
+  renderCurrentPracticeQuestion();
+  scrollToTopInstant();
+
+  if (state.narrationActive) {
+    narrateCurrentPracticeQuestion();
+  }
+
+  let toast = document.getElementById('bookmark-toast');
+  if (toast) {
+    if (toastTimeoutId) clearTimeout(toastTimeoutId);
+    toast.innerHTML = `<i class="fa-solid fa-rotate-right" style="color: var(--accent-primary);"></i> Pool reset! Starting fresh cycle.`;
     toast.classList.remove('show');
-  }, 2500);
+    void toast.offsetWidth;
+    toast.classList.add('show');
+    toastTimeoutId = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2000);
+  }
+}
+
+function dismissPoolResetPrompt() {
+  const promptEl = document.getElementById('pool-reset-prompt');
+  if (promptEl) {
+    promptEl.classList.remove('show');
+  }
+  state.isResetPromptActive = false;
 }
 
 /* Helper to generate a complete randomized alignment sequence of question indices */
@@ -2586,14 +2651,16 @@ function nextQuestion() {
       state.randomSequencePos++;
       state.currentIndex = state.randomSequence[state.randomSequencePos];
     } else {
-      // Reached the end of the randomized alignment sequence!
-      resetPoolAnswersAndReshuffle(questions);
-      generateRandomSequence(questions);
-      showPoolResetToast();
-      state.currentIndex = state.randomSequence[0];
+      // Reached the end of the randomized alignment sequence! Ask if user wants to reset
+      showPoolResetPrompt();
+      return;
     }
   } else if (state.currentIndex < questions.length - 1) {
     state.currentIndex++;
+  } else {
+    // Reached the end of sequential questions! Ask if user wants to reset
+    showPoolResetPrompt();
+    return;
   }
   saveCurrentIndex();
   renderCurrentPracticeQuestion();
@@ -2604,6 +2671,7 @@ function nextQuestion() {
 }
 
 function prevQuestion() {
+  dismissPoolResetPrompt();
   const questions = getFilteredPracticeQuestions();
   if (!questions || questions.length === 0) return;
   hideNotesSection();
