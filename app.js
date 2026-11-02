@@ -2963,6 +2963,9 @@ function formatMathTypography(str) {
     if (typeof katex !== 'undefined' && typeof katex.renderToString === 'function') {
       try {
         let cleanTex = tex.trim();
+        // Heal accidental form-feed whitespace or missing backslash on \frac:
+        cleanTex = cleanTex.replace(/[\x0c\f]rac\{/g, '\\frac{');
+        cleanTex = cleanTex.replace(/(?<![a-zA-Z\\])rac\{/g, '\\frac{');
         // Prioritize stacked fraction bar over plain slash:
         cleanTex = cleanTex.replace(/^([0-9a-zA-Z\_{}]+)\s*\/\s*([0-9a-zA-Z\_{}]+)$/, '\\frac{$1}{$2}');
         cleanTex = cleanTex.replace(/=\s*([0-9a-zA-Z\_{}]+)\s*\/\s*([0-9a-zA-Z\_{}]+)$/, '= \\frac{$1}{$2}');
