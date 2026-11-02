@@ -6722,10 +6722,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 63,
               "question": "6.12. Determine the useful flux per pole required to develop 6600 V across the terminals of a 3-phase, star connected, 50 Hz, 4-pole alternator having 60 slots with 2 conductors per slot. The coils are short pitched such that if one coil side lies in slot No. 1 and the other lies in slot No. 13. Assume a double-layer winding.",
               "options": [
-                  "$\\Phi = 94\\text{ mWb } (0.094\\text{ Wb})$",
-                  "$\\Phi = 94\\text{ mWb } (0.054\\text{ Wb})$",
-                  "$\\Phi = 54\\text{ mWb } (0.094\\text{ Wb})$",
-                  "$\\Phi = 54\\text{ mWb } (0.054\\text{ Wb})$"
+                  "$\\Phi = 94\\text{ mWb}$",
+                  "$\\Phi = 82\\text{ mWb}$",
+                  "$\\Phi = 54\\text{ mWb}$",
+                  "$\\Phi = 47\\text{ mWb}$"
 ],
               "answer": 0,
               "explanation": "• Given: $E_L = 6600\\text{ V} \\implies E_{\\text{ph}} = 3810.5\\text{ V}$, $f = 50\\text{ Hz}$, $P = 4$, Slots $= 60$, Cond/slot $= 2$.\n• Turns/phase $T = 20$. Coil span $= 12\\text{ slots}$ (pole pitch $= 15\\text{ slots}$) $\\implies \\alpha = 36^\\circ \\implies k_p = \\cos 18^\\circ \\approx 0.9511$.\n• $m = 5$, $\\beta = 12^\\circ \\implies k_d \\approx 0.9567$.\n• Useful flux: $\\Phi = \\frac{3810.5}{4.44 \\times 0.9511 \\times 0.9567 \\times 50 \\times 20} = 0.09433\\text{ Wb} \\approx 94\\text{ mWb}$."
@@ -6759,9 +6759,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.15. The armature of a 6600 volt, three-phase, 20-pole, 300 rpm star-connected alternator has 180 slots. The flux per pole is 80 mWb and the coil span is 160° electrical. Determine the number of conductors in series per phase.",
               "options": [
                   "$Z_{\\text{ph}} = 454\\text{ conductors/phase}$",
-                  "$Z_{\\text{ph}} = 454\\text{ turns/phase}$",
+                  "$Z_{\\text{ph}} = 412\\text{ conductors/phase}$",
                   "$Z_{\\text{ph}} = 227\\text{ conductors/phase}$",
-                  "$Z_{\\text{ph}} = 227\\text{ turns/phase}$"
+                  "$Z_{\\text{ph}} = 196\\text{ conductors/phase}$"
 ],
               "answer": 0,
               "explanation": "• $E_{\\text{ph}} = \\frac{6600}{\\sqrt{3}} = 3810.5\\text{ V}$. $k_p = \\cos 10^\\circ = 0.9848$; $k_d = 0.9598$; $f = 50\\text{ Hz}$; $\\Phi = 0.08\\text{ Wb}$.\n• Turns/phase: $T = \\frac{3810.5}{4.44 \\times 0.9848 \\times 0.9598 \\times 50 \\times 0.08} = 226.96\\text{ turns}$.\n• Conductors in series per phase: $Z_{\\text{ph}} = 2T = 453.92 \\approx 454\\text{ conductors}$."
@@ -6770,10 +6770,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 67,
               "question": "6.16. A single-phase alternator has a rated output of 60 kVA at a terminal voltage of 220 V and 50 Hz. Its armature resistance is negligible and leakage reactance is $0.07\\;\\Omega$. Find the induced armature voltage at rated current with a power factor of 0.7 lagging.",
               "options": [
-                  "$E = 234\\text{ V (terminal drop } 19\\text{ V)}$",
-                  "$E = 234\\text{ V (terminal drop } 14\\text{ V)}$",
-                  "$E = 206\\text{ V (terminal drop } 19\\text{ V)}$",
-                  "$E = 206\\text{ V (terminal drop } 14\\text{ V)}$"
+                  "$E = 234\\text{ V}$",
+                  "$E = 227\\text{ V}$",
+                  "$E = 215\\text{ V}$",
+                  "$E = 206\\text{ V}$"
 ],
               "answer": 0,
               "explanation": "• Rated current: $I = \\frac{60000}{220} = 272.7\\text{ A}$. $I X_L = 272.7 \\times 0.07 = 19.1\\text{ V}$.\n• $E = \\sqrt{(220 \\times 0.7)^2 + (220 \\times 0.7141 + 19.1)^2} = \\sqrt{154^2 + 176.2^2} = 234\\text{ V}$."
@@ -6842,10 +6842,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 73,
               "question": "6.22. Determine the synchronous impedance of an 11 kV, 3-phase, 50 Hz, 20 MVA alternator if rated emf on open circuit is produced by a field current of 10 A, and the same field current produces full-load rated current on short circuit.",
               "options": [
-                  "$Z_s = 6\\;\\Omega$ (Book saturated value: $4\\;\\Omega$)",
-                  "$Z_s = 6\\;\\Omega$ (Book saturated value: $2\\;\\Omega$)",
-                  "$Z_s = 10\\;\\Omega$ (Book saturated value: $4\\;\\Omega$)",
-                  "$Z_s = 10\\;\\Omega$ (Book saturated value: $2\\;\\Omega$)"
+                  "$Z_s = 6\\;\\Omega$ (Book saturated: $4\\;\\Omega$)",
+                  "$Z_s = 6\\;\\Omega$ (Book saturated: $2\\;\\Omega$)",
+                  "$Z_s = 4\\;\\Omega$ (Book saturated: $6\\;\\Omega$)",
+                  "$Z_s = 3\\;\\Omega$ (Book saturated: $2\\;\\Omega$)"
 ],
               "answer": 0,
               "explanation": "• Phase $V_{\\text{oc}} = \\frac{11,000}{\\sqrt{3}} = 6351\\text{ V}$. Full load $I_{\\text{sc}} = \\frac{20 \\times 10^6}{\\sqrt{3} \\times 11,000} = 1050\\text{ A}$.\n• Synchronous impedance: $Z_s = \\frac{6351}{1050} = 6.05\\;\\Omega \\approx 6\\;\\Omega$ (Saturated book value: $3.63\\;\\Omega \\approx 4\\;\\Omega$)."
@@ -7035,9 +7035,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "8.7. A 3-phase, star-connected 6600 V synchronous motor has synchronous reactance $X_s = 20\\;\\Omega/\\text{phase}$ ($R_a \\approx 0$). It takes an input power of 900 kW and the induced line emf is 8500 V. Determine the line current and power factor.",
               "options": [
                   "$I = 89\\text{ A},\\; \\cos\\phi = 0.88\\text{ leading}$",
-                  "$I = 89\\text{ A},\\; \\cos\\phi = 0.88\\text{ lagging}$",
+                  "$I = 89\\text{ A},\\; \\cos\\phi = 0.76\\text{ leading}$",
                   "$I = 65\\text{ A},\\; \\cos\\phi = 0.88\\text{ leading}$",
-                  "$I = 65\\text{ A},\\; \\cos\\phi = 0.88\\text{ lagging}$"
+                  "$I = 65\\text{ A},\\; \\cos\\phi = 0.76\\text{ leading}$"
 ],
               "answer": 0,
               "explanation": "• Line current: $I = 89.17\\text{ A} \\approx 89\\text{ A}$.\n• Power factor: $\\cos\\phi = 0.8829 \\approx 0.88\\text{ leading}$."
@@ -7059,9 +7059,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "8.9. A 2000 V, 3-phase, star-connected synchronous motor has $R_a = 0.2\\;\\Omega$ and $X_s = 2.2\\;\\Omega/\\text{phase}$. The motor takes an input of 800 kW, and the induced line emf is 2500 V. Calculate the line current and power factor.",
               "options": [
                   "$I = 254\\text{ A},\\; \\cos\\phi = 0.91\\text{ leading}$",
-                  "$I = 254\\text{ A},\\; \\cos\\phi = 0.91\\text{ lagging}$",
+                  "$I = 254\\text{ A},\\; \\cos\\phi = 0.82\\text{ leading}$",
                   "$I = 181\\text{ A},\\; \\cos\\phi = 0.91\\text{ leading}$",
-                  "$I = 181\\text{ A},\\; \\cos\\phi = 0.91\\text{ lagging}$"
+                  "$I = 181\\text{ A},\\; \\cos\\phi = 0.82\\text{ leading}$"
 ],
               "answer": 0,
               "explanation": "• Line current: $I = 254.16\\text{ A} \\approx 254\\text{ A}$.\n• Power factor: $\\cos\\phi = 0.909 \\approx 0.91\\text{ leading}$."
@@ -7083,9 +7083,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "8.11. A 2000 V, 4-pole, 3-phase star-connected motor runs at 1500 rpm with open-circuit voltage equal to applied voltage ($E = V = 1155\\text{ V/phase}$). Armature resistance is negligible and $X_s = 3\\;\\Omega/\\text{phase}$. Find input power, power factor, and torque for $I_a = 200\\text{ A}$.",
               "options": [
                   "$\\cos\\phi = 0.97\\text{ lagging},\\; P_{\\text{in}} = 669\\text{ kW},\\; T = 4259\\text{ N}\\cdot\\text{m}$",
-                  "$\\cos\\phi = 0.97\\text{ leading},\\; P_{\\text{in}} = 669\\text{ kW},\\; T = 4259\\text{ N}\\cdot\\text{m}$",
-                  "$\\cos\\phi = 0.85\\text{ lagging},\\; P_{\\text{in}} = 589\\text{ kW},\\; T = 3749\\text{ N}\\cdot\\text{m}$",
-                  "$\\cos\\phi = 0.85\\text{ leading},\\; P_{\\text{in}} = 589\\text{ kW},\\; T = 3749\\text{ N}\\cdot\\text{m}$"
+                  "$\\cos\\phi = 0.97\\text{ lagging},\\; P_{\\text{in}} = 589\\text{ kW},\\; T = 3749\\text{ N}\\cdot\\text{m}$",
+                  "$\\cos\\phi = 0.85\\text{ lagging},\\; P_{\\text{in}} = 669\\text{ kW},\\; T = 4259\\text{ N}\\cdot\\text{m}$",
+                  "$\\cos\\phi = 0.85\\text{ lagging},\\; P_{\\text{in}} = 589\\text{ kW},\\; T = 3749\\text{ N}\\cdot\\text{m}$"
 ],
               "answer": 0,
               "explanation": "• $\\cos\\phi = 0.9657 \\approx 0.97\\text{ lagging}$.\n• Input power: $P_{\\text{in}} = 669.2\\text{ kW} \\approx 669\\text{ kW}$.\n• Developed torque: $T = 4259.3\\text{ N}\\cdot\\text{m} \\approx 4259\\text{ N}\\cdot\\text{m}$."
