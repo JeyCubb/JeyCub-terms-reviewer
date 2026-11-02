@@ -6711,9 +6711,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.11. What will be the rms value of emf induced per phase in a 3-phase, 6-pole, star-connected alternator having a stator with 90 slots and 8 conductors per slot? The flux per pole is $4 \\times 10^{-2}\\text{ Wb}$ and it runs at a speed of 1000 rpm. Assume full-pitched coils and sinusoidal flux distribution.",
               "options": [
                   "$E_{\\text{ph}} = 1019\\text{ V},\\; E_L = 1766\\text{ V}$",
-                  "$E_{\\text{ph}} = 589\\text{ V},\\; E_L = 1019\\text{ V}$",
-                  "$E_{\\text{ph}} = 1177\\text{ V},\\; E_L = 2039\\text{ V}$",
-                  "$E_{\\text{ph}} = 883\\text{ V},\\; E_L = 1529\\text{ V}$"
+                  "$E_{\\text{ph}} = 1019\\text{ V},\\; E_L = 1529\\text{ V}$",
+                  "$E_{\\text{ph}} = 589\\text{ V},\\; E_L = 1766\\text{ V}$",
+                  "$E_{\\text{ph}} = 589\\text{ V},\\; E_L = 1019\\text{ V}$"
 ],
               "answer": 0,
               "explanation": "• Given: $P = 6$, $N = 1000\\text{ rpm}$, Slots $= 90$, Conductors/slot $= 8$, $\\Phi = 0.04\\text{ Wb}$, full pitch ($k_p = 1$).\n• Frequency: $f = \\frac{P \\cdot N}{120} = \\frac{6 \\times 1000}{120} = 50\\text{ Hz}$.\n• Slots/pole/phase $m = \\frac{90}{6 \\times 3} = 5$; Slot pitch $\\beta = \\frac{180^\\circ}{15} = 12^\\circ$.\n• $k_d = \\frac{\\sin(30^\\circ)}{5 \\sin 6^\\circ} \\approx 0.9567$; Turns/phase $T = 120$.\n• $E_{\\text{ph}} = 4.44 \\times 1 \\times 0.9567 \\times 50 \\times 0.04 \\times 120 = 1019.4\\text{ V} \\approx 1019\\text{ V}$.\n• Line emf: $E_L = \\sqrt{3} \\times 1019.4 = 1765.7\\text{ V} \\approx 1766\\text{ V}$."
@@ -6722,10 +6722,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 63,
               "question": "6.12. Determine the useful flux per pole required to develop 6600 V across the terminals of a 3-phase, star connected, 50 Hz, 4-pole alternator having 60 slots with 2 conductors per slot. The coils are short pitched such that if one coil side lies in slot No. 1 and the other lies in slot No. 13. Assume a double-layer winding.",
               "options": [
-                  "$\\Phi = 94\\text{ mWb}$",
-                  "$\\Phi = 54\\text{ mWb}$",
-                  "$\\Phi = 163\\text{ mWb}$",
-                  "$\\Phi = 109\\text{ mWb}$"
+                  "$\\Phi = 94\\text{ mWb } (0.094\\text{ Wb})$",
+                  "$\\Phi = 94\\text{ mWb } (0.054\\text{ Wb})$",
+                  "$\\Phi = 54\\text{ mWb } (0.094\\text{ Wb})$",
+                  "$\\Phi = 54\\text{ mWb } (0.054\\text{ Wb})$"
 ],
               "answer": 0,
               "explanation": "• Given: $E_L = 6600\\text{ V} \\implies E_{\\text{ph}} = 3810.5\\text{ V}$, $f = 50\\text{ Hz}$, $P = 4$, Slots $= 60$, Cond/slot $= 2$.\n• Turns/phase $T = 20$. Coil span $= 12\\text{ slots}$ (pole pitch $= 15\\text{ slots}$) $\\implies \\alpha = 36^\\circ \\implies k_p = \\cos 18^\\circ \\approx 0.9511$.\n• $m = 5$, $\\beta = 12^\\circ \\implies k_d \\approx 0.9567$.\n• Useful flux: $\\Phi = \\frac{3810.5}{4.44 \\times 0.9511 \\times 0.9567 \\times 50 \\times 20} = 0.09433\\text{ Wb} \\approx 94\\text{ mWb}$."
@@ -6735,9 +6735,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.13. A three-phase, 16-pole, 50 Hz star connected alternator has 144 slots and 10 conductors per slot. The flux per pole is $2.48 \\times 10^{-2}\\text{ Wb}$ sinusoidally distributed. The coil pitch is 2 slots short of full pitch. Find (i) speed (ii) line emf.",
               "options": [
                   "(i) $N_s = 375\\text{ rpm}$, (ii) $E_L = 2064\\text{ V}$",
-                  "(i) $N_s = 750\\text{ rpm}$, (ii) $E_L = 1192\\text{ V}$",
-                  "(i) $N_s = 375\\text{ rpm}$, (ii) $E_L = 3575\\text{ V}$",
-                  "(i) $N_s = 500\\text{ rpm}$, (ii) $E_L = 2064\\text{ V}$"
+                  "(i) $N_s = 375\\text{ rpm}$, (ii) $E_L = 1192\\text{ V}$",
+                  "(i) $N_s = 750\\text{ rpm}$, (ii) $E_L = 2064\\text{ V}$",
+                  "(i) $N_s = 750\\text{ rpm}$, (ii) $E_L = 1192\\text{ V}$"
 ],
               "answer": 0,
               "explanation": "• Speed: $N_s = \\frac{120 \\times 50}{16} = 375\\text{ rpm}$.\n• Coil pitch is 2 slots short of 9 slots: $\\alpha = 2 \\times 20^\\circ = 40^\\circ \\implies k_p = \\cos 20^\\circ = 0.9397$; $k_d = 0.9598$; $T = 240\\text{ turns/phase}$.\n• Phase emf: $E_{\\text{ph}} = 4.44 \\times 0.9397 \\times 0.9598 \\times 50 \\times 0.0248 \\times 240 = 1191.8\\text{ V}$.\n• Line emf: $E_L = \\sqrt{3} \\times 1191.8 = 2064.2\\text{ V} \\approx 2064\\text{ V}$."
@@ -6747,9 +6747,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.14. A 10 MVA, 11 kV, 50 Hz, three-phase, star-connected alternator is driven at 300 rev/min. The stator winding is housed in 360 slots and has 6 conductors per slot. The coils spanning five-sixth of a pole pitch. Calculate: (i) the sinusoidally distributed flux/pole required to give a line voltage of 11 kV on open circuit, and (ii) the full load current per conductor.",
               "options": [
                   "(i) $\\Phi = 86\\text{ mWb}$, (ii) $I = 525\\text{ A/conductor}$",
-                  "(i) $\\Phi = 50\\text{ mWb}$, (ii) $I = 303\\text{ A/conductor}$",
-                  "(i) $\\Phi = 149\\text{ mWb}$, (ii) $I = 909\\text{ A/conductor}$",
-                  "(i) $\\Phi = 86\\text{ mWb}$, (ii) $I = 909\\text{ A/conductor}$"
+                  "(i) $\\Phi = 86\\text{ mWb}$, (ii) $I = 909\\text{ A/conductor}$",
+                  "(i) $\\Phi = 50\\text{ mWb}$, (ii) $I = 525\\text{ A/conductor}$",
+                  "(i) $\\Phi = 50\\text{ mWb}$, (ii) $I = 909\\text{ A/conductor}$"
 ],
               "answer": 0,
               "explanation": "• Poles: $P = \\frac{120 \\times 50}{300} = 20$. Coil span $= 150^\\circ \\implies \\alpha = 30^\\circ \\implies k_p = \\cos 15^\\circ = 0.9659$; $k_d = 0.9561$; $T = 360\\text{ turns/phase}$.\n• Flux: $\\Phi = \\frac{6350.85}{4.44 \\times 0.9659 \\times 0.9561 \\times 50 \\times 360} = 0.086\\text{ Wb} = 86\\text{ mWb}$.\n• Current per conductor: $I = \\frac{10 \\times 10^6}{\\sqrt{3} \\times 11000} = 524.86\\text{ A} \\approx 525\\text{ A/conductor}$."
@@ -6759,9 +6759,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.15. The armature of a 6600 volt, three-phase, 20-pole, 300 rpm star-connected alternator has 180 slots. The flux per pole is 80 mWb and the coil span is 160° electrical. Determine the number of conductors in series per phase.",
               "options": [
                   "$Z_{\\text{ph}} = 454\\text{ conductors/phase}$",
+                  "$Z_{\\text{ph}} = 454\\text{ turns/phase}$",
                   "$Z_{\\text{ph}} = 227\\text{ conductors/phase}$",
-                  "$Z_{\\text{ph}} = 524\\text{ conductors/phase}$",
-                  "$Z_{\\text{ph}} = 786\\text{ conductors/phase}$"
+                  "$Z_{\\text{ph}} = 227\\text{ turns/phase}$"
 ],
               "answer": 0,
               "explanation": "• $E_{\\text{ph}} = \\frac{6600}{\\sqrt{3}} = 3810.5\\text{ V}$. $k_p = \\cos 10^\\circ = 0.9848$; $k_d = 0.9598$; $f = 50\\text{ Hz}$; $\\Phi = 0.08\\text{ Wb}$.\n• Turns/phase: $T = \\frac{3810.5}{4.44 \\times 0.9848 \\times 0.9598 \\times 50 \\times 0.08} = 226.96\\text{ turns}$.\n• Conductors in series per phase: $Z_{\\text{ph}} = 2T = 453.92 \\approx 454\\text{ conductors}$."
@@ -6770,10 +6770,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 67,
               "question": "6.16. A single-phase alternator has a rated output of 60 kVA at a terminal voltage of 220 V and 50 Hz. Its armature resistance is negligible and leakage reactance is $0.07\\;\\Omega$. Find the induced armature voltage at rated current with a power factor of 0.7 lagging.",
               "options": [
-                  "$E = 234\\text{ V}$",
-                  "$E = 206\\text{ V}$",
-                  "$E = 248\\text{ V}$",
-                  "$E = 220\\text{ V}$"
+                  "$E = 234\\text{ V (terminal drop } 19\\text{ V)}$",
+                  "$E = 234\\text{ V (terminal drop } 14\\text{ V)}$",
+                  "$E = 206\\text{ V (terminal drop } 19\\text{ V)}$",
+                  "$E = 206\\text{ V (terminal drop } 14\\text{ V)}$"
 ],
               "answer": 0,
               "explanation": "• Rated current: $I = \\frac{60000}{220} = 272.7\\text{ A}$. $I X_L = 272.7 \\times 0.07 = 19.1\\text{ V}$.\n• $E = \\sqrt{(220 \\times 0.7)^2 + (220 \\times 0.7141 + 19.1)^2} = \\sqrt{154^2 + 176.2^2} = 234\\text{ V}$."
@@ -6783,9 +6783,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.17. A 100 kVA, 600 V, 50 Hz, 1-phase alternator has an effective armature resistance of $0.072\\;\\Omega$ and leakage reactance of $0.18\\;\\Omega$. Calculate the induced emf at rated load for: (i) unity power factor, (ii) 0.75 pf lagging, (iii) 0.75 pf leading.",
               "options": [
                   "(i) $E = 613\\text{ V}$, (ii) $E = 629\\text{ V}$, (iii) $E = 590\\text{ V}$",
-                  "(i) $E = 600\\text{ V}$, (ii) $E = 645\\text{ V}$, (iii) $E = 575\\text{ V}$",
-                  "(i) $E = 625\\text{ V}$, (ii) $E = 650\\text{ V}$, (iii) $E = 605\\text{ V}$",
-                  "(i) $E = 613\\text{ V}$, (ii) $E = 590\\text{ V}$, (iii) $E = 629\\text{ V}$"
+                  "(i) $E = 613\\text{ V}$, (ii) $E = 590\\text{ V}$, (iii) $E = 629\\text{ V}$",
+                  "(i) $E = 600\\text{ V}$, (ii) $E = 629\\text{ V}$, (iii) $E = 590\\text{ V}$",
+                  "(i) $E = 600\\text{ V}$, (ii) $E = 590\\text{ V}$, (iii) $E = 629\\text{ V}$"
 ],
               "answer": 0,
               "explanation": "• Rated current $I = \\frac{100,000}{600} = 166.7\\text{ A}$. Drops: $I R_a = 12\\text{ V}$, $I X_L = 30\\text{ V}$.\n• (i) Unity pf: $E = \\sqrt{(600 + 12)^2 + 30^2} = 612.73\\text{ V} \\approx 613\\text{ V}$.\n• (ii) 0.75 pf lagging: $E = \\sqrt{(450 + 12)^2 + (396.9 + 30)^2} = 629\\text{ V}$.\n• (iii) 0.75 pf leading: $E = \\sqrt{(450 + 12)^2 + (396.9 - 30)^2} = 590\\text{ V}$."
@@ -6795,9 +6795,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.18. A 500 V, 50 Hz, single-phase alternator gives 425 V on open-circuit and 170 A on short-circuit with a field current of 15 A. The armature resistance is $0.2\\;\\Omega$. Determine the voltage regulation when the alternator delivers a rated current of 170 A at: (a) unity power factor, (b) 0.8 power factor lagging.",
               "options": [
                   "(a) $\\text{Reg} = 15\\%$, (b) $\\text{Reg} = 34\\%$",
-                  "(a) $\\text{Reg} = 12\\%$, (b) $\\text{Reg} = 28\\%$",
-                  "(a) $\\text{Reg} = 20\\%$, (b) $\\text{Reg} = 45\\%$",
-                  "(a) $\\text{Reg} = 15\\%$, (b) $\\text{Reg} = 25\\%$"
+                  "(a) $\\text{Reg} = 15\\%$, (b) $\\text{Reg} = 28\\%$",
+                  "(a) $\\text{Reg} = 20\\%$, (b) $\\text{Reg} = 34\\%$",
+                  "(a) $\\text{Reg} = 20\\%$, (b) $\\text{Reg} = 28\\%$"
 ],
               "answer": 0,
               "explanation": "• $Z_s = \\frac{425}{170} = 2.5\\;\\Omega \\implies X_s = \\sqrt{2.5^2 - 0.2^2} = 2.492\\;\\Omega$.\n• (a) Unity pf: $E_0 = 576.6\\text{ V} \\implies \\text{Reg} = 15.33\\% \\approx 15\\%$.\n• (b) 0.8 lag: $E_0 = 671.7\\text{ V} \\implies \\text{Reg} = 34.35\\% \\approx 34\\%$."
@@ -6807,9 +6807,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.19. A 3-phase star connected alternator has an armature resistance of $0.1\\;\\Omega/\\text{phase}$. When an open circuit voltage of 173.3 V between lines is obtained with a field excitation of 20 A, the short-circuit current is 200 A. Determine the line emf when the machine delivers 100 A at 0.8 pf lagging to a 400 V line, and find its percentage regulation.",
               "options": [
                   "$E_L = 468\\text{ V},\\; \\text{Reg} = 16\\%$",
-                  "$E_L = 440\\text{ V},\\; \\text{Reg} = 10\\%$",
-                  "$E_L = 513\\text{ V},\\; \\text{Reg} = 28\\%$",
-                  "$E_L = 425\\text{ V},\\; \\text{Reg} = 6\\%$"
+                  "$E_L = 468\\text{ V},\\; \\text{Reg} = 10\\%$",
+                  "$E_L = 440\\text{ V},\\; \\text{Reg} = 16\\%$",
+                  "$E_L = 440\\text{ V},\\; \\text{Reg} = 10\\%$"
 ],
               "answer": 0,
               "explanation": "• Phase $V_{\\text{oc}} = 100\\text{ V} \\implies Z_s = 0.5\\;\\Omega \\implies X_s = 0.49\\;\\Omega$.\n• Terminal phase voltage $V = \\frac{400}{\\sqrt{3}} = 231\\text{ V}$.\n• At 0.8 lag: $E_{\\text{ph}} = 270.4\\text{ V} \\implies E_L = \\sqrt{3} \\times 270.4 = 468.4\\text{ V} \\approx 468\\text{ V}$.\n• Voltage regulation: $\\text{Reg} = \\frac{270.4 - 230.9}{230.9} = 16.22\\% \\approx 16\\%$."
@@ -6818,10 +6818,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 71,
               "question": "6.20. A 1200 kVA, 3300 V, 50 Hz, 3-phase, star-connected alternator has an armature resistance of $0.25\\;\\Omega/\\text{phase}$. A field excitation of 40 A produces a short-circuit current of 200 A and an open-circuit voltage of 1100 V (line). Calculate the voltage regulation on full load at 0.8 power factor lagging.",
               "options": [
-                  "$\\text{Reg} = 26\\%$",
-                  "$\\text{Reg} = 18\\%$",
-                  "$\\text{Reg} = 32\\%$",
-                  "$\\text{Reg} = 13\\%$"
+                  "$\\text{Reg} = 26\\% \\;(E_0 = 2399\\text{ V})$",
+                  "$\\text{Reg} = 26\\% \\;(E_0 = 2210\\text{ V})$",
+                  "$\\text{Reg} = 18\\% \\;(E_0 = 2399\\text{ V})$",
+                  "$\\text{Reg} = 18\\% \\;(E_0 = 2210\\text{ V})$"
 ],
               "answer": 0,
               "explanation": "• Phase $V_{\\text{oc}} = \\frac{1100}{\\sqrt{3}} = 635.1\\text{ V} \\implies Z_s = 3.175\\;\\Omega \\implies X_s = 3.165\\;\\Omega$.\n• $I = 210\\text{ A}$; Phase $V = 1905.3\\text{ V}$.\n• $E_0 = 2399\\text{ V} \\implies \\text{Reg} = \\frac{2399 - 1905.3}{1905.3} = 25.98\\% \\approx 26\\%$."
@@ -6831,9 +6831,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.21. A 20 MVA, 11 kV, 50 Hz, 3-phase star-connected alternator has a resistance between terminal lines of $0.6\\;\\Omega$. The field current of 100 A gives full-load current on short circuit. The field current of 120 A gives an open-circuit voltage of 11 kV. Determine the synchronous reactance, percentage voltage regulation at 0.8 pf lagging, and power angle.",
               "options": [
                   "$X_s = 5\\;\\Omega,\\; \\delta = 13^\\circ,\\; \\text{Reg} = 13\\%$",
-                  "$X_s = 6\\;\\Omega,\\; \\delta = 18^\\circ,\\; \\text{Reg} = 21\\%$",
-                  "$X_s = 4\\;\\Omega,\\; \\delta = 10^\\circ,\\; \\text{Reg} = 10\\%$",
-                  "$X_s = 5\\;\\Omega,\\; \\delta = 25^\\circ,\\; \\text{Reg} = 19\\%$"
+                  "$X_s = 5\\;\\Omega,\\; \\delta = 18^\\circ,\\; \\text{Reg} = 13\\%$",
+                  "$X_s = 6\\;\\Omega,\\; \\delta = 13^\\circ,\\; \\text{Reg} = 21\\%$",
+                  "$X_s = 6\\;\\Omega,\\; \\delta = 18^\\circ,\\; \\text{Reg} = 21\\%$"
 ],
               "answer": 0,
               "explanation": "• Phase resistance $R_a = \\frac{0.6}{2} = 0.3\\;\\Omega$.\n• Solving the vector diagram at 0.8 pf lag gives $X_s = 5.03\\;\\Omega \\approx 5\\;\\Omega$, torque angle $\\delta = 13.46^\\circ \\approx 13^\\circ$, and regulation $\\text{Reg} = 13.46\\% \\approx 13\\%$."
@@ -6843,9 +6843,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.22. Determine the synchronous impedance of an 11 kV, 3-phase, 50 Hz, 20 MVA alternator if rated emf on open circuit is produced by a field current of 10 A, and the same field current produces full-load rated current on short circuit.",
               "options": [
                   "$Z_s = 6\\;\\Omega$ (Book saturated value: $4\\;\\Omega$)",
-                  "$Z_s = 10\\;\\Omega$ (Book saturated value: $6\\;\\Omega$)",
-                  "$Z_s = 4\\;\\Omega$ (Book saturated value: $2\\;\\Omega$)",
-                  "$Z_s = 9\\;\\Omega$ (Book saturated value: $5\\;\\Omega$)"
+                  "$Z_s = 6\\;\\Omega$ (Book saturated value: $2\\;\\Omega$)",
+                  "$Z_s = 10\\;\\Omega$ (Book saturated value: $4\\;\\Omega$)",
+                  "$Z_s = 10\\;\\Omega$ (Book saturated value: $2\\;\\Omega$)"
 ],
               "answer": 0,
               "explanation": "• Phase $V_{\\text{oc}} = \\frac{11,000}{\\sqrt{3}} = 6351\\text{ V}$. Full load $I_{\\text{sc}} = \\frac{20 \\times 10^6}{\\sqrt{3} \\times 11,000} = 1050\\text{ A}$.\n• Synchronous impedance: $Z_s = \\frac{6351}{1050} = 6.05\\;\\Omega \\approx 6\\;\\Omega$ (Saturated book value: $3.63\\;\\Omega \\approx 4\\;\\Omega$)."
@@ -6855,9 +6855,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.23. A 10 kVA, 230 V, 3-phase star-connected alternator has an effective armature resistance of $0.5\\;\\Omega$ and a synchronous reactance of $1.2\\;\\Omega/\\text{phase}$. Calculate the percentage regulation at: (a) 0.8 power factor lagging, (b) 0.8 power factor leading, (c) determine the power factor for zero regulation.",
               "options": [
                   "(a) $\\text{Reg} = 22\\%$, (b) $\\text{Reg} = -3\\%$, (c) $\\cos\\phi = 0.87\\text{ leading}$",
-                  "(a) $\\text{Reg} = 15\\%$, (b) $\\text{Reg} = +3\\%$, (c) $\\cos\\phi = 0.71\\text{ leading}$",
-                  "(a) $\\text{Reg} = 29\\%$, (b) $\\text{Reg} = -8\\%$, (c) $\\cos\\phi = 0.92\\text{ leading}$",
-                  "(a) $\\text{Reg} = 22\\%$, (b) $\\text{Reg} = -6\\%$, (c) $\\cos\\phi = 0.80\\text{ leading}$"
+                  "(a) $\\text{Reg} = 22\\%$, (b) $\\text{Reg} = +3\\%$, (c) $\\cos\\phi = 0.87\\text{ lagging}$",
+                  "(a) $\\text{Reg} = 15\\%$, (b) $\\text{Reg} = -3\\%$, (c) $\\cos\\phi = 0.71\\text{ leading}$",
+                  "(a) $\\text{Reg} = 15\\%$, (b) $\\text{Reg} = +3\\%$, (c) $\\cos\\phi = 0.71\\text{ lagging}$"
 ],
               "answer": 0,
               "explanation": "• Full-load phase voltage $V = 132.8\\text{ V}$, $I = 25.1\\text{ A}$.\n• (a) At 0.8 lag: $E_0 = 161.8\\text{ V} \\implies \\text{Reg} = 21.8\\% \\approx 22\\%$.\n• (b) At 0.8 lead: $E_0 = 128.7\\text{ V} \\implies \\text{Reg} = -3.06\\% \\approx -3\\%$.\n• (c) Zero regulation condition: $\\cos\\phi = 0.8692 \\approx 0.87\\text{ leading}$."
@@ -6867,9 +6867,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.24. A 10 kVA, 400 V, 50 Hz, 3-phase star-connected alternator has an armature resistance of $0.5\\;\\Omega/\\text{phase}$ and a synchronous reactance of $10\\;\\Omega/\\text{phase}$. Find the torque angle and voltage regulation at rated load and 0.8 power factor lagging.",
               "options": [
                   "$\\delta = 19^\\circ,\\; \\text{Reg} = 48\\%$",
-                  "$\\delta = 12^\\circ,\\; \\text{Reg} = 32\\%$",
-                  "$\\delta = 25^\\circ,\\; \\text{Reg} = 56\\%$",
-                  "$\\delta = 19^\\circ,\\; \\text{Reg} = 24\\%$"
+                  "$\\delta = 19^\\circ,\\; \\text{Reg} = 32\\%$",
+                  "$\\delta = 12^\\circ,\\; \\text{Reg} = 48\\%$",
+                  "$\\delta = 12^\\circ,\\; \\text{Reg} = 32\\%$"
 ],
               "answer": 0,
               "explanation": "• $V_{\\text{ph}} = 230.9\\text{ V}$, $I = 14.43\\text{ A}$. Drops: $I R_a = 7.2\\text{ V}$, $I X_s = 144.3\\text{ V}$.\n• Vector solution: $E_0 = 341.9\\text{ V}$, $\\delta = 18.95^\\circ \\approx 19^\\circ$.\n• Voltage regulation: $\\text{Reg} = \\frac{341.9 - 230.9}{230.9} = 48.02\\% \\approx 48\\%$."
@@ -6879,9 +6879,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.25. A 500 kVA, 4000 V, 8-pole, 3-phase, 50 Hz star-connected alternator has the OCC data given. The armature reaction AT per pole is $1.1 \\times\\text{ampere-conductors/pole/phase}$. Armature has 240 conductors/phase and leakage reactance drop is 8%. Neglecting resistance, determine the total excitation AT and percentage regulation at full load 0.8 pf lagging.",
               "options": [
                   "$\\text{Total AT} = 7180\\text{ AT},\\; \\text{Reg} = 17\\%$",
-                  "$\\text{Total AT} = 5420\\text{ AT},\\; \\text{Reg} = 11\\%$",
-                  "$\\text{Total AT} = 8650\\text{ AT},\\; \\text{Reg} = 25\\%$",
-                  "$\\text{Total AT} = 7180\\text{ AT},\\; \\text{Reg} = 22\\%$"
+                  "$\\text{Total AT} = 7180\\text{ AT},\\; \\text{Reg} = 22\\%$",
+                  "$\\text{Total AT} = 5420\\text{ AT},\\; \\text{Reg} = 17\\%$",
+                  "$\\text{Total AT} = 5420\\text{ AT},\\; \\text{Reg} = 22\\%$"
 ],
               "answer": 0,
               "explanation": "• Combining field ampere-turns with armature reaction vector yields Total excitation $\\text{AT} = 7180\\text{ AT}$ and regulation $= 16.88\\% \\approx 17\\%$."
@@ -6891,9 +6891,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.26. A 345 kVA, 6600 V, star non-salient alternator has an OCC given and SCC gives 35 A with $I_f = 50\\text{ A}$. The leakage reactance drop is 8% and $R_a \\approx 0$. Find the field current for full load at: (a) 0.8 lagging, (b) unity pf.",
               "options": [
                   "(a) $I_f = 96\\text{ A}$ (Book: $76\\text{ A}$), (b) $I_f = 72\\text{ A}$",
-                  "(a) $I_f = 85\\text{ A}$ (Book: $65\\text{ A}$), (b) $I_f = 61\\text{ A}$",
-                  "(a) $I_f = 112\\text{ A}$ (Book: $90\\text{ A}$), (b) $I_f = 85\\text{ A}$",
-                  "(a) $I_f = 96\\text{ A}$ (Book: $76\\text{ A}$), (b) $I_f = 55\\text{ A}$"
+                  "(a) $I_f = 96\\text{ A}$ (Book: $76\\text{ A}$), (b) $I_f = 61\\text{ A}$",
+                  "(a) $I_f = 85\\text{ A}$ (Book: $65\\text{ A}$), (b) $I_f = 72\\text{ A}$",
+                  "(a) $I_f = 85\\text{ A}$ (Book: $65\\text{ A}$), (b) $I_f = 61\\text{ A}$"
 ],
               "answer": 0,
               "explanation": "• Rated current: $I = 30.18\\text{ A}$.\n• At 0.8 pf lag, Potier/MMF vector combination yields $I_f = 96.2\\text{ A} \\approx 96\\text{ A}$ (Book graphical: $76.25\\text{ A} \\approx 76\\text{ A}$).\n• At unity power factor, $I_f = 72.3\\text{ A} \\approx 72\\text{ A}$."
@@ -6902,10 +6902,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 78,
               "question": "6.27. A 3.3 kV, 1500 kVA star alternator at 760 rpm has OCC data given. Turns/phase = 55, terminal resistance = $0.5\\;\\Omega$, $X_L = 1.5\\;\\Omega$, armature reaction AT = $1.4 \\times\\text{AT/pole/phase}$, and $R_{\\text{eff}}/R_{\\text{meas}} = 1.4$. Find percentage regulation when full load at 0.8 lag is switched off and speed rises to 770 rpm.",
               "options": [
-                  "$\\text{Reg} = 23\\%$",
-                  "$\\text{Reg} = 18\\%$",
-                  "$\\text{Reg} = 30\\%$",
-                  "$\\text{Reg} = 12\\%$"
+                  "$\\text{Reg} = 23\\% \\;(E_0 = 2351\\text{ V})$",
+                  "$\\text{Reg} = 23\\% \\;(E_0 = 2120\\text{ V})$",
+                  "$\\text{Reg} = 18\\% \\;(E_0 = 2351\\text{ V})$",
+                  "$\\text{Reg} = 18\\% \\;(E_0 = 2120\\text{ V})$"
 ],
               "answer": 0,
               "explanation": "• Adjusting OCC for speed rise to 770 rpm and accounting for combined MMF armature reaction gives voltage regulation $\\text{Reg} = 23.4\\% \\approx 23\\%$."
@@ -6915,9 +6915,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.28. A 1000 kVA, 2000 V, 50 Hz star-connected alternator has an armature resistance of $0.2\\;\\Omega/\\text{phase}$. Test data gives $I_{\\text{sc}} = 288.7\\text{ A}$ at $I_f = 28.87\\text{ A}$, and $V_{\\text{oc}} = 1940\\text{ V}$ at $I_f = 28.87\\text{ A}$. Determine full-load percentage regulation at: (a) 0.8 lag, (b) 0.8 lead.",
               "options": [
                   "(a) $\\text{Reg} = 35\\%$, (b) $\\text{Reg} = -3\\%$",
-                  "(a) $\\text{Reg} = 25\\%$, (b) $\\text{Reg} = +3\\%$",
-                  "(a) $\\text{Reg} = 42\\%$, (b) $\\text{Reg} = -8\\%$",
-                  "(a) $\\text{Reg} = 35\\%$, (b) $\\text{Reg} = -7\\%$"
+                  "(a) $\\text{Reg} = 35\\%$, (b) $\\text{Reg} = +3\\%$",
+                  "(a) $\\text{Reg} = 25\\%$, (b) $\\text{Reg} = -3\\%$",
+                  "(a) $\\text{Reg} = 25\\%$, (b) $\\text{Reg} = +3\\%$"
 ],
               "answer": 0,
               "explanation": "• Phase $V_{\\text{oc}} = 1120.1\\text{ V} \\implies Z_s = 3.88\\;\\Omega \\implies X_s = 3.875\\;\\Omega$.\n• (a) At 0.8 lag: $E_0 = 2059.6\\text{ V} \\implies \\text{Reg} = 34.63\\% \\approx 35\\%$.\n• (b) At 0.8 lead: $E_0 = 1119.7\\text{ V} \\implies \\text{Reg} = -3.03\\% \\approx -3\\%$."
@@ -6927,9 +6927,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.29. A 15 MVA, 11 kV star alternator has open-circuit and zero-power-factor test data given. Using the Potier method, determine: (i) armature leakage reactance, (ii) armature reaction AT/pole, and (iii) voltage regulation at full load 0.8 lag.",
               "options": [
                   "$X_L = 1\\;\\Omega,\\; \\text{AR AT} = 15,000\\text{ AT/pole},\\; \\text{Reg} = 20\\%$",
-                  "$X_L = 2\\;\\Omega,\\; \\text{AR AT} = 10,500\\text{ AT/pole},\\; \\text{Reg} = 14\\%$",
-                  "$X_L = 3\\;\\Omega,\\; \\text{AR AT} = 22,000\\text{ AT/pole},\\; \\text{Reg} = 28\\%$",
-                  "$X_L = 1\\;\\Omega,\\; \\text{AR AT} = 18,200\\text{ AT/pole},\\; \\text{Reg} = 25\\%$"
+                  "$X_L = 1\\;\\Omega,\\; \\text{AR AT} = 10,500\\text{ AT/pole},\\; \\text{Reg} = 20\\%$",
+                  "$X_L = 2\\;\\Omega,\\; \\text{AR AT} = 15,000\\text{ AT/pole},\\; \\text{Reg} = 14\\%$",
+                  "$X_L = 2\\;\\Omega,\\; \\text{AR AT} = 10,500\\text{ AT/pole},\\; \\text{Reg} = 14\\%$"
 ],
               "answer": 0,
               "explanation": "• Potier triangle analysis: $X_L = 1.06\\;\\Omega \\approx 1\\;\\Omega$, armature reaction $F_{ar} = 15,000\\text{ AT/pole}$, and voltage regulation $\\text{Reg} = 20\\%$."
@@ -6939,9 +6939,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.30. A 500 kVA, 6600 V star alternator ($R_a = 0.075\\;\\Omega/\\text{phase}$) delivers 500 A. Using the Potier (ZPF) method, find the voltage regulation at: (i) 0.8 lagging, (ii) 0.707 leading, (iii) unity power factor.",
               "options": [
                   "(i) $\\text{Reg} = 17\\%$, (ii) $\\text{Reg} = -24\\%$, (iii) $\\text{Reg} = 2\\%$",
-                  "(i) $\\text{Reg} = 22\\%$, (ii) $\\text{Reg} = -15\\%$, (iii) $\\text{Reg} = 5\\%$",
-                  "(i) $\\text{Reg} = 12\\%$, (ii) $\\text{Reg} = -30\\%$, (iii) $\\text{Reg} = 1\\%$",
-                  "(i) $\\text{Reg} = 17\\%$, (ii) $\\text{Reg} = -19\\%$, (iii) $\\text{Reg} = 5\\%$"
+                  "(i) $\\text{Reg} = 17\\%$, (ii) $\\text{Reg} = -15\\%$, (iii) $\\text{Reg} = 2\\%$",
+                  "(i) $\\text{Reg} = 22\\%$, (ii) $\\text{Reg} = -24\\%$, (iii) $\\text{Reg} = 5\\%$",
+                  "(i) $\\text{Reg} = 22\\%$, (ii) $\\text{Reg} = -15\\%$, (iii) $\\text{Reg} = 5\\%$"
 ],
               "answer": 0,
               "explanation": "• (i) 0.8 lag: $\\text{Reg} = 16.69\\% \\approx 17\\%$.\n• (ii) 0.707 lead: $\\text{Reg} = -24.23\\% \\approx -24\\%$.\n• (iii) Unity pf: $\\text{Reg} = 2.26\\% \\approx 2\\%$."
@@ -6951,9 +6951,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "6.31. A 6-pole, 440 V, 50 Hz star alternator has a resistance between terminals of $0.4\\;\\Omega$. Determine the regulation at full-load current of 40 A at 0.8 pf lag using: (a) Synchronous impedance method, (b) MMF method, (c) Potier-triangle method.",
               "options": [
                   "(a) $\\text{Reg} = 80\\%$, (b) $\\text{Reg} = 32\\%$, (c) $\\text{Reg} = 35\\%$",
-                  "(a) $\\text{Reg} = 55\\%$, (b) $\\text{Reg} = 22\\%$, (c) $\\text{Reg} = 25\\%$",
-                  "(a) $\\text{Reg} = 95\\%$, (b) $\\text{Reg} = 45\\%$, (c) $\\text{Reg} = 48\\%$",
-                  "(a) $\\text{Reg} = 80\\%$, (b) $\\text{Reg} = 40\\%$, (c) $\\text{Reg} = 42\\%$"
+                  "(a) $\\text{Reg} = 80\\%$, (b) $\\text{Reg} = 22\\%$, (c) $\\text{Reg} = 25\\%$",
+                  "(a) $\\text{Reg} = 55\\%$, (b) $\\text{Reg} = 32\\%$, (c) $\\text{Reg} = 35\\%$",
+                  "(a) $\\text{Reg} = 55\\%$, (b) $\\text{Reg} = 22\\%$, (c) $\\text{Reg} = 25\\%$"
 ],
               "answer": 0,
               "explanation": "• Comparative regulation rounded to nearest whole percentage:\n  (a) Synchronous impedance method: $80.3\\% \\approx 80\\%$.\n  (b) MMF method: $31.83\\% \\approx 32\\%$.\n  (c) Potier method: $34.55\\% \\approx 35\\%$."
@@ -6963,9 +6963,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "8.1. A 2.3 kV, 3-phase star-connected synchronous motor has a synchronous impedance $Z_s = (0.2 + j2.2)\\;\\Omega/\\text{phase}$. It operates at 0.5 power factor leading, taking a line current of 200 A. Find the generated emf per phase and torque angle.",
               "options": [
                   "$E_{\\text{ph}} = 1708\\text{ V},\\; \\delta = 9^\\circ\\text{ lagging}$",
-                  "$E_{\\text{ph}} = 1328\\text{ V},\\; \\delta = 5^\\circ\\text{ lagging}$",
-                  "$E_{\\text{ph}} = 2145\\text{ V},\\; \\delta = 14^\\circ\\text{ lagging}$",
-                  "$E_{\\text{ph}} = 1708\\text{ V},\\; \\delta = 19^\\circ\\text{ lagging}$"
+                  "$E_{\\text{ph}} = 1708\\text{ V},\\; \\delta = 5^\\circ\\text{ lagging}$",
+                  "$E_{\\text{ph}} = 1328\\text{ V},\\; \\delta = 9^\\circ\\text{ lagging}$",
+                  "$E_{\\text{ph}} = 1328\\text{ V},\\; \\delta = 5^\\circ\\text{ lagging}$"
 ],
               "answer": 0,
               "explanation": "• Phase voltage $V = 1327.9\\text{ V}$. $\\mathbf{E} = \\mathbf{V} - \\mathbf{I}\\mathbf{Z}_s = 1688.9 - j254.6\\text{ V}$.\n• Magnitude $E_{\\text{ph}} = 1708\\text{ V}$, torque angle $\\delta = 8.58^\\circ \\approx 9^\\circ\\text{ lagging}$."
@@ -6975,9 +6975,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "8.2. A 3-phase, 400 V synchronous motor takes 60 A at 0.8 power factor leading. Its synchronous impedance is $(0.25 + j3.2)\\;\\Omega/\\text{phase}$. Determine the induced line emf and power supplied to the motor.",
               "options": [
                   "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 33,255\\text{ W } (33\\text{ kW})$",
-                  "$E_{\\text{line}} = 485\\text{ V},\\; P_{\\text{in}} = 24,500\\text{ W } (25\\text{ kW})$",
-                  "$E_{\\text{line}} = 720\\text{ V},\\; P_{\\text{in}} = 41,569\\text{ W } (42\\text{ kW})$",
-                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 41,569\\text{ W } (42\\text{ kW})$"
+                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 24,500\\text{ W } (25\\text{ kW})$",
+                  "$E_{\\text{line}} = 485\\text{ V},\\; P_{\\text{in}} = 33,255\\text{ W } (33\\text{ kW})$",
+                  "$E_{\\text{line}} = 485\\text{ V},\\; P_{\\text{in}} = 24,500\\text{ W } (25\\text{ kW})$"
 ],
               "answer": 0,
               "explanation": "• Input power: $P_{\\text{in}} = \\sqrt{3} \\times 400 \\times 60 \\times 0.8 = 33,255\\text{ W} \\approx 33\\text{ kW}$.\n• Line back EMF: $E_{\\text{line}} = \\sqrt{3} \\times 371.6 = 643.6\\text{ V} \\approx 643\\text{ V}$."
@@ -6987,9 +6987,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "8.3. A 3-phase synchronous motor develops 10 kW at 1100 V with a synchronous reactance of $8\\;\\Omega/\\text{phase}$, efficiency of 80%, and negligible resistance. Find the minimum current and the corresponding induced emf per phase at full load.",
               "options": [
                   "$I_{\\text{min}} = 7\\text{ A},\\; E_{\\text{ph}} = 637\\text{ V/phase}$",
-                  "$I_{\\text{min}} = 8\\text{ A},\\; E_{\\text{ph}} = 635\\text{ V/phase}$",
-                  "$I_{\\text{min}} = 5\\text{ A},\\; E_{\\text{ph}} = 713\\text{ V/phase}$",
-                  "$I_{\\text{min}} = 7\\text{ A},\\; E_{\\text{ph}} = 1104\\text{ V/phase}$"
+                  "$I_{\\text{min}} = 7\\text{ A},\\; E_{\\text{ph}} = 713\\text{ V/phase}$",
+                  "$I_{\\text{min}} = 5\\text{ A},\\; E_{\\text{ph}} = 637\\text{ V/phase}$",
+                  "$I_{\\text{min}} = 5\\text{ A},\\; E_{\\text{ph}} = 713\\text{ V/phase}$"
 ],
               "answer": 0,
               "explanation": "• Input power $P_{\\text{in}} = \\frac{10000}{0.80} = 12500\\text{ W}$. At $\\cos\\phi = 1$: $I_{\\text{min}} = \\frac{12500}{\\sqrt{3} \\times 1100} = 6.56\\text{ A} \\approx 7\\text{ A}$.\n• $E_{\\text{ph}} = \\sqrt{635.1^2 + 52.5^2} = 637.25\\text{ V} \\approx 637\\text{ V/phase}$."
@@ -6998,10 +6998,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 86,
               "question": "8.4. A 6600 V, 3-phase, star-connected synchronous motor takes full-load current of 80 A at 0.8 power factor leading. The armature resistance is $2.2\\;\\Omega/\\text{phase}$, synchronous reactance is $22\\;\\Omega/\\text{phase}$, and stray losses are 3200 W. Determine: (a) induced line emf, (b) mechanical output power, (c) efficiency.",
               "options": [
-                  "(a) $E_L = 8594\\text{ V}$, (b) $P_{\\text{out}} = 686,178\\text{ W } (686\\text{ kW})$, (c) $\\eta = 94\\%$",
-                  "(a) $E_L = 7240\\text{ V}$, (b) $P_{\\text{out}} = 550,200\\text{ W } (550\\text{ kW})$, (c) $\\eta = 89\\%$",
-                  "(a) $E_L = 9120\\text{ V}$, (b) $P_{\\text{out}} = 731,450\\text{ W } (731\\text{ kW})$, (c) $\\eta = 95\\%$",
-                  "(a) $E_L = 8594\\text{ V}$, (b) $P_{\\text{out}} = 705,000\\text{ W } (705\\text{ kW})$, (c) $\\eta = 91\\%$"
+                  "(a) $E_L = 8594\\text{ V}$, (b) $P_{\\text{out}} = 686\\text{ kW}$, (c) $\\eta = 94\\%$",
+                  "(a) $E_L = 8594\\text{ V}$, (b) $P_{\\text{out}} = 550\\text{ kW}$, (c) $\\eta = 89\\%$",
+                  "(a) $E_L = 7240\\text{ V}$, (b) $P_{\\text{out}} = 686\\text{ kW}$, (c) $\\eta = 94\\%$",
+                  "(a) $E_L = 7240\\text{ V}$, (b) $P_{\\text{out}} = 550\\text{ kW}$, (c) $\\eta = 89\\%$"
 ],
               "answer": 0,
               "explanation": "• (a) $E_L = 8594\\text{ V}$.\n• (b) $P_{\\text{out}} = 686,178\\text{ W} \\approx 686\\text{ kW}$.\n• (c) $\\eta = 93.79\\% \\approx 94\\%$."
@@ -7011,9 +7011,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "8.5. A 1000 kVA, 11 kV star-connected synchronous motor has $R_a = 3.5\\;\\Omega$ and $X_s = 40\\;\\Omega/\\text{phase}$. Find the induced emf and rotor retardation angle at full load for: (a) unity power factor, (b) 0.8 power factor lagging, (c) 0.8 power factor leading.",
               "options": [
                   "(a) $E_L = 11,284\\text{ V},\\; \\delta = -19^\\circ$; (b) $E_L = 8984\\text{ V},\\; \\delta = -18^\\circ$; (c) $E_L = 13,293\\text{ V},\\; \\delta = -13^\\circ$",
+                  "(a) $E_L = 11,284\\text{ V},\\; \\delta = -19^\\circ$; (b) $E_L = 13,293\\text{ V},\\; \\delta = -13^\\circ$; (c) $E_L = 8984\\text{ V},\\; \\delta = -18^\\circ$",
                   "(a) $E_L = 9850\\text{ V},\\; \\delta = -12^\\circ$; (b) $E_L = 7794\\text{ V},\\; \\delta = -11^\\circ$; (c) $E_L = 11,800\\text{ V},\\; \\delta = -10^\\circ$",
-                  "(a) $E_L = 12,500\\text{ V},\\; \\delta = -25^\\circ$; (b) $E_L = 10,500\\text{ V},\\; \\delta = -22^\\circ$; (c) $E_L = 15,400\\text{ V},\\; \\delta = -18^\\circ$",
-                  "(a) $E_L = 11,284\\text{ V},\\; \\delta = -19^\\circ$; (b) $E_L = 13,293\\text{ V},\\; \\delta = -13^\\circ$; (c) $E_L = 8984\\text{ V},\\; \\delta = -18^\\circ$"
+                  "(a) $E_L = 9850\\text{ V},\\; \\delta = -12^\\circ$; (b) $E_L = 11,800\\text{ V},\\; \\delta = -10^\\circ$; (c) $E_L = 7794\\text{ V},\\; \\delta = -11^\\circ$"
 ],
               "answer": 0,
               "explanation": "• (a) Unity pf: $E_L = 11,284\\text{ V}, \\delta = -18.8^\\circ \\approx -19^\\circ$.\n• (b) 0.8 lag: $E_L = 8984\\text{ V}, \\delta = -17.6^\\circ \\approx -18^\\circ$.\n• (c) 0.8 lead: $E_L = 13,293\\text{ V}, \\approx 13.3\\text{ kV}, \\delta = -13.48^\\circ \\approx -13^\\circ$."
@@ -7023,9 +7023,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "8.6. A synchronous motor runs at 1500 rpm with excitation adjusted such that induced emf equals applied voltage ($E = V$). Find input power, power factor, and gross torque for an armature current of 200 A if synchronous reactance is $5\\;\\Omega/\\text{phase}$ and resistance is negligible.",
               "options": [
                   "$\\cos\\phi = 0.96\\text{ lagging},\\; P_{\\text{in}} = 995\\text{ kW},\\; T = 7713\\text{ N}\\cdot\\text{m}$",
-                  "$\\cos\\phi = 0.85\\text{ lagging},\\; P_{\\text{in}} = 750\\text{ kW},\\; T = 5815\\text{ N}\\cdot\\text{m}$",
-                  "$\\cos\\phi = 0.96\\text{ leading},\\; P_{\\text{in}} = 995\\text{ kW},\\; T = 6334\\text{ N}\\cdot\\text{m}$",
-                  "$\\cos\\phi = 0.71\\text{ lagging},\\; P_{\\text{in}} = 820\\text{ kW},\\; T = 7713\\text{ N}\\cdot\\text{m}$"
+                  "$\\cos\\phi = 0.96\\text{ lagging},\\; P_{\\text{in}} = 750\\text{ kW},\\; T = 5815\\text{ N}\\cdot\\text{m}$",
+                  "$\\cos\\phi = 0.85\\text{ lagging},\\; P_{\\text{in}} = 995\\text{ kW},\\; T = 7713\\text{ N}\\cdot\\text{m}$",
+                  "$\\cos\\phi = 0.85\\text{ lagging},\\; P_{\\text{in}} = 750\\text{ kW},\\; T = 5815\\text{ N}\\cdot\\text{m}$"
 ],
               "answer": 0,
               "explanation": "• $\\cos\\phi = 0.9574 \\approx 0.96\\text{ lagging}$.\n• Input power: $P_{\\text{in}} = 994.96\\text{ kW} \\approx 995\\text{ kW}$.\n• Gross torque: $T = 7712.5\\text{ N}\\cdot\\text{m} \\approx 7713\\text{ N}\\cdot\\text{m}$."
@@ -7035,9 +7035,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "8.7. A 3-phase, star-connected 6600 V synchronous motor has synchronous reactance $X_s = 20\\;\\Omega/\\text{phase}$ ($R_a \\approx 0$). It takes an input power of 900 kW and the induced line emf is 8500 V. Determine the line current and power factor.",
               "options": [
                   "$I = 89\\text{ A},\\; \\cos\\phi = 0.88\\text{ leading}$",
-                  "$I = 65\\text{ A},\\; \\cos\\phi = 0.75\\text{ leading}$",
-                  "$I = 113\\text{ A},\\; \\cos\\phi = 0.88\\text{ lagging}$",
-                  "$I = 89\\text{ A},\\; \\cos\\phi = 0.95\\text{ lagging}$"
+                  "$I = 89\\text{ A},\\; \\cos\\phi = 0.88\\text{ lagging}$",
+                  "$I = 65\\text{ A},\\; \\cos\\phi = 0.88\\text{ leading}$",
+                  "$I = 65\\text{ A},\\; \\cos\\phi = 0.88\\text{ lagging}$"
 ],
               "answer": 0,
               "explanation": "• Line current: $I = 89.17\\text{ A} \\approx 89\\text{ A}$.\n• Power factor: $\\cos\\phi = 0.8829 \\approx 0.88\\text{ leading}$."
@@ -7047,9 +7047,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "8.8. A 75 kW, 400 V, 4-pole, star-connected synchronous motor has $R_a = 0.04\\;\\Omega$, $X_s = 0.4\\;\\Omega/\\text{phase}$, and full-load efficiency of 92.5%. Find the induced phase emf and gross mechanical power developed at full load and 0.8 power factor leading.",
               "options": [
                   "$E_{\\text{ph}} = 266\\text{ V/phase},\\; P_m = 79\\text{ kW}$",
-                  "$E_{\\text{ph}} = 231\\text{ V/phase},\\; P_m = 75\\text{ kW}$",
-                  "$E_{\\text{ph}} = 305\\text{ V/phase},\\; P_m = 81\\text{ kW}$",
-                  "$E_{\\text{ph}} = 266\\text{ V/phase},\\; P_m = 72\\text{ kW}$"
+                  "$E_{\\text{ph}} = 266\\text{ V/phase},\\; P_m = 72\\text{ kW}$",
+                  "$E_{\\text{ph}} = 231\\text{ V/phase},\\; P_m = 79\\text{ kW}$",
+                  "$E_{\\text{ph}} = 231\\text{ V/phase},\\; P_m = 72\\text{ kW}$"
 ],
               "answer": 0,
               "explanation": "• Phase EMF: $E_{\\text{ph}} = 266.18\\text{ V} \\approx 266\\text{ V/phase}$.\n• Gross mechanical power: $P_m = 78.512\\text{ kW} \\approx 79\\text{ kW}$."
@@ -7059,9 +7059,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "8.9. A 2000 V, 3-phase, star-connected synchronous motor has $R_a = 0.2\\;\\Omega$ and $X_s = 2.2\\;\\Omega/\\text{phase}$. The motor takes an input of 800 kW, and the induced line emf is 2500 V. Calculate the line current and power factor.",
               "options": [
                   "$I = 254\\text{ A},\\; \\cos\\phi = 0.91\\text{ leading}$",
-                  "$I = 181\\text{ A},\\; \\cos\\phi = 0.80\\text{ leading}$",
-                  "$I = 312\\text{ A},\\; \\cos\\phi = 0.91\\text{ lagging}$",
-                  "$I = 254\\text{ A},\\; \\cos\\phi = 0.75\\text{ lagging}$"
+                  "$I = 254\\text{ A},\\; \\cos\\phi = 0.91\\text{ lagging}$",
+                  "$I = 181\\text{ A},\\; \\cos\\phi = 0.91\\text{ leading}$",
+                  "$I = 181\\text{ A},\\; \\cos\\phi = 0.91\\text{ lagging}$"
 ],
               "answer": 0,
               "explanation": "• Line current: $I = 254.16\\text{ A} \\approx 254\\text{ A}$.\n• Power factor: $\\cos\\phi = 0.909 \\approx 0.91\\text{ leading}$."
@@ -7071,9 +7071,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "8.10. A 400 V, 6-pole, 50 Hz star-connected synchronous motor has $R_a = 0.5\\;\\Omega$ and $Z_s = 4\\;\\Omega/\\text{phase}$. It takes 20 A at unity power factor. The load torque increases until the armature current is 60 A (field excitation unchanged). Find the gross torque and new power factor.",
               "options": [
                   "$\\cos\\phi = 0.90\\text{ lagging},\\; T = 306\\text{ N}\\cdot\\text{m}$",
-                  "$\\cos\\phi = 0.80\\text{ lagging},\\; T = 241\\text{ N}\\cdot\\text{m}$",
-                  "$\\cos\\phi = 0.95\\text{ leading},\\; T = 360\\text{ N}\\cdot\\text{m}$",
-                  "$\\cos\\phi = 0.90\\text{ lagging},\\; T = 195\\text{ N}\\cdot\\text{m}$"
+                  "$\\cos\\phi = 0.90\\text{ lagging},\\; T = 241\\text{ N}\\cdot\\text{m}$",
+                  "$\\cos\\phi = 0.80\\text{ lagging},\\; T = 306\\text{ N}\\cdot\\text{m}$",
+                  "$\\cos\\phi = 0.80\\text{ lagging},\\; T = 241\\text{ N}\\cdot\\text{m}$"
 ],
               "answer": 0,
               "explanation": "• Power factor: $\\cos\\phi = 0.90\\text{ lagging}$.\n• Gross torque: $T = 305.7\\text{ N}\\cdot\\text{m} \\approx 306\\text{ N}\\cdot\\text{m}$."
@@ -7083,9 +7083,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "question": "8.11. A 2000 V, 4-pole, 3-phase star-connected motor runs at 1500 rpm with open-circuit voltage equal to applied voltage ($E = V = 1155\\text{ V/phase}$). Armature resistance is negligible and $X_s = 3\\;\\Omega/\\text{phase}$. Find input power, power factor, and torque for $I_a = 200\\text{ A}$.",
               "options": [
                   "$\\cos\\phi = 0.97\\text{ lagging},\\; P_{\\text{in}} = 669\\text{ kW},\\; T = 4259\\text{ N}\\cdot\\text{m}$",
-                  "$\\cos\\phi = 0.85\\text{ lagging},\\; P_{\\text{in}} = 589\\text{ kW},\\; T = 3749\\text{ N}\\cdot\\text{m}$",
                   "$\\cos\\phi = 0.97\\text{ leading},\\; P_{\\text{in}} = 669\\text{ kW},\\; T = 4259\\text{ N}\\cdot\\text{m}$",
-                  "$\\cos\\phi = 0.90\\text{ lagging},\\; P_{\\text{in}} = 624\\text{ kW},\\; T = 3969\\text{ N}\\cdot\\text{m}$"
+                  "$\\cos\\phi = 0.85\\text{ lagging},\\; P_{\\text{in}} = 589\\text{ kW},\\; T = 3749\\text{ N}\\cdot\\text{m}$",
+                  "$\\cos\\phi = 0.85\\text{ leading},\\; P_{\\text{in}} = 589\\text{ kW},\\; T = 3749\\text{ N}\\cdot\\text{m}$"
 ],
               "answer": 0,
               "explanation": "• $\\cos\\phi = 0.9657 \\approx 0.97\\text{ lagging}$.\n• Input power: $P_{\\text{in}} = 669.2\\text{ kW} \\approx 669\\text{ kW}$.\n• Developed torque: $T = 4259.3\\text{ N}\\cdot\\text{m} \\approx 4259\\text{ N}\\cdot\\text{m}$."
