@@ -1132,7 +1132,7 @@ function switchMode(mode) {
   if (mode === 'all') {
     filterAllQuestions();
   }
-  if (mode === 'formulas') {
+  if (false && mode === 'formulas') {
     updateFormulasUI();
   }
 

@@ -182,210 +182,7 @@
       </div>
     </section>
 
-    <!-- MODE 3: FORMULAS MODE (INTERACTIVE RECALL QUIZ & CHEAT SHEET) -->
-    <section id="formulas-view" class="view-section">
-      
-      <!-- TAB 1: INTERACTIVE RECALL QUIZ (Question Card First at Top) -->
-      <div id="formula-quiz-container" class="formula-view-tab-content active">
-        <div class="quiz-card formula-card">
-          
-          <!-- Top Row: Category Tag, Mastered Badge, and Schematic Toggle -->
-          <div class="formula-card-top-row">
-            <div class="formula-tags-group">
-              <span class="formula-badge" id="fq-config-badge">Fixed-Bias Configuration</span>
-              <span class="formula-status-badge" id="fq-status-badge">Unattempted</span>
-            </div>
-            <button type="button" class="fq-schematic-toggle-btn" id="fq-schematic-btn" onclick="toggleCircuitSchematic()">
-              <i class="fa-solid fa-diagram-project"></i> View Schematic
-            </button>
-          </div>
-
-          <!-- Circuit Schematic Preview (Collapsible) -->
-          <div class="fq-schematic-drawer" id="fq-schematic-drawer" style="display: none;">
-            <div class="fq-schematic-card">
-              <div class="fq-schematic-header">
-                <span id="fq-schematic-title"><i class="fa-solid fa-microchip"></i> BJT DC Biasing Circuit Schematics</span>
-                <button type="button" class="fq-close-btn" onclick="toggleCircuitSchematic(false)"><i class="fa-solid fa-xmark"></i></button>
-              </div>
-              <div class="fq-schematic-img-wrap" id="fq-schematic-img-wrap">
-                <img id="fq-schematic-img" src="images/bjt_bias_formulas.jpg" alt="Circuit Schematics" class="fq-schematic-img">
-              </div>
-            </div>
-          </div>
-
-          <!-- Target Prompt Banner: "Looked-For Unit" -->
-          <div class="fq-target-banner">
-            <div class="fq-target-label">CONSTRUCT FORMULA FOR:</div>
-            <h2 class="fq-target-name" id="fq-target-name">Base Current (IB)</h2>
-            <div class="fq-target-symbol-pill">
-              <span class="fq-target-prefix">Solve for:</span>
-              <span class="fq-target-symbol" id="fq-target-symbol">I_B</span>
-            </div>
-            <!-- Explicit Expected Parameters Pill -->
-            <div class="fq-expected-params-row" id="fq-expected-params-row">
-              <span class="fq-params-tag"><i class="fa-solid fa-sliders"></i> Express in terms of: <strong id="fq-expected-params-text">V_CC, V_BE, R_B</strong></span>
-            </div>
-            <div class="fq-target-prompt-text" id="fq-target-desc">Base Current (I_B) in Fixed-Bias Configuration</div>
-          </div>
-
-          <!-- Equation Quick Access Toolbar (Keys 1–7) -->
-          <div class="equation-toolbar-wrapper">
-            <div class="equation-toolbar-label">
-              <span><i class="fa-solid fa-keyboard"></i> Equation Quick Access Toolbar</span>
-              <span class="eq-hint-badge">Word Equation Keys 1–7</span>
-            </div>
-            <div class="equation-toolbar" id="equation-toolbar">
-              <button type="button" class="eq-tool-btn" data-key="1" onclick="insertFormulaTemplate('superscript')" title="Superscript / Power (Key 1 or ^ or \superscript)">
-                <span class="eq-btn-key">1</span>
-                <span class="eq-btn-sym">x<sup class="eq-box">□</sup></span>
-              </button>
-              <button type="button" class="eq-tool-btn" data-key="2" onclick="insertFormulaTemplate('frac')" title="Fraction (Key 2 or / or \frac)">
-                <span class="eq-btn-key">2</span>
-                <span class="eq-btn-sym"><span class="eq-frac"><span class="eq-num">□</span><span class="eq-den">□</span></span></span>
-              </button>
-              <button type="button" class="eq-tool-btn" data-key="3" onclick="insertFormulaTemplate('subscript')" title="Subscript (Key 3 or _ or \subscript)">
-                <span class="eq-btn-key">3</span>
-                <span class="eq-btn-sym">x<sub class="eq-box">□</sub></span>
-              </button>
-              <button type="button" class="eq-tool-btn" data-key="4" onclick="insertFormulaTemplate('parens')" title="Parentheses (Key 4 or () )">
-                <span class="eq-btn-key">4</span>
-                <span class="eq-btn-sym">( <span class="eq-box">□</span> )</span>
-              </button>
-              <button type="button" class="eq-tool-btn" data-key="5" onclick="insertFormulaTemplate('equals')" title="Equals (Key 5 or =)">
-                <span class="eq-btn-key">5</span>
-                <span class="eq-btn-sym">=</span>
-              </button>
-              <button type="button" class="eq-tool-btn" data-key="6" onclick="insertFormulaTemplate('times')" title="Multiply / Times (Key 6 or * or \times)">
-                <span class="eq-btn-key">6</span>
-                <span class="eq-btn-sym">×</span>
-              </button>
-              <button type="button" class="eq-tool-btn" data-key="7" onclick="insertFormulaTemplate('sqrt')" title="Radical / Square Root (Key 7 or \sqrt)">
-                <span class="eq-btn-key">7</span>
-                <span class="eq-btn-sym">√<span class="eq-box">□</span></span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Formula WYSIWYG Math Field (Word Equation Editor with Dotted Boxes) -->
-          <div class="fq-wysiwyg-container">
-            <div class="fq-wysiwyg-toolbar-subrow">
-              <div class="fq-mode-pill-group">
-                <button type="button" class="fq-mode-pill-btn active" id="btn-mode-skeleton" onclick="loadSkeletonTemplate()" title="Reset to interactive skeleton with dotted placeholder boxes">
-                  <i class="fa-solid fa-puzzle-piece"></i> Dotted Skeleton
-                </button>
-                <button type="button" class="fq-mode-pill-btn" id="btn-mode-blank" onclick="loadBlankCanvas()" title="Start blank and build equation with keys 1-7">
-                  <i class="fa-solid fa-pen-to-square"></i> Blank Canvas
-                </button>
-              </div>
-              <button type="button" class="fq-input-clear-btn" onclick="clearFormulaInput()" title="Clear formula input">
-                <i class="fa-solid fa-eraser"></i> Clear
-              </button>
-            </div>
-
-            <!-- The Real WYSIWYG Math Field with Dotted Boxes -->
-            <div class="fq-wysiwyg-editor-box">
-              <span class="fq-input-prefix-tag" id="fq-input-prefix">I_B = </span>
-              <math-field id="fq-math-field" virtual-keyboard-mode="off" class="fq-math-field"></math-field>
-            </div>
-
-            <!-- Backslash Shortcuts Quick Tips -->
-            <div class="fq-shortcuts-tips">
-              <i class="fa-solid fa-bolt"></i> <strong>WYSIWYG Mode:</strong> Click any dotted box <code>□</code> to fill it. Type <code>/</code> or <code>\frac</code> for stacked fractions, <code>_</code> for subscript, <code>^</code> for power, or use toolbar <code>1</code>–<code>7</code>.
-            </div>
-          </div>
-
-          <!-- Variable Palette Chips (Click-to-Insert) -->
-          <div class="fq-palette-section">
-            <div class="fq-palette-header">
-              <span><i class="fa-solid fa-shapes"></i> Variables &amp; Elements Palette (Click to insert):</span>
-            </div>
-            <div class="fq-palette-chips" id="fq-palette-chips">
-              <!-- Dynamically populated based on active subject -->
-            </div>
-          </div>
-
-          <!-- Action Bar: Clear, Hint, Check, and Navigation -->
-          <div class="fq-action-bar">
-            <button type="button" class="fq-btn fq-btn-nav" id="fq-btn-prev" onclick="prevFormula()" title="Previous Formula">
-              <i class="fa-solid fa-chevron-left"></i> Prev
-            </button>
-            <button type="button" class="fq-btn fq-btn-hint" id="fq-btn-hint" onclick="toggleFormulaHint()" title="Show Ambiguous Conceptual Hint">
-              <i class="fa-solid fa-lightbulb"></i> Hint
-            </button>
-            <button type="button" class="fq-btn fq-btn-check" id="fq-btn-check" onclick="checkFormulaAnswer()" title="Check Formula Equivalence [Enter]">
-              <i class="fa-solid fa-check"></i> Check Formula
-            </button>
-            <button type="button" class="fq-btn fq-btn-nav" id="fq-btn-next" onclick="nextFormula()" title="Next Formula">
-              Next <i class="fa-solid fa-chevron-right"></i>
-            </button>
-          </div>
-
-          <!-- Feedback & Explanation Card (Hidden until checked or requested) -->
-          <div class="fq-feedback-card" id="fq-feedback-card" style="display: none;">
-            <div class="fq-feedback-header" id="fq-feedback-header">
-              <!-- Result Icon & Title -->
-            </div>
-            <div class="fq-feedback-body" id="fq-feedback-body">
-              <!-- Solution formula and conceptual derivations -->
-            </div>
-          </div>
-
-          <!-- Ambiguous Conceptual Hint Box -->
-          <div class="fq-hint-box" id="fq-hint-box" style="display: none;">
-            <div class="fq-hint-header">
-              <span><i class="fa-solid fa-lightbulb"></i> Conceptual Guiding Clue:</span>
-              <button type="button" class="fq-close-hint-btn" onclick="toggleFormulaHint(false)"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <p class="fq-hint-text" id="fq-hint-text"></p>
-          </div>
-
-          <!-- Formula Navigation Counter & Quick Select Dropdown -->
-          <div class="fq-footer-nav-row">
-            <span class="fq-counter-text" id="fq-counter-text">Formula 1 of 23</span>
-            <div class="fq-jump-select-wrapper">
-              <label for="fq-jump-select">Jump to:</label>
-              <select id="fq-jump-select" onchange="jumpToFormula(parseInt(this.value, 10))">
-                <!-- Populated dynamically -->
-              </select>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- TAB 2: FULL REFERENCE SHEET & SCHEMATICS -->
-      <div id="formula-sheet-container" class="formula-view-tab-content" style="display: none;">
-        <!-- Search bar for cheat sheet -->
-        <div class="search-input-wrapper" style="margin-bottom: 1rem;">
-          <i class="fa-solid fa-magnifying-glass search-icon"></i>
-          <input type="text" id="search-sheet-input" placeholder="Search reference formulas by variable, law, or equation..." oninput="filterReferenceSheet(this.value)">
-        </div>
-        <!-- Reference list rendered dynamically -->
-        <div class="formula-sheet-cards-list" id="formula-sheet-cards-list"></div>
-      </div>
-
-      <!-- Formulas Controls Card: Tabs & Category Filter (Placed at Bottom like Practice Controls) -->
-      <div class="filter-controls-card formula-header-card">
-        <!-- Sub-Navigation Tabs: Recall Quiz vs Full Sheet -->
-        <div class="formula-tab-bar">
-          <button type="button" class="formula-tab-btn active" id="btn-tab-formula-quiz" onclick="switchFormulaTab('quiz')">
-            <i class="fa-solid fa-gamepad"></i> Recall Quiz
-          </button>
-          <button type="button" class="formula-tab-btn" id="btn-tab-formula-sheet" onclick="switchFormulaTab('sheet')">
-            <i class="fa-solid fa-table-list"></i> Full Sheet &amp; Schematics
-          </button>
-        </div>
-
-        <!-- Category Filter Pills & Counter -->
-        <div class="formula-filter-bar">
-          <div class="formula-category-scroll" id="formula-category-pills">
-            <!-- Dynamically populated category chips (All, Fixed-Bias, etc.) -->
-          </div>
-          <span class="search-count-label" id="formulas-count-badge">ECE Formulas</span>
-        </div>
-      </div>
-
-    </section>
+    
 
     <!-- Reset All Answers Button -->
     <div class="reset-progress-wrapper">
@@ -487,9 +284,7 @@
             <button class="nav-btn active" id="btn-practice-mode" onclick="switchMode('practice')">
               <i class="fa-solid fa-graduation-cap"></i> Practice
             </button>
-            <button class="nav-btn" id="btn-formulas-mode" onclick="switchMode('formulas')">
-              <i class="fa-solid fa-square-root-variable"></i> Formulas
-            </button>
+
             <button class="nav-btn" id="btn-all-mode" onclick="switchMode('all')">
               <i class="fa-solid fa-list-check"></i> All Questions
             </button>
@@ -511,8 +306,7 @@
   </div>
 
 
-  <script src="formulas.js?v=6.0"></script>
   <script src="questions.js?v=76.0"></script>
-  <script src="app.js?v=91.0"></script>
+  <script src="app.js?v=92.0"></script>
 </body>
 </html>
