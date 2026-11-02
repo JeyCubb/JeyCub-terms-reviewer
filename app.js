@@ -2135,16 +2135,38 @@ function getShuffledOptionsForQuestion(key, q) {
       originalIndex: origIdx
     }));
 
-    // Do NOT jumble if options contain positional/relative references like "above", "below", "both (a) and (b)"
-    const hasPositionalOption = q.options.some(opt =>
-      /\b(above|below|both\s+(\(?[a-d]\)?|[a-d])\s+and|neither)\b/i.test(opt)
+    // Check if the final option is a positional reference like "None of the above", "All of the above", "Any of the above"
+    const lastIdx = opts.length - 1;
+    const lastOptText = (opts[lastIdx].text || '').trim();
+    const isLastPositional = /^(none|all|any)(\s+of)?\s+the\s+above/i.test(lastOptText);
+
+    // Check if options contain cross-letter references like "Both (a) and (b)" or "Neither (c) nor (d)"
+    const hasLetterReference = q.options.some(opt =>
+      /\b(both|neither)\s+(\(?[a-d]\)?|[a-d])\s+(and|nor|&)\s+(\(?[a-d]\)?|[a-d])\b/i.test(opt)
     );
 
-    if (!hasPositionalOption) {
-      // Fisher-Yates shuffle algorithm to jumble option positions
-      for (let i = opts.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [opts[i], opts[j]] = [opts[j], opts[i]];
+    if (!hasLetterReference) {
+      if (isLastPositional) {
+        // Pin the positional choice ("None/All of the above") at the bottom (slot D),
+        // and randomly shuffle all other choices (0 to lastIdx - 1)
+        for (let i = lastIdx - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [opts[i], opts[j]] = [opts[j], opts[i]];
+        }
+        // Guarantee non-identical order for the shuffled options
+        if (lastIdx > 1 && opts.slice(0, lastIdx).every((o, idx) => o.originalIndex === idx)) {
+          [opts[0], opts[1]] = [opts[1], opts[0]];
+        }
+      } else {
+        // Full Fisher-Yates shuffle across all options (0 to lastIdx)
+        for (let i = lastIdx; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [opts[i], opts[j]] = [opts[j], opts[i]];
+        }
+        // Guarantee non-identical order so options never remain statically in textbook sequence
+        if (opts.length > 1 && opts.every((o, idx) => o.originalIndex === idx)) {
+          [opts[0], opts[1]] = [opts[1], opts[0]];
+        }
       }
     }
 
@@ -2208,6 +2230,7 @@ function toggleRandomMode() {
   state.randomMode = !state.randomMode;
   localStorage.setItem('jt_random_mode', state.randomMode);
   updateRandomButtonUI();
+  state.shuffledOptionsMap = {}; // Freshly jumble all question choices on toggle
 
   if (state.randomMode) {
     const questions = getFilteredPracticeQuestions();
@@ -2217,6 +2240,8 @@ function toggleRandomMode() {
       hideNotesSection();
       renderCurrentPracticeQuestion();
     }
+  } else {
+    renderCurrentPracticeQuestion();
   }
 }
 
@@ -2964,8 +2989,11 @@ function formatMathTypography(str) {
       try {
         let cleanTex = tex.trim();
         // Heal accidental form-feed whitespace or missing backslash on \frac:
-        cleanTex = cleanTex.replace(/[\x0c\f]rac\{/g, '\\frac{');
+        cleanTex = cleanTex.replace(/[\x0c\f]rac/g, '\\frac');
+        cleanTex = cleanTex.replace(/\\+rac\b/g, '\\frac');
+        cleanTex = cleanTex.replace(/\\{2,}frac\b/g, '\\frac');
         cleanTex = cleanTex.replace(/(?<![a-zA-Z\\])rac\{/g, '\\frac{');
+        cleanTex = cleanTex.replace(/(?<![a-zA-Z\\])rac\s*([0-9a-zA-Z])\s*([0-9a-zA-Z])/g, '\\frac{$1}{$2}');
         // Prioritize stacked fraction bar over plain slash:
         cleanTex = cleanTex.replace(/^([0-9a-zA-Z\_{}]+)\s*\/\s*([0-9a-zA-Z\_{}]+)$/, '\\frac{$1}{$2}');
         cleanTex = cleanTex.replace(/=\s*([0-9a-zA-Z\_{}]+)\s*\/\s*([0-9a-zA-Z\_{}]+)$/, '= \\frac{$1}{$2}');
