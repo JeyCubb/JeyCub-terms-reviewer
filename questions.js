@@ -6137,10 +6137,10 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "Stationary with respect to the rotor",
                   "Rotating at synchronous speed in the direction of rotor rotation",
                   "Rotating at synchronous speed with respect to the rotor",
-                  "Both (a) and (b)"
+                  "Both stationary with respect to the rotor and rotating at synchronous speed in the direction of rotor rotation"
               ],
               "answer": 3,
-              "explanation": "• Why 'Both (a) and (b)' is Correct (Key: d): The rotor field rotates at synchronous speed $N_s$ in space, and balanced 3-phase stator armature currents create a rotating MMF that also travels at $N_s$ in the same direction. Therefore, the resultant air-gap field rotates at synchronous speed relative to the stator (b) and is stationary relative to the rotor (a).\n• Why Other Choices are Incorrect: Both statements (a) and (b) are simultaneously true."
+              "explanation": "• Why 'Both stationary with respect to the rotor and rotating at synchronous speed in the direction of rotor rotation' is Correct (Key: d): The rotor field rotates at synchronous speed $N_s$ in space, and balanced 3-phase stator armature currents produce a rotating field that also travels at $N_s$ in the same direction. Therefore, the resultant air-gap field rotates at synchronous speed relative to the stator and is stationary relative to the rotor.\n• Why Other Choices are Incorrect: Because both physical conditions occur simultaneously, neither choice alone is complete."
           },
           {
               "id": 15,

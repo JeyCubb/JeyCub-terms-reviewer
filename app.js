@@ -2120,11 +2120,20 @@ function getShuffledOptionsForQuestion(key, q) {
       text: optText,
       originalIndex: origIdx
     }));
-    // Fisher-Yates shuffle algorithm to jumble option positions
-    for (let i = opts.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [opts[i], opts[j]] = [opts[j], opts[i]];
+
+    // Do NOT jumble if options contain positional/relative references like "above", "below", "both (a) and (b)"
+    const hasPositionalOption = q.options.some(opt =>
+      /\b(above|below|both\s+(\(?[a-d]\)?|[a-d])\s+and|neither)\b/i.test(opt)
+    );
+
+    if (!hasPositionalOption) {
+      // Fisher-Yates shuffle algorithm to jumble option positions
+      for (let i = opts.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [opts[i], opts[j]] = [opts[j], opts[i]];
+      }
     }
+
     state.shuffledOptionsMap[key] = opts;
   }
   return state.shuffledOptionsMap[key];
