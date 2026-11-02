@@ -620,7 +620,7 @@ function initKeyboardShortcuts() {
 
     // Handle Reset Prompt keyboard confirmation & dismissal
     if (state.isResetPromptActive) {
-      if (e.key === 'Enter' || e.key === ' ' || e.key.toLowerCase() === 'y') {
+      if (e.key === 'Enter' || e.key === ' ' || e.key.toLowerCase() === 'y' || e.key === 'Delete' || e.code === 'Delete') {
         e.preventDefault();
         confirmPoolReset();
         return;
@@ -670,7 +670,10 @@ function initKeyboardShortcuts() {
     const key = e.key ? e.key.toLowerCase() : '';
     const code = e.code ? e.code.toLowerCase() : '';
 
-    if (e.key === ' ' || e.key === 'Spacebar' || key === 'space' || code === 'space') {
+    if (e.key === 'Delete' || code === 'delete' || e.key === 'Del') {
+      e.preventDefault();
+      showPoolResetPrompt('Reset quiz progress & return to zero?');
+    } else if (e.key === ' ' || e.key === 'Spacebar' || key === 'space' || code === 'space') {
       e.preventDefault();
       toggleNotesSection();
     } else if (e.key === '\\' || key === '\\' || code === 'backslash') {
@@ -2190,7 +2193,7 @@ function resetPoolAnswersAndReshuffle(questions) {
   saveData('jt_user_answers', state.userAnswers);
 }
 
-function showPoolResetPrompt() {
+function showPoolResetPrompt(message) {
   let promptEl = document.getElementById('pool-reset-prompt');
   if (!promptEl) {
     promptEl = document.createElement('div');
@@ -2199,13 +2202,15 @@ function showPoolResetPrompt() {
     document.body.appendChild(promptEl);
   }
 
+  const promptText = message || 'All questions completed! Reset pool?';
+
   promptEl.innerHTML = `
     <div class="prompt-text">
       <i class="fa-solid fa-rotate-right prompt-icon"></i>
-      <span>All questions completed! Reset pool?</span>
+      <span>${escapeHTML(promptText)}</span>
     </div>
     <div class="prompt-actions">
-      <button type="button" class="prompt-btn confirm-btn" id="btn-prompt-reset" onclick="confirmPoolReset()" title="Reset answers & start fresh cycle [Enter]">
+      <button type="button" class="prompt-btn confirm-btn" id="btn-prompt-reset" onclick="confirmPoolReset()" title="Reset answers & start fresh cycle [Enter / Delete]">
         <i class="fa-solid fa-check"></i> Reset
       </button>
       <button type="button" class="prompt-btn cancel-btn" id="btn-prompt-cancel" onclick="dismissPoolResetPrompt()" title="Keep answers & stay here [Esc]">
@@ -2236,6 +2241,7 @@ function confirmPoolReset() {
 
   saveCurrentIndex();
   renderCurrentPracticeQuestion();
+  updateStats();
   scrollToTopInstant();
 
   if (state.narrationActive) {
