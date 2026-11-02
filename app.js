@@ -2939,11 +2939,20 @@ function formatMathTypography(str) {
   // Decode entities on the whole string FIRST, before any regex matching
   s = decodeHTMLEntities(s);
 
+  // Auto-promote standalone slash fractions to KaTeX stacked fraction bars:
+  // e.g. "1/V" -> "$\frac{1}{V}$", "50/3 Hz" -> "$\frac{50}{3}\text{ Hz}$"
+  s = s.replace(/^([0-9]+|[a-zA-Z])\/([0-9]+|[a-zA-Z])$/, '$\\frac{$1}{$2}$');
+  s = s.replace(/^([0-9]+)\/([0-9]+)\s+([A-Za-zΩ]+)$/, '$\\frac{$1}{$2}\\text{ $3}$');
+
   // Helper to safely render KaTeX
   function renderKaTeX(tex, isDisplay) {
     if (typeof katex !== 'undefined' && typeof katex.renderToString === 'function') {
       try {
-        return katex.renderToString(tex.trim(), {
+        let cleanTex = tex.trim();
+        // Prioritize stacked fraction bar over plain slash:
+        cleanTex = cleanTex.replace(/^([0-9a-zA-Z\_{}]+)\s*\/\s*([0-9a-zA-Z\_{}]+)$/, '\\frac{$1}{$2}');
+        cleanTex = cleanTex.replace(/=\s*([0-9a-zA-Z\_{}]+)\s*\/\s*([0-9a-zA-Z\_{}]+)$/, '= \\frac{$1}{$2}');
+        return katex.renderToString(cleanTex, {
           displayMode: isDisplay,
           throwOnError: false
         });

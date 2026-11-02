@@ -6029,7 +6029,7 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "60 Hz",
                   "50 Hz",
                   "25 Hz",
-                  "50/3 Hz"
+                  "$\frac{50}{3}\text{ Hz}$"
               ],
               "answer": 3,
               "explanation": "• Why '50/3 Hz' is Correct (Key: d): Using the fundamental frequency relationship $f = \\frac{P \\cdot N}{120}$:\n$$f = \\frac{8 \\times 250}{120} = \\frac{2000}{120} = \\frac{50}{3}\\text{ Hz} \\approx 16.67\\text{ Hz}$$\n• Why Other Choices are Incorrect: 50 Hz requires 750 rpm for 8 poles; 60 Hz requires 900 rpm; 25 Hz requires 375 rpm."
@@ -6254,10 +6254,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 24,
               "question": "In a slip test, the direct-axis synchronous reactance ($X_d$) of a star-connected salient pole alternator is determined by:",
               "options": [
-                  "$X_d = V_{max} / I_{max}$",
-                  "$X_d = V_{min} / I_{max}$",
-                  "$X_d = V_{max} / I_{min}$",
-                  "$X_d = V_{min} / I_{min}$"
+                  "$X_d = \frac{V_{max}}{I_{max}}$",
+                  "$X_d = \frac{V_{min}}{I_{max}}$",
+                  "$X_d = \frac{V_{max}}{I_{min}}$",
+                  "$X_d = \frac{V_{min}}{I_{min}}$"
               ],
               "answer": 2,
               "explanation": "• Why 'Xd = Vmax / Imin' is Correct (Key: c): When the direct axis aligns with the stator MMF wave, magnetic reluctance is minimum, flux linkage is maximum, inductive reactance is highest ($X_d$), terminal voltage reaches $V_{\\max}$, and armature current drops to $I_{\\min}$. Thus $X_d = V_{\\max} / I_{\\min}$.\n• Why Other Choices are Incorrect: $X_q = V_{\\min} / I_{\\max}$ corresponds to the minimum-inductance quadrature axis."
@@ -6389,7 +6389,7 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$V$",
                   "$\\sqrt{V}$",
                   "$V^2$",
-                  "$1/V$"
+                  "$\frac{1}{V}$"
               ],
               "answer": 0,
               "explanation": "• Why 'V' is Correct (Key: a): Maximum power developed by a non-salient synchronous motor is $P_{\\max} = \\frac{E \\cdot V}{X_s}$. Since excitation voltage $E$ and synchronous reactance $X_s$ are constant, pull-out torque varies directly as $V$ (in contrast to induction motors where breakdown torque varies as $V^2$).\n• Why Other Choices are Incorrect: Induction motor torque varies with $V^2$; synchronous motor torque varies linearly with $V$."
@@ -6590,9 +6590,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 52,
               "question": "Synchronous speed ($N_s$) for a synchronous motor is given by:",
               "options": [
-                  "$N_s = 200f/P$",
-                  "$N_s = 120f/P$",
-                  "$N_s = 120P/f$",
+                  "$N_s = \frac{200f}{P}$",
+                  "$N_s = \frac{120f}{P}$",
+                  "$N_s = \frac{120P}{f}$",
                   "$N_s = 120f \\cdot P$"
               ],
               "answer": 1,
