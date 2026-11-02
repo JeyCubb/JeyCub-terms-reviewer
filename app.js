@@ -2136,10 +2136,35 @@ function updateThemeIcon(theme) {
 function getShuffledOptionsForQuestion(key, q) {
   if (!state.shuffledOptionsMap[key]) {
     if (!q || !q.options || !Array.isArray(q.options)) return [];
-    const opts = q.options.map((optText, origIdx) => ({
-      text: optText,
-      originalIndex: origIdx
-    }));
+    let opts = [];
+    if (q.extraDistractors && Array.isArray(q.extraDistractors) && q.extraDistractors.length > 0) {
+      // Correct answer is always originalIndex = 0
+      const correctOpt = { text: q.options[0], originalIndex: 0 };
+
+      // Build full distractor pool from existing distractors and extraDistractors
+      const distractorPool = [];
+      for (let i = 1; i < q.options.length; i++) {
+        distractorPool.push({ text: q.options[i], originalIndex: i });
+      }
+      for (let j = 0; j < q.extraDistractors.length; j++) {
+        distractorPool.push({ text: q.extraDistractors[j], originalIndex: q.options.length + j });
+      }
+
+      // Shuffle distractor pool and select 3 random distractors
+      for (let i = distractorPool.length - 1; i > 0; i--) {
+        const r = Math.floor(Math.random() * (i + 1));
+        [distractorPool[i], distractorPool[r]] = [distractorPool[r], distractorPool[i]];
+      }
+      const selectedDistractors = distractorPool.slice(0, 3);
+
+      // Exactly 4 options: correct answer + 3 randomly sampled distractors
+      opts = [correctOpt, ...selectedDistractors];
+    } else {
+      opts = q.options.map((optText, origIdx) => ({
+        text: optText,
+        originalIndex: origIdx
+      }));
+    }
 
     // Check if the final option is a positional reference like "None of the above", "All of the above", "Any of the above"
     const lastIdx = opts.length - 1;

@@ -6716,6 +6716,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$E_{\\text{ph}} = 589\\text{ V},\\; E_L = 1019\\text{ V}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$E_{\\text{ph}} = 1065\\text{ V},\\; E_L = 1845\\text{ V}$",
+                  "$E_{\\text{ph}} = 1019\\text{ V},\\; E_L = 1019\\text{ V}$",
+                  "$E_{\\text{ph}} = 883\\text{ V},\\; E_L = 1529\\text{ V}$"
+],
               "explanation": "• Given: $P = 6$, $N = 1000\\text{ rpm}$, Slots $= 90$, Conductors/slot $= 8$, $\\Phi = 0.04\\text{ Wb}$, full pitch ($k_p = 1$).\n• Frequency: $f = \\frac{P \\cdot N}{120} = \\frac{6 \\times 1000}{120} = 50\\text{ Hz}$.\n• Slots/pole/phase $m = \\frac{90}{6 \\times 3} = 5$; Slot pitch $\\beta = \\frac{180^\\circ}{15} = 12^\\circ$.\n• $k_d = \\frac{\\sin(30^\\circ)}{5 \\sin 6^\\circ} \\approx 0.9567$; Turns/phase $T = 120$.\n• $E_{\\text{ph}} = 4.44 \\times 1 \\times 0.9567 \\times 50 \\times 0.04 \\times 120 = 1019.4\\text{ V} \\approx 1019\\text{ V}$.\n• Line emf: $E_L = \\sqrt{3} \\times 1019.4 = 1765.7\\text{ V} \\approx 1766\\text{ V}$."
           },
           {
@@ -6728,6 +6733,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$\\Phi = 47\\text{ mWb}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$\\Phi = 102\\text{ mWb}$",
+                  "$\\Phi = 89\\text{ mWb}$",
+                  "$\\Phi = 63\\text{ mWb}$"
+],
               "explanation": "• Given: $E_L = 6600\\text{ V} \\implies E_{\\text{ph}} = 3810.5\\text{ V}$, $f = 50\\text{ Hz}$, $P = 4$, Slots $= 60$, Cond/slot $= 2$.\n• Turns/phase $T = 20$. Coil span $= 12\\text{ slots}$ (pole pitch $= 15\\text{ slots}$) $\\implies \\alpha = 36^\\circ \\implies k_p = \\cos 18^\\circ \\approx 0.9511$.\n• $m = 5$, $\\beta = 12^\\circ \\implies k_d \\approx 0.9567$.\n• Useful flux: $\\Phi = \\frac{3810.5}{4.44 \\times 0.9511 \\times 0.9567 \\times 50 \\times 20} = 0.09433\\text{ Wb} \\approx 94\\text{ mWb}$."
           },
           {
@@ -6740,6 +6750,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "(i) $N_s = 750\\text{ rpm}$, (ii) $E_L = 1192\\text{ V}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "(i) $N_s = 375\\text{ rpm}$, (ii) $E_L = 1850\\text{ V}$",
+                  "(i) $N_s = 500\\text{ rpm}$, (ii) $E_L = 2064\\text{ V}$",
+                  "(i) $N_s = 500\\text{ rpm}$, (ii) $E_L = 1540\\text{ V}$"
+],
               "explanation": "• Speed: $N_s = \\frac{120 \\times 50}{16} = 375\\text{ rpm}$.\n• Coil pitch is 2 slots short of 9 slots: $\\alpha = 2 \\times 20^\\circ = 40^\\circ \\implies k_p = \\cos 20^\\circ = 0.9397$; $k_d = 0.9598$; $T = 240\\text{ turns/phase}$.\n• Phase emf: $E_{\\text{ph}} = 4.44 \\times 0.9397 \\times 0.9598 \\times 50 \\times 0.0248 \\times 240 = 1191.8\\text{ V}$.\n• Line emf: $E_L = \\sqrt{3} \\times 1191.8 = 2064.2\\text{ V} \\approx 2064\\text{ V}$."
           },
           {
@@ -6752,6 +6767,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "(i) $\\Phi = 50\\text{ mWb}$, (ii) $I = 909\\text{ A/conductor}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "(i) $\\Phi = 75\\text{ mWb}$, (ii) $I = 525\\text{ A/conductor}$",
+                  "(i) $\\Phi = 86\\text{ mWb}$, (ii) $I = 303\\text{ A/conductor}$",
+                  "(i) $\\Phi = 75\\text{ mWb}$, (ii) $I = 450\\text{ A/conductor}$"
+],
               "explanation": "• Poles: $P = \\frac{120 \\times 50}{300} = 20$. Coil span $= 150^\\circ \\implies \\alpha = 30^\\circ \\implies k_p = \\cos 15^\\circ = 0.9659$; $k_d = 0.9561$; $T = 360\\text{ turns/phase}$.\n• Flux: $\\Phi = \\frac{6350.85}{4.44 \\times 0.9659 \\times 0.9561 \\times 50 \\times 360} = 0.086\\text{ Wb} = 86\\text{ mWb}$.\n• Current per conductor: $I = \\frac{10 \\times 10^6}{\\sqrt{3} \\times 11000} = 524.86\\text{ A} \\approx 525\\text{ A/conductor}$."
           },
           {
@@ -6764,6 +6784,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$Z_{\\text{ph}} = 196\\text{ conductors/phase}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$Z_{\\text{ph}} = 512\\text{ conductors/phase}$",
+                  "$Z_{\\text{ph}} = 380\\text{ conductors/phase}$",
+                  "$Z_{\\text{ph}} = 478\\text{ conductors/phase}$"
+],
               "explanation": "• $E_{\\text{ph}} = \\frac{6600}{\\sqrt{3}} = 3810.5\\text{ V}$. $k_p = \\cos 10^\\circ = 0.9848$; $k_d = 0.9598$; $f = 50\\text{ Hz}$; $\\Phi = 0.08\\text{ Wb}$.\n• Turns/phase: $T = \\frac{3810.5}{4.44 \\times 0.9848 \\times 0.9598 \\times 50 \\times 0.08} = 226.96\\text{ turns}$.\n• Conductors in series per phase: $Z_{\\text{ph}} = 2T = 453.92 \\approx 454\\text{ conductors}$."
           },
           {
@@ -6776,6 +6801,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$E = 206\\text{ V}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$E = 240\\text{ V}$",
+                  "$E = 222\\text{ V}$",
+                  "$E = 248\\text{ V}$"
+],
               "explanation": "• Rated current: $I = \\frac{60000}{220} = 272.7\\text{ A}$. $I X_L = 272.7 \\times 0.07 = 19.1\\text{ V}$.\n• $E = \\sqrt{(220 \\times 0.7)^2 + (220 \\times 0.7141 + 19.1)^2} = \\sqrt{154^2 + 176.2^2} = 234\\text{ V}$."
           },
           {
@@ -6788,6 +6818,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "(i) $E = 600\\text{ V}$, (ii) $E = 590\\text{ V}$, (iii) $E = 629\\text{ V}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "(i) $E = 613\\text{ V}$, (ii) $E = 645\\text{ V}$, (iii) $E = 575\\text{ V}$",
+                  "(i) $E = 625\\text{ V}$, (ii) $E = 629\\text{ V}$, (iii) $E = 602\\text{ V}$",
+                  "(i) $E = 600\\text{ V}$, (ii) $E = 645\\text{ V}$, (iii) $E = 590\\text{ V}$"
+],
               "explanation": "• Rated current $I = \\frac{100,000}{600} = 166.7\\text{ A}$. Drops: $I R_a = 12\\text{ V}$, $I X_L = 30\\text{ V}$.\n• (i) Unity pf: $E = \\sqrt{(600 + 12)^2 + 30^2} = 612.73\\text{ V} \\approx 613\\text{ V}$.\n• (ii) 0.75 pf lagging: $E = \\sqrt{(450 + 12)^2 + (396.9 + 30)^2} = 629\\text{ V}$.\n• (iii) 0.75 pf leading: $E = \\sqrt{(450 + 12)^2 + (396.9 - 30)^2} = 590\\text{ V}$."
           },
           {
@@ -6800,6 +6835,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "(a) $\\text{Reg} = 20\\%$, (b) $\\text{Reg} = 28\\%$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "(a) $\\text{Reg} = 15\\%$, (b) $\\text{Reg} = 40\\%$",
+                  "(a) $\\text{Reg} = 12\\%$, (b) $\\text{Reg} = 34\\%$",
+                  "(a) $\\text{Reg} = 18\\%$, (b) $\\text{Reg} = 31\\%$"
+],
               "explanation": "• $Z_s = \\frac{425}{170} = 2.5\\;\\Omega \\implies X_s = \\sqrt{2.5^2 - 0.2^2} = 2.492\\;\\Omega$.\n• (a) Unity pf: $E_0 = 576.6\\text{ V} \\implies \\text{Reg} = 15.33\\% \\approx 15\\%$.\n• (b) 0.8 lag: $E_0 = 671.7\\text{ V} \\implies \\text{Reg} = 34.35\\% \\approx 34\\%$."
           },
           {
@@ -6812,6 +6852,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$E_L = 440\\text{ V},\\; \\text{Reg} = 10\\%$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$E_L = 468\\text{ V},\\; \\text{Reg} = 22\\%$",
+                  "$E_L = 452\\text{ V},\\; \\text{Reg} = 16\\%$",
+                  "$E_L = 485\\text{ V},\\; \\text{Reg} = 21\\%$"
+],
               "explanation": "• Phase $V_{\\text{oc}} = 100\\text{ V} \\implies Z_s = 0.5\\;\\Omega \\implies X_s = 0.49\\;\\Omega$.\n• Terminal phase voltage $V = \\frac{400}{\\sqrt{3}} = 231\\text{ V}$.\n• At 0.8 lag: $E_{\\text{ph}} = 270.4\\text{ V} \\implies E_L = \\sqrt{3} \\times 270.4 = 468.4\\text{ V} \\approx 468\\text{ V}$.\n• Voltage regulation: $\\text{Reg} = \\frac{270.4 - 230.9}{230.9} = 16.22\\% \\approx 16\\%$."
           },
           {
@@ -6824,6 +6869,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$\\text{Reg} = 18\\% \\;(E_0 = 2210\\text{ V})$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$\\text{Reg} = 26\\% \\;(E_0 = 2510\\text{ V})$",
+                  "$\\text{Reg} = 31\\% \\;(E_0 = 2399\\text{ V})$",
+                  "$\\text{Reg} = 22\\% \\;(E_0 = 2320\\text{ V})$"
+],
               "explanation": "• Phase $V_{\\text{oc}} = \\frac{1100}{\\sqrt{3}} = 635.1\\text{ V} \\implies Z_s = 3.175\\;\\Omega \\implies X_s = 3.165\\;\\Omega$.\n• $I = 210\\text{ A}$; Phase $V = 1905.3\\text{ V}$.\n• $E_0 = 2399\\text{ V} \\implies \\text{Reg} = \\frac{2399 - 1905.3}{1905.3} = 25.98\\% \\approx 26\\%$."
           },
           {
@@ -6836,6 +6886,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$X_s = 6\\;\\Omega,\\; \\delta = 18^\\circ,\\; \\text{Reg} = 21\\%$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$X_s = 5\\;\\Omega,\\; \\delta = 13^\\circ,\\; \\text{Reg} = 18\\%$",
+                  "$X_s = 4\\;\\Omega,\\; \\delta = 10^\\circ,\\; \\text{Reg} = 13\\%$",
+                  "$X_s = 5\\;\\Omega,\\; \\delta = 15^\\circ,\\; \\text{Reg} = 16\\%$"
+],
               "explanation": "• Phase resistance $R_a = \\frac{0.6}{2} = 0.3\\;\\Omega$.\n• Solving the vector diagram at 0.8 pf lag gives $X_s = 5.03\\;\\Omega \\approx 5\\;\\Omega$, torque angle $\\delta = 13.46^\\circ \\approx 13^\\circ$, and regulation $\\text{Reg} = 13.46\\% \\approx 13\\%$."
           },
           {
@@ -6848,6 +6903,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$Z_s = 3\\;\\Omega$ (Book saturated: $2\\;\\Omega$)"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$Z_s = 6\\;\\Omega$ (Book saturated: $5\\;\\Omega$)",
+                  "$Z_s = 5\\;\\Omega$ (Book saturated: $4\\;\\Omega$)",
+                  "$Z_s = 8\\;\\Omega$ (Book saturated: $4\\;\\Omega$)"
+],
               "explanation": "• Phase $V_{\\text{oc}} = \\frac{11,000}{\\sqrt{3}} = 6351\\text{ V}$. Full load $I_{\\text{sc}} = \\frac{20 \\times 10^6}{\\sqrt{3} \\times 11,000} = 1050\\text{ A}$.\n• Synchronous impedance: $Z_s = \\frac{6351}{1050} = 6.05\\;\\Omega \\approx 6\\;\\Omega$ (Saturated book value: $3.63\\;\\Omega \\approx 4\\;\\Omega$)."
           },
           {
@@ -6860,6 +6920,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "(a) $\\text{Reg} = 15\\%$, (b) $\\text{Reg} = +3\\%$, (c) $\\cos\\phi = 0.71\\text{ lagging}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "(a) $\\text{Reg} = 22\\%$, (b) $\\text{Reg} = -3\\%$, (c) $\\cos\\phi = 0.92\\text{ leading}$",
+                  "(a) $\\text{Reg} = 18\\%$, (b) $\\text{Reg} = -5\\%$, (c) $\\cos\\phi = 0.87\\text{ leading}$",
+                  "(a) $\\text{Reg} = 22\\%$, (b) $\\text{Reg} = -7\\%$, (c) $\\cos\\phi = 0.80\\text{ leading}$"
+],
               "explanation": "• Full-load phase voltage $V = 132.8\\text{ V}$, $I = 25.1\\text{ A}$.\n• (a) At 0.8 lag: $E_0 = 161.8\\text{ V} \\implies \\text{Reg} = 21.8\\% \\approx 22\\%$.\n• (b) At 0.8 lead: $E_0 = 128.7\\text{ V} \\implies \\text{Reg} = -3.06\\% \\approx -3\\%$.\n• (c) Zero regulation condition: $\\cos\\phi = 0.8692 \\approx 0.87\\text{ leading}$."
           },
           {
@@ -6872,6 +6937,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$\\delta = 12^\\circ,\\; \\text{Reg} = 32\\%$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$\\delta = 19^\\circ,\\; \\text{Reg} = 54\\%$",
+                  "$\\delta = 24^\\circ,\\; \\text{Reg} = 48\\%$",
+                  "$\\delta = 15^\\circ,\\; \\text{Reg} = 38\\%$"
+],
               "explanation": "• $V_{\\text{ph}} = 230.9\\text{ V}$, $I = 14.43\\text{ A}$. Drops: $I R_a = 7.2\\text{ V}$, $I X_s = 144.3\\text{ V}$.\n• Vector solution: $E_0 = 341.9\\text{ V}$, $\\delta = 18.95^\\circ \\approx 19^\\circ$.\n• Voltage regulation: $\\text{Reg} = \\frac{341.9 - 230.9}{230.9} = 48.02\\% \\approx 48\\%$."
           },
           {
@@ -6884,6 +6954,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$\\text{Total AT} = 5420\\text{ AT},\\; \\text{Reg} = 22\\%$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$\\text{Total AT} = 7180\\text{ AT},\\; \\text{Reg} = 14\\%$",
+                  "$\\text{Total AT} = 6500\\text{ AT},\\; \\text{Reg} = 17\\%$",
+                  "$\\text{Total AT} = 8100\\text{ AT},\\; \\text{Reg} = 20\\%$"
+],
               "explanation": "• Combining field ampere-turns with armature reaction vector yields Total excitation $\\text{AT} = 7180\\text{ AT}$ and regulation $= 16.88\\% \\approx 17\\%$."
           },
           {
@@ -6896,6 +6971,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "(a) $I_f = 85\\text{ A}$ (Book: $65\\text{ A}$), (b) $I_f = 61\\text{ A}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "(a) $I_f = 96\\text{ A}$ (Book: $76\\text{ A}$), (b) $I_f = 80\\text{ A}$",
+                  "(a) $I_f = 76\\text{ A}$ (Book: $96\\text{ A}$), (b) $I_f = 72\\text{ A}$",
+                  "(a) $I_f = 90\\text{ A}$ (Book: $70\\text{ A}$), (b) $I_f = 68\\text{ A}$"
+],
               "explanation": "• Rated current: $I = 30.18\\text{ A}$.\n• At 0.8 pf lag, Potier/MMF vector combination yields $I_f = 96.2\\text{ A} \\approx 96\\text{ A}$ (Book graphical: $76.25\\text{ A} \\approx 76\\text{ A}$).\n• At unity power factor, $I_f = 72.3\\text{ A} \\approx 72\\text{ A}$."
           },
           {
@@ -6908,6 +6988,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$\\text{Reg} = 18\\% \\;(E_0 = 2120\\text{ V})$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$\\text{Reg} = 23\\% \\;(E_0 = 2460\\text{ V})$",
+                  "$\\text{Reg} = 27\\% \\;(E_0 = 2351\\text{ V})$",
+                  "$\\text{Reg} = 20\\% \\;(E_0 = 2280\\text{ V})$"
+],
               "explanation": "• Adjusting OCC for speed rise to 770 rpm and accounting for combined MMF armature reaction gives voltage regulation $\\text{Reg} = 23.4\\% \\approx 23\\%$."
           },
           {
@@ -6920,6 +7005,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "(a) $\\text{Reg} = 25\\%$, (b) $\\text{Reg} = +3\\%$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "(a) $\\text{Reg} = 35\\%$, (b) $\\text{Reg} = -6\\%$",
+                  "(a) $\\text{Reg} = 30\\%$, (b) $\\text{Reg} = -3\\%$",
+                  "(a) $\\text{Reg} = 40\\%$, (b) $\\text{Reg} = -5\\%$"
+],
               "explanation": "• Phase $V_{\\text{oc}} = 1120.1\\text{ V} \\implies Z_s = 3.88\\;\\Omega \\implies X_s = 3.875\\;\\Omega$.\n• (a) At 0.8 lag: $E_0 = 2059.6\\text{ V} \\implies \\text{Reg} = 34.63\\% \\approx 35\\%$.\n• (b) At 0.8 lead: $E_0 = 1119.7\\text{ V} \\implies \\text{Reg} = -3.03\\% \\approx -3\\%$."
           },
           {
@@ -6932,6 +7022,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$X_L = 2\\;\\Omega,\\; \\text{AR AT} = 10,500\\text{ AT/pole},\\; \\text{Reg} = 14\\%$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$X_L = 1\\;\\Omega,\\; \\text{AR AT} = 15,000\\text{ AT/pole},\\; \\text{Reg} = 25\\%$",
+                  "$X_L = 1\\;\\Omega,\\; \\text{AR AT} = 12,000\\text{ AT/pole},\\; \\text{Reg} = 18\\%$",
+                  "$X_L = 2\\;\\Omega,\\; \\text{AR AT} = 15,000\\text{ AT/pole},\\; \\text{Reg} = 22\\%$"
+],
               "explanation": "• Potier triangle analysis: $X_L = 1.06\\;\\Omega \\approx 1\\;\\Omega$, armature reaction $F_{ar} = 15,000\\text{ AT/pole}$, and voltage regulation $\\text{Reg} = 20\\%$."
           },
           {
@@ -6944,6 +7039,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "(i) $\\text{Reg} = 22\\%$, (ii) $\\text{Reg} = -15\\%$, (iii) $\\text{Reg} = 5\\%$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "(i) $\\text{Reg} = 17\\%$, (ii) $\\text{Reg} = -24\\%$, (iii) $\\text{Reg} = 6\\%$",
+                  "(i) $\\text{Reg} = 17\\%$, (ii) $\\text{Reg} = -19\\%$, (iii) $\\text{Reg} = 4\\%$",
+                  "(i) $\\text{Reg} = 14\\%$, (ii) $\\text{Reg} = -24\\%$, (iii) $\\text{Reg} = 2\\%$"
+],
               "explanation": "• (i) 0.8 lag: $\\text{Reg} = 16.69\\% \\approx 17\\%$.\n• (ii) 0.707 lead: $\\text{Reg} = -24.23\\% \\approx -24\\%$.\n• (iii) Unity pf: $\\text{Reg} = 2.26\\% \\approx 2\\%$."
           },
           {
@@ -6956,6 +7056,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "(a) $\\text{Reg} = 55\\%$, (b) $\\text{Reg} = 22\\%$, (c) $\\text{Reg} = 25\\%$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "(a) $\\text{Reg} = 80\\%$, (b) $\\text{Reg} = 32\\%$, (c) $\\text{Reg} = 42\\%$",
+                  "(a) $\\text{Reg} = 72\\%$, (b) $\\text{Reg} = 32\\%$, (c) $\\text{Reg} = 35\\%$",
+                  "(a) $\\text{Reg} = 80\\%$, (b) $\\text{Reg} = 28\\%$, (c) $\\text{Reg} = 30\\%$"
+],
               "explanation": "• Comparative regulation rounded to nearest whole percentage:\n  (a) Synchronous impedance method: $80.3\\% \\approx 80\\%$.\n  (b) MMF method: $31.83\\% \\approx 32\\%$.\n  (c) Potier method: $34.55\\% \\approx 35\\%$."
           },
           {
@@ -6968,6 +7073,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$E_{\\text{ph}} = 1328\\text{ V},\\; \\delta = 5^\\circ\\text{ lagging}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$E_{\\text{ph}} = 1708\\text{ V},\\; \\delta = 12^\\circ\\text{ lagging}$",
+                  "$E_{\\text{ph}} = 1540\\text{ V},\\; \\delta = 9^\\circ\\text{ lagging}$",
+                  "$E_{\\text{ph}} = 1480\\text{ V},\\; \\delta = 7^\\circ\\text{ lagging}$"
+],
               "explanation": "• Phase voltage $V = 1327.9\\text{ V}$. $\\mathbf{E} = \\mathbf{V} - \\mathbf{I}\\mathbf{Z}_s = 1688.9 - j254.6\\text{ V}$.\n• Magnitude $E_{\\text{ph}} = 1708\\text{ V}$, torque angle $\\delta = 8.58^\\circ \\approx 9^\\circ\\text{ lagging}$."
           },
           {
@@ -6980,6 +7090,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$E_{\\text{line}} = 485\\text{ V},\\; P_{\\text{in}} = 24,500\\text{ W } (25\\text{ kW})$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 38,400\\text{ W } (38\\text{ kW})$",
+                  "$E_{\\text{line}} = 570\\text{ V},\\; P_{\\text{in}} = 33,255\\text{ W } (33\\text{ kW})$",
+                  "$E_{\\text{line}} = 512\\text{ V},\\; P_{\\text{in}} = 28,100\\text{ W } (28\\text{ kW})$"
+],
               "explanation": "• Input power: $P_{\\text{in}} = \\sqrt{3} \\times 400 \\times 60 \\times 0.8 = 33,255\\text{ W} \\approx 33\\text{ kW}$.\n• Line back EMF: $E_{\\text{line}} = \\sqrt{3} \\times 371.6 = 643.6\\text{ V} \\approx 643\\text{ V}$."
           },
           {
@@ -6992,6 +7107,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$I_{\\text{min}} = 5\\text{ A},\\; E_{\\text{ph}} = 713\\text{ V/phase}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$I_{\\text{min}} = 7\\text{ A},\\; E_{\\text{ph}} = 585\\text{ V/phase}$",
+                  "$I_{\\text{min}} = 9\\text{ A},\\; E_{\\text{ph}} = 637\\text{ V/phase}$",
+                  "$I_{\\text{min}} = 6\\text{ A},\\; E_{\\text{ph}} = 672\\text{ V/phase}$"
+],
               "explanation": "• Input power $P_{\\text{in}} = \\frac{10000}{0.80} = 12500\\text{ W}$. At $\\cos\\phi = 1$: $I_{\\text{min}} = \\frac{12500}{\\sqrt{3} \\times 1100} = 6.56\\text{ A} \\approx 7\\text{ A}$.\n• $E_{\\text{ph}} = \\sqrt{635.1^2 + 52.5^2} = 637.25\\text{ V} \\approx 637\\text{ V/phase}$."
           },
           {
@@ -7004,6 +7124,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "(a) $E_L = 7240\\text{ V}$, (b) $P_{\\text{out}} = 550\\text{ kW}$, (c) $\\eta = 89\\%$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "(a) $E_L = 8594\\text{ V}$, (b) $P_{\\text{out}} = 686\\text{ kW}$, (c) $\\eta = 91\\%$",
+                  "(a) $E_L = 8594\\text{ V}$, (b) $P_{\\text{out}} = 612\\text{ kW}$, (c) $\\eta = 94\\%$",
+                  "(a) $E_L = 7820\\text{ V}$, (b) $P_{\\text{out}} = 686\\text{ kW}$, (c) $\\eta = 92\\%$"
+],
               "explanation": "• (a) $E_L = 8594\\text{ V}$.\n• (b) $P_{\\text{out}} = 686,178\\text{ W} \\approx 686\\text{ kW}$.\n• (c) $\\eta = 93.79\\% \\approx 94\\%$."
           },
           {
@@ -7016,6 +7141,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "(a) $E_L = 9850\\text{ V},\\; \\delta = -12^\\circ$; (b) $E_L = 11,800\\text{ V},\\; \\delta = -10^\\circ$; (c) $E_L = 7794\\text{ V},\\; \\delta = -11^\\circ$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "(a) $E_L = 11,284\\text{ V},\\; \\delta = -19^\\circ$; (b) $E_L = 9850\\text{ V},\\; \\delta = -15^\\circ$; (c) $E_L = 12,400\\text{ V},\\; \\delta = -14^\\circ$",
+                  "(a) $E_L = 10,500\\text{ V},\\; \\delta = -21^\\circ$; (b) $E_L = 8984\\text{ V},\\; \\delta = -18^\\circ$; (c) $E_L = 13,293\\text{ V},\\; \\delta = -13^\\circ$",
+                  "(a) $E_L = 12,150\\text{ V},\\; \\delta = -16^\\circ$; (b) $E_L = 7794\\text{ V},\\; \\delta = -11^\\circ$; (c) $E_L = 14,100\\text{ V},\\; \\delta = -12^\\circ$"
+],
               "explanation": "• (a) Unity pf: $E_L = 11,284\\text{ V}, \\delta = -18.8^\\circ \\approx -19^\\circ$.\n• (b) 0.8 lag: $E_L = 8984\\text{ V}, \\delta = -17.6^\\circ \\approx -18^\\circ$.\n• (c) 0.8 lead: $E_L = 13,293\\text{ V}, \\approx 13.3\\text{ kV}, \\delta = -13.48^\\circ \\approx -13^\\circ$."
           },
           {
@@ -7028,6 +7158,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$\\cos\\phi = 0.85\\text{ lagging},\\; P_{\\text{in}} = 750\\text{ kW},\\; T = 5815\\text{ N}\\cdot\\text{m}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$\\cos\\phi = 0.96\\text{ lagging},\\; P_{\\text{in}} = 880\\text{ kW},\\; T = 6825\\text{ N}\\cdot\\text{m}$",
+                  "$\\cos\\phi = 0.91\\text{ lagging},\\; P_{\\text{in}} = 995\\text{ kW},\\; T = 7713\\text{ N}\\cdot\\text{m}$",
+                  "$\\cos\\phi = 0.91\\text{ lagging},\\; P_{\\text{in}} = 880\\text{ kW},\\; T = 6825\\text{ N}\\cdot\\text{m}$"
+],
               "explanation": "• $\\cos\\phi = 0.9574 \\approx 0.96\\text{ lagging}$.\n• Input power: $P_{\\text{in}} = 994.96\\text{ kW} \\approx 995\\text{ kW}$.\n• Gross torque: $T = 7712.5\\text{ N}\\cdot\\text{m} \\approx 7713\\text{ N}\\cdot\\text{m}$."
           },
           {
@@ -7040,6 +7175,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$I = 65\\text{ A},\\; \\cos\\phi = 0.76\\text{ leading}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$I = 89\\text{ A},\\; \\cos\\phi = 0.82\\text{ leading}$",
+                  "$I = 78\\text{ A},\\; \\cos\\phi = 0.88\\text{ leading}$",
+                  "$I = 104\\text{ A},\\; \\cos\\phi = 0.75\\text{ leading}$"
+],
               "explanation": "• Line current: $I = 89.17\\text{ A} \\approx 89\\text{ A}$.\n• Power factor: $\\cos\\phi = 0.8829 \\approx 0.88\\text{ leading}$."
           },
           {
@@ -7052,6 +7192,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$E_{\\text{ph}} = 231\\text{ V/phase},\\; P_m = 72\\text{ kW}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$E_{\\text{ph}} = 266\\text{ V/phase},\\; P_m = 85\\text{ kW}$",
+                  "$E_{\\text{ph}} = 285\\text{ V/phase},\\; P_m = 79\\text{ kW}$",
+                  "$E_{\\text{ph}} = 250\\text{ V/phase},\\; P_m = 68\\text{ kW}$"
+],
               "explanation": "• Phase EMF: $E_{\\text{ph}} = 266.18\\text{ V} \\approx 266\\text{ V/phase}$.\n• Gross mechanical power: $P_m = 78.512\\text{ kW} \\approx 79\\text{ kW}$."
           },
           {
@@ -7064,6 +7209,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$I = 181\\text{ A},\\; \\cos\\phi = 0.82\\text{ leading}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$I = 254\\text{ A},\\; \\cos\\phi = 0.86\\text{ leading}$",
+                  "$I = 220\\text{ A},\\; \\cos\\phi = 0.91\\text{ leading}$",
+                  "$I = 285\\text{ A},\\; \\cos\\phi = 0.79\\text{ leading}$"
+],
               "explanation": "• Line current: $I = 254.16\\text{ A} \\approx 254\\text{ A}$.\n• Power factor: $\\cos\\phi = 0.909 \\approx 0.91\\text{ leading}$."
           },
           {
@@ -7076,6 +7226,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$\\cos\\phi = 0.80\\text{ lagging},\\; T = 241\\text{ N}\\cdot\\text{m}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$\\cos\\phi = 0.90\\text{ lagging},\\; T = 275\\text{ N}\\cdot\\text{m}$",
+                  "$\\cos\\phi = 0.85\\text{ lagging},\\; P = 306\\text{ N}\\cdot\\text{m}$",
+                  "$\\cos\\phi = 0.85\\text{ lagging},\\; T = 275\\text{ N}\\cdot\\text{m}$"
+],
               "explanation": "• Power factor: $\\cos\\phi = 0.90\\text{ lagging}$.\n• Gross torque: $T = 305.7\\text{ N}\\cdot\\text{m} \\approx 306\\text{ N}\\cdot\\text{m}$."
           },
           {
@@ -7088,6 +7243,11 @@ var SUBJECT_DATA = {  basic_electronics: {
                   "$\\cos\\phi = 0.85\\text{ lagging},\\; P_{\\text{in}} = 589\\text{ kW},\\; T = 3749\\text{ N}\\cdot\\text{m}$"
 ],
               "answer": 0,
+              "extraDistractors": [
+                  "$\\cos\\phi = 0.97\\text{ lagging},\\; P_{\\text{in}} = 620\\text{ kW},\\; T = 3945\\text{ N}\\cdot\\text{m}$",
+                  "$\\cos\\phi = 0.92\\text{ lagging},\\; P_{\\text{in}} = 669\\text{ kW},\\; T = 4259\\text{ N}\\cdot\\text{m}$",
+                  "$\\cos\\phi = 0.92\\text{ lagging},\\; P_{\\text{in}} = 620\\text{ kW},\\; T = 3945\\text{ N}\\cdot\\text{m}$"
+],
               "explanation": "• $\\cos\\phi = 0.9657 \\approx 0.97\\text{ lagging}$.\n• Input power: $P_{\\text{in}} = 669.2\\text{ kW} \\approx 669\\text{ kW}$.\n• Developed torque: $T = 4259.3\\text{ N}\\cdot\\text{m} \\approx 4259\\text{ N}\\cdot\\text{m}$."
           }
       ]
