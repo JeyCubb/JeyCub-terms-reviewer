@@ -2922,22 +2922,28 @@ function formatMathTypography(str) {
 
   const mathTokens = [];
 
-  // Decode HTML entities robustly for KaTeX mathematical input
-  function decodeHTMLEntities(text) {
-    if (typeof document === 'undefined') {
-      return text.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#39;/g, "'").replace(/&apos;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+  // Decode all HTML entities in text before any math processing.
+  // This is critical: escapeHTML() is called before formatMathTypography(),
+  // which converts ' -> &#39;, < -> &lt;, > -> &gt;, etc.
+  // We must decode them BEFORE the $...$ regex runs, so KaTeX receives clean LaTeX.
+  function decodeHTMLEntities(t) {
+    if (typeof document !== 'undefined') {
+      const el = document.createElement('textarea');
+      el.innerHTML = t;
+      return el.value;
     }
-    const txt = document.createElement('textarea');
-    txt.innerHTML = text;
-    return txt.value;
+    return t.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+            .replace(/&#39;/g, "'").replace(/&apos;/g, "'").replace(/&quot;/g, '"');
   }
 
-  // Helper to safely render KaTeX with HTML entity unescaping
+  // Decode entities on the whole string FIRST, before any regex matching
+  s = decodeHTMLEntities(s);
+
+  // Helper to safely render KaTeX
   function renderKaTeX(tex, isDisplay) {
     if (typeof katex !== 'undefined' && typeof katex.renderToString === 'function') {
       try {
-        const cleanTex = decodeHTMLEntities(tex.trim());
-        return katex.renderToString(cleanTex, {
+        return katex.renderToString(tex.trim(), {
           displayMode: isDisplay,
           throwOnError: false
         });
@@ -2951,7 +2957,7 @@ function formatMathTypography(str) {
   // 1. Extract and protect Display Math: $$...$$
   s = s.replace(/\$\$([\s\S]+?)\$\$/g, (match, tex) => {
     const token = `@@KATEX_DISP_${mathTokens.length}@@`;
-    mathTokens.append = mathTokens.push({ token, html: renderKaTeX(tex, true) });
+    mathTokens.push({ token, html: renderKaTeX(tex, true) });
     return token;
   });
 

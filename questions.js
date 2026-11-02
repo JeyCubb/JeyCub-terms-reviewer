@@ -6098,10 +6098,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 11,
               "question": "The RMS value of generated voltage per phase in an alternator is given by:",
               "options": [
-                  "E_ph = 4.44 · Kc · Kd · f · Φ · T_ph",
-                  "E_ph = 4.44 · Kc · Kd · f · T_ph (missing Φ)",
-                  "E_ph = 4.44 · Kc · Kd · f² · Φ · T_ph",
-                  "E_ph = 1.11 · Kc · Kd · f · Φ · T_ph"
+                  "$E_{ph} = 4.44 \\cdot K_c \\cdot K_d \\cdot f \\cdot \\Phi \\cdot T_{ph}$",
+                  "$E_{ph} = 4.44 \\cdot K_c \\cdot K_d \\cdot f \\cdot T_{ph}$",
+                  "$E_{ph} = 4.44 \\cdot K_c \\cdot K_d \\cdot f^2 \\cdot \\Phi \\cdot T_{ph}$",
+                  "$E_{ph} = 1.11 \\cdot K_c \\cdot K_d \\cdot f \\cdot \\Phi \\cdot T_{ph}$"
               ],
               "answer": 0,
               "explanation": "• Why 'Eph = 4.44 Kc Kd f Φ Tph' is Correct (Key: a): Average induced EMF per turn is $4f\\Phi$. For $T_{ph}$ turns and a sinusoidal form factor ($K_f = 1.11$), RMS EMF is $4 \\times 1.11 \\cdot f \\Phi T_{ph} = 4.44 f \\Phi T_{ph}$. Accounting for pitch factor ($K_c$) and distribution factor ($K_d$) yields $4.44 K_c K_d f \\Phi T_{ph}$.\n• Why Other Choices are Incorrect: Option b omits magnetic flux $\\Phi$; option c squares frequency; option d uses average instead of RMS."
@@ -6206,10 +6206,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 20,
               "question": "In a synchronous generator operating on load:",
               "options": [
-                  "The open-circuit voltage (E₀) lags terminal voltage (V) by the power angle δ",
-                  "The open-circuit voltage (E₀) leads terminal voltage (V) by the power factor angle φ",
-                  "The open-circuit voltage (E₀) leads terminal voltage (V) by the power angle δ",
-                  "The open-circuit voltage (E₀) lags terminal voltage (V) by the power factor angle φ"
+                  "The open-circuit voltage ($E_0$) lags terminal voltage ($V$) by the power angle $\\delta$",
+                  "The open-circuit voltage ($E_0$) leads terminal voltage ($V$) by the power factor angle $\\phi$",
+                  "The open-circuit voltage ($E_0$) leads terminal voltage ($V$) by the power angle $\\delta$",
+                  "The open-circuit voltage ($E_0$) lags terminal voltage ($V$) by the power factor angle $\\phi$"
               ],
               "answer": 2,
               "explanation": "• Why 'E0 leads V by power angle δ' is Correct (Key: c): In an alternator delivering electrical power, the rotor magnetic axis is pulled ahead of the stator terminal voltage phasor by rotor torque, so induced excitation EMF $E_0$ leads terminal voltage $V$ by torque angle $\\delta$.\n• Why Other Choices are Incorrect: In synchronous motors, $E$ lags $V$; in generators, $E_0$ leads $V$."
@@ -6230,9 +6230,9 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 22,
               "question": "On the open-circuit and zero-power-factor full-load curves of an alternator, the vertical distance $PQ$ of the Potier triangle gives the voltage drop across the:",
               "options": [
-                  "Armature leakage reactance",
-                  "Armature reaction reactance",
-                  "Synchronous reactance",
+                  "Armature leakage reactance ($I_a X_L$)",
+                  "Armature reaction reactance ($I_a X_{ar}$)",
+                  "Synchronous reactance ($I_a X_s$)",
                   "Potier reactance"
               ],
               "answer": 0,
@@ -6244,7 +6244,7 @@ var SUBJECT_DATA = {  basic_electronics: {
               "options": [
                   "Operating slip of the machine",
                   "Positive-sequence reactance and negative-sequence reactance",
-                  "Direct-axis reactance (Xd) and quadrature-axis reactance (Xq)",
+                  "Direct-axis reactance ($X_d$) and quadrature-axis reactance ($X_q$)",
                   "Subtransient reactance only"
               ],
               "answer": 2,
@@ -6254,10 +6254,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 24,
               "question": "In a slip test, the direct-axis synchronous reactance ($X_d$) of a star-connected salient pole alternator is determined by:",
               "options": [
-                  "Xd = Vmax / Imax",
-                  "Xd = Vmin / Imax",
-                  "Xd = Vmax / Imin",
-                  "Xd = Vmin / Imin"
+                  "$X_d = V_{max} / I_{max}$",
+                  "$X_d = V_{min} / I_{max}$",
+                  "$X_d = V_{max} / I_{min}$",
+                  "$X_d = V_{min} / I_{min}$"
               ],
               "answer": 2,
               "explanation": "• Why 'Xd = Vmax / Imin' is Correct (Key: c): When the direct axis aligns with the stator MMF wave, magnetic reluctance is minimum, flux linkage is maximum, inductive reactance is highest ($X_d$), terminal voltage reaches $V_{\\max}$, and armature current drops to $I_{\\min}$. Thus $X_d = V_{\\max} / I_{\\min}$.\n• Why Other Choices are Incorrect: $X_q = V_{\\min} / I_{\\max}$ corresponds to the minimum-inductance quadrature axis."
@@ -6266,10 +6266,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 25,
               "question": "When a 3-phase alternator is suddenly short-circuited at its terminals, the initial value of symmetrical short-circuit current is limited by:",
               "options": [
-                  "Subtransient reactance",
-                  "Transient reactance",
-                  "Steady-state synchronous reactance",
-                  "Sum of subtransient, transient, and synchronous reactance"
+                  "Subtransient reactance ($X_d''$)",
+                  "Transient reactance ($X_d'$)",
+                  "Steady-state synchronous reactance ($X_s$)",
+                  "Sum of $X_d''$, $X_d'$, and $X_s$"
               ],
               "answer": 0,
               "explanation": "• Why 'Subtransient reactance Xd''' is Correct (Key: a): During the first few cycles (0.01 to 0.05 seconds) following a sudden fault, damper winding currents oppose flux changes, yielding the lowest reactance $X_d''$ and highest initial symmetrical fault current $I'' = E / X_d''$.\n• Why Other Choices are Incorrect: Transient reactance $X_d'$ governs the intermediate period (0.1 to 1.0 s); steady-state reactance $X_s$ limits sustained short-circuit current after several seconds."
@@ -6278,10 +6278,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 26,
               "question": "If $X_d$, $X_d'$, and $X_d''$ are the steady-state, transient, and subtransient direct-axis reactances of a synchronous machine, their magnitude relationship is:",
               "options": [
-                  "Xd < Xd′ < Xd″",
-                  "Xd″ < Xd′ < Xd",
-                  "Xd′ > Xd″ > Xd",
-                  "Xd > Xd″ > Xd′"
+                  "$X_d < X_d' < X_d''$",
+                  "$X_d'' < X_d' < X_d$",
+                  "$X_d' > X_d'' > X_d$",
+                  "$X_d > X_d'' > X_d'$"
               ],
               "answer": 1,
               "explanation": "• Why 'Xd'' < Xd' < Xd' is Correct (Key: b): Damper windings and field windings trap flux during transients, reducing effective magnetic leakage paths. Hence, subtransient reactance is smallest ($X_d'' \\approx 0.15\\text{ pu}$), transient reactance is intermediate ($X_d' \\approx 0.25\\text{ pu}$), and steady-state synchronous reactance is largest ($X_d \\approx 1.0\\text{ to }1.5\\text{ pu}$).\n• Why Other Choices are Incorrect: Because fault current decreases over time ($I'' > I' > I$), reactances must follow the inverse order $X_d'' < X_d' < X_d$."
@@ -6386,10 +6386,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 35,
               "question": "When $V$ is the applied terminal voltage, the maximum pull-out (breakdown) torque of a synchronous motor varies as:",
               "options": [
-                  "V (directly proportional to V)",
-                  "√V (proportional to square root of V)",
-                  "V² (proportional to V squared)",
-                  "1/V (inversely proportional to V)"
+                  "$V$",
+                  "$\\sqrt{V}$",
+                  "$V^2$",
+                  "$1/V$"
               ],
               "answer": 0,
               "explanation": "• Why 'V' is Correct (Key: a): Maximum power developed by a non-salient synchronous motor is $P_{\\max} = \\frac{E \\cdot V}{X_s}$. Since excitation voltage $E$ and synchronous reactance $X_s$ are constant, pull-out torque varies directly as $V$ (in contrast to induction motors where breakdown torque varies as $V^2$).\n• Why Other Choices are Incorrect: Induction motor torque varies with $V^2$; synchronous motor torque varies linearly with $V$."
@@ -6590,10 +6590,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 52,
               "question": "Synchronous speed ($N_s$) for a synchronous motor is given by:",
               "options": [
-                  "Ns = 200f / P",
-                  "Ns = 120f / P",
-                  "Ns = 120P / f",
-                  "Ns = 120f · P"
+                  "$N_s = 200f/P$",
+                  "$N_s = 120f/P$",
+                  "$N_s = 120P/f$",
+                  "$N_s = 120f \\cdot P$"
               ],
               "answer": 1,
               "explanation": "• Why 'Ns = 120f/P' is Correct (Key: b): In one electrical cycle, the magnetic field travels past two poles (one pole pair). With $f$ cycles per second and $P$ poles, speed in rpm is $N_s = \\frac{60 \\times 2f}{P} = \\frac{120f}{P}$.\n• Why Other Choices are Incorrect: Standard equation verified across all AC rotating machinery."
