@@ -326,8 +326,8 @@ function initPinchToFontResize() {
       if (trackpadResetTimer) clearTimeout(trackpadResetTimer);
       trackpadResetTimer = setTimeout(() => { trackpadAccumulator = 0; }, 180);
 
-      // Require a natural, deliberate gesture distance before stepping 5%
-      const THRESHOLD = 75;
+      // Balanced pinch sensitivity (Middle ground between 0 and 75)
+      const THRESHOLD = 35;
       if (Math.abs(trackpadAccumulator) >= THRESHOLD) {
         const step = trackpadAccumulator < 0 ? 0.05 : -0.05;
         trackpadAccumulator = 0;
