@@ -2264,7 +2264,7 @@ function renderCurrentPracticeQuestion() {
   }
 
   // Question Text
-  if (qText) qText.innerHTML = formatMathTypography(escapeHTML(`Problem #${q.id}: ${q.question || ''}`));
+  if (qText) qText.innerHTML = formatMathTypography(escapeHTML(`${q.id}.) ${q.question || ''}`));
 
   // Question Image (Diagram)
   const imgContainer = document.getElementById('q-image-container');
@@ -2837,7 +2837,7 @@ function filterAllQuestions() {
 
     item.innerHTML = `
       <div class="item-top">
-        <span class="item-num">Problem #${q.id}</span>
+        <span class="item-num">${q.id}.)</span>
         <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
           ${mistakeCount > 0 ? `<span style="color: var(--color-error); font-size: 0.8rem; font-weight: 700; background: var(--color-error-bg); padding: 2px 8px; border-radius: var(--radius-sm);"><i class="fa-solid fa-triangle-exclamation"></i> ${mistakeCount} class ${mistakeCount === 1 ? 'mistake' : 'mistakes'}</span>` : ''}
           ${isBookmarked ? '<span style="color: var(--color-warning); font-size: 0.8rem; font-weight: 700; background: var(--color-warning-bg); padding: 2px 8px; border-radius: var(--radius-sm);"><i class="fa-solid fa-star"></i> Class Bookmarked</span>' : ''}

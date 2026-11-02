@@ -6024,12 +6024,12 @@ var SUBJECT_DATA = {  basic_electronics: {
           },
           {
               "id": 5,
-              "question": "An alternator having 8 poles rotating at 250 rpm will generate a frequency of:",
+              "question": "An alternator having 8 poles rotating at 250 rpm will have",
               "options": [
                   "60 Hz",
                   "50 Hz",
                   "25 Hz",
-                  "$\\frac{50}{3}\\text{ Hz}$"
+                  "50/3 Hz"
               ],
               "answer": 3,
               "explanation": "• Why '50/3 Hz' is Correct (Key: d): Using the fundamental frequency relationship $f = \\frac{P \\cdot N}{120}$:\n$$f = \\frac{8 \\times 250}{120} = \\frac{2000}{120} = \\frac{50}{3}\\text{ Hz} \\approx 16.67\\text{ Hz}$$\n• Why Other Choices are Incorrect: 50 Hz requires 750 rpm for 8 poles; 60 Hz requires 900 rpm; 25 Hz requires 375 rpm."
