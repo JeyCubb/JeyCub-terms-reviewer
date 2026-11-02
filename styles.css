@@ -4712,9 +4712,15 @@ sup {
    ========================================================================== */
 .katex {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+  font-style: normal !important;
   font-size: 1.06em !important;
   text-rendering: auto;
   letter-spacing: normal;
+}
+
+.katex,
+.katex * {
+  font-style: normal !important;
 }
 
 .katex .mathrm,
@@ -4724,10 +4730,7 @@ sup {
 .katex .mbin,
 .katex .mrel {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif, "KaTeX_Main", "KaTeX_Math" !important;
-}
-
-.katex .mathnormal {
-  font-style: italic;
+  font-style: normal !important;
 }
 
 .katex-display {
