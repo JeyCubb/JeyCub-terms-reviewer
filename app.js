@@ -136,6 +136,7 @@ function initScrollSnapInstant() {
   let isSnapping = false;
 
   window.addEventListener('wheel', (e) => {
+    if (e.ctrlKey) return; // Ignore pinch-to-zoom gestures on trackpads
     if (state.currentMode !== 'practice') return;
     const active = document.activeElement;
     if (active && (active.tagName === 'TEXTAREA' || active.tagName === 'INPUT')) return;
@@ -313,13 +314,26 @@ function initPinchToFontResize() {
     }
   }, { passive: true });
 
-  // 4. Trackpad Pinch-to-Zoom (Ctrl + Wheel)
+  // 4. Trackpad Pinch-to-Zoom (Ctrl + Wheel) with smooth accumulator
+  let trackpadAccumulator = 0;
+  let trackpadResetTimer = null;
+
   window.addEventListener('wheel', (e) => {
     if (e.ctrlKey) {
       e.preventDefault();
-      const step = e.deltaY < 0 ? 0.05 : -0.05;
-      const newScale = Math.min(2.0, Math.max(0.75, currentFontScale + step));
-      setFontScale(newScale, true);
+      trackpadAccumulator += e.deltaY;
+
+      if (trackpadResetTimer) clearTimeout(trackpadResetTimer);
+      trackpadResetTimer = setTimeout(() => { trackpadAccumulator = 0; }, 180);
+
+      // Require a natural, deliberate gesture distance before stepping 5%
+      const THRESHOLD = 75;
+      if (Math.abs(trackpadAccumulator) >= THRESHOLD) {
+        const step = trackpadAccumulator < 0 ? 0.05 : -0.05;
+        trackpadAccumulator = 0;
+        const newScale = Math.min(2.0, Math.max(0.75, currentFontScale + step));
+        setFontScale(newScale, true);
+      }
     }
   }, { passive: false });
 
