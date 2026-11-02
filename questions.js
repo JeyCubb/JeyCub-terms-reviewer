@@ -6266,10 +6266,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 25,
               "question": "When a 3-phase alternator is suddenly short-circuited at its terminals, the initial value of symmetrical short-circuit current is limited by:",
               "options": [
-                  "Subtransient reactance ($X_d''$)",
-                  "Transient reactance ($X_d'$)",
-                  "Steady-state synchronous reactance ($X_s$)",
-                  "Sum of $X_d''$, $X_d'$, and $X_s$"
+                  "Subtransient reactance",
+                  "Transient reactance",
+                  "Steady-state synchronous reactance",
+                  "Sum of subtransient, transient, and synchronous reactance"
               ],
               "answer": 0,
               "explanation": "• Why 'Subtransient reactance Xd''' is Correct (Key: a): During the first few cycles (0.01 to 0.05 seconds) following a sudden fault, damper winding currents oppose flux changes, yielding the lowest reactance $X_d''$ and highest initial symmetrical fault current $I'' = E / X_d''$.\n• Why Other Choices are Incorrect: Transient reactance $X_d'$ governs the intermediate period (0.1 to 1.0 s); steady-state reactance $X_s$ limits sustained short-circuit current after several seconds."

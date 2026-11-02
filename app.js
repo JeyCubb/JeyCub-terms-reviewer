@@ -2929,6 +2929,9 @@ function formatMathTypography(str) {
         const cleanTex = tex.trim()
           .replace(/&lt;/g, '<')
           .replace(/&gt;/g, '>')
+          .replace(/&#39;/g, "'")
+          .replace(/&apos;/g, "'")
+          .replace(/&quot;/g, '"')
           .replace(/&amp;/g, '&');
         return katex.renderToString(cleanTex, {
           displayMode: isDisplay,

@@ -4711,9 +4711,23 @@ sup {
    KaTeX Mathematical Typography
    ========================================================================== */
 .katex {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
   font-size: 1.06em !important;
   text-rendering: auto;
   letter-spacing: normal;
+}
+
+.katex .mathrm,
+.katex .text,
+.katex .mathnormal,
+.katex .mord:not(.delimsizingclass),
+.katex .mbin,
+.katex .mrel {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif, "KaTeX_Main", "KaTeX_Math" !important;
+}
+
+.katex .mathnormal {
+  font-style: italic;
 }
 
 .katex-display {
