@@ -6,13 +6,13 @@
   <title>JeyCub Terms Reviewer</title>
   <meta name="description" content="Interactive quiz reviewer app for Engineering Board Exams: Fluid Mechanics, Mechanics of Deformable Bodies, and Heat Transfer.">
   <!-- Quiz Emoji Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>ðŸ“</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23f97316%22/><path d=%22M6 8h7a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H6z M26 8h-7a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h8z%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-width=%222.2%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
   <!-- Google Fonts & FontAwesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=117.0">
+  <link rel="stylesheet" href="styles.css?v=118.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -129,7 +129,7 @@
       <!-- Practice Controls Box (Moved BELOW Show Notes & Solution) -->
       <div class="quiz-controls-card">
         <div class="question-number-badge">
-          <span id="subject-badge-name">Fluid Mechanics</span> â€¢ Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
+          <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
         </div>
 
         <div class="quiz-header-controls">
@@ -144,8 +144,8 @@
           <div class="practice-filter-wrapper">
             <label for="practice-filter-select"><i class="fa-solid fa-layer-group"></i> Pool:</label>
             <select id="practice-filter-select" onchange="changePracticeFilter(this.value)">
-              <option value="all">ðŸ“š All Questions</option>
-              <option value="weak">âš ï¸ Weak Questions</option>
+              <option value="all">📚 All Questions</option>
+              <option value="weak">⚠️ Weak Questions</option>
                           </select>
           </div>
 
@@ -169,9 +169,9 @@
         <div class="filters-row">
           <select id="filter-status-select" onchange="filterAllQuestions()">
             <option value="all">All Statuses</option>
-            <option value="weak">âš ï¸ Class Weak Questions</option>
-                        <option value="correct">âœ“ Correctly Answered</option>
-            <option value="incorrect">âœ— Incorrectly Answered</option>
+            <option value="weak">⚠️ Class Weak Questions</option>
+                        <option value="correct">✓ Correctly Answered</option>
+            <option value="incorrect">✗ Incorrectly Answered</option>
           </select>
           <span class="search-count-label" id="search-count-badge">Showing questions</span>
         </div>
@@ -193,7 +193,7 @@
 
     <!-- ============================================================
          BOTTOM PANEL: Stats Bar + Header (brand, subject, mode nav)
-         Sits BELOW all content â€” sticky to the bottom on mobile
+         Sits BELOW all content — sticky to the bottom on mobile
     ============================================================ -->
     <div class="bottom-panel">
 
@@ -246,7 +246,10 @@
           <div class="brand-row">
             <div class="brand">
               <div class="brand-icon">
-                <span>ðŸ“</span>
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
               </div>
               <a href="https://jeycubb.github.io/TIP-Grade-Calculator/" target="_self" class="reviewer-link-icon grade-calc-link-icon" title="Open TIP Grade Calculator (GWA & Target Calculator)" aria-label="Open TIP Grade Calculator">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -315,7 +318,7 @@
 
 
   <script src="questions.js?v=103.0"></script>
-  <script src="app.js?v=103.0"></script>
+  <script src="app.js?v=104.0"></script>
   <!-- App Confirmation & Alert Modal (TIP Grade Calculator Design) -->
   <div id="app-confirm-modal" class="profile-modal-overlay" style="display: none;">
     <div class="profile-modal-dialog">
