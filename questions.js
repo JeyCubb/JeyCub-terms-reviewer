@@ -60,15 +60,15 @@ var SUBJECT_DATA = {  basic_electronics: {
   },
   {
     "id": 5,
-    "question": "Calculate the loop current (I) in a forward-biased diode circuit using the Third Approximation (Piecewise Approximation). Given: Supply Voltage = 10 V, Silicon Diode (V_B = 0.7 V, internal resistance R_B = 0.2 Ω), and Load Resistor R_L = 1 kΩ (1000 Ω).",
+    "question": "Calculate the loop current ($I$) in a forward-biased diode circuit using the Third Approximation (Piecewise Approximation). Given: Supply Voltage $V_S = 10\\text{ V}$, Silicon Diode ($V_B = 0.7\\text{ V}$, internal bulk resistance $R_B = 0.2\\ \\Omega$), and Load Resistor $R_L = 1\\text{ k}\\Omega$ ($1000\\ \\Omega$).",
     "options": [
-      "9.300 mA",
-      "9.298 mA",
-      "10.00 mA",
-      "9.600 mA"
+      "$9.300\\text{ mA}$",
+      "$9.298\\text{ mA}$",
+      "$10.00\\text{ mA}$",
+      "$9.600\\text{ mA}$"
     ],
     "answer": 1,
-    "explanation": "• Why '9.298 mA' is Correct: In the Third Approximation, I = (V_S - V_B) / (R_L + R_B) = (10 V - 0.7 V) / (1000 Ω + 0.2 Ω) = 9.3 V / 1000.2 Ω = 0.00929814 A = 9.298 mA.\n• Why Other Choices are Incorrect: 9.300 mA is obtained using the Second Approximation (ignoring internal resistance R_B = 0.2 Ω), and 10.00 mA is obtained using the First (Ideal) Approximation."
+    "explanation": "• Why '$9.298\\text{ mA}$' is Correct: In the Third Approximation (Piecewise Linear Model), the diode is modeled as a barrier voltage $V_B$ in series with its dynamic forward resistance $R_B$:\n$$I = \\frac{V_S - V_B}{R_L + R_B} = \\frac{10\\text{ V} - 0.7\\text{ V}}{1000\\ \\Omega + 0.2\\ \\Omega} = \\frac{9.3\\text{ V}}{1000.2\\ \\Omega} \\approx 0.00929814\\text{ A} = 9.298\\text{ mA}$$\n• Why Other Choices are Incorrect: $9.300\\text{ mA}$ is from the Second Approximation ($I = \\frac{10 - 0.7}{1000}$, ignoring internal resistance), while $10.00\\text{ mA}$ is from the First (Ideal) Approximation ($I = \\frac{10}{1000}$ with zero forward drop)."
   },
   {
     "id": 6,
@@ -192,15 +192,15 @@ var SUBJECT_DATA = {  basic_electronics: {
   },
   {
     "id": 16,
-    "question": "What are the typical forward barrier (knee) voltages for Germanium (Ge) and Silicon (Si) diodes at room temperature?",
+    "question": "What are the approximate forward barrier potential voltages for Germanium and Silicon PN junctions at room temperature (25°C)?",
     "options": [
-      "Germanium = 0.7 V, Silicon = 0.3 V",
-      "Germanium = 0.3 V, Silicon = 0.7 V",
-      "Germanium = 1.1 V, Silicon = 1.5 V",
-      "Germanium = 0.0 V, Silicon = 0.0 V"
+      "Germanium = $0.7\\text{ V}$, Silicon = $0.3\\text{ V}$",
+      "Germanium = $0.3\\text{ V}$, Silicon = $0.7\\text{ V}$",
+      "Germanium = $1.1\\text{ V}$, Silicon = $1.5\\text{ V}$",
+      "Germanium = $0.0\\text{ V}$, Silicon = $0.0\\text{ V}$"
     ],
     "answer": 1,
-    "explanation": "• Why 'Germanium = 0.3 V, Silicon = 0.7 V' is Correct: At 25 °C, a Germanium PN junction requires approx 0.3 V to turn on in forward bias, while Silicon requires approx 0.7 V.\n• Why Other Choices are Incorrect: Reversing the values is a common mistake; Ge has smaller bandgap energy than Si."
+    "explanation": "• Why 'Germanium = $0.3\\text{ V}$, Silicon = $0.7\\text{ V}$' is Correct: At standard room temperature ($25^\\circ\\text{C}$ or $300\\text{ K}$), the barrier potentials needed to overcome the depletion layer electric field are approximately $0.3\\text{ V}$ for Germanium (Ge) and $0.7\\text{ V}$ for Silicon (Si).\n• Why Other Choices are Incorrect: Reversing the values ($0.7\\text{ V}$ for Ge, $0.3\\text{ V}$ for Si) is a common confusion. $1.1\\text{ eV}$ represents the bandgap energy of Silicon, not its barrier voltage."
   },
   {
     "id": 17,
@@ -713,7 +713,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       "1.8 V to 2.2 V",
       "0.3 V to 0.4 V",
       "5.0 V to 12.0 V",
-      "0.0 V"
+      "$0.0\\text{ V}$"
     ],
     "answer": 0,
     "explanation": "• Why '1.8 V to 2.2 V' is Correct: Red LEDs typically require a minimum forward voltage (V_F) of 1.8 V to 2.2 V to initiate electroluminescence.\n• Why Other Choices are Incorrect: 0.3 V is for Germanium diodes, 0.7 V is for Silicon diodes, while Green LEDs require 2.0 V – 3.2 V and Blue LEDs require 3.0 V – 3.5 V."
@@ -948,51 +948,51 @@ var SUBJECT_DATA = {  basic_electronics: {
   },
   {
     "id": 79,
-    "question": "Typical forward voltage drop of a Schottky diode is:",
+    "question": "The typical forward voltage drop of a Schottky diode is approximately:",
     "options": [
-      "0.7 V",
-      "0.3 V",
-      "0.25 V",
-      "1.0 V"
+      "$0.7\\text{ V}$",
+      "$0.3\\text{ V}$",
+      "$0.25\\text{ V}$",
+      "$1.0\\text{ V}$"
     ],
     "answer": 1,
-    "explanation": "• Why '0.3 V' is Correct: Schottky metal-semiconductor diodes feature a significantly lower barrier potential than standard silicon diodes, with a typical nominal forward voltage drop of approx 0.3 V (ranging between 0.15 V and 0.45 V).\n• Why Other Choices are Incorrect: 0.7 V is the forward drop of a standard Silicon PN diode, while 1.0 V is typical for power rectifiers under heavy load."
+    "explanation": "• Why '$0.3\\text{ V}$' is Correct: Schottky metal-semiconductor diodes feature a significantly lower barrier potential than standard silicon PN junction diodes ($0.7\\text{ V}$), typically exhibiting a forward voltage drop between $0.2\\text{ V}$ and $0.35\\text{ V}$ (nominally $\\approx 0.3\\text{ V}$).\n• Why Other Choices are Incorrect: $0.7\\text{ V}$ is standard for Silicon PN junction diodes, and $1.0\\text{ V}$ is typical for Silicon power rectifiers at high currents."
   },
   {
     "id": 80,
-    "question": "(Problem) A 6 V supply is connected across a 330 Ω resistor in series with a Light-Emitting Diode (LED) of 2 V forward drop. Calculate the current through the LED.",
+    "question": "(Problem) A $6\\text{ V}$ supply is connected across a $330\\ \\Omega$ resistor in series with a Light-Emitting Diode (LED) of $2\\text{ V}$ forward drop. Calculate the current through the LED.",
     "options": [
-      "6 mA",
-      "12 mA",
-      "20 mA",
-      "40 mA"
+      "$6\\text{ mA}$",
+      "$12\\text{ mA}$",
+      "$20\\text{ mA}$",
+      "$40\\text{ mA}$"
     ],
     "answer": 1,
-    "explanation": "• Why '12 mA' is Correct: By Kirchhoff's Voltage Law, resistor voltage V_R = V_S - V_F = 6 V - 2 V = 4 V. Applying Ohm's Law gives I = V_R / R = 4 V / 330 Ω = 0.01212 A = 12.12 mA ≈ 12 mA.\n• Why Other Choices are Incorrect: 6 mA neglects the 2 V LED drop (using 2 V / 330 Ω), while 20 mA and 40 mA are arbitrary values."
+    "explanation": "• Why '$12\\text{ mA}$' is Correct: By Kirchhoff's Voltage Law (KVL), the voltage across the current-limiting resistor is:\n$$V_R = V_S - V_F = 6\\text{ V} - 2\\text{ V} = 4\\text{ V}$$\nApplying Ohm's Law gives the loop current:\n$$I = \\frac{V_R}{R} = \\frac{4\\text{ V}}{330\\ \\Omega} \\approx 0.01212\\text{ A} = 12.12\\text{ mA} \\approx 12\\text{ mA}$$\n• Why Other Choices are Incorrect: $6\\text{ mA}$ neglects the supply voltage ($2\\text{ V} / 330\\ \\Omega$), while $20\\text{ mA}$ and $40\\text{ mA}$ are arbitrary values."
   },
   {
     "id": 81,
-    "question": "(Problem) A 10 pF varactor diode is used with a 100 µH coil. Find the resonant frequency.",
+    "question": "(Problem) A $10\\text{ pF}$ varactor diode is used with a $100\\ \\mu\\text{H}$ coil. Find the resonant frequency.",
     "options": [
-      "1.6 MHz",
-      "500 kHz",
-      "5 MHz",
-      "160 MHz"
+      "$1.6\\text{ MHz}$",
+      "$160\\text{ MHz}$",
+      "$500\\text{ kHz}$",
+      "$5\\text{ MHz}$"
     ],
-    "answer": 2,
-    "explanation": "• Why '5 MHz' is Correct: Resonant frequency f = 1 / (2π√(L * C)). Substituting L = 100 µH = 100 x 10^-6 H and C = 10 pF = 10 x 10^-12 F gives √(L * C) = √(10^-15) = 3.162 x 10^-8 s. Thus f = 1 / (2 * π * 3.162 x 10^-8) = 5,032,921 Hz ≈ 5.03 MHz ≈ 5 MHz.\n• Why Other Choices differ: Alternative choices result from unit conversion errors (e.g. omitting 10^-12 for pico or 10^-6 for micro)."
+    "answer": 3,
+    "explanation": "• Why '$5\\text{ MHz}$' is Correct: The fundamental resonant frequency formula for an LC tuned circuit is:\n$$f_r = \\frac{1}{2\\pi\\sqrt{LC}}$$\nGiven:\n- Inductance: $L = 100\\ \\mu\\text{H} = 100 \\times 10^{-6}\\text{ H}$\n- Capacitance: $C = 10\\text{ pF} = 10 \\times 10^{-12}\\text{ F}$\n\nCalculating $\\sqrt{LC}$:\n$$\\sqrt{LC} = \\sqrt{(100 \\times 10^{-6}\\text{ H})(10 \\times 10^{-12}\\text{ F})} = \\sqrt{10^{-15}} \\approx 3.162278 \\times 10^{-8}\\text{ s}$$\n\nCalculating resonant frequency $f_r$:\n$$f_r = \\frac{1}{2\\pi \\times (3.162278 \\times 10^{-8}\\text{ s})} = \\frac{1}{1.986918 \\times 10^{-7}\\text{ s}} \\approx 5,032,921\\text{ Hz} \\approx 5.03\\text{ MHz} \\approx 5\\text{ MHz}$$\n• Why Other Choices differ: Alternative choices result from unit prefix mistakes (such as forgetting $10^{-12}$ for pico or $10^{-6}$ for micro, or omitting the $2\\pi$ factor)."
   },
   {
     "id": 82,
-    "question": "(Problem) A Schottky diode bridge rectifier is used in a 5 V DC supply. If each diode drops 0.25 V, what is the total voltage drop across two conducting diodes?",
+    "question": "(Problem) A Schottky diode bridge rectifier is used in a $5\\text{ V}$ DC supply. If each diode drops $0.25\\text{ V}$, what is the total forward voltage drop across the two conducting diodes?",
     "options": [
-      "0.25 V",
-      "0.5 V",
-      "1.4 V",
-      "2.0 V"
+      "$0.25\\text{ V}$",
+      "$0.5\\text{ V}$",
+      "$1.4\\text{ V}$",
+      "$2.0\\text{ V}$"
     ],
     "answer": 1,
-    "explanation": "• Why '0.5 V' is Correct: In a full-wave bridge rectifier circuit, two diodes conduct simultaneously in series during each half-cycle. Total forward voltage drop V_total = 2 x V_diode = 2 x 0.25 V = 0.5 V.\n• Why Other Choices are Incorrect: 0.25 V counts only one diode, while 1.4 V is the drop across two standard silicon diodes (2 x 0.7 V)."
+    "explanation": "• Why '$0.5\\text{ V}$' is Correct: In a full-wave bridge rectifier circuit, two diodes conduct simultaneously in series during each AC half-cycle:\n$$V_{\\text{total}} = 2 \\times V_{\\text{diode}} = 2 \\times 0.25\\text{ V} = 0.5\\text{ V}$$\n• Why Other Choices are Incorrect: $0.25\\text{ V}$ accounts for only a single diode drop, while $1.4\\text{ V}$ ($2 \\times 0.7\\text{ V}$) is the drop for conventional silicon PN junction diodes."
   },
   {
     "id": 83,
@@ -1128,63 +1128,63 @@ var SUBJECT_DATA = {  basic_electronics: {
   },
   {
     "id": 94,
-    "question": "(Problem) An AC voltage with peak value V_p = 20 V is connected in series with a silicon diode (forward voltage drop V_D = 0.7 V, forward bulk resistance R_f = 10 Ω) and a load resistor R_L = 500 Ω. Find the peak current through the diode.",
+    "question": "(Problem) An AC voltage with peak value $V_p = 20\\text{ V}$ is connected in series with a silicon diode (forward voltage drop $V_D = 0.7\\text{ V}$, forward bulk resistance $R_f = 10\\ \\Omega$) and a load resistor $R_L = 500\\ \\Omega$. Find the peak current through the diode.",
     "options": [
-      "37.84 mA",
-      "40.00 mA",
-      "38.60 mA",
-      "35.20 mA"
+      "$37.84\\text{ mA}$",
+      "$40.00\\text{ mA}$",
+      "$38.60\\text{ mA}$",
+      "$35.20\\text{ mA}$"
     ],
     "answer": 0,
-    "explanation": "• Why '37.84 mA' is Correct: By Kirchhoff's Voltage Law, V_p - V_D = I * (R_f + R_L). Substituting values: 20 V - 0.7 V = I * (10 Ω + 500 Ω) => 19.3 V = 510 Ω * I. Therefore, peak current I_peak = 19.3 V / 510 Ω = 0.037843 A = 37.84 mA.\n• Why Other Choices are Incorrect: 40.00 mA assumes an ideal diode (20 V / 500 Ω), while 38.60 mA ignores the 10 Ω internal diode resistance."
+    "explanation": "• Why '$37.84\\text{ mA}$' is Correct: Applying Kirchhoff's Voltage Law at the positive AC peak:\n$$V_p - V_D = I_{\\text{peak}} \\cdot (R_f + R_L)$$\n$$20\\text{ V} - 0.7\\text{ V} = I_{\\text{peak}} \\cdot (10\\ \\Omega + 500\\ \\Omega)$$\n$$19.3\\text{ V} = I_{\\text{peak}} \\cdot 510\\ \\Omega$$\n$$I_{\\text{peak}} = \\frac{19.3\\text{ V}}{510\\ \\Omega} \\approx 0.037843\\text{ A} = 37.84\\text{ mA}$$\n• Why Other Choices are Incorrect: $40.00\\text{ mA}$ assumes an ideal diode ($20\\text{ V} / 500\\ \\Omega$), while $38.60\\text{ mA}$ ignores the $10\\ \\Omega$ internal bulk resistance ($19.3\\text{ V} / 500\\ \\Omega$)."
   },
   {
     "id": 95,
-    "question": "(Problem) For the silicon diode circuit in Problem 94 (V_p = 20 V, V_D = 0.7 V, R_f = 10 Ω, R_L = 500 Ω), calculate the peak output voltage V_out measured across the 500 Ω load resistor.",
+    "question": "(Problem) For the silicon diode circuit in Problem 94 ($V_p = 20\\text{ V}$, $V_D = 0.7\\text{ V}$, $R_f = 10\\ \\Omega$, $R_L = 500\\ \\Omega$), calculate the peak output voltage $V_{\\text{out}}$ measured across the $500\\ \\Omega$ load resistor.",
     "options": [
-      "18.92 V",
-      "20.00 V",
-      "19.30 V",
-      "17.50 V"
+      "$18.92\\text{ V}$",
+      "$20.00\\text{ V}$",
+      "$19.30\\text{ V}$",
+      "$17.50\\text{ V}$"
     ],
     "answer": 0,
-    "explanation": "• Why '18.92 V' is Correct: The peak output voltage across the load resistor is V_out = I_peak * R_L = (0.037843 A) * 500 Ω = 18.9215 V ≈ 18.92 V.\n• Why Other Choices are Incorrect: 20.00 V assumes an ideal diode with zero voltage drop, while 19.30 V neglects the 10 Ω internal diode resistance."
+    "explanation": "• Why '$18.92\\text{ V}$' is Correct: Using the peak current $I_{\\text{peak}} = 37.843\\text{ mA}$ found in Problem 94:\n$$V_{\\text{out}} = I_{\\text{peak}} \\cdot R_L = (0.037843\\text{ A}) \\times 500\\ \\Omega = 18.9215\\text{ V} \\approx 18.92\\text{ V}$$\nAlternatively, applying the voltage divider formula on the net $19.3\\text{ V}$:\n$$V_{\\text{out}} = 19.3\\text{ V} \\times \\frac{500\\ \\Omega}{500\\ \\Omega + 10\\ \\Omega} = 18.92\\text{ V}$$\n• Why Other Choices are Incorrect: $20.00\\text{ V}$ assumes an ideal lossless diode, while $19.30\\text{ V}$ ignores the internal voltage drop across bulk resistance $R_f$."
   },
   {
     "id": 96,
-    "question": "(Problem) If the silicon diode in Problem 94 (V_p = 20 V, R_L = 500 Ω) is assumed to be ideal (V_D = 0 V, R_f = 0 Ω), what are the values of peak current and peak output voltage?",
+    "question": "(Problem) If the silicon diode in Problem 94 ($V_p = 20\\text{ V}$, $R_L = 500\\ \\Omega$) is assumed to be ideal ($V_D = 0\\text{ V}$, $R_f = 0\\ \\Omega$), what are the values of peak current and peak output voltage?",
     "options": [
-      "Peak Current = 40.00 mA, Peak Output Voltage = 20.00 V",
-      "Peak Current = 37.84 mA, Peak Output Voltage = 18.92 V",
-      "Peak Current = 38.60 mA, Peak Output Voltage = 19.30 V",
-      "Peak Current = 50.00 mA, Peak Output Voltage = 25.00 V"
+      "$I_{\\text{peak}} = 40.00\\text{ mA}, \\; V_{\\text{out}} = 20.00\\text{ V}$",
+      "$I_{\\text{peak}} = 37.84\\text{ mA}, \\; V_{\\text{out}} = 18.92\\text{ V}$",
+      "$I_{\\text{peak}} = 38.60\\text{ mA}, \\; V_{\\text{out}} = 19.30\\text{ V}$",
+      "$I_{\\text{peak}} = 50.00\\text{ mA}, \\; V_{\\text{out}} = 25.00\\text{ V}$"
     ],
     "answer": 0,
-    "explanation": "• Why 'Peak Current = 40.00 mA, Peak Output Voltage = 20.00 V' is Correct: For an ideal diode, forward voltage drop V_D = 0 V and internal resistance R_f = 0 Ω. Thus I_peak = 20 V / 500 Ω = 40 mA, and V_out = 20 V.\n• Why Other Choices differ: 37.84 mA / 18.92 V corresponds to the practical diode model with 0.7 V drop and 10 Ω forward resistance."
+    "explanation": "• Why '$I_{\\text{peak}} = 40.00\\text{ mA}, \\; V_{\\text{out}} = 20.00\\text{ V}$' is Correct: For an ideal diode, forward voltage drop $V_D = 0\\text{ V}$ and bulk resistance $R_f = 0\\ \\Omega$:\n$$I_{\\text{peak}} = \\frac{V_p}{R_L} = \\frac{20\\text{ V}}{500\\ \\Omega} = 0.040\\text{ A} = 40.00\\text{ mA}$$\n$$V_{\\text{out}} = V_p = 20.00\\text{ V}$$\n• Why Other Choices differ: $37.84\\text{ mA}$ and $18.92\\text{ V}$ correspond to the practical diode model with $0.7\\text{ V}$ drop and $10\\ \\Omega$ bulk resistance."
   },
   {
     "id": 97,
-    "question": "(Problem) A 20 V DC source is connected to a parallel combination of a Silicon diode (V_D = 0.7 V) and a Germanium diode (V_D = 0.3 V), connected in series with a 3 kΩ load resistor. Using practical diode models, what is the node voltage V_A across the 3 kΩ resistor?",
+    "question": "(Problem) A $20\\text{ V}$ DC source is connected to a parallel combination of a Silicon diode ($V_D = 0.7\\text{ V}$) and a Germanium diode ($V_D = 0.3\\text{ V}$), connected in series with a $3\\text{ k}\\Omega$ load resistor. Using practical diode models, what is the node voltage $V_A$ across the $3\\text{ k}\\Omega$ resistor?",
     "options": [
-      "19.70 V",
-      "19.30 V",
-      "20.00 V",
-      "0.40 V"
+      "$19.70\\text{ V}$",
+      "$19.30\\text{ V}$",
+      "$20.00\\text{ V}$",
+      "$0.40\\text{ V}$"
     ],
     "answer": 0,
-    "explanation": "• Why '19.70 V' is Correct: Germanium (Ge) turns ON at 0.3 V, which is lower than Silicon's 0.7 V turn-on threshold. The Germanium diode conducts first and clamps the diode voltage drop to 0.3 V, keeping the Silicon diode OFF. Thus V_A = 20 V - 0.3 V = 19.70 V.\n• Why Other Choices are Incorrect: 19.30 V assumes the Silicon diode conducts (20 V - 0.7 V), but Silicon remains cut off because Germanium clamps the node first."
+    "explanation": "• Why '$19.70\\text{ V}$' is Correct: Germanium (Ge) reaches its conduction barrier at $0.3\\text{ V}$, before Silicon can reach $0.7\\text{ V}$. The Germanium diode conducts first and firmly clamps the parallel branch voltage to $0.3\\text{ V}$, preventing the Silicon diode from ever turning ON:\n$$V_A = V_S - V_{D(\\text{Ge})} = 20\\text{ V} - 0.3\\text{ V} = 19.70\\text{ V}$$\n• Why Other Choices are Incorrect: $19.30\\text{ V}$ ($20\\text{ V} - 0.7\\text{ V}$) assumes Silicon conducts, but Silicon remains completely cut off."
   },
   {
     "id": 98,
-    "question": "(Problem) Calculate the current I through the 3 kΩ resistor for the parallel Silicon/Germanium diode circuit in Problem 97 (V_S = 20 V, Germanium drop = 0.3 V, R = 3 kΩ).",
+    "question": "(Problem) Calculate the current $I$ through the $3\\text{ k}\\Omega$ resistor for the parallel Silicon/Germanium diode circuit in Problem 97 ($V_S = 20\\text{ V}$, Germanium drop $= 0.3\\text{ V}$, $R = 3\\text{ k}\\Omega$).",
     "options": [
-      "6.57 mA",
-      "5.90 mA",
-      "6.43 mA",
-      "6.67 mA"
+      "$6.57\\text{ mA}$",
+      "$5.90\\text{ mA}$",
+      "$6.43\\text{ mA}$",
+      "$6.67\\text{ mA}$"
     ],
     "answer": 0,
-    "explanation": "• Why '6.57 mA' is Correct: The voltage across the 3 kΩ load resistor is V_A = 20 V - 0.3 V = 19.7 V. Applying Ohm's Law gives I = V_A / R = 19.7 V / 3000 Ω = 0.0065667 A ≈ 6.57 mA.\n• Why Other Choices differ: 5.90 mA occurs if an additional 2 V drop is subtracted, while 6.43 mA occurs if Silicon's 0.7 V drop is used."
+    "explanation": "• Why '$6.57\\text{ mA}$' is Correct: From Problem 97, the voltage across the $3\\text{ k}\\Omega$ load resistor is $V_A = 19.70\\text{ V}$. Applying Ohm's Law gives:\n$$I = \\frac{V_A}{R} = \\frac{19.70\\text{ V}}{3000\\ \\Omega} \\approx 0.0065667\\text{ A} = 6.57\\text{ mA}$$\n• Why Other Choices differ: $6.43\\text{ mA}$ is obtained if Silicon's $0.7\\text{ V}$ drop is used ($19.3\\text{ V} / 3\\text{ k}\\Omega$), and $6.67\\text{ mA}$ assumes an ideal zero-drop diode ($20\\text{ V} / 3\\text{ k}\\Omega$)."
   },
   {
     "id": 99,
@@ -1542,10 +1542,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 127,
     "question": "A Silicon diode is connected in series with a 1.8 kΩ load resistor and a 25 V DC supply. Using the Second Approximation, calculate the circuit current in milliamperes.",
     "options": [
-      "a. 14.12 mA",
-      "b. 13.8889 mA",
-      "c. 12.9444 mA",
-      "d. 13.50 mA"
+      "a. $14.12\\text{ mA}$",
+      "b. $13.8889\\text{ mA}$",
+      "c. $12.9444\\text{ mA}$",
+      "d. $13.50\\text{ mA}$"
     ],
     "answer": 3,
     "explanation": "In the Second Approximation, the forward-biased silicon diode drops a constant 0.7 V. Applying Ohm's law: $I = \\frac{V_S - V_D}{R_L} = \\frac{25\\text{ V} - 0.7\\text{ V}}{1.8\\text{ k}\\Omega} = \\frac{24.3\\text{ V}}{1.8\\text{ k}\\Omega} = 13.50\\text{ mA}$.",
@@ -1555,10 +1555,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 128,
     "question": "A Germanium diode exhibits an internal forward resistance r_f = 8.5 Ω. It is placed in series with a load resistor R_L = 330 Ω and a 5 V DC source. Using the Third Approximation, calculate the total current in milliamperes.",
     "options": [
-      "a. 13.8848 mA",
-      "b. 14.2424 mA",
-      "c. 13.5201 mA",
-      "d. 15.1515 mA"
+      "a. $13.8848\\text{ mA}$",
+      "b. $14.2424\\text{ mA}$",
+      "c. $13.5201\\text{ mA}$",
+      "d. $15.1515\\text{ mA}$"
     ],
     "answer": 0,
     "explanation": "In the Third Approximation, Germanium drops its knee voltage $V_k = 0.3\\text{ V}$ plus the drop across its bulk resistance $r_f = 8.5\\ \\Omega$. Total resistance is $R_T = r_f + R_L = 8.5\\ \\Omega + 330\\ \\Omega = 338.5\\ \\Omega$. Total circuit current: $I = \\frac{V_S - V_{k}}{R_T} = \\frac{5\\text{ V} - 0.3\\text{ V}}{338.5\\ \\Omega} = \\frac{4.7\\text{ V}}{338.5\\ \\Omega} \\approx 0.013884786\\text{ A} = 13.8848\\text{ mA}$.",
@@ -1568,10 +1568,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 129,
     "question": "Using the parameters and results from Item 128 (Germanium V_k = 0.3 V, r_f = 8.5 Ω, I = 13.8848 mA), calculate the terminal voltage drop across the Germanium diode in volts using the Third Approximation.",
     "options": [
-      "a. 0.3 V",
-      "b. 0.418 V",
-      "c. 0.118 V",
-      "d. 0.3812 V"
+      "a. $0.3\\text{ V}$",
+      "b. $0.418\\text{ V}$",
+      "c. $0.118\\text{ V}$",
+      "d. $0.3812\\text{ V}$"
     ],
     "answer": 1,
     "explanation": "Under the Third Approximation, the terminal diode voltage is $V_D = V_k + I \\cdot r_f = 0.3\\text{ V} + (13.8848\\times 10^{-3}\\text{ A} \\times 8.5\\ \\Omega) = 0.3\\text{ V} + 0.11802\\text{ V} = 0.41802\\text{ V} \\approx 0.418\\text{ V}$.",
@@ -1581,10 +1581,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 130,
     "question": "A Gallium Arsenide (GaAs) diode (V_k = 1.2 V) is connected across a 9 V DC supply in series with a 1 kΩ load resistor. Using the Second Approximation, calculate the circuit current in milliamperes.",
     "options": [
-      "a. 7.8 mA",
-      "b. 9.0 mA",
-      "c. 6.6 mA",
-      "d. 8.2 mA"
+      "a. $7.8\\text{ mA}$",
+      "b. $9.0\\text{ mA}$",
+      "c. $6.6\\text{ mA}$",
+      "d. $8.2\\text{ mA}$"
     ],
     "answer": 0,
     "explanation": "Using the Second Approximation for GaAs with a knee voltage of 1.2 V: $I = \\frac{V_S - V_k}{R_L} = \\frac{9\\text{ V} - 1.2\\text{ V}}{1000\\ \\Omega} = \\frac{7.8\\text{ V}}{1000\\ \\Omega} = 7.8\\text{ mA}$.",
@@ -1594,10 +1594,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 131,
     "question": "A Silicon diode and a Germanium diode are connected in series with a 560 Ω load resistor and a 12 V DC supply. Using the Second Approximation, calculate the circuit current in milliamperes.",
     "options": [
-      "a. 20.8929 mA",
-      "b. 20.1786 mA",
-      "c. 19.6429 mA",
-      "d. 18.9286 mA"
+      "a. $20.8929\\text{ mA}$",
+      "b. $20.1786\\text{ mA}$",
+      "c. $19.6429\\text{ mA}$",
+      "d. $18.9286\\text{ mA}$"
     ],
     "answer": 2,
     "explanation": "When diodes are in series, their barrier potential drops add together: $V_{D(\\text{total})} = V_{D(\\text{Si})} + V_{D(\\text{Ge})} = 0.7\\text{ V} + 0.3\\text{ V} = 1.0\\text{ V}$. Current: $I = \\frac{V_S - V_{D(\\text{total})}}{R_L} = \\frac{12\\text{ V} - 1.0\\text{ V}}{560\\ \\Omega} = \\frac{11.0\\text{ V}}{560\\ \\Omega} \\approx 0.01964286\\text{ A} = 19.6429\\text{ mA}$.",
@@ -1607,10 +1607,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 132,
     "question": "Calculate the load voltage across the 560 Ω resistor in volts for the series combination in Item 131 (12 V DC supply, Silicon diode, Germanium diode).",
     "options": [
-      "a. 11.7 V",
-      "b. 11.3 V",
-      "c. 11 V",
-      "d. 12.0 V"
+      "a. $11.7\\text{ V}$",
+      "b. $11.3\\text{ V}$",
+      "c. $11\\text{ V}$",
+      "d. $12.0\\text{ V}$"
     ],
     "answer": 2,
     "explanation": "Applying KVL around the single series loop: $V_L = V_S - V_{D(\\text{Si})} - V_{D(\\text{Ge})} = 12\\text{ V} - 0.7\\text{ V} - 0.3\\text{ V} = 11.0\\text{ V}$.",
@@ -1620,10 +1620,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 133,
     "question": "Three identical Silicon diodes are connected in parallel with each other in forward orientation. This combination is connected in series with a 220 Ω resistor and a 12 V DC supply. Assuming equal current sharing, calculate the current through each individual diode in milliamperes using the Second Approximation.",
     "options": [
-      "a. 19.3636 mA",
-      "b. 17.1212 mA",
-      "c. 18.1618 mA",
-      "d. 16.3333 mA"
+      "a. $19.3636\\text{ mA}$",
+      "b. $17.1212\\text{ mA}$",
+      "c. $18.1618\\text{ mA}$",
+      "d. $16.3333\\text{ mA}$"
     ],
     "answer": 1,
     "explanation": "Since all three diodes are in parallel in the forward direction, the voltage across the parallel bank is held at the silicon threshold $V_D = 0.7\\text{ V}$. Voltage across $R_L$: $V_R = 12\\text{ V} - 0.7\\text{ V} = 11.3\\text{ V}$. Total current: $I_{\\text{total}} = \\frac{11.3\\text{ V}}{220\\ \\Omega} \\approx 51.3636\\text{ mA}$. Since the diodes are identical and share current equally: $I_{\\text{each}} = \\frac{I_{\\text{total}}}{3} = \\frac{51.3636\\text{ mA}}{3} \\approx 17.1212\\text{ mA}$.",
@@ -1633,10 +1633,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 134,
     "question": "A practical Germanium diode is reverse-biased across a 15 V DC supply in series with a 5 kΩ load resistor. If reverse leakage saturation current is I_s = 8.0 µA, calculate terminal voltage across the diode in volts using first approximation.",
     "options": [
-      "a. -15.0 V",
-      "b. -14.96 V",
-      "c. -0.04 V",
-      "d. 0 V"
+      "a. $-15.0\\text{ V}$",
+      "b. $-14.96\\text{ V}$",
+      "c. $-0.04\\text{ V}$",
+      "d. $0\\text{ V}$"
     ],
     "answer": 0,
     "explanation": "Under the First Approximation (Ideal Model), a reverse-biased diode is treated as a perfect open circuit ($R_{\\text{rev}} = \\infty, I_R = 0$). With zero current flowing through the series load resistor, no voltage drop occurs across $R_L$, and the entire 15 V source voltage appears across the reverse-biased diode terminals ($V_D = -15.0\\text{ V}$).",
@@ -1646,10 +1646,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 135,
     "question": "A Silicon diode with r_f = 12 Ω is connected to a 16 V DC source in series with R_L = 820 Ω. Using the Third Approximation, calculate total electrical power supplied by the DC source in milliwatts.",
     "options": [
-      "a. 294.2308 mW",
-      "b. 310.1205 mW",
-      "c. 285.50 mW",
-      "d. 300.0 mW"
+      "a. $294.2308\\text{ mW}$",
+      "b. $310.1205\\text{ mW}$",
+      "c. $285.50\\text{ mW}$",
+      "d. $300.0\\text{ mW}$"
     ],
     "answer": 0,
     "explanation": "Using Third Approximation: $I = \\frac{V_S - V_k}{r_f + R_L} = \\frac{16\\text{ V} - 0.7\\text{ V}}{12\\ \\Omega + 820\\ \\Omega} = \\frac{15.3\\text{ V}}{832\\ \\Omega} \\approx 0.018389423\\text{ A} = 18.3894\\text{ mA}$. Total electrical power delivered by the DC source: $P_{\\text{source}} = V_S \\times I = 16\\text{ V} \\times 0.018389423\\text{ A} \\approx 0.2942308\\text{ W} = 294.2308\\text{ mW}$.",
@@ -1659,10 +1659,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 136,
     "question": "In Item no. 135 (Silicon diode r_f = 12 Ω, V_S = 16 V, R_L = 820 Ω), what is the current flowing through the diode in mA?",
     "options": [
-      "a. 13.4845 mA",
-      "b. 17.8726 mA",
-      "c. 14.3894 mA",
-      "d. 18.3894 mA"
+      "a. $13.4845\\text{ mA}$",
+      "b. $17.8726\\text{ mA}$",
+      "c. $14.3894\\text{ mA}$",
+      "d. $18.3894\\text{ mA}$"
     ],
     "answer": 3,
     "explanation": "From the third approximation equation: $I_D = \\frac{V_S - V_k}{r_f + R_L} = \\frac{16\\text{ V} - 0.7\\text{ V}}{12\\ \\Omega + 820\\ \\Omega} = \\frac{15.3\\text{ V}}{832\\ \\Omega} \\approx 0.018389423\\text{ A} = 18.3894\\text{ mA}$.",
@@ -1828,10 +1828,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 149,
     "question": "What is the nominal barrier potential V_BE assumed for a forward-biased silicon PN junction at room temperature?",
     "options": [
-      "A. 0.3 V",
-      "B. 0.7 V",
-      "C. 1.2 V",
-      "D. 2.0 V"
+      "A. $0.3\\text{ V}$",
+      "B. $0.7\\text{ V}$",
+      "C. $1.2\\text{ V}$",
+      "D. $2.0\\text{ V}$"
     ],
     "answer": 1,
     "explanation": "At standard room temperature (25°C), the built-in barrier potential for a conducting forward-biased Silicon PN junction is universally taken as 0.7 V (or 0.6 V–0.7 V).",
@@ -1841,10 +1841,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 150,
     "question": "What is the approximate forward voltage drop across a Germanium diode when conducting?",
     "options": [
-      "A. 0.3 V",
-      "B. 0.7 V",
-      "C. 1.1 V",
-      "D. 0.0 V"
+      "A. $0.3\\text{ V}$",
+      "B. $0.7\\text{ V}$",
+      "C. $1.1\\text{ V}$",
+      "D. $0.0\\text{ V}$"
     ],
     "answer": 0,
     "explanation": "Due to Germanium's smaller energy bandgap ($0.67\\text{ eV}$ vs. $1.12\\text{ eV}$ for Silicon), the built-in barrier potential and forward conducting voltage drop of Germanium PN junctions is approximately 0.3 V.",
@@ -1997,10 +1997,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 162,
     "question": "A transistor circuit measures a collector current I_C = 5 mA and a base current I_B = 50 µA. What is the total emitter current?",
     "options": [
-      "A. 4.95 mA",
-      "B. 5.00 mA",
-      "C. 5.05 mA",
-      "D. 5.50 mA"
+      "A. $4.95\\text{ mA}$",
+      "B. $5.00\\text{ mA}$",
+      "C. $5.05\\text{ mA}$",
+      "D. $5.50\\text{ mA}$"
     ],
     "answer": 2,
     "explanation": "By Kirchhoff's Current Law: $I_E = I_C + I_B$. Converting units: $I_B = 50\\ \\mu\\text{A} = 0.05\\text{ mA}$. Thus, $I_E = 5\\text{ mA} + 0.05\\text{ mA} = 5.05\\text{ mA}$.",
@@ -2023,10 +2023,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 164,
     "question": "Consider the fixed-bias circuit: V_CC = 12 V, R_B = 330 kΩ, R_C = 2 kΩ, and β = 150. Calculate the base current.",
     "options": [
-      "A. 28.52 µA",
-      "B. 34.24 µA",
-      "C. 36.36 µA",
-      "D. 40.12 µA"
+      "A. $28.52\\ \mu\text{A}$",
+      "B. $34.24\\ \mu\text{A}$",
+      "C. $36.36\\ \mu\text{A}$",
+      "D. $40.12\\ \mu\text{A}$"
     ],
     "answer": 1,
     "explanation": "In a fixed-bias circuit, the base-emitter loop equation gives $I_B = \\frac{V_{CC} - V_{BE}}{R_B} = \\frac{12\\text{ V} - 0.7\\text{ V}}{330\\text{ k}\\Omega} = \\frac{11.3\\text{ V}}{330\\times 10^3\\ \\Omega} \\approx 34.242\\ \\mu\\text{A}$.",
@@ -2036,10 +2036,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 165,
     "question": "Using the circuit parameters from Item 164 (V_CC = 12 V, R_B = 330 kΩ, R_C = 2 kΩ, β = 150), what is the collector current?",
     "options": [
-      "A. 3.42 mA",
-      "B. 4.85 mA",
-      "C. 5.14 mA",
-      "D. 6.20 mA"
+      "A. $3.42\\text{ mA}$",
+      "B. $4.85\\text{ mA}$",
+      "C. $5.14\\text{ mA}$",
+      "D. $6.20\\text{ mA}$"
     ],
     "answer": 2,
     "explanation": "With $I_B = 34.242\\ \\mu\\text{A}$ and $\\beta = 150$: $I_C = \\beta I_B = 150 \\times 34.242\\ \\mu\\text{A} = 5.136\\text{ mA} \\approx 5.14\\text{ mA}$.",
@@ -2049,10 +2049,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 166,
     "question": "A half-wave rectifier uses a single silicon diode connected to an AC source with peak voltage V_in(pk) = 10 V. What is the peak output voltage V_out across the load?",
     "options": [
-      "A. 10.0 V",
-      "B. 9.3 V",
-      "C. 8.6 V",
-      "D. 4.3 V"
+      "A. $10.0\\text{ V}$",
+      "B. $9.3\\text{ V}$",
+      "C. $8.6\\text{ V}$",
+      "D. $4.3\\text{ V}$"
     ],
     "answer": 1,
     "explanation": "Accounting for the practical 0.7 V barrier potential drop of a conducting Silicon diode: $V_{out(pk)} = V_{in(pk)} - V_D = 10\\text{ V} - 0.7\\text{ V} = 9.3\\text{ V}$.",
@@ -2062,10 +2062,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 167,
     "question": "For the half-wave output in Item 166 (peak output = 9.3 V), what is the calculated average DC output voltage?",
     "options": [
-      "A. 2.96 V",
-      "B. 4.65 V",
-      "C. 5.92 V",
-      "D. 6.57 V"
+      "A. $2.96\\text{ V}$",
+      "B. $4.65\\text{ V}$",
+      "C. $5.92\\text{ V}$",
+      "D. $6.57\\text{ V}$"
     ],
     "answer": 0,
     "explanation": "The average DC voltage of a half-wave rectified waveform is $V_{dc} = \\frac{V_{out(pk)}}{\\pi} = \\frac{9.3\\text{ V}}{\\pi} \\approx 2.9603\\text{ V} \\approx 2.96\\text{ V}$.",
@@ -2075,10 +2075,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 168,
     "question": "A transformer with a turns specification 10:1 has a primary RMS voltage of 120 Vrms. What is the secondary RMS voltage?",
     "options": [
-      "A. 1200 V",
-      "B. 120 V",
-      "C. 12 V",
-      "D. 1.2 V"
+      "A. $1200\\text{ V}$",
+      "B. $120\\text{ V}$",
+      "C. $12\\text{ V}$",
+      "D. $1.2\\text{ V}$"
     ],
     "answer": 2,
     "explanation": "A turns ratio of 10:1 ($N_1 : N_2 = 10:1$) indicates a step-down transformer where $V_2 = V_1 / 10 = 120\\text{ V} / 10 = 12\\text{ V}_{rms}$.",
@@ -2127,10 +2127,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 172,
     "question": "A full-wave bridge rectifier is connected to a transformer secondary providing 24 V peak. Assuming silicon diodes, what is the peak voltage across the load resistor?",
     "options": [
-      "A. 24.0 V",
-      "B. 23.3 V",
-      "C. 22.6 V",
-      "D. 21.2 V"
+      "A. $24.0\\text{ V}$",
+      "B. $23.3\\text{ V}$",
+      "C. $22.6\\text{ V}$",
+      "D. $21.2\\text{ V}$"
     ],
     "answer": 2,
     "explanation": "In a bridge rectifier, two diodes conduct in series during each half-cycle. Therefore, two barrier potential drops must be subtracted: $V_{L(pk)} = V_{sec(pk)} - 2V_D = 24\\text{ V} - 2(0.7\\text{ V}) = 24 - 1.4 = 22.6\\text{ V}$.",
@@ -2140,10 +2140,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 173,
     "question": "A center-tapped transformer delivers a total secondary peak-to-peak voltage of 100 V. What peak voltage appears across each half of the secondary with respect to the center tap?",
     "options": [
-      "A. 100 V",
-      "B. 50 V",
-      "C. 25 V",
-      "D. 12.5 V"
+      "A. $100\\text{ V}$",
+      "B. $50\\text{ V}$",
+      "C. $25\\text{ V}$",
+      "D. $12.5\\text{ V}$"
     ],
     "answer": 2,
     "explanation": "A total secondary voltage of $100\\text{ V}_{p-p}$ has a total peak voltage of $V_p = 100 / 2 = 50\\text{ V}$. The center tap splits this total peak voltage exactly in half, so the peak voltage across each half with respect to the center tap is $50\\text{ V} / 2 = 25\\text{ V}$. (Note: 50 V is the peak-to-peak voltage across each half).",
@@ -2153,10 +2153,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 174,
     "question": "What is the peak voltage of a standard sinusoidal AC line voltage rated at 220 Vrms?",
     "options": [
-      "A. 220.0 V",
-      "B. 311.1 V",
-      "C. 440.0 V",
-      "D. 155.6 V"
+      "A. $220.0\\text{ V}$",
+      "B. $311.1\\text{ V}$",
+      "C. $440.0\\text{ V}$",
+      "D. $155.6\\text{ V}$"
     ],
     "answer": 1,
     "explanation": "For a pure sinusoidal wave: $V_{peak} = \\sqrt{2} \\times V_{rms} = \\sqrt{2} \\times 220\\text{ V} \\approx 1.4142 \\times 220 \\approx 311.13\\text{ V} \\approx 311.1\\text{ V}$.",
@@ -2179,10 +2179,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 176,
     "question": "A voltage divider bias network has V_CC = 22 V, R_1 = 39 kΩ, and R_2 = 3.9 kΩ. Calculate the Thevenin equivalent voltage (V_Th) at the base terminal.",
     "options": [
-      "A. 2.0 V",
-      "B. 3.9 V",
-      "C. 4.4 V",
-      "D. 10.0 V"
+      "A. $2.0\\text{ V}$",
+      "B. $3.9\\text{ V}$",
+      "C. $4.4\\text{ V}$",
+      "D. $10.0\\text{ V}$"
     ],
     "answer": 0,
     "explanation": "Using the voltage divider formula: $V_{Th} = V_{CC} \\times \\frac{R_2}{R_1 + R_2} = 22\\text{ V} \\times \\frac{3.9\\text{ k}\\Omega}{39\\text{ k}\\Omega + 3.9\\text{ k}\\Omega} = 22 \\times \\frac{3.9}{42.9} = 22 \\times \\frac{1}{11} = 2.0\\text{ V}$.",
@@ -2192,10 +2192,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 177,
     "question": "Consider the Voltage Divider Bias Circuit: V_CC = 22 V, R_1 = 39 kΩ, R_2 = 3.9 kΩ, R_C = 10 kΩ, R_E = 1.5 kΩ, and β = 100. Calculate the precise base current I_B.",
     "options": [
-      "A. 5.12 µA",
-      "B. 8.38 µA",
-      "C. 12.45 µA",
-      "D. 15.60 µA"
+      "A. $5.12\\ \mu\text{A}$",
+      "B. $8.38\\ \mu\text{A}$",
+      "C. $12.45\\ \mu\text{A}$",
+      "D. $15.60\\ \mu\text{A}$"
     ],
     "answer": 1,
     "explanation": "First find Thevenin values: $V_{Th} = 2.0\\text{ V}$, $R_{Th} = R_1 \\parallel R_2 = \\frac{39 \\times 3.9}{42.9} = 3.545\\text{ k}\\Omega$. Then by exact analysis: $I_B = \\frac{V_{Th} - V_{BE}}{R_{Th} + (\\beta + 1)R_E} = \\frac{2.0 - 0.7}{3.545\\text{ k}\\Omega + (101)(1.5\\text{ k}\\Omega)} = \\frac{1.3\\text{ V}}{3.545 + 151.5\\text{ k}\\Omega} = \\frac{1.3}{155.045\\text{ k}\\Omega} \\approx 8.38\\ \\mu\\text{A}$.",
@@ -2205,10 +2205,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 178,
     "question": "Using the exact circuit values from Item 177 (V_CC = 22 V, R_1 = 39 kΩ, R_2 = 3.9 kΩ, R_C = 10 kΩ, R_E = 1.5 kΩ, β = 100, I_B = 8.38 µA), calculate the collector-to-emitter voltage V_CE.",
     "options": [
-      "A. 6.82 V",
-      "B. 9.45 V",
-      "C. 12.36 V",
-      "D. 15.10 V"
+      "A. $6.82\\text{ V}$",
+      "B. $9.45\\text{ V}$",
+      "C. $12.36\\text{ V}$",
+      "D. $15.10\\text{ V}$"
     ],
     "answer": 2,
     "explanation": "$I_C = \\beta I_B = 100 \\times 8.385\\ \\mu\\text{A} = 0.8385\\text{ mA}$. $I_E = (\\beta + 1)I_B = 101 \\times 8.385\\ \\mu\\text{A} = 0.8469\\text{ mA}$. Applying KVL around collector-emitter loop: $V_{CE} = V_{CC} - I_C R_C - I_E R_E = 22 - (0.8385 \\times 10) - (0.8469 \\times 1.5) = 22 - 8.385 - 1.270 = 12.345\\text{ V} \\approx 12.36\\text{ V}$.",
@@ -2218,10 +2218,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 179,
     "question": "An emitter-stabilized bias circuit has V_CC = 15 V, R_B = 470 kΩ, R_C = 2.2 kΩ, R_E = 1.0 kΩ, and β = 100. Calculate V_CE at the DC operating point.",
     "options": [
-      "A. 4.25 V",
-      "B. 6.95 V",
-      "C. 8.53 V",
-      "D. 10.12 V"
+      "A. $4.25\\text{ V}$",
+      "B. $6.95\\text{ V}$",
+      "C. $8.53\\text{ V}$",
+      "D. $10.12\\text{ V}$"
     ],
     "answer": 1,
     "explanation": "$I_B = \\frac{V_{CC} - V_{BE}}{R_B + (\\beta + 1)R_E} = \\frac{15 - 0.7}{470\\text{ k} + 101(1.0\\text{ k})} = \\frac{14.3}{571\\text{ k}\\Omega} \\approx 25.04\\ \\mu\\text{A}$. $I_C = 100 \\times 25.04\\ \\mu\\text{A} = 2.504\\text{ mA}$; $I_E = 101 \\times 25.04\\ \\mu\\text{A} = 2.529\\text{ mA}$. $V_{CE} = 15 - I_C(2.2\\text{ k}) - I_E(1.0\\text{ k}) = 15 - 5.509 - 2.529 = 6.962\\text{ V} \\approx 6.95\\text{ V}$.",
@@ -2231,10 +2231,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 180,
     "question": "A single-phase transformer with V_pri = 220 Vrms and turns ratio n = 0.05 feeds a half-wave rectifier using a silicon diode. What is the average DC output voltage across the load?",
     "options": [
-      "A. 3.12 V",
-      "B. 4.73 V",
-      "C. 6.85 V",
-      "D. 9.20 V"
+      "A. $3.12\\text{ V}$",
+      "B. $4.73\\text{ V}$",
+      "C. $6.85\\text{ V}$",
+      "D. $9.20\\text{ V}$"
     ],
     "answer": 1,
     "explanation": "Secondary RMS voltage: $V_{sec} = 0.05 \\times 220\\text{ V} = 11\\text{ V}_{rms}$. Secondary peak voltage: $V_{p} = \\sqrt{2} \\times 11\\text{ V} = 15.556\\text{ V}$. Peak voltage across load: $V_{L(pk)} = 15.556 - 0.7 = 14.856\\text{ V}$. Average DC voltage: $V_{dc} = \\frac{V_{L(pk)}}{\\pi} = \\frac{14.856}{\\pi} \\approx 4.729\\text{ V} \\approx 4.73\\text{ V}$.",
@@ -2244,10 +2244,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 181,
     "question": "A collector-feedback bias circuit uses V_CC = 12 V, R_C = 2 kΩ, R_B = 200 kΩ, R_E = 1 kΩ, and β = 100. Calculate the base current I_B.",
     "options": [
-      "A. 18.20 µA",
-      "B. 22.60 µA",
-      "C. 28.40 µA",
-      "D. 35.10 µA"
+      "A. $18.20\\ \mu\text{A}$",
+      "B. $22.60\\ \mu\text{A}$",
+      "C. $28.40\\ \mu\text{A}$",
+      "D. $35.10\\ \mu\text{A}$"
     ],
     "answer": 1,
     "explanation": "Using the standard collector-feedback formula: $I_B = \\frac{V_{CC} - V_{BE}}{R_B + \\beta(R_C + R_E)} = \\frac{12 - 0.7}{200\\text{ k}\\Omega + 100(2\\text{ k} + 1\\text{ k})\\Omega} = \\frac{11.3\\text{ V}}{200\\text{ k} + 300\\text{ k}\\Omega} = \\frac{11.3\\text{ V}}{500\\text{ k}\\Omega} = 0.0226\\text{ mA} = 22.60\\ \\mu\\text{A}$.",
@@ -2257,10 +2257,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 182,
     "question": "A center-tapped full-wave rectifier circuit has an input peak voltage V_pri = 100 V and a transformer turns ratio n = 0.5. If silicon diodes are used, calculate the DC output voltage.",
     "options": [
-      "A. 15.47 V",
-      "B. 24.30 V",
-      "C. 30.85 V",
-      "D. 48.60 V"
+      "A. $15.47\\text{ V}$",
+      "B. $24.30\\text{ V}$",
+      "C. $30.85\\text{ V}$",
+      "D. $48.60\\text{ V}$"
     ],
     "answer": 0,
     "explanation": "Total secondary peak: $V_{sec(pk)} = 0.5 \\times 100\\text{ V} = 50\\text{ V}$. Across each half from the center tap: $V_{half(pk)} = 50\\text{ V} / 2 = 25\\text{ V}$. Peak voltage across load: $V_{L(pk)} = 25 - 0.7 = 24.30\\text{ V}$. The average DC output voltage is $V_{dc} = \\frac{2 V_{L(pk)}}{\\pi} = \\frac{2 \\times 24.30}{\\pi} = \\frac{48.60}{\\pi} \\approx 15.47\\text{ V}$. (Note: 24.30 V is peak DC voltage).",
@@ -2270,10 +2270,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 183,
     "question": "For a fixed-bias circuit with V_CC = 12 V and R_C = 1.2 kΩ, what is the collector saturation current on the DC load line?",
     "options": [
-      "A. 5.0 mA",
-      "B. 10.0 mA",
-      "C. 12.0 mA",
-      "D. 15.0 mA"
+      "A. $5.0\\text{ mA}$",
+      "B. $10.0\\text{ mA}$",
+      "C. $12.0\\text{ mA}$",
+      "D. $15.0\\text{ mA}$"
     ],
     "answer": 1,
     "explanation": "On the DC load line, saturation occurs when $V_{CE} = 0\\text{ V}$. The collector saturation current is $I_{C(sat)} = \\frac{V_{CC}}{R_C} = \\frac{12\\text{ V}}{1.2\\text{ k}\\Omega} = 10.0\\text{ mA}$.",
@@ -2283,10 +2283,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 184,
     "question": "Examine the diode configuration: An AC source of 15 Vpk feeds two silicon diodes connected in series in the same forward direction to a load resistor RL. What is the output peak voltage across RL?",
     "options": [
-      "A. 14.3 V",
-      "B. 13.6 V",
-      "C. 0.0 V",
-      "D. 7.5 V"
+      "A. $14.3\\text{ V}$",
+      "B. $13.6\\text{ V}$",
+      "C. $0.0\\text{ V}$",
+      "D. $7.5\\text{ V}$"
     ],
     "answer": 1,
     "explanation": "Because two silicon diodes are connected in series facing the same forward conducting direction, each diode drops $0.7\\text{ V}$. The total forward diode drop is $2 \\times 0.7\\text{ V} = 1.4\\text{ V}$. Output voltage across $R_L$: $V_{out} = V_{in(pk)} - 2V_D = 15\\text{ V} - 1.4\\text{ V} = 13.6\\text{ V}$. (Option A is a common error where only one diode drop is subtracted).",
@@ -2309,10 +2309,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 186,
     "question": "A full-wave bridge rectifier is powered by a step-down transformer (120 Vrms primary, 12 Vrms secondary). If the silicon bridge feeds a 1 kΩ load resistor, what average DC power is delivered to the load?",
     "options": [
-      "A. 49.5 mW",
-      "B. 98.7 mW",
-      "C. 142.0 mW",
-      "D. 210.5 mW"
+      "A. $49.5\\text{ mW}$",
+      "B. $98.7\\text{ mW}$",
+      "C. $142.0\\text{ mW}$",
+      "D. $210.5\\text{ mW}$"
     ],
     "answer": 1,
     "explanation": "Secondary peak: $V_{sec(pk)} = \\sqrt{2} \\times 12\\text{ V} \\approx 16.97\\text{ V}$. Peak voltage across load: $V_{L(pk)} = 16.97 - 2(0.7\\text{ V}) = 15.57\\text{ V}$. Average DC voltage: $V_{dc} = \\frac{2V_{L(pk)}}{\\pi} = \\frac{2 \\times 15.57}{\\pi} \\approx 9.912\\text{ V}$. Average DC power delivered to $R_L$: $P_{dc} = \\frac{V_{dc}^2}{R_L} = \\frac{(9.912)^2}{1000\\ \\Omega} \\approx 0.09826\\text{ W} = 98.3\\text{ mW} \\approx 98.7\\text{ mW}$.",
@@ -2322,10 +2322,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 187,
     "question": "The magnitude of the thermal voltage is approximately:",
     "options": [
-      "A. 22 mV",
-      "B. 23 mV",
-      "C. 26 mV",
-      "D. 25 mV"
+      "A. $22\\text{ mV}$",
+      "B. $23\\text{ mV}$",
+      "C. $26\\text{ mV}$",
+      "D. $25\\text{ mV}$"
     ],
     "answer": 2,
     "explanation": "\u2022 Why '26 mV' is Correct: Thermal voltage $V_T$ is defined as $V_T = \\frac{k \\cdot T}{q}$. At standard room temperature ($T = 300\\text{ K}$ or $27^\\circ\\text{C}$):\n$$V_T = \\frac{(1.38 \\times 10^{-23}\\text{ J/K})(300\\text{ K})}{1.602 \\times 10^{-19}\\text{ C}} \\approx 25.84\\text{ mV} \\approx 26\\text{ mV}$$\nThis constant appears throughout diode and transistor exponential equations.\n\u2022 Why Other Choices are Incorrect: 22 mV, 23 mV, and 25 mV are mathematically inaccurate for $T = 300\\text{ K}$."

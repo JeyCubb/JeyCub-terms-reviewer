@@ -2694,7 +2694,10 @@ function getAmbiguousHint(q, isAnswered) {
 
   if (isAnswered) {
     // When answered or revealed, display the complete solution breakdown
-    const raw = q.explanation || "Standard engineering principle.";
+    let raw = q.explanation || "Standard engineering principle.";
+    if (q.formula && !raw.includes(q.formula)) {
+      raw += `\n\n$$${q.formula}$$`;
+    }
     return escapeHTML(raw)
       .replace(/\n/g, '<br>')
       .replace(/•/g, '<span style="color: var(--accent-primary); font-weight: 700;">•</span>');
@@ -3279,7 +3282,7 @@ function formatMathTypography(str) {
   function renderKaTeX(tex, isDisplay) {
     if (typeof katex !== 'undefined' && typeof katex.renderToString === 'function') {
       try {
-        let cleanTex = tex.trim();
+        let cleanTex = tex.trim().replace(/<br\s*\/?>/gi, ' ');
         // Heal accidental form-feed whitespace or missing backslash on \frac:
         cleanTex = cleanTex.replace(/[\x0c\f]rac/g, '\\frac');
         cleanTex = cleanTex.replace(/\\+rac\b/g, '\\frac');
