@@ -734,10 +734,7 @@ const SUBJECT_FILTERS = {
   basic_electronics: [
     { value: 'semiconductors_diodes', id: 'opt-filter-semi-diodes', label: '🔬 Semiconductors & Diodes (Q1–Q116)' },
     { value: 'prelim_exam', id: 'opt-filter-prelim', label: '📝 TIP Prelim Exam (Q117–Q136)' },
-    { value: 'bjt_fundamentals', id: 'opt-filter-bjt-fund', label: '💡 BJT Principles & Configs (Q137–Q236)' },
-    { value: 'seatwork2_bjt', id: 'opt-filter-seatwork2', label: '📝 Canvas Midterm Seatwork 2: BJT (Q287–Q293)' },
-    { value: 'bjt_dc_bias', id: 'opt-filter-bjt-dc', label: '⚡ BJT DC Biasing (Q237–Q286 & Q347–Q376)' },
-    { value: 'bjt_ac_analysis', id: 'opt-filter-bjt-ac', label: '📶 BJT AC Analysis & re Modeling (Q297–Q336 & Q377–Q386)' }
+    { value: 'seatwork2_bjt', id: 'opt-filter-seatwork2', label: '📝 Canvas Midterm Seatwork 2: BJT (Q137–Q143)' }
   ],
   deformable_bodies: [
     { value: 'test8_vessels', id: 'opt-filter-test8', label: '⚓ Test 8: Vessels & Wire Ropes (Q151–Q195)' },
