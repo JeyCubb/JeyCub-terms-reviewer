@@ -1422,7 +1422,6 @@ var SUBJECT_DATA = {  basic_electronics: {
     "formula": "E_{g(\\text{Si})} = 1.12\\text{ eV} > E_{g(\\text{Ge})} = 0.67\\text{ eV} \\implies I_{R(\\text{Si})} \\ll I_{R(\\text{Ge})}"
   },
   {
-    "id": 118{
     "id": 118,
     "question": "Statement: In an unbiased PN junction, dynamic balance between carrier diffusion and drift results in zero net external current flow.",
     "options": [
