@@ -8,7 +8,7 @@
 
 var SUBJECT_DATA = {  basic_electronics: {
     title: "Basic Electronics",
-    chapter: "ECE 005 - Complete Reviewer (Prelim & Midterm)",
+    chapter: "ECE 005 - Complete Reviewer (Prelim, Midterm & Finals Quiz 1)",
     questions: [
   {
     "id": 1,
@@ -2317,6 +2317,191 @@ var SUBJECT_DATA = {  basic_electronics: {
     "correct": 1,
     "explanation": "Secondary peak: $V_{sec(pk)} = \\sqrt{2} \\times 12\\text{ V} \\approx 16.97\\text{ V}$. Peak voltage across load: $V_{L(pk)} = 16.97 - 2(0.7\\text{ V}) = 15.57\\text{ V}$. Average DC voltage: $V_{dc} = \\frac{2V_{L(pk)}}{\\pi} = \\frac{2 \\times 15.57}{\\pi} \\approx 9.912\\text{ V}$. Average DC power delivered to $R_L$: $P_{dc} = \\frac{V_{dc}^2}{R_L} = \\frac{(9.912)^2}{1000\\ \\Omega} \\approx 0.09826\\text{ W} = 98.3\\text{ mW} \\approx 98.7\\text{ mW}$.",
     "formula": "P_{dc} = \\frac{V_{dc}^2}{R_L} = \\frac{\\left(\\frac{2(12\\sqrt{2} - 1.4)}{\\pi}\\right)^2}{1000} = 98.7\\text{ mW}"
+  },
+  {
+    "id": 187,
+    "question": "The magnitude of the thermal voltage is approximately:",
+    "options": [
+      "A. 22 mV",
+      "B. 23 mV",
+      "C. 26 mV",
+      "D. 25 mV"
+    ],
+    "answer": 2,
+    "explanation": "\u2022 Why '26 mV' is Correct: Thermal voltage $V_T$ is defined as $V_T = \\frac{k \\cdot T}{q}$. At standard room temperature ($T = 300\\text{ K}$ or $27^\\circ\\text{C}$):\n$$V_T = \\frac{(1.38 \\times 10^{-23}\\text{ J/K})(300\\text{ K})}{1.602 \\times 10^{-19}\\text{ C}} \\approx 25.84\\text{ mV} \\approx 26\\text{ mV}$$\nThis constant appears throughout diode and transistor exponential equations.\n\u2022 Why Other Choices are Incorrect: 22 mV, 23 mV, and 25 mV are mathematically inaccurate for $T = 300\\text{ K}$."
+  },
+  {
+    "id": 188,
+    "question": "The drain of a FET is analogous to which terminal of a BJT?",
+    "options": [
+      "A. collector",
+      "B. emitter",
+      "C. base",
+      "D. drain"
+    ],
+    "answer": 0,
+    "explanation": "\u2022 Why 'collector' is Correct: In comparing BJT and FET terminals by functional carrier transport:\n1. Drain (D) $\\leftrightarrow$ Collector (C): both collect/drain the charge carriers leaving the device channel/base.\n2. Source (S) $\\leftrightarrow$ Emitter (E): both source/emit the primary charge carriers into the device.\n3. Gate (G) $\\leftrightarrow$ Base (B): both act as the control terminal modulating channel conduction.\n\u2022 Why Other Choices are Incorrect: Emitter corresponds to Source, Base corresponds to Gate, and Drain is not a BJT terminal."
+  },
+  {
+    "id": 189,
+    "question": "The output current in a FET is determined by the amount of:",
+    "options": [
+      "A. input current",
+      "B. output current",
+      "C. input voltage",
+      "D. sinusoidal wave"
+    ],
+    "answer": 2,
+    "explanation": "\u2022 Why 'input voltage' is Correct: The Field Effect Transistor is a voltage-controlled device. The output drain current ($I_D$) is governed by the electric field created by the input gate-to-source voltage ($V_{GS}$), which constricts or widens the conduction channel.\n\u2022 Why Other Choices are Incorrect: Input current controls the BJT ($I_C = \\beta I_B$). A FET's input gate is reverse-biased or insulated, so input current is practically zero ($I_G \\approx 0$)."
+  },
+  {
+    "id": 190,
+    "question": "Which of the following is not an advantage of FET over BJT?",
+    "options": [
+      "A. Faster switching time",
+      "B. Temperature stability",
+      "C. Smaller",
+      "D. High gain"
+    ],
+    "answer": 3,
+    "explanation": "\u2022 Why 'High gain' is Correct: High voltage gain is an advantage of BJTs, NOT FETs. BJTs have much higher transconductance ($g_m$) than FETs, resulting in significantly larger voltage gains in standard amplifier configurations.\n\u2022 Why Other Choices are Incorrect: Faster switching time (no minority carrier storage delay), better thermal stability (negative temperature coefficient preventing thermal runaway), and smaller physical size (allowing high packing density in integrated circuits) are all well-known advantages of FETs over BJTs."
+  },
+  {
+    "id": 191,
+    "question": "The n-type and p-type classification of FETs talks about:",
+    "options": [
+      "A. The electrons and holes",
+      "B. The polarity of the terminals",
+      "C. The channel's material",
+      "D. The semiconductor substrate used in manufacturing"
+    ],
+    "answer": 2,
+    "explanation": "\u2022 Why 'The channel\\'s material' is Correct: The classification of a FET as n-channel or p-channel refers specifically to the doping type of the semiconductor material forming the conduction channel between drain and source. An n-channel FET uses n-type material (electrons as majority carriers), while a p-channel FET uses p-type material (holes as majority carriers).\n\u2022 Note on Exam Correction: The student originally marked (D) Substrate, which was crossed out and corrected by the professor to (C) 'The channel\\'s material', as the substrate is oppositely doped from the channel."
+  },
+  {
+    "id": 192,
+    "question": "This is the specific voltage at which the channel is effectively restricted, significantly limiting current flow:",
+    "options": [
+      "A. input voltage",
+      "B. pinch-off",
+      "C. pinch-off voltage",
+      "D. pinch-off current"
+    ],
+    "answer": 2,
+    "explanation": "\u2022 Why 'pinch-off voltage' is Correct: The pinch-off voltage ($V_P$ or $V_{GS(off)}$) is the specific voltage at which the depletion layers widen and meet across the channel, constricting the conduction path so that drain current saturates and cannot increase further with higher $V_{DS}$.\n\u2022 Why Other Choices are Incorrect: 'Pinch-off' describes the physical phenomenon itself, but the question explicitly asks for the 'specific voltage', which is pinch-off voltage ($V_P$)."
+  },
+  {
+    "id": 193,
+    "question": "Which region is considered as the danger zone in FETs?",
+    "options": [
+      "A. cut-off",
+      "B. breakover",
+      "C. saturation",
+      "D. breakdown"
+    ],
+    "answer": 3,
+    "explanation": "\u2022 Why 'breakdown' is Correct: The breakdown region is considered the danger zone in FET operation. If the drain-to-source voltage exceeds the breakdown rating ($BV_{DS}$ or $V_{(BR)DSS}$), avalanche breakdown occurs across the reverse-biased gate-drain junction, leading to excessive current surge and permanent thermal destruction of the FET.\n\u2022 Why Other Choices are Incorrect: Cut-off and saturation are standard, safe operating regions in switching and amplification circuits; breakover applies primarily to thyristors (SCRs/DIACs)."
+  },
+  {
+    "id": 194,
+    "question": "In what region does the FET act like a voltage-controlled resistor?",
+    "options": [
+      "A. saturation",
+      "B. ohmic",
+      "C. cut-off",
+      "D. active"
+    ],
+    "answer": 1,
+    "explanation": "\u2022 Why 'ohmic' is Correct: In the ohmic region (also called the linear or triode region, where $V_{DS} < V_{GS} - V_P$), the channel behaves like a linear resistor obeying Ohm's law. By varying the gate-to-source voltage ($V_{GS}$), the channel dimensions and resistance ($r_{ds}$) change, allowing the FET to function as a Voltage-Controlled Resistor (VCR).\n\u2022 Why Other Choices are Incorrect: In the saturation/active region, the channel is pinched off and drain current is constant (acting as a constant current source, not a resistor)."
+  },
+  {
+    "id": 195,
+    "question": "The Shockley's Equation for FET drain current is:",
+    "options": [
+      "A. $I_D = \\left(1 - \\frac{V_{GS}}{V_P}\\right)^2$",
+      "B. $I_D = I_{DSS}\\left(1 - \\frac{V_{DS}}{V_P}\\right)^2$",
+      "C. $I_D = I_{DSS}\\left(1 - \\frac{V_P}{V_{GS}}\\right)^2$",
+      "D. $I_D = I_{DSS}\\left(1 - \\frac{V_{GS}}{V_P}\\right)^2$"
+    ],
+    "answer": 3,
+    "explanation": "\u2022 Why '$I_D = I_{DSS}\\left(1 - \\frac{V_{GS}}{V_P}\\right)^2$' is Correct: Shockley's equation models the transfer characteristics of JFETs and depletion-mode MOSFETs in the saturation region:\n$$I_D = I_{DSS}\\left(1 - \\frac{V_{GS}}{V_P}\\right)^2$$\nwhere $I_D$ is the drain current, $I_{DSS}$ is the drain-to-source saturation current with gate shorted to source ($V_{GS} = 0$), $V_{GS}$ is the applied gate-source bias, and $V_P$ is the pinch-off voltage ($V_{GS(off)}$)."
+  },
+  {
+    "id": 196,
+    "question": "The Shockley's Equation defines the drain current in the:",
+    "options": [
+      "A. saturation region",
+      "B. ohmic region",
+      "C. cut-off region",
+      "D. active region"
+    ],
+    "answer": 0,
+    "explanation": "\u2022 Why 'saturation region' is Correct: Shockley's equation strictly defines the drain current of JFETs and D-MOSFETs when operating in the saturation (pinch-off) region, where $V_{DS} \\ge V_{GS} - V_P$ and current is governed by the square-law control of $V_{GS}$.\n\u2022 Why Other Choices are Incorrect: In the ohmic region, $I_D$ depends on both $V_{DS}$ and $V_{GS}$; in cut-off, $I_D = 0$."
+  },
+  {
+    "id": 197,
+    "question": "Based on the standard FET classification tree, what are the two main primary categories under Field Effect Transistors (FET)?",
+    "image": "images/finals_quiz1_fet.png",
+    "options": [
+      "A. IGFET / MOSFET and JFET",
+      "B. BJT and UJT",
+      "C. SCR and TRIAC",
+      "D. CMOS and BiCMOS"
+    ],
+    "answer": 0,
+    "explanation": "\u2022 Why 'IGFET / MOSFET and JFET' is Correct: As shown in the classification chart, FETs branch directly into two primary families:\n1. IGFET (Insulated Gate FET) / MOSFET (Metal-Oxide-Semiconductor FET)\n2. JFET (Junction Field Effect Transistor)"
+  },
+  {
+    "id": 198,
+    "question": "In the FET classification chart, what are the two operational modes under IGFET / MOSFET?",
+    "image": "images/finals_quiz1_fet.png",
+    "options": [
+      "A. Depletion and Enhancement",
+      "B. Forward and Reverse",
+      "C. Linear and Exponential",
+      "D. Bipolar and Unipolar"
+    ],
+    "answer": 0,
+    "explanation": "\u2022 Why 'Depletion and Enhancement' is Correct: IGFETs / MOSFETs are divided into Depletion-type (D-MOSFET, which has a physical channel built in during fabrication) and Enhancement-type (E-MOSFET, which has no channel at zero gate bias and requires an induced channel)."
+  },
+  {
+    "id": 199,
+    "question": "In the FET classification chart, JFETs (Junction Field Effect Transistors) are classified under which operational mode?",
+    "image": "images/finals_quiz1_fet.png",
+    "options": [
+      "A. Depletion",
+      "B. Enhancement",
+      "C. Both Depletion and Enhancement",
+      "D. Inversion only"
+    ],
+    "answer": 0,
+    "explanation": "\u2022 Why 'Depletion' is Correct: JFETs operate exclusively in Depletion mode. A reverse bias is applied to the gate-to-channel PN junction to deplete carriers and restrict channel width. Forward bias (enhancement mode) is not used because it would cause the gate junction to conduct heavily, eliminating high input impedance."
+  },
+  {
+    "id": 200,
+    "question": "Across all FET types (Depletion JFET, Depletion MOSFET, and Enhancement MOSFET), what are the two final sub-classifications for channel types?",
+    "image": "images/finals_quiz1_fet.png",
+    "options": [
+      "A. N-Channel and P-Channel",
+      "B. Positive-Channel and Negative-Channel",
+      "C. Anode-Channel and Cathode-Channel",
+      "D. Collector-Channel and Emitter-Channel"
+    ],
+    "answer": 0,
+    "explanation": "\u2022 Why 'N-Channel and P-Channel' is Correct: Every FET branch at the bottom level of the classification tree divides into N-channel (majority carriers are electrons) and P-channel (majority carriers are holes)."
+  },
+  {
+    "id": 201,
+    "question": "Which type of field-effect device has an insulated gate structure that allows operation in both Depletion and Enhancement modes?",
+    "image": "images/finals_quiz1_fet.png",
+    "options": [
+      "A. Depletion-type MOSFET (D-MOSFET)",
+      "B. JFET",
+      "C. Enhancement-type MOSFET (E-MOSFET)",
+      "D. Bipolar Junction Transistor"
+    ],
+    "answer": 0,
+    "explanation": "\u2022 Why 'Depletion-type MOSFET (D-MOSFET)' is Correct: Because the gate of a MOSFET is electrically insulated from the channel by a silicon dioxide ($\\text{SiO}_2$) layer, a D-MOSFET can accept negative gate voltages (depletion mode, narrowing the channel) AND positive gate voltages (enhancement mode, attracting more electrons and widening the channel) without drawing gate current.\n\u2022 In contrast, JFETs cannot operate with forward gate bias without conducting."
   }
 ]
   },
