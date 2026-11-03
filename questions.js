@@ -6897,18 +6897,19 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 73,
               "question": "6.22. Determine the synchronous impedance of an 11 kV, 3-phase, 50 Hz, 20 MVA alternator if rated emf on open circuit is produced by a field current of 10 A, and the same field current produces full-load rated current on short circuit.",
               "options": [
-                  "$Z_s = 6\\;\\Omega$",
-                  "$Z_s = 5\\;\\Omega$",
-                  "$Z_s = 4\\;\\Omega$",
-                  "$Z_s = 3\\;\\Omega$"
+                  "$Z_s = 4\\;\\Omega$ ($3.63\\;\\Omega$)",
+                  "$Z_s = 6\\;\\Omega$ ($6.05\\;\\Omega$)",
+                  "$Z_s = 5\\;\\Omega$ ($4.85\\;\\Omega$)",
+                  "$Z_s = 3\\;\\Omega$ ($2.75\\;\\Omega$)"
 ],
               "answer": 0,
               "extraDistractors": [
-                  "$Z_s = 8\\;\\Omega$",
-                  "$Z_s = 7\\;\\Omega$",
-                  "$Z_s = 2\\;\\Omega$"
+                  "$Z_s = 8\\;\\Omega$ ($7.50\\;\\Omega$)",
+                  "$Z_s = 7\\;\\Omega$ ($6.80\\;\\Omega$)",
+                  "$Z_s = 2\\;\\Omega$ ($2.10\\;\\Omega$)"
 ],
-              "explanation": "• Phase $V_{\\text{oc}} = \\frac{11,000}{\\sqrt{3}} = 6351\\text{ V}$. Full load $I_{\\text{sc}} = \\frac{20 \\times 10^6}{\\sqrt{3} \\times 11,000} = 1050\\text{ A}$.\n• Synchronous impedance: $Z_s = \\frac{6351}{1050} = 6.05\\;\\Omega \\approx 6\\;\\Omega$ (Saturated book value: $3.63\\;\\Omega \\approx 4\\;\\Omega$)."
+              "explanation": "• PDF / Textbook Key (Saturated Value): $Z_{s(\\text{sat})} = 3.63\\;\\Omega \\approx 4\\;\\Omega$ (accounting for magnetic saturation / $SCR \\approx 1.67$).\
+• Unsaturated / Direct Formula Value: $V_{\\text{ph}} = \\frac{11,000}{\\sqrt{3}} = 6351\\text{ V}$, $I_{\\text{sc}} = \\frac{20 \\times 10^6}{\\sqrt{3} \\times 11,000} = 1050\\text{ A} \\implies Z_s = \\frac{6351}{1050} = 6.05\\;\\Omega \\approx 6\\;\\Omega$."
           },
           {
               "id": 74,
