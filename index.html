@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +6,7 @@
   <title>JeyCub Terms Reviewer</title>
   <meta name="description" content="Interactive quiz reviewer app for Engineering Board Exams: Fluid Mechanics, Mechanics of Deformable Bodies, and Heat Transfer.">
   <!-- Quiz Emoji Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>ðŸ“</text></svg>">
   <!-- Google Fonts & FontAwesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,7 +129,7 @@
       <!-- Practice Controls Box (Moved BELOW Show Notes & Solution) -->
       <div class="quiz-controls-card">
         <div class="question-number-badge">
-          <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
+          <span id="subject-badge-name">Fluid Mechanics</span> â€¢ Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
         </div>
 
         <div class="quiz-header-controls">
@@ -144,8 +144,8 @@
           <div class="practice-filter-wrapper">
             <label for="practice-filter-select"><i class="fa-solid fa-layer-group"></i> Pool:</label>
             <select id="practice-filter-select" onchange="changePracticeFilter(this.value)">
-              <option value="all">📚 All Questions</option>
-              <option value="weak">⚠️ Weak Questions</option>
+              <option value="all">ðŸ“š All Questions</option>
+              <option value="weak">âš ï¸ Weak Questions</option>
                           </select>
           </div>
 
@@ -169,9 +169,9 @@
         <div class="filters-row">
           <select id="filter-status-select" onchange="filterAllQuestions()">
             <option value="all">All Statuses</option>
-            <option value="weak">⚠️ Class Weak Questions</option>
-                        <option value="correct">✓ Correctly Answered</option>
-            <option value="incorrect">✗ Incorrectly Answered</option>
+            <option value="weak">âš ï¸ Class Weak Questions</option>
+                        <option value="correct">âœ“ Correctly Answered</option>
+            <option value="incorrect">âœ— Incorrectly Answered</option>
           </select>
           <span class="search-count-label" id="search-count-badge">Showing questions</span>
         </div>
@@ -193,7 +193,7 @@
 
     <!-- ============================================================
          BOTTOM PANEL: Stats Bar + Header (brand, subject, mode nav)
-         Sits BELOW all content — sticky to the bottom on mobile
+         Sits BELOW all content â€” sticky to the bottom on mobile
     ============================================================ -->
     <div class="bottom-panel">
 
@@ -246,7 +246,7 @@
           <div class="brand-row">
             <div class="brand">
               <div class="brand-icon">
-                <span>📝</span>
+                <span>ðŸ“</span>
               </div>
               <div class="brand-text">
                 <h1><span>JeyCub</span> Terms Reviewer</h1>
@@ -306,7 +306,7 @@
   </div>
 
 
-  <script src="questions.js?v=81.0"></script>
-  <script src="app.js?v=98.0"></script>
+  <script src="questions.js?v=82.0"></script>
+  <script src="app.js?v=99.0"></script>
 </body>
 </html>

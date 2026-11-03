@@ -1,4 +1,4 @@
-// Immediately restore user preferred font scale before paint
+﻿// Immediately restore user preferred font scale before paint
 (function() {
   try {
     const s = localStorage.getItem('jt_font_scale');
@@ -414,14 +414,8 @@ function getFilteredPracticeQuestions() {
     return allQs.filter(q => q.id >= 1 && q.id <= 116);
   } else if (state.practiceFilter === 'prelim_exam') {
     return allQs.filter(q => q.id >= 117 && q.id <= 136);
-  } else if (state.practiceFilter === 'bjt_fundamentals') {
-    return allQs.filter(q => (q.id >= 137 && q.id <= 236) || (q.id >= 294 && q.id <= 296) || (q.id >= 337 && q.id <= 346));
   } else if (state.practiceFilter === 'seatwork2_bjt') {
-    return allQs.filter(q => q.id >= 287 && q.id <= 293);
-  } else if (state.practiceFilter === 'bjt_dc_bias') {
-    return allQs.filter(q => (q.id >= 237 && q.id <= 286) || (q.id >= 347 && q.id <= 376));
-  } else if (state.practiceFilter === 'bjt_ac_analysis') {
-    return allQs.filter(q => (q.id >= 297 && q.id <= 336) || (q.id >= 377 && q.id <= 386));
+    return allQs.filter(q => q.id >= 137 && q.id <= 143);
   } else if (state.practiceFilter === 'test8_vessels') {
     return allQs.filter(q => q.id >= 151 && q.id <= 195);
   } else if (state.practiceFilter === 'test5_shaftings') {
@@ -618,9 +612,9 @@ function initKeyboardShortcuts() {
       activeEl.blur();
     }
 
-    // Handle Reset Prompt keyboard confirmation & dismissal
+    // Handle Reset Prompt keyboard confirmation & dismissal (Only DELETE confirms, Enter does not)
     if (state.isResetPromptActive) {
-      if (e.key === 'Enter' || e.key === ' ' || e.key.toLowerCase() === 'y' || e.key === 'Delete' || e.code === 'Delete') {
+      if (e.key === 'Delete' || e.code === 'Delete') {
         e.preventDefault();
         confirmPoolReset();
         return;
@@ -628,6 +622,10 @@ function initKeyboardShortcuts() {
       if (e.key === 'Escape' || e.key.toLowerCase() === 'n') {
         e.preventDefault();
         dismissPoolResetPrompt();
+        return;
+      }
+      if (e.key === 'Enter') {
+        e.preventDefault();
         return;
       }
     }
@@ -670,7 +668,13 @@ function initKeyboardShortcuts() {
     const key = e.key ? e.key.toLowerCase() : '';
     const code = e.code ? e.code.toLowerCase() : '';
 
-    if (e.key === 'Delete' || code === 'delete' || e.key === 'Del') {
+    if (e.key === 'Enter' || code === 'enter') {
+      e.preventDefault();
+      if (activeEl && (activeEl.tagName === 'BUTTON' || activeEl.tagName === 'A')) {
+        activeEl.blur();
+      }
+      return;
+    } else if (e.key === 'Delete' || code === 'delete' || e.key === 'Del') {
       e.preventDefault();
       showPoolResetPrompt('Reset quiz progress & return to zero?');
     } else if (e.key === ' ' || e.key === 'Spacebar' || key === 'space' || code === 'space') {
@@ -2659,15 +2663,13 @@ function nextQuestion() {
       state.randomSequencePos++;
       state.currentIndex = state.randomSequence[state.randomSequencePos];
     } else {
-      // Reached the end of the randomized alignment sequence! Ask if user wants to reset
-      showPoolResetPrompt();
+      // Reached the end of the randomized alignment sequence
       return;
     }
   } else if (state.currentIndex < questions.length - 1) {
     state.currentIndex++;
   } else {
-    // Reached the end of sequential questions! Ask if user wants to reset
-    showPoolResetPrompt();
+    // Reached the end of sequential questions
     return;
   }
   saveCurrentIndex();
