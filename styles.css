@@ -4860,3 +4860,208 @@ sup {
   font-size: 1.02em;
 }
 
+
+/* ==========================================================================
+   TIP Grade Calculator Link Button (Mirrors Grade Calculator's .reviewer-link-icon)
+   ========================================================================== */
+.reviewer-link-icon.grade-calc-link-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm, 8px);
+  background: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(249, 115, 22, 0.45);
+  color: var(--accent-primary, #f97316);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.15);
+  flex-shrink: 0;
+}
+
+.reviewer-link-icon.grade-calc-link-icon:hover {
+  background: var(--accent-primary, #f97316);
+  border-color: var(--accent-primary, #f97316);
+  color: #ffffff;
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 4px 14px var(--accent-glow, rgba(249, 115, 22, 0.3));
+}
+
+.reviewer-link-icon.grade-calc-link-icon:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.reviewer-link-icon.grade-calc-link-icon svg {
+  width: 17px;
+  height: 17px;
+  transition: transform 0.2s ease;
+}
+
+.reviewer-link-icon.grade-calc-link-icon:hover svg {
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   App Confirmation & Alert Modal System (Glassmorphic Design System)
+   ========================================================================== */
+.profile-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease-out;
+}
+
+.profile-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.profile-modal-dialog {
+  background: var(--bg-card, #1c1511);
+  border: 1.5px solid var(--border-color-hover, rgba(249, 115, 22, 0.25));
+  border-radius: var(--radius-lg, 18px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+  width: 100%;
+  max-width: 420px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transform: translateY(12px) scale(0.97);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-sizing: border-box;
+}
+
+.profile-modal-overlay.open .profile-modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.profile-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--border-color, rgba(249, 115, 22, 0.12));
+}
+
+.profile-modal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.profile-modal-avatar-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full, 9999px);
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--color-error, #ef4444);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-modal-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary, #fcf6f2);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.profile-modal-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-secondary, #a39287);
+  margin-top: 0.15rem;
+  line-height: 1.3;
+}
+
+.profile-modal-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted, #6e5e54);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.15rem 0.35rem;
+  border-radius: var(--radius-sm, 8px);
+  transition: color 0.15s ease;
+}
+
+.profile-modal-close-btn:hover {
+  color: var(--text-primary, #fcf6f2);
+}
+
+.profile-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn-modal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius-md, 12px);
+  font-family: inherit;
+  font-size: 0.825rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition, all 0.25s cubic-bezier(0.4, 0, 0.2, 1));
+  border: 1.5px solid transparent;
+  flex: 1;
+}
+
+.btn-modal-cancel {
+  color: var(--text-primary, #fcf6f2);
+  border-color: var(--border-color, rgba(249, 115, 22, 0.12));
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.btn-modal-cancel:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-color-hover, rgba(249, 115, 22, 0.25));
+}
+
+.btn-modal-primary {
+  background: var(--accent-primary, #f97316);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 14px var(--accent-glow, rgba(249, 115, 22, 0.3));
+}
+
+.btn-modal-primary:hover {
+  background: var(--accent-primary-hover, #ea580c);
+  transform: translateY(-1px);
+}
+
+.btn-modal-danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.45) !important;
+}
+
+.btn-modal-danger:hover {
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.6) !important;
+}

@@ -1,4 +1,4 @@
-﻿// Immediately restore user preferred font scale before paint
+// Immediately restore user preferred font scale before paint
 (function() {
   try {
     const s = localStorage.getItem('jt_font_scale');
@@ -512,7 +512,14 @@ function executeJumpFromInput() {
     }
     input.value = '';
   } else {
-    alert(`Problem #${numVal} not found in the current pool.`);
+    showCustomAlert({
+      title: 'Problem Not Found',
+      subtitle: 'Jump Target Unavailable',
+      iconBg: 'rgba(245, 158, 11, 0.15)',
+      iconColor: 'var(--color-warning)',
+      htmlContent: `<p style="margin:0; font-size:0.85rem; color:var(--text-secondary); line-height:1.45;">Problem <strong style="color:var(--text-primary);">#${numVal}</strong> was not found in the current pool filter.</p>`,
+      okText: 'Understood'
+    });
   }
 
   input.blur();
@@ -525,15 +532,195 @@ function handleJumpInputKey(e) {
   }
 }
 
-function resetAllSubjectAnswers() {
+/* ==========================================================================
+   Custom App Confirmation & Alert Modal System (Glassmorphic System)
+   ========================================================================== */
+function showCustomConfirm({
+  title = 'Confirm Action',
+  subtitle = '',
+  iconSvg = '',
+  iconBg = 'rgba(249, 115, 22, 0.15)',
+  iconColor = 'var(--accent-primary)',
+  htmlContent = '',
+  confirmText = 'Confirm',
+  cancelText = 'Cancel',
+  confirmClass = 'btn-modal-primary',
+  showCancel = true
+} = {}) {
+  return new Promise((resolve) => {
+    const modal = document.getElementById('app-confirm-modal');
+    if (!modal) {
+      resolve(confirm(title + (subtitle ? '\n\n' + subtitle : '')));
+      return;
+    }
+
+    const iconEl = document.getElementById('app-confirm-modal-icon');
+    const titleEl = document.getElementById('app-confirm-modal-title');
+    const subtitleEl = document.getElementById('app-confirm-modal-subtitle');
+    const contentEl = document.getElementById('app-confirm-modal-content');
+    const confirmBtn = document.getElementById('app-confirm-modal-confirm');
+    const cancelBtn = document.getElementById('app-confirm-modal-cancel');
+    const closeBtn = document.getElementById('app-confirm-modal-close');
+
+    if (iconEl) {
+      iconEl.style.background = iconBg;
+      iconEl.style.color = iconColor;
+      iconEl.innerHTML = iconSvg || `
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+      `;
+    }
+
+    if (titleEl) titleEl.textContent = title;
+    if (subtitleEl) {
+      subtitleEl.textContent = subtitle;
+      subtitleEl.style.display = subtitle ? 'block' : 'none';
+    }
+    if (contentEl) {
+      contentEl.innerHTML = htmlContent;
+    }
+
+    if (confirmBtn) {
+      confirmBtn.textContent = confirmText;
+      confirmBtn.className = `btn-modal ${confirmClass}`;
+    }
+
+    if (cancelBtn) {
+      cancelBtn.textContent = cancelText;
+      cancelBtn.style.display = showCancel ? 'inline-flex' : 'none';
+    }
+
+    let isDone = false;
+    function finish(result) {
+      if (isDone) return;
+      isDone = true;
+      modal.classList.remove('open');
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 220);
+      cleanup();
+      resolve(result);
+    }
+
+    function onConfirm() { finish(true); }
+    function onCancel() { finish(false); }
+    function onKeyDown(e) {
+      if (e.key === 'Escape') {
+        e.stopPropagation();
+        finish(false);
+      }
+      if (e.key === 'Enter') {
+        e.stopPropagation();
+        finish(true);
+      }
+    }
+    function onOverlayClick(e) {
+      if (e.target === modal) finish(false);
+    }
+
+    function cleanup() {
+      if (confirmBtn) confirmBtn.removeEventListener('click', onConfirm);
+      if (cancelBtn) cancelBtn.removeEventListener('click', onCancel);
+      if (closeBtn) closeBtn.removeEventListener('click', onCancel);
+      if (modal) modal.removeEventListener('click', onOverlayClick);
+      document.removeEventListener('keydown', onKeyDown);
+    }
+
+    if (confirmBtn) confirmBtn.addEventListener('click', onConfirm);
+    if (cancelBtn) cancelBtn.addEventListener('click', onCancel);
+    if (closeBtn) closeBtn.addEventListener('click', onCancel);
+    if (modal) modal.addEventListener('click', onOverlayClick);
+    document.addEventListener('keydown', onKeyDown);
+
+    modal.style.display = 'flex';
+    requestAnimationFrame(() => {
+      modal.classList.add('open');
+      if (confirmBtn) confirmBtn.focus();
+    });
+  });
+}
+
+function showCustomAlert({ title, subtitle, iconSvg, iconBg = 'rgba(249, 115, 22, 0.15)', iconColor = 'var(--accent-primary)', htmlContent, okText = 'OK' } = {}) {
+  return showCustomConfirm({
+    title,
+    subtitle,
+    iconSvg,
+    iconBg,
+    iconColor,
+    htmlContent,
+    confirmText: okText,
+    showCancel: false
+  });
+}
+
+async function resetAllSubjectAnswers() {
   const info = getActiveSubjectInfo();
-  if (!confirm(`Are you sure you want to reset all your answered practice questions for ${info.title}?`)) {
-    return;
-  }
-
-  const alsoDeleteWeak = confirm(`Do you also want to DELETE the Weak Questions memory for ${info.title}?\n\n• Click OK = Reset answers AND DELETE Weak Questions memory\n• Click Cancel = Reset answers only (KEEP Weak Questions memory)`);
-
   const questions = getActiveQuestions();
+
+  // Calculate current progress for the active subject
+  let answeredCount = 0;
+  let correctCount = 0;
+  let wrongCount = 0;
+  questions.forEach(q => {
+    const key = `${state.currentSubject}_q${q.id}`;
+    const ans = state.userAnswers[key];
+    if (ans !== undefined) {
+      answeredCount++;
+      if (ans === q.answer) correctCount++;
+      else wrongCount++;
+    }
+  });
+
+  const accuracy = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
+
+  const htmlContent = `
+    <div style="background: var(--bg-input); border: 1.5px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem 0.9rem; display: flex; flex-direction: column; gap: 0.45rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 600;">Answered Progress:</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; font-weight: 700; color: var(--accent-primary);">${answeredCount} / ${questions.length} Questions</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: var(--text-muted);">
+        <span>Current Accuracy:</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: ${accuracy >= 75 ? 'var(--color-success)' : 'var(--text-secondary)'};">${accuracy}% (${correctCount} correct, ${wrongCount} wrong)</span>
+      </div>
+    </div>
+    <p style="margin: 0.15rem 0 0 0; font-size: 0.825rem; color: var(--text-secondary); line-height: 1.45;">
+      Are you sure you want to reset all your answered practice questions for <strong style="color: var(--text-primary);">${escapeHTML(info.title)}</strong>? You will be returned to Question 1.
+    </p>
+    <label style="display: flex; align-items: center; gap: 0.65rem; cursor: pointer; user-select: none; padding: 0.55rem 0.75rem; border-radius: var(--radius-md); background: rgba(239, 68, 68, 0.08); border: 1.5px solid rgba(239, 68, 68, 0.25); margin-top: 0.2rem; transition: var(--transition);">
+      <input type="checkbox" id="modal-reset-weak-cb" style="width: 17px; height: 17px; accent-color: var(--color-error); cursor: pointer;" />
+      <div style="display: flex; flex-direction: column; gap: 0.1rem;">
+        <span style="font-size: 0.82rem; font-weight: 700; color: var(--color-error);">Also delete Weak Questions memory</span>
+        <span style="font-size: 0.72rem; color: var(--text-muted);">Erases logged mistakes so they won't appear in ⚠️ Weak Questions</span>
+      </div>
+    </label>
+  `;
+
+  const confirmed = await showCustomConfirm({
+    title: 'Reset Practice Answers?',
+    subtitle: `${info.title} (${questions.length} questions)`,
+    iconBg: 'rgba(239, 68, 68, 0.15)',
+    iconColor: 'var(--color-error)',
+    iconSvg: `
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+        <line x1="10" y1="11" x2="10" y2="17"></line>
+        <line x1="14" y1="11" x2="14" y2="17"></line>
+      </svg>
+    `,
+    htmlContent: htmlContent,
+    confirmText: 'Reset Answers',
+    cancelText: 'Cancel',
+    confirmClass: 'btn-modal-danger'
+  });
+
+  if (!confirmed) return;
+
+  const weakCb = document.getElementById('modal-reset-weak-cb');
+  const alsoDeleteWeak = !!(weakCb && weakCb.checked);
   questions.forEach(q => {
     const key = `${state.currentSubject}_q${q.id}`;
     delete state.userAnswers[key];
@@ -2841,7 +3028,14 @@ function postLiveSharedNote() {
   const text = textInput ? textInput.value.trim() : '';
 
   if (!text) {
-    alert('Please enter a note before posting.');
+    showCustomAlert({
+      title: 'Empty Note',
+      subtitle: 'Content required',
+      iconBg: 'rgba(245, 158, 11, 0.15)',
+      iconColor: 'var(--color-warning)',
+      htmlContent: `<p style="margin:0; font-size:0.85rem; color:var(--text-secondary); line-height:1.45;">Please write a study note, formula tip, or explanation before submitting.</p>`,
+      okText: 'Got it'
+    });
     return;
   }
 
@@ -2872,13 +3066,28 @@ function postLiveSharedNote() {
   renderLiveNotesUI(state.liveNotes[key]);
 }
 
-function deleteNote(noteIndex, firebaseKey) {
+async function deleteNote(noteIndex, firebaseKey) {
   const questions = getFilteredPracticeQuestions();
   if (!questions[state.currentIndex]) return;
   const qId = questions[state.currentIndex].id;
   const key = `${state.currentSubject}_q${qId}`;
 
-  if (!confirm("Are you sure you want to delete this note?")) return;
+  const confirmed = await showCustomConfirm({
+    title: 'Delete Note?',
+    subtitle: 'This cannot be undone',
+    iconBg: 'rgba(239, 68, 68, 0.15)',
+    iconColor: 'var(--color-error)',
+    iconSvg: `
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+      </svg>
+    `,
+    htmlContent: '<p style="margin:0; font-size:0.85rem; color:var(--text-secondary);">Are you sure you want to permanently delete this note?</p>',
+    confirmText: 'Delete',
+    cancelText: 'Cancel',
+    confirmClass: 'btn-modal-danger'
+  });
+  if (!confirmed) return;
 
   if (state.liveNotes[key] && state.liveNotes[key][noteIndex]) {
     const deletedItem = state.liveNotes[key].splice(noteIndex, 1)[0];
