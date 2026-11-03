@@ -6897,16 +6897,16 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 73,
               "question": "6.22. Determine the synchronous impedance of an 11 kV, 3-phase, 50 Hz, 20 MVA alternator if rated emf on open circuit is produced by a field current of 10 A, and the same field current produces full-load rated current on short circuit.",
               "options": [
-                  "$Z_s = 6\\;\\Omega$ (Book saturated: $4\\;\\Omega$)",
-                  "$Z_s = 6\\;\\Omega$ (Book saturated: $2\\;\\Omega$)",
-                  "$Z_s = 4\\;\\Omega$ (Book saturated: $6\\;\\Omega$)",
-                  "$Z_s = 3\\;\\Omega$ (Book saturated: $2\\;\\Omega$)"
+                  "$Z_s = 6\\;\\Omega$",
+                  "$Z_s = 5\\;\\Omega$",
+                  "$Z_s = 4\\;\\Omega$",
+                  "$Z_s = 3\\;\\Omega$"
 ],
               "answer": 0,
               "extraDistractors": [
-                  "$Z_s = 6\\;\\Omega$ (Book saturated: $5\\;\\Omega$)",
-                  "$Z_s = 5\\;\\Omega$ (Book saturated: $4\\;\\Omega$)",
-                  "$Z_s = 8\\;\\Omega$ (Book saturated: $4\\;\\Omega$)"
+                  "$Z_s = 8\\;\\Omega$",
+                  "$Z_s = 7\\;\\Omega$",
+                  "$Z_s = 2\\;\\Omega$"
 ],
               "explanation": "• Phase $V_{\\text{oc}} = \\frac{11,000}{\\sqrt{3}} = 6351\\text{ V}$. Full load $I_{\\text{sc}} = \\frac{20 \\times 10^6}{\\sqrt{3} \\times 11,000} = 1050\\text{ A}$.\n• Synchronous impedance: $Z_s = \\frac{6351}{1050} = 6.05\\;\\Omega \\approx 6\\;\\Omega$ (Saturated book value: $3.63\\;\\Omega \\approx 4\\;\\Omega$)."
           },
@@ -6965,18 +6965,18 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 77,
               "question": "6.26. A 345 kVA, 6600 V, star non-salient alternator has an OCC given and SCC gives 35 A with $I_f = 50\\text{ A}$. The leakage reactance drop is 8% and $R_a \\approx 0$. Find the field current for full load at: (a) 0.8 lagging, (b) unity pf.",
               "options": [
-                  "(a) $I_f = 96\\text{ A}$ (Book: $76\\text{ A}$), (b) $I_f = 72\\text{ A}$",
-                  "(a) $I_f = 96\\text{ A}$ (Book: $76\\text{ A}$), (b) $I_f = 61\\text{ A}$",
-                  "(a) $I_f = 85\\text{ A}$ (Book: $65\\text{ A}$), (b) $I_f = 72\\text{ A}$",
-                  "(a) $I_f = 85\\text{ A}$ (Book: $65\\text{ A}$), (b) $I_f = 61\\text{ A}$"
+                  "(a) $I_f = 96\\text{ A}$, (b) $I_f = 72\\text{ A}$",
+                  "(a) $I_f = 96\\text{ A}$, (b) $I_f = 61\\text{ A}$",
+                  "(a) $I_f = 85\\text{ A}$, (b) $I_f = 72\\text{ A}$",
+                  "(a) $I_f = 85\\text{ A}$, (b) $I_f = 61\\text{ A}$"
 ],
               "answer": 0,
               "extraDistractors": [
-                  "(a) $I_f = 96\\text{ A}$ (Book: $76\\text{ A}$), (b) $I_f = 80\\text{ A}$",
-                  "(a) $I_f = 76\\text{ A}$ (Book: $96\\text{ A}$), (b) $I_f = 72\\text{ A}$",
-                  "(a) $I_f = 90\\text{ A}$ (Book: $70\\text{ A}$), (b) $I_f = 68\\text{ A}$"
+                  "(a) $I_f = 96\\text{ A}$, (b) $I_f = 80\\text{ A}$",
+                  "(a) $I_f = 76\\text{ A}$, (b) $I_f = 72\\text{ A}$",
+                  "(a) $I_f = 90\\text{ A}$, (b) $I_f = 68\\text{ A}$"
 ],
-              "explanation": "• Rated current: $I = 30.18\\text{ A}$.\n• At 0.8 pf lag, Potier/MMF vector combination yields $I_f = 96.2\\text{ A} \\approx 96\\text{ A}$ (Book graphical: $76.25\\text{ A} \\approx 76\\text{ A}$).\n• At unity power factor, $I_f = 72.3\\text{ A} \\approx 72\\text{ A}$."
+              "explanation": "• Rated current: $I = 30.18\\text{ A}$.\n• At 0.8 pf lag, Potier/MMF vector combination yields $I_f = 96.2\\text{ A} \\approx 96\\text{ A}$.\n• At unity power factor, $I_f = 72.3\\text{ A} \\approx 72\\text{ A}$."
           },
           {
               "id": 78,
@@ -7084,16 +7084,16 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 84,
               "question": "8.2. A 3-phase, 400 V synchronous motor takes 60 A at 0.8 power factor leading. Its synchronous impedance is $(0.25 + j3.2)\\;\\Omega/\\text{phase}$. Determine the induced line emf and power supplied to the motor.",
               "options": [
-                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 33,255\\text{ W } (33\\text{ kW})$",
-                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 24,500\\text{ W } (25\\text{ kW})$",
-                  "$E_{\\text{line}} = 485\\text{ V},\\; P_{\\text{in}} = 33,255\\text{ W } (33\\text{ kW})$",
-                  "$E_{\\text{line}} = 485\\text{ V},\\; P_{\\text{in}} = 24,500\\text{ W } (25\\text{ kW})$"
+                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 33\text{ kW}$",
+                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 25\text{ kW}$",
+                  "$E_{\\text{line}} = 485\\text{ V},\\; P_{\\text{in}} = 33\text{ kW}$",
+                  "$E_{\\text{line}} = 485\\text{ V},\\; P_{\\text{in}} = 25\text{ kW}$"
 ],
               "answer": 0,
               "extraDistractors": [
-                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 38,400\\text{ W } (38\\text{ kW})$",
-                  "$E_{\\text{line}} = 570\\text{ V},\\; P_{\\text{in}} = 33,255\\text{ W } (33\\text{ kW})$",
-                  "$E_{\\text{line}} = 512\\text{ V},\\; P_{\\text{in}} = 28,100\\text{ W } (28\\text{ kW})$"
+                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 38\text{ kW}$",
+                  "$E_{\\text{line}} = 570\\text{ V},\\; P_{\\text{in}} = 33\text{ kW}$",
+                  "$E_{\\text{line}} = 512\\text{ V},\\; P_{\\text{in}} = 28\text{ kW}$"
 ],
               "explanation": "• Input power: $P_{\\text{in}} = \\sqrt{3} \\times 400 \\times 60 \\times 0.8 = 33,255\\text{ W} \\approx 33\\text{ kW}$.\n• Line back EMF: $E_{\\text{line}} = \\sqrt{3} \\times 371.6 = 643.6\\text{ V} \\approx 643\\text{ V}$."
           },
