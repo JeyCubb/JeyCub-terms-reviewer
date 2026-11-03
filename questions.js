@@ -1406,10 +1406,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 117,
     "question": "Statement: Germanium possesses higher thermal stability and lower reverse leakage current than Silicon.",
     "options": [
-      "a. True, Germanium has a larger energy bandgap than Silicon.",
-      "b. True, Germanium maintains fixed atomic bonds at elevated temperatures.",
-      "c. False, Silicon and Germanium have identical physical responses to temperature.",
-      "d. False, Silicon is more thermally stable and exhibits significantly lower reverse leakage current."
+      "True, Germanium has a larger energy bandgap than Silicon.",
+      "True, Germanium maintains fixed atomic bonds at elevated temperatures.",
+      "False, Silicon and Germanium have identical physical responses to temperature.",
+      "False, Silicon is more thermally stable and exhibits significantly lower reverse leakage current."
     ],
     "answer": 3,
     "explanation": "• Why 'd. False, Silicon is more thermally stable and exhibits significantly lower reverse leakage current.' is Correct: Silicon has a wider energy bandgap ($E_g = 1.12\\text{ eV}$) than Germanium ($E_g = 0.67\\text{ eV}$) and a much lower intrinsic carrier concentration ($n_i$) at room temperature. As a result, Silicon devices have reverse leakage currents measured in nanoamperes (nA) and can operate up to $150^\\circ\\text{C}$–$200^\\circ\\text{C}$, whereas Germanium has leakage currents in microamperes ($\\mu\\text{A}$) and breaks down thermally above ~$75^\\circ\\text{C}$–$100^\\circ\\text{C}$.\n$$E_{g(\\text{Si})} = 1.12\\text{ eV} > E_{g(\\text{Ge})} = 0.67\\text{ eV} \\implies I_{R(\\text{Si})} \\ll I_{R(\\text{Ge})}$$\n• Why Other Choices are Incorrect: Choices a and b are false statements (Germanium has a smaller bandgap and lower thermal stability). Choice c is incorrect because Silicon and Germanium have distinct physical and thermal properties.",
@@ -1419,10 +1419,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 118,
     "question": "Statement: In an unbiased PN junction, dynamic balance between carrier diffusion and drift results in zero net external current flow.",
     "options": [
-      "a. True, because diffusion current created by concentration gradients is exactly balanced by drift current driven by the built-in electric field.",
-      "b. True, because unbiased semiconductors act as infinite superconductors.",
-      "c. False, because unbiased diodes continuously produce direct electrical current.",
-      "d. False, because charge carriers cannot move across PN boundaries under any conditions."
+      "True, because diffusion current created by concentration gradients is exactly balanced by drift current driven by the built-in electric field.",
+      "True, because unbiased semiconductors act as infinite superconductors.",
+      "False, because unbiased diodes continuously produce direct electrical current.",
+      "False, because charge carriers cannot move across PN boundaries under any conditions."
     ],
     "answer": 0,
     "explanation": "In thermal equilibrium under zero external bias, the forward diffusion of majority carriers across the depletion layer due to concentration gradients is precisely counterbalanced by the reverse drift of minority carriers swept by the internal barrier electric field ($I_{\\text{diffusion}} = I_{\\text{drift}}$), producing zero net current.",
@@ -1432,10 +1432,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 119,
     "question": "Statement: The First Approximation of a diode treats a forward-biased diode as a closed switch with zero voltage drop.",
     "options": [
-      "a. True, because the ideal model simplifies the diode to a zero-resistance closed path during forward operation.",
-      "b. True, because ideal diodes drop 0.7V during forward operation.",
-      "c. False, because the ideal model treats forward bias as an open circuit with infinite resistance.",
-      "d. False, because the ideal model applies exclusively to AC transformer calculations."
+      "True, because the ideal model simplifies the diode to a zero-resistance closed path during forward operation.",
+      "True, because ideal diodes drop 0.7V during forward operation.",
+      "False, because the ideal model treats forward bias as an open circuit with infinite resistance.",
+      "False, because the ideal model applies exclusively to AC transformer calculations."
     ],
     "answer": 0,
     "explanation": "The First Approximation (Ideal Diode Model) assumes zero forward voltage drop ($V_F = 0\\text{ V}$) and zero internal forward resistance ($r_F = 0\\ \\Omega$), treating the forward-conducting diode as an ideal closed switch with no energy loss.",
@@ -1445,10 +1445,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 120,
     "question": "Statement: Trivalent impurities added to silicon create donor atoms that supply free electrons.",
     "options": [
-      "a. True, because trivalent atoms possess five valence electrons.",
-      "b. True, because trivalent doping yields N-type semiconductors.",
-      "c. False, because trivalent impurities are acceptor atoms that create excess holes in P-type material.",
-      "d. False, because trivalent impurities prevent semiconductor crystal formation."
+      "True, because trivalent atoms possess five valence electrons.",
+      "True, because trivalent doping yields N-type semiconductors.",
+      "False, because trivalent impurities are acceptor atoms that create excess holes in P-type material.",
+      "False, because trivalent impurities prevent semiconductor crystal formation."
     ],
     "answer": 2,
     "explanation": "Trivalent atoms (such as Boron, Gallium, or Indium) possess 3 valence electrons. When substituting for tetravalent Silicon (4 valence electrons), they create a vacancy or hole that accepts an electron, acting as acceptor impurities and forming P-type semiconductor material.",
@@ -1458,10 +1458,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 121,
     "question": "Statement: The barrier potential of a Silicon diode is approximately 0.7V, while that of a Germanium diode is approximately 0.3V.",
     "options": [
-      "a. True, because Silicon requires 0.3V forward bias while Germanium requires 0.7V to overcome internal junction fields.",
-      "b. True, because Silicon requires 0.7V forward bias while Germanium requires 0.3V to overcome internal junction fields.",
-      "c. False, because Germanium has a higher barrier potential than Silicon.",
-      "d. False, because both materials possess an identical threshold voltage of 1.0V."
+      "True, because Silicon requires 0.3V forward bias while Germanium requires 0.7V to overcome internal junction fields.",
+      "True, because Silicon requires 0.7V forward bias while Germanium requires 0.3V to overcome internal junction fields.",
+      "False, because Germanium has a higher barrier potential than Silicon.",
+      "False, because both materials possess an identical threshold voltage of 1.0V."
     ],
     "answer": 1,
     "explanation": "At room temperature (25°C), the internal electric field established in the depletion region requires approximately 0.7 V of forward bias to overcome for Silicon, whereas Germanium's smaller bandgap requires approximately 0.3 V.",
@@ -1471,10 +1471,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 122,
     "question": "Statement: The Second Approximation of a diode models the device as an ideal switch in series with a barrier potential battery.",
     "options": [
-      "a. True, because it accounts for the forward voltage required while neglecting internal forward resistance.",
-      "b. True, because it includes bulk resistance alongside the barrier voltage.",
-      "c. False, because the second approximation treats forward bias as an open switch.",
-      "d. False, because the second approximation applies strictly to reverse leakage conditions."
+      "True, because it accounts for the forward voltage required while neglecting internal forward resistance.",
+      "True, because it includes bulk resistance alongside the barrier voltage.",
+      "False, because the second approximation treats forward bias as an open switch.",
+      "False, because the second approximation applies strictly to reverse leakage conditions."
     ],
     "answer": 0,
     "explanation": "The Second Approximation (Practical Diode Model) introduces the knee/barrier voltage ($0.7\\text{ V}$ for Si or $0.3\\text{ V}$ for Ge) represented as a DC voltage source opposing current flow in series with an ideal switch, but continues to neglect the internal forward bulk resistance ($r_B = 0$).",
@@ -1484,10 +1484,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 123,
     "question": "Statement: The Third Approximation of a diode is also called the Piecewise Linear Model because it includes internal forward resistance alongside barrier potential.",
     "options": [
-      "a. True, because it models linear V-I operational slopes above the threshold knee voltage.",
-      "b. True, because it simplifies the diode to an ideal zero-voltage switch.",
-      "c. False, because piecewise linear modeling ignores bulk resistance completely.",
-      "d. False, because third approximation applies strictly to light-emitting diodes."
+      "True, because it models linear V-I operational slopes above the threshold knee voltage.",
+      "True, because it simplifies the diode to an ideal zero-voltage switch.",
+      "False, because piecewise linear modeling ignores bulk resistance completely.",
+      "False, because third approximation applies strictly to light-emitting diodes."
     ],
     "answer": 0,
     "explanation": "The Third Approximation (Piecewise Linear / Complete Diode Model) accounts for both the knee threshold voltage ($V_B$) and the internal bulk forward resistance ($r_f$ or $r_B$). The forward V-I characteristic is modeled as zero current below $V_B$ and a linear slope $\\Delta I / \\Delta V = 1/r_f$ above $V_B$.",
@@ -1497,10 +1497,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 124,
     "question": "Statement: Gallium Arsenide (GaAs) is classified as a single-crystal elemental semiconductor.",
     "options": [
-      "a. True, because GaAs consists of a single chemical element from Group IV.",
-      "b. True, because GaAs has an identical atomic lattice to pure Germanium.",
-      "c. False, because GaAs is a compound semiconductor synthesized from Gallium and Arsenic.",
-      "d. False, because GaAs is an electrical conductor with zero energy bandgap."
+      "True, because GaAs consists of a single chemical element from Group IV.",
+      "True, because GaAs has an identical atomic lattice to pure Germanium.",
+      "False, because GaAs is a compound semiconductor synthesized from Gallium and Arsenic.",
+      "False, because GaAs is an electrical conductor with zero energy bandgap."
     ],
     "answer": 2,
     "explanation": "Silicon and Germanium are elemental semiconductors (pure single chemical elements from Group IV of the periodic table). Gallium Arsenide (GaAs) is a III-V compound semiconductor formed from Gallium (Group III) and Arsenic (Group V).",
@@ -1510,10 +1510,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 125,
     "question": "Statement: Reverse biasing a PN junction diode widens the depletion region and reduces majority carrier current to near zero.",
     "options": [
-      "a. True, because applied reverse potential attracts majority carriers away from the junction, widening the depletion region.",
-      "b. True, because reverse bias pushes majority carriers across the junction boundary, widening the depletion region.",
-      "c. False, because reverse biasing narrows the depletion region to increase forward conduction.",
-      "d. False, because reverse bias causes immediate dielectric destruction at all voltages."
+      "True, because applied reverse potential attracts majority carriers away from the junction, widening the depletion region.",
+      "True, because reverse bias pushes majority carriers across the junction boundary, widening the depletion region.",
+      "False, because reverse biasing narrows the depletion region to increase forward conduction.",
+      "False, because reverse bias causes immediate dielectric destruction at all voltages."
     ],
     "answer": 0,
     "explanation": "Applying a reverse bias (positive terminal to N-region, negative terminal to P-region) pulls majority electrons and holes away from the metallurgical junction, widening the depletion layer and creating a high potential hill that stops majority carrier flow.",
@@ -1523,10 +1523,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 126,
     "question": "Statement: Semiconductor resistance decreases as operating temperature rises, demonstrating a negative temperature coefficient.",
     "options": [
-      "a. True, because thermal energy reduces free electron mobility in conductors, generating extra electron-hole pairs.",
-      "b. True, because thermal energy breaks covalent bonds, generating extra electron-hole pairs for electron mobility.",
-      "c. False, because semiconductor resistance increases linearly with temperature like copper.",
-      "d. False, because semiconductors cannot operate above absolute zero."
+      "True, because thermal energy reduces free electron mobility in conductors, generating extra electron-hole pairs.",
+      "True, because thermal energy breaks covalent bonds, generating extra electron-hole pairs for electron mobility.",
+      "False, because semiconductor resistance increases linearly with temperature like copper.",
+      "False, because semiconductors cannot operate above absolute zero."
     ],
     "answer": 1,
     "explanation": "Unlike metals which have a positive temperature coefficient (resistance increases with heat due to lattice vibrations), semiconductors have a negative temperature coefficient (NTC). Increased thermal energy breaks covalent bonds, liberating vast numbers of electron-hole pairs and substantially lowering electrical resistance.",
@@ -1536,10 +1536,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 127,
     "question": "A Silicon diode is connected in series with a 1.8 kΩ load resistor and a 25 V DC supply. Using the Second Approximation, calculate the circuit current in milliamperes.",
     "options": [
-      "a. $14.12\\text{ mA}$",
-      "b. $13.8889\\text{ mA}$",
-      "c. $12.9444\\text{ mA}$",
-      "d. $13.50\\text{ mA}$"
+      "$14.12\\text{ mA}$",
+      "$13.8889\\text{ mA}$",
+      "$12.9444\\text{ mA}$",
+      "$13.50\\text{ mA}$"
     ],
     "answer": 3,
     "explanation": "In the Second Approximation, the forward-biased silicon diode drops a constant 0.7 V. Applying Ohm's law: $I = \\frac{V_S - V_D}{R_L} = \\frac{25\\text{ V} - 0.7\\text{ V}}{1.8\\text{ k}\\Omega} = \\frac{24.3\\text{ V}}{1.8\\text{ k}\\Omega} = 13.50\\text{ mA}$.",
@@ -1549,10 +1549,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 128,
     "question": "A Germanium diode exhibits an internal forward resistance r_f = 8.5 Ω. It is placed in series with a load resistor R_L = 330 Ω and a 5 V DC source. Using the Third Approximation, calculate the total current in milliamperes.",
     "options": [
-      "a. $13.8848\\text{ mA}$",
-      "b. $14.2424\\text{ mA}$",
-      "c. $13.5201\\text{ mA}$",
-      "d. $15.1515\\text{ mA}$"
+      "$13.8848\\text{ mA}$",
+      "$14.2424\\text{ mA}$",
+      "$13.5201\\text{ mA}$",
+      "$15.1515\\text{ mA}$"
     ],
     "answer": 0,
     "explanation": "In the Third Approximation, Germanium drops its knee voltage $V_k = 0.3\\text{ V}$ plus the drop across its bulk resistance $r_f = 8.5\\ \\Omega$. Total resistance is $R_T = r_f + R_L = 8.5\\ \\Omega + 330\\ \\Omega = 338.5\\ \\Omega$. Total circuit current: $I = \\frac{V_S - V_{k}}{R_T} = \\frac{5\\text{ V} - 0.3\\text{ V}}{338.5\\ \\Omega} = \\frac{4.7\\text{ V}}{338.5\\ \\Omega} \\approx 0.013884786\\text{ A} = 13.8848\\text{ mA}$.",
@@ -1562,10 +1562,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 129,
     "question": "Using the parameters and results from Item 128 (Germanium V_k = 0.3 V, r_f = 8.5 Ω, I = 13.8848 mA), calculate the terminal voltage drop across the Germanium diode in volts using the Third Approximation.",
     "options": [
-      "a. $0.3\\text{ V}$",
-      "b. $0.418\\text{ V}$",
-      "c. $0.118\\text{ V}$",
-      "d. $0.3812\\text{ V}$"
+      "$0.3\\text{ V}$",
+      "$0.418\\text{ V}$",
+      "$0.118\\text{ V}$",
+      "$0.3812\\text{ V}$"
     ],
     "answer": 1,
     "explanation": "Under the Third Approximation, the terminal diode voltage is $V_D = V_k + I \\cdot r_f = 0.3\\text{ V} + (13.8848\\times 10^{-3}\\text{ A} \\times 8.5\\ \\Omega) = 0.3\\text{ V} + 0.11802\\text{ V} = 0.41802\\text{ V} \\approx 0.418\\text{ V}$.",
@@ -1575,10 +1575,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 130,
     "question": "A Gallium Arsenide (GaAs) diode (V_k = 1.2 V) is connected across a 9 V DC supply in series with a 1 kΩ load resistor. Using the Second Approximation, calculate the circuit current in milliamperes.",
     "options": [
-      "a. $7.8\\text{ mA}$",
-      "b. $9.0\\text{ mA}$",
-      "c. $6.6\\text{ mA}$",
-      "d. $8.2\\text{ mA}$"
+      "$7.8\\text{ mA}$",
+      "$9.0\\text{ mA}$",
+      "$6.6\\text{ mA}$",
+      "$8.2\\text{ mA}$"
     ],
     "answer": 0,
     "explanation": "Using the Second Approximation for GaAs with a knee voltage of 1.2 V: $I = \\frac{V_S - V_k}{R_L} = \\frac{9\\text{ V} - 1.2\\text{ V}}{1000\\ \\Omega} = \\frac{7.8\\text{ V}}{1000\\ \\Omega} = 7.8\\text{ mA}$.",
@@ -1588,10 +1588,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 131,
     "question": "A Silicon diode and a Germanium diode are connected in series with a 560 Ω load resistor and a 12 V DC supply. Using the Second Approximation, calculate the circuit current in milliamperes.",
     "options": [
-      "a. $20.8929\\text{ mA}$",
-      "b. $20.1786\\text{ mA}$",
-      "c. $19.6429\\text{ mA}$",
-      "d. $18.9286\\text{ mA}$"
+      "$20.8929\\text{ mA}$",
+      "$20.1786\\text{ mA}$",
+      "$19.6429\\text{ mA}$",
+      "$18.9286\\text{ mA}$"
     ],
     "answer": 2,
     "explanation": "When diodes are in series, their barrier potential drops add together: $V_{D(\\text{total})} = V_{D(\\text{Si})} + V_{D(\\text{Ge})} = 0.7\\text{ V} + 0.3\\text{ V} = 1.0\\text{ V}$. Current: $I = \\frac{V_S - V_{D(\\text{total})}}{R_L} = \\frac{12\\text{ V} - 1.0\\text{ V}}{560\\ \\Omega} = \\frac{11.0\\text{ V}}{560\\ \\Omega} \\approx 0.01964286\\text{ A} = 19.6429\\text{ mA}$.",
@@ -1601,10 +1601,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 132,
     "question": "Calculate the load voltage across the 560 Ω resistor in volts for the series combination in Item 131 (12 V DC supply, Silicon diode, Germanium diode).",
     "options": [
-      "a. $11.7\\text{ V}$",
-      "b. $11.3\\text{ V}$",
-      "c. $11\\text{ V}$",
-      "d. $12.0\\text{ V}$"
+      "$11.7\\text{ V}$",
+      "$11.3\\text{ V}$",
+      "$11\\text{ V}$",
+      "$12.0\\text{ V}$"
     ],
     "answer": 2,
     "explanation": "Applying KVL around the single series loop: $V_L = V_S - V_{D(\\text{Si})} - V_{D(\\text{Ge})} = 12\\text{ V} - 0.7\\text{ V} - 0.3\\text{ V} = 11.0\\text{ V}$.",
@@ -1614,10 +1614,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 133,
     "question": "Three identical Silicon diodes are connected in parallel with each other in forward orientation. This combination is connected in series with a 220 Ω resistor and a 12 V DC supply. Assuming equal current sharing, calculate the current through each individual diode in milliamperes using the Second Approximation.",
     "options": [
-      "a. $19.3636\\text{ mA}$",
-      "b. $17.1212\\text{ mA}$",
-      "c. $18.1618\\text{ mA}$",
-      "d. $16.3333\\text{ mA}$"
+      "$19.3636\\text{ mA}$",
+      "$17.1212\\text{ mA}$",
+      "$18.1618\\text{ mA}$",
+      "$16.3333\\text{ mA}$"
     ],
     "answer": 1,
     "explanation": "Since all three diodes are in parallel in the forward direction, the voltage across the parallel bank is held at the silicon threshold $V_D = 0.7\\text{ V}$. Voltage across $R_L$: $V_R = 12\\text{ V} - 0.7\\text{ V} = 11.3\\text{ V}$. Total current: $I_{\\text{total}} = \\frac{11.3\\text{ V}}{220\\ \\Omega} \\approx 51.3636\\text{ mA}$. Since the diodes are identical and share current equally: $I_{\\text{each}} = \\frac{I_{\\text{total}}}{3} = \\frac{51.3636\\text{ mA}}{3} \\approx 17.1212\\text{ mA}$.",
@@ -1627,10 +1627,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 134,
     "question": "A practical Germanium diode is reverse-biased across a 15 V DC supply in series with a 5 kΩ load resistor. If reverse leakage saturation current is I_s = 8.0 µA, calculate terminal voltage across the diode in volts using first approximation.",
     "options": [
-      "a. $-15.0\\text{ V}$",
-      "b. $-14.96\\text{ V}$",
-      "c. $-0.04\\text{ V}$",
-      "d. $0\\text{ V}$"
+      "$-15.0\\text{ V}$",
+      "$-14.96\\text{ V}$",
+      "$-0.04\\text{ V}$",
+      "$0\\text{ V}$"
     ],
     "answer": 0,
     "explanation": "Under the First Approximation (Ideal Model), a reverse-biased diode is treated as a perfect open circuit ($R_{\\text{rev}} = \\infty, I_R = 0$). With zero current flowing through the series load resistor, no voltage drop occurs across $R_L$, and the entire 15 V source voltage appears across the reverse-biased diode terminals ($V_D = -15.0\\text{ V}$).",
@@ -1640,10 +1640,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 135,
     "question": "A Silicon diode with r_f = 12 Ω is connected to a 16 V DC source in series with R_L = 820 Ω. Using the Third Approximation, calculate total electrical power supplied by the DC source in milliwatts.",
     "options": [
-      "a. $294.2308\\text{ mW}$",
-      "b. $310.1205\\text{ mW}$",
-      "c. $285.50\\text{ mW}$",
-      "d. $300.0\\text{ mW}$"
+      "$294.2308\\text{ mW}$",
+      "$310.1205\\text{ mW}$",
+      "$285.50\\text{ mW}$",
+      "$300.0\\text{ mW}$"
     ],
     "answer": 0,
     "explanation": "Using Third Approximation: $I = \\frac{V_S - V_k}{r_f + R_L} = \\frac{16\\text{ V} - 0.7\\text{ V}}{12\\ \\Omega + 820\\ \\Omega} = \\frac{15.3\\text{ V}}{832\\ \\Omega} \\approx 0.018389423\\text{ A} = 18.3894\\text{ mA}$. Total electrical power delivered by the DC source: $P_{\\text{source}} = V_S \\times I = 16\\text{ V} \\times 0.018389423\\text{ A} \\approx 0.2942308\\text{ W} = 294.2308\\text{ mW}$.",
@@ -1653,10 +1653,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 136,
     "question": "In Item no. 135 (Silicon diode r_f = 12 Ω, V_S = 16 V, R_L = 820 Ω), what is the current flowing through the diode in mA?",
     "options": [
-      "a. $13.4845\\text{ mA}$",
-      "b. $17.8726\\text{ mA}$",
-      "c. $14.3894\\text{ mA}$",
-      "d. $18.3894\\text{ mA}$"
+      "$13.4845\\text{ mA}$",
+      "$17.8726\\text{ mA}$",
+      "$14.3894\\text{ mA}$",
+      "$18.3894\\text{ mA}$"
     ],
     "answer": 3,
     "explanation": "From the third approximation equation: $I_D = \\frac{V_S - V_k}{r_f + R_L} = \\frac{16\\text{ V} - 0.7\\text{ V}}{12\\ \\Omega + 820\\ \\Omega} = \\frac{15.3\\text{ V}}{832\\ \\Omega} \\approx 0.018389423\\text{ A} = 18.3894\\text{ mA}$.",
@@ -1666,10 +1666,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 137,
     "question": "Which operating principle distinguishes vacuum tubes from bipolar junction transistors?",
     "options": [
-      "A. Thermionic emission requiring a heated filament",
-      "B. Solid-state conduction through intrinsic conductors only",
-      "C. Direct current amplification via field ionization",
-      "D. Quantum tunnelling across dielectric barriers"
+      "Thermionic emission requiring a heated filament",
+      "Solid-state conduction through intrinsic conductors only",
+      "Direct current amplification via field ionization",
+      "Quantum tunnelling across dielectric barriers"
     ],
     "answer": 0,
     "explanation": "Vacuum tubes rely on thermionic emission—heating a cathode filament in an evacuated glass envelope to boil off free electrons. In contrast, Bipolar Junction Transistors (BJTs) are solid-state devices where conduction occurs entirely within semiconductor crystal lattices without requiring heaters or a vacuum.",
@@ -1679,10 +1679,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 138,
     "question": "In a physical BJT structure, which region is manufactured with the highest doping concentration?",
     "options": [
-      "A. Base",
-      "B. Collector",
-      "C. Emitter",
-      "D. Substrate"
+      "Base",
+      "Collector",
+      "Emitter",
+      "Substrate"
     ],
     "answer": 2,
     "explanation": "The Emitter region is heavily doped ($n^+$ or $p^+$) so that it can inject a massive quantity of majority charge carriers into the base. The Collector is moderately doped, and the Base is the most lightly doped and physically thinnest region.",
@@ -1692,10 +1692,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 139,
     "question": "What is the typical physical width ratio between the whole BJT and the base region of a standard BJT?",
     "options": [
-      "A. 1:1",
-      "B. 10:1",
-      "C. 150:1",
-      "D. 1000:1"
+      "1:1",
+      "10:1",
+      "150:1",
+      "1000:1"
     ],
     "answer": 2,
     "explanation": "The base region of a standard planar BJT is made extremely thin (typically a few micrometers or less) to minimize electron-hole recombination and ensure that nearly all carriers injected by the emitter reach the collector. The ratio of total transistor thickness to base width is typically around 150:1.",
@@ -1705,10 +1705,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 140,
     "question": "Which type of transistor is represented by an arrow on the emitter terminal pointing away from the base terminal?",
     "options": [
-      "A. PNP Transistor",
-      "B. NPN Transistor",
-      "C. Junction FET",
-      "D. Unijunction Transistor"
+      "PNP Transistor",
+      "NPN Transistor",
+      "Junction FET",
+      "Unijunction Transistor"
     ],
     "answer": 1,
     "explanation": "In schematic symbols, the arrow is always placed on the emitter lead and indicates the direction of conventional current flow. An arrow pointing away from the base terminal represents an NPN transistor ('Not Pointing iN'). An arrow pointing inward toward the base represents a PNP transistor ('Pointing iN Proudly').",
@@ -1718,10 +1718,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 141,
     "question": "A Bipolar Junction Transistor is classified as what type of electronic device?",
     "options": [
-      "A. Voltage-controlled voltage source",
-      "B. Voltage-controlled current source",
-      "C. Current-controlled current source",
-      "D. Frequency-controlled resistor"
+      "Voltage-controlled voltage source",
+      "Voltage-controlled current source",
+      "Current-controlled current source",
+      "Frequency-controlled resistor"
     ],
     "answer": 2,
     "explanation": "A BJT is classified as a Current-Controlled Current Source (CCCS) because the output current (collector current $I_C$) is directly controlled by the input current (base current $I_B$) via the relationship $I_C = \\beta I_B$. (In contrast, FETs are voltage-controlled current sources).",
@@ -1731,10 +1731,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 142,
     "question": "Which equation correctly represents Kirchhoff's Current Law applied to the terminals of any BJT?",
     "options": [
-      "A. $I_B = I_C + I_E$",
-      "B. $I_E = I_C + I_B$",
-      "C. $I_C = I_E + I_B$",
-      "D. $I_E = I_C \\cdot I_B$"
+      "$I_B = I_C + I_E$",
+      "$I_E = I_C + I_B$",
+      "$I_C = I_E + I_B$",
+      "$I_E = I_C \\cdot I_B$"
     ],
     "answer": 1,
     "explanation": "According to Kirchhoff's Current Law (KCL), the sum of currents entering a transistor must equal the sum of currents leaving it. For any BJT in any configuration, the total emitter current is the sum of the collector current and the base current: $I_E = I_C + I_B$.",
@@ -1744,10 +1744,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 143,
     "question": "To operate an NPN bipolar transistor in its active (amplifying) region, how must its junctions be biased?",
     "options": [
-      "A. Base-Emitter forward biased, Collector-Base forward biased",
-      "B. Base-Emitter reverse biased, Collector-Base reverse biased",
-      "C. Base-Emitter forward biased, Collector-Base reverse biased",
-      "D. Base-Emitter reverse biased, Collector-Base forward biased"
+      "Base-Emitter forward biased, Collector-Base forward biased",
+      "Base-Emitter reverse biased, Collector-Base reverse biased",
+      "Base-Emitter forward biased, Collector-Base reverse biased",
+      "Base-Emitter reverse biased, Collector-Base forward biased"
     ],
     "answer": 2,
     "explanation": "For linear amplification (Active Region) in any BJT, the Base-Emitter (B-E) junction must be Forward Biased to allow carrier injection into the base, and the Collector-Base (C-B) junction must be Reverse Biased to sweep those carriers into the collector.",
@@ -1757,10 +1757,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 144,
     "question": "When both the Base-Emitter and Collector-Base junctions of a BJT are forward biased, in which region is the device operating?",
     "options": [
-      "A. Cutoff Region",
-      "B. Active Region",
-      "C. Breakdown Region",
-      "D. Saturation Region"
+      "Cutoff Region",
+      "Active Region",
+      "Breakdown Region",
+      "Saturation Region"
     ],
     "answer": 3,
     "explanation": "When both the B-E junction and C-B junction are forward biased, the transistor conducts maximum current with a very low collector-to-emitter voltage ($V_{CE(sat)} \\approx 0.2\\text{ V}$). This is the Saturation Region, corresponding to a CLOSED switch.",
@@ -1770,10 +1770,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 145,
     "question": "In a BJT switching circuit, what are the bias conditions for the transistor to act as an OPEN switch (Cutoff mode)?",
     "options": [
-      "A. B-E Forward Biased, C-B Reverse Biased",
-      "B. B-E Reverse Biased, C-B Reverse Biased",
-      "C. B-E Forward Biased, C-B Forward Biased",
-      "D. B-E Reverse Biased, C-B Forward Biased"
+      "B-E Forward Biased, C-B Reverse Biased",
+      "B-E Reverse Biased, C-B Reverse Biased",
+      "B-E Forward Biased, C-B Forward Biased",
+      "B-E Reverse Biased, C-B Forward Biased"
     ],
     "answer": 1,
     "explanation": "In cutoff mode, the transistor acts as an open circuit (OPEN switch) with virtually zero current ($I_C \\approx 0$). This occurs when both the Base-Emitter and Collector-Base junctions are Reverse Biased (or $V_{BE} \\le 0\\text{ V}$).",
@@ -1783,10 +1783,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 146,
     "question": "What is the current gain parameter beta (β) in a Common Emitter configuration defined as?",
     "options": [
-      "A. Ratio of IC to IE",
-      "B. Ratio of IB to IC",
-      "C. Ratio of IC to IB",
-      "D. Ratio of IE to IB"
+      "Ratio of IC to IE",
+      "Ratio of IB to IC",
+      "Ratio of IC to IB",
+      "Ratio of IE to IB"
     ],
     "answer": 2,
     "explanation": "In Common Emitter (CE) configuration, the input current is the base current $I_B$ and the output current is the collector current $I_C$. Therefore, the common-emitter DC current gain $\\beta_{dc}$ (or $h_{FE}$) is defined as the ratio of $I_C$ to $I_B$.",
@@ -1796,10 +1796,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 147,
     "question": "What parameter represents the alpha (α) current gain in a Common Base configuration?",
     "options": [
-      "A. $\\frac{I_C}{I_E}$",
-      "B. $\\frac{I_E}{I_C}$",
-      "C. $\\frac{I_C}{I_B}$",
-      "D. $\\frac{I_B}{I_C}$"
+      "$\\frac{I_C}{I_E}$",
+      "$\\frac{I_E}{I_C}$",
+      "$\\frac{I_C}{I_B}$",
+      "$\\frac{I_B}{I_C}$"
     ],
     "answer": 0,
     "explanation": "In Common Base (CB) configuration, the input terminal is the emitter and the output terminal is the collector. The alpha current gain $\\alpha_{dc}$ is the ratio of collector current to emitter current ($I_C / I_E$), typically having a value between 0.95 and 0.998.",
@@ -1809,10 +1809,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 148,
     "question": "Which BJT configuration provides high current gain, a voltage gain of approximately 1, and very high input impedance?",
     "options": [
-      "A. Common Emitter (CE)",
-      "B. Common Base (CB)",
-      "C. Common Collector (CC)",
-      "D. Collector Feedback"
+      "Common Emitter (CE)",
+      "Common Base (CB)",
+      "Common Collector (CC)",
+      "Collector Feedback"
     ],
     "answer": 2,
     "explanation": "The Common Collector (CC) configuration—widely called an Emitter Follower—features high input impedance ($Z_{in}$), low output impedance ($Z_{out}$), high current gain ($A_i \\approx \\beta$), and a non-inverting voltage gain slightly less than or approximately equal to 1 ($A_v \\approx 1$). It is widely used for impedance buffering.",
@@ -1822,10 +1822,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 149,
     "question": "What is the nominal barrier potential V_BE assumed for a forward-biased silicon PN junction at room temperature?",
     "options": [
-      "A. $0.3\\text{ V}$",
-      "B. $0.7\\text{ V}$",
-      "C. $1.2\\text{ V}$",
-      "D. $2.0\\text{ V}$"
+      "$0.3\\text{ V}$",
+      "$0.7\\text{ V}$",
+      "$1.2\\text{ V}$",
+      "$2.0\\text{ V}$"
     ],
     "answer": 1,
     "explanation": "At standard room temperature (25°C), the built-in barrier potential for a conducting forward-biased Silicon PN junction is universally taken as 0.7 V (or 0.6 V–0.7 V).",
@@ -1835,10 +1835,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 150,
     "question": "What is the approximate forward voltage drop across a Germanium diode when conducting?",
     "options": [
-      "A. $0.3\\text{ V}$",
-      "B. $0.7\\text{ V}$",
-      "C. $1.1\\text{ V}$",
-      "D. $0.0\\text{ V}$"
+      "$0.3\\text{ V}$",
+      "$0.7\\text{ V}$",
+      "$1.1\\text{ V}$",
+      "$0.0\\text{ V}$"
     ],
     "answer": 0,
     "explanation": "Due to Germanium's smaller energy bandgap ($0.67\\text{ eV}$ vs. $1.12\\text{ eV}$ for Silicon), the built-in barrier potential and forward conducting voltage drop of Germanium PN junctions is approximately 0.3 V.",
@@ -1848,10 +1848,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 151,
     "question": "In a standard regulated DC power supply design, what is the first functional block following the AC main outlet?",
     "options": [
-      "A. Rectifier",
-      "B. Filter",
-      "C. Transformer",
-      "D. Voltage Regulator"
+      "Rectifier",
+      "Filter",
+      "Transformer",
+      "Voltage Regulator"
     ],
     "answer": 2,
     "explanation": "The block sequence of a linear DC power supply is: AC Mains (120V/220V) → 1. Transformer (steps down voltage) → 2. Rectifier (converts AC to pulsating DC) → 3. Filter (smoothes ripples) → 4. Voltage Regulator (maintains constant DC output). Therefore, the Transformer is first.",
@@ -1861,10 +1861,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 152,
     "question": "What is the primary function of the capacitor filter block in a DC power supply?",
     "options": [
-      "A. Convert DC voltage to AC voltage",
-      "B. Step down the AC line voltage",
-      "C. Smooth out voltage ripples from the rectified output",
-      "D. Maintain a constant output current regardless of load"
+      "Convert DC voltage to AC voltage",
+      "Step down the AC line voltage",
+      "Smooth out voltage ripples from the rectified output",
+      "Maintain a constant output current regardless of load"
     ],
     "answer": 2,
     "explanation": "The capacitor filter charges to the peak voltage during conducting half-cycles and discharges slowly into the load when diode conduction drops, filling in the valleys and significantly smoothing out voltage ripples from the pulsating rectified output.",
@@ -1874,10 +1874,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 153,
     "question": "What is the average DC value of a half-wave rectified sine wave with a peak output voltage V_p?",
     "options": [
-      "A. $\\frac{V_p}{2\\pi}$",
-      "B. $\\frac{V_p}{\\pi}$",
-      "C. $\\frac{2V_p}{\\pi}$",
-      "D. $\\frac{V_p}{\\sqrt{2}}$"
+      "$\\frac{V_p}{2\\pi}$",
+      "$\\frac{V_p}{\\pi}$",
+      "$\\frac{2V_p}{\\pi}$",
+      "$\\frac{V_p}{\\sqrt{2}}$"
     ],
     "answer": 1,
     "explanation": "For a half-wave rectifier, output voltage exists for only one half of the AC cycle ($0$ to $\\pi$). Integrating over a full period $2\\pi$ yields $V_{dc} = \\frac{1}{2\\pi} \\int_0^\\pi V_p \\sin(\\theta) d\\theta = \\frac{V_p}{\\pi} \\approx 0.318 V_p$.",
@@ -1887,10 +1887,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 154,
     "question": "What is the average DC voltage produced by an ideal full-wave rectifier with a peak input voltage V_p?",
     "options": [
-      "A. $\\frac{V_p}{\\pi}$",
-      "B. $\\frac{2V_p}{\\pi}$",
-      "C. $\\frac{V_p}{2}$",
-      "D. $\\sqrt{2} \\cdot V_p$"
+      "$\\frac{V_p}{\\pi}$",
+      "$\\frac{2V_p}{\\pi}$",
+      "$\\frac{V_p}{2}$",
+      "$\\sqrt{2} \\cdot V_p$"
     ],
     "answer": 1,
     "explanation": "A full-wave rectifier conducts during both half-cycles, delivering twice the average voltage of a half-wave rectifier: $V_{dc} = \\frac{2V_p}{\\pi} \\approx 0.636 V_p$.",
@@ -1900,10 +1900,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 155,
     "question": "How is the turns ratio (n) of a transformer defined in electronics?",
     "options": [
-      "A. $\\frac{N_{\\text{pri}}}{N_{\\text{sec}}}$",
-      "B. $\\frac{N_{\\text{sec}}}{N_{\\text{pri}}}$",
-      "C. $N_{\\text{pri}} \\cdot N_{\\text{sec}}$",
-      "D. $\\left(\\frac{N_{\\text{sec}}}{N_{\\text{pri}}}\\right)^2$"
+      "$\\frac{N_{\\text{pri}}}{N_{\\text{sec}}}$",
+      "$\\frac{N_{\\text{sec}}}{N_{\\text{pri}}}$",
+      "$N_{\\text{pri}} \\cdot N_{\\text{sec}}$",
+      "$\\left(\\frac{N_{\\text{sec}}}{N_{\\text{pri}}}\\right)^2$"
     ],
     "answer": 1,
     "explanation": "In standard electronic engineering textbooks (such as Boylestad and Floyd), the transformation turns ratio $n$ is defined as the ratio of secondary turns to primary turns: $n = \\frac{N_{sec}}{N_{pri}}$, such that secondary voltage is directly $V_{sec} = n \\cdot V_{pri}$.",
@@ -1913,10 +1913,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 156,
     "question": "Which configuration is also referred to as an 'emitter follower'?",
     "options": [
-      "A. Common Base",
-      "B. Common Emitter",
-      "C. Common Collector",
-      "D. Fixed Bias"
+      "Common Base",
+      "Common Emitter",
+      "Common Collector",
+      "Fixed Bias"
     ],
     "answer": 2,
     "explanation": "The Common Collector configuration is called an emitter follower because the output is taken directly across the emitter resistor $R_E$, and the emitter voltage follows the base input voltage in phase with a constant $0.7\\text{ V}$ offset ($V_E = V_B - 0.7\\text{ V}$).",
@@ -1926,10 +1926,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 157,
     "question": "What typical DC operating voltage range is associated with modern solid-state transistors compared to vacuum tubes?",
     "options": [
-      "A. 100 V to 500 V",
-      "B. 1 V to 15 V",
-      "C. 500 V to 1000 V",
-      "D. 0 V to 0.5 V"
+      "100 V to 500 V",
+      "1 V to 15 V",
+      "500 V to 1000 V",
+      "0 V to 0.5 V"
     ],
     "answer": 1,
     "explanation": "Modern solid-state transistors operate at safe, low DC supply voltages typically ranging between 1 V and 15 V (e.g., 3.3V, 5V, 9V, 12V), whereas obsolete vacuum tubes required high plate voltages of 100 V to 500 V.",
@@ -1939,10 +1939,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 158,
     "question": "What breakdown mechanism occurs in a BJT when excessive reverse bias is applied across the collector-base junction?",
     "options": [
-      "A. Zener Breakdown",
-      "B. Avalanche Breakdown",
-      "C. Thermal Runaway",
-      "D. Pinch-off Breakdown"
+      "Zener Breakdown",
+      "Avalanche Breakdown",
+      "Thermal Runaway",
+      "Pinch-off Breakdown"
     ],
     "answer": 1,
     "explanation": "Because the collector region is moderately or lightly doped and has a wide depletion region, applying excessive reverse bias voltage ($BV_{CBO}$ or $BV_{CEO}$) accelerates minority carriers to sufficient kinetic energy to knock valence electrons free in a cumulative chain reaction known as Avalanche Breakdown.",
@@ -1952,10 +1952,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 159,
     "question": "What is the role of a voltage regulator in a linear DC power supply?",
     "options": [
-      "A. To step down the AC main voltage",
-      "B. To convert AC voltage into pulsating DC voltage",
-      "C. To maintain a constant DC output voltage despite changes in input voltage or load",
-      "D. To isolate the load circuit from ground"
+      "To step down the AC main voltage",
+      "To convert AC voltage into pulsating DC voltage",
+      "To maintain a constant DC output voltage despite changes in input voltage or load",
+      "To isolate the load circuit from ground"
     ],
     "answer": 2,
     "explanation": "The voltage regulator circuit (e.g., Zener diode shunt or 78xx IC) holds the DC load voltage strictly constant despite variations in the incoming line voltage (line regulation) or changes in the load current demand (load regulation).",
@@ -1965,10 +1965,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 160,
     "question": "How many diodes are required to construct a full-wave bridge rectifier circuit?",
     "options": [
-      "A. 1",
-      "B. 2",
-      "C. 3",
-      "D. 4"
+      "1",
+      "2",
+      "3",
+      "4"
     ],
     "answer": 3,
     "explanation": "A full-wave bridge rectifier consists of 4 diodes arranged in a closed loop (bridge network). During each half-cycle, two diagonally opposite diodes conduct simultaneously in series.",
@@ -1978,10 +1978,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 161,
     "question": "How many diodes are used in a center-tapped full-wave rectifier circuit?",
     "options": [
-      "A. 1",
-      "B. 2",
-      "C. 4",
-      "D. 6"
+      "1",
+      "2",
+      "4",
+      "6"
     ],
     "answer": 1,
     "explanation": "A center-tapped full-wave rectifier requires a transformer with a secondary center tap and exactly 2 diodes, each conducting alternately during opposite half-cycles.",
@@ -1991,10 +1991,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 162,
     "question": "A transistor circuit measures a collector current I_C = 5 mA and a base current I_B = 50 µA. What is the total emitter current?",
     "options": [
-      "A. $4.95\\text{ mA}$",
-      "B. $5.00\\text{ mA}$",
-      "C. $5.05\\text{ mA}$",
-      "D. $5.50\\text{ mA}$"
+      "$4.95\\text{ mA}$",
+      "$5.00\\text{ mA}$",
+      "$5.05\\text{ mA}$",
+      "$5.50\\text{ mA}$"
     ],
     "answer": 2,
     "explanation": "By Kirchhoff's Current Law: $I_E = I_C + I_B$. Converting units: $I_B = 50\\ \\mu\\text{A} = 0.05\\text{ mA}$. Thus, $I_E = 5\\text{ mA} + 0.05\\text{ mA} = 5.05\\text{ mA}$.",
@@ -2004,10 +2004,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 163,
     "question": "If a BJT has a common-emitter current gain β = 100, what is its corresponding common-base current gain (α)?",
     "options": [
-      "A. 0.9803",
-      "B. 0.9901",
-      "C. 1.0100",
-      "D. 0.9500"
+      "0.9803",
+      "0.9901",
+      "1.0100",
+      "0.9500"
     ],
     "answer": 1,
     "explanation": "The relationship between common-emitter gain $\\beta$ and common-base gain $\\alpha$ is $\\alpha = \\frac{\\beta}{\\beta + 1} = \\frac{100}{101} \\approx 0.990099 \\approx 0.9901$.",
@@ -2017,10 +2017,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 164,
     "question": "Consider the fixed-bias circuit: V_CC = 12 V, R_B = 330 kΩ, R_C = 2 kΩ, and β = 150. Calculate the base current.",
     "options": [
-      "A. $28.52\\ \mu\text{A}$",
-      "B. $34.24\\ \mu\text{A}$",
-      "C. $36.36\\ \mu\text{A}$",
-      "D. $40.12\\ \mu\text{A}$"
+      "$28.52\\ \mu\text{A}$",
+      "$34.24\\ \mu\text{A}$",
+      "$36.36\\ \mu\text{A}$",
+      "$40.12\\ \mu\text{A}$"
     ],
     "answer": 1,
     "explanation": "In a fixed-bias circuit, the base-emitter loop equation gives $I_B = \\frac{V_{CC} - V_{BE}}{R_B} = \\frac{12\\text{ V} - 0.7\\text{ V}}{330\\text{ k}\\Omega} = \\frac{11.3\\text{ V}}{330\\times 10^3\\ \\Omega} \\approx 34.242\\ \\mu\\text{A}$.",
@@ -2030,10 +2030,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 165,
     "question": "Using the circuit parameters from Item 164 (V_CC = 12 V, R_B = 330 kΩ, R_C = 2 kΩ, β = 150), what is the collector current?",
     "options": [
-      "A. $3.42\\text{ mA}$",
-      "B. $4.85\\text{ mA}$",
-      "C. $5.14\\text{ mA}$",
-      "D. $6.20\\text{ mA}$"
+      "$3.42\\text{ mA}$",
+      "$4.85\\text{ mA}$",
+      "$5.14\\text{ mA}$",
+      "$6.20\\text{ mA}$"
     ],
     "answer": 2,
     "explanation": "With $I_B = 34.242\\ \\mu\\text{A}$ and $\\beta = 150$: $I_C = \\beta I_B = 150 \\times 34.242\\ \\mu\\text{A} = 5.136\\text{ mA} \\approx 5.14\\text{ mA}$.",
@@ -2043,10 +2043,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 166,
     "question": "A half-wave rectifier uses a single silicon diode connected to an AC source with peak voltage V_in(pk) = 10 V. What is the peak output voltage V_out across the load?",
     "options": [
-      "A. $10.0\\text{ V}$",
-      "B. $9.3\\text{ V}$",
-      "C. $8.6\\text{ V}$",
-      "D. $4.3\\text{ V}$"
+      "$10.0\\text{ V}$",
+      "$9.3\\text{ V}$",
+      "$8.6\\text{ V}$",
+      "$4.3\\text{ V}$"
     ],
     "answer": 1,
     "explanation": "Accounting for the practical 0.7 V barrier potential drop of a conducting Silicon diode: $V_{out(pk)} = V_{in(pk)} - V_D = 10\\text{ V} - 0.7\\text{ V} = 9.3\\text{ V}$.",
@@ -2056,10 +2056,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 167,
     "question": "For the half-wave output in Item 166 (peak output = 9.3 V), what is the calculated average DC output voltage?",
     "options": [
-      "A. $2.96\\text{ V}$",
-      "B. $4.65\\text{ V}$",
-      "C. $5.92\\text{ V}$",
-      "D. $6.57\\text{ V}$"
+      "$2.96\\text{ V}$",
+      "$4.65\\text{ V}$",
+      "$5.92\\text{ V}$",
+      "$6.57\\text{ V}$"
     ],
     "answer": 0,
     "explanation": "The average DC voltage of a half-wave rectified waveform is $V_{dc} = \\frac{V_{out(pk)}}{\\pi} = \\frac{9.3\\text{ V}}{\\pi} \\approx 2.9603\\text{ V} \\approx 2.96\\text{ V}$.",
@@ -2069,10 +2069,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 168,
     "question": "A transformer with a turns specification 10:1 has a primary RMS voltage of 120 Vrms. What is the secondary RMS voltage?",
     "options": [
-      "A. $1200\\text{ V}$",
-      "B. $120\\text{ V}$",
-      "C. $12\\text{ V}$",
-      "D. $1.2\\text{ V}$"
+      "$1200\\text{ V}$",
+      "$120\\text{ V}$",
+      "$12\\text{ V}$",
+      "$1.2\\text{ V}$"
     ],
     "answer": 2,
     "explanation": "A turns ratio of 10:1 ($N_1 : N_2 = 10:1$) indicates a step-down transformer where $V_2 = V_1 / 10 = 120\\text{ V} / 10 = 12\\text{ V}_{rms}$.",
@@ -2082,10 +2082,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 169,
     "question": "Refer to the following BJT operating profile: Collector-Base Junction: Reverse Biased; Base-Emitter Junction: Forward Biased; Signal Output: Amplified replica of input signal. Which region of operation does this describe?",
     "options": [
-      "A. Cutoff Region",
-      "B. Active Region",
-      "C. Saturation Region",
-      "D. Breakdown Region"
+      "Cutoff Region",
+      "Active Region",
+      "Saturation Region",
+      "Breakdown Region"
     ],
     "answer": 1,
     "explanation": "When the B-E junction is forward-biased and the C-B junction is reverse-biased, the transistor operates in the Active Region, behaving as a linear amplifier reproducing an amplified version of the input signal without clipping.",
@@ -2095,10 +2095,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 170,
     "question": "In an emitter-stabilized bias circuit, what is the correct formula for the base current I_B?",
     "options": [
-      "A. $I_B = \\frac{V_{CC} - V_{BE}}{R_B}$",
-      "B. $I_B = \\frac{V_{CC} - V_{BE}}{R_B + (\\beta + 1)R_E}$",
-      "C. $I_B = \\frac{V_{CC} - V_{BE}}{R_B + \\beta R_C}$",
-      "D. $I_B = \\frac{V_{Th} - V_{BE}}{R_{Th}}$"
+      "$I_B = \\frac{V_{CC} - V_{BE}}{R_B}$",
+      "$I_B = \\frac{V_{CC} - V_{BE}}{R_B + (\\beta + 1)R_E}$",
+      "$I_B = \\frac{V_{CC} - V_{BE}}{R_B + \\beta R_C}$",
+      "$I_B = \\frac{V_{Th} - V_{BE}}{R_{Th}}$"
     ],
     "answer": 1,
     "explanation": "Applying KVL around the base-emitter loop: $V_{CC} - I_B R_B - V_{BE} - I_E R_E = 0$. Substituting $I_E = (\\beta + 1)I_B$ and solving gives $I_B = \\frac{V_{CC} - V_{BE}}{R_B + (\\beta + 1)R_E}$.",
@@ -2108,10 +2108,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 171,
     "question": "Which set of terminal characteristics correctly describes a Common Base (CB) amplifier configuration?",
     "options": [
-      "A. High input impedance, low output impedance, current gain < 1",
-      "B. Low input impedance, high output impedance, current gain < 1",
-      "C. High input impedance, high output impedance, voltage gain ≈ 1",
-      "D. Low input impedance, low output impedance, phase inversion of 180°"
+      "High input impedance, low output impedance, current gain < 1",
+      "Low input impedance, high output impedance, current gain < 1",
+      "High input impedance, high output impedance, voltage gain ≈ 1",
+      "Low input impedance, low output impedance, phase inversion of 180°"
     ],
     "answer": 1,
     "explanation": "A Common Base amplifier has very low input impedance ($Z_{in} \\approx r_e$), very high output impedance ($Z_{out} \\approx R_C$), a current gain $\\alpha$ slightly less than 1 (current gain $< 1$), high voltage gain, and $0^\\circ$ phase shift (in-phase).",
@@ -2121,10 +2121,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 172,
     "question": "A full-wave bridge rectifier is connected to a transformer secondary providing 24 V peak. Assuming silicon diodes, what is the peak voltage across the load resistor?",
     "options": [
-      "A. $24.0\\text{ V}$",
-      "B. $23.3\\text{ V}$",
-      "C. $22.6\\text{ V}$",
-      "D. $21.2\\text{ V}$"
+      "$24.0\\text{ V}$",
+      "$23.3\\text{ V}$",
+      "$22.6\\text{ V}$",
+      "$21.2\\text{ V}$"
     ],
     "answer": 2,
     "explanation": "In a bridge rectifier, two diodes conduct in series during each half-cycle. Therefore, two barrier potential drops must be subtracted: $V_{L(pk)} = V_{sec(pk)} - 2V_D = 24\\text{ V} - 2(0.7\\text{ V}) = 24 - 1.4 = 22.6\\text{ V}$.",
@@ -2134,10 +2134,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 173,
     "question": "A center-tapped transformer delivers a total secondary peak-to-peak voltage of 100 V. What peak voltage appears across each half of the secondary with respect to the center tap?",
     "options": [
-      "A. $100\\text{ V}$",
-      "B. $50\\text{ V}$",
-      "C. $25\\text{ V}$",
-      "D. $12.5\\text{ V}$"
+      "$100\\text{ V}$",
+      "$50\\text{ V}$",
+      "$25\\text{ V}$",
+      "$12.5\\text{ V}$"
     ],
     "answer": 2,
     "explanation": "A total secondary voltage of $100\\text{ V}_{p-p}$ has a total peak voltage of $V_p = 100 / 2 = 50\\text{ V}$. The center tap splits this total peak voltage exactly in half, so the peak voltage across each half with respect to the center tap is $50\\text{ V} / 2 = 25\\text{ V}$. (Note: 50 V is the peak-to-peak voltage across each half).",
@@ -2147,10 +2147,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 174,
     "question": "What is the peak voltage of a standard sinusoidal AC line voltage rated at 220 Vrms?",
     "options": [
-      "A. $220.0\\text{ V}$",
-      "B. $311.1\\text{ V}$",
-      "C. $440.0\\text{ V}$",
-      "D. $155.6\\text{ V}$"
+      "$220.0\\text{ V}$",
+      "$311.1\\text{ V}$",
+      "$440.0\\text{ V}$",
+      "$155.6\\text{ V}$"
     ],
     "answer": 1,
     "explanation": "For a pure sinusoidal wave: $V_{peak} = \\sqrt{2} \\times V_{rms} = \\sqrt{2} \\times 220\\text{ V} \\approx 1.4142 \\times 220 \\approx 311.13\\text{ V} \\approx 311.1\\text{ V}$.",
@@ -2160,10 +2160,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 175,
     "question": "In a collector-feedback bias configuration, why does collector voltage decrease when collector current increases?",
     "options": [
-      "A. The base diode breaks down",
-      "B. Negative feedback reduces base current to stabilize the Q-point",
-      "C. Emitter resistance drops to zero",
-      "D. Transistor enters the cutoff region"
+      "The base diode breaks down",
+      "Negative feedback reduces base current to stabilize the Q-point",
+      "Emitter resistance drops to zero",
+      "Transistor enters the cutoff region"
     ],
     "answer": 1,
     "explanation": "In collector feedback, $R_B$ is connected directly to the collector. If $I_C$ increases, the voltage drop across $R_C$ increases, reducing $V_C$. Since $V_C$ supplies the base, a lower $V_C$ forces $I_B$ to decrease, which counteracts the original increase in $I_C$. This is stabilizing negative feedback.",
@@ -2173,10 +2173,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 176,
     "question": "A voltage divider bias network has V_CC = 22 V, R_1 = 39 kΩ, and R_2 = 3.9 kΩ. Calculate the Thevenin equivalent voltage (V_Th) at the base terminal.",
     "options": [
-      "A. $2.0\\text{ V}$",
-      "B. $3.9\\text{ V}$",
-      "C. $4.4\\text{ V}$",
-      "D. $10.0\\text{ V}$"
+      "$2.0\\text{ V}$",
+      "$3.9\\text{ V}$",
+      "$4.4\\text{ V}$",
+      "$10.0\\text{ V}$"
     ],
     "answer": 0,
     "explanation": "Using the voltage divider formula: $V_{Th} = V_{CC} \\times \\frac{R_2}{R_1 + R_2} = 22\\text{ V} \\times \\frac{3.9\\text{ k}\\Omega}{39\\text{ k}\\Omega + 3.9\\text{ k}\\Omega} = 22 \\times \\frac{3.9}{42.9} = 22 \\times \\frac{1}{11} = 2.0\\text{ V}$.",
@@ -2186,10 +2186,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 177,
     "question": "Consider the Voltage Divider Bias Circuit: V_CC = 22 V, R_1 = 39 kΩ, R_2 = 3.9 kΩ, R_C = 10 kΩ, R_E = 1.5 kΩ, and β = 100. Calculate the precise base current I_B.",
     "options": [
-      "A. $5.12\\ \mu\text{A}$",
-      "B. $8.38\\ \mu\text{A}$",
-      "C. $12.45\\ \mu\text{A}$",
-      "D. $15.60\\ \mu\text{A}$"
+      "$5.12\\ \mu\text{A}$",
+      "$8.38\\ \mu\text{A}$",
+      "$12.45\\ \mu\text{A}$",
+      "$15.60\\ \mu\text{A}$"
     ],
     "answer": 1,
     "explanation": "First find Thevenin values: $V_{Th} = 2.0\\text{ V}$, $R_{Th} = R_1 \\parallel R_2 = \\frac{39 \\times 3.9}{42.9} = 3.545\\text{ k}\\Omega$. Then by exact analysis: $I_B = \\frac{V_{Th} - V_{BE}}{R_{Th} + (\\beta + 1)R_E} = \\frac{2.0 - 0.7}{3.545\\text{ k}\\Omega + (101)(1.5\\text{ k}\\Omega)} = \\frac{1.3\\text{ V}}{3.545 + 151.5\\text{ k}\\Omega} = \\frac{1.3}{155.045\\text{ k}\\Omega} \\approx 8.38\\ \\mu\\text{A}$.",
@@ -2199,10 +2199,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 178,
     "question": "Using the exact circuit values from Item 177 (V_CC = 22 V, R_1 = 39 kΩ, R_2 = 3.9 kΩ, R_C = 10 kΩ, R_E = 1.5 kΩ, β = 100, I_B = 8.38 µA), calculate the collector-to-emitter voltage V_CE.",
     "options": [
-      "A. $6.82\\text{ V}$",
-      "B. $9.45\\text{ V}$",
-      "C. $12.36\\text{ V}$",
-      "D. $15.10\\text{ V}$"
+      "$6.82\\text{ V}$",
+      "$9.45\\text{ V}$",
+      "$12.36\\text{ V}$",
+      "$15.10\\text{ V}$"
     ],
     "answer": 2,
     "explanation": "$I_C = \\beta I_B = 100 \\times 8.385\\ \\mu\\text{A} = 0.8385\\text{ mA}$. $I_E = (\\beta + 1)I_B = 101 \\times 8.385\\ \\mu\\text{A} = 0.8469\\text{ mA}$. Applying KVL around collector-emitter loop: $V_{CE} = V_{CC} - I_C R_C - I_E R_E = 22 - (0.8385 \\times 10) - (0.8469 \\times 1.5) = 22 - 8.385 - 1.270 = 12.345\\text{ V} \\approx 12.36\\text{ V}$.",
@@ -2212,10 +2212,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 179,
     "question": "An emitter-stabilized bias circuit has V_CC = 15 V, R_B = 470 kΩ, R_C = 2.2 kΩ, R_E = 1.0 kΩ, and β = 100. Calculate V_CE at the DC operating point.",
     "options": [
-      "A. $4.25\\text{ V}$",
-      "B. $6.95\\text{ V}$",
-      "C. $8.53\\text{ V}$",
-      "D. $10.12\\text{ V}$"
+      "$4.25\\text{ V}$",
+      "$6.95\\text{ V}$",
+      "$8.53\\text{ V}$",
+      "$10.12\\text{ V}$"
     ],
     "answer": 1,
     "explanation": "$I_B = \\frac{V_{CC} - V_{BE}}{R_B + (\\beta + 1)R_E} = \\frac{15 - 0.7}{470\\text{ k} + 101(1.0\\text{ k})} = \\frac{14.3}{571\\text{ k}\\Omega} \\approx 25.04\\ \\mu\\text{A}$. $I_C = 100 \\times 25.04\\ \\mu\\text{A} = 2.504\\text{ mA}$; $I_E = 101 \\times 25.04\\ \\mu\\text{A} = 2.529\\text{ mA}$. $V_{CE} = 15 - I_C(2.2\\text{ k}) - I_E(1.0\\text{ k}) = 15 - 5.509 - 2.529 = 6.962\\text{ V} \\approx 6.95\\text{ V}$.",
@@ -2225,10 +2225,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 180,
     "question": "A single-phase transformer with V_pri = 220 Vrms and turns ratio n = 0.05 feeds a half-wave rectifier using a silicon diode. What is the average DC output voltage across the load?",
     "options": [
-      "A. $3.12\\text{ V}$",
-      "B. $4.73\\text{ V}$",
-      "C. $6.85\\text{ V}$",
-      "D. $9.20\\text{ V}$"
+      "$3.12\\text{ V}$",
+      "$4.73\\text{ V}$",
+      "$6.85\\text{ V}$",
+      "$9.20\\text{ V}$"
     ],
     "answer": 1,
     "explanation": "Secondary RMS voltage: $V_{sec} = 0.05 \\times 220\\text{ V} = 11\\text{ V}_{rms}$. Secondary peak voltage: $V_{p} = \\sqrt{2} \\times 11\\text{ V} = 15.556\\text{ V}$. Peak voltage across load: $V_{L(pk)} = 15.556 - 0.7 = 14.856\\text{ V}$. Average DC voltage: $V_{dc} = \\frac{V_{L(pk)}}{\\pi} = \\frac{14.856}{\\pi} \\approx 4.729\\text{ V} \\approx 4.73\\text{ V}$.",
@@ -2238,10 +2238,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 181,
     "question": "A collector-feedback bias circuit uses V_CC = 12 V, R_C = 2 kΩ, R_B = 200 kΩ, R_E = 1 kΩ, and β = 100. Calculate the base current I_B.",
     "options": [
-      "A. $18.20\\ \mu\text{A}$",
-      "B. $22.60\\ \mu\text{A}$",
-      "C. $28.40\\ \mu\text{A}$",
-      "D. $35.10\\ \mu\text{A}$"
+      "$18.20\\ \mu\text{A}$",
+      "$22.60\\ \mu\text{A}$",
+      "$28.40\\ \mu\text{A}$",
+      "$35.10\\ \mu\text{A}$"
     ],
     "answer": 1,
     "explanation": "Using the standard collector-feedback formula: $I_B = \\frac{V_{CC} - V_{BE}}{R_B + \\beta(R_C + R_E)} = \\frac{12 - 0.7}{200\\text{ k}\\Omega + 100(2\\text{ k} + 1\\text{ k})\\Omega} = \\frac{11.3\\text{ V}}{200\\text{ k} + 300\\text{ k}\\Omega} = \\frac{11.3\\text{ V}}{500\\text{ k}\\Omega} = 0.0226\\text{ mA} = 22.60\\ \\mu\\text{A}$.",
@@ -2251,10 +2251,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 182,
     "question": "A center-tapped full-wave rectifier circuit has an input peak voltage V_pri = 100 V and a transformer turns ratio n = 0.5. If silicon diodes are used, calculate the DC output voltage.",
     "options": [
-      "A. $15.47\\text{ V}$",
-      "B. $24.30\\text{ V}$",
-      "C. $30.85\\text{ V}$",
-      "D. $48.60\\text{ V}$"
+      "$15.47\\text{ V}$",
+      "$24.30\\text{ V}$",
+      "$30.85\\text{ V}$",
+      "$48.60\\text{ V}$"
     ],
     "answer": 0,
     "explanation": "Total secondary peak: $V_{sec(pk)} = 0.5 \\times 100\\text{ V} = 50\\text{ V}$. Across each half from the center tap: $V_{half(pk)} = 50\\text{ V} / 2 = 25\\text{ V}$. Peak voltage across load: $V_{L(pk)} = 25 - 0.7 = 24.30\\text{ V}$. The average DC output voltage is $V_{dc} = \\frac{2 V_{L(pk)}}{\\pi} = \\frac{2 \\times 24.30}{\\pi} = \\frac{48.60}{\\pi} \\approx 15.47\\text{ V}$. (Note: 24.30 V is peak DC voltage).",
@@ -2264,10 +2264,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 183,
     "question": "For a fixed-bias circuit with V_CC = 12 V and R_C = 1.2 kΩ, what is the collector saturation current on the DC load line?",
     "options": [
-      "A. $5.0\\text{ mA}$",
-      "B. $10.0\\text{ mA}$",
-      "C. $12.0\\text{ mA}$",
-      "D. $15.0\\text{ mA}$"
+      "$5.0\\text{ mA}$",
+      "$10.0\\text{ mA}$",
+      "$12.0\\text{ mA}$",
+      "$15.0\\text{ mA}$"
     ],
     "answer": 1,
     "explanation": "On the DC load line, saturation occurs when $V_{CE} = 0\\text{ V}$. The collector saturation current is $I_{C(sat)} = \\frac{V_{CC}}{R_C} = \\frac{12\\text{ V}}{1.2\\text{ k}\\Omega} = 10.0\\text{ mA}$.",
@@ -2277,10 +2277,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 184,
     "question": "Examine the diode configuration: An AC source of 15 Vpk feeds two silicon diodes connected in series in the same forward direction to a load resistor RL. What is the output peak voltage across RL?",
     "options": [
-      "A. $14.3\\text{ V}$",
-      "B. $13.6\\text{ V}$",
-      "C. $0.0\\text{ V}$",
-      "D. $7.5\\text{ V}$"
+      "$14.3\\text{ V}$",
+      "$13.6\\text{ V}$",
+      "$0.0\\text{ V}$",
+      "$7.5\\text{ V}$"
     ],
     "answer": 1,
     "explanation": "Because two silicon diodes are connected in series facing the same forward conducting direction, each diode drops $0.7\\text{ V}$. The total forward diode drop is $2 \\times 0.7\\text{ V} = 1.4\\text{ V}$. Output voltage across $R_L$: $V_{out} = V_{in(pk)} - 2V_D = 15\\text{ V} - 1.4\\text{ V} = 13.6\\text{ V}$. (Option A is a common error where only one diode drop is subtracted).",
@@ -2290,10 +2290,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 185,
     "question": "Why is Voltage Divider Bias preferred over Fixed Bias in high-volume production amplifier circuits?",
     "options": [
-      "A. It eliminates the need for an emitter resistor",
-      "B. Its Q-point is practically independent of transistor beta variations",
-      "C. It requires fewer total resistors to bias the transistor",
-      "D. It increases the voltage gain of the amplifier by a factor of 10"
+      "It eliminates the need for an emitter resistor",
+      "Its Q-point is practically independent of transistor beta variations",
+      "It requires fewer total resistors to bias the transistor",
+      "It increases the voltage gain of the amplifier by a factor of 10"
     ],
     "answer": 1,
     "explanation": "In mass production, individual transistor current gain ($\beta$) varies widely (e.g. from 50 to 300) even for the exact same part number. Voltage Divider Bias provides beta-independent Q-point stability provided $\beta R_E \\ge 10 R_2$, ensuring consistent bias point without trimming.",
@@ -2303,10 +2303,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 186,
     "question": "A full-wave bridge rectifier is powered by a step-down transformer (120 Vrms primary, 12 Vrms secondary). If the silicon bridge feeds a 1 kΩ load resistor, what average DC power is delivered to the load?",
     "options": [
-      "A. $49.5\\text{ mW}$",
-      "B. $98.7\\text{ mW}$",
-      "C. $142.0\\text{ mW}$",
-      "D. $210.5\\text{ mW}$"
+      "$49.5\\text{ mW}$",
+      "$98.7\\text{ mW}$",
+      "$142.0\\text{ mW}$",
+      "$210.5\\text{ mW}$"
     ],
     "answer": 1,
     "explanation": "Secondary peak: $V_{sec(pk)} = \\sqrt{2} \\times 12\\text{ V} \\approx 16.97\\text{ V}$. Peak voltage across load: $V_{L(pk)} = 16.97 - 2(0.7\\text{ V}) = 15.57\\text{ V}$. Average DC voltage: $V_{dc} = \\frac{2V_{L(pk)}}{\\pi} = \\frac{2 \\times 15.57}{\\pi} \\approx 9.912\\text{ V}$. Average DC power delivered to $R_L$: $P_{dc} = \\frac{V_{dc}^2}{R_L} = \\frac{(9.912)^2}{1000\\ \\Omega} \\approx 0.09826\\text{ W} = 98.3\\text{ mW} \\approx 98.7\\text{ mW}$.",
@@ -2316,10 +2316,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 187,
     "question": "The magnitude of the thermal voltage is approximately:",
     "options": [
-      "A. $22\\text{ mV}$",
-      "B. $23\\text{ mV}$",
-      "C. $26\\text{ mV}$",
-      "D. $25\\text{ mV}$"
+      "$22\\text{ mV}$",
+      "$23\\text{ mV}$",
+      "$26\\text{ mV}$",
+      "$25\\text{ mV}$"
     ],
     "answer": 2,
     "explanation": "\u2022 Why '26 mV' is Correct: Thermal voltage $V_T$ is defined as $V_T = \\frac{k \\cdot T}{q}$. At standard room temperature ($T = 300\\text{ K}$ or $27^\\circ\\text{C}$):\n$$V_T = \\frac{(1.38 \\times 10^{-23}\\text{ J/K})(300\\text{ K})}{1.602 \\times 10^{-19}\\text{ C}} \\approx 25.84\\text{ mV} \\approx 26\\text{ mV}$$\nThis constant appears throughout diode and transistor exponential equations.\n\u2022 Why Other Choices are Incorrect: 22 mV, 23 mV, and 25 mV are mathematically inaccurate for $T = 300\\text{ K}$."
@@ -2328,10 +2328,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 188,
     "question": "The drain of a FET is analogous to which terminal of a BJT?",
     "options": [
-      "A. collector",
-      "B. emitter",
-      "C. base",
-      "D. drain"
+      "collector",
+      "emitter",
+      "base",
+      "drain"
     ],
     "answer": 0,
     "explanation": "\u2022 Why 'collector' is Correct: In comparing BJT and FET terminals by functional carrier transport:\n1. Drain (D) $\\leftrightarrow$ Collector (C): both collect/drain the charge carriers leaving the device channel/base.\n2. Source (S) $\\leftrightarrow$ Emitter (E): both source/emit the primary charge carriers into the device.\n3. Gate (G) $\\leftrightarrow$ Base (B): both act as the control terminal modulating channel conduction.\n\u2022 Why Other Choices are Incorrect: Emitter corresponds to Source, Base corresponds to Gate, and Drain is not a BJT terminal."
@@ -2340,10 +2340,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 189,
     "question": "The output current in a FET is determined by the amount of:",
     "options": [
-      "A. input current",
-      "B. output current",
-      "C. input voltage",
-      "D. sinusoidal wave"
+      "input current",
+      "output current",
+      "input voltage",
+      "sinusoidal wave"
     ],
     "answer": 2,
     "explanation": "\u2022 Why 'input voltage' is Correct: The Field Effect Transistor is a voltage-controlled device. The output drain current ($I_D$) is governed by the electric field created by the input gate-to-source voltage ($V_{GS}$), which constricts or widens the conduction channel.\n\u2022 Why Other Choices are Incorrect: Input current controls the BJT ($I_C = \\beta I_B$). A FET's input gate is reverse-biased or insulated, so input current is practically zero ($I_G \\approx 0$)."
@@ -2352,10 +2352,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 190,
     "question": "Which of the following is not an advantage of FET over BJT?",
     "options": [
-      "A. Faster switching time",
-      "B. Temperature stability",
-      "C. Smaller",
-      "D. High gain"
+      "Faster switching time",
+      "Temperature stability",
+      "Smaller",
+      "High gain"
     ],
     "answer": 3,
     "explanation": "\u2022 Why 'High gain' is Correct: High voltage gain is an advantage of BJTs, NOT FETs. BJTs have much higher transconductance ($g_m$) than FETs, resulting in significantly larger voltage gains in standard amplifier configurations.\n\u2022 Why Other Choices are Incorrect: Faster switching time (no minority carrier storage delay), better thermal stability (negative temperature coefficient preventing thermal runaway), and smaller physical size (allowing high packing density in integrated circuits) are all well-known advantages of FETs over BJTs."
@@ -2364,10 +2364,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 191,
     "question": "The n-type and p-type classification of FETs talks about:",
     "options": [
-      "A. The electrons and holes",
-      "B. The polarity of the terminals",
-      "C. The channel's material",
-      "D. The semiconductor substrate used in manufacturing"
+      "The electrons and holes",
+      "The polarity of the terminals",
+      "The channel's material",
+      "The semiconductor substrate used in manufacturing"
     ],
     "answer": 2,
     "explanation": "\u2022 Why 'The channel\\'s material' is Correct: The classification of a FET as n-channel or p-channel refers specifically to the doping type of the semiconductor material forming the conduction channel between drain and source. An n-channel FET uses n-type material (electrons as majority carriers), while a p-channel FET uses p-type material (holes as majority carriers).\n\u2022 Note on Exam Correction: The student originally marked (D) Substrate, which was crossed out and corrected by the professor to (C) 'The channel\\'s material', as the substrate is oppositely doped from the channel."
@@ -2376,10 +2376,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 192,
     "question": "This is the specific voltage at which the channel is effectively restricted, significantly limiting current flow:",
     "options": [
-      "A. input voltage",
-      "B. pinch-off",
-      "C. pinch-off voltage",
-      "D. pinch-off current"
+      "input voltage",
+      "pinch-off",
+      "pinch-off voltage",
+      "pinch-off current"
     ],
     "answer": 2,
     "explanation": "\u2022 Why 'pinch-off voltage' is Correct: The pinch-off voltage ($V_P$ or $V_{GS(off)}$) is the specific voltage at which the depletion layers widen and meet across the channel, constricting the conduction path so that drain current saturates and cannot increase further with higher $V_{DS}$.\n\u2022 Why Other Choices are Incorrect: 'Pinch-off' describes the physical phenomenon itself, but the question explicitly asks for the 'specific voltage', which is pinch-off voltage ($V_P$)."
@@ -2388,10 +2388,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 193,
     "question": "Which region is considered as the danger zone in FETs?",
     "options": [
-      "A. cut-off",
-      "B. breakover",
-      "C. saturation",
-      "D. breakdown"
+      "cut-off",
+      "breakover",
+      "saturation",
+      "breakdown"
     ],
     "answer": 3,
     "explanation": "\u2022 Why 'breakdown' is Correct: The breakdown region is considered the danger zone in FET operation. If the drain-to-source voltage exceeds the breakdown rating ($BV_{DS}$ or $V_{(BR)DSS}$), avalanche breakdown occurs across the reverse-biased gate-drain junction, leading to excessive current surge and permanent thermal destruction of the FET.\n\u2022 Why Other Choices are Incorrect: Cut-off and saturation are standard, safe operating regions in switching and amplification circuits; breakover applies primarily to thyristors (SCRs/DIACs)."
@@ -2400,10 +2400,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 194,
     "question": "In what region does the FET act like a voltage-controlled resistor?",
     "options": [
-      "A. saturation",
-      "B. ohmic",
-      "C. cut-off",
-      "D. active"
+      "saturation",
+      "ohmic",
+      "cut-off",
+      "active"
     ],
     "answer": 1,
     "explanation": "\u2022 Why 'ohmic' is Correct: In the ohmic region (also called the linear or triode region, where $V_{DS} < V_{GS} - V_P$), the channel behaves like a linear resistor obeying Ohm's law. By varying the gate-to-source voltage ($V_{GS}$), the channel dimensions and resistance ($r_{ds}$) change, allowing the FET to function as a Voltage-Controlled Resistor (VCR).\n\u2022 Why Other Choices are Incorrect: In the saturation/active region, the channel is pinched off and drain current is constant (acting as a constant current source, not a resistor)."
@@ -2412,10 +2412,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 195,
     "question": "The Shockley's Equation for FET drain current is:",
     "options": [
-      "A. $I_D = \\left(1 - \\frac{V_{GS}}{V_P}\\right)^2$",
-      "B. $I_D = I_{DSS}\\left(1 - \\frac{V_{DS}}{V_P}\\right)^2$",
-      "C. $I_D = I_{DSS}\\left(1 - \\frac{V_P}{V_{GS}}\\right)^2$",
-      "D. $I_D = I_{DSS}\\left(1 - \\frac{V_{GS}}{V_P}\\right)^2$"
+      "$I_D = \\left(1 - \\frac{V_{GS}}{V_P}\\right)^2$",
+      "$I_D = I_{DSS}\\left(1 - \\frac{V_{DS}}{V_P}\\right)^2$",
+      "$I_D = I_{DSS}\\left(1 - \\frac{V_P}{V_{GS}}\\right)^2$",
+      "$I_D = I_{DSS}\\left(1 - \\frac{V_{GS}}{V_P}\\right)^2$"
     ],
     "answer": 3,
     "explanation": "\u2022 Why '$I_D = I_{DSS}\\left(1 - \\frac{V_{GS}}{V_P}\\right)^2$' is Correct: Shockley's equation models the transfer characteristics of JFETs and depletion-mode MOSFETs in the saturation region:\n$$I_D = I_{DSS}\\left(1 - \\frac{V_{GS}}{V_P}\\right)^2$$\nwhere $I_D$ is the drain current, $I_{DSS}$ is the drain-to-source saturation current with gate shorted to source ($V_{GS} = 0$), $V_{GS}$ is the applied gate-source bias, and $V_P$ is the pinch-off voltage ($V_{GS(off)}$)."
@@ -2424,10 +2424,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 196,
     "question": "The Shockley's Equation defines the drain current in the:",
     "options": [
-      "A. saturation region",
-      "B. ohmic region",
-      "C. cut-off region",
-      "D. active region"
+      "saturation region",
+      "ohmic region",
+      "cut-off region",
+      "active region"
     ],
     "answer": 0,
     "explanation": "\u2022 Why 'saturation region' is Correct: Shockley's equation strictly defines the drain current of JFETs and D-MOSFETs when operating in the saturation (pinch-off) region, where $V_{DS} \\ge V_{GS} - V_P$ and current is governed by the square-law control of $V_{GS}$.\n\u2022 Why Other Choices are Incorrect: In the ohmic region, $I_D$ depends on both $V_{DS}$ and $V_{GS}$; in cut-off, $I_D = 0$."
@@ -2437,10 +2437,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "question": "Based on the standard FET classification tree, what are the two main primary categories under Field Effect Transistors (FET)?",
     "image": "images/finals_quiz1_fet.png",
     "options": [
-      "A. IGFET / MOSFET and JFET",
-      "B. BJT and UJT",
-      "C. SCR and TRIAC",
-      "D. CMOS and BiCMOS"
+      "IGFET / MOSFET and JFET",
+      "BJT and UJT",
+      "SCR and TRIAC",
+      "CMOS and BiCMOS"
     ],
     "answer": 0,
     "explanation": "\u2022 Why 'IGFET / MOSFET and JFET' is Correct: As shown in the classification chart, FETs branch directly into two primary families:\n1. IGFET (Insulated Gate FET) / MOSFET (Metal-Oxide-Semiconductor FET)\n2. JFET (Junction Field Effect Transistor)"
@@ -2450,10 +2450,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "question": "In the FET classification chart, what are the two operational modes under IGFET / MOSFET?",
     "image": "images/finals_quiz1_fet.png",
     "options": [
-      "A. Depletion and Enhancement",
-      "B. Forward and Reverse",
-      "C. Linear and Exponential",
-      "D. Bipolar and Unipolar"
+      "Depletion and Enhancement",
+      "Forward and Reverse",
+      "Linear and Exponential",
+      "Bipolar and Unipolar"
     ],
     "answer": 0,
     "explanation": "\u2022 Why 'Depletion and Enhancement' is Correct: IGFETs / MOSFETs are divided into Depletion-type (D-MOSFET, which has a physical channel built in during fabrication) and Enhancement-type (E-MOSFET, which has no channel at zero gate bias and requires an induced channel)."
@@ -2463,10 +2463,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "question": "In the FET classification chart, JFETs (Junction Field Effect Transistors) are classified under which operational mode?",
     "image": "images/finals_quiz1_fet.png",
     "options": [
-      "A. Depletion",
-      "B. Enhancement",
-      "C. Both Depletion and Enhancement",
-      "D. Inversion only"
+      "Depletion",
+      "Enhancement",
+      "Both Depletion and Enhancement",
+      "Inversion only"
     ],
     "answer": 0,
     "explanation": "\u2022 Why 'Depletion' is Correct: JFETs operate exclusively in Depletion mode. A reverse bias is applied to the gate-to-channel PN junction to deplete carriers and restrict channel width. Forward bias (enhancement mode) is not used because it would cause the gate junction to conduct heavily, eliminating high input impedance."
@@ -2476,10 +2476,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "question": "Across all FET types (Depletion JFET, Depletion MOSFET, and Enhancement MOSFET), what are the two final sub-classifications for channel types?",
     "image": "images/finals_quiz1_fet.png",
     "options": [
-      "A. N-Channel and P-Channel",
-      "B. Positive-Channel and Negative-Channel",
-      "C. Anode-Channel and Cathode-Channel",
-      "D. Collector-Channel and Emitter-Channel"
+      "N-Channel and P-Channel",
+      "Positive-Channel and Negative-Channel",
+      "Anode-Channel and Cathode-Channel",
+      "Collector-Channel and Emitter-Channel"
     ],
     "answer": 0,
     "explanation": "\u2022 Why 'N-Channel and P-Channel' is Correct: Every FET branch at the bottom level of the classification tree divides into N-channel (majority carriers are electrons) and P-channel (majority carriers are holes)."
@@ -2489,10 +2489,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "question": "Which type of field-effect device has an insulated gate structure that allows operation in both Depletion and Enhancement modes?",
     "image": "images/finals_quiz1_fet.png",
     "options": [
-      "A. Depletion-type MOSFET (D-MOSFET)",
-      "B. JFET",
-      "C. Enhancement-type MOSFET (E-MOSFET)",
-      "D. Bipolar Junction Transistor"
+      "Depletion-type MOSFET (D-MOSFET)",
+      "JFET",
+      "Enhancement-type MOSFET (E-MOSFET)",
+      "Bipolar Junction Transistor"
     ],
     "answer": 0,
     "explanation": "\u2022 Why 'Depletion-type MOSFET (D-MOSFET)' is Correct: Because the gate of a MOSFET is electrically insulated from the channel by a silicon dioxide ($\\text{SiO}_2$) layer, a D-MOSFET can accept negative gate voltages (depletion mode, narrowing the channel) AND positive gate voltages (enhancement mode, attracting more electrons and widening the channel) without drawing gate current.\n\u2022 In contrast, JFETs cannot operate with forward gate bias without conducting."
@@ -4665,10 +4665,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 69,
               "question": "6.18. A 500 V, 50 Hz, single-phase alternator gives 425 V on open-circuit and 170 A on short-circuit with a field current of 15 A. The armature resistance is $0.2\\;\\Omega$. Determine the voltage regulation when the alternator delivers a rated current of 170 A at: (a) unity power factor, (b) 0.8 power factor lagging.",
               "options": [
-                  "(a) $\\text{Reg} = 15\\%$, (b) $\\text{Reg} = 34\\%$",
-                  "(a) $\\text{Reg} = 15\\%$, (b) $\\text{Reg} = 28\\%$",
-                  "(a) $\\text{Reg} = 20\\%$, (b) $\\text{Reg} = 34\\%$",
-                  "(a) $\\text{Reg} = 20\\%$, (b) $\\text{Reg} = 28\\%$"
+                  "$\\text{Reg} = 15\\%$, (b) $\\text{Reg} = 34\\%$",
+                  "$\\text{Reg} = 15\\%$, (b) $\\text{Reg} = 28\\%$",
+                  "$\\text{Reg} = 20\\%$, (b) $\\text{Reg} = 34\\%$",
+                  "$\\text{Reg} = 20\\%$, (b) $\\text{Reg} = 28\\%$"
 ],
               "answer": 0,
               "extraDistractors": [
@@ -4751,10 +4751,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 74,
               "question": "6.23. A 10 kVA, 230 V, 3-phase star-connected alternator has an effective armature resistance of $0.5\\;\\Omega$ and a synchronous reactance of $1.2\\;\\Omega/\\text{phase}$. Calculate the percentage regulation at: (a) 0.8 power factor lagging, (b) 0.8 power factor leading, (c) determine the power factor for zero regulation.",
               "options": [
-                  "(a) $\\text{Reg} = 22\\%$, (b) $\\text{Reg} = -3\\%$, (c) $\\cos\\phi = 0.87\\text{ leading}$",
-                  "(a) $\\text{Reg} = 22\\%$, (b) $\\text{Reg} = +3\\%$, (c) $\\cos\\phi = 0.87\\text{ lagging}$",
-                  "(a) $\\text{Reg} = 15\\%$, (b) $\\text{Reg} = -3\\%$, (c) $\\cos\\phi = 0.71\\text{ leading}$",
-                  "(a) $\\text{Reg} = 15\\%$, (b) $\\text{Reg} = +3\\%$, (c) $\\cos\\phi = 0.71\\text{ lagging}$"
+                  "$\\text{Reg} = 22\\%$, (b) $\\text{Reg} = -3\\%$, (c) $\\cos\\phi = 0.87\\text{ leading}$",
+                  "$\\text{Reg} = 22\\%$, (b) $\\text{Reg} = +3\\%$, (c) $\\cos\\phi = 0.87\\text{ lagging}$",
+                  "$\\text{Reg} = 15\\%$, (b) $\\text{Reg} = -3\\%$, (c) $\\cos\\phi = 0.71\\text{ leading}$",
+                  "$\\text{Reg} = 15\\%$, (b) $\\text{Reg} = +3\\%$, (c) $\\cos\\phi = 0.71\\text{ lagging}$"
 ],
               "answer": 0,
               "extraDistractors": [
@@ -4802,10 +4802,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 77,
               "question": "6.26. A 345 kVA, 6600 V, star non-salient alternator has an OCC given and SCC gives 35 A with $I_f = 50\\text{ A}$. The leakage reactance drop is 8% and $R_a \\approx 0$. Find the field current for full load at: (a) 0.8 lagging, (b) unity pf.",
               "options": [
-                  "(a) $I_f = 96\\text{ A}$, (b) $I_f = 72\\text{ A}$",
-                  "(a) $I_f = 96\\text{ A}$, (b) $I_f = 61\\text{ A}$",
-                  "(a) $I_f = 85\\text{ A}$, (b) $I_f = 72\\text{ A}$",
-                  "(a) $I_f = 85\\text{ A}$, (b) $I_f = 61\\text{ A}$"
+                  "$I_f = 96\\text{ A}$, (b) $I_f = 72\\text{ A}$",
+                  "$I_f = 96\\text{ A}$, (b) $I_f = 61\\text{ A}$",
+                  "$I_f = 85\\text{ A}$, (b) $I_f = 72\\text{ A}$",
+                  "$I_f = 85\\text{ A}$, (b) $I_f = 61\\text{ A}$"
 ],
               "answer": 0,
               "extraDistractors": [
@@ -4836,10 +4836,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 79,
               "question": "6.28. A 1000 kVA, 2000 V, 50 Hz star-connected alternator has an armature resistance of $0.2\\;\\Omega/\\text{phase}$. Test data gives $I_{\\text{sc}} = 288.7\\text{ A}$ at $I_f = 28.87\\text{ A}$, and $V_{\\text{oc}} = 1940\\text{ V}$ at $I_f = 28.87\\text{ A}$. Determine full-load percentage regulation at: (a) 0.8 lag, (b) 0.8 lead.",
               "options": [
-                  "(a) $\\text{Reg} = 35\\%$, (b) $\\text{Reg} = -3\\%$",
-                  "(a) $\\text{Reg} = 35\\%$, (b) $\\text{Reg} = +3\\%$",
-                  "(a) $\\text{Reg} = 25\\%$, (b) $\\text{Reg} = -3\\%$",
-                  "(a) $\\text{Reg} = 25\\%$, (b) $\\text{Reg} = +3\\%$"
+                  "$\\text{Reg} = 35\\%$, (b) $\\text{Reg} = -3\\%$",
+                  "$\\text{Reg} = 35\\%$, (b) $\\text{Reg} = +3\\%$",
+                  "$\\text{Reg} = 25\\%$, (b) $\\text{Reg} = -3\\%$",
+                  "$\\text{Reg} = 25\\%$, (b) $\\text{Reg} = +3\\%$"
 ],
               "answer": 0,
               "extraDistractors": [
@@ -4887,10 +4887,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 82,
               "question": "6.31. A 6-pole, 440 V, 50 Hz star alternator has a resistance between terminals of $0.4\\;\\Omega$. Determine the regulation at full-load current of 40 A at 0.8 pf lag using: (a) Synchronous impedance method, (b) MMF method, (c) Potier-triangle method.",
               "options": [
-                  "(a) $\\text{Reg} = 80\\%$, (b) $\\text{Reg} = 32\\%$, (c) $\\text{Reg} = 35\\%$",
-                  "(a) $\\text{Reg} = 80\\%$, (b) $\\text{Reg} = 22\\%$, (c) $\\text{Reg} = 25\\%$",
-                  "(a) $\\text{Reg} = 55\\%$, (b) $\\text{Reg} = 32\\%$, (c) $\\text{Reg} = 35\\%$",
-                  "(a) $\\text{Reg} = 55\\%$, (b) $\\text{Reg} = 22\\%$, (c) $\\text{Reg} = 25\\%$"
+                  "$\\text{Reg} = 80\\%$, (b) $\\text{Reg} = 32\\%$, (c) $\\text{Reg} = 35\\%$",
+                  "$\\text{Reg} = 80\\%$, (b) $\\text{Reg} = 22\\%$, (c) $\\text{Reg} = 25\\%$",
+                  "$\\text{Reg} = 55\\%$, (b) $\\text{Reg} = 32\\%$, (c) $\\text{Reg} = 35\\%$",
+                  "$\\text{Reg} = 55\\%$, (b) $\\text{Reg} = 22\\%$, (c) $\\text{Reg} = 25\\%$"
 ],
               "answer": 0,
               "extraDistractors": [
@@ -4955,10 +4955,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 86,
               "question": "8.4. A 6600 V, 3-phase, star-connected synchronous motor takes full-load current of 80 A at 0.8 power factor leading. The armature resistance is $2.2\\;\\Omega/\\text{phase}$, synchronous reactance is $22\\;\\Omega/\\text{phase}$, and stray losses are 3200 W. Determine: (a) induced line emf, (b) mechanical output power, (c) efficiency.",
               "options": [
-                  "(a) $E_L = 8594\\text{ V}$, (b) $P_{\\text{out}} = 686\\text{ kW}$, (c) $\\eta = 94\\%$",
-                  "(a) $E_L = 8594\\text{ V}$, (b) $P_{\\text{out}} = 550\\text{ kW}$, (c) $\\eta = 89\\%$",
-                  "(a) $E_L = 7240\\text{ V}$, (b) $P_{\\text{out}} = 686\\text{ kW}$, (c) $\\eta = 94\\%$",
-                  "(a) $E_L = 7240\\text{ V}$, (b) $P_{\\text{out}} = 550\\text{ kW}$, (c) $\\eta = 89\\%$"
+                  "$E_L = 8594\\text{ V}$, (b) $P_{\\text{out}} = 686\\text{ kW}$, (c) $\\eta = 94\\%$",
+                  "$E_L = 8594\\text{ V}$, (b) $P_{\\text{out}} = 550\\text{ kW}$, (c) $\\eta = 89\\%$",
+                  "$E_L = 7240\\text{ V}$, (b) $P_{\\text{out}} = 686\\text{ kW}$, (c) $\\eta = 94\\%$",
+                  "$E_L = 7240\\text{ V}$, (b) $P_{\\text{out}} = 550\\text{ kW}$, (c) $\\eta = 89\\%$"
 ],
               "answer": 0,
               "extraDistractors": [
@@ -4972,10 +4972,10 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 87,
               "question": "8.5. A 1000 kVA, 11 kV star-connected synchronous motor has $R_a = 3.5\\;\\Omega$ and $X_s = 40\\;\\Omega/\\text{phase}$. Find the induced emf and rotor retardation angle at full load for: (a) unity power factor, (b) 0.8 power factor lagging, (c) 0.8 power factor leading.",
               "options": [
-                  "(a) $E_L = 11,284\\text{ V},\\; \\delta = -19^\\circ$; (b) $E_L = 8984\\text{ V},\\; \\delta = -18^\\circ$; (c) $E_L = 13,293\\text{ V},\\; \\delta = -13^\\circ$",
-                  "(a) $E_L = 11,284\\text{ V},\\; \\delta = -19^\\circ$; (b) $E_L = 13,293\\text{ V},\\; \\delta = -13^\\circ$; (c) $E_L = 8984\\text{ V},\\; \\delta = -18^\\circ$",
-                  "(a) $E_L = 9850\\text{ V},\\; \\delta = -12^\\circ$; (b) $E_L = 7794\\text{ V},\\; \\delta = -11^\\circ$; (c) $E_L = 11,800\\text{ V},\\; \\delta = -10^\\circ$",
-                  "(a) $E_L = 9850\\text{ V},\\; \\delta = -12^\\circ$; (b) $E_L = 11,800\\text{ V},\\; \\delta = -10^\\circ$; (c) $E_L = 7794\\text{ V},\\; \\delta = -11^\\circ$"
+                  "$E_L = 11,284\\text{ V},\\; \\delta = -19^\\circ$; (b) $E_L = 8984\\text{ V},\\; \\delta = -18^\\circ$; (c) $E_L = 13,293\\text{ V},\\; \\delta = -13^\\circ$",
+                  "$E_L = 11,284\\text{ V},\\; \\delta = -19^\\circ$; (b) $E_L = 13,293\\text{ V},\\; \\delta = -13^\\circ$; (c) $E_L = 8984\\text{ V},\\; \\delta = -18^\\circ$",
+                  "$E_L = 9850\\text{ V},\\; \\delta = -12^\\circ$; (b) $E_L = 7794\\text{ V},\\; \\delta = -11^\\circ$; (c) $E_L = 11,800\\text{ V},\\; \\delta = -10^\\circ$",
+                  "$E_L = 9850\\text{ V},\\; \\delta = -12^\\circ$; (b) $E_L = 11,800\\text{ V},\\; \\delta = -10^\\circ$; (c) $E_L = 7794\\text{ V},\\; \\delta = -11^\\circ$"
 ],
               "answer": 0,
               "extraDistractors": [

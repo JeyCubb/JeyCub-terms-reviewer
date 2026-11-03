@@ -2330,6 +2330,11 @@ function updateThemeIcon(theme) {
    ========================================================================== */
 
 /* Helper to get cached jumbled options for a question */
+function cleanOptionText(text) {
+  if (text === null || text === undefined) return '';
+  return String(text).replace(/^(\(?[A-Da-d]\)?[\.\)]\s*)/, '').trim();
+}
+
 function getShuffledOptionsForQuestion(key, q) {
   if (!state.shuffledOptionsMap[key]) {
     if (!q || !q.options || !Array.isArray(q.options)) return [];
@@ -2619,7 +2624,7 @@ function renderCurrentPracticeQuestion() {
         btn.setAttribute('data-key-hint', `Press [${letter}]`);
         
         const origIdx = optObj.originalIndex;
-        const optText = optObj.text;
+        const optText = cleanOptionText(optObj.text);
 
         if (isAnswered) {
           btn.classList.add('disabled');
@@ -3174,7 +3179,7 @@ function filterAllQuestions() {
     if (q.options && Array.isArray(q.options)) {
       q.options.forEach((opt, idx) => {
         const isCorrectOpt = idx === q.answer;
-        optionsHtml += `<div class="item-opt ${isCorrectOpt ? 'correct-opt' : ''}">${String.fromCharCode(65 + idx)}. ${formatMathTypography(escapeHTML(opt))}</div>`;
+        optionsHtml += `<div class="item-opt ${isCorrectOpt ? 'correct-opt' : ''}">${String.fromCharCode(65 + idx)}. ${formatMathTypography(escapeHTML(cleanOptionText(opt)))}</div>`;
       });
     }
 
@@ -3375,7 +3380,7 @@ function downloadSubjectPdf() {
     if (q.options && q.options.length > 0) {
       optionsHtml = q.options.map((opt, oIdx) => {
         const letter = optionLetters[oIdx] || String.fromCharCode(65 + oIdx);
-        return `<div class="pdf-opt"><span class="pdf-opt-label">${letter}.</span> <span class="pdf-opt-text">${formatMathTypography(escapeHTML(opt))}</span></div>`;
+        return `<div class="pdf-opt"><span class="pdf-opt-label">${letter}.</span> <span class="pdf-opt-text">${formatMathTypography(escapeHTML(cleanOptionText(opt)))}</span></div>`;
       }).join('');
     }
 
@@ -3583,7 +3588,7 @@ if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
 
 function prepareTextForSpeech(text) {
   if (!text) return '';
-  let s = String(text);
+  let s = cleanOptionText(String(text));
 
   // Replace blanks (e.g. ______ or ___ or __________) with "blank"
   s = s.replace(/_{2,}/g, ' blank ');
