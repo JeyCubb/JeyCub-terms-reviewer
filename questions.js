@@ -1332,8 +1332,7 @@ var SUBJECT_DATA = {  basic_electronics: {
   },
   {
     "id": 111,
-    "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Zener Diode?",
-    "image": "images/diode_symbols.png",
+    "question": "Which schematic symbol represents a Zener Diode?",
     "options": [
       "Diode with a bent 'Z' cathode bar",
       "Diode with two outward-pointing arrows",
@@ -1345,8 +1344,7 @@ var SUBJECT_DATA = {  basic_electronics: {
   },
   {
     "id": 112,
-    "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Light-Emitting Diode (LED)?",
-    "image": "images/diode_symbols.png",
+    "question": "Which schematic symbol represents a Light-Emitting Diode (LED)?",
     "options": [
       "Diode with two outward-pointing arrows",
       "Diode with two inward-pointing arrows",
@@ -1358,8 +1356,7 @@ var SUBJECT_DATA = {  basic_electronics: {
   },
   {
     "id": 113,
-    "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Photo Diode?",
-    "image": "images/diode_symbols.png",
+    "question": "Which schematic symbol represents a Photo Diode?",
     "options": [
       "Diode with two inward-pointing arrows",
       "Diode with two outward-pointing arrows",
@@ -1371,8 +1368,7 @@ var SUBJECT_DATA = {  basic_electronics: {
   },
   {
     "id": 114,
-    "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Schottky Diode?",
-    "image": "images/diode_symbols.png",
+    "question": "Which schematic symbol represents a Schottky Diode?",
     "options": [
       "Diode with S-shaped bent cathode bar",
       "Diode with bent 'Z' cathode bar",
@@ -1384,8 +1380,7 @@ var SUBJECT_DATA = {  basic_electronics: {
   },
   {
     "id": 115,
-    "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Tunnel Diode?",
-    "image": "images/diode_symbols.png",
+    "question": "Which schematic symbol represents a Tunnel Diode?",
     "options": [
       "Diode with bracket-shaped cathode bar",
       "Diode with S-shaped bent cathode bar",
@@ -1397,8 +1392,7 @@ var SUBJECT_DATA = {  basic_electronics: {
   },
   {
     "id": 116,
-    "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Varicap (Varactor) Diode?",
-    "image": "images/diode_symbols.png",
+    "question": "Which schematic symbol represents a Varicap (Varactor) Diode?",
     "options": [
       "Diode with parallel capacitor lines at cathode",
       "Diode with two outward-pointing arrows",
