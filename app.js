@@ -414,8 +414,7 @@ function getFilteredPracticeQuestions() {
     return allQs.filter(q => q.id >= 1 && q.id <= 116);
   } else if (state.practiceFilter === 'prelim_exam') {
     return allQs.filter(q => q.id >= 117 && q.id <= 136);
-  } else if (state.practiceFilter === 'seatwork2_bjt') {
-    return allQs.filter(q => q.id >= 137 && q.id <= 143);
+
   } else if (state.practiceFilter === 'test8_vessels') {
     return allQs.filter(q => q.id >= 151 && q.id <= 195);
   } else if (state.practiceFilter === 'test5_shaftings') {
@@ -733,8 +732,7 @@ function triggerOptionSelection(displayedIdx) {
 const SUBJECT_FILTERS = {
   basic_electronics: [
     { value: 'semiconductors_diodes', id: 'opt-filter-semi-diodes', label: '🔬 Semiconductors & Diodes (Q1–Q116)' },
-    { value: 'prelim_exam', id: 'opt-filter-prelim', label: '📝 TIP Prelim Exam (Q117–Q136)' },
-    { value: 'seatwork2_bjt', id: 'opt-filter-seatwork2', label: '📝 Canvas Midterm Seatwork 2: BJT (Q137–Q143)' }
+    { value: 'prelim_exam', id: 'opt-filter-prelim', label: '📝 TIP Prelim Exam (Q117–Q136)' }
   ],
   deformable_bodies: [
     { value: 'test8_vessels', id: 'opt-filter-test8', label: '⚓ Test 8: Vessels & Wire Ropes (Q151–Q195)' },

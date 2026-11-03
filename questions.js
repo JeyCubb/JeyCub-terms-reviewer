@@ -10,1742 +10,1645 @@ var SUBJECT_DATA = {  basic_electronics: {
     title: "Basic Electronics",
     chapter: "ECE 005 - Complete Reviewer (Prelim & Midterm)",
     questions: [
-      {
-            "id": 1,
-            "question": "What is the name of Niels Bohr's 1913 atomic model?",
-            "options": [
-                  "Solid Sphere Model",
-                  "Plum Pudding Model",
-                  "Nuclear Model",
-                  "Planetary Model"
-            ],
-            "answer": 3,
-            "explanation": "\u2022 Why 'Planetary Model' is Correct: Niels Bohr proposed the Planetary Model in 1913, in which electrons orbit a dense positive nucleus in discrete energy levels, similar to planets orbiting the sun.\n\u2022 Why Other Choices are Incorrect: Dalton proposed the Solid Sphere Model (1803), Thomson proposed the Plum Pudding Model (1897), and Rutherford proposed the Nuclear Model (1911)."
-      },
-      {
-            "id": 2,
-            "question": "Which of the following best defines a semiconductor?",
-            "options": [
-                  "Zero electrical resistance at standard room temperature and pressure",
-                  "Conductivity between a good conductor and an insulator",
-                  "Complete blockage of electrical current conduction under all bias voltages",
-                  "Conduction carried exclusively by trivalent positive metallic ions"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'A material having electrical conductivity between a good conductor and an insulator' is Correct: Semiconductors are a special class of elements whose conductivity lies between conductors (like copper) and insulators (like rubber).\n\u2022 Why Other Choices are Incorrect: Superconductors have zero resistance, while insulators completely block current."
-      },
-      {
-            "id": 3,
-            "question": "How many valence electrons does a pure semiconductor atom (such as Silicon or Germanium) have?",
-            "options": [
-                  "2",
-                  "3",
-                  "4",
-                  "5"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why '4' is Correct: Pure semiconductor atoms like Silicon (Si) and Germanium (Ge) belong to Group IV of the periodic table and have 4 valence electrons (tetravalent).\n\u2022 Why Other Choices are Incorrect: Trivalent elements have 3 valence electrons (acceptors like Boron), while pentavalent elements have 5 valence electrons (donors like Phosphorus)."
-      },
-      {
-            "id": 4,
-            "question": "What is the term for a pure semiconductor that has not been subjected to doping?",
-            "options": [
-                  "Extrinsic semiconductor",
-                  "Intrinsic semiconductor",
-                  "N-type semiconductor",
-                  "P-type semiconductor"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Intrinsic semiconductor' is Correct: An intrinsic semiconductor is an pure, un-doped semiconductor crystal where thermal excitation alone creates equal numbers of free electrons and holes.\n\u2022 Why Other Choices are Incorrect: Extrinsic semiconductors are semiconductors that have been intentionally doped with impurities to form N-type or P-type materials."
-      },
-      {
-            "id": 5,
-            "question": "Calculate the loop current (I) in a forward-biased diode circuit using the Third Approximation (Piecewise Approximation). Given: Supply Voltage = 10 V, Silicon Diode (V_B = 0.7 V, internal resistance R_B = 0.2 \u03a9), and Load Resistor R_L = 1 k\u03a9 (1000 \u03a9).",
-            "options": [
-                  "9.300 mA",
-                  "9.298 mA",
-                  "10.00 mA",
-                  "9.600 mA"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why '9.298 mA' is Correct: In the Third Approximation, I = (V_S - V_B) / (R_L + R_B) = (10 V - 0.7 V) / (1000 \u03a9 + 0.2 \u03a9) = 9.3 V / 1000.2 \u03a9 = 0.00929814 A = 9.298 mA.\n\u2022 Why Other Choices are Incorrect: 9.300 mA is obtained using the Second Approximation (ignoring internal resistance R_B = 0.2 \u03a9), and 10.00 mA is obtained using the First (Ideal) Approximation."
-      },
-      {
-            "id": 6,
-            "question": "Who discovered static electricity in ancient times by rubbing amber against fur?",
-            "options": [
-                  "Ancient Egyptians",
-                  "Ancient Greeks",
-                  "Romans",
-                  "Babylonians"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Ancient Greeks' is Correct: The ancient Greeks discovered static electricity when rubbing amber (Greek: elektron) against fur attracted light objects.\n\u2022 Why Other Choices are Incorrect: Ancient Egyptians utilized electric fish to alleviate pain, but did not discover amber static electricity."
-      },
-      {
-            "id": 7,
-            "question": "The Leyden jar, invented in 1745, was a landmark historical device because it was capable of:",
-            "options": [
-                  "Generating alternating current",
-                  "Storing an electric charge",
-                  "Measuring magnetic flux",
-                  "Amplifying radio signals"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Storing an electric charge' is Correct: The Leyden jar (1745) was the earliest form of a capacitor, designed to store static electrical charge.\n\u2022 Why Other Choices are Incorrect: Generators produce AC, magnetometers measure flux, and vacuum tubes/transistors amplify signals."
-      },
-      {
-            "id": 8,
-            "question": "In 1820, Hans Christian Oersted discovered which foundational physical phenomenon?",
-            "options": [
-                  "Photoelectric effect",
-                  "Electromagnetism",
-                  "Thermionic emission",
-                  "Quantum entanglement"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Electromagnetism' is Correct: Oersted noticed a compass needle deflected near a current-carrying wire in 1820, establishing the field of electromagnetism.\n\u2022 Why Other Choices are Incorrect: Faraday discovered induction (1831), Edison discovered thermionic emission (1883), and Einstein explained photoelectric effect (1905)."
-      },
-      {
-            "id": 9,
-            "question": "Michael Faraday's discovery of electromagnetic induction in 1831 led directly to the development of:",
-            "options": [
-                  "Electric motors and generators",
-                  "Vacuum tubes",
-                  "Microprocessors",
-                  "Leyden jars"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Electric motors and generators' is Correct: Faraday showed that a changing magnetic field induces an electric current, enabling mechanical-to-electrical energy conversion in electric generators.\n\u2022 Why Other Choices are Incorrect: Vacuum tubes were invented by Fleming (1904), microprocessors by Intel (1971), and Leyden jars in 1745."
-      },
-      {
-            "id": 10,
-            "question": "Who invented the first vacuum tube (diode / Fleming valve) in 1904?",
-            "options": [
-                  "Thomas Edison",
-                  "John Ambrose Fleming",
-                  "Lee de Forest",
-                  "Nikola Tesla"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'John Ambrose Fleming' is Correct: John Ambrose Fleming invented the two-electrode thermionic vacuum tube (diode valve) in 1904 based on the Edison effect.\n\u2022 Why Other Choices are Incorrect: Thomas Edison discovered the Edison effect (1883), Lee de Forest added a grid to create the triode (1906), and Tesla pioneered AC power."
-      },
-      {
-            "id": 11,
-            "question": "The transistor was invented in 1947 at Bell Laboratories by which team of scientists?",
-            "options": [
-                  "Jack Kilby, Robert Noyce, and Ted Hoff",
-                  "John Bardeen, Walter Brattain, and William Shockley",
-                  "Thomas Edison, Nikola Tesla, and Alexander Graham Bell",
-                  "J.J. Thomson, Ernest Rutherford, and Niels Bohr"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'John Bardeen, Walter Brattain, and William Shockley' is Correct: Bardeen, Brattain, and Shockley co-invented the point-contact and junction transistor at Bell Labs in December 1947.\n\u2022 Why Other Choices are Incorrect: Kilby, Noyce, and Hoff developed integrated circuits and microprocessors."
-      },
-      {
-            "id": 12,
-            "question": "Integrated Circuits (ICs) were independently invented in the late 1950s by:",
-            "options": [
-                  "Jack Kilby and Robert Noyce",
-                  "John Bardeen and Walter Brattain",
-                  "Ted Hoff and Federico Faggin",
-                  "John Ambrose Fleming and Lee de Forest"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Jack Kilby and Robert Noyce' is Correct: Jack Kilby (Texas Instruments) and Robert Noyce (Fairchild Semiconductor) independently invented planar integrated circuits in 1958-1959.\n\u2022 Why Other Choices are Incorrect: Bardeen & Brattain invented the transistor; Hoff & Faggin created the Intel 4004 microprocessor."
-      },
-      {
-            "id": 13,
-            "question": "Which atomic model introduced the concept of electrons embedded in a positively charged sphere, known as the 'Plum Pudding Model'?",
-            "options": [
-                  "John Dalton (1803)",
-                  "J.J. Thomson (1897)",
-                  "Ernest Rutherford (1911)",
-                  "Erwin Schr\u00f6dinger (1926)"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'J.J. Thomson (1897)' is Correct: J.J. Thomson discovered the electron in 1897 and proposed the Plum Pudding Model, where negative electrons were embedded in a positive sphere.\n\u2022 Why Other Choices are Incorrect: Dalton proposed solid sphere, Rutherford proposed nuclear model, and Schr\u00f6dinger developed the quantum wave model."
-      },
-      {
-            "id": 14,
-            "question": "Erwin Schr\u00f6dinger's 1926 contribution to atomic theory is known as the:",
-            "options": [
-                  "Solid Sphere Model",
-                  "Nuclear Model",
-                  "Planetary Model",
-                  "Quantum Model"
-            ],
-            "answer": 3,
-            "explanation": "\u2022 Why 'Quantum Model' is Correct: Schr\u00f6dinger formulated wave mechanics in 1926, defining electron positions probabilistically in 3D electron clouds (orbitals).\n\u2022 Why Other Choices are Incorrect: Dalton (solid sphere), Rutherford (nuclear), and Bohr (planetary) were earlier classical models."
-      },
-      {
-            "id": 15,
-            "question": "Which of the following is a key advantage of Silicon over Germanium in semiconductor device manufacturing?",
-            "options": [
-                  "Higher reverse leakage current and lower thermal breakdown threshold",
-                  "Higher thermal stability and lower reverse leakage current",
-                  "Lower forward barrier voltage of 0.1 V requiring less turn-on energy",
-                  "Greater sensitivity to ambient temperature variations than Germanium"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Silicon is thermally stable, more abundant, cost-effective, and has low leakage current' is Correct: Silicon (Si) outperforms Germanium (Ge) because Si handles higher operating temperatures, has lower reverse leakage current, and is abundant in sand (SiO2).\n\u2022 Why Other Choices are Incorrect: Germanium is temperature sensitive, expensive, less abundant, and has high leakage current."
-      },
-      {
-            "id": 16,
-            "question": "What are the typical forward barrier (knee) voltages for Germanium (Ge) and Silicon (Si) diodes at room temperature?",
-            "options": [
-                  "Germanium = 0.7 V, Silicon = 0.3 V",
-                  "Germanium = 0.3 V, Silicon = 0.7 V",
-                  "Germanium = 1.1 V, Silicon = 1.5 V",
-                  "Germanium = 0.0 V, Silicon = 0.0 V"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Germanium = 0.3 V, Silicon = 0.7 V' is Correct: At 25 \u00b0C, a Germanium PN junction requires approx 0.3 V to turn on in forward bias, while Silicon requires approx 0.7 V.\n\u2022 Why Other Choices are Incorrect: Reversing the values is a common mistake; Ge has smaller bandgap energy than Si."
-      },
-      {
-            "id": 17,
-            "question": "Which of the following is an example of a Compound Semiconductor?",
-            "options": [
-                  "Silicon (Si)",
-                  "Germanium (Ge)",
-                  "Gallium Arsenide (GaAs)",
-                  "Carbon (C)"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why 'Gallium Arsenide (GaAs)' is Correct: Gallium Arsenide (GaAs) and Cadmium Sulfide (CdS) are compound semiconductors formed by combining elements from different periodic table groups.\n\u2022 Why Other Choices are Incorrect: Silicon and Germanium are single-crystal elemental semiconductors."
-      },
-      {
-            "id": 18,
-            "question": "What type of chemical bonding is formed between semiconductor atoms in a crystal lattice by sharing valence electrons?",
-            "options": [
-                  "Ionic bonding",
-                  "Covalent bonding",
-                  "Metallic bonding",
-                  "Hydrogen bonding"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Covalent bonding' is Correct: Semiconductor atoms achieve an 8-electron stable valence octet by sharing valence electrons with four neighboring atoms in covalent bonds.\n\u2022 Why Other Choices are Incorrect: Ionic bonds involve complete electron transfer, while metallic bonds feature a sea of delocalized electrons."
-      },
-      {
-            "id": 19,
-            "question": "Adding donor impurities (such as Phosphorus or Arsenic) to an intrinsic semiconductor produces which type of material?",
-            "options": [
-                  "P-type semiconductor with excess holes",
-                  "N-type semiconductor with excess free electrons",
-                  "Insulator with high resistance",
-                  "Superconductor"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'N-type semiconductor with excess free electrons' is Correct: Pentavalent donor atoms (5 valence electrons) donate extra free electrons, creating an N-type (negative carrier) semiconductor.\n\u2022 Why Other Choices are Incorrect: Acceptor impurities (trivalent like Boron) produce P-type semiconductors with excess holes."
-      },
-      {
-            "id": 20,
-            "question": "In a P-type semiconductor, which charge carriers are the majority carriers and minority carriers?",
-            "options": [
-                  "Majority: Electrons, Minority: Holes",
-                  "Majority: Holes, Minority: Electrons",
-                  "Majority: Positive Ions, Minority: Negative Ions",
-                  "Majority: Photons, Minority: Neutrons"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Majority: Holes, Minority: Electrons' is Correct: P-type semiconductors are doped with trivalent acceptors (Boron), creating a abundance of positive holes (majority carriers) and few thermally generated electrons (minority carriers).\n\u2022 Why Other Choices are Incorrect: N-type materials have electrons as majority carriers and holes as minority carriers."
-      },
-      {
-            "id": 21,
-            "question": "In the First (Ideal) Approximation of a diode, how does the diode behave under forward bias and reverse bias conditions?",
-            "options": [
-                  "Open switch (forward); Closed switch (reverse)",
-                  "Closed switch (forward); Open switch (reverse)",
-                  "0.7 V battery source; High-value parallel resistor",
-                  "Variable dynamic capacitor; Constant inducting coil"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Forward bias: Closed switch (0 V drop); Reverse bias: Open switch (0 current)' is Correct: The Ideal (First) Approximation treats the diode as a perfect binary switch with zero forward voltage drop when ON and zero leakage current when OFF.\n\u2022 Why Other Choices are Incorrect: 0.7 V battery model corresponds to the Practical (Second) Approximation."
-      },
-      {
-            "id": 22,
-            "question": "In the Second (Practical) Approximation, a forward-biased diode is modeled as a switch in series with a:",
-            "options": [
-                  "Variable dynamic series resistance",
-                  "Constant voltage battery of 0.7 V",
-                  "Parallel junction storage capacitor",
-                  "Constant current saturation source"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Constant voltage battery (V_B = 0.7 V for Si)' is Correct: The Second Approximation accounts for barrier potential by modeling the diode as a switch in series with an opposing DC battery equal to the barrier voltage (0.7 V for Si, 0.3 V for Ge).\n\u2022 Why Other Choices are Incorrect: Adding a bulk resistor corresponds to the Third (Piecewise) Approximation."
-      },
-      {
-            "id": 23,
-            "question": "What is the region near the PN junction called where free electrons and holes recombine, leaving unneutralized donor and acceptor ions?",
-            "options": [
-                  "Conduction region",
-                  "Depletion region",
-                  "Saturation region",
-                  "Substrate region"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Depletion region' is Correct: When a PN junction is formed, mobile charge carriers diffuse across and recombine, depleting the junction of free carriers and forming a depletion region of fixed ions.\n\u2022 Why Other Choices are Incorrect: Conduction region refers to energy bands, while saturation region refers to transistor operation."
-      },
-      {
-            "id": 24,
-            "question": "Under Reverse-Bias conditions, what happens to the depletion region width of a PN junction diode?",
-            "options": [
-                  "Shrinks to zero, enabling unrestricted electron flow",
-                  "Widens, increasing internal barrier potential",
-                  "Remains completely unchanged across all reverse voltages",
-                  "Converts immediately into a low-resistance ohmic conductor"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'It widens, increasing the internal barrier potential' is Correct: Reverse bias pulls majority carriers away from the PN junction, widening the depletion layer and preventing forward current flow.\n\u2022 Why Other Choices are Incorrect: Forward bias shrinks the depletion region width."
-      },
-      {
-            "id": 25,
-            "question": "Which diode approximation incorporates the diode's internal bulk resistance (R_B) in series with the barrier voltage battery and switch?",
-            "options": [
-                  "First (Ideal) Approximation",
-                  "Second (Practical) Approximation",
-                  "Third (Piecewise Linear) Approximation",
-                  "Fourth (Small-Signal) Approximation"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why 'Third (Piecewise Linear) Approximation' is Correct: The Third Approximation includes the internal bulk resistance of the semiconductor material (R_B) in series with the barrier battery (V_B) and switch.\n\u2022 Why Other Choices are Incorrect: First approximation has no voltage drop or resistance; Second approximation includes barrier voltage V_B but assumes R_B = 0."
-      },
-
-      {
-            "id": 26,
-            "question": "Which scientist and inventor is famous for discovering and pioneering Alternating Current (AC) power transmission systems?",
-            "options": [
-                  "Nikola Tesla",
-                  "Alessandro Volta",
-                  "Thomas Edison",
-                  "James Clerk Maxwell"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Nikola Tesla' is Correct: Nikola Tesla pioneered polyphase Alternating Current (AC) power systems, AC induction motors, and high-voltage AC transmission lines.\n\u2022 Why Other Choices are Incorrect: Alessandro Volta invented the battery, Thomas Edison advocated for Direct Current (DC), and Maxwell formulated electromagnetic theory."
-      },
-      {
-            "id": 27,
-            "question": "Who invented the first practical battery (the Voltaic Pile) in 1800, providing the world with its first source of continuous direct electric current?",
-            "options": [
-                  "Guglielmo Marconi",
-                  "Alessandro Volta",
-                  "Samuel Morse",
-                  "Michael Faraday"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Alessandro Volta' is Correct: Alessandro Volta created the Voltaic Pile in 1800 (alternating discs of zinc and copper separated by brine-soaked cloth), producing the first chemical battery.\n\u2022 Why Other Choices are Incorrect: Marconi pioneered wireless radio, Morse developed telegraphy, and Faraday discovered electromagnetic induction."
-      },
-      {
-            "id": 28,
-            "question": "Who is credited with pioneering work in long-distance radio transmission and developing practical wireless telegraphy?",
-            "options": [
-                  "Tim Berners-Lee",
-                  "Jack Kilby",
-                  "Guglielmo Marconi",
-                  "Alexander Graham Bell"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why 'Guglielmo Marconi' is Correct: Guglielmo Marconi sent the first transatlantic radio signal in 1901 and won the Nobel Prize for pioneering wireless radio communication.\n\u2022 Why Other Choices are Incorrect: Tim Berners-Lee created the World Wide Web, Jack Kilby co-invented the integrated circuit, and Bell invented the telephone."
-      },
-      {
-            "id": 29,
-            "question": "Which theoretical physicist is renowned for the formulation of classical electromagnetic theory (Maxwell's Equations), unifying electricity, magnetism, and light?",
-            "options": [
-                  "James Clerk Maxwell",
-                  "Nikola Tesla",
-                  "Samuel Morse",
-                  "Heinrich Hertz"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'James Clerk Maxwell' is Correct: James Clerk Maxwell published his four unified field equations in 1865, proving that light is an electromagnetic wave.\n\u2022 Why Other Choices are Incorrect: Tesla pioneered AC power systems, Morse invented single-wire telegraphy, and Hertz experimentally demonstrated radio waves."
-      },
-      {
-            "id": 30,
-            "question": "Jack Kilby and Robert Noyce are celebrated in electronics history for which revolutionary breakthrough in the late 1950s?",
-            "options": [
-                  "Discovery of thermionic emission",
-                  "Introduction of the Integrated Circuit",
-                  "Development of the World Wide Web",
-                  "Invention of the single-wire electric telegraph"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Introduction of the Integrated Circuit' is Correct: Jack Kilby (Texas Instruments) and Robert Noyce (Fairchild Semiconductor) independently invented the Integrated Circuit (IC), fabricating complete circuits on a single semiconductor chip.\n\u2022 Why Other Choices are Incorrect: Edison discovered thermionic emission, Berners-Lee created WWW, and Morse invented the telegraph."
-      },
-      {
-            "id": 31,
-            "question": "Which computer scientist is renowned for the development of the World Wide Web (WWW) in 1989 while working at CERN?",
-            "options": [
-                  "Alan Turing",
-                  "Tim Berners-Lee",
-                  "Steve Wozniak",
-                  "Dennis Ritchie"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Tim Berners-Lee' is Correct: Sir Tim Berners-Lee invented the World Wide Web (WWW), HTML, HTTP, and the first browser at CERN in 1989.\n\u2022 Why Other Choices are Incorrect: Alan Turing developed theoretical computer science, Wozniak co-founded Apple, and Ritchie created C/Unix."
-      },
-      {
-            "id": 32,
-            "question": "Who developed the first successful single-wire electric telegraph and co-created the dot-and-dash signaling code named after him?",
-            "options": [
-                  "Samuel Morse",
-                  "Alexander Graham Bell",
-                  "Guglielmo Marconi",
-                  "Thomas Edison"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Samuel Morse' is Correct: Samuel Morse patented the single-wire electric telegraph in 1837 and created Morse Code for long-distance telecommunication.\n\u2022 Why Other Choices are Incorrect: Bell invented the telephone, Marconi developed radio transmission, and Edison invented the incandescent bulb."
-      },
-      {
-            "id": 33,
-            "question": "In a review matching historical pioneers with their legacies, which of the following pairings is INCORRECT?",
-            "options": [
-                  "Alessandro Volta \u2014 First Practical Battery",
-                  "Guglielmo Marconi \u2014 Pioneering work in wireless radio transmission",
-                  "Tim Berners-Lee \u2014 Development of the World Wide Web",
-                  "Nikola Tesla \u2014 Invention of the vacuum tube Fleming valve"
-            ],
-            "answer": 3,
-            "explanation": "\u2022 Why 'Nikola Tesla \u2014 Invention of the vacuum tube Fleming valve' is Correct (as the INCORRECT match): The vacuum tube (Fleming valve) was invented by John Ambrose Fleming in 1904. Nikola Tesla is famous for discovering and pioneering Alternating Current (AC) power systems.\n\u2022 Why Other Choices are Valid Matches: Volta created the first battery (1800), Marconi pioneered radio, and Berners-Lee invented the World Wide Web (1989)."
-      },
-
-      {
-            "id": 34,
-            "question": "What is the unique structural construction of a Schottky diode compared to a traditional Positive-Negative (PN) junction diode?",
-            "options": [
-                  "It joins a metal Anode to an N-type semiconductor Cathode with no P-type material",
-                  "It joins a P-type semiconductor to a metal Cathode",
-                  "It consists of two intrinsic semiconductor layers without any metal contact",
-                  "It combines three alternating layers of P-type and N-type materials"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'It joins a metal Anode to an N-type semiconductor Cathode with no P-type material' is Correct: A Schottky diode is a metal-semiconductor junction formed by bonding a metal (like gold, silver, or platinum) as the Anode to an N-type silicon Cathode, completely omitting P-type semiconductor material.\n\u2022 Why Other Choices are Incorrect: Traditional diodes use P-N semiconductor junctions; Schottky diodes rely on metal-N semiconductor junctions."
-      },
-      {
-            "id": 35,
-            "question": "What is the typical forward voltage drop across a Schottky diode when conducting current?",
-            "options": [
-                  "0.15 V to 0.45 V",
-                  "0.60 V to 0.70 V",
-                  "1.20 V to 1.50 V",
-                  "2.00 V to 3.00 V"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why '0.15 V to 0.45 V' is Correct: The metal-semiconductor Schottky barrier potential is significantly lower than a standard PN junction, resulting in a low forward voltage drop of 0.15 V to 0.45 V.\n\u2022 Why Other Choices are Incorrect: Standard silicon PN diodes have a 0.6 V \u2013 0.7 V drop, while Light-Emitting Diodes (LEDs) require 1.5 V \u2013 3.0 V."
-      },
-      {
-            "id": 36,
-            "question": "Why do Schottky diodes exhibit extremely fast switching speeds with virtually zero reverse recovery time?",
-            "options": [
-                  "Conduction involves only majority carriers without minority carrier storage",
-                  "Because they operate using high thermal dissipation",
-                  "Because they possess a thick depletion region that stores positive holes",
-                  "Because they rely on mechanical switch contacts"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Conduction involves only majority carriers without minority carrier storage' is Correct: In Schottky diodes, current is carried almost exclusively by majority carriers (electrons). Since there are no stored minority carriers to clear out during turn-off, reverse recovery time is negligible (a few nanoseconds).\n\u2022 Why Other Choices are Incorrect: Standard PN diodes suffer from slow switching due to minority carrier storage in the depletion region."
-      },
-      {
-            "id": 37,
-            "question": "Which of the following is a main limitation or disadvantage of a Schottky diode compared to a standard Silicon PN junction diode?",
-            "options": [
-                  "Higher reverse leakage and lower breakdown voltage",
-                  "Sluggish switching speed during high-frequency cycles",
-                  "Excessive forward barrier voltage drop exceeding 1.5 V",
-                  "Total inability to conduct forward majority carrier current"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Higher reverse leakage current and lower reverse breakdown voltage' is Correct: Because of the thin metal barrier, Schottky diodes experience higher reverse leakage current and lower reverse breakdown voltages, making them unsuitable for high-voltage circuits.\n\u2022 Why Other Choices are Incorrect: Schottky diodes excel in fast switching speed and low forward voltage drop."
-      },
-      {
-            "id": 38,
-            "question": "In a forward-biased Schottky diode, what is the direction of conventional current flow?",
-            "options": [
-                  "Metal Anode to N-type semiconductor Cathode",
-                  "N-type semiconductor Cathode to metal Anode",
-                  "External Cathode terminal to external Anode",
-                  "Zero current conduction in either direction"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'From the metal Anode to the N-type semiconductor Cathode' is Correct: Forward bias connects the positive terminal to the Metal (Anode) and negative to N-type (Cathode), directing conventional current from Metal to N-type semiconductor.\n\u2022 Why Other Choices are Incorrect: Electron flow is in the opposite direction (N-type to Metal)."
-      },
-      {
-            "id": 39,
-            "question": "Which electronic system widely uses Schottky diodes due to their high efficiency and fast switching capabilities?",
-            "options": [
-                  "Smartphone chargers and laptop power bricks",
-                  "High-voltage AC overhead transmission power networks",
-                  "Incandescent lamp tungsten filaments and heater units",
-                  "Cathode ray tube high-voltage electron gun assemblies"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Smartphone chargers, laptop power bricks, and computer motherboards' is Correct: Low forward voltage drop and fast switching speed minimize power loss and heat, making Schottky diodes ideal for high-frequency switch-mode power supplies and digital chargers.\n\u2022 Why Other Choices are Incorrect: High-voltage AC lines require high-breakdown silicon rectifiers, not Schottky diodes."
-      },
-      {
-            "id": 40,
-            "question": "Unlike a standard PN junction diode, a Zener diode is specifically designed and heavily doped to operate safely in which region?",
-            "options": [
-                  "Reverse-Bias breakdown region",
-                  "Forward-bias saturation region",
-                  "Cut-off region only",
-                  "Thermal breakdown destruction region"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Reverse-Bias breakdown region' is Correct: Zener diodes are manufactured with heavy doping to operate continuously and safely in reverse breakdown without causing permanent device damage.\n\u2022 Why Other Choices are Incorrect: Standard diodes overheat and fail if driven into reverse breakdown; Zener diodes are designed for it."
-      },
-      {
-            "id": 41,
-            "question": "What key electrical characteristic makes Zener diodes ideal for voltage regulation circuits?",
-            "options": [
-                  "Constant reverse breakdown voltage",
-                  "Linearly increasing voltage with rising current",
-                  "Complete current blockage under both polarities",
-                  "High-frequency sinusoidal oscillation output"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Maintaining a nearly constant voltage (Zener voltage V_Z) across its terminals during reverse breakdown' is Correct: Once the reverse breakdown voltage (Zener Voltage V_Z) is reached, the voltage across the Zener diode remains virtually constant even as reverse current varies widely.\n\u2022 Why Other Choices are Incorrect: Resistors and standard components change voltage with current, unlike Zener regulators."
-      },
-      {
-            "id": 42,
-            "question": "Why does a Zener diode have an extremely thin depletion layer?",
-            "options": [
-                  "Heavy doping in both P-type and N-type regions",
-                  "Pure metallic construction without semiconductor",
-                  "Operation strictly restricted to absolute zero",
-                  "Complete absence of an internal junction boundary"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Because both P-type and N-type regions are heavily doped with impurity atoms' is Correct: Heavy doping increases impurity ion density at the junction, creating an intense electric field across an extremely narrow depletion layer.\n\u2022 Why Other Choices are Incorrect: Light doping creates a wide depletion layer with high breakdown voltage."
-      },
-      {
-            "id": 43,
-            "question": "What are the primary practical applications of a Zener diode in electronic circuits?",
-            "options": [
-                  "Voltage regulation and reference points",
-                  "Light emission, optical display, and infrared transmission",
-                  "Audio frequency power amplification and loudspeaker driving",
-                  "Mechanical energy storage and rotational speed governors"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Voltage regulation, surge protection, and stable voltage reference points' is Correct: The constant reverse breakdown voltage property enables Zener diodes to clamp overvoltages and regulate DC power supply rails.\n\u2022 Why Other Choices are Incorrect: LEDs emit light, BJTs amplify audio signals, and capacitors/batteries store energy."
-      },
-      {
-            "id": 44,
-            "question": "A Tunnel diode (Esaki diode) operates at ultra-high switching speeds due to which quantum mechanical phenomenon?",
-            "options": [
-                  "Quantum Tunneling",
-                  "Thermionic emission",
-                  "Photoelectric absorption",
-                  "Secondary emission"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Quantum Tunneling' is Correct: Quantum tunneling allows valence electrons to pass directly through an ultra-thin potential barrier at nearly the speed of light rather than climbing over the barrier.\n\u2022 Why Other Choices are Incorrect: Thermionic emission involves heating filaments, and photoelectric absorption involves photon energy."
-      },
-      {
-            "id": 45,
-            "question": "How does the doping concentration of a Tunnel diode compare to a standard Positive-Negative (PN) junction diode?",
-            "options": [
-                  "Heavily doped up to 1,000 times higher than standard diodes",
-                  "Completely un-doped intrinsic silicon without any impurities",
-                  "Lightly doped to maximize internal bulk semiconductor ohms",
-                  "Symmetrically doped with equal numbers of metal gold atoms"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'It is heavily doped up to 1,000 times higher than a standard junction diode' is Correct: Ultra-heavy doping (~1000x standard levels) shrinks the depletion layer down to less than 10 nanometers, enabling quantum tunneling.\n\u2022 Why Other Choices are Incorrect: Light doping prevents tunneling by creating a wide barrier."
-      },
-      {
-            "id": 46,
-            "question": "What unique operational characteristic occurs on the forward V-I curve of a Tunnel diode between the peak current point and valley point?",
-            "options": [
-                  "Negative Resistance Region",
-                  "Infinite positive resistance",
-                  "Zero voltage drop at all currents",
-                  "Constant current saturation regardless of voltage"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Negative Resistance Region' is Correct: As forward voltage increases past the peak point, energy bands misalign and reduce electron tunneling, causing current to fall as voltage increases (negative resistance).\n\u2022 Why Other Choices are Incorrect: Ordinary resistors obey Ohm's Law where current increases with voltage."
-      },
-      {
-            "id": 47,
-            "question": "Because of its ultra-thin depletion layer (< 10 nanometers), what happens when a small reverse bias voltage is applied to a Tunnel diode?",
-            "options": [
-                  "Large reverse current conducted immediately by tunneling",
-                  "Destructive thermal runaway occurs instantaneously at zero volts",
-                  "Depletion layer expands into several millimeters of insulation",
-                  "Zero reverse current flows under all applied negative voltages"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Valence electrons easily tunnel from P-side to N-side, conducting large reverse current immediately' is Correct: Due to heavy doping and energy band overlap, small reverse bias immediately initiates heavy electron tunneling, making it conduct heavily in reverse.\n\u2022 Why Other Choices are Incorrect: Standard diodes block reverse current until breakdown voltage is reached."
-      },
-      {
-            "id": 48,
-            "question": "Which semiconductor materials are most commonly used in the fabrication of Tunnel diodes?",
-            "options": [
-                  "Germanium and Gallium Arsenide",
-                  "Copper and Aluminum",
-                  "Pure Carbon and Diamond",
-                  "Silicon Dioxide and Glass"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Germanium and Gallium Arsenide' is Correct: Germanium and Gallium Arsenide have high electron mobility and suitable bandgap energies for high-efficiency quantum tunneling.\n\u2022 Why Other Choices are Incorrect: Copper and Aluminum are metals; Silicon Dioxide is an insulator."
-      },
-      {
-            "id": 49,
-            "question": "Which electronic applications take advantage of the negative resistance and ultra-fast response of a Tunnel diode?",
-            "options": [
-                  "Relaxation oscillators, high-speed switches, and FM receivers",
-                  "Low-frequency power transformers, line filters, and chokes",
-                  "Incandescent lighting filaments, flash tubes, and arc lamps",
-                  "Electro-mechanical heavy-duty relays, solenoids, and contactors"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Relaxation oscillators, high-speed switches, and FM receivers' is Correct: Negative dynamic resistance cancels circuit losses in high-frequency oscillators and enables sub-nanosecond pulse switching.\n\u2022 Why Other Choices are Incorrect: Transformers and relays are heavy magnetic/mechanical components."
-      },
-
-      {
-            "id": 50,
-            "question": "What is the primary operating bias condition for a Photodiode during light-sensing operation?",
-            "options": [
-                  "Reverse-Bias condition",
-                  "Forward-Bias condition above 1.5 V",
-                  "Thermal breakdown bias",
-                  "Direct AC bias"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Reverse-Bias condition' is Correct: Photodiodes operate in Reverse-Bias (or zero bias) to widen the depletion region and establish a strong internal electric field that efficiently separates light-generated electron-hole pairs.\n\u2022 Why Other Choices are Incorrect: Forward biasing a photodiode conducts large forward current, masking photo-generated current and potentially damaging the sensor."
-      },
-      {
-            "id": 51,
-            "question": "What fundamental physical energy conversion takes place inside a Photodiode when exposed to light?",
-            "options": [
-                  "Converts light energy into electrical current",
-                  "Converts electrical energy into mechanical movement",
-                  "Converts acoustic sound waves into voltage",
-                  "Converts magnetic flux into thermal heat"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Converts light energy into electrical current' is Correct: When incoming photons with energy greater than the semiconductor bandgap strike the depletion region, they excite bound electrons to create free electron-hole pairs, producing measurable photocurrent.\n\u2022 Why Other Choices are Incorrect: Solar cells also use this photoelectric principle for power generation, whereas LEDs do the reverse (electrical energy to light)."
-      },
-      {
-            "id": 52,
-            "question": "How does the generated output photocurrent (I_p) of a Photodiode respond to changes in incoming light intensity (Lux)?",
-            "options": [
-                  "Photocurrent is directly proportional to light intensity",
-                  "Photocurrent decreases exponentially as light intensity increases",
-                  "Photocurrent remains completely constant regardless of light level",
-                  "Photocurrent is inversely proportional to light intensity squared"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Photocurrent is directly proportional to light intensity' is Correct: The Current-Light (I-L) relationship of a photodiode is highly linear: higher light intensity delivers more photons per second, creating more electron-hole pairs and higher photocurrent.\n\u2022 Why Other Choices are Incorrect: Inverse or exponential responses would distort linear light measurement."
-      },
-      {
-            "id": 53,
-            "question": "What is 'Dark Current' in a Photodiode?",
-            "options": [
-                  "A small reverse leakage current that flows even when no light is present",
-                  "The maximum forward current that destroys the photodiode",
-                  "The light emitted by the photodiode when operating in total darkness",
-                  "The AC ripple current from power supplies"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'A small reverse leakage current that flows even when no light is present' is Correct: Dark current is the minor reverse saturation current caused by thermal generation of electron-hole pairs when the photodiode is completely shielded from light.\n\u2022 Why Other Choices are Incorrect: Photodiodes do not emit light, and dark current is a tiny DC leakage current."
-      },
-      {
-            "id": 54,
-            "question": "Which layer of a photodiode active region is coated with an Anti-Reflective (AR) layer or glass lens?",
-            "options": [
-                  "P+ active surface region to maximize light absorption",
-                  "Bottom metal Cathode contact to reflect incoming light",
-                  "Outer protective black casing to block ambient photons",
-                  "Internal battery terminals to eliminate reverse bias"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'The P+ active surface region to maximize light absorption' is Correct: An Anti-Reflective (AR) coating or optical glass lens is placed over the active junction surface to reduce optical reflection losses and maximize photon entry into the depletion region.\n\u2022 Why Other Choices are Incorrect: The remaining body is coated in opaque black layer to block unwanted stray light."
-      },
-      {
-            "id": 55,
-            "question": "Which of the following semiconductor materials is commonly used in fabricating Photodiodes for optical communications?",
-            "options": [
-                  "Silicon, Germanium, and InGaAs",
-                  "Pure Copper, Aluminum, and Silver conductors",
-                  "Sodium Chloride, Calcium, and Potassium salts",
-                  "Polyethylene, Polystyrene, and Teflon plastics"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Silicon, Germanium, and Indium Gallium Arsenide' is Correct: Silicon (visible light), Germanium, and Indium Gallium Arsenide (InGaAs for long-wavelength infrared fiber optics) have suitable bandgaps for absorbing target light wavelengths.\n\u2022 Why Other Choices are Incorrect: Metals and plastics lack semiconductor bandgaps necessary for photon absorption."
-      },
-      {
-            "id": 56,
-            "question": "A Light-Emitting Diode (LED) emits visible or infrared light when operated under which bias condition?",
-            "options": [
-                  "Forward-Bias condition",
-                  "Reverse-Bias condition",
-                  "Zero bias condition",
-                  "High-voltage reverse breakdown"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Forward-Bias condition' is Correct: In Forward Bias, external voltage pushes electrons from the N-region and holes from the P-region into the active junction layer, where they recombine and release energy as photons.\n\u2022 Why Other Choices are Incorrect: In Reverse Bias, the depletion region widens, blocking current and keeping the LED completely OFF."
-      },
-      {
-            "id": 57,
-            "question": "Inside the structure of a Light-Emitting Diode (LED), which layer is responsible for producing light through electron-hole recombination?",
-            "options": [
-                  "The active layer",
-                  "The outer plastic epoxy lens",
-                  "The bottom metal Cathode wire lead",
-                  "The external series resistor"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'The active layer' is Correct: The Active layer sandwiched between the P-type and N-type semiconductor layers provides the optimum energy bandgap region where injected electrons and holes recombine to emit photons.\n\u2022 Why Other Choices are Incorrect: The epoxy lens focuses the emitted light, while leads supply current."
-      },
-      {
-            "id": 58,
-            "question": "On an electronic schematic symbol for a Light-Emitting Diode (LED), what do the two small outward-pointing arrows indicate?",
-            "options": [
-                  "Light emission when current flows through the diode",
-                  "Direction of conventional current flow",
-                  "Direction of electron movement",
-                  "Maximum reverse breakdown voltage limit"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Light emission when current flows through the diode' is Correct: The two outward-pointing arrows distinguish an LED from a standard diode, symbolizing light energy radiating outward upon forward conduction.\n\u2022 Why Other Choices are Incorrect: Inward-pointing arrows represent a Photodiode (absorbing incoming light)."
-      },
-      {
-            "id": 59,
-            "question": "What is the typical forward voltage (V_F) required to turn ON a standard Red Light-Emitting Diode (LED)?",
-            "options": [
-                  "1.8 V to 2.2 V",
-                  "0.3 V to 0.4 V",
-                  "5.0 V to 12.0 V",
-                  "0.0 V"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why '1.8 V to 2.2 V' is Correct: Red LEDs typically require a minimum forward voltage (V_F) of 1.8 V to 2.2 V to initiate electroluminescence.\n\u2022 Why Other Choices are Incorrect: 0.3 V is for Germanium diodes, 0.7 V is for Silicon diodes, while Green LEDs require 2.0 V \u2013 3.2 V and Blue LEDs require 3.0 V \u2013 3.5 V."
-      },
-      {
-            "id": 60,
-            "question": "What is the typical recommended continuous forward current (I_F) range for operating standard indicator Light-Emitting Diodes (LEDs)?",
-            "options": [
-                  "10 mA to 20 mA",
-                  "1 A to 5 A",
-                  "100 A to 500 A",
-                  "1 \u00b5A to 5 \u00b5A"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why '10 mA to 20 mA' is Correct: Standard commercial indicator LEDs achieve bright, reliable illumination at continuous forward currents of 10 mA to 20 mA.\n\u2022 Why Other Choices are Incorrect: Operating above 30\u201350 mA without heat sinking causes thermal destruction, while microamps are too low to illuminate standard LEDs."
-      },
-      {
-            "id": 61,
-            "question": "What formula is used to calculate the required resistance value of a Current-Limiting Resistor (R) connected in series with a Light-Emitting Diode (LED)?",
-            "options": [
-                  "R = (V_S - V_F) / I_F",
-                  "R = V_S * V_F * I_F",
-                  "R = (V_S + V_F) / I_F^2",
-                  "R = I_F / (V_S - V_F)"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'R = (V_S - V_F) / I_F' is Correct: By Kirchhoff's Voltage Law, the resistor voltage is V_R = V_S - V_F. Applying Ohm's Law yields R = (V_S - V_F) / I_F to prevent overcurrent damage to the LED.\n\u2022 Why Other Choices are Incorrect: Multiplying or adding forward voltage violates Ohm's Law."
-      },
-      {
-            "id": 62,
-            "question": "What is the typical maximum safe Reverse Voltage rating (V_R) for most standard Light-Emitting Diodes (LEDs)?",
-            "options": [
-                  "3 V to 5 V",
-                  "100 V to 1000 V",
-                  "500 V to 2000 V",
-                  "50 V to 100 V"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why '3 V to 5 V' is Correct: LEDs have relatively low reverse breakdown voltage ratings (typically 3 V to 5 V). Applying higher reverse voltage can damage the delicate PN junction.\n\u2022 Why Other Choices are Incorrect: Standard power rectifiers handle 100 V \u2013 1000 V reverse ratings, but LEDs cannot."
-      },
-      {
-            "id": 63,
-            "question": "Which key advantage distinguishes a Light-Emitting Diode (LED) over a standard semiconductor PN junction diode?",
-            "options": [
-                  "High efficiency and long lifespan",
-                  "High-voltage AC power rectification and surge suppression",
-                  "Ultra-slow switching response and high thermal energy loss",
-                  "Zero forward barrier potential required for active turn-ON"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Emits visible or infrared light efficiently with a long operational lifespan' is Correct: LEDs convert electrical energy directly into light via electroluminescence, offering high energy efficiency, low heat generation, and tens of thousands of operating hours.\n\u2022 Why Other Choices are Incorrect: Standard diodes dissipate energy as heat rather than light."
-      },
-      {
-            "id": 64,
-            "question": "Which of the following is a common application of Infrared (IR) Photodiodes and Light-Emitting Diodes working together as an optical pair?",
-            "options": [
-                  "TV remote controls and optical encoder sensors",
-                  "High-power AC step-down electrical transformers",
-                  "Incandescent illumination and halogen floodlights",
-                  "Hydraulic fluid pumps and pneumatic air pistons"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'TV and Air Conditioner remote controls and optical encoders' is Correct: An Infrared LED transmitter sends pulsed light signals to an Infrared Photodiode receiver, forming an optical communication link.\n\u2022 Why Other Choices are Incorrect: Transformers and pumps use magnetic or mechanical energy, not optoelectronic light pairs."
-      },
-
-      {
-            "id": 65,
-            "question": "Tunnel diodes are mainly used in:",
-            "options": [
-                  "Rectifiers",
-                  "Oscillators and high-speed switches",
-                  "Voltage regulators",
-                  "Signal clippers"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Oscillators and high-speed switches' is Correct: Tunnel diodes possess negative dynamic resistance and an ultra-thin depletion layer, allowing them to switch in picoseconds and sustain high-frequency oscillations.\n\u2022 Why Other Choices are Incorrect: Standard diodes act as rectifiers and signal clippers, while Zener diodes serve as voltage regulators."
-      },
-      {
-            "id": 66,
-            "question": "Light-Emitting Diodes (LEDs) emit light because of:",
-            "options": [
-                  "Thermal heating of a metallic tungsten filament",
-                  "Electron-hole recombination releasing photons",
-                  "Secondary electron collision with mercury vapor",
-                  "Nuclear decay of radioactive impurity atoms"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Electron-hole recombination releasing photons' is Correct: When forward-biased, injected electrons from the N-region and holes from the P-region recombine in the active junction layer, releasing excess bandgap energy as photons (Electroluminescence).\n\u2022 Why Other Choices are Incorrect: Avalanche breakdown occurs in reverse breakdown, thermal energy causes heating, and tunneling effect powers Tunnel diodes."
-      },
-      {
-            "id": 67,
-            "question": "The forward voltage drop of a Light-Emitting Diode (LED) is typically in the range of:",
-            "options": [
-                  "0.3 \u2013 0.7 V",
-                  "1 \u2013 3 V",
-                  "5 \u2013 10 V",
-                  "0.1 \u2013 0.2 V"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why '1 \u2013 3 V' is Correct: Because LEDs are fabricated from wide-bandgap compound semiconductors (like Gallium Arsenide and Gallium Phosphide), their forward barrier voltage drop ranges from 1.8 V to 3.5 V (commonly specified as 1 \u2013 3 V).\n\u2022 Why Other Choices are Incorrect: 0.3 \u2013 0.7 V applies to standard Germanium and Silicon PN diodes, while 0.1 \u2013 0.2 V applies to Schottky diodes."
-      },
-      {
-            "id": 68,
-            "question": "Which material is commonly used to make Light-Emitting Diodes (LEDs)?",
-            "options": [
-                  "Silicon",
-                  "Germanium",
-                  "Gallium compounds",
-                  "Carbon"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why 'Gallium compounds' is Correct: Direct bandgap compound semiconductors such as Gallium Arsenide (GaAs) and Gallium Phosphide (GaP) allow efficient photon emission during carrier recombination.\n\u2022 Why Other Choices are Incorrect: Elemental Silicon and Germanium are indirect bandgap semiconductors that dissipate recombination energy as heat rather than light."
-      },
-      {
-            "id": 69,
-            "question": "An Light-Emitting Diode (LED) usually operates with a forward current in the range of:",
-            "options": [
-                  "0.1 \u2013 1 mA",
-                  "10 \u2013 100 mA",
-                  "1 \u2013 10 A",
-                  "1 \u2013 10 \u00b5A"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why '10 \u2013 100 mA' is Correct: Standard illumination and indicator LEDs operate with forward currents in the 10 mA to 100 mA range (typically 10 \u2013 20 mA for standard indicators).\n\u2022 Why Other Choices are Incorrect: Microamps are too small to excite visible emission, while 1 \u2013 10 Amperes causes rapid thermal burnout."
-      },
-
-      {
-            "id": 70,
-            "question": "A photodiode is normally operated under:",
-            "options": [
-                  "Forward bias",
-                  "Reverse bias",
-                  "Zero bias",
-                  "Breakdown condition"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Reverse bias' is Correct: Operating a photodiode under Reverse bias widens the depletion layer, creating a strong internal electric field that efficiently separates light-generated electron-hole pairs into photocurrent.\n\u2022 Why Other Choices are Incorrect: Forward bias allows heavy conventional current that masks light detection, while breakdown condition causes uncontrolled reverse avalanche."
-      },
-      {
-            "id": 71,
-            "question": "The output current of a photodiode is directly proportional to:",
-            "options": [
-                  "Forward voltage",
-                  "Illumination intensity",
-                  "Junction temperature only",
-                  "Doping concentration"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Illumination intensity' is Correct: Higher illumination intensity delivers more photons per second into the depletion region, generating a linearly proportional increase in free electron-hole pairs and output photocurrent.\n\u2022 Why Other Choices are Incorrect: Forward voltage is not applied during photodiode operation, while temperature and doping affect noise rather than linear light response."
-      },
-      {
-            "id": 72,
-            "question": "Dark current in a photodiode is:",
-            "options": [
-                  "Reverse current with no light",
-                  "Forward current under strong light",
-                  "Current only at breakdown",
-                  "Peak current under illumination"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Reverse current with no light' is Correct: Dark current is the minor reverse saturation current generated by ambient thermal energy when the photodiode is completely shielded from light.\n\u2022 Why Other Choices are Incorrect: It is a reverse leakage current (not forward), and occurs specifically under zero light illumination."
-      },
-      {
-            "id": 73,
-            "question": "The tunnel diode exhibits which unique property?",
-            "options": [
-                  "Positive resistance",
-                  "Negative resistance",
-                  "Zero resistance",
-                  "Infinite resistance"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Negative resistance' is Correct: On its forward V-I characteristic curve between the peak point and valley point, increasing the forward voltage reduces energy band overlap, causing current to fall as voltage increases (Negative Dynamic Resistance).\n\u2022 Why Other Choices are Incorrect: Standard resistors exhibit positive resistance where current increases with voltage."
-      },
-
-      {
-            "id": 74,
-            "question": "A varactor diode behaves as a:",
-            "options": [
-                  "Voltage-controlled current source",
-                  "Voltage-controlled capacitor",
-                  "Voltage amplifier",
-                  "Light source"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Voltage-controlled capacitor' is Correct: A varactor diode operates under reverse bias where its depletion layer acts as a variable dielectric insulator between conductive P and N regions, creating a capacitance that varies with applied voltage.\n\u2022 Why Other Choices are Incorrect: Transistors act as current sources/amplifiers, while LEDs act as light sources."
-      },
-      {
-            "id": 75,
-            "question": "As reverse bias on a varactor increases, its capacitance:",
-            "options": [
-                  "Increases",
-                  "Decreases",
-                  "Remains constant",
-                  "Becomes infinite"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Decreases' is Correct: Increasing reverse bias voltage widens the depletion layer (increasing plate separation d in C = \u03b5A/d), which causes junction capacitance to decrease.\n\u2022 Why Other Choices are Incorrect: Decreasing reverse bias shrinks the depletion layer, which increases capacitance."
-      },
-      {
-            "id": 76,
-            "question": "The resonance frequency of an Inductor-Capacitor (LC) circuit with a varactor diode is given by:",
-            "options": [
-                  "f = 1 / (2 * pi * sqrt(L * C))",
-                  "f = 2 * pi * sqrt(L * C)",
-                  "f = (L * C) / (2 * pi)",
-                  "f = 1 / (L * C)"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'f = 1 / (2 * pi * sqrt(L * C))' is Correct: The fundamental resonance frequency formula for an LC tuned circuit is f = 1 / (2\u03c0\u221a(LC)). Adjusting the varactor reverse voltage alters capacitance C, directly tuning the resonant frequency f.\n\u2022 Why Other Choices differ: Alternative formulas do not satisfy the required mathematical derivation for LC resonance."
-      },
-      {
-            "id": 77,
-            "question": "The Shockley diode is a:",
-            "options": [
-                  "Two-layer device",
-                  "Three-layer device",
-                  "Four-layer PNPN device",
-                  "Metal-semiconductor junction"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why 'Four-layer PNPN device' is Correct: A Shockley diode is a four-layer (P-N-P-N) semiconductor thyristor featuring two terminals (Anode and Cathode) and three PN junctions.\n\u2022 Why Other Choices are Incorrect: Standard diodes have 2 layers (PN), BJTs have 3 layers (NPN/PNP), and Schottky diodes are metal-semiconductor junctions."
-      },
-      {
-            "id": 78,
-            "question": "Which condition turns ON a Shockley diode?",
-            "options": [
-                  "Reverse bias",
-                  "Applied voltage exceeds breakover voltage",
-                  "Applied current less than holding current",
-                  "Thermal excitation"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Applied voltage exceeds breakover voltage' is Correct: A Shockley diode remains OFF in forward blocking mode until the applied forward voltage exceeds its characteristic breakover voltage (V_BO), causing it to switch into heavy conduction (ON state).\n\u2022 Why Other Choices are Incorrect: Dropping below holding current turns the diode OFF, while reverse bias blocks current."
-      },
-
-      {
-            "id": 79,
-            "question": "Typical forward voltage drop of a Schottky diode is:",
-            "options": [
-                  "0.7 V",
-                  "0.3 V",
-                  "0.25 V",
-                  "1.0 V"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why '0.3 V' is Correct: Schottky metal-semiconductor diodes feature a significantly lower barrier potential than standard silicon diodes, with a typical nominal forward voltage drop of approx 0.3 V (ranging between 0.15 V and 0.45 V).\n\u2022 Why Other Choices are Incorrect: 0.7 V is the forward drop of a standard Silicon PN diode, while 1.0 V is typical for power rectifiers under heavy load."
-      },
-      {
-            "id": 80,
-            "question": "(Problem) A 6 V supply is connected across a 330 \u03a9 resistor in series with a Light-Emitting Diode (LED) of 2 V forward drop. Calculate the current through the LED.",
-            "options": [
-                  "6 mA",
-                  "12 mA",
-                  "20 mA",
-                  "40 mA"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why '12 mA' is Correct: By Kirchhoff's Voltage Law, resistor voltage V_R = V_S - V_F = 6 V - 2 V = 4 V. Applying Ohm's Law gives I = V_R / R = 4 V / 330 \u03a9 = 0.01212 A = 12.12 mA \u2248 12 mA.\n\u2022 Why Other Choices are Incorrect: 6 mA neglects the 2 V LED drop (using 2 V / 330 \u03a9), while 20 mA and 40 mA are arbitrary values."
-      },
-      {
-            "id": 81,
-            "question": "(Problem) A 10 pF varactor diode is used with a 100 \u00b5H coil. Find the resonant frequency.",
-            "options": [
-                  "1.6 MHz",
-                  "500 kHz",
-                  "5 MHz",
-                  "160 MHz"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why '5 MHz' is Correct: Resonant frequency f = 1 / (2\u03c0\u221a(L * C)). Substituting L = 100 \u00b5H = 100 x 10^-6 H and C = 10 pF = 10 x 10^-12 F gives \u221a(L * C) = \u221a(10^-15) = 3.162 x 10^-8 s. Thus f = 1 / (2 * \u03c0 * 3.162 x 10^-8) = 5,032,921 Hz \u2248 5.03 MHz \u2248 5 MHz.\n\u2022 Why Other Choices differ: Alternative choices result from unit conversion errors (e.g. omitting 10^-12 for pico or 10^-6 for micro)."
-      },
-      {
-            "id": 82,
-            "question": "(Problem) A Schottky diode bridge rectifier is used in a 5 V DC supply. If each diode drops 0.25 V, what is the total voltage drop across two conducting diodes?",
-            "options": [
-                  "0.25 V",
-                  "0.5 V",
-                  "1.4 V",
-                  "2.0 V"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why '0.5 V' is Correct: In a full-wave bridge rectifier circuit, two diodes conduct simultaneously in series during each half-cycle. Total forward voltage drop V_total = 2 x V_diode = 2 x 0.25 V = 0.5 V.\n\u2022 Why Other Choices are Incorrect: 0.25 V counts only one diode, while 1.4 V is the drop across two standard silicon diodes (2 x 0.7 V)."
-      },
-      {
-            "id": 83,
-            "question": "Which special-purpose diode is known for its fast switching speed and low forward voltage drop?",
-            "options": [
-                  "Zener diode",
-                  "Light-emitting diode",
-                  "Schottky diode",
-                  "Tunnel diode"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why 'Schottky diode' is Correct: A Schottky metal-semiconductor diode exhibits extremely fast switching speed (nanosecond reverse recovery time) and low forward voltage drop (0.15 V to 0.45 V).\n\u2022 Why Other Choices are Incorrect: Zener diodes are for voltage regulation, LEDs emit light, and Tunnel diodes exhibit negative resistance."
-      },
-
-      {
-            "id": 84,
-            "question": "In what type of electronic circuit would you commonly find a Schottky diode?",
-            "options": [
-                  "Audio amplifiers",
-                  "Power supplies",
-                  "High-frequency rectifiers",
-                  "Voltage regulators"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why 'High-frequency rectifiers' is Correct: Because Schottky diodes feature metal-semiconductor junctions with virtually zero reverse recovery time, they excel at rectifying high-frequency Alternating Current (AC) signals without switching losses.\n\u2022 Why Other Choices are Incorrect: Audio amplifiers use transistors, low-frequency power supplies use Silicon PN rectifiers, and Zener diodes handle voltage regulation."
-      },
-      {
-            "id": 85,
-            "question": "What is the primary application of a Schottky diode?",
-            "options": [
-                  "Voltage regulation",
-                  "Rectification of AC signals",
-                  "High-frequency applications",
-                  "Light detection"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why 'High-frequency applications' is Correct: Due to majority-carrier conduction, Schottky diodes switch in nanoseconds, making high-frequency Radio Frequency (RF) and switched-mode power supplies their primary application.\n\u2022 Why Other Choices are Incorrect: Zener diodes perform voltage regulation, standard diodes perform 60Hz AC rectification, and photodiodes perform light detection."
-      },
-      {
-            "id": 86,
-            "question": "Which type of diode is designed to emit light when forward-biased?",
-            "options": [
-                  "Zener diode",
-                  "Photodiode",
-                  "Light-emitting diode",
-                  "Schottky diode"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why 'Light-emitting diode' is Correct: When forward-biased, a Light-Emitting Diode (LED) recombines electrons and holes in its active junction layer, directly releasing excess energy as visible or infrared photons.\n\u2022 Why Other Choices are Incorrect: Zener diodes regulate voltage, photodiodes absorb light to create current, and Schottky diodes are fast rectifiers."
-      },
-      {
-            "id": 87,
-            "question": "Which special-purpose diode is used for frequency multiplication and frequency synthesis in communication systems?",
-            "options": [
-                  "Gunn diode",
-                  "Zener diode",
-                  "Varactor diode",
-                  "Tunnel diode"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why 'Varactor diode' is Correct: Varying reverse voltage on a Varactor diode alters its junction capacitance, making it the primary tuning element in Voltage-Controlled Oscillators (VCOs) for frequency synthesis and multiplication.\n\u2022 Why Other Choices are Incorrect: Gunn diodes generate microwave signals, Zener diodes regulate DC voltage, and Tunnel diodes act as high-speed switches."
-      },
-      {
-            "id": 88,
-            "question": "Which special-purpose diode is commonly used for voltage regulation in electronic circuits?",
-            "options": [
-                  "Varactor diode",
-                  "Schottky diode",
-                  "Zener diode",
-                  "Tunnel diode"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why 'Zener diode' is Correct: Zener diodes maintain a constant reverse breakdown voltage (V_Z) across their terminals over a wide current range, making them ideal for DC voltage regulation.\n\u2022 Why Other Choices are Incorrect: Varactor diodes are variable capacitors, Schottky diodes are fast rectifiers, and Tunnel diodes are high-speed switches."
-      },
-
-      {
-            "id": 89,
-            "question": "What is the primary function of a Photodiode?",
-            "options": [
-                  "Electron emission caused by heating a metallic cathode filament",
-                  "Electron release induced by applying an intense electric field",
-                  "Electron emission caused by incident electromagnetic radiation",
-                  "Electron release produced by bombarding atoms with alpha rays"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why 'Detect light and convert it into a current' is Correct: A photodiode operates under reverse bias where incoming optical photons generate electron-hole pairs, producing a photocurrent proportional to light intensity.\n\u2022 Why Other Choices are Incorrect: LEDs emit light, standard PN diodes rectify AC signals, and Varactor diodes provide variable capacitance."
-      },
-      {
-            "id": 90,
-            "question": "In which application would a Tunnel diode be most suitable?",
-            "options": [
-                  "High-frequency oscillators",
-                  "Voltage regulation",
-                  "Light detection",
-                  "Rectification of low-frequency signals"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'High-frequency oscillators' is Correct: Tunnel diodes possess a negative dynamic resistance region and ultra-fast quantum tunneling speed, making them ideal for high-frequency microwave oscillators.\n\u2022 Why Other Choices are Incorrect: Zener diodes perform voltage regulation, photodiodes perform light detection, and standard diodes rectify low-frequency signals."
-      },
-      {
-            "id": 91,
-            "question": "Which special-purpose diode is designed to exhibit a varying capacitance with reverse bias voltage and is often used in tuning circuits?",
-            "options": [
-                  "Varactor diode",
-                  "Tunnel diode",
-                  "Photodiode",
-                  "Schottky diode"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Varactor diode' is Correct: A Varactor diode (varicap) operates in reverse bias, using its variable depletion layer width to act as a voltage-controlled capacitor in electronic tuning circuits.\n\u2022 Why Other Choices are Incorrect: Tunnel diodes exhibit negative resistance, photodiodes sense light, and Schottky diodes are fast rectifiers."
-      },
-      {
-            "id": 92,
-            "question": "What is the unique characteristic of a Varactor diode?",
-            "options": [
-                  "Emission of light",
-                  "Variable capacitance with voltage",
-                  "High-speed switching",
-                  "Rectification of signals"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Variable capacitance with voltage' is Correct: The fundamental feature of a Varactor diode is that its junction capacitance varies inversely with applied reverse bias voltage.\n\u2022 Why Other Choices are Incorrect: LEDs emit light, Schottky diodes perform high-speed switching, and standard diodes rectify signals."
-      },
-      {
-            "id": 93,
-            "question": "What is the primary application of a Gunn diode?",
-            "options": [
-                  "Voltage regulation",
-                  "Microwave oscillators",
-                  "Light detection",
-                  "Rectification of AC signals"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why 'Microwave oscillators' is Correct: Gunn diodes utilize the Gunn effect (transferred electron effect in bulk N-type Gallium Arsenide) to generate high-frequency microwave oscillations in RF transmitters and radar systems.\n\u2022 Why Other Choices are Incorrect: Zener diodes perform voltage regulation, photodiodes perform light detection, and PN junction diodes rectify AC signals."
-      },
-
-      {
-            "id": 94,
-            "question": "(Problem) An AC voltage with peak value V_p = 20 V is connected in series with a silicon diode (forward voltage drop V_D = 0.7 V, forward bulk resistance R_f = 10 \u03a9) and a load resistor R_L = 500 \u03a9. Find the peak current through the diode.",
-            "options": [
-                  "37.84 mA",
-                  "40.00 mA",
-                  "38.60 mA",
-                  "35.20 mA"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why '37.84 mA' is Correct: By Kirchhoff's Voltage Law, V_p - V_D = I * (R_f + R_L). Substituting values: 20 V - 0.7 V = I * (10 \u03a9 + 500 \u03a9) => 19.3 V = 510 \u03a9 * I. Therefore, peak current I_peak = 19.3 V / 510 \u03a9 = 0.037843 A = 37.84 mA.\n\u2022 Why Other Choices are Incorrect: 40.00 mA assumes an ideal diode (20 V / 500 \u03a9), while 38.60 mA ignores the 10 \u03a9 internal diode resistance."
-      },
-      {
-            "id": 95,
-            "question": "(Problem) For the silicon diode circuit in Problem 94 (V_p = 20 V, V_D = 0.7 V, R_f = 10 \u03a9, R_L = 500 \u03a9), calculate the peak output voltage V_out measured across the 500 \u03a9 load resistor.",
-            "options": [
-                  "18.92 V",
-                  "20.00 V",
-                  "19.30 V",
-                  "17.50 V"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why '18.92 V' is Correct: The peak output voltage across the load resistor is V_out = I_peak * R_L = (0.037843 A) * 500 \u03a9 = 18.9215 V \u2248 18.92 V.\n\u2022 Why Other Choices are Incorrect: 20.00 V assumes an ideal diode with zero voltage drop, while 19.30 V neglects the 10 \u03a9 internal diode resistance."
-      },
-      {
-            "id": 96,
-            "question": "(Problem) If the silicon diode in Problem 94 (V_p = 20 V, R_L = 500 \u03a9) is assumed to be ideal (V_D = 0 V, R_f = 0 \u03a9), what are the values of peak current and peak output voltage?",
-            "options": [
-                  "Peak Current = 40.00 mA, Peak Output Voltage = 20.00 V",
-                  "Peak Current = 37.84 mA, Peak Output Voltage = 18.92 V",
-                  "Peak Current = 38.60 mA, Peak Output Voltage = 19.30 V",
-                  "Peak Current = 50.00 mA, Peak Output Voltage = 25.00 V"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Peak Current = 40.00 mA, Peak Output Voltage = 20.00 V' is Correct: For an ideal diode, forward voltage drop V_D = 0 V and internal resistance R_f = 0 \u03a9. Thus I_peak = 20 V / 500 \u03a9 = 40 mA, and V_out = 20 V.\n\u2022 Why Other Choices differ: 37.84 mA / 18.92 V corresponds to the practical diode model with 0.7 V drop and 10 \u03a9 forward resistance."
-      },
-      {
-            "id": 97,
-            "question": "(Problem) A 20 V DC source is connected to a parallel combination of a Silicon diode (V_D = 0.7 V) and a Germanium diode (V_D = 0.3 V), connected in series with a 3 k\u03a9 load resistor. Using practical diode models, what is the node voltage V_A across the 3 k\u03a9 resistor?",
-            "options": [
-                  "19.70 V",
-                  "19.30 V",
-                  "20.00 V",
-                  "0.40 V"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why '19.70 V' is Correct: Germanium (Ge) turns ON at 0.3 V, which is lower than Silicon's 0.7 V turn-on threshold. The Germanium diode conducts first and clamps the diode voltage drop to 0.3 V, keeping the Silicon diode OFF. Thus V_A = 20 V - 0.3 V = 19.70 V.\n\u2022 Why Other Choices are Incorrect: 19.30 V assumes the Silicon diode conducts (20 V - 0.7 V), but Silicon remains cut off because Germanium clamps the node first."
-      },
-      {
-            "id": 98,
-            "question": "(Problem) Calculate the current I through the 3 k\u03a9 resistor for the parallel Silicon/Germanium diode circuit in Problem 97 (V_S = 20 V, Germanium drop = 0.3 V, R = 3 k\u03a9).",
-            "options": [
-                  "6.57 mA",
-                  "5.90 mA",
-                  "6.43 mA",
-                  "6.67 mA"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why '6.57 mA' is Correct: The voltage across the 3 k\u03a9 load resistor is V_A = 20 V - 0.3 V = 19.7 V. Applying Ohm's Law gives I = V_A / R = 19.7 V / 3000 \u03a9 = 0.0065667 A \u2248 6.57 mA.\n\u2022 Why Other Choices differ: 5.90 mA occurs if an additional 2 V drop is subtracted, while 6.43 mA occurs if Silicon's 0.7 V drop is used."
-      },
-      {
-            "id": 99,
-            "question": "Which special-purpose diode symbol is identified by a bent cathode bar resembling the letter 'Z'?",
-            "options": [
-                  "Zener diode",
-                  "Schottky diode",
-                  "Tunnel diode",
-                  "Varactor diode"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Zener diode' is Correct: The Zener diode schematic symbol features diagonal bent ends on its cathode bar, forming a characteristic 'Z' shape.\n\u2022 Why Other Choices differ: Schottky diodes have S-like bent ends, Tunnel diodes have bracketed ends, and Varactor diodes feature parallel capacitor lines."
-      },
-      {
-            "id": 100,
-            "question": "Which special-purpose diode symbol features two outward-pointing arrows radiating from the diode triangle?",
-            "options": [
-                  "Light-Emitting Diode",
-                  "Photodiode",
-                  "Tunnel diode",
-                  "Zener diode"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Light-Emitting Diode' is Correct: Two outward-pointing arrows symbolize light emission from the active junction of a Light-Emitting Diode (LED).\n\u2022 Why Other Choices differ: Inward-pointing arrows symbolize light absorption in a Photodiode."
-      },
-
-      {
-            "id": 101,
-            "question": "Which type of electron emission occurs when a metal is heated to a high temperature (around 2500 \u00b0C) so that free electrons gain sufficient kinetic energy to escape from the surface?",
-            "options": [
-                  "Thermionic emission",
-                  "Field emission",
-                  "Photoelectric emission",
-                  "Secondary emission"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Thermionic emission' is Correct: Thermionic emission relies on thermal energy (heating a metal cathode to high temperatures) to impart kinetic energy to electrons so they overcome the surface barrier and emit into space, as used in vacuum tubes.\n\u2022 Why Other Choices are Incorrect: Field emission uses high electric fields, photoelectric emission uses light photons, and secondary emission uses electron bombardment."
-      },
-      {
-            "id": 102,
-            "question": "What is the term for the minimum amount of energy required for an electron to escape from a metal's surface into surrounding space?",
-            "options": [
-                  "Work function",
-                  "Ionization potential",
-                  "Bandgap energy",
-                  "Breakover voltage"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Work function' is Correct: The Work Function (\u03a6) defines the minimum energy required to liberate an electron from the attractive nuclear forces at a metal surface.\n\u2022 Why Other Choices are Incorrect: Bandgap energy is the forbidden energy gap between valence and conduction bands in crystals."
-      },
-      {
-            "id": 103,
-            "question": "In electronics, 1 Electron-Volt (1 eV) is equivalent to how many Joules (J) of energy?",
-            "options": [
-                  "1.602 x 10^-19 J",
-                  "9.109 x 10^-31 J",
-                  "6.022 x 10^23 J",
-                  "1.000 x 10^-6 J"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why '1.602 x 10^-19 J' is Correct: By definition, 1 electron-volt (1 eV) is the kinetic energy gained by a single electron moving through a potential difference of 1 volt, equal to 1.602 x 10^-19 Joules.\n\u2022 Why Other Choices differ: 9.109 x 10^-31 kg is electron mass, and 6.022 x 10^23 is Avogadro's number."
-      },
-      {
-            "id": 104,
-            "question": "Which electron emission process occurs when high-speed primary electrons strike a metal surface and transfer kinetic energy to eject secondary electrons?",
-            "options": [
-                  "Secondary emission",
-                  "Thermionic emission",
-                  "Field emission",
-                  "Photoelectric emission"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Secondary emission' is Correct: Secondary emission occurs when high-velocity primary electrons bombard a metal surface, transferring momentum to knock bound electrons out of the metal.\n\u2022 Why Other Choices are Incorrect: Thermionic uses heat, field uses high voltage, and photoelectric uses light photons."
-      },
-      {
-            "id": 105,
-            "question": "Which fundamental quantum physics rule states that no two electrons in an atom can occupy the exact same quantum state simultaneously?",
-            "options": [
-                  "Pauli Exclusion Principle",
-                  "Heisenberg Uncertainty Principle",
-                  "Bohr Magneton Law",
-                  "Coulomb Law"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Pauli Exclusion Principle' is Correct: Wolfgang Pauli's Exclusion Principle dictates that no two identical fermions (electrons) can occupy the same quantum state, establishing atomic electron shell structures.\n\u2022 Why Other Choices differ: Heisenberg's uncertainty principle limits simultaneous measurement of position and momentum."
-      },
-      {
-            "id": 106,
-            "question": "What is the energy bandgap (E_g) equation defining the forbidden zone between the conduction band (E_C) and valence band (E_V)?",
-            "options": [
-                  "E_g = E_C - E_V",
-                  "E_g = E_C + E_V",
-                  "E_g = E_C * E_V",
-                  "E_g = E_V / E_C"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'E_g = E_C - E_V' is Correct: The bandgap energy (E_g) represents the energy difference between the bottom of the conduction band (E_C) and the top of the valence band (E_V).\n\u2022 Why Other Choices differ: Adding, multiplying, or dividing band energies violates solid-state energy band definitions."
-      },
-      {
-            "id": 107,
-            "question": "Which type of electron emission occurs when an extremely strong external electric field pulls free electrons out of a cold metal surface via electrostatic attraction?",
-            "options": [
-                  "Field emission",
-                  "Thermionic emission",
-                  "Photoelectric emission",
-                  "Secondary emission"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Field emission' is Correct: Field emission applies an intense positive electric field at a metal surface to lower the potential barrier, allowing electrons to tunnel out without thermal heating.\n\u2022 Why Other Choices are Incorrect: Thermionic emission requires heating the cathode to high temperatures."
-      },
-      {
-            "id": 108,
-            "question": "Why do good conductors (such as copper and silver) conduct electricity easily with almost zero electrical resistance?",
-            "options": [
-                  "Overlapping valence and conduction bands with zero bandgap",
-                  "Valence bands that remain completely empty at absolute zero",
-                  "Extremely wide forbidden energy bandgap exceeding 5 to 6 eV",
-                  "Exclusive reliance on positive hole conduction mechanisms"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Because their valence and conduction energy bands overlap with no significant forbidden bandgap' is Correct: In metallic conductors, the highest filled valence band overlaps directly with the conduction band (E_g \u2248 0), allowing free electrons to move freely upon applying a voltage.\n\u2022 Why Other Choices are Incorrect: Wide bandgaps (>5 eV) characterize insulators, not conductors."
-      },
-      {
-            "id": 109,
-            "question": "Which chemical stability rule states that atoms are most chemically stable when their outermost valence shell contains eight electrons?",
-            "options": [
-                  "Octet Rule",
-                  "Ohm Law",
-                  "Faraday Law",
-                  "Kepler Law"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Octet Rule' is Correct: The Octet Rule dictates that atoms achieve maximum chemical stability by gaining, losing, or sharing electrons (covalent bonding) to fill their valence shell with 8 electrons.\n\u2022 Why Other Choices are Incorrect: Ohm's Law relates V, I, and R; Faraday's Law governs induction."
-      },
-      {
-            "id": 110,
-            "question": "Reviewing the special diodes summary table, match each diode to its primary operational characteristic:",
-            "options": [
-                  "Zener = Voltage regulation, Schottky = Fast switching, Tunnel = Negative resistance, Varactor = Variable capacitance",
-                  "Zener = Light emission, Schottky = Voltage regulation, Tunnel = Variable capacitance, Varactor = Fast switching",
-                  "Zener = Fast switching, Schottky = Light emission, Tunnel = Voltage regulation, Varactor = Negative resistance",
-                  "Zener = Negative resistance, Schottky = Variable capacitance, Tunnel = Fast switching, Varactor = Light emission"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Zener = Voltage regulation, Schottky = Fast switching, Tunnel = Negative resistance, Varactor = Variable capacitance' is Correct: This summarizes core diode functions: Zener operates in reverse breakdown for voltage regulation; Schottky has zero reverse recovery for fast switching; Tunnel exhibits negative resistance via quantum tunneling; Varactor acts as a voltage-controlled variable capacitor.\n\u2022 Why Other Choices are Incorrect: Swapping functions confuses diode device physics."
-      },
-
-      {
-            "id": 111,
-            "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Zener Diode?",
-            "image": "images/diode_symbols.png",
-            "options": [
-                  "Diode with a bent 'Z' cathode bar",
-                  "Diode with two outward-pointing arrows",
-                  "Diode with S-shaped bent cathode bar",
-                  "Diode with parallel capacitor lines"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Diode with a bent Z cathode bar' is Correct: The Zener diode symbol features diagonal bent ends on its cathode bar, forming a distinct 'Z' shape to indicate operation in reverse breakdown voltage regulation.\n\u2022 Why Other Choices differ: Two outward arrows represent an LED, S-shaped cathode represents a Schottky diode, and parallel capacitor lines represent a Varicap/Varactor diode."
-      },
-      {
-            "id": 112,
-            "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Light-Emitting Diode (LED)?",
-            "image": "images/diode_symbols.png",
-            "options": [
-                  "Diode with two outward-pointing arrows",
-                  "Diode with two inward-pointing arrows",
-                  "Diode with bracket-shaped cathode bar",
-                  "Diode with bent 'Z' cathode bar"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Diode with two outward-pointing arrows' is Correct: The Light-Emitting Diode (LED) symbol uses two outward-pointing arrows to signify photon emission during electron-hole recombination under forward bias.\n\u2022 Why Other Choices differ: Inward-pointing arrows signify light absorption in a Photo Diode."
-      },
-      {
-            "id": 113,
-            "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Photo Diode?",
-            "image": "images/diode_symbols.png",
-            "options": [
-                  "Diode with two inward-pointing arrows",
-                  "Diode with two outward-pointing arrows",
-                  "Diode with S-shaped bent cathode bar",
-                  "Diode with parallel capacitor lines"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Diode with two inward-pointing arrows' is Correct: The Photo Diode symbol features two inward-pointing arrows to represent incoming optical photons that generate photocurrent under reverse bias.\n\u2022 Why Other Choices differ: Outward arrows represent LED light emission."
-      },
-      {
-            "id": 114,
-            "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Schottky Diode?",
-            "image": "images/diode_symbols.png",
-            "options": [
-                  "Diode with S-shaped bent cathode bar",
-                  "Diode with bent 'Z' cathode bar",
-                  "Diode with bracket-shaped cathode bar",
-                  "Diode with parallel capacitor lines"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Diode with S-shaped bent cathode bar' is Correct: The Schottky diode symbol features an S-like curved cathode bar representing its metal-semiconductor junction with zero reverse recovery time.\n\u2022 Why Other Choices differ: Z-shaped bar represents Zener, bracket represents Tunnel diode."
-      },
-      {
-            "id": 115,
-            "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Tunnel Diode?",
-            "image": "images/diode_symbols.png",
-            "options": [
-                  "Diode with bracket-shaped cathode bar",
-                  "Diode with S-shaped bent cathode bar",
-                  "Diode with two inward-pointing arrows",
-                  "Diode with bent 'Z' cathode bar"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Diode with bracket-shaped cathode bar' is Correct: The Tunnel diode symbol features right-angled square brackets on its cathode bar, symbolizing quantum tunneling and negative dynamic resistance.\n\u2022 Why Other Choices differ: S-shaped bar represents Schottky, Z-shaped bar represents Zener."
-      },
-      {
-            "id": 116,
-            "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Varicap (Varactor) Diode?",
-            "image": "images/diode_symbols.png",
-            "options": [
-                  "Diode with parallel capacitor lines at cathode",
-                  "Diode with two outward-pointing arrows",
-                  "Diode with bent 'Z' cathode bar",
-                  "Diode with bracket-shaped cathode bar"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why 'Diode with parallel capacitor lines at cathode' is Correct: The Varicap/Varactor diode symbol combines a standard diode triangle with a parallel capacitor plate at its cathode, denoting voltage-controlled variable capacitance.\n\u2022 Why Other Choices differ: Outward arrows represent LED, Z-bar represents Zener, bracket represents Tunnel diode."
-      },
-
-      {
-            "id": 117,
-            "question": "Statement: Germanium diodes begin conducting at a higher forward voltage threshold than Silicon diodes.",
-            "options": [
-                  "a. True, because Germanium has a wider bandgap energy than Silicon.",
-                  "b. True, because Germanium exhibits lower thermal stability under direct current bias.",
-                  "c. False, because Germanium has a lower potential barrier compared to Silicon.",
-                  "d. False, because both materials possess identical potential barriers of 0.5 V at room temperature."
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why Choice C is Correct: Germanium (Ge) has a lower barrier potential (approx 0.3 V) compared to Silicon (Si, approx 0.7 V). Therefore, Germanium begins conducting at a lower forward voltage threshold, making the statement False.\n\u2022 Why Other Choices are Incorrect: Germanium has a smaller bandgap (~0.67 eV vs Si 1.1 eV), and Germanium's potential barrier is 0.3 V, not equal to 0.7 V."
-      },
-      {
-            "id": 118,
-            "question": "Statement: Doping a semiconductor with trivalent impurities produces donor atoms that increase the concentration of free electrons.",
-            "options": [
-                  "a. True, trivalent atoms donate three extra electrons to lattice",
-                  "b. True, trivalent impurities increase negative charge density",
-                  "c. False, trivalent impurities are acceptors creating excess holes",
-                  "d. False, trivalent impurities form metallic insulating bonds"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why Choice C is Correct: Trivalent impurities (e.g. Boron, Gallium, Indium) have 3 valence electrons and act as acceptor atoms that accept electrons to create excess holes, forming P-type material. Pentavalent impurities are donors that create free electrons.\n\u2022 Why Other Choices are Incorrect: Trivalent atoms create holes, not free electron donors."
-      },
-      {
-            "id": 119,
-            "question": "Statement: In the First Approximation (Ideal Diode Model), a forward-biased diode is treated as a closed switch with zero voltage drop.",
-            "options": [
-                  "a. True, because the ideal model neglects the barrier potential and internal forward resistance.",
-                  "b. True, because ideal diodes convert all applied forward voltage directly into heat energy.",
-                  "c. False, because the ideal model includes a fixed 0.7 V battery drop across the terminals.",
-                  "d. False, because ideal diodes offer infinite resistance regardless of polarity."
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why Choice A is Correct: The First Approximation (Ideal Diode) simplifies forward bias to a closed switch (V_D = 0 V, R_f = 0 \u03a9) and reverse bias to an open switch, completely neglecting barrier potential and internal resistance.\n\u2022 Why Other Choices are Incorrect: The ideal model has 0 V drop, unlike the practical second approximation which includes a 0.7 V drop."
-      },
-      {
-            "id": 120,
-            "question": "Statement: A reverse-biased practical diode permits zero electrical current to pass through its PN junction under all operational conditions.",
-            "options": [
-                  "a. True, depletion region forms absolute barrier to charge flow",
-                  "b. True, minority charge carriers cannot exist in doped silicon",
-                  "c. False, thermally generated minority carriers form leakage current",
-                  "d. False, forward current and reverse current are always equal"
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why Choice C is Correct: In reverse bias, a small reverse saturation leakage current (I_S) flows due to thermally generated minority carriers crossing the junction. Therefore, the statement claiming zero current is False.\n\u2022 Why Other Choices are Incorrect: Minority carriers are generated by thermal energy and produce reverse leakage current."
-      },
-      {
-            "id": 121,
-            "question": "Statement: The Second Approximation of a diode models the device as an ideal switch in series with a DC voltage source equal to its barrier potential.",
-            "options": [
-                  "a. True, accounts for knee voltage while ignoring bulk resistance",
-                  "b. True, includes internal forward resistance and capacitance",
-                  "c. False, ignores barrier potential and only models resistance",
-                  "d. False, applies strictly to reverse-bias operating analysis"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why Choice A is Correct: The Second Approximation (Practical Diode) models forward bias as a closed switch in series with a 0.7 V battery (for Si) or 0.3 V (for Ge), representing barrier knee voltage while omitting bulk resistance.\n\u2022 Why Other Choices are Incorrect: Bulk resistance is only added in the third approximation."
-      },
-      {
-            "id": 122,
-            "question": "Statement: The Third Approximation of a diode is also referred to as the Piecewise Linear Model.",
-            "options": [
-                  "a. True, because it combines the barrier voltage with the internal forward resistance of the semiconductor.",
-                  "b. True, because it treats the diode as a variable AC voltage generator under steady-state DC conditions.",
-                  "c. False, because the piecewise linear model applies only to the First (Ideal) Approximation.",
-                  "d. False, because the third approximation assumes zero internal resistance during conduction."
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why Choice A is Correct: The Third Approximation incorporates the threshold voltage V_D and internal bulk resistance r_f into a two-segment linear I-V curve, which is officially named the Piecewise Linear Model.\n\u2022 Why Other Choices are Incorrect: The piecewise linear model specifically includes internal resistance r_f."
-      },
-      {
-            "id": 123,
-            "question": "Statement: GaAs is a single-crystal elemental semiconductor like Silicon and Germanium.",
-            "options": [
-                  "a. True, because GaAs is composed of a single element from Group IV of the periodic table.",
-                  "b. True, because GaAs possess identical electronic properties to pure Silicon crystals.",
-                  "c. False, because GaAs is a compound semiconductor made from Gallium and Arsenic.",
-                  "d. False, because GaAs is a synthetic ceramic insulator incapable of conducting current."
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why Choice C is Correct: Gallium Arsenide (GaAs) is a Group III-V compound semiconductor formed chemically by Gallium and Arsenic, unlike Silicon and Germanium which are single-element single-crystal semiconductors.\n\u2022 Why Other Choices are Incorrect: GaAs is not a single element."
-      },
-      {
-            "id": 124,
-            "question": "Statement: Applying a forward bias to a PN junction diode lowers the internal potential barrier across the depletion region.",
-            "options": [
-                  "a. True, because the external voltage opposes the built-in electric field, narrowing the depletion region.",
-                  "b. True, because the external voltage forces minority carriers to widen the depletion region.",
-                  "c. False, because forward biasing increases the internal potential barrier to prevent breakdown.",
-                  "d. False, because external voltage bias has no physical effect on depletion region width."
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why Choice A is Correct: Forward bias applies positive voltage to the P-side and negative to the N-side, opposing the internal junction field, narrowing the depletion region, and lowering the barrier potential.\n\u2022 Why Other Choices are Incorrect: Reverse bias widens the depletion region, while forward bias thins it."
-      },
-      {
-            "id": 125,
-            "question": "Statement: Increasing the temperature of a semiconductor material increases its electrical resistance.",
-            "options": [
-                  "a. True, because thermal vibration impairs covalent bonding, reducing the number of charge carriers.",
-                  "b. True, because semiconductors have a positive temperature coefficient of resistance like copper.",
-                  "c. False, because thermal energy generates additional electron-hole pairs, decreasing electrical resistance.",
-                  "d. False, because temperature changes affect electrical insulators exclusively."
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why Choice C is Correct: Semiconductors have a Negative Temperature Coefficient (NTC). As temperature rises, thermal energy breaks covalent bonds and creates additional electron-hole pairs, increasing conductivity and decreasing resistance.\n\u2022 Why Other Choices are Incorrect: Metals have a positive temperature coefficient, but semiconductors have a negative temperature coefficient."
-      },
-      {
-            "id": 126,
-            "question": "Statement: Under zero bias conditions, an electrical current flows spontaneously through an isolated PN junction diode due to concentration gradients.",
-            "options": [
-                  "a. True, because diffusion of majority carriers creates a continuous closed-loop direct current.",
-                  "b. True, because the built-in voltage acts as an internal DC power supply.",
-                  "c. False, because carrier diffusion is counterbalanced by drift current in equilibrium, resulting in zero net current.",
-                  "d. False, because charge carriers cannot move within semiconductor materials without external light exposure."
-            ],
-            "answer": 2,
-            "explanation": "\u2022 Why Choice C is Correct: At thermal equilibrium (zero bias), the forward diffusion current of majority carriers is exactly equal and opposite to the reverse drift current of thermally generated minority carriers, making net current zero.\n\u2022 Why Other Choices are Incorrect: No net current flows without an external energy source."
-      },
-      {
-            "id": 127,
-            "question": "(Problem) A Silicon diode is connected in a simple series circuit with a 1.2 k\u03a9 load resistor and a DC source V_S = 12 V. Using the Second Approximation, calculate the total circuit current I_D in milliamperes (mA).",
-            "options": [
-                  "a. 9.4167 mA",
-                  "b. 10.0 mA",
-                  "c. 8.8333 mA",
-                  "d. 9.15 mA"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why '9.4167 mA' is Correct: By the Second Approximation, Silicon forward voltage V_D = 0.7 V. Voltage across load resistor V_R = V_S - V_D = 12 V - 0.7 V = 11.3 V. By Ohm's Law, I_D = V_R / R_L = 11.3 V / 1200 \u03a9 = 0.00941667 A = 9.4167 mA.\n\u2022 Why Other Choices are Incorrect: 10.0 mA assumes an ideal diode (12 V / 1200 \u03a9), while 8.8333 mA assumes an incorrect drop."
-      },
-      {
-            "id": 128,
-            "question": "(Problem) For the same series circuit described in Item 11 (V_S = 12 V, Silicon diode V_D = 0.7 V, R_L = 1.2 k\u03a9, I_D = 9.4167 mA), calculate the power dissipated by the Silicon diode (P_D) in milliwatts (mW) using the Second Approximation.",
-            "options": [
-                  "a. 7.1 mW",
-                  "b. 6.5917 mW",
-                  "c. 6.1833 mW",
-                  "d. 8.4 mW"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why '6.5917 mW' is Correct: Power dissipated by diode P_D = V_D * I_D = 0.7 V * 9.416667 mA = 6.591667 mW \u2248 6.5917 mW.\n\u2022 Why Other Choices are Incorrect: 7.1 mW and 6.1833 mW use incorrect current or voltage values."
-      },
-      {
-            "id": 129,
-            "question": "(Problem) A Germanium diode exhibits an internal forward resistance r_f = 15 \u03a9. It is connected in series with a load resistor R_L = 470 \u03a9 and a 9 V DC supply. Using the Third Approximation, calculate the total current in milliamperes (mA).",
-            "options": [
-                  "a. 18.5106 mA",
-                  "b. 17.9381 mA",
-                  "c. 19.1489 mA",
-                  "d. 17.3913 mA"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why '17.9381 mA' is Correct: Third Approximation for Germanium: V_D = 0.3 V, internal resistance r_f = 15 \u03a9. Total circuit resistance R_total = r_f + R_L = 15 \u03a9 + 470 \u03a9 = 485 \u03a9. Current I = (V_S - V_D) / R_total = (9 V - 0.3 V) / 485 \u03a9 = 8.7 V / 485 \u03a9 = 0.01793814 A = 17.9381 mA.\n\u2022 Why Other Choices are Incorrect: 18.5106 mA ignores internal resistance r_f (8.7 V / 470 \u03a9)."
-      },
-      {
-            "id": 130,
-            "question": "(Problem) Using the parameters and results from Item 13 (V_S = 9 V, Germanium V_D = 0.3 V, r_f = 15 \u03a9, R_L = 470 \u03a9, I = 17.9381 mA), calculate the actual terminal voltage drop across the Germanium diode in volts using the Third Approximation.",
-            "options": [
-                  "a. 0.3 V",
-                  "b. 0.5691 V",
-                  "c. 0.2691 V",
-                  "d. 0.45 V"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why '0.5691 V' is Correct: Actual diode terminal voltage V_terminal = V_D + (I * r_f) = 0.3 V + (0.01793814 A * 15 \u03a9) = 0.3 V + 0.269072 V = 0.569072 V \u2248 0.5691 V.\n\u2022 Why Other Choices are Incorrect: 0.3 V is only the knee voltage without internal resistance voltage drop."
-      },
-      {
-            "id": 131,
-            "question": "(Problem) A Gallium Arsenide (GaAs) diode (V_F = 1.2 V) is connected across a 15 V DC source in series with a 2.2 k\u03a9 resistor. Using the Second Approximation, determine the voltage across the load resistor V_L in volts (V).",
-            "options": [
-                  "a. 15 V",
-                  "b. 13.8 V",
-                  "c. 1.2 V",
-                  "d. 14.3 V"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why '13.8 V' is Correct: GaAs forward barrier voltage V_F = 1.2 V. By Kirchhoff's Voltage Law, voltage across load resistor V_L = V_S - V_F = 15 V - 1.2 V = 13.8 V.\n\u2022 Why Other Choices are Incorrect: 15 V neglects diode drop, 1.2 V is the diode drop itself, and 14.3 V assumes 0.7 V drop."
-      },
-      {
-            "id": 132,
-            "question": "(Problem) Two identical Silicon diodes are connected in series with a 680 \u03a9 load resistor and a 10 V DC voltage supply. Using the Second Approximation, calculate the total circuit current in milliamperes (mA).",
-            "options": [
-                  "a. 13.6765 mA",
-                  "b. 12.6471 mA",
-                  "c. 14.7059 mA",
-                  "d. 11.6176 mA"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why '12.6471 mA' is Correct: Two series Silicon diodes drop V_total = 2 * 0.7 V = 1.4 V. Resistor voltage V_R = 10 V - 1.4 V = 8.6 V. Circuit current I = 8.6 V / 680 \u03a9 = 0.01264706 A = 12.6471 mA.\n\u2022 Why Other Choices are Incorrect: 13.6765 mA counts only one diode drop (9.3 V / 680 \u03a9)."
-      },
-      {
-            "id": 133,
-            "question": "(Problem) For a series circuit with a 10 V DC source and a single Silicon diode (V_D = 0.7 V) connected across a 330 \u03a9 load resistor, calculate the load voltage V_L across the 330 \u03a9 resistor in volts (V).",
-            "options": [
-                  "a. 9.3 V",
-                  "b. 4.3 V",
-                  "c. 10.0 V",
-                  "d. 7.9 V"
-            ],
-            "answer": 0,
-            "explanation": "\u2022 Why '9.3 V' is Correct: By KVL, load voltage V_L = V_S - V_D = 10 V - 0.7 V = 9.3 V.\n\u2022 Why Other Choices are Incorrect: 4.3 V corresponds to a 5 V source (5 V - 0.7 V), while 10.0 V ignores diode barrier drop."
-      },
-      {
-            "id": 134,
-            "question": "(Problem) Two Silicon diodes are connected in parallel with each other in the forward direction. This parallel branch is placed in series with a 330 \u03a9 resistor and a 5 V DC supply. Assuming equal current sharing, calculate the current through each individual diode in milliamperes (mA) using the Second Approximation.",
-            "options": [
-                  "a. 13.0303 mA",
-                  "b. 6.5152 mA",
-                  "c. 7.5758 mA",
-                  "d. 3.2576 mA"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why '6.5152 mA' is Correct: Parallel Silicon diodes clamp the branch voltage to V_D = 0.7 V. Resistor voltage V_R = 5 V - 0.7 V = 4.3 V. Total supply current I_total = 4.3 V / 330 \u03a9 = 13.0303 mA. Since current divides equally between two parallel diodes: I_diode = 13.0303 mA / 2 = 6.51515 mA \u2248 6.5152 mA.\n\u2022 Why Other Choices are Incorrect: 13.0303 mA is total circuit current before dividing by 2."
-      },
-      {
-            "id": 135,
-            "question": "(Problem) An ideal Silicon diode is connected in reverse bias across a 24 V DC supply in series with a 1 k\u03a9 resistor. Calculate the terminal voltage across the reverse-biased diode V_D in volts (V).",
-            "options": [
-                  "a. 0 V",
-                  "b. 24 V",
-                  "c. 12 V",
-                  "d. 0.7 V"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why '24 V' is Correct: In reverse bias, an ideal diode acts as an open circuit (I = 0). With zero current flowing through the resistor (V_R = 0 V), the full 24 V supply voltage drops across the open diode terminals.\n\u2022 Why Other Choices are Incorrect: 0 V occurs across an ideal diode in forward bias, not reverse bias."
-      },
-      {
-            "id": 136,
-            "question": "(Problem) A Silicon diode and a Germanium diode are connected in parallel (facing the same forward conduction path) in series with a 1.5 k\u03a9 load resistor and a 12 V DC source. Using the Second Approximation, determine the total current drawn from the supply in milliamperes (mA).",
-            "options": [
-                  "a. 7.5333 mA",
-                  "b. 7.8000 mA",
-                  "c. 7.2667 mA",
-                  "d. 8.0000 mA"
-            ],
-            "answer": 1,
-            "explanation": "\u2022 Why '7.8000 mA' is Correct: Germanium turns ON at 0.3 V, which is lower than Silicon's 0.7 V threshold. Germanium conducts first and clamps the node voltage to 0.3 V, keeping Silicon OFF. Resistor voltage V_R = 12 V - 0.3 V = 11.7 V. Total current I = 11.7 V / 1500 \u03a9 = 0.0078 A = 7.8 mA.\n\u2022 Why Other Choices are Incorrect: 7.5333 mA assumes Silicon conducts (11.3 V / 1500 \u03a9 = 7.533 mA), but Silicon remains OFF."
-      },
-{
-            "id": 137,
-            "question": "(Midterm Seatwork 2) What does BJT stand for in electronics?",
-            "options": [
-                "Bipolar Junction Transistor",
-                "Basic Junction Technology",
-                "Binary Junction Transformer",
-                "Base Joint Transducer"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Bipolar Junction Transistor' is Correct: BJT stands for Bipolar Junction Transistor. It is called 'bipolar' because it utilizes both electron and hole conduction, and 'junction' because it consists of two PN junctions separating three doped regions.\n• Why Other Choices are Incorrect: BJT does not stand for Technology, Transformer, or Transducer."
-        },
-{
-            "id": 138,
-            "question": "(Midterm Seatwork 2) In a BJT, what are the three layers formed by the P-type and N-type semiconductor materials?",
-            "options": [
-                "Emitter, Base, Collector",
-                "Anode, Cathode, Gate",
-                "Source, Drain, Gate",
-                "Channel, Substrate, Body"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Emitter, Base, Collector' is Correct: The three functional semiconductor layers of a BJT are the Emitter (injects carriers), the Base (controls carrier flow), and the Collector (collects carriers).\n• Why Other Choices are Incorrect: Anode, Cathode, and Gate belong to thyristors (SCRs); Source, Drain, and Gate belong to FETs."
-        },
-{
-            "id": 139,
-            "question": "(Midterm Seatwork 2) Which terminal of the BJT is responsible for the majority charge carriers injection into the base region?",
-            "options": [
-                "Collector",
-                "Base",
-                "Emitter",
-                "Substrate"
-            ],
-            "answer": 2,
-            "explanation": "• Why 'Emitter' is Correct: As its name implies, the Emitter is heavily doped and responsible for emitting (injecting) majority charge carriers across the forward-biased base-emitter junction into the base region.\n• Why Other Choices are Incorrect: The Collector collects carriers; the Base controls their transit."
-        },
-{
-            "id": 140,
-            "question": "(Midterm Seatwork 2) What is the purpose of the thin base region in a BJT?",
-            "options": [
-                "To provide mechanical strength",
-                "To control the flow of majority charge carriers",
-                "To enhance thermal conductivity",
-                "To increase voltage handling capacity"
-            ],
-            "answer": 1,
-            "explanation": "• Why 'To control the flow of majority charge carriers' is Correct: The Base is physically ultra-thin and lightly doped so that it allows small base currents to modulate and control the vast majority of carriers diffusing from emitter to collector with minimal recombination.\n• Why Other Choices are Incorrect: The base does not provide structural strength or heat dissipation (heat dissipation is handled by the collector)."
-        },
-{
-            "id": 141,
-            "question": "(Midterm Seatwork 2) What type of charge carriers dominate the current flow in the emitter and collector regions of an NPN BJT?",
-            "options": [
-                "Electrons",
-                "Holes",
-                "Protons",
-                "Neutrons"
-            ],
-            "answer": 0,
-            "explanation": "• Why 'Electrons' is Correct: In an NPN transistor, the Emitter and Collector are both composed of N-type semiconductor material, where negatively charged free electrons are the majority charge carriers.\n• Why Other Choices are Incorrect: Holes dominate in P-type regions (PNP transistors); protons and neutrons are fixed subatomic particles in the nucleus."
-        },
-{
-            "id": 142,
-            "question": "(Midterm Seatwork 2) What type of charge carriers dominate the current flow in the emitter and collector regions of a PNP BJT?",
-            "options": [
-                "Electrons",
-                "Holes",
-                "Proton",
-                "Neutrons"
-            ],
-            "answer": 1,
-            "explanation": "• Why 'Holes' is Correct: In a PNP transistor, the Emitter and Collector are composed of P-type semiconductor material, where positively charged holes (deficiencies of electrons in valence bonds) are the majority charge carriers.\n• Why Other Choices are Incorrect: Electrons dominate in N-type material (NPN transistors)."
-        },
-{
-            "id": 143,
-            "question": "(Midterm Seatwork 2) What is the function of the collector terminal in a BJT?",
-            "options": [
-                "To inject majority carriers into the base",
-                "To collect majority carriers emitted from the base",
-                "To control the base current",
-                "To provide mechanical support"
-            ],
-            "answer": 1,
-            "explanation": "• Why 'To collect majority carriers emitted from the base' is Correct: The primary function of the Collector terminal is to collect the majority charge carriers that were injected by the emitter and have traversed across the base region.\n• Why Other Choices are Incorrect: Injecting carriers is the role of the emitter; controlling current is the function of the base."
-        }
-    ]
+  {
+    "id": 1,
+    "question": "What is the name of Niels Bohr's 1913 atomic model?",
+    "options": [
+      "Solid Sphere Model",
+      "Plum Pudding Model",
+      "Nuclear Model",
+      "Planetary Model"
+    ],
+    "answer": 3,
+    "explanation": "• Why 'Planetary Model' is Correct: Niels Bohr proposed the Planetary Model in 1913, in which electrons orbit a dense positive nucleus in discrete energy levels, similar to planets orbiting the sun.\n• Why Other Choices are Incorrect: Dalton proposed the Solid Sphere Model (1803), Thomson proposed the Plum Pudding Model (1897), and Rutherford proposed the Nuclear Model (1911)."
+  },
+  {
+    "id": 2,
+    "question": "Which of the following best defines a semiconductor?",
+    "options": [
+      "Zero electrical resistance at standard room temperature and pressure",
+      "Conductivity between a good conductor and an insulator",
+      "Complete blockage of electrical current conduction under all bias voltages",
+      "Conduction carried exclusively by trivalent positive metallic ions"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'A material having electrical conductivity between a good conductor and an insulator' is Correct: Semiconductors are a special class of elements whose conductivity lies between conductors (like copper) and insulators (like rubber).\n• Why Other Choices are Incorrect: Superconductors have zero resistance, while insulators completely block current."
+  },
+  {
+    "id": 3,
+    "question": "How many valence electrons does a pure semiconductor atom (such as Silicon or Germanium) have?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": 2,
+    "explanation": "• Why '4' is Correct: Pure semiconductor atoms like Silicon (Si) and Germanium (Ge) belong to Group IV of the periodic table and have 4 valence electrons (tetravalent).\n• Why Other Choices are Incorrect: Trivalent elements have 3 valence electrons (acceptors like Boron), while pentavalent elements have 5 valence electrons (donors like Phosphorus)."
+  },
+  {
+    "id": 4,
+    "question": "What is the term for a pure semiconductor that has not been subjected to doping?",
+    "options": [
+      "Extrinsic semiconductor",
+      "Intrinsic semiconductor",
+      "N-type semiconductor",
+      "P-type semiconductor"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Intrinsic semiconductor' is Correct: An intrinsic semiconductor is an pure, un-doped semiconductor crystal where thermal excitation alone creates equal numbers of free electrons and holes.\n• Why Other Choices are Incorrect: Extrinsic semiconductors are semiconductors that have been intentionally doped with impurities to form N-type or P-type materials."
+  },
+  {
+    "id": 5,
+    "question": "Calculate the loop current (I) in a forward-biased diode circuit using the Third Approximation (Piecewise Approximation). Given: Supply Voltage = 10 V, Silicon Diode (V_B = 0.7 V, internal resistance R_B = 0.2 Ω), and Load Resistor R_L = 1 kΩ (1000 Ω).",
+    "options": [
+      "9.300 mA",
+      "9.298 mA",
+      "10.00 mA",
+      "9.600 mA"
+    ],
+    "answer": 1,
+    "explanation": "• Why '9.298 mA' is Correct: In the Third Approximation, I = (V_S - V_B) / (R_L + R_B) = (10 V - 0.7 V) / (1000 Ω + 0.2 Ω) = 9.3 V / 1000.2 Ω = 0.00929814 A = 9.298 mA.\n• Why Other Choices are Incorrect: 9.300 mA is obtained using the Second Approximation (ignoring internal resistance R_B = 0.2 Ω), and 10.00 mA is obtained using the First (Ideal) Approximation."
+  },
+  {
+    "id": 6,
+    "question": "Who discovered static electricity in ancient times by rubbing amber against fur?",
+    "options": [
+      "Ancient Egyptians",
+      "Ancient Greeks",
+      "Romans",
+      "Babylonians"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Ancient Greeks' is Correct: The ancient Greeks discovered static electricity when rubbing amber (Greek: elektron) against fur attracted light objects.\n• Why Other Choices are Incorrect: Ancient Egyptians utilized electric fish to alleviate pain, but did not discover amber static electricity."
+  },
+  {
+    "id": 7,
+    "question": "The Leyden jar, invented in 1745, was a landmark historical device because it was capable of:",
+    "options": [
+      "Generating alternating current",
+      "Storing an electric charge",
+      "Measuring magnetic flux",
+      "Amplifying radio signals"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Storing an electric charge' is Correct: The Leyden jar (1745) was the earliest form of a capacitor, designed to store static electrical charge.\n• Why Other Choices are Incorrect: Generators produce AC, magnetometers measure flux, and vacuum tubes/transistors amplify signals."
+  },
+  {
+    "id": 8,
+    "question": "In 1820, Hans Christian Oersted discovered which foundational physical phenomenon?",
+    "options": [
+      "Photoelectric effect",
+      "Electromagnetism",
+      "Thermionic emission",
+      "Quantum entanglement"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Electromagnetism' is Correct: Oersted noticed a compass needle deflected near a current-carrying wire in 1820, establishing the field of electromagnetism.\n• Why Other Choices are Incorrect: Faraday discovered induction (1831), Edison discovered thermionic emission (1883), and Einstein explained photoelectric effect (1905)."
+  },
+  {
+    "id": 9,
+    "question": "Michael Faraday's discovery of electromagnetic induction in 1831 led directly to the development of:",
+    "options": [
+      "Electric motors and generators",
+      "Vacuum tubes",
+      "Microprocessors",
+      "Leyden jars"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Electric motors and generators' is Correct: Faraday showed that a changing magnetic field induces an electric current, enabling mechanical-to-electrical energy conversion in electric generators.\n• Why Other Choices are Incorrect: Vacuum tubes were invented by Fleming (1904), microprocessors by Intel (1971), and Leyden jars in 1745."
+  },
+  {
+    "id": 10,
+    "question": "Who invented the first vacuum tube (diode / Fleming valve) in 1904?",
+    "options": [
+      "Thomas Edison",
+      "John Ambrose Fleming",
+      "Lee de Forest",
+      "Nikola Tesla"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'John Ambrose Fleming' is Correct: John Ambrose Fleming invented the two-electrode thermionic vacuum tube (diode valve) in 1904 based on the Edison effect.\n• Why Other Choices are Incorrect: Thomas Edison discovered the Edison effect (1883), Lee de Forest added a grid to create the triode (1906), and Tesla pioneered AC power."
+  },
+  {
+    "id": 11,
+    "question": "The transistor was invented in 1947 at Bell Laboratories by which team of scientists?",
+    "options": [
+      "Jack Kilby, Robert Noyce, and Ted Hoff",
+      "John Bardeen, Walter Brattain, and William Shockley",
+      "Thomas Edison, Nikola Tesla, and Alexander Graham Bell",
+      "J.J. Thomson, Ernest Rutherford, and Niels Bohr"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'John Bardeen, Walter Brattain, and William Shockley' is Correct: Bardeen, Brattain, and Shockley co-invented the point-contact and junction transistor at Bell Labs in December 1947.\n• Why Other Choices are Incorrect: Kilby, Noyce, and Hoff developed integrated circuits and microprocessors."
+  },
+  {
+    "id": 12,
+    "question": "Integrated Circuits (ICs) were independently invented in the late 1950s by:",
+    "options": [
+      "Jack Kilby and Robert Noyce",
+      "John Bardeen and Walter Brattain",
+      "Ted Hoff and Federico Faggin",
+      "John Ambrose Fleming and Lee de Forest"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Jack Kilby and Robert Noyce' is Correct: Jack Kilby (Texas Instruments) and Robert Noyce (Fairchild Semiconductor) independently invented planar integrated circuits in 1958-1959.\n• Why Other Choices are Incorrect: Bardeen & Brattain invented the transistor; Hoff & Faggin created the Intel 4004 microprocessor."
+  },
+  {
+    "id": 13,
+    "question": "Which atomic model introduced the concept of electrons embedded in a positively charged sphere, known as the 'Plum Pudding Model'?",
+    "options": [
+      "John Dalton (1803)",
+      "J.J. Thomson (1897)",
+      "Ernest Rutherford (1911)",
+      "Erwin Schrödinger (1926)"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'J.J. Thomson (1897)' is Correct: J.J. Thomson discovered the electron in 1897 and proposed the Plum Pudding Model, where negative electrons were embedded in a positive sphere.\n• Why Other Choices are Incorrect: Dalton proposed solid sphere, Rutherford proposed nuclear model, and Schrödinger developed the quantum wave model."
+  },
+  {
+    "id": 14,
+    "question": "Erwin Schrödinger's 1926 contribution to atomic theory is known as the:",
+    "options": [
+      "Solid Sphere Model",
+      "Nuclear Model",
+      "Planetary Model",
+      "Quantum Model"
+    ],
+    "answer": 3,
+    "explanation": "• Why 'Quantum Model' is Correct: Schrödinger formulated wave mechanics in 1926, defining electron positions probabilistically in 3D electron clouds (orbitals).\n• Why Other Choices are Incorrect: Dalton (solid sphere), Rutherford (nuclear), and Bohr (planetary) were earlier classical models."
+  },
+  {
+    "id": 15,
+    "question": "Which of the following is a key advantage of Silicon over Germanium in semiconductor device manufacturing?",
+    "options": [
+      "Higher reverse leakage current and lower thermal breakdown threshold",
+      "Higher thermal stability and lower reverse leakage current",
+      "Lower forward barrier voltage of 0.1 V requiring less turn-on energy",
+      "Greater sensitivity to ambient temperature variations than Germanium"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Silicon is thermally stable, more abundant, cost-effective, and has low leakage current' is Correct: Silicon (Si) outperforms Germanium (Ge) because Si handles higher operating temperatures, has lower reverse leakage current, and is abundant in sand (SiO2).\n• Why Other Choices are Incorrect: Germanium is temperature sensitive, expensive, less abundant, and has high leakage current."
+  },
+  {
+    "id": 16,
+    "question": "What are the typical forward barrier (knee) voltages for Germanium (Ge) and Silicon (Si) diodes at room temperature?",
+    "options": [
+      "Germanium = 0.7 V, Silicon = 0.3 V",
+      "Germanium = 0.3 V, Silicon = 0.7 V",
+      "Germanium = 1.1 V, Silicon = 1.5 V",
+      "Germanium = 0.0 V, Silicon = 0.0 V"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Germanium = 0.3 V, Silicon = 0.7 V' is Correct: At 25 °C, a Germanium PN junction requires approx 0.3 V to turn on in forward bias, while Silicon requires approx 0.7 V.\n• Why Other Choices are Incorrect: Reversing the values is a common mistake; Ge has smaller bandgap energy than Si."
+  },
+  {
+    "id": 17,
+    "question": "Which of the following is an example of a Compound Semiconductor?",
+    "options": [
+      "Silicon (Si)",
+      "Germanium (Ge)",
+      "Gallium Arsenide (GaAs)",
+      "Carbon (C)"
+    ],
+    "answer": 2,
+    "explanation": "• Why 'Gallium Arsenide (GaAs)' is Correct: Gallium Arsenide (GaAs) and Cadmium Sulfide (CdS) are compound semiconductors formed by combining elements from different periodic table groups.\n• Why Other Choices are Incorrect: Silicon and Germanium are single-crystal elemental semiconductors."
+  },
+  {
+    "id": 18,
+    "question": "What type of chemical bonding is formed between semiconductor atoms in a crystal lattice by sharing valence electrons?",
+    "options": [
+      "Ionic bonding",
+      "Covalent bonding",
+      "Metallic bonding",
+      "Hydrogen bonding"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Covalent bonding' is Correct: Semiconductor atoms achieve an 8-electron stable valence octet by sharing valence electrons with four neighboring atoms in covalent bonds.\n• Why Other Choices are Incorrect: Ionic bonds involve complete electron transfer, while metallic bonds feature a sea of delocalized electrons."
+  },
+  {
+    "id": 19,
+    "question": "Adding donor impurities (such as Phosphorus or Arsenic) to an intrinsic semiconductor produces which type of material?",
+    "options": [
+      "P-type semiconductor with excess holes",
+      "N-type semiconductor with excess free electrons",
+      "Insulator with high resistance",
+      "Superconductor"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'N-type semiconductor with excess free electrons' is Correct: Pentavalent donor atoms (5 valence electrons) donate extra free electrons, creating an N-type (negative carrier) semiconductor.\n• Why Other Choices are Incorrect: Acceptor impurities (trivalent like Boron) produce P-type semiconductors with excess holes."
+  },
+  {
+    "id": 20,
+    "question": "In a P-type semiconductor, which charge carriers are the majority carriers and minority carriers?",
+    "options": [
+      "Majority: Electrons, Minority: Holes",
+      "Majority: Holes, Minority: Electrons",
+      "Majority: Positive Ions, Minority: Negative Ions",
+      "Majority: Photons, Minority: Neutrons"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Majority: Holes, Minority: Electrons' is Correct: P-type semiconductors are doped with trivalent acceptors (Boron), creating a abundance of positive holes (majority carriers) and few thermally generated electrons (minority carriers).\n• Why Other Choices are Incorrect: N-type materials have electrons as majority carriers and holes as minority carriers."
+  },
+  {
+    "id": 21,
+    "question": "In the First (Ideal) Approximation of a diode, how does the diode behave under forward bias and reverse bias conditions?",
+    "options": [
+      "Open switch (forward); Closed switch (reverse)",
+      "Closed switch (forward); Open switch (reverse)",
+      "0.7 V battery source; High-value parallel resistor",
+      "Variable dynamic capacitor; Constant inducting coil"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Forward bias: Closed switch (0 V drop); Reverse bias: Open switch (0 current)' is Correct: The Ideal (First) Approximation treats the diode as a perfect binary switch with zero forward voltage drop when ON and zero leakage current when OFF.\n• Why Other Choices are Incorrect: 0.7 V battery model corresponds to the Practical (Second) Approximation."
+  },
+  {
+    "id": 22,
+    "question": "In the Second (Practical) Approximation, a forward-biased diode is modeled as a switch in series with a:",
+    "options": [
+      "Variable dynamic series resistance",
+      "Constant voltage battery of 0.7 V",
+      "Parallel junction storage capacitor",
+      "Constant current saturation source"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Constant voltage battery (V_B = 0.7 V for Si)' is Correct: The Second Approximation accounts for barrier potential by modeling the diode as a switch in series with an opposing DC battery equal to the barrier voltage (0.7 V for Si, 0.3 V for Ge).\n• Why Other Choices are Incorrect: Adding a bulk resistor corresponds to the Third (Piecewise) Approximation."
+  },
+  {
+    "id": 23,
+    "question": "What is the region near the PN junction called where free electrons and holes recombine, leaving unneutralized donor and acceptor ions?",
+    "options": [
+      "Conduction region",
+      "Depletion region",
+      "Saturation region",
+      "Substrate region"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Depletion region' is Correct: When a PN junction is formed, mobile charge carriers diffuse across and recombine, depleting the junction of free carriers and forming a depletion region of fixed ions.\n• Why Other Choices are Incorrect: Conduction region refers to energy bands, while saturation region refers to transistor operation."
+  },
+  {
+    "id": 24,
+    "question": "Under Reverse-Bias conditions, what happens to the depletion region width of a PN junction diode?",
+    "options": [
+      "Shrinks to zero, enabling unrestricted electron flow",
+      "Widens, increasing internal barrier potential",
+      "Remains completely unchanged across all reverse voltages",
+      "Converts immediately into a low-resistance ohmic conductor"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'It widens, increasing the internal barrier potential' is Correct: Reverse bias pulls majority carriers away from the PN junction, widening the depletion layer and preventing forward current flow.\n• Why Other Choices are Incorrect: Forward bias shrinks the depletion region width."
+  },
+  {
+    "id": 25,
+    "question": "Which diode approximation incorporates the diode's internal bulk resistance (R_B) in series with the barrier voltage battery and switch?",
+    "options": [
+      "First (Ideal) Approximation",
+      "Second (Practical) Approximation",
+      "Third (Piecewise Linear) Approximation",
+      "Fourth (Small-Signal) Approximation"
+    ],
+    "answer": 2,
+    "explanation": "• Why 'Third (Piecewise Linear) Approximation' is Correct: The Third Approximation includes the internal bulk resistance of the semiconductor material (R_B) in series with the barrier battery (V_B) and switch.\n• Why Other Choices are Incorrect: First approximation has no voltage drop or resistance; Second approximation includes barrier voltage V_B but assumes R_B = 0."
+  },
+  {
+    "id": 26,
+    "question": "Which scientist and inventor is famous for discovering and pioneering Alternating Current (AC) power transmission systems?",
+    "options": [
+      "Nikola Tesla",
+      "Alessandro Volta",
+      "Thomas Edison",
+      "James Clerk Maxwell"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Nikola Tesla' is Correct: Nikola Tesla pioneered polyphase Alternating Current (AC) power systems, AC induction motors, and high-voltage AC transmission lines.\n• Why Other Choices are Incorrect: Alessandro Volta invented the battery, Thomas Edison advocated for Direct Current (DC), and Maxwell formulated electromagnetic theory."
+  },
+  {
+    "id": 27,
+    "question": "Who invented the first practical battery (the Voltaic Pile) in 1800, providing the world with its first source of continuous direct electric current?",
+    "options": [
+      "Guglielmo Marconi",
+      "Alessandro Volta",
+      "Samuel Morse",
+      "Michael Faraday"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Alessandro Volta' is Correct: Alessandro Volta created the Voltaic Pile in 1800 (alternating discs of zinc and copper separated by brine-soaked cloth), producing the first chemical battery.\n• Why Other Choices are Incorrect: Marconi pioneered wireless radio, Morse developed telegraphy, and Faraday discovered electromagnetic induction."
+  },
+  {
+    "id": 28,
+    "question": "Who is credited with pioneering work in long-distance radio transmission and developing practical wireless telegraphy?",
+    "options": [
+      "Tim Berners-Lee",
+      "Jack Kilby",
+      "Guglielmo Marconi",
+      "Alexander Graham Bell"
+    ],
+    "answer": 2,
+    "explanation": "• Why 'Guglielmo Marconi' is Correct: Guglielmo Marconi sent the first transatlantic radio signal in 1901 and won the Nobel Prize for pioneering wireless radio communication.\n• Why Other Choices are Incorrect: Tim Berners-Lee created the World Wide Web, Jack Kilby co-invented the integrated circuit, and Bell invented the telephone."
+  },
+  {
+    "id": 29,
+    "question": "Which theoretical physicist is renowned for the formulation of classical electromagnetic theory (Maxwell's Equations), unifying electricity, magnetism, and light?",
+    "options": [
+      "James Clerk Maxwell",
+      "Nikola Tesla",
+      "Samuel Morse",
+      "Heinrich Hertz"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'James Clerk Maxwell' is Correct: James Clerk Maxwell published his four unified field equations in 1865, proving that light is an electromagnetic wave.\n• Why Other Choices are Incorrect: Tesla pioneered AC power systems, Morse invented single-wire telegraphy, and Hertz experimentally demonstrated radio waves."
+  },
+  {
+    "id": 30,
+    "question": "Jack Kilby and Robert Noyce are celebrated in electronics history for which revolutionary breakthrough in the late 1950s?",
+    "options": [
+      "Discovery of thermionic emission",
+      "Introduction of the Integrated Circuit",
+      "Development of the World Wide Web",
+      "Invention of the single-wire electric telegraph"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Introduction of the Integrated Circuit' is Correct: Jack Kilby (Texas Instruments) and Robert Noyce (Fairchild Semiconductor) independently invented the Integrated Circuit (IC), fabricating complete circuits on a single semiconductor chip.\n• Why Other Choices are Incorrect: Edison discovered thermionic emission, Berners-Lee created WWW, and Morse invented the telegraph."
+  },
+  {
+    "id": 31,
+    "question": "Which computer scientist is renowned for the development of the World Wide Web (WWW) in 1989 while working at CERN?",
+    "options": [
+      "Alan Turing",
+      "Tim Berners-Lee",
+      "Steve Wozniak",
+      "Dennis Ritchie"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Tim Berners-Lee' is Correct: Sir Tim Berners-Lee invented the World Wide Web (WWW), HTML, HTTP, and the first browser at CERN in 1989.\n• Why Other Choices are Incorrect: Alan Turing developed theoretical computer science, Wozniak co-founded Apple, and Ritchie created C/Unix."
+  },
+  {
+    "id": 32,
+    "question": "Who developed the first successful single-wire electric telegraph and co-created the dot-and-dash signaling code named after him?",
+    "options": [
+      "Samuel Morse",
+      "Alexander Graham Bell",
+      "Guglielmo Marconi",
+      "Thomas Edison"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Samuel Morse' is Correct: Samuel Morse patented the single-wire electric telegraph in 1837 and created Morse Code for long-distance telecommunication.\n• Why Other Choices are Incorrect: Bell invented the telephone, Marconi developed radio transmission, and Edison invented the incandescent bulb."
+  },
+  {
+    "id": 33,
+    "question": "In a review matching historical pioneers with their legacies, which of the following pairings is INCORRECT?",
+    "options": [
+      "Alessandro Volta — First Practical Battery",
+      "Guglielmo Marconi — Pioneering work in wireless radio transmission",
+      "Tim Berners-Lee — Development of the World Wide Web",
+      "Nikola Tesla — Invention of the vacuum tube Fleming valve"
+    ],
+    "answer": 3,
+    "explanation": "• Why 'Nikola Tesla — Invention of the vacuum tube Fleming valve' is Correct (as the INCORRECT match): The vacuum tube (Fleming valve) was invented by John Ambrose Fleming in 1904. Nikola Tesla is famous for discovering and pioneering Alternating Current (AC) power systems.\n• Why Other Choices are Valid Matches: Volta created the first battery (1800), Marconi pioneered radio, and Berners-Lee invented the World Wide Web (1989)."
+  },
+  {
+    "id": 34,
+    "question": "What is the unique structural construction of a Schottky diode compared to a traditional Positive-Negative (PN) junction diode?",
+    "options": [
+      "It joins a metal Anode to an N-type semiconductor Cathode with no P-type material",
+      "It joins a P-type semiconductor to a metal Cathode",
+      "It consists of two intrinsic semiconductor layers without any metal contact",
+      "It combines three alternating layers of P-type and N-type materials"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'It joins a metal Anode to an N-type semiconductor Cathode with no P-type material' is Correct: A Schottky diode is a metal-semiconductor junction formed by bonding a metal (like gold, silver, or platinum) as the Anode to an N-type silicon Cathode, completely omitting P-type semiconductor material.\n• Why Other Choices are Incorrect: Traditional diodes use P-N semiconductor junctions; Schottky diodes rely on metal-N semiconductor junctions."
+  },
+  {
+    "id": 35,
+    "question": "What is the typical forward voltage drop across a Schottky diode when conducting current?",
+    "options": [
+      "0.15 V to 0.45 V",
+      "0.60 V to 0.70 V",
+      "1.20 V to 1.50 V",
+      "2.00 V to 3.00 V"
+    ],
+    "answer": 0,
+    "explanation": "• Why '0.15 V to 0.45 V' is Correct: The metal-semiconductor Schottky barrier potential is significantly lower than a standard PN junction, resulting in a low forward voltage drop of 0.15 V to 0.45 V.\n• Why Other Choices are Incorrect: Standard silicon PN diodes have a 0.6 V – 0.7 V drop, while Light-Emitting Diodes (LEDs) require 1.5 V – 3.0 V."
+  },
+  {
+    "id": 36,
+    "question": "Why do Schottky diodes exhibit extremely fast switching speeds with virtually zero reverse recovery time?",
+    "options": [
+      "Conduction involves only majority carriers without minority carrier storage",
+      "Because they operate using high thermal dissipation",
+      "Because they possess a thick depletion region that stores positive holes",
+      "Because they rely on mechanical switch contacts"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Conduction involves only majority carriers without minority carrier storage' is Correct: In Schottky diodes, current is carried almost exclusively by majority carriers (electrons). Since there are no stored minority carriers to clear out during turn-off, reverse recovery time is negligible (a few nanoseconds).\n• Why Other Choices are Incorrect: Standard PN diodes suffer from slow switching due to minority carrier storage in the depletion region."
+  },
+  {
+    "id": 37,
+    "question": "Which of the following is a main limitation or disadvantage of a Schottky diode compared to a standard Silicon PN junction diode?",
+    "options": [
+      "Higher reverse leakage and lower breakdown voltage",
+      "Sluggish switching speed during high-frequency cycles",
+      "Excessive forward barrier voltage drop exceeding 1.5 V",
+      "Total inability to conduct forward majority carrier current"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Higher reverse leakage current and lower reverse breakdown voltage' is Correct: Because of the thin metal barrier, Schottky diodes experience higher reverse leakage current and lower reverse breakdown voltages, making them unsuitable for high-voltage circuits.\n• Why Other Choices are Incorrect: Schottky diodes excel in fast switching speed and low forward voltage drop."
+  },
+  {
+    "id": 38,
+    "question": "In a forward-biased Schottky diode, what is the direction of conventional current flow?",
+    "options": [
+      "Metal Anode to N-type semiconductor Cathode",
+      "N-type semiconductor Cathode to metal Anode",
+      "External Cathode terminal to external Anode",
+      "Zero current conduction in either direction"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'From the metal Anode to the N-type semiconductor Cathode' is Correct: Forward bias connects the positive terminal to the Metal (Anode) and negative to N-type (Cathode), directing conventional current from Metal to N-type semiconductor.\n• Why Other Choices are Incorrect: Electron flow is in the opposite direction (N-type to Metal)."
+  },
+  {
+    "id": 39,
+    "question": "Which electronic system widely uses Schottky diodes due to their high efficiency and fast switching capabilities?",
+    "options": [
+      "Smartphone chargers and laptop power bricks",
+      "High-voltage AC overhead transmission power networks",
+      "Incandescent lamp tungsten filaments and heater units",
+      "Cathode ray tube high-voltage electron gun assemblies"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Smartphone chargers, laptop power bricks, and computer motherboards' is Correct: Low forward voltage drop and fast switching speed minimize power loss and heat, making Schottky diodes ideal for high-frequency switch-mode power supplies and digital chargers.\n• Why Other Choices are Incorrect: High-voltage AC lines require high-breakdown silicon rectifiers, not Schottky diodes."
+  },
+  {
+    "id": 40,
+    "question": "Unlike a standard PN junction diode, a Zener diode is specifically designed and heavily doped to operate safely in which region?",
+    "options": [
+      "Reverse-Bias breakdown region",
+      "Forward-bias saturation region",
+      "Cut-off region only",
+      "Thermal breakdown destruction region"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Reverse-Bias breakdown region' is Correct: Zener diodes are manufactured with heavy doping to operate continuously and safely in reverse breakdown without causing permanent device damage.\n• Why Other Choices are Incorrect: Standard diodes overheat and fail if driven into reverse breakdown; Zener diodes are designed for it."
+  },
+  {
+    "id": 41,
+    "question": "What key electrical characteristic makes Zener diodes ideal for voltage regulation circuits?",
+    "options": [
+      "Constant reverse breakdown voltage",
+      "Linearly increasing voltage with rising current",
+      "Complete current blockage under both polarities",
+      "High-frequency sinusoidal oscillation output"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Maintaining a nearly constant voltage (Zener voltage V_Z) across its terminals during reverse breakdown' is Correct: Once the reverse breakdown voltage (Zener Voltage V_Z) is reached, the voltage across the Zener diode remains virtually constant even as reverse current varies widely.\n• Why Other Choices are Incorrect: Resistors and standard components change voltage with current, unlike Zener regulators."
+  },
+  {
+    "id": 42,
+    "question": "Why does a Zener diode have an extremely thin depletion layer?",
+    "options": [
+      "Heavy doping in both P-type and N-type regions",
+      "Pure metallic construction without semiconductor",
+      "Operation strictly restricted to absolute zero",
+      "Complete absence of an internal junction boundary"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Because both P-type and N-type regions are heavily doped with impurity atoms' is Correct: Heavy doping increases impurity ion density at the junction, creating an intense electric field across an extremely narrow depletion layer.\n• Why Other Choices are Incorrect: Light doping creates a wide depletion layer with high breakdown voltage."
+  },
+  {
+    "id": 43,
+    "question": "What are the primary practical applications of a Zener diode in electronic circuits?",
+    "options": [
+      "Voltage regulation and reference points",
+      "Light emission, optical display, and infrared transmission",
+      "Audio frequency power amplification and loudspeaker driving",
+      "Mechanical energy storage and rotational speed governors"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Voltage regulation, surge protection, and stable voltage reference points' is Correct: The constant reverse breakdown voltage property enables Zener diodes to clamp overvoltages and regulate DC power supply rails.\n• Why Other Choices are Incorrect: LEDs emit light, BJTs amplify audio signals, and capacitors/batteries store energy."
+  },
+  {
+    "id": 44,
+    "question": "A Tunnel diode (Esaki diode) operates at ultra-high switching speeds due to which quantum mechanical phenomenon?",
+    "options": [
+      "Quantum Tunneling",
+      "Thermionic emission",
+      "Photoelectric absorption",
+      "Secondary emission"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Quantum Tunneling' is Correct: Quantum tunneling allows valence electrons to pass directly through an ultra-thin potential barrier at nearly the speed of light rather than climbing over the barrier.\n• Why Other Choices are Incorrect: Thermionic emission involves heating filaments, and photoelectric absorption involves photon energy."
+  },
+  {
+    "id": 45,
+    "question": "How does the doping concentration of a Tunnel diode compare to a standard Positive-Negative (PN) junction diode?",
+    "options": [
+      "Heavily doped up to 1,000 times higher than standard diodes",
+      "Completely un-doped intrinsic silicon without any impurities",
+      "Lightly doped to maximize internal bulk semiconductor ohms",
+      "Symmetrically doped with equal numbers of metal gold atoms"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'It is heavily doped up to 1,000 times higher than a standard junction diode' is Correct: Ultra-heavy doping (~1000x standard levels) shrinks the depletion layer down to less than 10 nanometers, enabling quantum tunneling.\n• Why Other Choices are Incorrect: Light doping prevents tunneling by creating a wide barrier."
+  },
+  {
+    "id": 46,
+    "question": "What unique operational characteristic occurs on the forward V-I curve of a Tunnel diode between the peak current point and valley point?",
+    "options": [
+      "Negative Resistance Region",
+      "Infinite positive resistance",
+      "Zero voltage drop at all currents",
+      "Constant current saturation regardless of voltage"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Negative Resistance Region' is Correct: As forward voltage increases past the peak point, energy bands misalign and reduce electron tunneling, causing current to fall as voltage increases (negative resistance).\n• Why Other Choices are Incorrect: Ordinary resistors obey Ohm's Law where current increases with voltage."
+  },
+  {
+    "id": 47,
+    "question": "Because of its ultra-thin depletion layer (< 10 nanometers), what happens when a small reverse bias voltage is applied to a Tunnel diode?",
+    "options": [
+      "Large reverse current conducted immediately by tunneling",
+      "Destructive thermal runaway occurs instantaneously at zero volts",
+      "Depletion layer expands into several millimeters of insulation",
+      "Zero reverse current flows under all applied negative voltages"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Valence electrons easily tunnel from P-side to N-side, conducting large reverse current immediately' is Correct: Due to heavy doping and energy band overlap, small reverse bias immediately initiates heavy electron tunneling, making it conduct heavily in reverse.\n• Why Other Choices are Incorrect: Standard diodes block reverse current until breakdown voltage is reached."
+  },
+  {
+    "id": 48,
+    "question": "Which semiconductor materials are most commonly used in the fabrication of Tunnel diodes?",
+    "options": [
+      "Germanium and Gallium Arsenide",
+      "Copper and Aluminum",
+      "Pure Carbon and Diamond",
+      "Silicon Dioxide and Glass"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Germanium and Gallium Arsenide' is Correct: Germanium and Gallium Arsenide have high electron mobility and suitable bandgap energies for high-efficiency quantum tunneling.\n• Why Other Choices are Incorrect: Copper and Aluminum are metals; Silicon Dioxide is an insulator."
+  },
+  {
+    "id": 49,
+    "question": "Which electronic applications take advantage of the negative resistance and ultra-fast response of a Tunnel diode?",
+    "options": [
+      "Relaxation oscillators, high-speed switches, and FM receivers",
+      "Low-frequency power transformers, line filters, and chokes",
+      "Incandescent lighting filaments, flash tubes, and arc lamps",
+      "Electro-mechanical heavy-duty relays, solenoids, and contactors"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Relaxation oscillators, high-speed switches, and FM receivers' is Correct: Negative dynamic resistance cancels circuit losses in high-frequency oscillators and enables sub-nanosecond pulse switching.\n• Why Other Choices are Incorrect: Transformers and relays are heavy magnetic/mechanical components."
+  },
+  {
+    "id": 50,
+    "question": "What is the primary operating bias condition for a Photodiode during light-sensing operation?",
+    "options": [
+      "Reverse-Bias condition",
+      "Forward-Bias condition above 1.5 V",
+      "Thermal breakdown bias",
+      "Direct AC bias"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Reverse-Bias condition' is Correct: Photodiodes operate in Reverse-Bias (or zero bias) to widen the depletion region and establish a strong internal electric field that efficiently separates light-generated electron-hole pairs.\n• Why Other Choices are Incorrect: Forward biasing a photodiode conducts large forward current, masking photo-generated current and potentially damaging the sensor."
+  },
+  {
+    "id": 51,
+    "question": "What fundamental physical energy conversion takes place inside a Photodiode when exposed to light?",
+    "options": [
+      "Converts light energy into electrical current",
+      "Converts electrical energy into mechanical movement",
+      "Converts acoustic sound waves into voltage",
+      "Converts magnetic flux into thermal heat"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Converts light energy into electrical current' is Correct: When incoming photons with energy greater than the semiconductor bandgap strike the depletion region, they excite bound electrons to create free electron-hole pairs, producing measurable photocurrent.\n• Why Other Choices are Incorrect: Solar cells also use this photoelectric principle for power generation, whereas LEDs do the reverse (electrical energy to light)."
+  },
+  {
+    "id": 52,
+    "question": "How does the generated output photocurrent (I_p) of a Photodiode respond to changes in incoming light intensity (Lux)?",
+    "options": [
+      "Photocurrent is directly proportional to light intensity",
+      "Photocurrent decreases exponentially as light intensity increases",
+      "Photocurrent remains completely constant regardless of light level",
+      "Photocurrent is inversely proportional to light intensity squared"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Photocurrent is directly proportional to light intensity' is Correct: The Current-Light (I-L) relationship of a photodiode is highly linear: higher light intensity delivers more photons per second, creating more electron-hole pairs and higher photocurrent.\n• Why Other Choices are Incorrect: Inverse or exponential responses would distort linear light measurement."
+  },
+  {
+    "id": 53,
+    "question": "What is 'Dark Current' in a Photodiode?",
+    "options": [
+      "A small reverse leakage current that flows even when no light is present",
+      "The maximum forward current that destroys the photodiode",
+      "The light emitted by the photodiode when operating in total darkness",
+      "The AC ripple current from power supplies"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'A small reverse leakage current that flows even when no light is present' is Correct: Dark current is the minor reverse saturation current caused by thermal generation of electron-hole pairs when the photodiode is completely shielded from light.\n• Why Other Choices are Incorrect: Photodiodes do not emit light, and dark current is a tiny DC leakage current."
+  },
+  {
+    "id": 54,
+    "question": "Which layer of a photodiode active region is coated with an Anti-Reflective (AR) layer or glass lens?",
+    "options": [
+      "P+ active surface region to maximize light absorption",
+      "Bottom metal Cathode contact to reflect incoming light",
+      "Outer protective black casing to block ambient photons",
+      "Internal battery terminals to eliminate reverse bias"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'The P+ active surface region to maximize light absorption' is Correct: An Anti-Reflective (AR) coating or optical glass lens is placed over the active junction surface to reduce optical reflection losses and maximize photon entry into the depletion region.\n• Why Other Choices are Incorrect: The remaining body is coated in opaque black layer to block unwanted stray light."
+  },
+  {
+    "id": 55,
+    "question": "Which of the following semiconductor materials is commonly used in fabricating Photodiodes for optical communications?",
+    "options": [
+      "Silicon, Germanium, and InGaAs",
+      "Pure Copper, Aluminum, and Silver conductors",
+      "Sodium Chloride, Calcium, and Potassium salts",
+      "Polyethylene, Polystyrene, and Teflon plastics"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Silicon, Germanium, and Indium Gallium Arsenide' is Correct: Silicon (visible light), Germanium, and Indium Gallium Arsenide (InGaAs for long-wavelength infrared fiber optics) have suitable bandgaps for absorbing target light wavelengths.\n• Why Other Choices are Incorrect: Metals and plastics lack semiconductor bandgaps necessary for photon absorption."
+  },
+  {
+    "id": 56,
+    "question": "A Light-Emitting Diode (LED) emits visible or infrared light when operated under which bias condition?",
+    "options": [
+      "Forward-Bias condition",
+      "Reverse-Bias condition",
+      "Zero bias condition",
+      "High-voltage reverse breakdown"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Forward-Bias condition' is Correct: In Forward Bias, external voltage pushes electrons from the N-region and holes from the P-region into the active junction layer, where they recombine and release energy as photons.\n• Why Other Choices are Incorrect: In Reverse Bias, the depletion region widens, blocking current and keeping the LED completely OFF."
+  },
+  {
+    "id": 57,
+    "question": "Inside the structure of a Light-Emitting Diode (LED), which layer is responsible for producing light through electron-hole recombination?",
+    "options": [
+      "The active layer",
+      "The outer plastic epoxy lens",
+      "The bottom metal Cathode wire lead",
+      "The external series resistor"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'The active layer' is Correct: The Active layer sandwiched between the P-type and N-type semiconductor layers provides the optimum energy bandgap region where injected electrons and holes recombine to emit photons.\n• Why Other Choices are Incorrect: The epoxy lens focuses the emitted light, while leads supply current."
+  },
+  {
+    "id": 58,
+    "question": "On an electronic schematic symbol for a Light-Emitting Diode (LED), what do the two small outward-pointing arrows indicate?",
+    "options": [
+      "Light emission when current flows through the diode",
+      "Direction of conventional current flow",
+      "Direction of electron movement",
+      "Maximum reverse breakdown voltage limit"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Light emission when current flows through the diode' is Correct: The two outward-pointing arrows distinguish an LED from a standard diode, symbolizing light energy radiating outward upon forward conduction.\n• Why Other Choices are Incorrect: Inward-pointing arrows represent a Photodiode (absorbing incoming light)."
+  },
+  {
+    "id": 59,
+    "question": "What is the typical forward voltage (V_F) required to turn ON a standard Red Light-Emitting Diode (LED)?",
+    "options": [
+      "1.8 V to 2.2 V",
+      "0.3 V to 0.4 V",
+      "5.0 V to 12.0 V",
+      "0.0 V"
+    ],
+    "answer": 0,
+    "explanation": "• Why '1.8 V to 2.2 V' is Correct: Red LEDs typically require a minimum forward voltage (V_F) of 1.8 V to 2.2 V to initiate electroluminescence.\n• Why Other Choices are Incorrect: 0.3 V is for Germanium diodes, 0.7 V is for Silicon diodes, while Green LEDs require 2.0 V – 3.2 V and Blue LEDs require 3.0 V – 3.5 V."
+  },
+  {
+    "id": 60,
+    "question": "What is the typical recommended continuous forward current (I_F) range for operating standard indicator Light-Emitting Diodes (LEDs)?",
+    "options": [
+      "10 mA to 20 mA",
+      "1 A to 5 A",
+      "100 A to 500 A",
+      "1 µA to 5 µA"
+    ],
+    "answer": 0,
+    "explanation": "• Why '10 mA to 20 mA' is Correct: Standard commercial indicator LEDs achieve bright, reliable illumination at continuous forward currents of 10 mA to 20 mA.\n• Why Other Choices are Incorrect: Operating above 30–50 mA without heat sinking causes thermal destruction, while microamps are too low to illuminate standard LEDs."
+  },
+  {
+    "id": 61,
+    "question": "What formula is used to calculate the required resistance value of a Current-Limiting Resistor (R) connected in series with a Light-Emitting Diode (LED)?",
+    "options": [
+      "R = (V_S - V_F) / I_F",
+      "R = V_S * V_F * I_F",
+      "R = (V_S + V_F) / I_F^2",
+      "R = I_F / (V_S - V_F)"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'R = (V_S - V_F) / I_F' is Correct: By Kirchhoff's Voltage Law, the resistor voltage is V_R = V_S - V_F. Applying Ohm's Law yields R = (V_S - V_F) / I_F to prevent overcurrent damage to the LED.\n• Why Other Choices are Incorrect: Multiplying or adding forward voltage violates Ohm's Law."
+  },
+  {
+    "id": 62,
+    "question": "What is the typical maximum safe Reverse Voltage rating (V_R) for most standard Light-Emitting Diodes (LEDs)?",
+    "options": [
+      "3 V to 5 V",
+      "100 V to 1000 V",
+      "500 V to 2000 V",
+      "50 V to 100 V"
+    ],
+    "answer": 0,
+    "explanation": "• Why '3 V to 5 V' is Correct: LEDs have relatively low reverse breakdown voltage ratings (typically 3 V to 5 V). Applying higher reverse voltage can damage the delicate PN junction.\n• Why Other Choices are Incorrect: Standard power rectifiers handle 100 V – 1000 V reverse ratings, but LEDs cannot."
+  },
+  {
+    "id": 63,
+    "question": "Which key advantage distinguishes a Light-Emitting Diode (LED) over a standard semiconductor PN junction diode?",
+    "options": [
+      "High efficiency and long lifespan",
+      "High-voltage AC power rectification and surge suppression",
+      "Ultra-slow switching response and high thermal energy loss",
+      "Zero forward barrier potential required for active turn-ON"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Emits visible or infrared light efficiently with a long operational lifespan' is Correct: LEDs convert electrical energy directly into light via electroluminescence, offering high energy efficiency, low heat generation, and tens of thousands of operating hours.\n• Why Other Choices are Incorrect: Standard diodes dissipate energy as heat rather than light."
+  },
+  {
+    "id": 64,
+    "question": "Which of the following is a common application of Infrared (IR) Photodiodes and Light-Emitting Diodes working together as an optical pair?",
+    "options": [
+      "TV remote controls and optical encoder sensors",
+      "High-power AC step-down electrical transformers",
+      "Incandescent illumination and halogen floodlights",
+      "Hydraulic fluid pumps and pneumatic air pistons"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'TV and Air Conditioner remote controls and optical encoders' is Correct: An Infrared LED transmitter sends pulsed light signals to an Infrared Photodiode receiver, forming an optical communication link.\n• Why Other Choices are Incorrect: Transformers and pumps use magnetic or mechanical energy, not optoelectronic light pairs."
+  },
+  {
+    "id": 65,
+    "question": "Tunnel diodes are mainly used in:",
+    "options": [
+      "Rectifiers",
+      "Oscillators and high-speed switches",
+      "Voltage regulators",
+      "Signal clippers"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Oscillators and high-speed switches' is Correct: Tunnel diodes possess negative dynamic resistance and an ultra-thin depletion layer, allowing them to switch in picoseconds and sustain high-frequency oscillations.\n• Why Other Choices are Incorrect: Standard diodes act as rectifiers and signal clippers, while Zener diodes serve as voltage regulators."
+  },
+  {
+    "id": 66,
+    "question": "Light-Emitting Diodes (LEDs) emit light because of:",
+    "options": [
+      "Thermal heating of a metallic tungsten filament",
+      "Electron-hole recombination releasing photons",
+      "Secondary electron collision with mercury vapor",
+      "Nuclear decay of radioactive impurity atoms"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Electron-hole recombination releasing photons' is Correct: When forward-biased, injected electrons from the N-region and holes from the P-region recombine in the active junction layer, releasing excess bandgap energy as photons (Electroluminescence).\n• Why Other Choices are Incorrect: Avalanche breakdown occurs in reverse breakdown, thermal energy causes heating, and tunneling effect powers Tunnel diodes."
+  },
+  {
+    "id": 67,
+    "question": "The forward voltage drop of a Light-Emitting Diode (LED) is typically in the range of:",
+    "options": [
+      "0.3 – 0.7 V",
+      "1 – 3 V",
+      "5 – 10 V",
+      "0.1 – 0.2 V"
+    ],
+    "answer": 1,
+    "explanation": "• Why '1 – 3 V' is Correct: Because LEDs are fabricated from wide-bandgap compound semiconductors (like Gallium Arsenide and Gallium Phosphide), their forward barrier voltage drop ranges from 1.8 V to 3.5 V (commonly specified as 1 – 3 V).\n• Why Other Choices are Incorrect: 0.3 – 0.7 V applies to standard Germanium and Silicon PN diodes, while 0.1 – 0.2 V applies to Schottky diodes."
+  },
+  {
+    "id": 68,
+    "question": "Which material is commonly used to make Light-Emitting Diodes (LEDs)?",
+    "options": [
+      "Silicon",
+      "Germanium",
+      "Gallium compounds",
+      "Carbon"
+    ],
+    "answer": 2,
+    "explanation": "• Why 'Gallium compounds' is Correct: Direct bandgap compound semiconductors such as Gallium Arsenide (GaAs) and Gallium Phosphide (GaP) allow efficient photon emission during carrier recombination.\n• Why Other Choices are Incorrect: Elemental Silicon and Germanium are indirect bandgap semiconductors that dissipate recombination energy as heat rather than light."
+  },
+  {
+    "id": 69,
+    "question": "An Light-Emitting Diode (LED) usually operates with a forward current in the range of:",
+    "options": [
+      "0.1 – 1 mA",
+      "10 – 100 mA",
+      "1 – 10 A",
+      "1 – 10 µA"
+    ],
+    "answer": 1,
+    "explanation": "• Why '10 – 100 mA' is Correct: Standard illumination and indicator LEDs operate with forward currents in the 10 mA to 100 mA range (typically 10 – 20 mA for standard indicators).\n• Why Other Choices are Incorrect: Microamps are too small to excite visible emission, while 1 – 10 Amperes causes rapid thermal burnout."
+  },
+  {
+    "id": 70,
+    "question": "A photodiode is normally operated under:",
+    "options": [
+      "Forward bias",
+      "Reverse bias",
+      "Zero bias",
+      "Breakdown condition"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Reverse bias' is Correct: Operating a photodiode under Reverse bias widens the depletion layer, creating a strong internal electric field that efficiently separates light-generated electron-hole pairs into photocurrent.\n• Why Other Choices are Incorrect: Forward bias allows heavy conventional current that masks light detection, while breakdown condition causes uncontrolled reverse avalanche."
+  },
+  {
+    "id": 71,
+    "question": "The output current of a photodiode is directly proportional to:",
+    "options": [
+      "Forward voltage",
+      "Illumination intensity",
+      "Junction temperature only",
+      "Doping concentration"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Illumination intensity' is Correct: Higher illumination intensity delivers more photons per second into the depletion region, generating a linearly proportional increase in free electron-hole pairs and output photocurrent.\n• Why Other Choices are Incorrect: Forward voltage is not applied during photodiode operation, while temperature and doping affect noise rather than linear light response."
+  },
+  {
+    "id": 72,
+    "question": "Dark current in a photodiode is:",
+    "options": [
+      "Reverse current with no light",
+      "Forward current under strong light",
+      "Current only at breakdown",
+      "Peak current under illumination"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Reverse current with no light' is Correct: Dark current is the minor reverse saturation current generated by ambient thermal energy when the photodiode is completely shielded from light.\n• Why Other Choices are Incorrect: It is a reverse leakage current (not forward), and occurs specifically under zero light illumination."
+  },
+  {
+    "id": 73,
+    "question": "The tunnel diode exhibits which unique property?",
+    "options": [
+      "Positive resistance",
+      "Negative resistance",
+      "Zero resistance",
+      "Infinite resistance"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Negative resistance' is Correct: On its forward V-I characteristic curve between the peak point and valley point, increasing the forward voltage reduces energy band overlap, causing current to fall as voltage increases (Negative Dynamic Resistance).\n• Why Other Choices are Incorrect: Standard resistors exhibit positive resistance where current increases with voltage."
+  },
+  {
+    "id": 74,
+    "question": "A varactor diode behaves as a:",
+    "options": [
+      "Voltage-controlled current source",
+      "Voltage-controlled capacitor",
+      "Voltage amplifier",
+      "Light source"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Voltage-controlled capacitor' is Correct: A varactor diode operates under reverse bias where its depletion layer acts as a variable dielectric insulator between conductive P and N regions, creating a capacitance that varies with applied voltage.\n• Why Other Choices are Incorrect: Transistors act as current sources/amplifiers, while LEDs act as light sources."
+  },
+  {
+    "id": 75,
+    "question": "As reverse bias on a varactor increases, its capacitance:",
+    "options": [
+      "Increases",
+      "Decreases",
+      "Remains constant",
+      "Becomes infinite"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Decreases' is Correct: Increasing reverse bias voltage widens the depletion layer (increasing plate separation d in C = εA/d), which causes junction capacitance to decrease.\n• Why Other Choices are Incorrect: Decreasing reverse bias shrinks the depletion layer, which increases capacitance."
+  },
+  {
+    "id": 76,
+    "question": "The resonance frequency of an Inductor-Capacitor (LC) circuit with a varactor diode is given by:",
+    "options": [
+      "f = 1 / (2 * pi * sqrt(L * C))",
+      "f = 2 * pi * sqrt(L * C)",
+      "f = (L * C) / (2 * pi)",
+      "f = 1 / (L * C)"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'f = 1 / (2 * pi * sqrt(L * C))' is Correct: The fundamental resonance frequency formula for an LC tuned circuit is f = 1 / (2π√(LC)). Adjusting the varactor reverse voltage alters capacitance C, directly tuning the resonant frequency f.\n• Why Other Choices differ: Alternative formulas do not satisfy the required mathematical derivation for LC resonance."
+  },
+  {
+    "id": 77,
+    "question": "The Shockley diode is a:",
+    "options": [
+      "Two-layer device",
+      "Three-layer device",
+      "Four-layer PNPN device",
+      "Metal-semiconductor junction"
+    ],
+    "answer": 2,
+    "explanation": "• Why 'Four-layer PNPN device' is Correct: A Shockley diode is a four-layer (P-N-P-N) semiconductor thyristor featuring two terminals (Anode and Cathode) and three PN junctions.\n• Why Other Choices are Incorrect: Standard diodes have 2 layers (PN), BJTs have 3 layers (NPN/PNP), and Schottky diodes are metal-semiconductor junctions."
+  },
+  {
+    "id": 78,
+    "question": "Which condition turns ON a Shockley diode?",
+    "options": [
+      "Reverse bias",
+      "Applied voltage exceeds breakover voltage",
+      "Applied current less than holding current",
+      "Thermal excitation"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Applied voltage exceeds breakover voltage' is Correct: A Shockley diode remains OFF in forward blocking mode until the applied forward voltage exceeds its characteristic breakover voltage (V_BO), causing it to switch into heavy conduction (ON state).\n• Why Other Choices are Incorrect: Dropping below holding current turns the diode OFF, while reverse bias blocks current."
+  },
+  {
+    "id": 79,
+    "question": "Typical forward voltage drop of a Schottky diode is:",
+    "options": [
+      "0.7 V",
+      "0.3 V",
+      "0.25 V",
+      "1.0 V"
+    ],
+    "answer": 1,
+    "explanation": "• Why '0.3 V' is Correct: Schottky metal-semiconductor diodes feature a significantly lower barrier potential than standard silicon diodes, with a typical nominal forward voltage drop of approx 0.3 V (ranging between 0.15 V and 0.45 V).\n• Why Other Choices are Incorrect: 0.7 V is the forward drop of a standard Silicon PN diode, while 1.0 V is typical for power rectifiers under heavy load."
+  },
+  {
+    "id": 80,
+    "question": "(Problem) A 6 V supply is connected across a 330 Ω resistor in series with a Light-Emitting Diode (LED) of 2 V forward drop. Calculate the current through the LED.",
+    "options": [
+      "6 mA",
+      "12 mA",
+      "20 mA",
+      "40 mA"
+    ],
+    "answer": 1,
+    "explanation": "• Why '12 mA' is Correct: By Kirchhoff's Voltage Law, resistor voltage V_R = V_S - V_F = 6 V - 2 V = 4 V. Applying Ohm's Law gives I = V_R / R = 4 V / 330 Ω = 0.01212 A = 12.12 mA ≈ 12 mA.\n• Why Other Choices are Incorrect: 6 mA neglects the 2 V LED drop (using 2 V / 330 Ω), while 20 mA and 40 mA are arbitrary values."
+  },
+  {
+    "id": 81,
+    "question": "(Problem) A 10 pF varactor diode is used with a 100 µH coil. Find the resonant frequency.",
+    "options": [
+      "1.6 MHz",
+      "500 kHz",
+      "5 MHz",
+      "160 MHz"
+    ],
+    "answer": 2,
+    "explanation": "• Why '5 MHz' is Correct: Resonant frequency f = 1 / (2π√(L * C)). Substituting L = 100 µH = 100 x 10^-6 H and C = 10 pF = 10 x 10^-12 F gives √(L * C) = √(10^-15) = 3.162 x 10^-8 s. Thus f = 1 / (2 * π * 3.162 x 10^-8) = 5,032,921 Hz ≈ 5.03 MHz ≈ 5 MHz.\n• Why Other Choices differ: Alternative choices result from unit conversion errors (e.g. omitting 10^-12 for pico or 10^-6 for micro)."
+  },
+  {
+    "id": 82,
+    "question": "(Problem) A Schottky diode bridge rectifier is used in a 5 V DC supply. If each diode drops 0.25 V, what is the total voltage drop across two conducting diodes?",
+    "options": [
+      "0.25 V",
+      "0.5 V",
+      "1.4 V",
+      "2.0 V"
+    ],
+    "answer": 1,
+    "explanation": "• Why '0.5 V' is Correct: In a full-wave bridge rectifier circuit, two diodes conduct simultaneously in series during each half-cycle. Total forward voltage drop V_total = 2 x V_diode = 2 x 0.25 V = 0.5 V.\n• Why Other Choices are Incorrect: 0.25 V counts only one diode, while 1.4 V is the drop across two standard silicon diodes (2 x 0.7 V)."
+  },
+  {
+    "id": 83,
+    "question": "Which special-purpose diode is known for its fast switching speed and low forward voltage drop?",
+    "options": [
+      "Zener diode",
+      "Light-emitting diode",
+      "Schottky diode",
+      "Tunnel diode"
+    ],
+    "answer": 2,
+    "explanation": "• Why 'Schottky diode' is Correct: A Schottky metal-semiconductor diode exhibits extremely fast switching speed (nanosecond reverse recovery time) and low forward voltage drop (0.15 V to 0.45 V).\n• Why Other Choices are Incorrect: Zener diodes are for voltage regulation, LEDs emit light, and Tunnel diodes exhibit negative resistance."
+  },
+  {
+    "id": 84,
+    "question": "In what type of electronic circuit would you commonly find a Schottky diode?",
+    "options": [
+      "Audio amplifiers",
+      "Power supplies",
+      "High-frequency rectifiers",
+      "Voltage regulators"
+    ],
+    "answer": 2,
+    "explanation": "• Why 'High-frequency rectifiers' is Correct: Because Schottky diodes feature metal-semiconductor junctions with virtually zero reverse recovery time, they excel at rectifying high-frequency Alternating Current (AC) signals without switching losses.\n• Why Other Choices are Incorrect: Audio amplifiers use transistors, low-frequency power supplies use Silicon PN rectifiers, and Zener diodes handle voltage regulation."
+  },
+  {
+    "id": 85,
+    "question": "What is the primary application of a Schottky diode?",
+    "options": [
+      "Voltage regulation",
+      "Rectification of AC signals",
+      "High-frequency applications",
+      "Light detection"
+    ],
+    "answer": 2,
+    "explanation": "• Why 'High-frequency applications' is Correct: Due to majority-carrier conduction, Schottky diodes switch in nanoseconds, making high-frequency Radio Frequency (RF) and switched-mode power supplies their primary application.\n• Why Other Choices are Incorrect: Zener diodes perform voltage regulation, standard diodes perform 60Hz AC rectification, and photodiodes perform light detection."
+  },
+  {
+    "id": 86,
+    "question": "Which type of diode is designed to emit light when forward-biased?",
+    "options": [
+      "Zener diode",
+      "Photodiode",
+      "Light-emitting diode",
+      "Schottky diode"
+    ],
+    "answer": 2,
+    "explanation": "• Why 'Light-emitting diode' is Correct: When forward-biased, a Light-Emitting Diode (LED) recombines electrons and holes in its active junction layer, directly releasing excess energy as visible or infrared photons.\n• Why Other Choices are Incorrect: Zener diodes regulate voltage, photodiodes absorb light to create current, and Schottky diodes are fast rectifiers."
+  },
+  {
+    "id": 87,
+    "question": "Which special-purpose diode is used for frequency multiplication and frequency synthesis in communication systems?",
+    "options": [
+      "Gunn diode",
+      "Zener diode",
+      "Varactor diode",
+      "Tunnel diode"
+    ],
+    "answer": 2,
+    "explanation": "• Why 'Varactor diode' is Correct: Varying reverse voltage on a Varactor diode alters its junction capacitance, making it the primary tuning element in Voltage-Controlled Oscillators (VCOs) for frequency synthesis and multiplication.\n• Why Other Choices are Incorrect: Gunn diodes generate microwave signals, Zener diodes regulate DC voltage, and Tunnel diodes act as high-speed switches."
+  },
+  {
+    "id": 88,
+    "question": "Which special-purpose diode is commonly used for voltage regulation in electronic circuits?",
+    "options": [
+      "Varactor diode",
+      "Schottky diode",
+      "Zener diode",
+      "Tunnel diode"
+    ],
+    "answer": 2,
+    "explanation": "• Why 'Zener diode' is Correct: Zener diodes maintain a constant reverse breakdown voltage (V_Z) across their terminals over a wide current range, making them ideal for DC voltage regulation.\n• Why Other Choices are Incorrect: Varactor diodes are variable capacitors, Schottky diodes are fast rectifiers, and Tunnel diodes are high-speed switches."
+  },
+  {
+    "id": 89,
+    "question": "What is the primary function of a Photodiode?",
+    "options": [
+      "Electron emission caused by heating a metallic cathode filament",
+      "Electron release induced by applying an intense electric field",
+      "Electron emission caused by incident electromagnetic radiation",
+      "Electron release produced by bombarding atoms with alpha rays"
+    ],
+    "answer": 2,
+    "explanation": "• Why 'Detect light and convert it into a current' is Correct: A photodiode operates under reverse bias where incoming optical photons generate electron-hole pairs, producing a photocurrent proportional to light intensity.\n• Why Other Choices are Incorrect: LEDs emit light, standard PN diodes rectify AC signals, and Varactor diodes provide variable capacitance."
+  },
+  {
+    "id": 90,
+    "question": "In which application would a Tunnel diode be most suitable?",
+    "options": [
+      "High-frequency oscillators",
+      "Voltage regulation",
+      "Light detection",
+      "Rectification of low-frequency signals"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'High-frequency oscillators' is Correct: Tunnel diodes possess a negative dynamic resistance region and ultra-fast quantum tunneling speed, making them ideal for high-frequency microwave oscillators.\n• Why Other Choices are Incorrect: Zener diodes perform voltage regulation, photodiodes perform light detection, and standard diodes rectify low-frequency signals."
+  },
+  {
+    "id": 91,
+    "question": "Which special-purpose diode is designed to exhibit a varying capacitance with reverse bias voltage and is often used in tuning circuits?",
+    "options": [
+      "Varactor diode",
+      "Tunnel diode",
+      "Photodiode",
+      "Schottky diode"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Varactor diode' is Correct: A Varactor diode (varicap) operates in reverse bias, using its variable depletion layer width to act as a voltage-controlled capacitor in electronic tuning circuits.\n• Why Other Choices are Incorrect: Tunnel diodes exhibit negative resistance, photodiodes sense light, and Schottky diodes are fast rectifiers."
+  },
+  {
+    "id": 92,
+    "question": "What is the unique characteristic of a Varactor diode?",
+    "options": [
+      "Emission of light",
+      "Variable capacitance with voltage",
+      "High-speed switching",
+      "Rectification of signals"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Variable capacitance with voltage' is Correct: The fundamental feature of a Varactor diode is that its junction capacitance varies inversely with applied reverse bias voltage.\n• Why Other Choices are Incorrect: LEDs emit light, Schottky diodes perform high-speed switching, and standard diodes rectify signals."
+  },
+  {
+    "id": 93,
+    "question": "What is the primary application of a Gunn diode?",
+    "options": [
+      "Voltage regulation",
+      "Microwave oscillators",
+      "Light detection",
+      "Rectification of AC signals"
+    ],
+    "answer": 1,
+    "explanation": "• Why 'Microwave oscillators' is Correct: Gunn diodes utilize the Gunn effect (transferred electron effect in bulk N-type Gallium Arsenide) to generate high-frequency microwave oscillations in RF transmitters and radar systems.\n• Why Other Choices are Incorrect: Zener diodes perform voltage regulation, photodiodes perform light detection, and PN junction diodes rectify AC signals."
+  },
+  {
+    "id": 94,
+    "question": "(Problem) An AC voltage with peak value V_p = 20 V is connected in series with a silicon diode (forward voltage drop V_D = 0.7 V, forward bulk resistance R_f = 10 Ω) and a load resistor R_L = 500 Ω. Find the peak current through the diode.",
+    "options": [
+      "37.84 mA",
+      "40.00 mA",
+      "38.60 mA",
+      "35.20 mA"
+    ],
+    "answer": 0,
+    "explanation": "• Why '37.84 mA' is Correct: By Kirchhoff's Voltage Law, V_p - V_D = I * (R_f + R_L). Substituting values: 20 V - 0.7 V = I * (10 Ω + 500 Ω) => 19.3 V = 510 Ω * I. Therefore, peak current I_peak = 19.3 V / 510 Ω = 0.037843 A = 37.84 mA.\n• Why Other Choices are Incorrect: 40.00 mA assumes an ideal diode (20 V / 500 Ω), while 38.60 mA ignores the 10 Ω internal diode resistance."
+  },
+  {
+    "id": 95,
+    "question": "(Problem) For the silicon diode circuit in Problem 94 (V_p = 20 V, V_D = 0.7 V, R_f = 10 Ω, R_L = 500 Ω), calculate the peak output voltage V_out measured across the 500 Ω load resistor.",
+    "options": [
+      "18.92 V",
+      "20.00 V",
+      "19.30 V",
+      "17.50 V"
+    ],
+    "answer": 0,
+    "explanation": "• Why '18.92 V' is Correct: The peak output voltage across the load resistor is V_out = I_peak * R_L = (0.037843 A) * 500 Ω = 18.9215 V ≈ 18.92 V.\n• Why Other Choices are Incorrect: 20.00 V assumes an ideal diode with zero voltage drop, while 19.30 V neglects the 10 Ω internal diode resistance."
+  },
+  {
+    "id": 96,
+    "question": "(Problem) If the silicon diode in Problem 94 (V_p = 20 V, R_L = 500 Ω) is assumed to be ideal (V_D = 0 V, R_f = 0 Ω), what are the values of peak current and peak output voltage?",
+    "options": [
+      "Peak Current = 40.00 mA, Peak Output Voltage = 20.00 V",
+      "Peak Current = 37.84 mA, Peak Output Voltage = 18.92 V",
+      "Peak Current = 38.60 mA, Peak Output Voltage = 19.30 V",
+      "Peak Current = 50.00 mA, Peak Output Voltage = 25.00 V"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Peak Current = 40.00 mA, Peak Output Voltage = 20.00 V' is Correct: For an ideal diode, forward voltage drop V_D = 0 V and internal resistance R_f = 0 Ω. Thus I_peak = 20 V / 500 Ω = 40 mA, and V_out = 20 V.\n• Why Other Choices differ: 37.84 mA / 18.92 V corresponds to the practical diode model with 0.7 V drop and 10 Ω forward resistance."
+  },
+  {
+    "id": 97,
+    "question": "(Problem) A 20 V DC source is connected to a parallel combination of a Silicon diode (V_D = 0.7 V) and a Germanium diode (V_D = 0.3 V), connected in series with a 3 kΩ load resistor. Using practical diode models, what is the node voltage V_A across the 3 kΩ resistor?",
+    "options": [
+      "19.70 V",
+      "19.30 V",
+      "20.00 V",
+      "0.40 V"
+    ],
+    "answer": 0,
+    "explanation": "• Why '19.70 V' is Correct: Germanium (Ge) turns ON at 0.3 V, which is lower than Silicon's 0.7 V turn-on threshold. The Germanium diode conducts first and clamps the diode voltage drop to 0.3 V, keeping the Silicon diode OFF. Thus V_A = 20 V - 0.3 V = 19.70 V.\n• Why Other Choices are Incorrect: 19.30 V assumes the Silicon diode conducts (20 V - 0.7 V), but Silicon remains cut off because Germanium clamps the node first."
+  },
+  {
+    "id": 98,
+    "question": "(Problem) Calculate the current I through the 3 kΩ resistor for the parallel Silicon/Germanium diode circuit in Problem 97 (V_S = 20 V, Germanium drop = 0.3 V, R = 3 kΩ).",
+    "options": [
+      "6.57 mA",
+      "5.90 mA",
+      "6.43 mA",
+      "6.67 mA"
+    ],
+    "answer": 0,
+    "explanation": "• Why '6.57 mA' is Correct: The voltage across the 3 kΩ load resistor is V_A = 20 V - 0.3 V = 19.7 V. Applying Ohm's Law gives I = V_A / R = 19.7 V / 3000 Ω = 0.0065667 A ≈ 6.57 mA.\n• Why Other Choices differ: 5.90 mA occurs if an additional 2 V drop is subtracted, while 6.43 mA occurs if Silicon's 0.7 V drop is used."
+  },
+  {
+    "id": 99,
+    "question": "Which special-purpose diode symbol is identified by a bent cathode bar resembling the letter 'Z'?",
+    "options": [
+      "Zener diode",
+      "Schottky diode",
+      "Tunnel diode",
+      "Varactor diode"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Zener diode' is Correct: The Zener diode schematic symbol features diagonal bent ends on its cathode bar, forming a characteristic 'Z' shape.\n• Why Other Choices differ: Schottky diodes have S-like bent ends, Tunnel diodes have bracketed ends, and Varactor diodes feature parallel capacitor lines."
+  },
+  {
+    "id": 100,
+    "question": "Which special-purpose diode symbol features two outward-pointing arrows radiating from the diode triangle?",
+    "options": [
+      "Light-Emitting Diode",
+      "Photodiode",
+      "Tunnel diode",
+      "Zener diode"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Light-Emitting Diode' is Correct: Two outward-pointing arrows symbolize light emission from the active junction of a Light-Emitting Diode (LED).\n• Why Other Choices differ: Inward-pointing arrows symbolize light absorption in a Photodiode."
+  },
+  {
+    "id": 101,
+    "question": "Which type of electron emission occurs when a metal is heated to a high temperature (around 2500 °C) so that free electrons gain sufficient kinetic energy to escape from the surface?",
+    "options": [
+      "Thermionic emission",
+      "Field emission",
+      "Photoelectric emission",
+      "Secondary emission"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Thermionic emission' is Correct: Thermionic emission relies on thermal energy (heating a metal cathode to high temperatures) to impart kinetic energy to electrons so they overcome the surface barrier and emit into space, as used in vacuum tubes.\n• Why Other Choices are Incorrect: Field emission uses high electric fields, photoelectric emission uses light photons, and secondary emission uses electron bombardment."
+  },
+  {
+    "id": 102,
+    "question": "What is the term for the minimum amount of energy required for an electron to escape from a metal's surface into surrounding space?",
+    "options": [
+      "Work function",
+      "Ionization potential",
+      "Bandgap energy",
+      "Breakover voltage"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Work function' is Correct: The Work Function (Φ) defines the minimum energy required to liberate an electron from the attractive nuclear forces at a metal surface.\n• Why Other Choices are Incorrect: Bandgap energy is the forbidden energy gap between valence and conduction bands in crystals."
+  },
+  {
+    "id": 103,
+    "question": "In electronics, 1 Electron-Volt (1 eV) is equivalent to how many Joules (J) of energy?",
+    "options": [
+      "1.602 x 10^-19 J",
+      "9.109 x 10^-31 J",
+      "6.022 x 10^23 J",
+      "1.000 x 10^-6 J"
+    ],
+    "answer": 0,
+    "explanation": "• Why '1.602 x 10^-19 J' is Correct: By definition, 1 electron-volt (1 eV) is the kinetic energy gained by a single electron moving through a potential difference of 1 volt, equal to 1.602 x 10^-19 Joules.\n• Why Other Choices differ: 9.109 x 10^-31 kg is electron mass, and 6.022 x 10^23 is Avogadro's number."
+  },
+  {
+    "id": 104,
+    "question": "Which electron emission process occurs when high-speed primary electrons strike a metal surface and transfer kinetic energy to eject secondary electrons?",
+    "options": [
+      "Secondary emission",
+      "Thermionic emission",
+      "Field emission",
+      "Photoelectric emission"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Secondary emission' is Correct: Secondary emission occurs when high-velocity primary electrons bombard a metal surface, transferring momentum to knock bound electrons out of the metal.\n• Why Other Choices are Incorrect: Thermionic uses heat, field uses high voltage, and photoelectric uses light photons."
+  },
+  {
+    "id": 105,
+    "question": "Which fundamental quantum physics rule states that no two electrons in an atom can occupy the exact same quantum state simultaneously?",
+    "options": [
+      "Pauli Exclusion Principle",
+      "Heisenberg Uncertainty Principle",
+      "Bohr Magneton Law",
+      "Coulomb Law"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Pauli Exclusion Principle' is Correct: Wolfgang Pauli's Exclusion Principle dictates that no two identical fermions (electrons) can occupy the same quantum state, establishing atomic electron shell structures.\n• Why Other Choices differ: Heisenberg's uncertainty principle limits simultaneous measurement of position and momentum."
+  },
+  {
+    "id": 106,
+    "question": "What is the energy bandgap (E_g) equation defining the forbidden zone between the conduction band (E_C) and valence band (E_V)?",
+    "options": [
+      "E_g = E_C - E_V",
+      "E_g = E_C + E_V",
+      "E_g = E_C * E_V",
+      "E_g = E_V / E_C"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'E_g = E_C - E_V' is Correct: The bandgap energy (E_g) represents the energy difference between the bottom of the conduction band (E_C) and the top of the valence band (E_V).\n• Why Other Choices differ: Adding, multiplying, or dividing band energies violates solid-state energy band definitions."
+  },
+  {
+    "id": 107,
+    "question": "Which type of electron emission occurs when an extremely strong external electric field pulls free electrons out of a cold metal surface via electrostatic attraction?",
+    "options": [
+      "Field emission",
+      "Thermionic emission",
+      "Photoelectric emission",
+      "Secondary emission"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Field emission' is Correct: Field emission applies an intense positive electric field at a metal surface to lower the potential barrier, allowing electrons to tunnel out without thermal heating.\n• Why Other Choices are Incorrect: Thermionic emission requires heating the cathode to high temperatures."
+  },
+  {
+    "id": 108,
+    "question": "Why do good conductors (such as copper and silver) conduct electricity easily with almost zero electrical resistance?",
+    "options": [
+      "Overlapping valence and conduction bands with zero bandgap",
+      "Valence bands that remain completely empty at absolute zero",
+      "Extremely wide forbidden energy bandgap exceeding 5 to 6 eV",
+      "Exclusive reliance on positive hole conduction mechanisms"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Because their valence and conduction energy bands overlap with no significant forbidden bandgap' is Correct: In metallic conductors, the highest filled valence band overlaps directly with the conduction band (E_g ≈ 0), allowing free electrons to move freely upon applying a voltage.\n• Why Other Choices are Incorrect: Wide bandgaps (>5 eV) characterize insulators, not conductors."
+  },
+  {
+    "id": 109,
+    "question": "Which chemical stability rule states that atoms are most chemically stable when their outermost valence shell contains eight electrons?",
+    "options": [
+      "Octet Rule",
+      "Ohm Law",
+      "Faraday Law",
+      "Kepler Law"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Octet Rule' is Correct: The Octet Rule dictates that atoms achieve maximum chemical stability by gaining, losing, or sharing electrons (covalent bonding) to fill their valence shell with 8 electrons.\n• Why Other Choices are Incorrect: Ohm's Law relates V, I, and R; Faraday's Law governs induction."
+  },
+  {
+    "id": 110,
+    "question": "Reviewing the special diodes summary table, match each diode to its primary operational characteristic:",
+    "options": [
+      "Zener = Voltage regulation, Schottky = Fast switching, Tunnel = Negative resistance, Varactor = Variable capacitance",
+      "Zener = Light emission, Schottky = Voltage regulation, Tunnel = Variable capacitance, Varactor = Fast switching",
+      "Zener = Fast switching, Schottky = Light emission, Tunnel = Voltage regulation, Varactor = Negative resistance",
+      "Zener = Negative resistance, Schottky = Variable capacitance, Tunnel = Fast switching, Varactor = Light emission"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Zener = Voltage regulation, Schottky = Fast switching, Tunnel = Negative resistance, Varactor = Variable capacitance' is Correct: This summarizes core diode functions: Zener operates in reverse breakdown for voltage regulation; Schottky has zero reverse recovery for fast switching; Tunnel exhibits negative resistance via quantum tunneling; Varactor acts as a voltage-controlled variable capacitor.\n• Why Other Choices are Incorrect: Swapping functions confuses diode device physics."
+  },
+  {
+    "id": 111,
+    "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Zener Diode?",
+    "image": "images/diode_symbols.png",
+    "options": [
+      "Diode with a bent 'Z' cathode bar",
+      "Diode with two outward-pointing arrows",
+      "Diode with S-shaped bent cathode bar",
+      "Diode with parallel capacitor lines"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Diode with a bent Z cathode bar' is Correct: The Zener diode symbol features diagonal bent ends on its cathode bar, forming a distinct 'Z' shape to indicate operation in reverse breakdown voltage regulation.\n• Why Other Choices differ: Two outward arrows represent an LED, S-shaped cathode represents a Schottky diode, and parallel capacitor lines represent a Varicap/Varactor diode."
+  },
+  {
+    "id": 112,
+    "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Light-Emitting Diode (LED)?",
+    "image": "images/diode_symbols.png",
+    "options": [
+      "Diode with two outward-pointing arrows",
+      "Diode with two inward-pointing arrows",
+      "Diode with bracket-shaped cathode bar",
+      "Diode with bent 'Z' cathode bar"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Diode with two outward-pointing arrows' is Correct: The Light-Emitting Diode (LED) symbol uses two outward-pointing arrows to signify photon emission during electron-hole recombination under forward bias.\n• Why Other Choices differ: Inward-pointing arrows signify light absorption in a Photo Diode."
+  },
+  {
+    "id": 113,
+    "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Photo Diode?",
+    "image": "images/diode_symbols.png",
+    "options": [
+      "Diode with two inward-pointing arrows",
+      "Diode with two outward-pointing arrows",
+      "Diode with S-shaped bent cathode bar",
+      "Diode with parallel capacitor lines"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Diode with two inward-pointing arrows' is Correct: The Photo Diode symbol features two inward-pointing arrows to represent incoming optical photons that generate photocurrent under reverse bias.\n• Why Other Choices differ: Outward arrows represent LED light emission."
+  },
+  {
+    "id": 114,
+    "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Schottky Diode?",
+    "image": "images/diode_symbols.png",
+    "options": [
+      "Diode with S-shaped bent cathode bar",
+      "Diode with bent 'Z' cathode bar",
+      "Diode with bracket-shaped cathode bar",
+      "Diode with parallel capacitor lines"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Diode with S-shaped bent cathode bar' is Correct: The Schottky diode symbol features an S-like curved cathode bar representing its metal-semiconductor junction with zero reverse recovery time.\n• Why Other Choices differ: Z-shaped bar represents Zener, bracket represents Tunnel diode."
+  },
+  {
+    "id": 115,
+    "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Tunnel Diode?",
+    "image": "images/diode_symbols.png",
+    "options": [
+      "Diode with bracket-shaped cathode bar",
+      "Diode with S-shaped bent cathode bar",
+      "Diode with two inward-pointing arrows",
+      "Diode with bent 'Z' cathode bar"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Diode with bracket-shaped cathode bar' is Correct: The Tunnel diode symbol features right-angled square brackets on its cathode bar, symbolizing quantum tunneling and negative dynamic resistance.\n• Why Other Choices differ: S-shaped bar represents Schottky, Z-shaped bar represents Zener."
+  },
+  {
+    "id": 116,
+    "question": "(Diagram Problem) Refer to the diode symbols chart below. Which schematic symbol represents a Varicap (Varactor) Diode?",
+    "image": "images/diode_symbols.png",
+    "options": [
+      "Diode with parallel capacitor lines at cathode",
+      "Diode with two outward-pointing arrows",
+      "Diode with bent 'Z' cathode bar",
+      "Diode with bracket-shaped cathode bar"
+    ],
+    "answer": 0,
+    "explanation": "• Why 'Diode with parallel capacitor lines at cathode' is Correct: The Varicap/Varactor diode symbol combines a standard diode triangle with a parallel capacitor plate at its cathode, denoting voltage-controlled variable capacitance.\n• Why Other Choices differ: Outward arrows represent LED, Z-bar represents Zener, bracket represents Tunnel diode."
+  },
+  {
+    "id": 117,
+    "question": "Statement: Germanium diodes begin conducting at a higher forward voltage threshold than Silicon diodes.",
+    "options": [
+      "a. True, because Germanium has a wider bandgap energy than Silicon.",
+      "b. True, because Germanium exhibits lower thermal stability under direct current bias.",
+      "c. False, because Germanium has a lower potential barrier compared to Silicon.",
+      "d. False, because both materials possess identical potential barriers of 0.5 V at room temperature."
+    ],
+    "answer": 2,
+    "explanation": "• Why Choice C is Correct: Germanium (Ge) has a lower barrier potential (approx 0.3 V) compared to Silicon (Si, approx 0.7 V). Therefore, Germanium begins conducting at a lower forward voltage threshold, making the statement False.\n• Why Other Choices are Incorrect: Germanium has a smaller bandgap (~0.67 eV vs Si 1.1 eV), and Germanium's potential barrier is 0.3 V, not equal to 0.7 V."
+  },
+  {
+    "id": 118,
+    "question": "Statement: Doping a semiconductor with trivalent impurities produces donor atoms that increase the concentration of free electrons.",
+    "options": [
+      "a. True, trivalent atoms donate three extra electrons to lattice",
+      "b. True, trivalent impurities increase negative charge density",
+      "c. False, trivalent impurities are acceptors creating excess holes",
+      "d. False, trivalent impurities form metallic insulating bonds"
+    ],
+    "answer": 2,
+    "explanation": "• Why Choice C is Correct: Trivalent impurities (e.g. Boron, Gallium, Indium) have 3 valence electrons and act as acceptor atoms that accept electrons to create excess holes, forming P-type material. Pentavalent impurities are donors that create free electrons.\n• Why Other Choices are Incorrect: Trivalent atoms create holes, not free electron donors."
+  },
+  {
+    "id": 119,
+    "question": "Statement: In the First Approximation (Ideal Diode Model), a forward-biased diode is treated as a closed switch with zero voltage drop.",
+    "options": [
+      "a. True, because the ideal model neglects the barrier potential and internal forward resistance.",
+      "b. True, because ideal diodes convert all applied forward voltage directly into heat energy.",
+      "c. False, because the ideal model includes a fixed 0.7 V battery drop across the terminals.",
+      "d. False, because ideal diodes offer infinite resistance regardless of polarity."
+    ],
+    "answer": 0,
+    "explanation": "• Why Choice A is Correct: The First Approximation (Ideal Diode) simplifies forward bias to a closed switch (V_D = 0 V, R_f = 0 Ω) and reverse bias to an open switch, completely neglecting barrier potential and internal resistance.\n• Why Other Choices are Incorrect: The ideal model has 0 V drop, unlike the practical second approximation which includes a 0.7 V drop."
+  },
+  {
+    "id": 120,
+    "question": "Statement: A reverse-biased practical diode permits zero electrical current to pass through its PN junction under all operational conditions.",
+    "options": [
+      "a. True, depletion region forms absolute barrier to charge flow",
+      "b. True, minority charge carriers cannot exist in doped silicon",
+      "c. False, thermally generated minority carriers form leakage current",
+      "d. False, forward current and reverse current are always equal"
+    ],
+    "answer": 2,
+    "explanation": "• Why Choice C is Correct: In reverse bias, a small reverse saturation leakage current (I_S) flows due to thermally generated minority carriers crossing the junction. Therefore, the statement claiming zero current is False.\n• Why Other Choices are Incorrect: Minority carriers are generated by thermal energy and produce reverse leakage current."
+  },
+  {
+    "id": 121,
+    "question": "Statement: The Second Approximation of a diode models the device as an ideal switch in series with a DC voltage source equal to its barrier potential.",
+    "options": [
+      "a. True, accounts for knee voltage while ignoring bulk resistance",
+      "b. True, includes internal forward resistance and capacitance",
+      "c. False, ignores barrier potential and only models resistance",
+      "d. False, applies strictly to reverse-bias operating analysis"
+    ],
+    "answer": 0,
+    "explanation": "• Why Choice A is Correct: The Second Approximation (Practical Diode) models forward bias as a closed switch in series with a 0.7 V battery (for Si) or 0.3 V (for Ge), representing barrier knee voltage while omitting bulk resistance.\n• Why Other Choices are Incorrect: Bulk resistance is only added in the third approximation."
+  },
+  {
+    "id": 122,
+    "question": "Statement: The Third Approximation of a diode is also referred to as the Piecewise Linear Model.",
+    "options": [
+      "a. True, because it combines the barrier voltage with the internal forward resistance of the semiconductor.",
+      "b. True, because it treats the diode as a variable AC voltage generator under steady-state DC conditions.",
+      "c. False, because the piecewise linear model applies only to the First (Ideal) Approximation.",
+      "d. False, because the third approximation assumes zero internal resistance during conduction."
+    ],
+    "answer": 0,
+    "explanation": "• Why Choice A is Correct: The Third Approximation incorporates the threshold voltage V_D and internal bulk resistance r_f into a two-segment linear I-V curve, which is officially named the Piecewise Linear Model.\n• Why Other Choices are Incorrect: The piecewise linear model specifically includes internal resistance r_f."
+  },
+  {
+    "id": 123,
+    "question": "Statement: GaAs is a single-crystal elemental semiconductor like Silicon and Germanium.",
+    "options": [
+      "a. True, because GaAs is composed of a single element from Group IV of the periodic table.",
+      "b. True, because GaAs possess identical electronic properties to pure Silicon crystals.",
+      "c. False, because GaAs is a compound semiconductor made from Gallium and Arsenic.",
+      "d. False, because GaAs is a synthetic ceramic insulator incapable of conducting current."
+    ],
+    "answer": 2,
+    "explanation": "• Why Choice C is Correct: Gallium Arsenide (GaAs) is a Group III-V compound semiconductor formed chemically by Gallium and Arsenic, unlike Silicon and Germanium which are single-element single-crystal semiconductors.\n• Why Other Choices are Incorrect: GaAs is not a single element."
+  },
+  {
+    "id": 124,
+    "question": "Statement: Applying a forward bias to a PN junction diode lowers the internal potential barrier across the depletion region.",
+    "options": [
+      "a. True, because the external voltage opposes the built-in electric field, narrowing the depletion region.",
+      "b. True, because the external voltage forces minority carriers to widen the depletion region.",
+      "c. False, because forward biasing increases the internal potential barrier to prevent breakdown.",
+      "d. False, because external voltage bias has no physical effect on depletion region width."
+    ],
+    "answer": 0,
+    "explanation": "• Why Choice A is Correct: Forward bias applies positive voltage to the P-side and negative to the N-side, opposing the internal junction field, narrowing the depletion region, and lowering the barrier potential.\n• Why Other Choices are Incorrect: Reverse bias widens the depletion region, while forward bias thins it."
+  },
+  {
+    "id": 125,
+    "question": "Statement: Increasing the temperature of a semiconductor material increases its electrical resistance.",
+    "options": [
+      "a. True, because thermal vibration impairs covalent bonding, reducing the number of charge carriers.",
+      "b. True, because semiconductors have a positive temperature coefficient of resistance like copper.",
+      "c. False, because thermal energy generates additional electron-hole pairs, decreasing electrical resistance.",
+      "d. False, because temperature changes affect electrical insulators exclusively."
+    ],
+    "answer": 2,
+    "explanation": "• Why Choice C is Correct: Semiconductors have a Negative Temperature Coefficient (NTC). As temperature rises, thermal energy breaks covalent bonds and creates additional electron-hole pairs, increasing conductivity and decreasing resistance.\n• Why Other Choices are Incorrect: Metals have a positive temperature coefficient, but semiconductors have a negative temperature coefficient."
+  },
+  {
+    "id": 126,
+    "question": "Statement: Under zero bias conditions, an electrical current flows spontaneously through an isolated PN junction diode due to concentration gradients.",
+    "options": [
+      "a. True, because diffusion of majority carriers creates a continuous closed-loop direct current.",
+      "b. True, because the built-in voltage acts as an internal DC power supply.",
+      "c. False, because carrier diffusion is counterbalanced by drift current in equilibrium, resulting in zero net current.",
+      "d. False, because charge carriers cannot move within semiconductor materials without external light exposure."
+    ],
+    "answer": 2,
+    "explanation": "• Why Choice C is Correct: At thermal equilibrium (zero bias), the forward diffusion current of majority carriers is exactly equal and opposite to the reverse drift current of thermally generated minority carriers, making net current zero.\n• Why Other Choices are Incorrect: No net current flows without an external energy source."
+  },
+  {
+    "id": 127,
+    "question": "(Problem) A Silicon diode is connected in a simple series circuit with a 1.2 kΩ load resistor and a DC source V_S = 12 V. Using the Second Approximation, calculate the total circuit current I_D in milliamperes (mA).",
+    "options": [
+      "a. 9.4167 mA",
+      "b. 10.0 mA",
+      "c. 8.8333 mA",
+      "d. 9.15 mA"
+    ],
+    "answer": 0,
+    "explanation": "• Why '9.4167 mA' is Correct: By the Second Approximation, Silicon forward voltage V_D = 0.7 V. Voltage across load resistor V_R = V_S - V_D = 12 V - 0.7 V = 11.3 V. By Ohm's Law, I_D = V_R / R_L = 11.3 V / 1200 Ω = 0.00941667 A = 9.4167 mA.\n• Why Other Choices are Incorrect: 10.0 mA assumes an ideal diode (12 V / 1200 Ω), while 8.8333 mA assumes an incorrect drop."
+  },
+  {
+    "id": 128,
+    "question": "(Problem) For the same series circuit described in Item 11 (V_S = 12 V, Silicon diode V_D = 0.7 V, R_L = 1.2 kΩ, I_D = 9.4167 mA), calculate the power dissipated by the Silicon diode (P_D) in milliwatts (mW) using the Second Approximation.",
+    "options": [
+      "a. 7.1 mW",
+      "b. 6.5917 mW",
+      "c. 6.1833 mW",
+      "d. 8.4 mW"
+    ],
+    "answer": 1,
+    "explanation": "• Why '6.5917 mW' is Correct: Power dissipated by diode P_D = V_D * I_D = 0.7 V * 9.416667 mA = 6.591667 mW ≈ 6.5917 mW.\n• Why Other Choices are Incorrect: 7.1 mW and 6.1833 mW use incorrect current or voltage values."
+  },
+  {
+    "id": 129,
+    "question": "(Problem) A Germanium diode exhibits an internal forward resistance r_f = 15 Ω. It is connected in series with a load resistor R_L = 470 Ω and a 9 V DC supply. Using the Third Approximation, calculate the total current in milliamperes (mA).",
+    "options": [
+      "a. 18.5106 mA",
+      "b. 17.9381 mA",
+      "c. 19.1489 mA",
+      "d. 17.3913 mA"
+    ],
+    "answer": 1,
+    "explanation": "• Why '17.9381 mA' is Correct: Third Approximation for Germanium: V_D = 0.3 V, internal resistance r_f = 15 Ω. Total circuit resistance R_total = r_f + R_L = 15 Ω + 470 Ω = 485 Ω. Current I = (V_S - V_D) / R_total = (9 V - 0.3 V) / 485 Ω = 8.7 V / 485 Ω = 0.01793814 A = 17.9381 mA.\n• Why Other Choices are Incorrect: 18.5106 mA ignores internal resistance r_f (8.7 V / 470 Ω)."
+  },
+  {
+    "id": 130,
+    "question": "(Problem) Using the parameters and results from Item 13 (V_S = 9 V, Germanium V_D = 0.3 V, r_f = 15 Ω, R_L = 470 Ω, I = 17.9381 mA), calculate the actual terminal voltage drop across the Germanium diode in volts using the Third Approximation.",
+    "options": [
+      "a. 0.3 V",
+      "b. 0.5691 V",
+      "c. 0.2691 V",
+      "d. 0.45 V"
+    ],
+    "answer": 1,
+    "explanation": "• Why '0.5691 V' is Correct: Actual diode terminal voltage V_terminal = V_D + (I * r_f) = 0.3 V + (0.01793814 A * 15 Ω) = 0.3 V + 0.269072 V = 0.569072 V ≈ 0.5691 V.\n• Why Other Choices are Incorrect: 0.3 V is only the knee voltage without internal resistance voltage drop."
+  },
+  {
+    "id": 131,
+    "question": "(Problem) A Gallium Arsenide (GaAs) diode (V_F = 1.2 V) is connected across a 15 V DC source in series with a 2.2 kΩ resistor. Using the Second Approximation, determine the voltage across the load resistor V_L in volts (V).",
+    "options": [
+      "a. 15 V",
+      "b. 13.8 V",
+      "c. 1.2 V",
+      "d. 14.3 V"
+    ],
+    "answer": 1,
+    "explanation": "• Why '13.8 V' is Correct: GaAs forward barrier voltage V_F = 1.2 V. By Kirchhoff's Voltage Law, voltage across load resistor V_L = V_S - V_F = 15 V - 1.2 V = 13.8 V.\n• Why Other Choices are Incorrect: 15 V neglects diode drop, 1.2 V is the diode drop itself, and 14.3 V assumes 0.7 V drop."
+  },
+  {
+    "id": 132,
+    "question": "(Problem) Two identical Silicon diodes are connected in series with a 680 Ω load resistor and a 10 V DC voltage supply. Using the Second Approximation, calculate the total circuit current in milliamperes (mA).",
+    "options": [
+      "a. 13.6765 mA",
+      "b. 12.6471 mA",
+      "c. 14.7059 mA",
+      "d. 11.6176 mA"
+    ],
+    "answer": 1,
+    "explanation": "• Why '12.6471 mA' is Correct: Two series Silicon diodes drop V_total = 2 * 0.7 V = 1.4 V. Resistor voltage V_R = 10 V - 1.4 V = 8.6 V. Circuit current I = 8.6 V / 680 Ω = 0.01264706 A = 12.6471 mA.\n• Why Other Choices are Incorrect: 13.6765 mA counts only one diode drop (9.3 V / 680 Ω)."
+  },
+  {
+    "id": 133,
+    "question": "(Problem) For a series circuit with a 10 V DC source and a single Silicon diode (V_D = 0.7 V) connected across a 330 Ω load resistor, calculate the load voltage V_L across the 330 Ω resistor in volts (V).",
+    "options": [
+      "a. 9.3 V",
+      "b. 4.3 V",
+      "c. 10.0 V",
+      "d. 7.9 V"
+    ],
+    "answer": 0,
+    "explanation": "• Why '9.3 V' is Correct: By KVL, load voltage V_L = V_S - V_D = 10 V - 0.7 V = 9.3 V.\n• Why Other Choices are Incorrect: 4.3 V corresponds to a 5 V source (5 V - 0.7 V), while 10.0 V ignores diode barrier drop."
+  },
+  {
+    "id": 134,
+    "question": "(Problem) Two Silicon diodes are connected in parallel with each other in the forward direction. This parallel branch is placed in series with a 330 Ω resistor and a 5 V DC supply. Assuming equal current sharing, calculate the current through each individual diode in milliamperes (mA) using the Second Approximation.",
+    "options": [
+      "a. 13.0303 mA",
+      "b. 6.5152 mA",
+      "c. 7.5758 mA",
+      "d. 3.2576 mA"
+    ],
+    "answer": 1,
+    "explanation": "• Why '6.5152 mA' is Correct: Parallel Silicon diodes clamp the branch voltage to V_D = 0.7 V. Resistor voltage V_R = 5 V - 0.7 V = 4.3 V. Total supply current I_total = 4.3 V / 330 Ω = 13.0303 mA. Since current divides equally between two parallel diodes: I_diode = 13.0303 mA / 2 = 6.51515 mA ≈ 6.5152 mA.\n• Why Other Choices are Incorrect: 13.0303 mA is total circuit current before dividing by 2."
+  },
+  {
+    "id": 135,
+    "question": "(Problem) An ideal Silicon diode is connected in reverse bias across a 24 V DC supply in series with a 1 kΩ resistor. Calculate the terminal voltage across the reverse-biased diode V_D in volts (V).",
+    "options": [
+      "a. 0 V",
+      "b. 24 V",
+      "c. 12 V",
+      "d. 0.7 V"
+    ],
+    "answer": 1,
+    "explanation": "• Why '24 V' is Correct: In reverse bias, an ideal diode acts as an open circuit (I = 0). With zero current flowing through the resistor (V_R = 0 V), the full 24 V supply voltage drops across the open diode terminals.\n• Why Other Choices are Incorrect: 0 V occurs across an ideal diode in forward bias, not reverse bias."
+  },
+  {
+    "id": 136,
+    "question": "(Problem) A Silicon diode and a Germanium diode are connected in parallel (facing the same forward conduction path) in series with a 1.5 kΩ load resistor and a 12 V DC source. Using the Second Approximation, determine the total current drawn from the supply in milliamperes (mA).",
+    "options": [
+      "a. 7.5333 mA",
+      "b. 7.8000 mA",
+      "c. 7.2667 mA",
+      "d. 8.0000 mA"
+    ],
+    "answer": 1,
+    "explanation": "• Why '7.8000 mA' is Correct: Germanium turns ON at 0.3 V, which is lower than Silicon's 0.7 V threshold. Germanium conducts first and clamps the node voltage to 0.3 V, keeping Silicon OFF. Resistor voltage V_R = 12 V - 0.3 V = 11.7 V. Total current I = 11.7 V / 1500 Ω = 0.0078 A = 7.8 mA.\n• Why Other Choices are Incorrect: 7.5333 mA assumes Silicon conducts (11.3 V / 1500 Ω = 7.533 mA), but Silicon remains OFF."
+  }
+]
   },
 
   fluid_mechanics: {
