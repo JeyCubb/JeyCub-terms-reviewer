@@ -384,6 +384,11 @@ function getSubjectData() {
 
 function getActiveQuestions() {
   const data = getSubjectData();
+  if (data[state.currentSubject] && Array.isArray(data[state.currentSubject].questions)) {
+    data[state.currentSubject].questions.forEach(q => {
+      if (q.answer === undefined && q.correct !== undefined) q.answer = q.correct;
+    });
+  }
   if (!data[state.currentSubject]) {
     state.currentSubject = 'basic_electronics';
   }
