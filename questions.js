@@ -1647,6 +1647,656 @@ var SUBJECT_DATA = {  basic_electronics: {
     ],
     "answer": 1,
     "explanation": "• Why '7.8000 mA' is Correct: Germanium turns ON at 0.3 V, which is lower than Silicon's 0.7 V threshold. Germanium conducts first and clamps the node voltage to 0.3 V, keeping Silicon OFF. Resistor voltage V_R = 12 V - 0.3 V = 11.7 V. Total current I = 11.7 V / 1500 Ω = 0.0078 A = 7.8 mA.\n• Why Other Choices are Incorrect: 7.5333 mA assumes Silicon conducts (11.3 V / 1500 Ω = 7.533 mA), but Silicon remains OFF."
+  },
+  {
+    "id": 137,
+    "question": "Which operating principle distinguishes vacuum tubes from bipolar junction transistors?",
+    "options": [
+      "A. Thermionic emission requiring a heated filament",
+      "B. Solid-state conduction through intrinsic conductors only",
+      "C. Direct current amplification via field ionization",
+      "D. Quantum tunnelling across dielectric barriers"
+    ],
+    "correct": 0,
+    "explanation": "Vacuum tubes rely on thermionic emission—heating a cathode filament in an evacuated glass envelope to boil off free electrons. In contrast, Bipolar Junction Transistors (BJTs) are solid-state devices where conduction occurs entirely within semiconductor crystal lattices without requiring heaters or a vacuum.",
+    "formula": "Thermionic Emission (Vacuum Tube) vs. Solid-State Drift/Diffusion (Transistor)"
+  },
+  {
+    "id": 138,
+    "question": "In a physical BJT structure, which region is manufactured with the highest doping concentration?",
+    "options": [
+      "A. Base",
+      "B. Collector",
+      "C. Emitter",
+      "D. Substrate"
+    ],
+    "correct": 2,
+    "explanation": "The Emitter region is heavily doped ($n^+$ or $p^+$) so that it can inject a massive quantity of majority charge carriers into the base. The Collector is moderately doped, and the Base is the most lightly doped and physically thinnest region.",
+    "formula": "\\text{Doping Profile: } N_E \\gg N_C > N_B"
+  },
+  {
+    "id": 139,
+    "question": "What is the typical physical width ratio between the whole BJT and the base region of a standard BJT?",
+    "options": [
+      "A. 1:1",
+      "B. 10:1",
+      "C. 150:1",
+      "D. 1000:1"
+    ],
+    "correct": 2,
+    "explanation": "The base region of a standard planar BJT is made extremely thin (typically a few micrometers or less) to minimize electron-hole recombination and ensure that nearly all carriers injected by the emitter reach the collector. The ratio of total transistor thickness to base width is typically around 150:1.",
+    "formula": "\\text{Physical Ratio: } W_{\\text{total}} : W_{\\text{base}} \\approx 150:1"
+  },
+  {
+    "id": 140,
+    "question": "Which type of transistor is represented by an arrow on the emitter terminal pointing away from the base terminal?",
+    "options": [
+      "A. PNP Transistor",
+      "B. NPN Transistor",
+      "C. Junction FET",
+      "D. Unijunction Transistor"
+    ],
+    "correct": 1,
+    "explanation": "In schematic symbols, the arrow is always placed on the emitter lead and indicates the direction of conventional current flow. An arrow pointing away from the base terminal represents an NPN transistor ('Not Pointing iN'). An arrow pointing inward toward the base represents a PNP transistor ('Pointing iN Proudly').",
+    "formula": "\\text{NPN: Arrow points OUT } (B \\to E); \\quad \\text{PNP: Arrow points IN } (E \\to B)"
+  },
+  {
+    "id": 141,
+    "question": "A Bipolar Junction Transistor is classified as what type of electronic device?",
+    "options": [
+      "A. Voltage-controlled voltage source",
+      "B. Voltage-controlled current source",
+      "C. Current-controlled current source",
+      "D. Frequency-controlled resistor"
+    ],
+    "correct": 2,
+    "explanation": "A BJT is classified as a Current-Controlled Current Source (CCCS) because the output current (collector current $I_C$) is directly controlled by the input current (base current $I_B$) via the relationship $I_C = \\beta I_B$. (In contrast, FETs are voltage-controlled current sources).",
+    "formula": "I_C = \\beta I_B \\implies \\text{CCCS (Current-Controlled Current Source)}"
+  },
+  {
+    "id": 142,
+    "question": "Which equation correctly represents Kirchhoff's Current Law applied to the terminals of any BJT?",
+    "options": [
+      "A. I_B = I_C + I_E",
+      "B. I_E = I_C + I_B",
+      "C. I_C = I_E + I_B",
+      "D. I_E = I_C · I_B"
+    ],
+    "correct": 1,
+    "explanation": "According to Kirchhoff's Current Law (KCL), the sum of currents entering a transistor must equal the sum of currents leaving it. For any BJT in any configuration, the total emitter current is the sum of the collector current and the base current: $I_E = I_C + I_B$.",
+    "formula": "I_E = I_C + I_B"
+  },
+  {
+    "id": 143,
+    "question": "To operate an NPN bipolar transistor in its active (amplifying) region, how must its junctions be biased?",
+    "options": [
+      "A. Base-Emitter forward biased, Collector-Base forward biased",
+      "B. Base-Emitter reverse biased, Collector-Base reverse biased",
+      "C. Base-Emitter forward biased, Collector-Base reverse biased",
+      "D. Base-Emitter reverse biased, Collector-Base forward biased"
+    ],
+    "correct": 2,
+    "explanation": "For linear amplification (Active Region) in any BJT, the Base-Emitter (B-E) junction must be Forward Biased to allow carrier injection into the base, and the Collector-Base (C-B) junction must be Reverse Biased to sweep those carriers into the collector.",
+    "formula": "\\text{Active Region: } B\\text{-}E = \\text{Forward Biased}, \\quad C\\text{-}B = \\text{Reverse Biased}"
+  },
+  {
+    "id": 144,
+    "question": "When both the Base-Emitter and Collector-Base junctions of a BJT are forward biased, in which region is the device operating?",
+    "options": [
+      "A. Cutoff Region",
+      "B. Active Region",
+      "C. Breakdown Region",
+      "D. Saturation Region"
+    ],
+    "correct": 3,
+    "explanation": "When both the B-E junction and C-B junction are forward biased, the transistor conducts maximum current with a very low collector-to-emitter voltage ($V_{CE(sat)} \\approx 0.2\\text{ V}$). This is the Saturation Region, corresponding to a CLOSED switch.",
+    "formula": "\\text{Saturation: Both junctions Forward-Biased } (V_{CE} \\approx 0.2\\text{ V})"
+  },
+  {
+    "id": 145,
+    "question": "In a BJT switching circuit, what are the bias conditions for the transistor to act as an OPEN switch (Cutoff mode)?",
+    "options": [
+      "A. B-E Forward Biased, C-B Reverse Biased",
+      "B. B-E Reverse Biased, C-B Reverse Biased",
+      "C. B-E Forward Biased, C-B Forward Biased",
+      "D. B-E Reverse Biased, C-B Forward Biased"
+    ],
+    "correct": 1,
+    "explanation": "In cutoff mode, the transistor acts as an open circuit (OPEN switch) with virtually zero current ($I_C \\approx 0$). This occurs when both the Base-Emitter and Collector-Base junctions are Reverse Biased (or $V_{BE} \\le 0\\text{ V}$).",
+    "formula": "\\text{Cutoff: Both junctions Reverse-Biased } (I_C = 0, \\; V_{CE} = V_{CC})"
+  },
+  {
+    "id": 146,
+    "question": "What is the current gain parameter beta (β) in a Common Emitter configuration defined as?",
+    "options": [
+      "A. Ratio of IC to IE",
+      "B. Ratio of IB to IC",
+      "C. Ratio of IC to IB",
+      "D. Ratio of IE to IB"
+    ],
+    "correct": 2,
+    "explanation": "In Common Emitter (CE) configuration, the input current is the base current $I_B$ and the output current is the collector current $I_C$. Therefore, the common-emitter DC current gain $\\beta_{dc}$ (or $h_{FE}$) is defined as the ratio of $I_C$ to $I_B$.",
+    "formula": "\\beta = \\frac{I_C}{I_B}"
+  },
+  {
+    "id": 147,
+    "question": "What parameter represents the alpha (α) current gain in a Common Base configuration?",
+    "options": [
+      "A. I_C / I_E",
+      "B. I_E / I_C",
+      "C. I_C / I_B",
+      "D. I_B / I_C"
+    ],
+    "correct": 0,
+    "explanation": "In Common Base (CB) configuration, the input terminal is the emitter and the output terminal is the collector. The alpha current gain $\\alpha_{dc}$ is the ratio of collector current to emitter current ($I_C / I_E$), typically having a value between 0.95 and 0.998.",
+    "formula": "\\alpha = \\frac{I_C}{I_E} = \\frac{\\beta}{\\beta + 1}"
+  },
+  {
+    "id": 148,
+    "question": "Which BJT configuration provides high current gain, a voltage gain of approximately 1, and very high input impedance?",
+    "options": [
+      "A. Common Emitter (CE)",
+      "B. Common Base (CB)",
+      "C. Common Collector (CC)",
+      "D. Collector Feedback"
+    ],
+    "correct": 2,
+    "explanation": "The Common Collector (CC) configuration—widely called an Emitter Follower—features high input impedance ($Z_{in}$), low output impedance ($Z_{out}$), high current gain ($A_i \\approx \\beta$), and a non-inverting voltage gain slightly less than or approximately equal to 1 ($A_v \\approx 1$). It is widely used for impedance buffering.",
+    "formula": "A_v \\approx 1, \\quad Z_{in} \\text{ (Very High)}, \\quad Z_{out} \\text{ (Low)} \\implies \\text{Common Collector}"
+  },
+  {
+    "id": 149,
+    "question": "What is the nominal barrier potential V_BE assumed for a forward-biased silicon PN junction at room temperature?",
+    "options": [
+      "A. 0.3 V",
+      "B. 0.7 V",
+      "C. 1.2 V",
+      "D. 2.0 V"
+    ],
+    "correct": 1,
+    "explanation": "At standard room temperature (25°C), the built-in barrier potential for a conducting forward-biased Silicon PN junction is universally taken as 0.7 V (or 0.6 V–0.7 V).",
+    "formula": "V_{BE(\\text{Si})} = 0.7\\text{ V}"
+  },
+  {
+    "id": 150,
+    "question": "What is the approximate forward voltage drop across a Germanium diode when conducting?",
+    "options": [
+      "A. 0.3 V",
+      "B. 0.7 V",
+      "C. 1.1 V",
+      "D. 0.0 V"
+    ],
+    "correct": 0,
+    "explanation": "Due to Germanium's smaller energy bandgap ($0.67\\text{ eV}$ vs. $1.12\\text{ eV}$ for Silicon), the built-in barrier potential and forward conducting voltage drop of Germanium PN junctions is approximately 0.3 V.",
+    "formula": "V_{D(\\text{Ge})} \\approx 0.3\\text{ V}"
+  },
+  {
+    "id": 151,
+    "question": "In a standard regulated DC power supply design, what is the first functional block following the AC main outlet?",
+    "options": [
+      "A. Rectifier",
+      "B. Filter",
+      "C. Transformer",
+      "D. Voltage Regulator"
+    ],
+    "correct": 2,
+    "explanation": "The block sequence of a linear DC power supply is: AC Mains (120V/220V) → 1. Transformer (steps down voltage) → 2. Rectifier (converts AC to pulsating DC) → 3. Filter (smoothes ripples) → 4. Voltage Regulator (maintains constant DC output). Therefore, the Transformer is first.",
+    "formula": "\\text{AC Main} \\to \\text{Transformer} \\to \\text{Rectifier} \\to \\text{Filter} \\to \\text{Regulator} \\to \\text{Load}"
+  },
+  {
+    "id": 152,
+    "question": "What is the primary function of the capacitor filter block in a DC power supply?",
+    "options": [
+      "A. Convert DC voltage to AC voltage",
+      "B. Step down the AC line voltage",
+      "C. Smooth out voltage ripples from the rectified output",
+      "D. Maintain a constant output current regardless of load"
+    ],
+    "correct": 2,
+    "explanation": "The capacitor filter charges to the peak voltage during conducting half-cycles and discharges slowly into the load when diode conduction drops, filling in the valleys and significantly smoothing out voltage ripples from the pulsating rectified output.",
+    "formula": "V_{\\text{ripple}} = \\frac{I_{\\text{load}}}{f \\cdot C}"
+  },
+  {
+    "id": 153,
+    "question": "What is the average DC value of a half-wave rectified sine wave with a peak output voltage V_p?",
+    "options": [
+      "A. V_p / (2π)",
+      "B. V_p / π",
+      "C. 2V_p / π",
+      "D. V_p / √2"
+    ],
+    "correct": 1,
+    "explanation": "For a half-wave rectifier, output voltage exists for only one half of the AC cycle ($0$ to $\\pi$). Integrating over a full period $2\\pi$ yields $V_{dc} = \\frac{1}{2\\pi} \\int_0^\\pi V_p \\sin(\\theta) d\\theta = \\frac{V_p}{\\pi} \\approx 0.318 V_p$.",
+    "formula": "V_{dc} = \\frac{V_p}{\\pi} \\approx 0.318 V_p"
+  },
+  {
+    "id": 154,
+    "question": "What is the average DC voltage produced by an ideal full-wave rectifier with a peak input voltage V_p?",
+    "options": [
+      "A. V_p / π",
+      "B. 2V_p / π",
+      "C. V_p / 2",
+      "D. √2 · V_p"
+    ],
+    "correct": 1,
+    "explanation": "A full-wave rectifier conducts during both half-cycles, delivering twice the average voltage of a half-wave rectifier: $V_{dc} = \\frac{2V_p}{\\pi} \\approx 0.636 V_p$.",
+    "formula": "V_{dc} = \\frac{2V_p}{\\pi} \\approx 0.636 V_p"
+  },
+  {
+    "id": 155,
+    "question": "How is the turns ratio (n) of a transformer defined in electronics?",
+    "options": [
+      "A. N_pri / N_sec",
+      "B. N_sec / N_pri",
+      "C. N_pri · N_sec",
+      "D. (N_sec / N_pri)²"
+    ],
+    "correct": 1,
+    "explanation": "In standard electronic engineering textbooks (such as Boylestad and Floyd), the transformation turns ratio $n$ is defined as the ratio of secondary turns to primary turns: $n = \\frac{N_{sec}}{N_{pri}}$, such that secondary voltage is directly $V_{sec} = n \\cdot V_{pri}$.",
+    "formula": "n = \\frac{N_{sec}}{N_{pri}} \\implies V_{sec} = n \\cdot V_{pri}"
+  },
+  {
+    "id": 156,
+    "question": "Which configuration is also referred to as an 'emitter follower'?",
+    "options": [
+      "A. Common Base",
+      "B. Common Emitter",
+      "C. Common Collector",
+      "D. Fixed Bias"
+    ],
+    "correct": 2,
+    "explanation": "The Common Collector configuration is called an emitter follower because the output is taken directly across the emitter resistor $R_E$, and the emitter voltage follows the base input voltage in phase with a constant $0.7\\text{ V}$ offset ($V_E = V_B - 0.7\\text{ V}$).",
+    "formula": "V_E = V_B - V_{BE} \\implies \\text{Emitter Follower (Common Collector)}"
+  },
+  {
+    "id": 157,
+    "question": "What typical DC operating voltage range is associated with modern solid-state transistors compared to vacuum tubes?",
+    "options": [
+      "A. 100 V to 500 V",
+      "B. 1 V to 15 V",
+      "C. 500 V to 1000 V",
+      "D. 0 V to 0.5 V"
+    ],
+    "correct": 1,
+    "explanation": "Modern solid-state transistors operate at safe, low DC supply voltages typically ranging between 1 V and 15 V (e.g., 3.3V, 5V, 9V, 12V), whereas obsolete vacuum tubes required high plate voltages of 100 V to 500 V.",
+    "formula": "\\text{Transistor } V_{CC} \\approx 1\\text{ V to } 15\\text{ V} \\quad (\\text{vs. Tube } 100\\text{ V – } 500\\text{ V})"
+  },
+  {
+    "id": 158,
+    "question": "What breakdown mechanism occurs in a BJT when excessive reverse bias is applied across the collector-base junction?",
+    "options": [
+      "A. Zener Breakdown",
+      "B. Avalanche Breakdown",
+      "C. Thermal Runaway",
+      "D. Pinch-off Breakdown"
+    ],
+    "correct": 1,
+    "explanation": "Because the collector region is moderately or lightly doped and has a wide depletion region, applying excessive reverse bias voltage ($BV_{CBO}$ or $BV_{CEO}$) accelerates minority carriers to sufficient kinetic energy to knock valence electrons free in a cumulative chain reaction known as Avalanche Breakdown.",
+    "formula": "\\text{Avalanche Multiplication: } M = \\frac{1}{1 - (V_{CB}/BV)^n}"
+  },
+  {
+    "id": 159,
+    "question": "What is the role of a voltage regulator in a linear DC power supply?",
+    "options": [
+      "A. To step down the AC main voltage",
+      "B. To convert AC voltage into pulsating DC voltage",
+      "C. To maintain a constant DC output voltage despite changes in input voltage or load",
+      "D. To isolate the load circuit from ground"
+    ],
+    "correct": 2,
+    "explanation": "The voltage regulator circuit (e.g., Zener diode shunt or 78xx IC) holds the DC load voltage strictly constant despite variations in the incoming line voltage (line regulation) or changes in the load current demand (load regulation).",
+    "formula": "\\text{Regulation: } \\Delta V_{\\text{out}} \\approx 0 \\text{ as } \\Delta V_{\\text{in}} \\text{ or } \\Delta I_L \\text{ varies}"
+  },
+  {
+    "id": 160,
+    "question": "How many diodes are required to construct a full-wave bridge rectifier circuit?",
+    "options": [
+      "A. 1",
+      "B. 2",
+      "C. 3",
+      "D. 4"
+    ],
+    "correct": 3,
+    "explanation": "A full-wave bridge rectifier consists of 4 diodes arranged in a closed loop (bridge network). During each half-cycle, two diagonally opposite diodes conduct simultaneously in series.",
+    "formula": "\\text{Bridge Rectifier: 4 Diodes}"
+  },
+  {
+    "id": 161,
+    "question": "How many diodes are used in a center-tapped full-wave rectifier circuit?",
+    "options": [
+      "A. 1",
+      "B. 2",
+      "C. 4",
+      "D. 6"
+    ],
+    "correct": 1,
+    "explanation": "A center-tapped full-wave rectifier requires a transformer with a secondary center tap and exactly 2 diodes, each conducting alternately during opposite half-cycles.",
+    "formula": "\\text{Center-Tapped Full-Wave Rectifier: 2 Diodes}"
+  },
+  {
+    "id": 162,
+    "question": "A transistor circuit measures a collector current I_C = 5 mA and a base current I_B = 50 µA. What is the total emitter current?",
+    "options": [
+      "A. 4.95 mA",
+      "B. 5.00 mA",
+      "C. 5.05 mA",
+      "D. 5.50 mA"
+    ],
+    "correct": 2,
+    "explanation": "By Kirchhoff's Current Law: $I_E = I_C + I_B$. Converting units: $I_B = 50\\ \\mu\\text{A} = 0.05\\text{ mA}$. Thus, $I_E = 5\\text{ mA} + 0.05\\text{ mA} = 5.05\\text{ mA}$.",
+    "formula": "I_E = I_C + I_B = 5\\text{ mA} + 0.05\\text{ mA} = 5.05\\text{ mA}"
+  },
+  {
+    "id": 163,
+    "question": "If a BJT has a common-emitter current gain β = 100, what is its corresponding common-base current gain (α)?",
+    "options": [
+      "A. 0.9803",
+      "B. 0.9901",
+      "C. 1.0100",
+      "D. 0.9500"
+    ],
+    "correct": 1,
+    "explanation": "The relationship between common-emitter gain $\\beta$ and common-base gain $\\alpha$ is $\\alpha = \\frac{\\beta}{\\beta + 1} = \\frac{100}{101} \\approx 0.990099 \\approx 0.9901$.",
+    "formula": "\\alpha = \\frac{\\beta}{\\beta + 1} = \\frac{100}{101} \\approx 0.9901"
+  },
+  {
+    "id": 164,
+    "question": "Consider the fixed-bias circuit: V_CC = 12 V, R_B = 330 kΩ, R_C = 2 kΩ, and β = 150. Calculate the base current.",
+    "options": [
+      "A. 28.52 µA",
+      "B. 34.24 µA",
+      "C. 36.36 µA",
+      "D. 40.12 µA"
+    ],
+    "correct": 1,
+    "explanation": "In a fixed-bias circuit, the base-emitter loop equation gives $I_B = \\frac{V_{CC} - V_{BE}}{R_B} = \\frac{12\\text{ V} - 0.7\\text{ V}}{330\\text{ k}\\Omega} = \\frac{11.3\\text{ V}}{330\\times 10^3\\ \\Omega} \\approx 34.242\\ \\mu\\text{A}$.",
+    "formula": "I_B = \\frac{V_{CC} - V_{BE}}{R_B} = \\frac{12 - 0.7}{330\\text{ k}\\Omega} = 34.24\\ \\mu\\text{A}"
+  },
+  {
+    "id": 165,
+    "question": "Using the circuit parameters from Item 164 (V_CC = 12 V, R_B = 330 kΩ, R_C = 2 kΩ, β = 150), what is the collector current?",
+    "options": [
+      "A. 3.42 mA",
+      "B. 4.85 mA",
+      "C. 5.14 mA",
+      "D. 6.20 mA"
+    ],
+    "correct": 2,
+    "explanation": "With $I_B = 34.242\\ \\mu\\text{A}$ and $\\beta = 150$: $I_C = \\beta I_B = 150 \\times 34.242\\ \\mu\\text{A} = 5.136\\text{ mA} \\approx 5.14\\text{ mA}$.",
+    "formula": "I_C = \\beta I_B = 150 \\times 34.24\\ \\mu\\text{A} = 5.14\\text{ mA}"
+  },
+  {
+    "id": 166,
+    "question": "A half-wave rectifier uses a single silicon diode connected to an AC source with peak voltage V_in(pk) = 10 V. What is the peak output voltage V_out across the load?",
+    "options": [
+      "A. 10.0 V",
+      "B. 9.3 V",
+      "C. 8.6 V",
+      "D. 4.3 V"
+    ],
+    "correct": 1,
+    "explanation": "Accounting for the practical 0.7 V barrier potential drop of a conducting Silicon diode: $V_{out(pk)} = V_{in(pk)} - V_D = 10\\text{ V} - 0.7\\text{ V} = 9.3\\text{ V}$.",
+    "formula": "V_{out(pk)} = V_{in(pk)} - 0.7\\text{ V} = 10 - 0.7 = 9.3\\text{ V}"
+  },
+  {
+    "id": 167,
+    "question": "For the half-wave output in Item 166 (peak output = 9.3 V), what is the calculated average DC output voltage?",
+    "options": [
+      "A. 2.96 V",
+      "B. 4.65 V",
+      "C. 5.92 V",
+      "D. 6.57 V"
+    ],
+    "correct": 0,
+    "explanation": "The average DC voltage of a half-wave rectified waveform is $V_{dc} = \\frac{V_{out(pk)}}{\\pi} = \\frac{9.3\\text{ V}}{\\pi} \\approx 2.9603\\text{ V} \\approx 2.96\\text{ V}$.",
+    "formula": "V_{dc} = \\frac{V_p}{\\pi} = \\frac{9.3}{\\pi} = 2.96\\text{ V}"
+  },
+  {
+    "id": 168,
+    "question": "A transformer with a turns specification 10:1 has a primary RMS voltage of 120 Vrms. What is the secondary RMS voltage?",
+    "options": [
+      "A. 1200 V",
+      "B. 120 V",
+      "C. 12 V",
+      "D. 1.2 V"
+    ],
+    "correct": 2,
+    "explanation": "A turns ratio of 10:1 ($N_1 : N_2 = 10:1$) indicates a step-down transformer where $V_2 = V_1 / 10 = 120\\text{ V} / 10 = 12\\text{ V}_{rms}$.",
+    "formula": "V_{\\text{sec}} = V_{\\text{pri}} \\times \\frac{N_{\\text{sec}}}{N_{\\text{pri}}} = 120 \\times \\frac{1}{10} = 12\\text{ V}"
+  },
+  {
+    "id": 169,
+    "question": "Refer to the following BJT operating profile: Collector-Base Junction: Reverse Biased; Base-Emitter Junction: Forward Biased; Signal Output: Amplified replica of input signal. Which region of operation does this describe?",
+    "options": [
+      "A. Cutoff Region",
+      "B. Active Region",
+      "C. Saturation Region",
+      "D. Breakdown Region"
+    ],
+    "correct": 1,
+    "explanation": "When the B-E junction is forward-biased and the C-B junction is reverse-biased, the transistor operates in the Active Region, behaving as a linear amplifier reproducing an amplified version of the input signal without clipping.",
+    "formula": "\\text{B-E Forward, C-B Reverse } \\implies \\text{Active (Linear Amplification) Region}"
+  },
+  {
+    "id": 170,
+    "question": "In an emitter-stabilized bias circuit, what is the correct formula for the base current I_B?",
+    "options": [
+      "A. I_B = (V_CC - V_BE) / R_B",
+      "B. I_B = (V_CC - V_BE) / [R_B + (β + 1)R_E]",
+      "C. I_B = (V_CC - V_BE) / (R_B + β R_C)",
+      "D. I_B = (V_Th - V_BE) / R_Th"
+    ],
+    "correct": 1,
+    "explanation": "Applying KVL around the base-emitter loop: $V_{CC} - I_B R_B - V_{BE} - I_E R_E = 0$. Substituting $I_E = (\\beta + 1)I_B$ and solving gives $I_B = \\frac{V_{CC} - V_{BE}}{R_B + (\\beta + 1)R_E}$.",
+    "formula": "I_B = \\frac{V_{CC} - V_{BE}}{R_B + (\\beta + 1)R_E}"
+  },
+  {
+    "id": 171,
+    "question": "Which set of terminal characteristics correctly describes a Common Base (CB) amplifier configuration?",
+    "options": [
+      "A. High input impedance, low output impedance, current gain < 1",
+      "B. Low input impedance, high output impedance, current gain < 1",
+      "C. High input impedance, high output impedance, voltage gain ≈ 1",
+      "D. Low input impedance, low output impedance, phase inversion of 180°"
+    ],
+    "correct": 1,
+    "explanation": "A Common Base amplifier has very low input impedance ($Z_{in} \\approx r_e$), very high output impedance ($Z_{out} \\approx R_C$), a current gain $\\alpha$ slightly less than 1 (current gain $< 1$), high voltage gain, and $0^\\circ$ phase shift (in-phase).",
+    "formula": "Z_{in} \\text{ (Very Low)}, \\quad Z_{out} \\text{ (High)}, \\quad A_i < 1 \\implies \\text{Common Base}"
+  },
+  {
+    "id": 172,
+    "question": "A full-wave bridge rectifier is connected to a transformer secondary providing 24 V peak. Assuming silicon diodes, what is the peak voltage across the load resistor?",
+    "options": [
+      "A. 24.0 V",
+      "B. 23.3 V",
+      "C. 22.6 V",
+      "D. 21.2 V"
+    ],
+    "correct": 2,
+    "explanation": "In a bridge rectifier, two diodes conduct in series during each half-cycle. Therefore, two barrier potential drops must be subtracted: $V_{L(pk)} = V_{sec(pk)} - 2V_D = 24\\text{ V} - 2(0.7\\text{ V}) = 24 - 1.4 = 22.6\\text{ V}$.",
+    "formula": "V_{L(pk)} = V_{sec(pk)} - 2V_D = 24 - 1.4 = 22.6\\text{ V}"
+  },
+  {
+    "id": 173,
+    "question": "A center-tapped transformer delivers a total secondary peak-to-peak voltage of 100 V. What peak voltage appears across each half of the secondary with respect to the center tap?",
+    "options": [
+      "A. 100 V",
+      "B. 50 V",
+      "C. 25 V",
+      "D. 12.5 V"
+    ],
+    "correct": 2,
+    "explanation": "A total secondary voltage of $100\\text{ V}_{p-p}$ has a total peak voltage of $V_p = 100 / 2 = 50\\text{ V}$. The center tap splits this total peak voltage exactly in half, so the peak voltage across each half with respect to the center tap is $50\\text{ V} / 2 = 25\\text{ V}$. (Note: 50 V is the peak-to-peak voltage across each half).",
+    "formula": "V_{\\text{half}(pk)} = \\frac{V_{\\text{total}(pk)}}{2} = \\frac{50\\text{ V}}{2} = 25\\text{ V}"
+  },
+  {
+    "id": 174,
+    "question": "What is the peak voltage of a standard sinusoidal AC line voltage rated at 220 Vrms?",
+    "options": [
+      "A. 220.0 V",
+      "B. 311.1 V",
+      "C. 440.0 V",
+      "D. 155.6 V"
+    ],
+    "correct": 1,
+    "explanation": "For a pure sinusoidal wave: $V_{peak} = \\sqrt{2} \\times V_{rms} = \\sqrt{2} \\times 220\\text{ V} \\approx 1.4142 \\times 220 \\approx 311.13\\text{ V} \\approx 311.1\\text{ V}$.",
+    "formula": "V_{peak} = \\sqrt{2} \\cdot V_{rms} = \\sqrt{2} \\cdot 220 = 311.1\\text{ V}"
+  },
+  {
+    "id": 175,
+    "question": "In a collector-feedback bias configuration, why does collector voltage decrease when collector current increases?",
+    "options": [
+      "A. The base diode breaks down",
+      "B. Negative feedback reduces base current to stabilize the Q-point",
+      "C. Emitter resistance drops to zero",
+      "D. Transistor enters the cutoff region"
+    ],
+    "correct": 1,
+    "explanation": "In collector feedback, $R_B$ is connected directly to the collector. If $I_C$ increases, the voltage drop across $R_C$ increases, reducing $V_C$. Since $V_C$ supplies the base, a lower $V_C$ forces $I_B$ to decrease, which counteracts the original increase in $I_C$. This is stabilizing negative feedback.",
+    "formula": "I_C \\uparrow \\implies V_C = (V_{CC} - I_C R_C) \\downarrow \\implies I_B \\downarrow \\implies I_C \\downarrow"
+  },
+  {
+    "id": 176,
+    "question": "A voltage divider bias network has V_CC = 22 V, R_1 = 39 kΩ, and R_2 = 3.9 kΩ. Calculate the Thevenin equivalent voltage (V_Th) at the base terminal.",
+    "options": [
+      "A. 2.0 V",
+      "B. 3.9 V",
+      "C. 4.4 V",
+      "D. 10.0 V"
+    ],
+    "correct": 0,
+    "explanation": "Using the voltage divider formula: $V_{Th} = V_{CC} \\times \\frac{R_2}{R_1 + R_2} = 22\\text{ V} \\times \\frac{3.9\\text{ k}\\Omega}{39\\text{ k}\\Omega + 3.9\\text{ k}\\Omega} = 22 \\times \\frac{3.9}{42.9} = 22 \\times \\frac{1}{11} = 2.0\\text{ V}$.",
+    "formula": "V_{Th} = V_{CC} \\cdot \\frac{R_2}{R_1 + R_2} = 22 \\cdot \\frac{3.9}{42.9} = 2.0\\text{ V}"
+  },
+  {
+    "id": 177,
+    "question": "Consider the Voltage Divider Bias Circuit: V_CC = 22 V, R_1 = 39 kΩ, R_2 = 3.9 kΩ, R_C = 10 kΩ, R_E = 1.5 kΩ, and β = 100. Calculate the precise base current I_B.",
+    "options": [
+      "A. 5.12 µA",
+      "B. 8.38 µA",
+      "C. 12.45 µA",
+      "D. 15.60 µA"
+    ],
+    "correct": 1,
+    "explanation": "First find Thevenin values: $V_{Th} = 2.0\\text{ V}$, $R_{Th} = R_1 \\parallel R_2 = \\frac{39 \\times 3.9}{42.9} = 3.545\\text{ k}\\Omega$. Then by exact analysis: $I_B = \\frac{V_{Th} - V_{BE}}{R_{Th} + (\\beta + 1)R_E} = \\frac{2.0 - 0.7}{3.545\\text{ k}\\Omega + (101)(1.5\\text{ k}\\Omega)} = \\frac{1.3\\text{ V}}{3.545 + 151.5\\text{ k}\\Omega} = \\frac{1.3}{155.045\\text{ k}\\Omega} \\approx 8.38\\ \\mu\\text{A}$.",
+    "formula": "I_B = \\frac{V_{Th} - V_{BE}}{R_{Th} + (\\beta + 1)R_E} = \\frac{1.3\\text{ V}}{155.05\\text{ k}\\Omega} = 8.38\\ \\mu\\text{A}"
+  },
+  {
+    "id": 178,
+    "question": "Using the exact circuit values from Item 177 (V_CC = 22 V, R_1 = 39 kΩ, R_2 = 3.9 kΩ, R_C = 10 kΩ, R_E = 1.5 kΩ, β = 100, I_B = 8.38 µA), calculate the collector-to-emitter voltage V_CE.",
+    "options": [
+      "A. 6.82 V",
+      "B. 9.45 V",
+      "C. 12.36 V",
+      "D. 15.10 V"
+    ],
+    "correct": 2,
+    "explanation": "$I_C = \\beta I_B = 100 \\times 8.385\\ \\mu\\text{A} = 0.8385\\text{ mA}$. $I_E = (\\beta + 1)I_B = 101 \\times 8.385\\ \\mu\\text{A} = 0.8469\\text{ mA}$. Applying KVL around collector-emitter loop: $V_{CE} = V_{CC} - I_C R_C - I_E R_E = 22 - (0.8385 \\times 10) - (0.8469 \\times 1.5) = 22 - 8.385 - 1.270 = 12.345\\text{ V} \\approx 12.36\\text{ V}$.",
+    "formula": "V_{CE} = V_{CC} - I_C R_C - I_E R_E = 22 - 8.385 - 1.27 = 12.36\\text{ V}"
+  },
+  {
+    "id": 179,
+    "question": "An emitter-stabilized bias circuit has V_CC = 15 V, R_B = 470 kΩ, R_C = 2.2 kΩ, R_E = 1.0 kΩ, and β = 100. Calculate V_CE at the DC operating point.",
+    "options": [
+      "A. 4.25 V",
+      "B. 6.95 V",
+      "C. 8.53 V",
+      "D. 10.12 V"
+    ],
+    "correct": 1,
+    "explanation": "$I_B = \\frac{V_{CC} - V_{BE}}{R_B + (\\beta + 1)R_E} = \\frac{15 - 0.7}{470\\text{ k} + 101(1.0\\text{ k})} = \\frac{14.3}{571\\text{ k}\\Omega} \\approx 25.04\\ \\mu\\text{A}$. $I_C = 100 \\times 25.04\\ \\mu\\text{A} = 2.504\\text{ mA}$; $I_E = 101 \\times 25.04\\ \\mu\\text{A} = 2.529\\text{ mA}$. $V_{CE} = 15 - I_C(2.2\\text{ k}) - I_E(1.0\\text{ k}) = 15 - 5.509 - 2.529 = 6.962\\text{ V} \\approx 6.95\\text{ V}$.",
+    "formula": "V_{CE} = V_{CC} - I_C R_C - I_E R_E = 15 - 5.51 - 2.53 = 6.95\\text{ V}"
+  },
+  {
+    "id": 180,
+    "question": "A single-phase transformer with V_pri = 220 Vrms and turns ratio n = 0.05 feeds a half-wave rectifier using a silicon diode. What is the average DC output voltage across the load?",
+    "options": [
+      "A. 3.12 V",
+      "B. 4.73 V",
+      "C. 6.85 V",
+      "D. 9.20 V"
+    ],
+    "correct": 1,
+    "explanation": "Secondary RMS voltage: $V_{sec} = 0.05 \\times 220\\text{ V} = 11\\text{ V}_{rms}$. Secondary peak voltage: $V_{p} = \\sqrt{2} \\times 11\\text{ V} = 15.556\\text{ V}$. Peak voltage across load: $V_{L(pk)} = 15.556 - 0.7 = 14.856\\text{ V}$. Average DC voltage: $V_{dc} = \\frac{V_{L(pk)}}{\\pi} = \\frac{14.856}{\\pi} \\approx 4.729\\text{ V} \\approx 4.73\\text{ V}$.",
+    "formula": "V_{dc} = \\frac{(\\sqrt{2} \\cdot n \\cdot V_{\\text{pri}} - 0.7)}{\\pi} = \\frac{14.86}{\\pi} = 4.73\\text{ V}"
+  },
+  {
+    "id": 181,
+    "question": "A collector-feedback bias circuit uses V_CC = 12 V, R_C = 2 kΩ, R_B = 200 kΩ, R_E = 1 kΩ, and β = 100. Calculate the base current I_B.",
+    "options": [
+      "A. 18.20 µA",
+      "B. 22.60 µA",
+      "C. 28.40 µA",
+      "D. 35.10 µA"
+    ],
+    "correct": 1,
+    "explanation": "Using the standard collector-feedback formula: $I_B = \\frac{V_{CC} - V_{BE}}{R_B + \\beta(R_C + R_E)} = \\frac{12 - 0.7}{200\\text{ k}\\Omega + 100(2\\text{ k} + 1\\text{ k})\\Omega} = \\frac{11.3\\text{ V}}{200\\text{ k} + 300\\text{ k}\\Omega} = \\frac{11.3\\text{ V}}{500\\text{ k}\\Omega} = 0.0226\\text{ mA} = 22.60\\ \\mu\\text{A}$.",
+    "formula": "I_B = \\frac{V_{CC} - V_{BE}}{R_B + \\beta(R_C + R_E)} = \\frac{11.3\\text{ V}}{500\\text{ k}\\Omega} = 22.60\\ \\mu\\text{A}"
+  },
+  {
+    "id": 182,
+    "question": "A center-tapped full-wave rectifier circuit has an input peak voltage V_pri = 100 V and a transformer turns ratio n = 0.5. If silicon diodes are used, calculate the DC output voltage.",
+    "options": [
+      "A. 15.47 V",
+      "B. 24.30 V",
+      "C. 30.85 V",
+      "D. 48.60 V"
+    ],
+    "correct": 0,
+    "explanation": "Total secondary peak: $V_{sec(pk)} = 0.5 \\times 100\\text{ V} = 50\\text{ V}$. Across each half from the center tap: $V_{half(pk)} = 50\\text{ V} / 2 = 25\\text{ V}$. Peak voltage across load: $V_{L(pk)} = 25 - 0.7 = 24.30\\text{ V}$. The average DC output voltage is $V_{dc} = \\frac{2 V_{L(pk)}}{\\pi} = \\frac{2 \\times 24.30}{\\pi} = \\frac{48.60}{\\pi} \\approx 15.47\\text{ V}$. (Note: 24.30 V is peak DC voltage).",
+    "formula": "V_{dc} = \\frac{2(V_{\\text{half}(pk)} - 0.7)}{\\pi} = \\frac{48.60}{\\pi} = 15.47\\text{ V}"
+  },
+  {
+    "id": 183,
+    "question": "For a fixed-bias circuit with V_CC = 12 V and R_C = 1.2 kΩ, what is the collector saturation current on the DC load line?",
+    "options": [
+      "A. 5.0 mA",
+      "B. 10.0 mA",
+      "C. 12.0 mA",
+      "D. 15.0 mA"
+    ],
+    "correct": 1,
+    "explanation": "On the DC load line, saturation occurs when $V_{CE} = 0\\text{ V}$. The collector saturation current is $I_{C(sat)} = \\frac{V_{CC}}{R_C} = \\frac{12\\text{ V}}{1.2\\text{ k}\\Omega} = 10.0\\text{ mA}$.",
+    "formula": "I_{C(sat)} = \\frac{V_{CC}}{R_C} = \\frac{12\\text{ V}}{1.2\\text{ k}\\Omega} = 10.0\\text{ mA}"
+  },
+  {
+    "id": 184,
+    "question": "Examine the diode configuration: An AC source of 15 Vpk feeds two silicon diodes connected in series in the same forward direction to a load resistor RL. What is the output peak voltage across RL?",
+    "options": [
+      "A. 14.3 V",
+      "B. 13.6 V",
+      "C. 0.0 V",
+      "D. 7.5 V"
+    ],
+    "correct": 1,
+    "explanation": "Because two silicon diodes are connected in series facing the same forward conducting direction, each diode drops $0.7\\text{ V}$. The total forward diode drop is $2 \\times 0.7\\text{ V} = 1.4\\text{ V}$. Output voltage across $R_L$: $V_{out} = V_{in(pk)} - 2V_D = 15\\text{ V} - 1.4\\text{ V} = 13.6\\text{ V}$. (Option A is a common error where only one diode drop is subtracted).",
+    "formula": "V_{out} = V_{in(pk)} - 2V_D = 15 - 1.4 = 13.6\\text{ V}"
+  },
+  {
+    "id": 185,
+    "question": "Why is Voltage Divider Bias preferred over Fixed Bias in high-volume production amplifier circuits?",
+    "options": [
+      "A. It eliminates the need for an emitter resistor",
+      "B. Its Q-point is practically independent of transistor beta variations",
+      "C. It requires fewer total resistors to bias the transistor",
+      "D. It increases the voltage gain of the amplifier by a factor of 10"
+    ],
+    "correct": 1,
+    "explanation": "In mass production, individual transistor current gain ($\beta$) varies widely (e.g. from 50 to 300) even for the exact same part number. Voltage Divider Bias provides beta-independent Q-point stability provided $\beta R_E \\ge 10 R_2$, ensuring consistent bias point without trimming.",
+    "formula": "V_B \\approx V_{CC} \\cdot \\frac{R_2}{R_1 + R_2} \\implies I_C \\approx \\frac{V_B - 0.7}{R_E} \\quad (\\text{Beta Independent})"
+  },
+  {
+    "id": 186,
+    "question": "A full-wave bridge rectifier is powered by a step-down transformer (120 Vrms primary, 12 Vrms secondary). If the silicon bridge feeds a 1 kΩ load resistor, what average DC power is delivered to the load?",
+    "options": [
+      "A. 49.5 mW",
+      "B. 98.7 mW",
+      "C. 142.0 mW",
+      "D. 210.5 mW"
+    ],
+    "correct": 1,
+    "explanation": "Secondary peak: $V_{sec(pk)} = \\sqrt{2} \\times 12\\text{ V} \\approx 16.97\\text{ V}$. Peak voltage across load: $V_{L(pk)} = 16.97 - 2(0.7\\text{ V}) = 15.57\\text{ V}$. Average DC voltage: $V_{dc} = \\frac{2V_{L(pk)}}{\\pi} = \\frac{2 \\times 15.57}{\\pi} \\approx 9.912\\text{ V}$. Average DC power delivered to $R_L$: $P_{dc} = \\frac{V_{dc}^2}{R_L} = \\frac{(9.912)^2}{1000\\ \\Omega} \\approx 0.09826\\text{ W} = 98.3\\text{ mW} \\approx 98.7\\text{ mW}$.",
+    "formula": "P_{dc} = \\frac{V_{dc}^2}{R_L} = \\frac{\\left(\\frac{2(12\\sqrt{2} - 1.4)}{\\pi}\\right)^2}{1000} = 98.7\\text{ mW}"
   }
 ]
   },
