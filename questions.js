@@ -734,10 +734,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 61,
     "question": "What formula is used to calculate the required resistance value of a Current-Limiting Resistor (R) connected in series with a Light-Emitting Diode (LED)?",
     "options": [
-      "R = (V_S - V_F) / I_F",
-      "R = V_S * V_F * I_F",
-      "R = (V_S + V_F) / I_F^2",
-      "R = I_F / (V_S - V_F)"
+      "$R = \\frac{V_S - V_F}{I_F}$",
+      "$R = V_S \\cdot V_F \\cdot I_F$",
+      "$R = \\frac{V_S + V_F}{I_F^2}$",
+      "$R = \\frac{I_F}{V_S - V_F}$"
     ],
     "answer": 0,
     "explanation": "• Why 'R = (V_S - V_F) / I_F' is Correct: By Kirchhoff's Voltage Law, the resistor voltage is V_R = V_S - V_F. Applying Ohm's Law yields R = (V_S - V_F) / I_F to prevent overcurrent damage to the LED.\n• Why Other Choices are Incorrect: Multiplying or adding forward voltage violates Ohm's Law."
@@ -914,13 +914,13 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 76,
     "question": "The resonance frequency of an Inductor-Capacitor (LC) circuit with a varactor diode is given by:",
     "options": [
-      "f = 1 / (2 * pi * sqrt(L * C))",
-      "f = 2 * pi * sqrt(L * C)",
-      "f = (L * C) / (2 * pi)",
-      "f = 1 / (L * C)"
+      "$f = \\frac{1}{2\\pi\\sqrt{LC}}$",
+      "$f = 2\\pi\\sqrt{LC}$",
+      "$f = \\frac{LC}{2\\pi}$",
+      "$f = \\frac{1}{LC}$"
     ],
     "answer": 0,
-    "explanation": "• Why 'f = 1 / (2 * pi * sqrt(L * C))' is Correct: The fundamental resonance frequency formula for an LC tuned circuit is f = 1 / (2π√(LC)). Adjusting the varactor reverse voltage alters capacitance C, directly tuning the resonant frequency f.\n• Why Other Choices differ: Alternative formulas do not satisfy the required mathematical derivation for LC resonance."
+    "explanation": "• Why '$f = \\frac{1}{2\\pi\\sqrt{LC}}$' is Correct: The fundamental resonance frequency formula for an LC tuned circuit is:\n$$f = \\frac{1}{2\\pi\\sqrt{LC}}$$\nAdjusting the varactor diode's reverse-bias voltage varies its junction capacitance $C$, directly tuning the resonant frequency $f$ of the LC tank circuit.\n• Why Other Choices are Incorrect: $f = 2\\pi\\sqrt{LC}$ is the reciprocal without inversion, while $\\frac{LC}{2\\pi}$ and $\\frac{1}{LC}$ are dimensionally incorrect formulas for frequency in Hertz."
   },
   {
     "id": 77,
@@ -1238,10 +1238,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 103,
     "question": "In electronics, 1 Electron-Volt (1 eV) is equivalent to how many Joules (J) of energy?",
     "options": [
-      "1.602 x 10^-19 J",
-      "9.109 x 10^-31 J",
-      "6.022 x 10^23 J",
-      "1.000 x 10^-6 J"
+      "$1.602 \\times 10^{-19}\\text{ J}$",
+      "$9.109 \\times 10^{-31}\\text{ J}$",
+      "$6.022 \\times 10^{23}\\text{ J}$",
+      "$1.000 \\times 10^{-6}\\text{ J}$"
     ],
     "answer": 0,
     "explanation": "• Why '1.602 x 10^-19 J' is Correct: By definition, 1 electron-volt (1 eV) is the kinetic energy gained by a single electron moving through a potential difference of 1 volt, equal to 1.602 x 10^-19 Joules.\n• Why Other Choices differ: 9.109 x 10^-31 kg is electron mass, and 6.022 x 10^23 is Avogadro's number."
@@ -1274,10 +1274,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 106,
     "question": "What is the energy bandgap (E_g) equation defining the forbidden zone between the conduction band (E_C) and valence band (E_V)?",
     "options": [
-      "E_g = E_C - E_V",
-      "E_g = E_C + E_V",
-      "E_g = E_C * E_V",
-      "E_g = E_V / E_C"
+      "$E_g = E_C - E_V$",
+      "$E_g = E_C + E_V$",
+      "$E_g = E_C \\cdot E_V$",
+      "$E_g = \\frac{E_V}{E_C}$"
     ],
     "answer": 0,
     "explanation": "• Why 'E_g = E_C - E_V' is Correct: The bandgap energy (E_g) represents the energy difference between the bottom of the conduction band (E_C) and the top of the valence band (E_V).\n• Why Other Choices differ: Adding, multiplying, or dividing band energies violates solid-state energy band definitions."
@@ -1737,10 +1737,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 142,
     "question": "Which equation correctly represents Kirchhoff's Current Law applied to the terminals of any BJT?",
     "options": [
-      "A. I_B = I_C + I_E",
-      "B. I_E = I_C + I_B",
-      "C. I_C = I_E + I_B",
-      "D. I_E = I_C · I_B"
+      "A. $I_B = I_C + I_E$",
+      "B. $I_E = I_C + I_B$",
+      "C. $I_C = I_E + I_B$",
+      "D. $I_E = I_C \\cdot I_B$"
     ],
     "answer": 1,
     "explanation": "According to Kirchhoff's Current Law (KCL), the sum of currents entering a transistor must equal the sum of currents leaving it. For any BJT in any configuration, the total emitter current is the sum of the collector current and the base current: $I_E = I_C + I_B$.",
@@ -1802,10 +1802,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 147,
     "question": "What parameter represents the alpha (α) current gain in a Common Base configuration?",
     "options": [
-      "A. I_C / I_E",
-      "B. I_E / I_C",
-      "C. I_C / I_B",
-      "D. I_B / I_C"
+      "A. $\\frac{I_C}{I_E}$",
+      "B. $\\frac{I_E}{I_C}$",
+      "C. $\\frac{I_C}{I_B}$",
+      "D. $\\frac{I_B}{I_C}$"
     ],
     "answer": 0,
     "explanation": "In Common Base (CB) configuration, the input terminal is the emitter and the output terminal is the collector. The alpha current gain $\\alpha_{dc}$ is the ratio of collector current to emitter current ($I_C / I_E$), typically having a value between 0.95 and 0.998.",
@@ -1880,10 +1880,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 153,
     "question": "What is the average DC value of a half-wave rectified sine wave with a peak output voltage V_p?",
     "options": [
-      "A. V_p / (2π)",
-      "B. V_p / π",
-      "C. 2V_p / π",
-      "D. V_p / √2"
+      "A. $\\frac{V_p}{2\\pi}$",
+      "B. $\\frac{V_p}{\\pi}$",
+      "C. $\\frac{2V_p}{\\pi}$",
+      "D. $\\frac{V_p}{\\sqrt{2}}$"
     ],
     "answer": 1,
     "explanation": "For a half-wave rectifier, output voltage exists for only one half of the AC cycle ($0$ to $\\pi$). Integrating over a full period $2\\pi$ yields $V_{dc} = \\frac{1}{2\\pi} \\int_0^\\pi V_p \\sin(\\theta) d\\theta = \\frac{V_p}{\\pi} \\approx 0.318 V_p$.",
@@ -1893,10 +1893,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 154,
     "question": "What is the average DC voltage produced by an ideal full-wave rectifier with a peak input voltage V_p?",
     "options": [
-      "A. V_p / π",
-      "B. 2V_p / π",
-      "C. V_p / 2",
-      "D. √2 · V_p"
+      "A. $\\frac{V_p}{\\pi}$",
+      "B. $\\frac{2V_p}{\\pi}$",
+      "C. $\\frac{V_p}{2}$",
+      "D. $\\sqrt{2} \\cdot V_p$"
     ],
     "answer": 1,
     "explanation": "A full-wave rectifier conducts during both half-cycles, delivering twice the average voltage of a half-wave rectifier: $V_{dc} = \\frac{2V_p}{\\pi} \\approx 0.636 V_p$.",
@@ -1906,10 +1906,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 155,
     "question": "How is the turns ratio (n) of a transformer defined in electronics?",
     "options": [
-      "A. N_pri / N_sec",
-      "B. N_sec / N_pri",
-      "C. N_pri · N_sec",
-      "D. (N_sec / N_pri)²"
+      "A. $\\frac{N_{\\text{pri}}}{N_{\\text{sec}}}$",
+      "B. $\\frac{N_{\\text{sec}}}{N_{\\text{pri}}}$",
+      "C. $N_{\\text{pri}} \\cdot N_{\\text{sec}}$",
+      "D. $\\left(\\frac{N_{\\text{sec}}}{N_{\\text{pri}}}\\right)^2$"
     ],
     "answer": 1,
     "explanation": "In standard electronic engineering textbooks (such as Boylestad and Floyd), the transformation turns ratio $n$ is defined as the ratio of secondary turns to primary turns: $n = \\frac{N_{sec}}{N_{pri}}$, such that secondary voltage is directly $V_{sec} = n \\cdot V_{pri}$.",
@@ -2101,10 +2101,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 170,
     "question": "In an emitter-stabilized bias circuit, what is the correct formula for the base current I_B?",
     "options": [
-      "A. I_B = (V_CC - V_BE) / R_B",
-      "B. I_B = (V_CC - V_BE) / [R_B + (β + 1)R_E]",
-      "C. I_B = (V_CC - V_BE) / (R_B + β R_C)",
-      "D. I_B = (V_Th - V_BE) / R_Th"
+      "A. $I_B = \\frac{V_{CC} - V_{BE}}{R_B}$",
+      "B. $I_B = \\frac{V_{CC} - V_{BE}}{R_B + (\\beta + 1)R_E}$",
+      "C. $I_B = \\frac{V_{CC} - V_{BE}}{R_B + \\beta R_C}$",
+      "D. $I_B = \\frac{V_{Th} - V_{BE}}{R_{Th}}$"
     ],
     "answer": 1,
     "explanation": "Applying KVL around the base-emitter loop: $V_{CC} - I_B R_B - V_{BE} - I_E R_E = 0$. Substituting $I_E = (\\beta + 1)I_B$ and solving gives $I_B = \\frac{V_{CC} - V_{BE}}{R_B + (\\beta + 1)R_E}$.",

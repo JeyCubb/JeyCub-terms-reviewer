@@ -3596,6 +3596,10 @@ function prepareTextForSpeech(text) {
   s = s.replace(/\\cos\b/g, ' cosine ');
   s = s.replace(/\\tan\b/g, ' tangent ');
   s = s.replace(/\\cdot|\\times/g, ' times ');
+  s = s.replace(/\\pi\b/g, ' pi ');
+  s = s.replace(/\\beta\b/g, ' beta ');
+  s = s.replace(/\\alpha\b/g, ' alpha ');
+  s = s.replace(/\\text\{([^}]+)\}/g, '$1');
   s = s.replace(/\$+/g, ' ');
 
   // Symbols and Greek letters
