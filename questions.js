@@ -1410,243 +1410,263 @@ var SUBJECT_DATA = {  basic_electronics: {
   },
   {
     "id": 117,
-    "question": "Statement: Germanium diodes begin conducting at a higher forward voltage threshold than Silicon diodes.",
+    "question": "Statement: Germanium possesses higher thermal stability and lower reverse leakage current than Silicon.",
     "options": [
-      "a. True, because Germanium has a wider bandgap energy than Silicon.",
-      "b. True, because Germanium exhibits lower thermal stability under direct current bias.",
-      "c. False, because Germanium has a lower potential barrier compared to Silicon.",
-      "d. False, because both materials possess identical potential barriers of 0.5 V at room temperature."
+      "a. True, Germanium has a larger energy bandgap than Silicon.",
+      "b. True, Germanium maintains fixed atomic bonds at elevated temperatures.",
+      "c. False, Silicon and Germanium have identical physical responses to temperature.",
+      "d. False, Silicon is more thermally stable and exhibits significantly lower reverse leakage current."
     ],
-    "answer": 2,
-    "explanation": "• Why Choice C is Correct: Germanium (Ge) has a lower barrier potential (approx 0.3 V) compared to Silicon (Si, approx 0.7 V). Therefore, Germanium begins conducting at a lower forward voltage threshold, making the statement False.\n• Why Other Choices are Incorrect: Germanium has a smaller bandgap (~0.67 eV vs Si 1.1 eV), and Germanium's potential barrier is 0.3 V, not equal to 0.7 V."
+    "correct": 3,
+    "explanation": "Silicon has a wider energy bandgap (1.12 eV vs. 0.67 eV for Germanium) and much lower intrinsic carrier concentration at room temperature. As a result, Silicon devices have reverse leakage currents measured in nanoamperes (nA) and can operate up to 150°C–200°C, whereas Germanium has leakage currents in microamperes (µA) and breaks down thermally above ~75°C–100°C.",
+    "formula": "E_{g(\\text{Si})} = 1.12\\text{ eV} > E_{g(\\text{Ge})} = 0.67\\text{ eV} \\implies I_{R(\\text{Si})} \\ll I_{R(\\text{Ge})}"
   },
   {
     "id": 118,
-    "question": "Statement: Doping a semiconductor with trivalent impurities produces donor atoms that increase the concentration of free electrons.",
+    "question": "Statement: In an unbiased PN junction, dynamic balance between carrier diffusion and drift results in zero net external current flow.",
     "options": [
-      "a. True, trivalent atoms donate three extra electrons to lattice",
-      "b. True, trivalent impurities increase negative charge density",
-      "c. False, trivalent impurities are acceptors creating excess holes",
-      "d. False, trivalent impurities form metallic insulating bonds"
+      "a. True, because diffusion current created by concentration gradients is exactly balanced by drift current driven by the built-in electric field.",
+      "b. True, because unbiased semiconductors act as infinite superconductors.",
+      "c. False, because unbiased diodes continuously produce direct electrical current.",
+      "d. False, because charge carriers cannot move across PN boundaries under any conditions."
     ],
-    "answer": 2,
-    "explanation": "• Why Choice C is Correct: Trivalent impurities (e.g. Boron, Gallium, Indium) have 3 valence electrons and act as acceptor atoms that accept electrons to create excess holes, forming P-type material. Pentavalent impurities are donors that create free electrons.\n• Why Other Choices are Incorrect: Trivalent atoms create holes, not free electron donors."
+    "correct": 0,
+    "explanation": "In thermal equilibrium under zero external bias, the forward diffusion of majority carriers across the depletion layer due to concentration gradients is precisely counterbalanced by the reverse drift of minority carriers swept by the internal barrier electric field ($I_{\\text{diffusion}} = I_{\\text{drift}}$), producing zero net current.",
+    "formula": "I_{\\text{net}} = I_{\\text{diffusion}} - I_{\\text{drift}} = 0"
   },
   {
     "id": 119,
-    "question": "Statement: In the First Approximation (Ideal Diode Model), a forward-biased diode is treated as a closed switch with zero voltage drop.",
+    "question": "Statement: The First Approximation of a diode treats a forward-biased diode as a closed switch with zero voltage drop.",
     "options": [
-      "a. True, because the ideal model neglects the barrier potential and internal forward resistance.",
-      "b. True, because ideal diodes convert all applied forward voltage directly into heat energy.",
-      "c. False, because the ideal model includes a fixed 0.7 V battery drop across the terminals.",
-      "d. False, because ideal diodes offer infinite resistance regardless of polarity."
+      "a. True, because the ideal model simplifies the diode to a zero-resistance closed path during forward operation.",
+      "b. True, because ideal diodes drop 0.7V during forward operation.",
+      "c. False, because the ideal model treats forward bias as an open circuit with infinite resistance.",
+      "d. False, because the ideal model applies exclusively to AC transformer calculations."
     ],
-    "answer": 0,
-    "explanation": "• Why Choice A is Correct: The First Approximation (Ideal Diode) simplifies forward bias to a closed switch (V_D = 0 V, R_f = 0 Ω) and reverse bias to an open switch, completely neglecting barrier potential and internal resistance.\n• Why Other Choices are Incorrect: The ideal model has 0 V drop, unlike the practical second approximation which includes a 0.7 V drop."
+    "correct": 0,
+    "explanation": "The First Approximation (Ideal Diode Model) assumes zero forward voltage drop ($V_F = 0\\text{ V}$) and zero internal forward resistance ($r_F = 0\\ \\Omega$), treating the forward-conducting diode as an ideal closed switch with no energy loss.",
+    "formula": "\\text{1st Approximation (Ideal): } V_F = 0\\text{ V}, \\quad R_{\\text{on}} = 0\\ \\Omega"
   },
   {
     "id": 120,
-    "question": "Statement: A reverse-biased practical diode permits zero electrical current to pass through its PN junction under all operational conditions.",
+    "question": "Statement: Trivalent impurities added to silicon create donor atoms that supply free electrons.",
     "options": [
-      "a. True, depletion region forms absolute barrier to charge flow",
-      "b. True, minority charge carriers cannot exist in doped silicon",
-      "c. False, thermally generated minority carriers form leakage current",
-      "d. False, forward current and reverse current are always equal"
+      "a. True, because trivalent atoms possess five valence electrons.",
+      "b. True, because trivalent doping yields N-type semiconductors.",
+      "c. False, because trivalent impurities are acceptor atoms that create excess holes in P-type material.",
+      "d. False, because trivalent impurities prevent semiconductor crystal formation."
     ],
-    "answer": 2,
-    "explanation": "• Why Choice C is Correct: In reverse bias, a small reverse saturation leakage current (I_S) flows due to thermally generated minority carriers crossing the junction. Therefore, the statement claiming zero current is False.\n• Why Other Choices are Incorrect: Minority carriers are generated by thermal energy and produce reverse leakage current."
+    "correct": 2,
+    "explanation": "Trivalent atoms (such as Boron, Gallium, or Indium) possess 3 valence electrons. When substituting for tetravalent Silicon (4 valence electrons), they create a vacancy or hole that accepts an electron, acting as acceptor impurities and forming P-type semiconductor material.",
+    "formula": "\\text{Trivalent (3 valence e}^-) \\implies \\text{Acceptor} \\implies \\text{P-type (Holes)}"
   },
   {
     "id": 121,
-    "question": "Statement: The Second Approximation of a diode models the device as an ideal switch in series with a DC voltage source equal to its barrier potential.",
+    "question": "Statement: The barrier potential of a Silicon diode is approximately 0.7V, while that of a Germanium diode is approximately 0.3V.",
     "options": [
-      "a. True, accounts for knee voltage while ignoring bulk resistance",
-      "b. True, includes internal forward resistance and capacitance",
-      "c. False, ignores barrier potential and only models resistance",
-      "d. False, applies strictly to reverse-bias operating analysis"
+      "a. True, because Silicon requires 0.3V forward bias while Germanium requires 0.7V to overcome internal junction fields.",
+      "b. True, because Silicon requires 0.7V forward bias while Germanium requires 0.3V to overcome internal junction fields.",
+      "c. False, because Germanium has a higher barrier potential than Silicon.",
+      "d. False, because both materials possess an identical threshold voltage of 1.0V."
     ],
-    "answer": 0,
-    "explanation": "• Why Choice A is Correct: The Second Approximation (Practical Diode) models forward bias as a closed switch in series with a 0.7 V battery (for Si) or 0.3 V (for Ge), representing barrier knee voltage while omitting bulk resistance.\n• Why Other Choices are Incorrect: Bulk resistance is only added in the third approximation."
+    "correct": 1,
+    "explanation": "At room temperature (25°C), the internal electric field established in the depletion region requires approximately 0.7 V of forward bias to overcome for Silicon, whereas Germanium's smaller bandgap requires approximately 0.3 V.",
+    "formula": "V_{B(\\text{Si})} \\approx 0.7\\text{ V}, \\quad V_{B(\\text{Ge})} \\approx 0.3\\text{ V}"
   },
   {
     "id": 122,
-    "question": "Statement: The Third Approximation of a diode is also referred to as the Piecewise Linear Model.",
+    "question": "Statement: The Second Approximation of a diode models the device as an ideal switch in series with a barrier potential battery.",
     "options": [
-      "a. True, because it combines the barrier voltage with the internal forward resistance of the semiconductor.",
-      "b. True, because it treats the diode as a variable AC voltage generator under steady-state DC conditions.",
-      "c. False, because the piecewise linear model applies only to the First (Ideal) Approximation.",
-      "d. False, because the third approximation assumes zero internal resistance during conduction."
+      "a. True, because it accounts for the forward voltage required while neglecting internal forward resistance.",
+      "b. True, because it includes bulk resistance alongside the barrier voltage.",
+      "c. False, because the second approximation treats forward bias as an open switch.",
+      "d. False, because the second approximation applies strictly to reverse leakage conditions."
     ],
-    "answer": 0,
-    "explanation": "• Why Choice A is Correct: The Third Approximation incorporates the threshold voltage V_D and internal bulk resistance r_f into a two-segment linear I-V curve, which is officially named the Piecewise Linear Model.\n• Why Other Choices are Incorrect: The piecewise linear model specifically includes internal resistance r_f."
+    "correct": 0,
+    "explanation": "The Second Approximation (Practical Diode Model) introduces the knee/barrier voltage ($0.7\\text{ V}$ for Si or $0.3\\text{ V}$ for Ge) represented as a DC voltage source opposing current flow in series with an ideal switch, but continues to neglect the internal forward bulk resistance ($r_B = 0$).",
+    "formula": "\\text{2nd Approximation: } V_D = V_B \\; (0.7\\text{V / } 0.3\\text{V}), \\quad r_F = 0"
   },
   {
     "id": 123,
-    "question": "Statement: GaAs is a single-crystal elemental semiconductor like Silicon and Germanium.",
+    "question": "Statement: The Third Approximation of a diode is also called the Piecewise Linear Model because it includes internal forward resistance alongside barrier potential.",
     "options": [
-      "a. True, because GaAs is composed of a single element from Group IV of the periodic table.",
-      "b. True, because GaAs possess identical electronic properties to pure Silicon crystals.",
-      "c. False, because GaAs is a compound semiconductor made from Gallium and Arsenic.",
-      "d. False, because GaAs is a synthetic ceramic insulator incapable of conducting current."
+      "a. True, because it models linear V-I operational slopes above the threshold knee voltage.",
+      "b. True, because it simplifies the diode to an ideal zero-voltage switch.",
+      "c. False, because piecewise linear modeling ignores bulk resistance completely.",
+      "d. False, because third approximation applies strictly to light-emitting diodes."
     ],
-    "answer": 2,
-    "explanation": "• Why Choice C is Correct: Gallium Arsenide (GaAs) is a Group III-V compound semiconductor formed chemically by Gallium and Arsenic, unlike Silicon and Germanium which are single-element single-crystal semiconductors.\n• Why Other Choices are Incorrect: GaAs is not a single element."
+    "correct": 0,
+    "explanation": "The Third Approximation (Piecewise Linear / Complete Diode Model) accounts for both the knee threshold voltage ($V_B$) and the internal bulk forward resistance ($r_f$ or $r_B$). The forward V-I characteristic is modeled as zero current below $V_B$ and a linear slope $\\Delta I / \\Delta V = 1/r_f$ above $V_B$.",
+    "formula": "\\text{3rd Approximation: } V_D = V_B + I_D \\cdot r_f"
   },
   {
     "id": 124,
-    "question": "Statement: Applying a forward bias to a PN junction diode lowers the internal potential barrier across the depletion region.",
+    "question": "Statement: Gallium Arsenide (GaAs) is classified as a single-crystal elemental semiconductor.",
     "options": [
-      "a. True, because the external voltage opposes the built-in electric field, narrowing the depletion region.",
-      "b. True, because the external voltage forces minority carriers to widen the depletion region.",
-      "c. False, because forward biasing increases the internal potential barrier to prevent breakdown.",
-      "d. False, because external voltage bias has no physical effect on depletion region width."
+      "a. True, because GaAs consists of a single chemical element from Group IV.",
+      "b. True, because GaAs has an identical atomic lattice to pure Germanium.",
+      "c. False, because GaAs is a compound semiconductor synthesized from Gallium and Arsenic.",
+      "d. False, because GaAs is an electrical conductor with zero energy bandgap."
     ],
-    "answer": 0,
-    "explanation": "• Why Choice A is Correct: Forward bias applies positive voltage to the P-side and negative to the N-side, opposing the internal junction field, narrowing the depletion region, and lowering the barrier potential.\n• Why Other Choices are Incorrect: Reverse bias widens the depletion region, while forward bias thins it."
+    "correct": 2,
+    "explanation": "Silicon and Germanium are elemental semiconductors (pure single chemical elements from Group IV of the periodic table). Gallium Arsenide (GaAs) is a III-V compound semiconductor formed from Gallium (Group III) and Arsenic (Group V).",
+    "formula": "\\text{GaAs} = \\text{Group III (Ga)} + \\text{Group V (As)} \\implies \\text{Compound Semiconductor}"
   },
   {
     "id": 125,
-    "question": "Statement: Increasing the temperature of a semiconductor material increases its electrical resistance.",
+    "question": "Statement: Reverse biasing a PN junction diode widens the depletion region and reduces majority carrier current to near zero.",
     "options": [
-      "a. True, because thermal vibration impairs covalent bonding, reducing the number of charge carriers.",
-      "b. True, because semiconductors have a positive temperature coefficient of resistance like copper.",
-      "c. False, because thermal energy generates additional electron-hole pairs, decreasing electrical resistance.",
-      "d. False, because temperature changes affect electrical insulators exclusively."
+      "a. True, because applied reverse potential attracts majority carriers away from the junction, widening the depletion region.",
+      "b. True, because reverse bias pushes majority carriers across the junction boundary, widening the depletion region.",
+      "c. False, because reverse biasing narrows the depletion region to increase forward conduction.",
+      "d. False, because reverse bias causes immediate dielectric destruction at all voltages."
     ],
-    "answer": 2,
-    "explanation": "• Why Choice C is Correct: Semiconductors have a Negative Temperature Coefficient (NTC). As temperature rises, thermal energy breaks covalent bonds and creates additional electron-hole pairs, increasing conductivity and decreasing resistance.\n• Why Other Choices are Incorrect: Metals have a positive temperature coefficient, but semiconductors have a negative temperature coefficient."
+    "correct": 0,
+    "explanation": "Applying a reverse bias (positive terminal to N-region, negative terminal to P-region) pulls majority electrons and holes away from the metallurgical junction, widening the depletion layer and creating a high potential hill that stops majority carrier flow.",
+    "formula": "V_{\\text{reverse}} \\uparrow \\implies W_{\\text{depletion}} \\uparrow, \\quad I_{\\text{majority}} \\to 0"
   },
   {
     "id": 126,
-    "question": "Statement: Under zero bias conditions, an electrical current flows spontaneously through an isolated PN junction diode due to concentration gradients.",
+    "question": "Statement: Semiconductor resistance decreases as operating temperature rises, demonstrating a negative temperature coefficient.",
     "options": [
-      "a. True, because diffusion of majority carriers creates a continuous closed-loop direct current.",
-      "b. True, because the built-in voltage acts as an internal DC power supply.",
-      "c. False, because carrier diffusion is counterbalanced by drift current in equilibrium, resulting in zero net current.",
-      "d. False, because charge carriers cannot move within semiconductor materials without external light exposure."
+      "a. True, because thermal energy reduces free electron mobility in conductors, generating extra electron-hole pairs.",
+      "b. True, because thermal energy breaks covalent bonds, generating extra electron-hole pairs for electron mobility.",
+      "c. False, because semiconductor resistance increases linearly with temperature like copper.",
+      "d. False, because semiconductors cannot operate above absolute zero."
     ],
-    "answer": 2,
-    "explanation": "• Why Choice C is Correct: At thermal equilibrium (zero bias), the forward diffusion current of majority carriers is exactly equal and opposite to the reverse drift current of thermally generated minority carriers, making net current zero.\n• Why Other Choices are Incorrect: No net current flows without an external energy source."
+    "correct": 1,
+    "explanation": "Unlike metals which have a positive temperature coefficient (resistance increases with heat due to lattice vibrations), semiconductors have a negative temperature coefficient (NTC). Increased thermal energy breaks covalent bonds, liberating vast numbers of electron-hole pairs and substantially lowering electrical resistance.",
+    "formula": "T \\uparrow \\implies n_i \\uparrow \\implies \\sigma \\uparrow \\implies R \\downarrow \\quad (\\text{Negative Temperature Coefficient})"
   },
   {
     "id": 127,
-    "question": "(Problem) A Silicon diode is connected in a simple series circuit with a 1.2 kΩ load resistor and a DC source V_S = 12 V. Using the Second Approximation, calculate the total circuit current I_D in milliamperes (mA).",
+    "question": "A Silicon diode is connected in series with a 1.8 kΩ load resistor and a 25 V DC supply. Using the Second Approximation, calculate the circuit current in milliamperes.",
     "options": [
-      "a. 9.4167 mA",
-      "b. 10.0 mA",
-      "c. 8.8333 mA",
-      "d. 9.15 mA"
+      "a. 14.12 mA",
+      "b. 13.8889 mA",
+      "c. 12.9444 mA",
+      "d. 13.50 mA"
     ],
-    "answer": 0,
-    "explanation": "• Why '9.4167 mA' is Correct: By the Second Approximation, Silicon forward voltage V_D = 0.7 V. Voltage across load resistor V_R = V_S - V_D = 12 V - 0.7 V = 11.3 V. By Ohm's Law, I_D = V_R / R_L = 11.3 V / 1200 Ω = 0.00941667 A = 9.4167 mA.\n• Why Other Choices are Incorrect: 10.0 mA assumes an ideal diode (12 V / 1200 Ω), while 8.8333 mA assumes an incorrect drop."
+    "correct": 3,
+    "explanation": "In the Second Approximation, the forward-biased silicon diode drops a constant 0.7 V. Applying Ohm's law: $I = \\frac{V_S - V_D}{R_L} = \\frac{25\\text{ V} - 0.7\\text{ V}}{1.8\\text{ k}\\Omega} = \\frac{24.3\\text{ V}}{1.8\\text{ k}\\Omega} = 13.50\\text{ mA}$.",
+    "formula": "I = \\frac{V_S - V_D}{R_L} = \\frac{25 - 0.7}{1.8\\text{ k}\\Omega} = 13.50\\text{ mA}"
   },
   {
     "id": 128,
-    "question": "(Problem) For the same series circuit described in Item 11 (V_S = 12 V, Silicon diode V_D = 0.7 V, R_L = 1.2 kΩ, I_D = 9.4167 mA), calculate the power dissipated by the Silicon diode (P_D) in milliwatts (mW) using the Second Approximation.",
+    "question": "A Germanium diode exhibits an internal forward resistance r_f = 8.5 Ω. It is placed in series with a load resistor R_L = 330 Ω and a 5 V DC source. Using the Third Approximation, calculate the total current in milliamperes.",
     "options": [
-      "a. 7.1 mW",
-      "b. 6.5917 mW",
-      "c. 6.1833 mW",
-      "d. 8.4 mW"
+      "a. 13.8848 mA",
+      "b. 14.2424 mA",
+      "c. 13.5201 mA",
+      "d. 15.1515 mA"
     ],
-    "answer": 1,
-    "explanation": "• Why '6.5917 mW' is Correct: Power dissipated by diode P_D = V_D * I_D = 0.7 V * 9.416667 mA = 6.591667 mW ≈ 6.5917 mW.\n• Why Other Choices are Incorrect: 7.1 mW and 6.1833 mW use incorrect current or voltage values."
+    "correct": 0,
+    "explanation": "In the Third Approximation, Germanium drops its knee voltage $V_k = 0.3\\text{ V}$ plus the drop across its bulk resistance $r_f = 8.5\\ \\Omega$. Total resistance is $R_T = r_f + R_L = 8.5\\ \\Omega + 330\\ \\Omega = 338.5\\ \\Omega$. Total circuit current: $I = \\frac{V_S - V_{k}}{R_T} = \\frac{5\\text{ V} - 0.3\\text{ V}}{338.5\\ \\Omega} = \\frac{4.7\\text{ V}}{338.5\\ \\Omega} \\approx 0.013884786\\text{ A} = 13.8848\\text{ mA}$.",
+    "formula": "I = \\frac{V_S - 0.3}{r_f + R_L} = \\frac{4.7\\text{ V}}{338.5\\ \\Omega} = 13.8848\\text{ mA}"
   },
   {
     "id": 129,
-    "question": "(Problem) A Germanium diode exhibits an internal forward resistance r_f = 15 Ω. It is connected in series with a load resistor R_L = 470 Ω and a 9 V DC supply. Using the Third Approximation, calculate the total current in milliamperes (mA).",
+    "question": "Using the parameters and results from Item 128 (Germanium V_k = 0.3 V, r_f = 8.5 Ω, I = 13.8848 mA), calculate the terminal voltage drop across the Germanium diode in volts using the Third Approximation.",
     "options": [
-      "a. 18.5106 mA",
-      "b. 17.9381 mA",
-      "c. 19.1489 mA",
-      "d. 17.3913 mA"
+      "a. 0.3 V",
+      "b. 0.418 V",
+      "c. 0.118 V",
+      "d. 0.3812 V"
     ],
-    "answer": 1,
-    "explanation": "• Why '17.9381 mA' is Correct: Third Approximation for Germanium: V_D = 0.3 V, internal resistance r_f = 15 Ω. Total circuit resistance R_total = r_f + R_L = 15 Ω + 470 Ω = 485 Ω. Current I = (V_S - V_D) / R_total = (9 V - 0.3 V) / 485 Ω = 8.7 V / 485 Ω = 0.01793814 A = 17.9381 mA.\n• Why Other Choices are Incorrect: 18.5106 mA ignores internal resistance r_f (8.7 V / 470 Ω)."
+    "correct": 1,
+    "explanation": "Under the Third Approximation, the terminal diode voltage is $V_D = V_k + I \\cdot r_f = 0.3\\text{ V} + (13.8848\\times 10^{-3}\\text{ A} \\times 8.5\\ \\Omega) = 0.3\\text{ V} + 0.11802\\text{ V} = 0.41802\\text{ V} \\approx 0.418\\text{ V}$.",
+    "formula": "V_D = V_k + I \\cdot r_f = 0.3 + (0.013885 \\times 8.5) = 0.418\\text{ V}"
   },
   {
     "id": 130,
-    "question": "(Problem) Using the parameters and results from Item 13 (V_S = 9 V, Germanium V_D = 0.3 V, r_f = 15 Ω, R_L = 470 Ω, I = 17.9381 mA), calculate the actual terminal voltage drop across the Germanium diode in volts using the Third Approximation.",
+    "question": "A Gallium Arsenide (GaAs) diode (V_k = 1.2 V) is connected across a 9 V DC supply in series with a 1 kΩ load resistor. Using the Second Approximation, calculate the circuit current in milliamperes.",
     "options": [
-      "a. 0.3 V",
-      "b. 0.5691 V",
-      "c. 0.2691 V",
-      "d. 0.45 V"
+      "a. 7.8 mA",
+      "b. 9.0 mA",
+      "c. 6.6 mA",
+      "d. 8.2 mA"
     ],
-    "answer": 1,
-    "explanation": "• Why '0.5691 V' is Correct: Actual diode terminal voltage V_terminal = V_D + (I * r_f) = 0.3 V + (0.01793814 A * 15 Ω) = 0.3 V + 0.269072 V = 0.569072 V ≈ 0.5691 V.\n• Why Other Choices are Incorrect: 0.3 V is only the knee voltage without internal resistance voltage drop."
+    "correct": 0,
+    "explanation": "Using the Second Approximation for GaAs with a knee voltage of 1.2 V: $I = \\frac{V_S - V_k}{R_L} = \\frac{9\\text{ V} - 1.2\\text{ V}}{1000\\ \\Omega} = \\frac{7.8\\text{ V}}{1000\\ \\Omega} = 7.8\\text{ mA}$.",
+    "formula": "I = \\frac{V_S - V_k}{R_L} = \\frac{9 - 1.2}{1\\text{ k}\\Omega} = 7.8\\text{ mA}"
   },
   {
     "id": 131,
-    "question": "(Problem) A Gallium Arsenide (GaAs) diode (V_F = 1.2 V) is connected across a 15 V DC source in series with a 2.2 kΩ resistor. Using the Second Approximation, determine the voltage across the load resistor V_L in volts (V).",
+    "question": "A Silicon diode and a Germanium diode are connected in series with a 560 Ω load resistor and a 12 V DC supply. Using the Second Approximation, calculate the circuit current in milliamperes.",
     "options": [
-      "a. 15 V",
-      "b. 13.8 V",
-      "c. 1.2 V",
-      "d. 14.3 V"
+      "a. 20.8929 mA",
+      "b. 20.1786 mA",
+      "c. 19.6429 mA",
+      "d. 18.9286 mA"
     ],
-    "answer": 1,
-    "explanation": "• Why '13.8 V' is Correct: GaAs forward barrier voltage V_F = 1.2 V. By Kirchhoff's Voltage Law, voltage across load resistor V_L = V_S - V_F = 15 V - 1.2 V = 13.8 V.\n• Why Other Choices are Incorrect: 15 V neglects diode drop, 1.2 V is the diode drop itself, and 14.3 V assumes 0.7 V drop."
+    "correct": 2,
+    "explanation": "When diodes are in series, their barrier potential drops add together: $V_{D(\\text{total})} = V_{D(\\text{Si})} + V_{D(\\text{Ge})} = 0.7\\text{ V} + 0.3\\text{ V} = 1.0\\text{ V}$. Current: $I = \\frac{V_S - V_{D(\\text{total})}}{R_L} = \\frac{12\\text{ V} - 1.0\\text{ V}}{560\\ \\Omega} = \\frac{11.0\\text{ V}}{560\\ \\Omega} \\approx 0.01964286\\text{ A} = 19.6429\\text{ mA}$.",
+    "formula": "I = \\frac{V_S - (V_{\\text{Si}} + V_{\\text{Ge}})}{R_L} = \\frac{12 - 1.0}{560} = 19.6429\\text{ mA}"
   },
   {
     "id": 132,
-    "question": "(Problem) Two identical Silicon diodes are connected in series with a 680 Ω load resistor and a 10 V DC voltage supply. Using the Second Approximation, calculate the total circuit current in milliamperes (mA).",
+    "question": "Calculate the load voltage across the 560 Ω resistor in volts for the series combination in Item 131 (12 V DC supply, Silicon diode, Germanium diode).",
     "options": [
-      "a. 13.6765 mA",
-      "b. 12.6471 mA",
-      "c. 14.7059 mA",
-      "d. 11.6176 mA"
+      "a. 11.7 V",
+      "b. 11.3 V",
+      "c. 11 V",
+      "d. 12.0 V"
     ],
-    "answer": 1,
-    "explanation": "• Why '12.6471 mA' is Correct: Two series Silicon diodes drop V_total = 2 * 0.7 V = 1.4 V. Resistor voltage V_R = 10 V - 1.4 V = 8.6 V. Circuit current I = 8.6 V / 680 Ω = 0.01264706 A = 12.6471 mA.\n• Why Other Choices are Incorrect: 13.6765 mA counts only one diode drop (9.3 V / 680 Ω)."
+    "correct": 2,
+    "explanation": "Applying KVL around the single series loop: $V_L = V_S - V_{D(\\text{Si})} - V_{D(\\text{Ge})} = 12\\text{ V} - 0.7\\text{ V} - 0.3\\text{ V} = 11.0\\text{ V}$.",
+    "formula": "V_L = V_S - 0.7 - 0.3 = 11.0\\text{ V}"
   },
   {
     "id": 133,
-    "question": "(Problem) For a series circuit with a 10 V DC source and a single Silicon diode (V_D = 0.7 V) connected across a 330 Ω load resistor, calculate the load voltage V_L across the 330 Ω resistor in volts (V).",
+    "question": "Three identical Silicon diodes are connected in parallel with each other in forward orientation. This combination is connected in series with a 220 Ω resistor and a 12 V DC supply. Assuming equal current sharing, calculate the current through each individual diode in milliamperes using the Second Approximation.",
     "options": [
-      "a. 9.3 V",
-      "b. 4.3 V",
-      "c. 10.0 V",
-      "d. 7.9 V"
+      "a. 19.3636 mA",
+      "b. 17.1212 mA",
+      "c. 18.1618 mA",
+      "d. 16.3333 mA"
     ],
-    "answer": 0,
-    "explanation": "• Why '9.3 V' is Correct: By KVL, load voltage V_L = V_S - V_D = 10 V - 0.7 V = 9.3 V.\n• Why Other Choices are Incorrect: 4.3 V corresponds to a 5 V source (5 V - 0.7 V), while 10.0 V ignores diode barrier drop."
+    "correct": 1,
+    "explanation": "Since all three diodes are in parallel in the forward direction, the voltage across the parallel bank is held at the silicon threshold $V_D = 0.7\\text{ V}$. Voltage across $R_L$: $V_R = 12\\text{ V} - 0.7\\text{ V} = 11.3\\text{ V}$. Total current: $I_{\\text{total}} = \\frac{11.3\\text{ V}}{220\\ \\Omega} \\approx 51.3636\\text{ mA}$. Since the diodes are identical and share current equally: $I_{\\text{each}} = \\frac{I_{\\text{total}}}{3} = \\frac{51.3636\\text{ mA}}{3} \\approx 17.1212\\text{ mA}$.",
+    "formula": "I_{\\text{each}} = \\frac{V_S - 0.7}{3 \\cdot R_L} = \\frac{11.3}{660} = 17.1212\\text{ mA}"
   },
   {
     "id": 134,
-    "question": "(Problem) Two Silicon diodes are connected in parallel with each other in the forward direction. This parallel branch is placed in series with a 330 Ω resistor and a 5 V DC supply. Assuming equal current sharing, calculate the current through each individual diode in milliamperes (mA) using the Second Approximation.",
+    "question": "A practical Germanium diode is reverse-biased across a 15 V DC supply in series with a 5 kΩ load resistor. If reverse leakage saturation current is I_s = 8.0 µA, calculate terminal voltage across the diode in volts using first approximation.",
     "options": [
-      "a. 13.0303 mA",
-      "b. 6.5152 mA",
-      "c. 7.5758 mA",
-      "d. 3.2576 mA"
+      "a. -15.0 V",
+      "b. -14.96 V",
+      "c. -0.04 V",
+      "d. 0 V"
     ],
-    "answer": 1,
-    "explanation": "• Why '6.5152 mA' is Correct: Parallel Silicon diodes clamp the branch voltage to V_D = 0.7 V. Resistor voltage V_R = 5 V - 0.7 V = 4.3 V. Total supply current I_total = 4.3 V / 330 Ω = 13.0303 mA. Since current divides equally between two parallel diodes: I_diode = 13.0303 mA / 2 = 6.51515 mA ≈ 6.5152 mA.\n• Why Other Choices are Incorrect: 13.0303 mA is total circuit current before dividing by 2."
+    "correct": 0,
+    "explanation": "Under the First Approximation (Ideal Model), a reverse-biased diode is treated as a perfect open circuit ($R_{\\text{rev}} = \\infty, I_R = 0$). With zero current flowing through the series load resistor, no voltage drop occurs across $R_L$, and the entire 15 V source voltage appears across the reverse-biased diode terminals ($V_D = -15.0\\text{ V}$).",
+    "formula": "\\text{Ideal Model (Reverse Bias): } I_R = 0 \\implies V_L = 0 \\implies V_D = -V_S = -15.0\\text{ V}"
   },
   {
     "id": 135,
-    "question": "(Problem) An ideal Silicon diode is connected in reverse bias across a 24 V DC supply in series with a 1 kΩ resistor. Calculate the terminal voltage across the reverse-biased diode V_D in volts (V).",
+    "question": "A Silicon diode with r_f = 12 Ω is connected to a 16 V DC source in series with R_L = 820 Ω. Using the Third Approximation, calculate total electrical power supplied by the DC source in milliwatts.",
     "options": [
-      "a. 0 V",
-      "b. 24 V",
-      "c. 12 V",
-      "d. 0.7 V"
+      "a. 294.2308 mW",
+      "b. 310.1205 mW",
+      "c. 285.50 mW",
+      "d. 300.0 mW"
     ],
-    "answer": 1,
-    "explanation": "• Why '24 V' is Correct: In reverse bias, an ideal diode acts as an open circuit (I = 0). With zero current flowing through the resistor (V_R = 0 V), the full 24 V supply voltage drops across the open diode terminals.\n• Why Other Choices are Incorrect: 0 V occurs across an ideal diode in forward bias, not reverse bias."
+    "correct": 0,
+    "explanation": "Using Third Approximation: $I = \\frac{V_S - V_k}{r_f + R_L} = \\frac{16\\text{ V} - 0.7\\text{ V}}{12\\ \\Omega + 820\\ \\Omega} = \\frac{15.3\\text{ V}}{832\\ \\Omega} \\approx 0.018389423\\text{ A} = 18.3894\\text{ mA}$. Total electrical power delivered by the DC source: $P_{\\text{source}} = V_S \\times I = 16\\text{ V} \\times 0.018389423\\text{ A} \\approx 0.2942308\\text{ W} = 294.2308\\text{ mW}$.",
+    "formula": "P_S = V_S \\cdot \\frac{V_S - 0.7}{r_f + R_L} = 16 \\cdot \\frac{15.3}{832} = 294.2308\\text{ mW}"
   },
   {
     "id": 136,
-    "question": "(Problem) A Silicon diode and a Germanium diode are connected in parallel (facing the same forward conduction path) in series with a 1.5 kΩ load resistor and a 12 V DC source. Using the Second Approximation, determine the total current drawn from the supply in milliamperes (mA).",
+    "question": "In Item no. 135 (Silicon diode r_f = 12 Ω, V_S = 16 V, R_L = 820 Ω), what is the current flowing through the diode in mA?",
     "options": [
-      "a. 7.5333 mA",
-      "b. 7.8000 mA",
-      "c. 7.2667 mA",
-      "d. 8.0000 mA"
+      "a. 13.4845 mA",
+      "b. 17.8726 mA",
+      "c. 14.3894 mA",
+      "d. 18.3894 mA"
     ],
-    "answer": 1,
-    "explanation": "• Why '7.8000 mA' is Correct: Germanium turns ON at 0.3 V, which is lower than Silicon's 0.7 V threshold. Germanium conducts first and clamps the node voltage to 0.3 V, keeping Silicon OFF. Resistor voltage V_R = 12 V - 0.3 V = 11.7 V. Total current I = 11.7 V / 1500 Ω = 0.0078 A = 7.8 mA.\n• Why Other Choices are Incorrect: 7.5333 mA assumes Silicon conducts (11.3 V / 1500 Ω = 7.533 mA), but Silicon remains OFF."
+    "correct": 3,
+    "explanation": "From the third approximation equation: $I_D = \\frac{V_S - V_k}{r_f + R_L} = \\frac{16\\text{ V} - 0.7\\text{ V}}{12\\ \\Omega + 820\\ \\Omega} = \\frac{15.3\\text{ V}}{832\\ \\Omega} \\approx 0.018389423\\text{ A} = 18.3894\\text{ mA}$.",
+    "formula": "I_D = \\frac{15.3\\text{ V}}{832\\ \\Omega} = 18.3894\\text{ mA}"
   },
   {
     "id": 137,
