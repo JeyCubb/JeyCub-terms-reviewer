@@ -2924,7 +2924,7 @@ function hideNotesSection() {
   if (wrapper) wrapper.classList.remove('hidden-toggle');
   if (btn) {
     btn.classList.remove('active');
-    btn.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Show Hints (<span id="notes-count-badge">${getLiveNotesCount()}</span>) <i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
+    btn.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Show Solution & Hint <span id="notes-count-badge" style="display:none;"></span><i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
   }
 }
 
