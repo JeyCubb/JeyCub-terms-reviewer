@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Jeycub Terms Reviewer - Multi-Subject Dataset
  * Contains:
  * 1. Fluid Mechanics (127 Problems)
@@ -2435,7 +2435,6 @@ var SUBJECT_DATA = {  basic_electronics: {
   {
     "id": 197,
     "question": "Based on the standard FET classification tree, what are the two main primary categories under Field Effect Transistors (FET)?",
-    "image": "images/finals_quiz1_fet.png",
     "options": [
       "IGFET / MOSFET and JFET",
       "BJT and UJT",
@@ -2448,7 +2447,6 @@ var SUBJECT_DATA = {  basic_electronics: {
   {
     "id": 198,
     "question": "In the FET classification chart, what are the two operational modes under IGFET / MOSFET?",
-    "image": "images/finals_quiz1_fet.png",
     "options": [
       "Depletion and Enhancement",
       "Forward and Reverse",
@@ -2461,7 +2459,6 @@ var SUBJECT_DATA = {  basic_electronics: {
   {
     "id": 199,
     "question": "In the FET classification chart, JFETs (Junction Field Effect Transistors) are classified under which operational mode?",
-    "image": "images/finals_quiz1_fet.png",
     "options": [
       "Depletion",
       "Enhancement",
@@ -2474,7 +2471,6 @@ var SUBJECT_DATA = {  basic_electronics: {
   {
     "id": 200,
     "question": "Across all FET types (Depletion JFET, Depletion MOSFET, and Enhancement MOSFET), what are the two final sub-classifications for channel types?",
-    "image": "images/finals_quiz1_fet.png",
     "options": [
       "N-Channel and P-Channel",
       "Positive-Channel and Negative-Channel",
@@ -2487,7 +2483,6 @@ var SUBJECT_DATA = {  basic_electronics: {
   {
     "id": 201,
     "question": "Which type of field-effect device has an insulated gate structure that allows operation in both Depletion and Enhancement modes?",
-    "image": "images/finals_quiz1_fet.png",
     "options": [
       "Depletion-type MOSFET (D-MOSFET)",
       "JFET",
