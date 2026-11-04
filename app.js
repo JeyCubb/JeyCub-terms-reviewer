@@ -36,6 +36,7 @@ let state = {
   shuffledOptionsMap: {}, // Cache jumbled options per question key
   userAnswers: {}, // Master answers for All Questions mode
   sessionPoolAnswers: {}, // Transient answers for Weak / Bookmarked practice sessions
+  weakSessionResolved: new Set(), // Questions answered correctly in Weak mode (kept during session for arrow nav, removed on refresh)
   bookmarks: new Set(), // Shared class bookmarks (synced globally in Firebase for all users)
   liveNotes: {}, // { "subject_qId": [{ id, name, text, date, firebaseKey }] }
   groupMistakes: {}, // { "subject_qId": mistakeCount } shared class weak memory (synced globally)
@@ -411,7 +412,7 @@ function getFilteredPracticeQuestions() {
   if (state.practiceFilter === 'weak') {
     const pool = allQs.filter(q => {
       const key = `${state.currentSubject}_q${q.id}`;
-      return (state.groupMistakes[key] || 0) > 0;
+      return (state.groupMistakes[key] || 0) > 0 || (state.weakSessionResolved && state.weakSessionResolved.has(key));
     });
     // Stably sort by question ID so questions never jump or bump around when a mistake is made!
     return pool.sort((a, b) => a.id - b.id);
@@ -734,6 +735,9 @@ async function resetAllSubjectAnswers() {
     delete state.sessionPoolAnswers[key];
     if (alsoDeleteWeak) {
       delete state.groupMistakes[key];
+      if (state.weakSessionResolved) {
+        state.weakSessionResolved.delete(key);
+      }
       if (state.firebaseDb) {
         try {
           state.firebaseDb.ref(`group_mistakes/${key}`).remove();
@@ -2820,7 +2824,22 @@ function selectPracticeAnswer(key, optionIdx) {
   saveData('jt_user_answers', state.userAnswers);
 
   if (q && optionIdx !== q.answer) {
+    if (state.weakSessionResolved) {
+      state.weakSessionResolved.delete(key);
+    }
     recordGroupMistake(key);
+  } else if (q && optionIdx === q.answer && state.practiceFilter === 'weak') {
+    if (!state.weakSessionResolved) state.weakSessionResolved = new Set();
+    state.weakSessionResolved.add(key);
+    delete state.groupMistakes[key];
+    saveData('jt_group_mistakes_local', state.groupMistakes);
+    if (state.firebaseDb) {
+      try {
+        state.firebaseDb.ref(`group_mistakes/${key}`).remove();
+      } catch (e) {
+        console.warn("Firebase remove error:", e);
+      }
+    }
   }
 
   // Ensure currentIndex stays securely locked on the current question so you can read the explanation
