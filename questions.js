@@ -2017,10 +2017,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 164,
     "question": "Consider the fixed-bias circuit: V_CC = 12 V, R_B = 330 kΩ, R_C = 2 kΩ, and β = 150. Calculate the base current.",
     "options": [
-      "$28.52\\ \mu\text{A}$",
-      "$34.24\\ \mu\text{A}$",
-      "$36.36\\ \mu\text{A}$",
-      "$40.12\\ \mu\text{A}$"
+      "$28.52\\mu\\text{A}$",
+      "$34.24\\mu\\text{A}$",
+      "$36.36\\mu\\text{A}$",
+      "$40.12\\mu\\text{A}$"
     ],
     "answer": 1,
     "explanation": "In a fixed-bias circuit, the base-emitter loop equation gives $I_B = \\frac{V_{CC} - V_{BE}}{R_B} = \\frac{12\\text{ V} - 0.7\\text{ V}}{330\\text{ k}\\Omega} = \\frac{11.3\\text{ V}}{330\\times 10^3\\ \\Omega} \\approx 34.242\\ \\mu\\text{A}$.",
@@ -2186,10 +2186,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 177,
     "question": "Consider the Voltage Divider Bias Circuit: V_CC = 22 V, R_1 = 39 kΩ, R_2 = 3.9 kΩ, R_C = 10 kΩ, R_E = 1.5 kΩ, and β = 100. Calculate the precise base current I_B.",
     "options": [
-      "$5.12\\ \mu\text{A}$",
-      "$8.38\\ \mu\text{A}$",
-      "$12.45\\ \mu\text{A}$",
-      "$15.60\\ \mu\text{A}$"
+      "$5.12\\mu\\text{A}$",
+      "$8.38\\mu\\text{A}$",
+      "$12.45\\mu\\text{A}$",
+      "$15.60\\mu\\text{A}$"
     ],
     "answer": 1,
     "explanation": "First find Thevenin values: $V_{Th} = 2.0\\text{ V}$, $R_{Th} = R_1 \\parallel R_2 = \\frac{39 \\times 3.9}{42.9} = 3.545\\text{ k}\\Omega$. Then by exact analysis: $I_B = \\frac{V_{Th} - V_{BE}}{R_{Th} + (\\beta + 1)R_E} = \\frac{2.0 - 0.7}{3.545\\text{ k}\\Omega + (101)(1.5\\text{ k}\\Omega)} = \\frac{1.3\\text{ V}}{3.545 + 151.5\\text{ k}\\Omega} = \\frac{1.3}{155.045\\text{ k}\\Omega} \\approx 8.38\\ \\mu\\text{A}$.",
@@ -2238,10 +2238,10 @@ var SUBJECT_DATA = {  basic_electronics: {
     "id": 181,
     "question": "A collector-feedback bias circuit uses V_CC = 12 V, R_C = 2 kΩ, R_B = 200 kΩ, R_E = 1 kΩ, and β = 100. Calculate the base current I_B.",
     "options": [
-      "$18.20\\ \mu\text{A}$",
-      "$22.60\\ \mu\text{A}$",
-      "$28.40\\ \mu\text{A}$",
-      "$35.10\\ \mu\text{A}$"
+      "$18.20\\mu\\text{A}$",
+      "$22.60\\mu\\text{A}$",
+      "$28.40\\mu\\text{A}$",
+      "$35.10\\mu\\text{A}$"
     ],
     "answer": 1,
     "explanation": "Using the standard collector-feedback formula: $I_B = \\frac{V_{CC} - V_{BE}}{R_B + \\beta(R_C + R_E)} = \\frac{12 - 0.7}{200\\text{ k}\\Omega + 100(2\\text{ k} + 1\\text{ k})\\Omega} = \\frac{11.3\\text{ V}}{200\\text{ k} + 300\\text{ k}\\Omega} = \\frac{11.3\\text{ V}}{500\\text{ k}\\Omega} = 0.0226\\text{ mA} = 22.60\\ \\mu\\text{A}$.",
@@ -2296,7 +2296,7 @@ var SUBJECT_DATA = {  basic_electronics: {
       "It increases the voltage gain of the amplifier by a factor of 10"
     ],
     "answer": 1,
-    "explanation": "In mass production, individual transistor current gain ($\beta$) varies widely (e.g. from 50 to 300) even for the exact same part number. Voltage Divider Bias provides beta-independent Q-point stability provided $\beta R_E \\ge 10 R_2$, ensuring consistent bias point without trimming.",
+    "explanation": "In mass production, individual transistor current gain ($\\beta$) varies widely (e.g. from 50 to 300) even for the exact same part number. Voltage Divider Bias provides beta-independent Q-point stability provided $\\beta R_E \\ge 10 R_2$, ensuring consistent bias point without trimming.",
     "formula": "V_B \\approx V_{CC} \\cdot \\frac{R_2}{R_1 + R_2} \\implies I_C \\approx \\frac{V_B - 0.7}{R_E} \\quad (\\text{Beta Independent})"
   },
   {
@@ -4921,16 +4921,16 @@ var SUBJECT_DATA = {  basic_electronics: {
               "id": 84,
               "question": "8.2. A 3-phase, 400 V synchronous motor takes 60 A at 0.8 power factor leading. Its synchronous impedance is $(0.25 + j3.2)\\;\\Omega/\\text{phase}$. Determine the induced line emf and power supplied to the motor.",
               "options": [
-                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 33\text{ kW}$",
-                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 25\text{ kW}$",
-                  "$E_{\\text{line}} = 485\\text{ V},\\; P_{\\text{in}} = 33\text{ kW}$",
-                  "$E_{\\text{line}} = 485\\text{ V},\\; P_{\\text{in}} = 25\text{ kW}$"
+                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 33\\text{ kW}$",
+                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 25\\text{ kW}$",
+                  "$E_{\\text{line}} = 485\\text{ V},\\; P_{\\text{in}} = 33\\text{ kW}$",
+                  "$E_{\\text{line}} = 485\\text{ V},\\; P_{\\text{in}} = 25\\text{ kW}$"
 ],
               "answer": 0,
               "extraDistractors": [
-                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 38\text{ kW}$",
-                  "$E_{\\text{line}} = 570\\text{ V},\\; P_{\\text{in}} = 33\text{ kW}$",
-                  "$E_{\\text{line}} = 512\\text{ V},\\; P_{\\text{in}} = 28\text{ kW}$"
+                  "$E_{\\text{line}} = 643\\text{ V},\\; P_{\\text{in}} = 38\\text{ kW}$",
+                  "$E_{\\text{line}} = 570\\text{ V},\\; P_{\\text{in}} = 33\\text{ kW}$",
+                  "$E_{\\text{line}} = 512\\text{ V},\\; P_{\\text{in}} = 28\\text{ kW}$"
 ],
               "explanation": "• Input power: $P_{\\text{in}} = \\sqrt{3} \\times 400 \\times 60 \\times 0.8 = 33,255\\text{ W} \\approx 33\\text{ kW}$.\n• Line back EMF: $E_{\\text{line}} = \\sqrt{3} \\times 371.6 = 643.6\\text{ V} \\approx 643\\text{ V}$."
           },

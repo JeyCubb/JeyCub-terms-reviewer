@@ -3278,6 +3278,9 @@ function formatMathTypography(str) {
   // Decode entities on the whole string FIRST, before any regex matching
   s = decodeHTMLEntities(s);
 
+  // Auto-heal accidental unescaped LaTeX collapse (e.g. muextA -> \mu\text{A})
+  s = s.replace(/([0-9]+(?:\.[0-9]+)?)\s*muext\{?A\}?/g, '$$$1\\ \\mu\\text{A}$$');
+
   // Auto-promote standalone slash fractions to KaTeX stacked fraction bars:
   // e.g. "1/V" -> "$\frac{1}{V}$", "50/3 Hz" -> "$\frac{50}{3}\text{ Hz}$"
   s = s.replace(/^([0-9]+|[a-zA-Z])\/([0-9]+|[a-zA-Z])$/, '$\\frac{$1}{$2}$');
