@@ -390,17 +390,17 @@ body {
 .header-container {
   max-width: 1280px;
   margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 0.75rem;
-  flex-wrap: wrap;
 }
 
 .header-right-group {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  justify-self: end;
 }
 
 /* Screen-reader only utility */
@@ -420,6 +420,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  justify-self: start;
 }
 
 .brand-nav-btn,
@@ -568,6 +569,8 @@ body {
   display: flex;
 
   align-items: center;
+
+  justify-self: center;
 
   background: var(--bg-input);
 
@@ -2520,9 +2523,15 @@ body {
     padding: 0.45rem 0.5rem;
   }
   .header-container {
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 0.6rem;
+  }
+  .brand-group,
+  .mode-nav,
+  .header-right-group {
+    justify-self: auto;
   }
   .header-right-group {
     width: 100%;
