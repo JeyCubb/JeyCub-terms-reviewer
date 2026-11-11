@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=118.0">
+  <link rel="stylesheet" href="styles.css?v=119.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -231,23 +231,70 @@
           
           <!-- Brand & Theme Toggle -->
           <div class="brand-row">
-            <div class="brand">
-              <div class="brand-icon">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                </svg>
-              </div>
-              <a href="https://jeycubb.github.io/TIP-Grade-Calculator/" target="_self" class="reviewer-link-icon grade-calc-link-icon" title="Open TIP Grade Calculator (GWA & Target Calculator)" aria-label="Open TIP Grade Calculator">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="4" y="2" width="16" height="20" rx="2"/>
-                  <line x1="8" y1="6" x2="16" y2="6"/>
-                  <line x1="16" y1="14" x2="16" y2="18"/>
-                  <path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"/>
-                </svg>
+            <div class="brand-group">
+              <a href="https://jeycubb.github.io/TIP-Grade-Calculator/" target="_self" class="brand-nav-btn" id="btn-header-calc" title="Open TIP Grade Calculator (GWA & Target Calculator)" aria-label="Open TIP Grade Calculator">
+                <span class="brand-emoji">
+                  <svg class="brand-calc-emoji" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="calc-body-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#475569"/>
+                        <stop offset="30%" stop-color="#334155"/>
+                        <stop offset="100%" stop-color="#1e293b"/>
+                      </linearGradient>
+                      <linearGradient id="calc-lcd-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#090d16"/>
+                        <stop offset="100%" stop-color="#111827"/>
+                      </linearGradient>
+                      <linearGradient id="calc-bevel-gloss" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.32"/>
+                        <stop offset="45%" stop-color="#ffffff" stop-opacity="0.04"/>
+                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="calc-btn-accent" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#fb923c"/>
+                        <stop offset="100%" stop-color="#ea580c"/>
+                      </linearGradient>
+                      <linearGradient id="calc-btn-fn-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#94a3b8"/>
+                        <stop offset="100%" stop-color="#64748b"/>
+                      </linearGradient>
+                      <linearGradient id="calc-btn-num-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="100%" stop-color="#cbd5e1"/>
+                      </linearGradient>
+                    </defs>
+                    <rect x="5" y="3" width="26" height="30" rx="5.5" fill="url(#calc-body-grad)" stroke="#64748b" stroke-width="0.75"/>
+                    <rect x="5.5" y="3.5" width="25" height="12" rx="4.8" fill="url(#calc-bevel-gloss)"/>
+                    <rect x="7.5" y="5.5" width="21" height="7.5" rx="2" fill="url(#calc-lcd-grad)" stroke="#090d16" stroke-width="0.75"/>
+                    <rect x="23.5" y="7.8" width="3.2" height="3" rx="0.5" fill="#38bdf8"/>
+                    <text x="21" y="11" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', monospace" font-size="5" font-weight="800" fill="#38bdf8" text-anchor="end">12</text>
+                    <rect x="8" y="15" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-fn-grad)"/>
+                    <rect x="13.2" y="15" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-fn-grad)"/>
+                    <rect x="18.5" y="15" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-fn-grad)"/>
+                    <rect x="23.8" y="15" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-accent)"/>
+                    <rect x="8" y="19.2" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-num-grad)"/>
+                    <rect x="13.2" y="19.2" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-num-grad)"/>
+                    <rect x="18.5" y="19.2" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-num-grad)"/>
+                    <rect x="23.8" y="19.2" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-accent)"/>
+                    <rect x="8" y="23.4" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-num-grad)"/>
+                    <rect x="13.2" y="23.4" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-num-grad)"/>
+                    <rect x="18.5" y="23.4" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-num-grad)"/>
+                    <rect x="23.8" y="23.4" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-accent)"/>
+                    <rect x="8" y="27.6" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-num-grad)"/>
+                    <rect x="13.2" y="27.6" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-num-grad)"/>
+                    <rect x="18.5" y="27.6" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-num-grad)"/>
+                    <rect x="23.8" y="27.6" width="4.2" height="3.2" rx="1" fill="url(#calc-btn-accent)"/>
+                  </svg>
+                </span>
               </a>
-              <div class="brand-text">
-                <h1><span>JeyCub</span> Terms Reviewer</h1>
+              <a href="https://jeycubb.github.io/JeyCub-terms-reviewer/" target="_self" class="brand-nav-btn active" id="btn-header-reviewer" title="JeyCub Terms Reviewer (Current App)" aria-label="JeyCub Terms Reviewer">
+                <span class="brand-emoji">📖</span>
+              </a>
+              <a href="https://jeycubb.github.io/TIP-Grade-Calculator/#sched" target="_self" class="brand-nav-btn" id="btn-header-sched" title="Open Schedule Creator" aria-label="Open Schedule Creator">
+                <span class="brand-emoji">📅</span>
+              </a>
+              <div>
+                <h1 class="brand-title"><span>JeyCub</span> Terms Reviewer</h1>
               </div>
             </div>
 
