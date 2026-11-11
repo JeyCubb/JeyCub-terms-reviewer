@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=122.0">
+  <link rel="stylesheet" href="styles.css?v=123.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -123,7 +123,8 @@
                     <!-- Reset Current Subject Button (Moved into controls card as requested) -->
           <button class="reset-all-btn quiz-control-reset-btn" onclick="resetAllSubjectAnswers()" title="Reset answered practice questions for current subject (Keeps Weak Questions Memory)">
             <i class="fa-solid fa-rotate-left"></i>
-            <span>Reset All Answers for <span id="reset-subject-name">Basic Electronics</span> <span class="reset-sub-memory">(Keeps Weak Questions Memory)</span></span>
+            <span>Reset <span class="reset-sub-memory">(Keep Weak Questions)</span></span>
+            <span id="reset-subject-name" style="display: none;">Basic Electronics</span>
           </button>
 
           <!-- Jump to Question Number Input (To the left of Pool selector) -->
