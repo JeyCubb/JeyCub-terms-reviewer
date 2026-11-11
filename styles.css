@@ -5027,3 +5027,68 @@ sup {
     box-sizing: border-box;
   }
 }
+
+/* Quiz Controls Top Row (Problem Badge + Live Score) */
+.quiz-controls-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.quiz-score-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.score-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  letter-spacing: 0.02em;
+}
+
+.score-tag.correct {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #10b981;
+}
+
+.score-tag.incorrect {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #ef4444;
+}
+
+@media (max-width: 640px) {
+  .quiz-controls-top-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.45rem;
+  }
+  .question-number-badge {
+    text-align: center;
+    width: 100%;
+  }
+  .quiz-score-badge {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .score-tag {
+    flex: 1;
+    justify-content: center;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+    box-sizing: border-box;
+  }
+}

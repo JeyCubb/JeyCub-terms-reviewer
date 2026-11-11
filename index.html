@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=124.0">
+  <link rel="stylesheet" href="styles.css?v=125.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -115,8 +115,15 @@
 
       <!-- Practice Controls Box (Moved BELOW Show Notes & Solution) -->
       <div class="quiz-controls-card">
-        <div class="question-number-badge">
-          <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
+        <div class="quiz-controls-top-row">
+          <div class="question-number-badge">
+            <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
+          </div>
+
+          <div class="quiz-score-badge">
+            <span class="score-tag correct" title="Correct Answers"><i class="fa-solid fa-check"></i> <span id="stat-correct">0</span> Correct</span>
+            <span class="score-tag incorrect" title="Incorrect Answers"><i class="fa-solid fa-xmark"></i> <span id="stat-incorrect">0</span> Wrong</span>
+          </div>
         </div>
 
         <div class="quiz-header-controls">
@@ -184,30 +191,9 @@
     ============================================================ -->
     <div class="bottom-panel">
 
-      <!-- Unified Progress & Analytics Bar with Integrated Reset -->
-      <section class="stats-bar-three">
-        <div class="stats-unified-group">
-          <div class="stat-sub-item">
-            <span class="stat-value" id="stat-total">0</span>
-            <span class="stat-label">Total</span>
-          </div>
-          <div class="stat-sub-divider"></div>
-          <div class="stat-sub-item">
-            <span class="stat-value orange-text" id="stat-accuracy">0%</span>
-            <span class="stat-label">Accuracy</span>
-          </div>
-          <div class="stat-sub-divider"></div>
-          <div class="stat-sub-item">
-            <span class="stat-value green-text" id="stat-correct">0</span>
-            <span class="stat-label">Correct</span>
-          </div>
-          <div class="stat-sub-divider"></div>
-          <div class="stat-sub-item">
-            <span class="stat-value red-text" id="stat-incorrect">0</span>
-            <span class="stat-label">Wrong</span>
-          </div>
-        </div>
-      </section>
+      <!-- Hidden compatibility stats elements for JS -->
+      <span id="stat-total" style="display: none;">0</span>
+      <span id="stat-accuracy" style="display: none;">0%</span>
 
       <!-- App Header: Brand, Mode Switcher, Subject Selector, Utility Actions -->
       <header class="app-header">
