@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNotesInputSubmit();
   initPinchToFontResize();
   initScrollSnapInstant();
+  initCrossAppNav();
 
   // Anchor at the very top of the question card
   scrollToTopInstant();
@@ -3944,5 +3945,34 @@ function updateNarrationUI() {
     }
     if (qListenIcon) qListenIcon.className = 'fa-solid fa-volume-high';
     if (qListenLabel) qListenLabel.textContent = 'Listen';
+  }
+}
+
+// Cross-App Navigation for Calculator and Scheduler
+function initCrossAppNav() {
+  const calcBtn = document.getElementById('btn-header-calc');
+  if (calcBtn) {
+    calcBtn.addEventListener('click', (e) => {
+      try {
+        localStorage.setItem('tip_gc_active_view', 'calc');
+      } catch (err) {}
+      if (!e.ctrlKey && !e.metaKey && e.button !== 1) {
+        e.preventDefault();
+        window.location.href = 'https://jeycubb.github.io/TIP-Grade-Calculator/#calc';
+      }
+    });
+  }
+
+  const schedBtn = document.getElementById('btn-header-sched');
+  if (schedBtn) {
+    schedBtn.addEventListener('click', (e) => {
+      try {
+        localStorage.setItem('tip_gc_active_view', 'sched');
+      } catch (err) {}
+      if (!e.ctrlKey && !e.metaKey && e.button !== 1) {
+        e.preventDefault();
+        window.location.href = 'https://jeycubb.github.io/TIP-Grade-Calculator/#sched';
+      }
+    });
   }
 }
