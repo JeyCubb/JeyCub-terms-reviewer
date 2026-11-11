@@ -352,9 +352,9 @@ body {
 .bottom-panel {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-  padding-bottom: 1.5rem;
+  gap: 0.5rem;
+  margin-top: 0;
+  padding-bottom: 1rem;
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -1159,62 +1159,39 @@ body {
 
 /* Practice Controls Box */
 
-  .quiz-controls-card {
-
+.quiz-controls-card {
   background: var(--bg-card);
-
   border: 1px solid var(--border-color);
-
-  border-radius: var(--radius-lg);
-
-  padding: 1.25rem 1.5rem;
-
-  margin-top: 1.25rem;
-
-  margin-bottom: 1.5rem;
-
+  border-radius: var(--radius-md);
+  padding: 0.45rem 0.85rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   box-shadow: var(--shadow-sm);
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
-  gap: 1rem;
-
+  gap: 0.6rem;
   flex-wrap: wrap;
-
 }
 
 .question-number-badge {
-
   background: var(--bg-input);
-
   border: 1px solid var(--border-color);
-
-  padding: 0.4rem 1rem;
-
+  padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
-
   font-weight: 700;
-
-  font-size: 0.875rem;
-
+  font-size: 0.82rem;
   color: var(--accent-primary);
-
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .quiz-header-controls {
-
   display: flex;
-
   align-items: center;
-
-  gap: 0.6rem;
-
+  gap: 0.45rem;
   flex-wrap: wrap;
-
+  justify-content: center;
 }
 
 /* Jump Number Input Wrapper */
@@ -5050,32 +5027,25 @@ sup {
   }
 }
 
-/* Quiz Controls Top Row (Problem Badge + Live Score) */
-.quiz-controls-top-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
+/* Quiz Score Badges */
 .quiz-score-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
+  flex-shrink: 0;
 }
 
 .score-tag {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.25rem 0.65rem;
+  padding: 0.28rem 0.65rem;
   border-radius: var(--radius-full);
   font-size: 0.78rem;
   font-weight: 700;
   box-shadow: var(--shadow-sm);
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .score-tag.correct {
@@ -5091,14 +5061,18 @@ sup {
 }
 
 @media (max-width: 640px) {
-  .quiz-controls-top-row {
+  .quiz-controls-card {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.45rem;
+    padding: 0.65rem 0.75rem;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
   .question-number-badge {
     text-align: center;
     width: 100%;
+    box-sizing: border-box;
   }
   .quiz-score-badge {
     display: flex;

@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=129.0">
+  <link rel="stylesheet" href="styles.css?v=131.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -116,22 +116,15 @@
 
       <!-- Practice Controls Box (Moved BELOW Show Notes & Solution) -->
       <div class="quiz-controls-card">
-        <div class="quiz-controls-top-row">
-          <div class="question-number-badge">
-            <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
-          </div>
-
-          <div class="quiz-score-badge">
-            <span class="score-tag correct" title="Correct Answers"><i class="fa-solid fa-check"></i> <span id="stat-correct">0</span> Correct</span>
-            <span class="score-tag incorrect" title="Incorrect Answers"><i class="fa-solid fa-xmark"></i> <span id="stat-incorrect">0</span> Wrong</span>
-          </div>
+        <div class="question-number-badge">
+          <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
         </div>
 
         <div class="quiz-header-controls">
-                    <!-- Reset Current Subject Button (Moved into controls card as requested) -->
+          <!-- Reset Current Subject Button (Moved into controls card as requested) -->
           <button class="reset-all-btn quiz-control-reset-btn" onclick="resetAllSubjectAnswers()" title="Reset answered practice questions for current subject (Keeps Weak Questions Memory)">
             <i class="fa-solid fa-rotate-left"></i>
-            <span>Reset <span class="reset-sub-memory">(Keep Weak Questions)</span></span>
+            <span>Reset</span>
             <span id="reset-subject-name" style="display: none;">Basic Electronics</span>
           </button>
 
@@ -147,16 +140,19 @@
             <label for="practice-filter-select"><i class="fa-solid fa-layer-group"></i> Pool:</label>
             <select id="practice-filter-select" onchange="changePracticeFilter(this.value)">
               <option value="all">📚 All Questions</option>
-              <option value="weak">⚠️ Weak Questions</option>
-                          </select>
+              <option value="weak">⚠️  Weak Questions</option>
+            </select>
           </div>
 
           <!-- Random Toggle Button -->
           <button class="control-toggle-btn" id="btn-toggle-random" onclick="toggleRandomMode()" title="Toggle Random Order">
             <i class="fa-solid fa-shuffle"></i> Random: OFF
           </button>
+        </div>
 
-
+        <div class="quiz-score-badge">
+          <span class="score-tag correct" title="Correct Answers"><i class="fa-solid fa-check"></i> <span id="stat-correct">0</span> Correct</span>
+          <span class="score-tag incorrect" title="Incorrect Answers"><i class="fa-solid fa-xmark"></i> <span id="stat-incorrect">0</span> Wrong</span>
         </div>
       </div>
     </section>
