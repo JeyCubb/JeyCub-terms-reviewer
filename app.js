@@ -931,35 +931,35 @@ function triggerOptionSelection(displayedIdx) {
 
 const SUBJECT_FILTERS = {
   basic_electronics: [
-    { value: 'semiconductors_diodes', id: 'opt-filter-semi-diodes', label: '🔬 Semiconductors & Diodes (Q1–Q116)' },
-    { value: 'prelim_exam', id: 'opt-filter-prelim', label: '📝 TIP Prelim Exam (Q117–Q136)' },
-    { value: 'midterm_exam', id: 'opt-filter-midterm', label: '📋 TIP Midterm Exam (Q137–Q186)' },
-    { value: 'finals_quiz1', id: 'opt-filter-finals1', label: '🎯 TIP Finals Quiz 1: FETs (Q187–Q201)' }
+    { value: 'semiconductors_diodes', id: 'opt-filter-semi-diodes', label: '🔬 Semiconductors & Diodes' },
+    { value: 'prelim_exam', id: 'opt-filter-prelim', label: '📝 TIP Prelim Exam' },
+    { value: 'midterm_exam', id: 'opt-filter-midterm', label: '📋 TIP Midterm Exam' },
+    { value: 'finals_quiz1', id: 'opt-filter-finals1', label: '🎯 TIP Finals Quiz 1: FETs' }
   ],
   deformable_bodies: [
-    { value: 'test8_vessels', id: 'opt-filter-test8', label: '⚓ Test 8: Vessels & Wire Ropes (Q151–Q195)' },
-    { value: 'test5_shaftings', id: 'opt-filter-test5', label: '🔩 Test 5: Shaftings (Q196–Q245)' }
+    { value: 'test8_vessels', id: 'opt-filter-test8', label: '⚓ Test 8: Vessels & Wire Ropes' },
+    { value: 'test5_shaftings', id: 'opt-filter-test5', label: '🔩 Test 5: Shaftings' }
   ],
   fluid_mechanics: [
-    { value: 'fluid_machinery', id: 'opt-filter-machinery', label: '⚙️ Fluid Machinery (Q128–Q215)' }
+    { value: 'fluid_machinery', id: 'opt-filter-machinery', label: '⚙️ Fluid Machinery' }
   ],
   heat_transfer: [
-    { value: 'ht_original', id: 'opt-filter-ht-original', label: '📖 Original Questions (Q1–Q146)' },
-    { value: 'ht_canvas_all', id: 'opt-filter-ht-canvas-all', label: '🎓 All Canvas Modules (Q147–Q310)' },
-    { value: 'ht_mod1_1', id: 'opt-filter-ht-mod1', label: '🔥 Module 1.1: Intro to Heat Transfer (Q147–Q161)' },
-    { value: 'ht_mod1_2', id: 'opt-filter-ht-mod2', label: '🧱 Module 1.2: Conduction in Plane Wall (Q162–Q176)' },
-    { value: 'ht_mod1_3', id: 'opt-filter-ht-mod3', label: '🏢 Module 1.3: Conduction in Composite Wall (Q177–Q188)' },
-    { value: 'ht_mod4_1', id: 'opt-filter-ht-mod4', label: '🔘 Module 4.1: Conduction in Pipes (Q189–Q200)' },
-    { value: 'ht_mod5_1', id: 'opt-filter-ht-mod5', label: '🛡️ Module 5.1: Composite Pipes (Q201–Q210)' },
-    { value: 'ht_mod7_1', id: 'opt-filter-ht-mod7', label: '🌬️ Module 7.1: Convection (Q211–Q225)' },
-    { value: 'ht_mod7_2', id: 'opt-filter-ht-mod7-2', label: '🌊 Module 7.1–7.2: Surface Convection & Principles (Q226–Q248)' },
-    { value: 'ht_assignment_conv', id: 'opt-filter-ht-assign-conv', label: '📝 Assignment: Convection & Lagging (Q249–Q258)' },
-    { value: 'ht_mod4_rad', id: 'opt-filter-ht-mod4-rad', label: '☀️ Module 4.1: Radiation & Sample Problems (Q259–Q276)' },
-    { value: 'ht_mod_hx', id: 'opt-filter-ht-mod-hx', label: '🔄 Module 13: Heat Exchangers, Flow Types, U-Value & LMTD (Q277–Q310)' }
+    { value: 'ht_original', id: 'opt-filter-ht-original', label: '📖 Original Questions' },
+    { value: 'ht_canvas_all', id: 'opt-filter-ht-canvas-all', label: '🎓 All Canvas Modules' },
+    { value: 'ht_mod1_1', id: 'opt-filter-ht-mod1', label: '🔥 Module 1.1: Intro to Heat Transfer' },
+    { value: 'ht_mod1_2', id: 'opt-filter-ht-mod2', label: '🧱 Module 1.2: Conduction in Plane Wall' },
+    { value: 'ht_mod1_3', id: 'opt-filter-ht-mod3', label: '🏢 Module 1.3: Conduction in Composite Wall' },
+    { value: 'ht_mod4_1', id: 'opt-filter-ht-mod4', label: '🔘 Module 4.1: Conduction in Pipes' },
+    { value: 'ht_mod5_1', id: 'opt-filter-ht-mod5', label: '🛡️ Module 5.1: Composite Pipes' },
+    { value: 'ht_mod7_1', id: 'opt-filter-ht-mod7', label: '🌬️ Module 7.1: Convection' },
+    { value: 'ht_mod7_2', id: 'opt-filter-ht-mod7-2', label: '🌊 Module 7.1–7.2: Surface Convection & Principles' },
+    { value: 'ht_assignment_conv', id: 'opt-filter-ht-assign-conv', label: '📝 Assignment: Convection & Lagging' },
+    { value: 'ht_mod4_rad', id: 'opt-filter-ht-mod4-rad', label: '☀️ Module 4.1: Radiation & Sample Problems' },
+    { value: 'ht_mod_hx', id: 'opt-filter-ht-mod-hx', label: '🔄 Module 13: Heat Exchangers, Flow Types, U-Value & LMTD' }
   ],
   ac_dc_machinery: [
-    { value: 'ac_all_mcqs', id: 'opt-filter-ac-all-mcqs', label: '⚡ All Official MCQs (61 Items)' },
-    { value: 'ac_solving_all', id: 'opt-filter-ac-solving-all', label: '🧮 All Solving Problems (32 Items)' }
+    { value: 'ac_all_mcqs', id: 'opt-filter-ac-all-mcqs', label: '⚡ All Official MCQs' },
+    { value: 'ac_solving_all', id: 'opt-filter-ac-solving-all', label: '🧮 All Solving Problems' }
   ]
 };
 
