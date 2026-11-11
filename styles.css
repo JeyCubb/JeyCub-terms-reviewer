@@ -676,7 +676,7 @@ body {
 .stats-bar-three {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -689,8 +689,10 @@ body {
 .stats-unified-group {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .stat-sub-item {
@@ -1141,7 +1143,7 @@ body {
 
 /* Practice Controls Box */
 
-.quiz-controls-card {
+  .quiz-controls-card {
 
   background: var(--bg-card);
 
@@ -2476,12 +2478,13 @@ body {
     padding: 0.5rem 0.65rem;
   }
   .stats-unified-group {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-    gap: 0.25rem;
-    width: 100%;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
   .stat-sub-item {
     min-width: 0;
     width: 100%;
@@ -4976,4 +4979,51 @@ sup {
   background: linear-gradient(135deg, #f87171 0%, #ef4444 100%) !important;
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(239, 68, 68, 0.6) !important;
+}
+
+/* Reset Button inside Quiz Controls Card */
+.quiz-control-reset-btn {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1.5px solid rgba(239, 68, 68, 0.45);
+  color: #ef4444;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.quiz-control-reset-btn:hover {
+  background: var(--color-error);
+  color: #ffffff;
+  border-color: var(--color-error);
+  box-shadow: 0 2px 10px rgba(239, 68, 68, 0.35);
+  transform: translateY(-1px);
+}
+
+.reset-sub-memory {
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  .reset-sub-memory {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .quiz-control-reset-btn {
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-content: center;
+    font-size: 0.74rem;
+    padding: 0.45rem 0.5rem;
+    box-sizing: border-box;
+  }
 }
