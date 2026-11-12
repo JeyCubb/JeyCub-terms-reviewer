@@ -526,19 +526,7 @@ function changePracticeFilter(filterVal) {
   }
 }
 
-function promptJumpToQuestion() {
-  const questions = getFilteredPracticeQuestions();
-  if (!questions || questions.length === 0) return;
-  const currentNum = state.currentIndex + 1;
-  const totalNum = questions.length;
-  const res = window.prompt(`Jump to problem number (1 - ${totalNum}):`, currentNum);
-  if (res === null) return; // User pressed Cancel
-  const trimmed = res.trim();
-  if (!trimmed) return;
-  const numVal = parseInt(trimmed, 10);
-  if (isNaN(numVal)) return;
-
-  // Find index of question matching problem ID or 1-based index in active pool
+function applyJumpToProblem(numVal, questions) {
   let foundIndex = questions.findIndex(q => q.id === numVal);
   if (foundIndex === -1 && numVal >= 1 && numVal <= questions.length) {
     foundIndex = numVal - 1;
@@ -559,10 +547,187 @@ function promptJumpToQuestion() {
       subtitle: 'Jump Target Unavailable',
       iconBg: 'rgba(245, 158, 11, 0.15)',
       iconColor: 'var(--color-warning)',
-      htmlContent: `<p style="margin:0; font-size:0.85rem; color:var(--text-secondary); line-height:1.45;">Problem <strong style="color:var(--text-primary);">#${numVal}</strong> was not found in the current pool filter (Total: ${totalNum} questions).</p>`,
+      htmlContent: `<p style="margin:0; font-size:0.85rem; color:var(--text-secondary); line-height:1.45;">Problem <strong style="color:var(--text-primary);">#${numVal}</strong> was not found in the current pool filter (Total: ${questions.length} questions).</p>`,
       okText: 'Understood'
     });
   }
+}
+
+window.setJumpModalVal = function(val) {
+  const input = document.getElementById('jump-modal-input');
+  if (input) {
+    input.value = val;
+    input.focus();
+    input.select();
+  }
+};
+
+window.adjustJumpModalVal = function(delta, max) {
+  const input = document.getElementById('jump-modal-input');
+  if (input) {
+    let cur = parseInt(input.value, 10) || 1;
+    cur = Math.max(1, Math.min(max, cur + delta));
+    input.value = cur;
+    input.focus();
+    input.select();
+  }
+};
+
+function promptJumpToQuestion() {
+  const questions = getFilteredPracticeQuestions();
+  if (!questions || questions.length === 0) return;
+  const currentNum = state.currentIndex + 1;
+  const totalNum = questions.length;
+  const info = getActiveSubjectInfo();
+  const select = document.getElementById('practice-filter-select');
+  const poolName = select ? select.options[select.selectedIndex]?.textContent : 'All Questions';
+
+  const modal = document.getElementById('app-confirm-modal');
+  if (!modal) {
+    const res = window.prompt(`Jump to problem number (1 - ${totalNum}):`, currentNum);
+    if (!res) return;
+    const num = parseInt(res.trim(), 10);
+    if (!isNaN(num)) applyJumpToProblem(num, questions);
+    return;
+  }
+
+  const iconEl = document.getElementById('app-confirm-modal-icon');
+  const titleEl = document.getElementById('app-confirm-modal-title');
+  const subtitleEl = document.getElementById('app-confirm-modal-subtitle');
+  const contentEl = document.getElementById('app-confirm-modal-content');
+  const confirmBtn = document.getElementById('app-confirm-modal-confirm');
+  const cancelBtn = document.getElementById('app-confirm-modal-cancel');
+  const closeBtn = document.getElementById('app-confirm-modal-close');
+
+  if (iconEl) {
+    iconEl.style.background = 'rgba(249, 115, 22, 0.15)';
+    iconEl.style.color = 'var(--accent-primary)';
+    iconEl.innerHTML = '<i class="fa-solid fa-hashtag" style="font-size: 1.15rem;"></i>';
+  }
+
+  if (titleEl) titleEl.textContent = 'Jump to Problem';
+  if (subtitleEl) {
+    subtitleEl.textContent = `${info.title} • ${poolName}`;
+    subtitleEl.style.display = 'block';
+  }
+
+  if (contentEl) {
+    contentEl.innerHTML = `
+      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <div>
+          <label for="jump-modal-input" style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.4rem;">
+            Problem Number (1 – ${totalNum}):
+          </label>
+          <input type="number" id="jump-modal-input" min="1" max="${totalNum}" value="${currentNum}"
+            style="width: 100%; box-sizing: border-box; background: var(--bg-input); border: 2px solid var(--border-color); border-radius: var(--radius-md); padding: 0.65rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 800; color: var(--accent-primary); text-align: center; outline: none; transition: all 0.2s ease;"
+            onfocus="this.style.borderColor='var(--accent-primary)'; this.style.boxShadow='0 0 14px var(--accent-glow)';"
+            onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none';"
+          />
+          <div id="jump-modal-error" style="display: none; color: var(--color-error); font-size: 0.75rem; font-weight: 700; margin-top: 0.35rem; text-align: center;">
+            Please enter a number between 1 and ${totalNum}
+          </div>
+        </div>
+
+        <!-- Quick Jump Shortcuts -->
+        <div style="display: flex; gap: 0.35rem; justify-content: center; flex-wrap: wrap;">
+          <button type="button" class="btn-preset-jump" onclick="setJumpModalVal(1)">
+            First (1)
+          </button>
+          <button type="button" class="btn-preset-jump" onclick="adjustJumpModalVal(-10, ${totalNum})">
+            -10
+          </button>
+          <button type="button" class="btn-preset-jump" onclick="setJumpModalVal(${currentNum})">
+            Current (${currentNum})
+          </button>
+          <button type="button" class="btn-preset-jump" onclick="adjustJumpModalVal(10, ${totalNum})">
+            +10
+          </button>
+          <button type="button" class="btn-preset-jump" onclick="setJumpModalVal(${totalNum})">
+            Last (${totalNum})
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  if (confirmBtn) {
+    confirmBtn.innerHTML = '<i class="fa-solid fa-arrow-right"></i> Jump';
+    confirmBtn.className = 'btn-modal btn-modal-primary';
+  }
+
+  if (cancelBtn) {
+    cancelBtn.textContent = 'Cancel';
+    cancelBtn.style.display = 'inline-flex';
+  }
+
+  let isDone = false;
+  function finish() {
+    if (isDone) return;
+    isDone = true;
+    modal.classList.remove('open');
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 220);
+    cleanup();
+  }
+
+  function submitJump() {
+    const input = document.getElementById('jump-modal-input');
+    const errEl = document.getElementById('jump-modal-error');
+    if (!input) return;
+    const num = parseInt(input.value.trim(), 10);
+    if (isNaN(num) || num < 1 || num > totalNum) {
+      if (errEl) {
+        errEl.style.display = 'block';
+        input.style.borderColor = 'var(--color-error)';
+        input.style.boxShadow = '0 0 12px rgba(239, 68, 68, 0.4)';
+      }
+      input.focus();
+      return;
+    }
+    finish();
+    applyJumpToProblem(num, questions);
+  }
+
+  function onKeyDown(e) {
+    if (e.key === 'Escape') {
+      e.stopPropagation();
+      finish();
+    }
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      e.stopPropagation();
+      submitJump();
+    }
+  }
+
+  function onOverlayClick(e) {
+    if (e.target === modal) finish();
+  }
+
+  function cleanup() {
+    if (confirmBtn) confirmBtn.removeEventListener('click', submitJump);
+    if (cancelBtn) cancelBtn.removeEventListener('click', finish);
+    if (closeBtn) closeBtn.removeEventListener('click', finish);
+    if (modal) modal.removeEventListener('click', onOverlayClick);
+    document.removeEventListener('keydown', onKeyDown);
+  }
+
+  if (confirmBtn) confirmBtn.addEventListener('click', submitJump);
+  if (cancelBtn) cancelBtn.addEventListener('click', finish);
+  if (closeBtn) closeBtn.addEventListener('click', finish);
+  if (modal) modal.addEventListener('click', onOverlayClick);
+  document.addEventListener('keydown', onKeyDown);
+
+  modal.style.display = 'flex';
+  requestAnimationFrame(() => {
+    modal.classList.add('open');
+    const input = document.getElementById('jump-modal-input');
+    if (input) {
+      input.focus();
+      input.select();
+    }
+  });
 }
 
 function executeJumpFromInput() {
