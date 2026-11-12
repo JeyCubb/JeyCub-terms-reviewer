@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=135.0">
+  <link rel="stylesheet" href="styles.css?v=136.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -128,41 +128,6 @@
           <div id="live-notes-container"></div>
         </div>
       </div>
-
-      <!-- Practice Controls Box (Compact Level Row with Single Action Buttons) -->
-      <div class="quiz-controls-card">
-        <div class="quiz-score-badge">
-          <span class="score-tag correct" title="Correct Answers"><i class="fa-solid fa-check"></i> <span id="stat-correct">0</span> Correct</span>
-          <span class="score-tag incorrect" title="Incorrect Answers"><i class="fa-solid fa-xmark"></i> <span id="stat-incorrect">0</span> Wrong</span>
-        </div>
-
-        <div class="quiz-header-controls">
-          <!-- Reset Current Subject Button (Single Button, Hover Tooltip) -->
-          <button class="control-single-btn reset-single-btn" id="btn-quiz-reset" onclick="resetAllSubjectAnswers()" title="Reset All Answers (Keeps Weak Questions Memory)" aria-label="Reset All Answers">
-            <i class="fa-solid fa-rotate-left"></i>
-            <span id="reset-subject-name" style="display: none;"></span>
-          </button>
-
-          <!-- Jump to Question Button (Single Button, Prompts on Click) -->
-          <button class="control-single-btn jump-single-btn" id="btn-quiz-jump" onclick="promptJumpToQuestion()" title="Jump to Problem Number" aria-label="Jump to Problem Number">
-            <i class="fa-solid fa-hashtag"></i>
-          </button>
-
-          <!-- Practice Pool Filter (Single Button with Dropdown Overlay, Hover Tooltip) -->
-          <div class="control-single-btn pool-single-btn-wrapper" id="pool-single-wrapper" title="Question Pool: All Questions">
-            <i class="fa-solid fa-layer-group"></i>
-            <select id="practice-filter-select" onchange="changePracticeFilter(this.value)" title="Question Pool">
-              <option value="all">📚 All Questions</option>
-              <option value="weak">⚠️  Weak Questions</option>
-            </select>
-          </div>
-
-          <!-- Random Toggle Button (Single Button, Hover Tooltip) -->
-          <button class="control-single-btn random-single-btn" id="btn-toggle-random" onclick="toggleRandomMode()" title="Random Order: OFF (Click to turn ON)" aria-label="Toggle Random Order">
-            <i class="fa-solid fa-shuffle"></i>
-          </button>
-        </div>
-      </div>
     </section>
 
     <!-- MODE 2: ALL QUESTIONS / FLASHCARDS VIEW -->
@@ -270,6 +235,12 @@
             <h1 class="sr-only">JeyCub Terms Reviewer</h1>
           </div>
 
+          <!-- Practice Score Badge (Live Correct/Wrong Counters) -->
+          <div class="quiz-score-badge">
+            <span class="score-tag correct" title="Correct Answers"><i class="fa-solid fa-check"></i> <span id="stat-correct">0</span> Correct</span>
+            <span class="score-tag incorrect" title="Incorrect Answers"><i class="fa-solid fa-xmark"></i> <span id="stat-incorrect">0</span> Wrong</span>
+          </div>
+
           <!-- Center: Review Modes Toggle -->
           <nav class="mode-nav">
             <button class="nav-btn active" id="btn-practice-mode" onclick="switchMode('practice')">
@@ -279,6 +250,34 @@
               <i class="fa-solid fa-list-check"></i> All Questions
             </button>
           </nav>
+
+          <!-- Practice Header Controls (Single Action Buttons) -->
+          <div class="quiz-header-controls">
+            <!-- Reset Current Subject Button (Single Button, Hover Tooltip) -->
+            <button class="control-single-btn reset-single-btn" id="btn-quiz-reset" onclick="resetAllSubjectAnswers()" title="Reset All Answers (Keeps Weak Questions Memory)" aria-label="Reset All Answers">
+              <i class="fa-solid fa-rotate-left"></i>
+              <span id="reset-subject-name" style="display: none;"></span>
+            </button>
+
+            <!-- Jump to Question Button (Single Button, Prompts on Click) -->
+            <button class="control-single-btn jump-single-btn" id="btn-quiz-jump" onclick="promptJumpToQuestion()" title="Jump to Problem Number" aria-label="Jump to Problem Number">
+              <i class="fa-solid fa-hashtag"></i>
+            </button>
+
+            <!-- Practice Pool Filter (Single Button with Dropdown Overlay, Hover Tooltip) -->
+            <div class="control-single-btn pool-single-btn-wrapper" id="pool-single-wrapper" title="Question Pool: All Questions">
+              <i class="fa-solid fa-layer-group"></i>
+              <select id="practice-filter-select" onchange="changePracticeFilter(this.value)" title="Question Pool">
+                <option value="all">📚 All Questions</option>
+                <option value="weak">⚠️  Weak Questions</option>
+              </select>
+            </div>
+
+            <!-- Random Toggle Button (Single Button, Hover Tooltip) -->
+            <button class="control-single-btn random-single-btn" id="btn-toggle-random" onclick="toggleRandomMode()" title="Random Order: OFF (Click to turn ON)" aria-label="Toggle Random Order">
+              <i class="fa-solid fa-shuffle"></i>
+            </button>
+          </div>
 
           <!-- Right: Utility Actions (PDF & Theme) -->
           <div class="header-right-group">
