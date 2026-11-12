@@ -107,21 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPinchToFontResize();
   initScrollSnapInstant();
   initCrossAppNav();
-
-  // Clicking badge opens the subject picker
-  const cardBadge = document.getElementById('card-subject-badge');
-  if (cardBadge) {
-    cardBadge.addEventListener('click', (e) => {
-      const sel = document.getElementById('card-subject-selector');
-      if (sel && e.target !== sel) {
-        if (typeof sel.showPicker === 'function') {
-          try { sel.showPicker(); } catch (err) {}
-        } else {
-          sel.focus();
-        }
-      }
-    });
-  }
+  initRibbonAutoHide();
 
   // Anchor at the very top of the question card
   scrollToTopInstant();
@@ -668,6 +654,9 @@ function promptJumpToQuestion() {
     modal.classList.remove('open');
     setTimeout(() => {
       modal.style.display = 'none';
+      if (typeof showRibbon === 'function') {
+        showRibbon(3500);
+      }
     }, 220);
     cleanup();
   }
@@ -822,6 +811,9 @@ function promptPoolFilterSelection() {
     modal.classList.remove('open');
     setTimeout(() => {
       modal.style.display = 'none';
+      if (typeof showRibbon === 'function') {
+        showRibbon(3500);
+      }
     }, 220);
     cleanup();
   }
@@ -947,6 +939,9 @@ function promptSubjectSelection() {
     modal.classList.remove('open');
     setTimeout(() => {
       modal.style.display = 'none';
+      if (typeof showRibbon === 'function') {
+        showRibbon(3500);
+      }
     }, 220);
     cleanup();
   }
@@ -1823,6 +1818,9 @@ function switchMode(mode) {
 
   // Smoothly scroll to top on mode switch so active view is immediately visible!
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (typeof showRibbon === 'function') {
+    showRibbon(3500);
+  }
 }
 
 /* ==========================================================================
@@ -4468,4 +4466,124 @@ function initCrossAppNav() {
       }
     });
   }
+}
+
+/* ==========================================================================
+   Auto-Hide Ribbon Controller (Swiping Up/Down Reveals Ribbon)
+   ========================================================================== */
+
+let ribbonAutoHideTimer = null;
+let ribbonTouchStartY = 0;
+let ribbonTouchStartX = 0;
+let ribbonIsInteracting = false;
+
+function showRibbon(duration = 3500) {
+  const panel = document.querySelector('.bottom-panel');
+  if (!panel) return;
+
+  panel.classList.remove('ribbon-hidden');
+
+  if (ribbonAutoHideTimer) {
+    clearTimeout(ribbonAutoHideTimer);
+    ribbonAutoHideTimer = null;
+  }
+
+  // Auto-hide after duration if user is not actively interacting with the ribbon
+  if (duration > 0 && !ribbonIsInteracting) {
+    ribbonAutoHideTimer = setTimeout(() => {
+      hideRibbon();
+    }, duration);
+  }
+}
+
+function hideRibbon() {
+  const panel = document.querySelector('.bottom-panel');
+  if (!panel) return;
+
+  // Don't hide if user is interacting or if a modal dialog is open
+  if (ribbonIsInteracting) return;
+  const modal = document.getElementById('app-confirm-modal');
+  if (modal && modal.classList.contains('open')) return;
+
+  panel.classList.add('ribbon-hidden');
+  if (ribbonAutoHideTimer) {
+    clearTimeout(ribbonAutoHideTimer);
+    ribbonAutoHideTimer = null;
+  }
+}
+
+window.showRibbon = showRibbon;
+window.hideRibbon = hideRibbon;
+
+function initRibbonAutoHide() {
+  const panel = document.querySelector('.bottom-panel');
+  if (!panel) return;
+
+  // 1. Initial State: Show ribbon for 4 seconds upon loading, then auto-hide
+  showRibbon(4000);
+
+  // 2. Touch Events on window for swipe up / down detection
+  window.addEventListener('touchstart', (e) => {
+    if (e.touches && e.touches.length === 1) {
+      ribbonTouchStartY = e.touches[0].clientY;
+      ribbonTouchStartX = e.touches[0].clientX;
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches.length === 1) {
+      const currentY = e.touches[0].clientY;
+      const currentX = e.touches[0].clientX;
+      const deltaY = currentY - ribbonTouchStartY;
+      const deltaX = currentX - ribbonTouchStartX;
+
+      // Vertical swipe: if vertical movement > 10px and vertical movement dominates
+      if (Math.abs(deltaY) > 10 && Math.abs(deltaY) > Math.abs(deltaX)) {
+        showRibbon(3500);
+      }
+    }
+  }, { passive: true });
+
+  // 3. Wheel / Scroll detection (trackpads, mousewheel, scroll events)
+  window.addEventListener('wheel', (e) => {
+    if (Math.abs(e.deltaY) > 4) {
+      showRibbon(3500);
+    }
+  }, { passive: true });
+
+  window.addEventListener('scroll', () => {
+    showRibbon(3500);
+  }, { passive: true });
+
+  // 4. Ribbon Interaction Listeners: Keep ribbon visible while hovering or touching
+  panel.addEventListener('mouseenter', () => {
+    ribbonIsInteracting = true;
+    showRibbon(0); // keep visible
+  });
+
+  panel.addEventListener('mouseleave', () => {
+    ribbonIsInteracting = false;
+    showRibbon(2500);
+  });
+
+  panel.addEventListener('touchstart', () => {
+    ribbonIsInteracting = true;
+    showRibbon(0);
+  }, { passive: true });
+
+  panel.addEventListener('touchend', () => {
+    ribbonIsInteracting = false;
+    showRibbon(3500);
+  }, { passive: true });
+
+  panel.addEventListener('click', () => {
+    showRibbon(3500);
+  });
+
+  // 5. Tap near bottom of screen: if tapped in bottom 70px when hidden, reveal ribbon
+  window.addEventListener('click', (e) => {
+    if (e.clientY > (window.innerHeight - 70) && panel.classList.contains('ribbon-hidden')) {
+      showRibbon(3500);
+    }
+  });
 }
