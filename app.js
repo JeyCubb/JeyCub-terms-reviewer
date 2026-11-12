@@ -3039,6 +3039,35 @@ function toggleRandomMode() {
   } else {
     renderCurrentPracticeQuestion();
   }
+
+  showRandomModeToast(state.randomMode);
+}
+
+let _randomToastTimeoutId = null;
+function showRandomModeToast(isEnabled) {
+  let toast = document.getElementById('random-mode-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'random-mode-toast';
+    toast.className = 'random-mode-toast';
+    document.body.appendChild(toast);
+  }
+
+  if (_randomToastTimeoutId) clearTimeout(_randomToastTimeoutId);
+
+  if (isEnabled) {
+    toast.innerHTML = '<i class="fa-solid fa-shuffle" style="color: var(--accent-primary, #ff8c00);"></i> Random Mode: Enabled';
+  } else {
+    toast.innerHTML = '<i class="fa-solid fa-arrow-down-1-9" style="color: var(--text-muted, #94a3b8);"></i> Random Mode: Disabled';
+  }
+
+  toast.classList.remove('show');
+  void toast.offsetWidth;
+  toast.classList.add('show');
+
+  _randomToastTimeoutId = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2000);
 }
 
 function updateRandomButtonUI() {
