@@ -383,7 +383,7 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: auto auto 1fr auto;
-  grid-template-areas: "brand score mode buttons";
+  grid-template-areas: "brand mode score buttons";
   align-items: center;
   gap: 0.65rem;
 }
@@ -396,19 +396,20 @@ body {
   justify-self: start;
 }
 
-.quiz-score-badge {
-  grid-area: score;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  justify-self: start;
-}
-
 .mode-nav {
   grid-area: mode;
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  justify-self: start;
+}
+
+.quiz-score-badge {
+  grid-area: score;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
   justify-self: center;
 }
 
@@ -430,7 +431,7 @@ body[data-mode="all"] #btn-toggle-random {
 }
 
 body[data-mode="all"] .header-container {
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto 1fr auto;
   grid-template-areas: "brand mode buttons";
 }
 
@@ -2465,10 +2466,11 @@ body[data-mode="all"] .header-container {
   }
   .header-container {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: auto 1fr;
     grid-template-areas: 
-      "score buttons"
-      "brand mode";
+      "score  score"
+      "brand  buttons"
+      "mode   mode";
     gap: 0.35rem 0.45rem;
     align-items: center;
     width: 100%;
@@ -2478,10 +2480,12 @@ body[data-mode="all"] .header-container {
   }
   .quiz-score-badge {
     grid-area: score;
-    justify-self: start;
+    justify-self: center;
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    justify-content: center;
+    gap: 0.35rem;
+    width: 100%;
     min-width: 0;
   }
   .header-action-buttons-group {
@@ -2515,22 +2519,23 @@ body[data-mode="all"] .header-container {
   }
   .mode-nav {
     grid-area: mode;
-    width: auto;
+    width: 100%;
     display: flex;
-    justify-self: end;
+    justify-self: center;
     gap: 0.25rem;
   }
   .nav-btn {
-    flex: 0 0 auto;
+    flex: 1;
     justify-content: center;
     padding: 0.28rem 0.5rem;
     font-size: 0.74rem;
     min-height: 28px;
   }
   body[data-mode="all"] .header-container {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr;
     grid-template-areas: 
-      "brand mode buttons";
+      "brand buttons"
+      "mode  mode";
   }
 
   .stat-group-header .stat-group-title {
