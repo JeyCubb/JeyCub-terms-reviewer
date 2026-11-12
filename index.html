@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=137.0">
+  <link rel="stylesheet" href="styles.css?v=138.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -251,20 +251,20 @@
             </button>
           </nav>
 
-          <!-- Practice Header Controls (Single Action Buttons) -->
-          <div class="quiz-header-controls">
-            <!-- Reset Current Subject Button (Single Button, Hover Tooltip) -->
+          <!-- Right: All 6 Action Buttons in a Single Contiguous Row -->
+          <div class="header-action-buttons-group">
+            <!-- 1. Reset Current Subject Button -->
             <button class="control-single-btn reset-single-btn" id="btn-quiz-reset" onclick="resetAllSubjectAnswers()" title="Reset All Answers (Keeps Weak Questions Memory)" aria-label="Reset All Answers">
               <i class="fa-solid fa-rotate-left"></i>
               <span id="reset-subject-name" style="display: none;"></span>
             </button>
 
-            <!-- Jump to Question Button (Single Button, Prompts on Click) -->
+            <!-- 2. Jump to Question Button -->
             <button class="control-single-btn jump-single-btn" id="btn-quiz-jump" onclick="promptJumpToQuestion()" title="Jump to Problem Number" aria-label="Jump to Problem Number">
               <i class="fa-solid fa-hashtag"></i>
             </button>
 
-            <!-- Practice Pool Filter (Single Button with Dropdown Overlay, Hover Tooltip) -->
+            <!-- 3. Practice Pool Filter -->
             <div class="control-single-btn pool-single-btn-wrapper" id="pool-single-wrapper" title="Question Pool: All Questions">
               <i class="fa-solid fa-layer-group"></i>
               <select id="practice-filter-select" onchange="changePracticeFilter(this.value)" title="Question Pool">
@@ -273,22 +273,20 @@
               </select>
             </div>
 
-            <!-- Random Toggle Button (Single Button, Hover Tooltip) -->
+            <!-- 4. Random Toggle Button -->
             <button class="control-single-btn random-single-btn" id="btn-toggle-random" onclick="toggleRandomMode()" title="Random Order: OFF (Click to turn ON)" aria-label="Toggle Random Order">
               <i class="fa-solid fa-shuffle"></i>
             </button>
-          </div>
 
-          <!-- Right: Utility Actions (PDF & Theme) -->
-          <div class="header-right-group">
-            <div class="header-actions">
-              <button class="action-btn pdf-btn" title="Download Subject as Printable PDF (Randomized, 2 Columns, 0.05 margin)" onclick="downloadSubjectPdf()">
-                <i class="fa-solid fa-file-pdf"></i>
-              </button>
-              <button class="action-btn theme-toggle" title="Toggle Dark/Light Mode" onclick="toggleTheme()">
-                <i class="fa-solid fa-moon" id="theme-icon"></i>
-              </button>
-            </div>
+            <!-- 5. PDF Export Button -->
+            <button class="control-single-btn action-single-btn pdf-btn" title="Download Subject as Printable PDF (Randomized, 2 Columns, 0.05 margin)" onclick="downloadSubjectPdf()" aria-label="Download Printable PDF">
+              <i class="fa-solid fa-file-pdf"></i>
+            </button>
+
+            <!-- 6. Dark/Light Mode Toggle -->
+            <button class="control-single-btn action-single-btn theme-toggle" title="Toggle Dark/Light Mode" onclick="toggleTheme()" aria-label="Toggle Dark/Light Mode">
+              <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
           </div>
 
         </div>
