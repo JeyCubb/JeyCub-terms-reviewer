@@ -653,6 +653,7 @@ function promptJumpToQuestion() {
   if (confirmBtn) {
     confirmBtn.innerHTML = '<i class="fa-solid fa-arrow-right"></i> Jump';
     confirmBtn.className = 'btn-modal btn-modal-primary';
+    confirmBtn.style.display = 'inline-flex';
   }
 
   if (cancelBtn) {
@@ -739,6 +740,292 @@ function handleJumpInputKey(e) {
     e.preventDefault();
     promptJumpToQuestion();
   }
+}
+
+/* Helper to count questions matching a specific pool filter */
+function countQuestionsForFilter(filterVal, allQs) {
+  if (!allQs) allQs = getActiveQuestions();
+  if (!allQs || !allQs.length) return 0;
+  if (filterVal === 'all') return allQs.length;
+  if (filterVal === 'weak') {
+    return allQs.filter(q => {
+      const key = `${state.currentSubject}_q${q.id}`;
+      return (state.groupMistakes[key] || 0) > 0 || (state.weakSessionResolved && state.weakSessionResolved.has(key));
+    }).length;
+  }
+  switch (filterVal) {
+    case 'semiconductors_diodes': return allQs.filter(q => q.id >= 1 && q.id <= 116).length;
+    case 'prelim_exam': return allQs.filter(q => q.id >= 117 && q.id <= 136).length;
+    case 'midterm_exam': return allQs.filter(q => q.id >= 137 && q.id <= 186).length;
+    case 'finals_quiz1': return allQs.filter(q => q.id >= 187 && q.id <= 201).length;
+    case 'test8_vessels': return allQs.filter(q => q.id >= 151 && q.id <= 195).length;
+    case 'test5_shaftings': return allQs.filter(q => q.id >= 196 && q.id <= 245).length;
+    case 'fluid_machinery': return allQs.filter(q => q.id >= 128 && q.id <= 215).length;
+    case 'ht_original': return allQs.filter(q => q.id >= 1 && q.id <= 146).length;
+    case 'ht_canvas_all': return allQs.filter(q => q.id >= 147 && q.id <= 310).length;
+    case 'ht_mod1_1': return allQs.filter(q => q.id >= 147 && q.id <= 161).length;
+    case 'ht_mod1_2': return allQs.filter(q => q.id >= 162 && q.id <= 176).length;
+    case 'ht_mod1_3': return allQs.filter(q => q.id >= 177 && q.id <= 188).length;
+    case 'ht_mod4_1': return allQs.filter(q => q.id >= 189 && q.id <= 200).length;
+    case 'ht_mod5_1': return allQs.filter(q => q.id >= 201 && q.id <= 210).length;
+    case 'ht_mod7_1': return allQs.filter(q => q.id >= 211 && q.id <= 225).length;
+    case 'ht_mod7_2': return allQs.filter(q => q.id >= 226 && q.id <= 248).length;
+    case 'ht_assignment_conv': return allQs.filter(q => q.id >= 249 && q.id <= 258).length;
+    case 'ht_mod4_rad': return allQs.filter(q => q.id >= 259 && q.id <= 276).length;
+    case 'ht_mod_hx': return allQs.filter(q => q.id >= 277 && q.id <= 310).length;
+    case 'ac_all_mcqs': return allQs.filter(q => q.id >= 1 && q.id <= 61).length;
+    case 'ac_solving_all': return allQs.filter(q => q.id >= 62 && q.id <= 93).length;
+    default: return allQs.length;
+  }
+}
+
+/* Glassmorphic Question Pool Selector Modal */
+function promptPoolFilterSelection() {
+  const modal = document.getElementById('app-confirm-modal');
+  if (!modal) return;
+
+  const info = getActiveSubjectInfo();
+  const allQs = getActiveQuestions();
+  const currentFilter = state.practiceFilter;
+
+  const iconEl = document.getElementById('app-confirm-modal-icon');
+  const titleEl = document.getElementById('app-confirm-modal-title');
+  const subtitleEl = document.getElementById('app-confirm-modal-subtitle');
+  const contentEl = document.getElementById('app-confirm-modal-content');
+  const confirmBtn = document.getElementById('app-confirm-modal-confirm');
+  const cancelBtn = document.getElementById('app-confirm-modal-cancel');
+  const closeBtn = document.getElementById('app-confirm-modal-close');
+
+  if (iconEl) {
+    iconEl.style.background = 'rgba(249, 115, 22, 0.15)';
+    iconEl.style.color = 'var(--accent-primary)';
+    iconEl.innerHTML = '<i class="fa-solid fa-layer-group" style="font-size: 1.15rem;"></i>';
+  }
+
+  if (titleEl) titleEl.textContent = 'Question Pool';
+  if (subtitleEl) {
+    subtitleEl.textContent = `${info.title} • Select a Pool`;
+    subtitleEl.style.display = 'block';
+  }
+
+  const subjectOpts = SUBJECT_FILTERS[state.currentSubject] || [];
+  const options = [
+    { value: 'all', label: '📚 All Questions' },
+    ...subjectOpts,
+    { value: 'weak', label: '⚠️ Weak Questions' }
+  ];
+
+  let isDone = false;
+  function finish() {
+    if (isDone) return;
+    isDone = true;
+    modal.classList.remove('open');
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 220);
+    cleanup();
+  }
+
+  function selectPool(val) {
+    finish();
+    const select = document.getElementById('practice-filter-select');
+    if (select) select.value = val;
+    changePracticeFilter(val);
+  }
+
+  window._onSelectPoolOption = function(val) {
+    selectPool(val);
+  };
+
+  let listHtml = '<div class="pool-modal-list">';
+  options.forEach(opt => {
+    const isActive = opt.value === currentFilter;
+    const parts = opt.label.split(' ');
+    const icon = parts.length > 1 ? parts[0] : '📌';
+    const title = parts.length > 1 ? parts.slice(1).join(' ') : opt.label;
+    const count = countQuestionsForFilter(opt.value, allQs);
+
+    listHtml += `
+      <button type="button" class="pool-modal-option ${isActive ? 'active' : ''}" onclick="window._onSelectPoolOption('${opt.value}')">
+        <div class="pool-modal-option-left">
+          <span class="pool-modal-option-emoji">${icon}</span>
+          <span class="pool-modal-option-title">${title}</span>
+        </div>
+        <div class="pool-modal-option-right">
+          <span class="pool-modal-count-pill">${count} Qs</span>
+          ${isActive ? '<i class="fa-solid fa-check pool-modal-check"></i>' : ''}
+        </div>
+      </button>
+    `;
+  });
+  listHtml += '</div>';
+
+  if (contentEl) {
+    contentEl.innerHTML = listHtml;
+  }
+
+  if (confirmBtn) {
+    confirmBtn.style.display = 'none';
+  }
+  if (cancelBtn) {
+    cancelBtn.textContent = 'Close';
+    cancelBtn.style.display = 'inline-flex';
+  }
+
+  function onKeyDown(e) {
+    if (e.key === 'Escape') {
+      e.stopPropagation();
+      finish();
+    }
+  }
+
+  function onOverlayClick(e) {
+    if (e.target === modal) finish();
+  }
+
+  function cleanup() {
+    if (cancelBtn) cancelBtn.removeEventListener('click', finish);
+    if (closeBtn) closeBtn.removeEventListener('click', finish);
+    if (modal) modal.removeEventListener('click', onOverlayClick);
+    document.removeEventListener('keydown', onKeyDown);
+    delete window._onSelectPoolOption;
+  }
+
+  if (cancelBtn) cancelBtn.addEventListener('click', finish);
+  if (closeBtn) closeBtn.addEventListener('click', finish);
+  if (modal) modal.addEventListener('click', onOverlayClick);
+  document.addEventListener('keydown', onKeyDown);
+
+  modal.style.display = 'flex';
+  requestAnimationFrame(() => {
+    modal.classList.add('open');
+    const activeItem = contentEl.querySelector('.pool-modal-option.active');
+    if (activeItem) {
+      activeItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  });
+}
+
+/* Glassmorphic Subject Selector Modal */
+function promptSubjectSelection() {
+  const modal = document.getElementById('app-confirm-modal');
+  if (!modal) return;
+
+  const currentSubject = state.currentSubject;
+  const iconEl = document.getElementById('app-confirm-modal-icon');
+  const titleEl = document.getElementById('app-confirm-modal-title');
+  const subtitleEl = document.getElementById('app-confirm-modal-subtitle');
+  const contentEl = document.getElementById('app-confirm-modal-content');
+  const confirmBtn = document.getElementById('app-confirm-modal-confirm');
+  const cancelBtn = document.getElementById('app-confirm-modal-cancel');
+  const closeBtn = document.getElementById('app-confirm-modal-close');
+
+  if (iconEl) {
+    iconEl.style.background = 'rgba(249, 115, 22, 0.15)';
+    iconEl.style.color = 'var(--accent-primary)';
+    iconEl.innerHTML = '<i class="fa-solid fa-graduation-cap" style="font-size: 1.15rem;"></i>';
+  }
+
+  if (titleEl) titleEl.textContent = 'Select Subject';
+  if (subtitleEl) {
+    subtitleEl.textContent = 'Choose an Engineering Reviewer';
+    subtitleEl.style.display = 'block';
+  }
+
+  const subjects = [
+    { key: 'basic_electronics', title: 'Basic Electronics', icon: '⚡', count: 201 },
+    { key: 'deformable_bodies', title: 'Mechanics of Deformable Bodies', icon: '⚓', count: 245 },
+    { key: 'fluid_mechanics', title: 'Fluid Mechanics', icon: '⚙️', count: 215 },
+    { key: 'heat_transfer', title: 'Heat Transfer', icon: '🔥', count: 310 },
+    { key: 'ac_dc_machinery', title: 'AC / DC Machinery', icon: '🔌', count: 93 }
+  ];
+
+  let isDone = false;
+  function finish() {
+    if (isDone) return;
+    isDone = true;
+    modal.classList.remove('open');
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 220);
+    cleanup();
+  }
+
+  function pickSubject(key) {
+    finish();
+    const select = document.getElementById('subject-selector');
+    if (select) select.value = key;
+    const cardSelect = document.getElementById('card-subject-selector');
+    if (cardSelect) cardSelect.value = key;
+    switchSubject(key);
+  }
+
+  window._onSelectSubjectOption = function(key) {
+    pickSubject(key);
+  };
+
+  let listHtml = '<div class="pool-modal-list">';
+  subjects.forEach(sub => {
+    const isActive = sub.key === currentSubject;
+    listHtml += `
+      <button type="button" class="pool-modal-option ${isActive ? 'active' : ''}" onclick="window._onSelectSubjectOption('${sub.key}')">
+        <div class="pool-modal-option-left">
+          <span class="pool-modal-option-emoji">${sub.icon}</span>
+          <span class="pool-modal-option-title">${sub.title}</span>
+        </div>
+        <div class="pool-modal-option-right">
+          <span class="pool-modal-count-pill">${sub.count} Qs</span>
+          ${isActive ? '<i class="fa-solid fa-check pool-modal-check"></i>' : ''}
+        </div>
+      </button>
+    `;
+  });
+  listHtml += '</div>';
+
+  if (contentEl) {
+    contentEl.innerHTML = listHtml;
+  }
+
+  if (confirmBtn) {
+    confirmBtn.style.display = 'none';
+  }
+  if (cancelBtn) {
+    cancelBtn.textContent = 'Close';
+    cancelBtn.style.display = 'inline-flex';
+  }
+
+  function onKeyDown(e) {
+    if (e.key === 'Escape') {
+      e.stopPropagation();
+      finish();
+    }
+  }
+
+  function onOverlayClick(e) {
+    if (e.target === modal) finish();
+  }
+
+  function cleanup() {
+    if (cancelBtn) cancelBtn.removeEventListener('click', finish);
+    if (closeBtn) closeBtn.removeEventListener('click', finish);
+    if (modal) modal.removeEventListener('click', onOverlayClick);
+    document.removeEventListener('keydown', onKeyDown);
+    delete window._onSelectSubjectOption;
+  }
+
+  if (cancelBtn) cancelBtn.addEventListener('click', finish);
+  if (closeBtn) closeBtn.addEventListener('click', finish);
+  if (modal) modal.addEventListener('click', onOverlayClick);
+  document.addEventListener('keydown', onKeyDown);
+
+  modal.style.display = 'flex';
+  requestAnimationFrame(() => {
+    modal.classList.add('open');
+    const activeItem = contentEl.querySelector('.pool-modal-option.active');
+    if (activeItem) {
+      activeItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  });
 }
 
 /* ==========================================================================
