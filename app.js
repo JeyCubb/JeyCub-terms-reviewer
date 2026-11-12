@@ -1135,6 +1135,19 @@ function showCustomAlert({ title, subtitle, iconSvg, iconBg = 'rgba(249, 115, 22
   });
 }
 
+window.toggleResetWeakCheckbox = function(e) {
+  const cb = document.getElementById('modal-reset-weak-cb');
+  const card = document.getElementById('modal-reset-weak-card');
+  if (!cb || !card) return;
+  cb.checked = !cb.checked;
+  card.setAttribute('aria-checked', cb.checked ? 'true' : 'false');
+  if (cb.checked) {
+    card.classList.add('checked');
+  } else {
+    card.classList.remove('checked');
+  }
+};
+
 async function resetAllSubjectAnswers() {
   const info = getActiveSubjectInfo();
   const questions = getActiveQuestions();
@@ -1169,13 +1182,20 @@ async function resetAllSubjectAnswers() {
     <p style="margin: 0.15rem 0 0 0; font-size: 0.825rem; color: var(--text-secondary); line-height: 1.45;">
       Are you sure you want to reset all your answered practice questions for <strong style="color: var(--text-primary);">${escapeHTML(info.title)}</strong>? You will be returned to Question 1.
     </p>
-    <label style="display: flex; align-items: center; gap: 0.65rem; cursor: pointer; user-select: none; padding: 0.55rem 0.75rem; border-radius: var(--radius-md); background: rgba(239, 68, 68, 0.08); border: 1.5px solid rgba(239, 68, 68, 0.25); margin-top: 0.2rem; transition: var(--transition);">
-      <input type="checkbox" id="modal-reset-weak-cb" style="width: 17px; height: 17px; accent-color: var(--color-error); cursor: pointer;" />
-      <div style="display: flex; flex-direction: column; gap: 0.1rem;">
-        <span style="font-size: 0.82rem; font-weight: 700; color: var(--color-error);">Also delete Weak Questions memory</span>
-        <span style="font-size: 0.72rem; color: var(--text-muted);">Erases logged mistakes so they won't appear in ⚠️ Weak Questions</span>
+    <div class="reset-weak-card" id="modal-reset-weak-card" onclick="toggleResetWeakCheckbox(event)" role="checkbox" aria-checked="false" tabindex="0" onkeydown="if(event.key===' '||event.key==='Enter'){event.preventDefault(); toggleResetWeakCheckbox(event);}">
+      <div class="custom-checkbox-indicator" id="modal-weak-checkbox-indicator">
+        <i class="fa-solid fa-check"></i>
       </div>
-    </label>
+      <div style="display: flex; flex-direction: column; gap: 0.15rem; min-width: 0;">
+        <span style="font-size: 0.85rem; font-weight: 700; color: #f87171; display: flex; align-items: center; gap: 0.35rem;">
+          <i class="fa-solid fa-trash-can" style="font-size: 0.8rem;"></i> Also delete Weak Questions memory
+        </span>
+        <span style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.35;">
+          Erases logged mistakes so they won't appear in ⚠️ Weak Questions
+        </span>
+      </div>
+      <input type="checkbox" id="modal-reset-weak-cb" style="display: none;" />
+    </div>
   `;
 
   const confirmed = await showCustomConfirm({
