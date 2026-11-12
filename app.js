@@ -4479,16 +4479,16 @@ let ribbonIsInteracting = false;
 
 function showRibbon(duration = 3500) {
   const panel = document.querySelector('.bottom-panel');
-  if (!panel) return;
-
-  panel.classList.remove('ribbon-hidden');
+  const headerBar = document.querySelector('.question-header-bar');
+  if (panel) panel.classList.remove('ribbon-hidden');
+  if (headerBar) headerBar.classList.remove('ribbon-hidden');
 
   if (ribbonAutoHideTimer) {
     clearTimeout(ribbonAutoHideTimer);
     ribbonAutoHideTimer = null;
   }
 
-  // Auto-hide after duration if user is not actively interacting with the ribbon
+  // Auto-hide after duration if user is not actively interacting with the ribbon or header
   if (duration > 0 && !ribbonIsInteracting) {
     ribbonAutoHideTimer = setTimeout(() => {
       hideRibbon();
@@ -4498,14 +4498,16 @@ function showRibbon(duration = 3500) {
 
 function hideRibbon() {
   const panel = document.querySelector('.bottom-panel');
-  if (!panel) return;
+  const headerBar = document.querySelector('.question-header-bar');
 
   // Don't hide if user is interacting or if a modal dialog is open
   if (ribbonIsInteracting) return;
   const modal = document.getElementById('app-confirm-modal');
   if (modal && modal.classList.contains('open')) return;
 
-  panel.classList.add('ribbon-hidden');
+  if (panel) panel.classList.add('ribbon-hidden');
+  if (headerBar) headerBar.classList.add('ribbon-hidden');
+
   if (ribbonAutoHideTimer) {
     clearTimeout(ribbonAutoHideTimer);
     ribbonAutoHideTimer = null;
@@ -4517,9 +4519,10 @@ window.hideRibbon = hideRibbon;
 
 function initRibbonAutoHide() {
   const panel = document.querySelector('.bottom-panel');
-  if (!panel) return;
+  const headerBar = document.querySelector('.question-header-bar');
+  if (!panel && !headerBar) return;
 
-  // 1. Initial State: Show ribbon for 4 seconds upon loading, then auto-hide
+  // 1. Initial State: Show ribbon and top bar for 4 seconds upon loading, then auto-hide
   showRibbon(4000);
 
   // 2. Touch Events on window for swipe up / down detection
@@ -4555,34 +4558,66 @@ function initRibbonAutoHide() {
     showRibbon(3500);
   }, { passive: true });
 
-  // 4. Ribbon Interaction Listeners: Keep ribbon visible while hovering or touching
-  panel.addEventListener('mouseenter', () => {
-    ribbonIsInteracting = true;
-    showRibbon(0); // keep visible
-  });
+  // 4. Ribbon Interaction Listeners: Keep visible while hovering or touching bottom panel
+  if (panel) {
+    panel.addEventListener('mouseenter', () => {
+      ribbonIsInteracting = true;
+      showRibbon(0); // keep visible
+    });
 
-  panel.addEventListener('mouseleave', () => {
-    ribbonIsInteracting = false;
-    showRibbon(2500);
-  });
+    panel.addEventListener('mouseleave', () => {
+      ribbonIsInteracting = false;
+      showRibbon(2500);
+    });
 
-  panel.addEventListener('touchstart', () => {
-    ribbonIsInteracting = true;
-    showRibbon(0);
-  }, { passive: true });
+    panel.addEventListener('touchstart', () => {
+      ribbonIsInteracting = true;
+      showRibbon(0);
+    }, { passive: true });
 
-  panel.addEventListener('touchend', () => {
-    ribbonIsInteracting = false;
-    showRibbon(3500);
-  }, { passive: true });
+    panel.addEventListener('touchend', () => {
+      ribbonIsInteracting = false;
+      showRibbon(3500);
+    }, { passive: true });
 
-  panel.addEventListener('click', () => {
-    showRibbon(3500);
-  });
+    panel.addEventListener('click', () => {
+      showRibbon(3500);
+    });
+  }
 
-  // 5. Tap near bottom of screen: if tapped in bottom 70px when hidden, reveal ribbon
+  // 5. Header Bar Interaction Listeners: Keep visible while hovering or touching top header bar
+  if (headerBar) {
+    headerBar.addEventListener('mouseenter', () => {
+      ribbonIsInteracting = true;
+      showRibbon(0);
+    });
+
+    headerBar.addEventListener('mouseleave', () => {
+      ribbonIsInteracting = false;
+      showRibbon(2500);
+    });
+
+    headerBar.addEventListener('touchstart', () => {
+      ribbonIsInteracting = true;
+      showRibbon(0);
+    }, { passive: true });
+
+    headerBar.addEventListener('touchend', () => {
+      ribbonIsInteracting = false;
+      showRibbon(3500);
+    }, { passive: true });
+
+    headerBar.addEventListener('click', () => {
+      showRibbon(3500);
+    });
+  }
+
+  // 6. Tap near top or bottom edge: if tapped in top or bottom 75px when hidden, reveal both
   window.addEventListener('click', (e) => {
-    if (e.clientY > (window.innerHeight - 70) && panel.classList.contains('ribbon-hidden')) {
+    const isNearTop = e.clientY < 75;
+    const isNearBottom = e.clientY > (window.innerHeight - 75);
+    const isHidden = (panel && panel.classList.contains('ribbon-hidden')) || (headerBar && headerBar.classList.contains('ribbon-hidden'));
+    if ((isNearTop || isNearBottom) && isHidden) {
       showRibbon(3500);
     }
   });
