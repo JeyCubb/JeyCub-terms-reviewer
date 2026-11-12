@@ -4834,6 +4834,21 @@ sup {
   box-shadow: 0 6px 18px rgba(239, 68, 68, 0.6) !important;
 }
 
+/* Hide number input spinner arrows (scroll wheel / up-down steppers) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button,
+#jump-modal-input::-webkit-outer-spin-button,
+#jump-modal-input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+input[type="number"],
+#jump-modal-input {
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
 .btn-preset-jump {
   display: inline-flex;
   align-items: center;

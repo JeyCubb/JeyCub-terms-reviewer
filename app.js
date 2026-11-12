@@ -605,38 +605,20 @@ function promptJumpToQuestion() {
 
   if (contentEl) {
     contentEl.innerHTML = `
-      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
         <div>
           <label for="jump-modal-input" style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.4rem;">
             Problem Number (1 – ${totalNum}):
           </label>
-          <input type="number" id="jump-modal-input" min="1" max="${totalNum}" value="${currentNum}"
+          <input type="number" id="jump-modal-input" min="1" max="${totalNum}" value="${currentNum}" inputmode="numeric"
             style="width: 100%; box-sizing: border-box; background: var(--bg-input); border: 2px solid var(--border-color); border-radius: var(--radius-md); padding: 0.65rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 800; color: var(--accent-primary); text-align: center; outline: none; transition: all 0.2s ease;"
             onfocus="this.style.borderColor='var(--accent-primary)'; this.style.boxShadow='0 0 14px var(--accent-glow)';"
             onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none';"
+            onwheel="event.preventDefault();"
           />
           <div id="jump-modal-error" style="display: none; color: var(--color-error); font-size: 0.75rem; font-weight: 700; margin-top: 0.35rem; text-align: center;">
             Please enter a number between 1 and ${totalNum}
           </div>
-        </div>
-
-        <!-- Quick Jump Shortcuts -->
-        <div style="display: flex; gap: 0.35rem; justify-content: center; flex-wrap: wrap;">
-          <button type="button" class="btn-preset-jump" onclick="setJumpModalVal(1)">
-            First (1)
-          </button>
-          <button type="button" class="btn-preset-jump" onclick="adjustJumpModalVal(-10, ${totalNum})">
-            -10
-          </button>
-          <button type="button" class="btn-preset-jump" onclick="setJumpModalVal(${currentNum})">
-            Current (${currentNum})
-          </button>
-          <button type="button" class="btn-preset-jump" onclick="adjustJumpModalVal(10, ${totalNum})">
-            +10
-          </button>
-          <button type="button" class="btn-preset-jump" onclick="setJumpModalVal(${totalNum})">
-            Last (${totalNum})
-          </button>
         </div>
       </div>
     `;
@@ -4553,18 +4535,7 @@ function initRibbonAutoHide() {
     }
   }, { passive: true });
 
-  // 3. Wheel / Scroll detection (trackpads, mousewheel, scroll events)
-  window.addEventListener('wheel', (e) => {
-    if (Math.abs(e.deltaY) > 4) {
-      showRibbon(3500);
-    }
-  }, { passive: true });
-
-  window.addEventListener('scroll', () => {
-    showRibbon(3500);
-  }, { passive: true });
-
-  // 4. Ribbon Interaction Listeners: Keep visible while hovering or touching bottom panel
+  // 3. Ribbon Interaction Listeners: Keep visible while hovering or touching bottom panel
   if (panel) {
     panel.addEventListener('mouseenter', () => {
       ribbonIsInteracting = true;
