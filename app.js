@@ -4618,12 +4618,11 @@ function initRibbonAutoHide() {
     });
   }
 
-  // 6. Desktop Mouse Hover Zone Detection (hovering at bottom of screen shows ribbon)
+  // 6. Desktop Mouse Hover Zone Detection (hovering tightly at very bottom edge near task bar)
   let wasInBottomZone = false;
   window.addEventListener('mousemove', (e) => {
-    const triggerThreshold = 95; // Trigger when within bottom 95px
+    const triggerThreshold = 32; // Tight zone: within bottom 32px right near taskbar
     const isAtBottom = e.clientY >= (window.innerHeight - triggerThreshold);
-    const isAtTop = e.clientY <= 65;
 
     if (isAtBottom) {
       if (!wasInBottomZone) {
@@ -4633,18 +4632,13 @@ function initRibbonAutoHide() {
     } else {
       wasInBottomZone = false;
     }
-
-    if (isAtTop) {
-      showRibbon(3500);
-    }
   }, { passive: true });
 
-  // 7. Tap near top or bottom edge: if tapped in top or bottom 75px when hidden, reveal both
+  // 7. Tap near bottom edge: if tapped within bottom 45px when hidden, reveal ribbon
   window.addEventListener('click', (e) => {
-    const isNearTop = e.clientY < 75;
-    const isNearBottom = e.clientY > (window.innerHeight - 75);
+    const isNearBottom = e.clientY > (window.innerHeight - 45);
     const isHidden = (panel && panel.classList.contains('ribbon-hidden')) || (headerBar && headerBar.classList.contains('ribbon-hidden'));
-    if ((isNearTop || isNearBottom) && isHidden) {
+    if (isNearBottom && isHidden) {
       showRibbon(3500);
     }
   });
