@@ -4618,7 +4618,28 @@ function initRibbonAutoHide() {
     });
   }
 
-  // 6. Tap near top or bottom edge: if tapped in top or bottom 75px when hidden, reveal both
+  // 6. Desktop Mouse Hover Zone Detection (hovering at bottom of screen shows ribbon)
+  let wasInBottomZone = false;
+  window.addEventListener('mousemove', (e) => {
+    const triggerThreshold = 95; // Trigger when within bottom 95px
+    const isAtBottom = e.clientY >= (window.innerHeight - triggerThreshold);
+    const isAtTop = e.clientY <= 65;
+
+    if (isAtBottom) {
+      if (!wasInBottomZone) {
+        wasInBottomZone = true;
+      }
+      showRibbon(3500);
+    } else {
+      wasInBottomZone = false;
+    }
+
+    if (isAtTop) {
+      showRibbon(3500);
+    }
+  }, { passive: true });
+
+  // 7. Tap near top or bottom edge: if tapped in top or bottom 75px when hidden, reveal both
   window.addEventListener('click', (e) => {
     const isNearTop = e.clientY < 75;
     const isNearBottom = e.clientY > (window.innerHeight - 75);
