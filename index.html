@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=133.0">
+  <link rel="stylesheet" href="styles.css?v=135.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -129,7 +129,7 @@
         </div>
       </div>
 
-      <!-- Practice Controls Box (Moved BELOW Show Notes & Solution) -->
+      <!-- Practice Controls Box (Compact Level Row with Single Action Buttons) -->
       <div class="quiz-controls-card">
         <div class="quiz-score-badge">
           <span class="score-tag correct" title="Correct Answers"><i class="fa-solid fa-check"></i> <span id="stat-correct">0</span> Correct</span>
@@ -137,32 +137,29 @@
         </div>
 
         <div class="quiz-header-controls">
-          <!-- Reset Current Subject Button (Moved into controls card as requested) -->
-          <button class="reset-all-btn quiz-control-reset-btn" onclick="resetAllSubjectAnswers()" title="Reset answered practice questions for current subject (Keeps Weak Questions Memory)">
+          <!-- Reset Current Subject Button (Single Button, Hover Tooltip) -->
+          <button class="control-single-btn reset-single-btn" id="btn-quiz-reset" onclick="resetAllSubjectAnswers()" title="Reset All Answers (Keeps Weak Questions Memory)" aria-label="Reset All Answers">
             <i class="fa-solid fa-rotate-left"></i>
-            <span>Reset</span>
-            <span id="reset-subject-name" style="display: none;">Basic Electronics</span>
+            <span id="reset-subject-name" style="display: none;"></span>
           </button>
 
-          <!-- Jump to Question Number Input (To the left of Pool selector) -->
-          <div class="jump-input-wrapper">
-            <label for="jump-number-input"><i class="fa-solid fa-hashtag"></i> Jump:</label>
-            <input type="number" id="jump-number-input" placeholder="No." min="1" max="500" onkeydown="handleJumpInputKey(event)">
-            <button class="jump-go-btn" onclick="executeJumpFromInput()" title="Jump to Problem"><i class="fa-solid fa-arrow-right"></i></button>
-          </div>
+          <!-- Jump to Question Button (Single Button, Prompts on Click) -->
+          <button class="control-single-btn jump-single-btn" id="btn-quiz-jump" onclick="promptJumpToQuestion()" title="Jump to Problem Number" aria-label="Jump to Problem Number">
+            <i class="fa-solid fa-hashtag"></i>
+          </button>
 
-          <!-- Practice Pool Filter Dropdown -->
-          <div class="practice-filter-wrapper">
-            <label for="practice-filter-select"><i class="fa-solid fa-layer-group"></i> Pool:</label>
-            <select id="practice-filter-select" onchange="changePracticeFilter(this.value)">
+          <!-- Practice Pool Filter (Single Button with Dropdown Overlay, Hover Tooltip) -->
+          <div class="control-single-btn pool-single-btn-wrapper" id="pool-single-wrapper" title="Question Pool: All Questions">
+            <i class="fa-solid fa-layer-group"></i>
+            <select id="practice-filter-select" onchange="changePracticeFilter(this.value)" title="Question Pool">
               <option value="all">📚 All Questions</option>
               <option value="weak">⚠️  Weak Questions</option>
             </select>
           </div>
 
-          <!-- Random Toggle Button -->
-          <button class="control-toggle-btn" id="btn-toggle-random" onclick="toggleRandomMode()" title="Toggle Random Order">
-            <i class="fa-solid fa-shuffle"></i> Random: OFF
+          <!-- Random Toggle Button (Single Button, Hover Tooltip) -->
+          <button class="control-single-btn random-single-btn" id="btn-toggle-random" onclick="toggleRandomMode()" title="Random Order: OFF (Click to turn ON)" aria-label="Toggle Random Order">
+            <i class="fa-solid fa-shuffle"></i>
           </button>
         </div>
       </div>
@@ -283,20 +280,8 @@
             </button>
           </nav>
 
-          <!-- Right: Subject Selector Pill & Utility Actions -->
+          <!-- Right: Utility Actions (PDF & Theme) -->
           <div class="header-right-group">
-            <div class="subject-dropdown-wrapper" title="Select Review Subject">
-              <i class="fa-solid fa-book-open subject-icon"></i>
-              <label for="subject-selector" class="sr-only">Subject:</label>
-              <select id="subject-selector" onchange="switchSubject(this.value)">
-                <option value="basic_electronics" selected>Basic Electronics</option>
-                <option value="fluid_mechanics">Fluid Mechanics</option>
-                <option value="deformable_bodies">Mechanics of Deformable Bodies</option>
-                <option value="heat_transfer">Heat Transfer</option>
-                <option value="ac_dc_machinery">AC/DC Machinery</option>
-              </select>
-            </div>
-
             <div class="header-actions">
               <button class="action-btn pdf-btn" title="Download Subject as Printable PDF (Randomized, 2 Columns, 0.05 margin)" onclick="downloadSubjectPdf()">
                 <i class="fa-solid fa-file-pdf"></i>

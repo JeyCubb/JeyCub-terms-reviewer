@@ -1256,202 +1256,82 @@ body {
 .quiz-header-controls {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
-  flex-wrap: wrap;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Compact Single Action Buttons */
+.control-single-btn {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-}
-
-/* Jump Number Input Wrapper */
-
-.jump-input-wrapper {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 0.35rem;
-
-  background: var(--bg-input);
-
-  border: 1px solid var(--border-color);
-
-  padding: 0.25rem 0.5rem 0.25rem 0.75rem;
-
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
   border-radius: var(--radius-full);
-
-}
-
-.jump-input-wrapper label {
-
-  font-size: 0.8rem;
-
-  font-weight: 700;
-
-  color: var(--accent-primary);
-
-  white-space: nowrap;
-
-}
-
-.jump-input-wrapper input {
-
-  background: transparent;
-
-  border: none;
-
-  color: var(--text-primary);
-
-  font-size: 0.85rem;
-
-  font-weight: 700;
-
-  outline: none;
-
-  width: 44px;
-
-  text-align: center;
-
-  -moz-appearance: textfield;
-
-}
-
-.jump-input-wrapper input::-webkit-outer-spin-button,
-
-.jump-input-wrapper input::-webkit-inner-spin-button {
-
-  -webkit-appearance: none;
-
-  margin: 0;
-
-}
-
-.jump-go-btn {
-
-  background: var(--accent-primary);
-
-  color: #fff;
-
-  border: none;
-
-  border-radius: 50%;
-
-  width: 22px;
-
-  height: 22px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  font-size: 0.7rem;
-
-  cursor: pointer;
-
-  transition: var(--transition);
-
-}
-
-.jump-go-btn:hover {
-
-  background: var(--accent-primary-hover);
-
-  transform: scale(1.1);
-
-}
-
-.practice-filter-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
   background: var(--bg-input);
   border: 1px solid var(--border-color);
-  padding: 0.35rem 0.85rem;
-  border-radius: var(--radius-full);
-  min-width: 0;
-  max-width: 100%;
-}
-
-.practice-filter-wrapper label {
-
-  font-size: 0.8rem;
-
-  font-weight: 700;
-
   color: var(--accent-primary);
-
-  white-space: nowrap;
-
-}
-
-.practice-filter-wrapper select {
-  background: transparent;
-  border: none;
-  color: var(--text-primary);
-  font-size: 0.85rem;
-  font-weight: 700;
-  outline: none;
+  font-size: 0.88rem;
   cursor: pointer;
-  min-width: 0;
-  max-width: 100%;
-  text-overflow: ellipsis;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  box-sizing: border-box;
+  padding: 0;
+  flex-shrink: 0;
 }
 
-.practice-filter-wrapper select option {
-
-  background: #1c1511;
-
-  color: #fcf6f2;
-
-}
-
-.control-toggle-btn {
-
-  background: var(--bg-input);
-
-  border: 1px solid var(--border-color);
-
-  color: var(--text-secondary);
-
-  padding: 0.4rem 0.85rem;
-
-  border-radius: var(--radius-full);
-
-  font-size: 0.85rem;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 0.4rem;
-
-  transition: var(--transition);
-
-}
-
-.control-toggle-btn:hover {
-
-  background: var(--bg-card-hover);
-
-  color: var(--text-primary);
-
-  border-color: var(--border-color-hover);
-
-}
-
-.control-toggle-btn.active {
-
-  background: rgba(249, 115, 22, 0.15);
-
-  color: var(--accent-primary);
-
+.control-single-btn:hover {
   border-color: var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-glow);
+  transform: translateY(-1px);
+}
 
+.control-single-btn:active {
+  transform: translateY(0);
+}
+
+.control-single-btn.active {
+  background: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.control-single-btn.has-filter {
+  border-color: #f59e0b;
+  color: #f59e0b;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.3);
+}
+
+/* Pool Dropdown Invisible Overlay */
+.pool-single-btn-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pool-single-btn-wrapper select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+  font-size: 16px;
+}
+
+.pool-single-btn-wrapper select option {
+  background: #1c1511;
+  color: #fcf6f2;
+  padding: 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
 }
 
 .bookmark-btn {
@@ -2495,24 +2375,6 @@ body {
 
   }
 
-  .subject-dropdown-wrapper {
-
-    width: 100%;
-
-    padding: 0.35rem 0.75rem;
-
-  }
-
-  .subject-dropdown-wrapper select {
-
-    font-size: 0.85rem;
-
-    padding: 0.25rem 0.4rem;
-
-    width: 100%;
-
-  }
-
   .mode-nav {
 
     width: 100%;
@@ -2568,9 +2430,10 @@ body {
   }
   .header-container {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
   }
   .brand-group,
   .mode-nav,
@@ -2578,26 +2441,15 @@ body {
     justify-self: auto;
   }
   .header-right-group {
-    width: 100%;
+    width: auto;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 0.5rem;
   }
-  .subject-dropdown-wrapper {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-  }
-  .subject-dropdown-wrapper select {
-    flex: 1;
-    width: 100%;
-    min-width: 0;
-  }
   .header-actions {
-    width: 100%;
-    justify-content: center;
-    gap: 0.65rem;
+    width: auto;
+    justify-content: flex-end;
+    gap: 0.5rem;
   }
 
   .stat-group-header .stat-group-title {
@@ -2775,95 +2627,47 @@ body {
   }
 
   .quiz-controls-card {
-
-    flex-direction: column;
-
-    align-items: stretch;
-
-    padding: 0.85rem;
-
-    gap: 0.6rem;
-
-    margin-top: 1.25rem;
-
-    margin-bottom: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.45rem 0.65rem;
+    gap: 0.4rem;
+    margin-top: 0.65rem;
+    margin-bottom: 0.65rem;
     width: 100%;
     max-width: 100%;
     min-width: 0;
     box-sizing: border-box;
-
   }
 
-  .question-number-badge {
+  .quiz-score-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    width: auto;
+    flex-shrink: 0;
+  }
 
-    text-align: center;
-
-    font-size: 0.78rem;
-
-    padding: 0.3rem 0.5rem;
-
+  .score-tag {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.74rem;
   }
 
   .quiz-header-controls {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.4rem;
-    width: 100%;
-    min-width: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.35rem;
+    width: auto;
+    flex-shrink: 0;
   }
 
-  .quiz-header-controls > * {
-    min-width: 0;
-    max-width: 100%;
-  }
-
-  .practice-filter-wrapper {
-    justify-content: center;
-    padding: 0.3rem 0.5rem;
-    min-width: 0;
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-  .practice-filter-wrapper select {
-    min-width: 0;
-    max-width: 100%;
-    width: 100%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  .jump-input-wrapper {
-
-    justify-content: center;
-    min-width: 0;
-    max-width: 100%;
-
-  }
-
-  .control-toggle-btn {
-
-    width: 100%;
-
-    justify-content: center;
-
-    padding: 0.3rem;
-
-    font-size: 0.78rem;
-
-  }
-
-  .bookmark-btn {
-
-    width: 100%;
-
-    justify-content: center;
-
-    padding: 0.3rem;
-
-    font-size: 0.78rem;
-
+  .control-single-btn {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    font-size: 0.82rem;
   }
 
   .notes-toggle-btn {
@@ -5133,10 +4937,11 @@ sup {
 
 @media (max-width: 640px) {
   .quiz-controls-card {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0.65rem 0.75rem;
-    gap: 0.5rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.45rem 0.65rem;
+    gap: 0.4rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
@@ -5170,16 +4975,17 @@ sup {
     white-space: nowrap;
   }
   .quiz-score-badge {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    width: auto;
+    flex-shrink: 0;
   }
   .score-tag {
-    flex: 1;
+    flex: 0 0 auto;
     justify-content: center;
-    font-size: 0.75rem;
-    padding: 0.3rem 0.5rem;
+    font-size: 0.74rem;
+    padding: 0.25rem 0.45rem;
     box-sizing: border-box;
   }
 }

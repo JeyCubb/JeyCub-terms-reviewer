@@ -479,6 +479,20 @@ function getFilteredPracticeQuestions() {
   return allQs;
 }
 
+function updatePoolButtonTitle() {
+  const select = document.getElementById('practice-filter-select');
+  const wrapper = document.getElementById('pool-single-wrapper');
+  if (select && wrapper) {
+    const selectedText = select.options[select.selectedIndex]?.textContent || 'All Questions';
+    wrapper.title = `Question Pool: ${selectedText}`;
+    if (select.value !== 'all') {
+      wrapper.classList.add('has-filter');
+    } else {
+      wrapper.classList.remove('has-filter');
+    }
+  }
+}
+
 function changePracticeFilter(filterVal) {
   state.practiceFilter = filterVal;
   state.currentIndex = 0;
@@ -489,6 +503,8 @@ function changePracticeFilter(filterVal) {
   // Blur select dropdown immediately so arrow keys navigate questions
   const select = document.getElementById('practice-filter-select');
   if (select) select.blur();
+
+  updatePoolButtonTitle();
 
   // Reset transient pool session answers so Weak and Bookmarked pools present questions fresh & unanswered
   if (filterVal === 'weak') {
@@ -510,14 +526,17 @@ function changePracticeFilter(filterVal) {
   }
 }
 
-function executeJumpFromInput() {
-  const input = document.getElementById('jump-number-input');
-  if (!input) return;
-  const numVal = parseInt(input.value.trim(), 10);
-  if (isNaN(numVal)) return;
-
+function promptJumpToQuestion() {
   const questions = getFilteredPracticeQuestions();
   if (!questions || questions.length === 0) return;
+  const currentNum = state.currentIndex + 1;
+  const totalNum = questions.length;
+  const res = window.prompt(`Jump to problem number (1 - ${totalNum}):`, currentNum);
+  if (res === null) return; // User pressed Cancel
+  const trimmed = res.trim();
+  if (!trimmed) return;
+  const numVal = parseInt(trimmed, 10);
+  if (isNaN(numVal)) return;
 
   // Find index of question matching problem ID or 1-based index in active pool
   let foundIndex = questions.findIndex(q => q.id === numVal);
@@ -534,25 +553,26 @@ function executeJumpFromInput() {
     if (state.narrationActive) {
       narrateCurrentPracticeQuestion();
     }
-    input.value = '';
   } else {
     showCustomAlert({
       title: 'Problem Not Found',
       subtitle: 'Jump Target Unavailable',
       iconBg: 'rgba(245, 158, 11, 0.15)',
       iconColor: 'var(--color-warning)',
-      htmlContent: `<p style="margin:0; font-size:0.85rem; color:var(--text-secondary); line-height:1.45;">Problem <strong style="color:var(--text-primary);">#${numVal}</strong> was not found in the current pool filter.</p>`,
+      htmlContent: `<p style="margin:0; font-size:0.85rem; color:var(--text-secondary); line-height:1.45;">Problem <strong style="color:var(--text-primary);">#${numVal}</strong> was not found in the current pool filter (Total: ${totalNum} questions).</p>`,
       okText: 'Understood'
     });
   }
+}
 
-  input.blur();
+function executeJumpFromInput() {
+  promptJumpToQuestion();
 }
 
 function handleJumpInputKey(e) {
   if (e.key === 'Enter') {
     e.preventDefault();
-    executeJumpFromInput();
+    promptJumpToQuestion();
   }
 }
 
@@ -1030,6 +1050,12 @@ function updateSubjectUI() {
     filterSelect.appendChild(optWeak);
 
     filterSelect.value = state.practiceFilter;
+    updatePoolButtonTitle();
+  }
+
+  const resetBtn = document.getElementById('btn-quiz-reset');
+  if (resetBtn) {
+    resetBtn.title = `Reset All Answers for ${info.title} (Keeps Weak Questions Memory)`;
   }
 
   updateFormulasUI();
@@ -2560,13 +2586,11 @@ function toggleRandomMode() {
 function updateRandomButtonUI() {
   const btn = document.getElementById('btn-toggle-random');
   if (btn) {
-    if (state.randomMode) {
-      btn.classList.add('active');
-      btn.innerHTML = `<i class="fa-solid fa-shuffle"></i> Random: ON`;
-    } else {
-      btn.classList.remove('active');
-      btn.innerHTML = `<i class="fa-solid fa-shuffle"></i> Random: OFF`;
-    }
+    btn.innerHTML = '<i class="fa-solid fa-shuffle"></i>';
+    btn.classList.toggle('active', !!state.randomMode);
+    btn.title = state.randomMode
+      ? 'Random Order: ON (Click to turn OFF)'
+      : 'Random Order: OFF (Click to turn ON)';
   }
 }
 
