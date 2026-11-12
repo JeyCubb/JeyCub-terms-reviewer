@@ -1183,7 +1183,8 @@ body {
   font-size: 0.82rem;
   color: var(--accent-primary);
   white-space: nowrap;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1191,6 +1192,7 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   user-select: none;
+  box-sizing: border-box;
 }
 
 .question-number-badge:hover {
@@ -1204,6 +1206,14 @@ body {
   align-items: center;
   gap: 0.35rem;
   cursor: pointer;
+  min-width: 0;
+}
+
+.badge-subject-select-wrapper span#subject-badge-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
 }
 
 .badge-subject-select-wrapper select {
@@ -4660,6 +4670,8 @@ math-field::part(placeholder-focused) {
   justify-content: space-between;
   margin-bottom: 0.75rem;
   gap: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .question-pill-badge {
@@ -4692,6 +4704,8 @@ math-field::part(placeholder-focused) {
   transition: all 0.2s ease;
   user-select: none;
   touch-action: manipulation;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .q-audio-btn:hover {
@@ -5126,10 +5140,34 @@ sup {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
-  .question-number-badge {
-    text-align: center;
+  .question-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
     width: 100%;
     box-sizing: border-box;
+  }
+  .question-number-badge {
+    text-align: center;
+    font-size: 0.76rem;
+    padding: 0.28rem 0.55rem;
+    gap: 0.35rem;
+    width: auto;
+    max-width: calc(100% - 75px);
+    box-sizing: border-box;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+  .badge-subject-select-wrapper span#subject-badge-name {
+    max-width: 125px;
+  }
+  .q-audio-btn {
+    padding: 0.25rem 0.55rem;
+    font-size: 0.75rem;
+    gap: 0.3rem;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
   .quiz-score-badge {
     display: flex;
