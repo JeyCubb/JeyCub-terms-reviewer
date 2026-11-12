@@ -58,8 +58,21 @@
         <!-- Question Body -->
         <div class="question-content">
           <div class="question-header-bar">
-            <div class="question-number-badge">
-              <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
+            <div class="question-number-badge subject-selector-badge" id="card-subject-badge" title="Click to change subject">
+              <div class="badge-subject-select-wrapper">
+                <span id="subject-badge-name">Fluid Mechanics</span>
+                <i class="fa-solid fa-chevron-down badge-subject-chevron"></i>
+                <label for="card-subject-selector" class="sr-only">Subject:</label>
+                <select id="card-subject-selector" onchange="switchSubject(this.value)" title="Change Subject">
+                  <option value="basic_electronics">Basic Electronics</option>
+                  <option value="fluid_mechanics" selected>Fluid Mechanics</option>
+                  <option value="deformable_bodies">Mechanics of Deformable Bodies</option>
+                  <option value="heat_transfer">Heat Transfer</option>
+                  <option value="ac_dc_machinery">AC/DC Machinery</option>
+                </select>
+              </div>
+              <span class="badge-dot">•</span>
+              <span class="badge-problem-info">Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span></span>
             </div>
             <button type="button" class="q-audio-btn" id="q-audio-btn" onclick="toggleNarration()" title="Narrate question &amp; choices [Press M]">
               <i class="fa-solid fa-volume-high" id="q-audio-icon"></i> <span id="q-audio-label">Listen</span>

@@ -108,6 +108,21 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSnapInstant();
   initCrossAppNav();
 
+  // Clicking badge opens the subject picker
+  const cardBadge = document.getElementById('card-subject-badge');
+  if (cardBadge) {
+    cardBadge.addEventListener('click', (e) => {
+      const sel = document.getElementById('card-subject-selector');
+      if (sel && e.target !== sel) {
+        if (typeof sel.showPicker === 'function') {
+          try { sel.showPicker(); } catch (err) {}
+        } else {
+          sel.focus();
+        }
+      }
+    });
+  }
+
   // Anchor at the very top of the question card
   scrollToTopInstant();
   requestAnimationFrame(scrollToTopInstant);
@@ -969,6 +984,9 @@ function updateSubjectUI() {
   const select = document.getElementById('subject-selector');
   if (select) select.value = state.currentSubject;
 
+  const cardSelect = document.getElementById('card-subject-selector');
+  if (cardSelect) cardSelect.value = state.currentSubject;
+
   const badge = document.getElementById('subject-badge-name');
   if (badge) badge.textContent = info.title;
 
@@ -1048,6 +1066,8 @@ function switchSubject(subjectKey) {
 
   const select = document.getElementById('subject-selector');
   if (select) select.blur();
+  const cardSelect = document.getElementById('card-subject-selector');
+  if (cardSelect) cardSelect.blur();
 
   updateSubjectUI();
   renderCurrentPracticeQuestion();

@@ -1184,6 +1184,63 @@ body {
   color: var(--accent-primary);
   white-space: nowrap;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.question-number-badge:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.badge-subject-select-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+}
+
+.badge-subject-select-wrapper select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 16px; /* Prevents auto-zoom on iOS */
+}
+
+.badge-subject-select-wrapper select option {
+  background: #1c1511;
+  color: #fcf6f2;
+  padding: 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.badge-subject-chevron {
+  font-size: 0.65rem;
+  opacity: 0.75;
+  color: var(--accent-primary);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.question-number-badge:hover .badge-subject-chevron {
+  opacity: 1;
+}
+
+.badge-dot {
+  opacity: 0.6;
+  font-weight: 400;
 }
 
 .quiz-header-controls {
