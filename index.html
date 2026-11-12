@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=131.0">
+  <link rel="stylesheet" href="styles.css?v=132.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -58,7 +58,9 @@
         <!-- Question Body -->
         <div class="question-content">
           <div class="question-header-bar">
-            <span class="question-pill-badge" id="q-pill-badge"><i class="fa-solid fa-graduation-cap"></i> Practice</span>
+            <div class="question-number-badge">
+              <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
+            </div>
             <button type="button" class="q-audio-btn" id="q-audio-btn" onclick="toggleNarration()" title="Narrate question &amp; choices [Press M]">
               <i class="fa-solid fa-volume-high" id="q-audio-icon"></i> <span id="q-audio-label">Listen</span>
             </button>
@@ -116,8 +118,9 @@
 
       <!-- Practice Controls Box (Moved BELOW Show Notes & Solution) -->
       <div class="quiz-controls-card">
-        <div class="question-number-badge">
-          <span id="subject-badge-name">Fluid Mechanics</span> • Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span>
+        <div class="quiz-score-badge">
+          <span class="score-tag correct" title="Correct Answers"><i class="fa-solid fa-check"></i> <span id="stat-correct">0</span> Correct</span>
+          <span class="score-tag incorrect" title="Incorrect Answers"><i class="fa-solid fa-xmark"></i> <span id="stat-incorrect">0</span> Wrong</span>
         </div>
 
         <div class="quiz-header-controls">
@@ -148,11 +151,6 @@
           <button class="control-toggle-btn" id="btn-toggle-random" onclick="toggleRandomMode()" title="Toggle Random Order">
             <i class="fa-solid fa-shuffle"></i> Random: OFF
           </button>
-        </div>
-
-        <div class="quiz-score-badge">
-          <span class="score-tag correct" title="Correct Answers"><i class="fa-solid fa-check"></i> <span id="stat-correct">0</span> Correct</span>
-          <span class="score-tag incorrect" title="Incorrect Answers"><i class="fa-solid fa-xmark"></i> <span id="stat-incorrect">0</span> Wrong</span>
         </div>
       </div>
     </section>
@@ -256,7 +254,7 @@
             <a href="https://jeycubb.github.io/JeyCub-terms-reviewer/" target="_self" class="brand-nav-btn active" id="btn-header-reviewer" title="JeyCub Terms Reviewer (Current App)" aria-label="JeyCub Terms Reviewer">
               <span class="brand-emoji">📖</span>
             </a>
-            <a href="https://jeycubb.github.io/TIP-Grade-Calculator/#sched" target="_self" class="brand-nav-btn" id="btn-header-sched" onclick="try{localStorage.setItem('tip_gc_active_view','sched');}catch(e){}" title="Open Schedule Creator" aria-label="Open Schedule Creator">
+            <a href="https://jeycubb.github.io/scheduler/" target="_self" class="brand-nav-btn" id="btn-header-sched" title="Open Schedule Creator" aria-label="Open Schedule Creator">
               <span class="brand-emoji">📅</span>
             </a>
             <h1 class="sr-only">JeyCub Terms Reviewer</h1>

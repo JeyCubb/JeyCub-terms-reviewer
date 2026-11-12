@@ -3966,12 +3966,9 @@ function initCrossAppNav() {
   const schedBtn = document.getElementById('btn-header-sched');
   if (schedBtn) {
     schedBtn.addEventListener('click', (e) => {
-      try {
-        localStorage.setItem('tip_gc_active_view', 'sched');
-      } catch (err) {}
       if (!e.ctrlKey && !e.metaKey && e.button !== 1) {
         e.preventDefault();
-        window.location.href = 'https://jeycubb.github.io/TIP-Grade-Calculator/#sched';
+        window.location.href = 'https://jeycubb.github.io/scheduler/';
       }
     });
   }
