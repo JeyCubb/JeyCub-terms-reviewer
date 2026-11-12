@@ -1,12 +1,15 @@
 // Immediately restore user preferred font scale before paint
 (function() {
   try {
-    const s = localStorage.getItem('jt_font_scale');
-    if (s) {
-      const v = parseFloat(s);
-      if (!isNaN(v) && v >= 0.75 && v <= 2.0) {
-        document.documentElement.style.setProperty('--font-scale', v);
-      }
+    let s = localStorage.getItem('jt_font_scale');
+    // If not set or previously set to default 1.0, update to new default 1.10 (+2 units)
+    if (!s || s === '1' || s === '1.0' || s === '1.00') {
+      s = '1.10';
+      localStorage.setItem('jt_font_scale', '1.10');
+    }
+    const v = parseFloat(s);
+    if (!isNaN(v) && v >= 0.75 && v <= 2.2) {
+      document.documentElement.style.setProperty('--font-scale', v);
     }
   } catch (e) {}
 })();
@@ -163,7 +166,8 @@ function initScrollSnapInstant() {
    Persists across Next/Previous questions, refreshes, and app sessions
    ========================================================================== */
 
-let currentFontScale = 1.0;
+const DEFAULT_FONT_SCALE = 1.10;
+let currentFontScale = DEFAULT_FONT_SCALE;
 let fontToastTimeout = null;
 
 function setFontScale(scale, showToast = true) {
@@ -216,7 +220,7 @@ function adjustFontSize(delta = 0.05) {
 }
 
 function cycleFontSize() {
-  const steps = [1.0, 1.15, 1.30, 1.50, 0.85];
+  const steps = [1.10, 1.25, 1.40, 1.60, 0.95];
   let nextIdx = 0;
   for (let i = 0; i < steps.length; i++) {
     if (Math.abs(currentFontScale - steps[i]) < 0.05) {
@@ -234,20 +238,22 @@ function saveFontScale() {
 }
 
 function resetFontScale() {
-  setFontScale(1.0, true);
+  setFontScale(DEFAULT_FONT_SCALE, true);
   saveFontScale();
 }
 
 function initPinchToFontResize() {
   // 1. Restore saved scale on boot
   try {
-    const saved = localStorage.getItem('jt_font_scale');
-    if (saved) {
-      const parsed = parseFloat(saved);
-      if (!isNaN(parsed) && parsed >= 0.75 && parsed <= 2.2) {
-        currentFontScale = parsed;
-        setFontScale(parsed, false);
-      }
+    let saved = localStorage.getItem('jt_font_scale');
+    if (!saved || saved === '1' || saved === '1.0' || saved === '1.00') {
+      saved = '1.10';
+      localStorage.setItem('jt_font_scale', '1.10');
+    }
+    const parsed = parseFloat(saved);
+    if (!isNaN(parsed) && parsed >= 0.75 && parsed <= 2.2) {
+      currentFontScale = parsed;
+      setFontScale(parsed, false);
     }
   } catch (e) {}
 
