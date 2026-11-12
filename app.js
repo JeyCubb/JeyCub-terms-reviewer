@@ -2,10 +2,10 @@
 (function() {
   try {
     let s = localStorage.getItem('jt_font_scale');
-    // If not set or previously set to default 1.0, update to new default 1.10 (+2 units)
-    if (!s || s === '1' || s === '1.0' || s === '1.00') {
-      s = '1.10';
-      localStorage.setItem('jt_font_scale', '1.10');
+    // If not set or previously set to older defaults, update to new default 1.35 (135%)
+    if (!s || s === '1' || s === '1.0' || s === '1.00' || s === '1.1' || s === '1.10') {
+      s = '1.35';
+      localStorage.setItem('jt_font_scale', '1.35');
     }
     const v = parseFloat(s);
     if (!isNaN(v) && v >= 0.75 && v <= 2.2) {
@@ -166,7 +166,7 @@ function initScrollSnapInstant() {
    Persists across Next/Previous questions, refreshes, and app sessions
    ========================================================================== */
 
-const DEFAULT_FONT_SCALE = 1.10;
+const DEFAULT_FONT_SCALE = 1.35;
 let currentFontScale = DEFAULT_FONT_SCALE;
 let fontToastTimeout = null;
 
@@ -220,7 +220,7 @@ function adjustFontSize(delta = 0.05) {
 }
 
 function cycleFontSize() {
-  const steps = [1.10, 1.25, 1.40, 1.60, 0.95];
+  const steps = [1.35, 1.50, 1.65, 1.85, 1.00, 1.15];
   let nextIdx = 0;
   for (let i = 0; i < steps.length; i++) {
     if (Math.abs(currentFontScale - steps[i]) < 0.05) {
@@ -246,9 +246,9 @@ function initPinchToFontResize() {
   // 1. Restore saved scale on boot
   try {
     let saved = localStorage.getItem('jt_font_scale');
-    if (!saved || saved === '1' || saved === '1.0' || saved === '1.00') {
-      saved = '1.10';
-      localStorage.setItem('jt_font_scale', '1.10');
+    if (!saved || saved === '1' || saved === '1.0' || saved === '1.00' || saved === '1.1' || saved === '1.10') {
+      saved = '1.35';
+      localStorage.setItem('jt_font_scale', '1.35');
     }
     const parsed = parseFloat(saved);
     if (!isNaN(parsed) && parsed >= 0.75 && parsed <= 2.2) {
