@@ -2374,95 +2374,141 @@ body[data-mode="all"] .pdf-btn {
 /* Mode 2: All Questions / Flashcard View */
 
 .filter-controls-card {
-
-  background: var(--bg-card);
-
-  border: 1px solid var(--border-color);
-
+  background: linear-gradient(145deg, rgba(38, 28, 22, 0.95) 0%, rgba(24, 18, 14, 0.98) 100%);
+  border: 1.5px solid rgba(249, 115, 22, 0.35);
   border-radius: var(--radius-lg);
-
-  padding: 1.25rem;
-
+  padding: 1.25rem 1.4rem;
   margin-bottom: 1.5rem;
-
   display: flex;
-
   flex-direction: column;
+  gap: 0.95rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), 0 0 20px rgba(249, 115, 22, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  gap: 1rem;
-
+.filter-controls-card:hover {
+  border-color: rgba(249, 115, 22, 0.5);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.7), 0 0 26px rgba(249, 115, 22, 0.18);
 }
 
 .search-input-wrapper {
-
   position: relative;
-
+  width: 100%;
 }
 
 .search-icon {
-
   position: absolute;
-
-  left: 1rem;
-
+  left: 1.1rem;
   top: 50%;
-
   transform: translateY(-50%);
-
-  color: var(--text-muted);
-
+  color: var(--accent-primary);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: color 0.2s ease;
 }
 
 #search-all-input {
-
   width: 100%;
-
-  background: var(--bg-input);
-
-  border: 1px solid var(--border-color);
-
+  background: rgba(14, 11, 9, 0.88);
+  border: 1.5px solid rgba(249, 115, 22, 0.25);
   border-radius: var(--radius-md);
-
-  padding: 0.75rem 1rem 0.75rem 2.5rem;
-
-  color: var(--text-primary);
-
-  font-size: 0.95rem;
-
+  padding: 0.85rem 1.15rem 0.85rem 2.85rem;
+  color: #ffffff;
+  font-size: 0.96rem;
+  font-weight: 500;
   outline: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
 
+#search-all-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.85;
+}
+
+#search-all-input:focus {
+  border-color: var(--accent-primary);
+  background: rgba(18, 14, 11, 0.98);
+  box-shadow: 0 0 18px var(--accent-glow), inset 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .filters-row {
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   flex-wrap: wrap;
-
-  gap: 1rem;
-
+  gap: 0.75rem;
 }
 
 #filter-status-select {
-
-  background: var(--bg-input);
-
-  border: 1px solid var(--border-color);
-
-  border-radius: var(--radius-sm);
-
-  padding: 0.5rem 0.85rem;
-
-  color: var(--text-primary);
-
+  background: rgba(249, 115, 22, 0.08);
+  border: 1.5px solid rgba(249, 115, 22, 0.3);
+  border-radius: var(--radius-full);
+  padding: 0.45rem 1.1rem;
+  color: #ffffff;
   font-size: 0.875rem;
-
+  font-weight: 600;
+  cursor: pointer;
   outline: none;
+  transition: all 0.2s ease;
+}
 
+#filter-status-select:hover,
+#filter-status-select:focus {
+  border-color: var(--accent-primary);
+  background: rgba(249, 115, 22, 0.16);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+#filter-status-select option {
+  background: #1c1511;
+  color: #ffffff;
+  padding: 0.5rem;
+  font-weight: 600;
+}
+
+.search-count-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.38rem 0.95rem;
+  border-radius: var(--radius-full);
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.28);
+  color: var(--accent-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+[data-theme="light"] .filter-controls-card {
+  background: linear-gradient(145deg, #ffffff 0%, #fff7f2 100%);
+  border-color: rgba(234, 88, 12, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 0 16px rgba(234, 88, 12, 0.1);
+}
+
+[data-theme="light"] #search-all-input {
+  background: #ffffff;
+  border-color: rgba(234, 88, 12, 0.25);
+  color: #1c130d;
+}
+
+[data-theme="light"] #filter-status-select {
+  background: rgba(234, 88, 12, 0.08);
+  border-color: rgba(234, 88, 12, 0.25);
+  color: #1c130d;
+}
+
+[data-theme="light"] #filter-status-select option {
+  background: #ffffff;
+  color: #1c130d;
+}
+
+[data-theme="light"] .search-count-label {
+  background: rgba(234, 88, 12, 0.08);
+  border-color: rgba(234, 88, 12, 0.25);
+  color: var(--accent-primary);
 }
 
 .questions-list-container {
