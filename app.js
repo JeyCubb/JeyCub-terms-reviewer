@@ -152,7 +152,10 @@ function initScrollSnapInstant() {
     if (e.ctrlKey) return; // Ignore pinch-to-zoom gestures on trackpads
     if (state.currentMode !== 'practice') return;
     // When in practice mode and hints are not activated, lock scrolling
-    if (!state.notesOpen) return;
+    if (!state.notesOpen) {
+      if (e.cancelable) e.preventDefault();
+      return;
+    }
     const active = document.activeElement;
     if (active && (active.tagName === 'TEXTAREA' || active.tagName === 'INPUT')) return;
 
@@ -167,7 +170,7 @@ function initScrollSnapInstant() {
       scrollToTopInstant();
       setTimeout(() => { isSnapping = false; }, 180);
     }
-  }, { passive: true });
+  }, { passive: false });
 }
 
 /* ==========================================================================
@@ -1835,6 +1838,9 @@ function switchMode(mode) {
   }
   state.currentMode = mode;
   document.body.setAttribute('data-mode', mode);
+  if (typeof updateScrollLock === 'function') {
+    updateScrollLock();
+  }
 
   document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
   const btn = document.getElementById(`btn-${mode}-mode`);
@@ -4551,11 +4557,9 @@ let ribbonIsInteracting = false;
 
 function updateScrollLock() {
   const isPractice = state.currentMode === 'practice';
-  const panel = document.querySelector('.bottom-panel');
-  const isRibbonHidden = document.body.classList.contains('ribbon-hidden') || (panel && panel.classList.contains('ribbon-hidden'));
   const isHintsOpen = !!state.notesOpen;
 
-  if (isPractice && isRibbonHidden && !isHintsOpen) {
+  if (isPractice && !isHintsOpen) {
     document.documentElement.classList.add('practice-no-scroll');
     document.body.classList.add('practice-no-scroll');
   } else {
@@ -4637,7 +4641,14 @@ function initRibbonAutoHide() {
         showRibbon(3500);
       }
     }
-  }, { passive: true });
+    // Prevent dragging/scrolling page in practice mode when hints are closed
+    if (state.currentMode === 'practice' && !state.notesOpen) {
+      const active = document.activeElement;
+      if (!active || (active.tagName !== 'TEXTAREA' && active.tagName !== 'INPUT')) {
+        if (e.cancelable) e.preventDefault();
+      }
+    }
+  }, { passive: false });
 
   // 2b. Desktop Wheel & Trackpad Scroll Detection: scrolling on desktop reveals ribbon
   window.addEventListener('wheel', (e) => {
@@ -4645,7 +4656,11 @@ function initRibbonAutoHide() {
     if (Math.abs(e.deltaY) > 1 || Math.abs(e.deltaX) > 1) {
       showRibbon(3500);
     }
-  }, { passive: true });
+    // Prevent page scrolling on desktop in practice mode when hints are closed
+    if (state.currentMode === 'practice' && !state.notesOpen) {
+      if (e.cancelable) e.preventDefault();
+    }
+  }, { passive: false });
 
   // 2c. Window Scroll Detection (scrollbar dragging, keyboard PageUp/Down / space)
   window.addEventListener('scroll', () => {
