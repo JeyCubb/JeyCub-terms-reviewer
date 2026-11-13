@@ -353,10 +353,10 @@ body {
 
 /* Main Container - Flex Column for Mode-Dependent Reordering */
 .main-container {
-  max-width: 100%;
+  max-width: 1100px;
   width: 100%;
   margin: 0 auto;
-  padding: clamp(0.4rem, 1vh, 0.85rem) 0.65rem clamp(0.4rem, 1vh, 0.85rem);
+  padding: clamp(0.4rem, 1vh, 0.85rem) 1.5rem clamp(0.4rem, 1vh, 0.85rem);
   flex: 1;
   display: flex;
   flex-direction: column;
