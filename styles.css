@@ -1119,7 +1119,7 @@ body[data-mode="all"] .pdf-btn {
 
   display: flex;
 
-  align-items: flex-start;
+  align-items: center;
 
   gap: 1rem;
 
@@ -1141,9 +1141,13 @@ body[data-mode="all"] .pdf-btn {
 
 .option-letter {
 
-  width: 28px;
+  width: 2.15em;
 
-  height: 28px;
+  height: 2.15em;
+
+  min-width: 2.15em;
+
+  min-height: 2.15em;
 
   border-radius: 50%;
 
@@ -1157,7 +1161,9 @@ body[data-mode="all"] .pdf-btn {
 
   font-weight: 700;
 
-  font-size: 0.85rem;
+  font-size: 0.82em;
+
+  line-height: 1;
 
   flex-shrink: 0;
 
@@ -1167,7 +1173,7 @@ body[data-mode="all"] .pdf-btn {
 
   flex: 1;
 
-  padding-top: 1px;
+  padding-top: 0;
 
 }
 
@@ -2800,9 +2806,12 @@ body[data-mode="all"] .pdf-btn {
   }
 
   .option-letter {
-    width: 22px;
-    height: 22px;
-    font-size: 0.72rem;
+    width: 2.1em;
+    height: 2.1em;
+    min-width: 2.1em;
+    min-height: 2.1em;
+    font-size: 0.78em;
+    line-height: 1;
   }
 
   /* Inline Navigation Buttons directly below choices */
