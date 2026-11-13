@@ -3182,9 +3182,11 @@ function renderCurrentPracticeQuestion() {
     if (shuffledOpts && Array.isArray(shuffledOpts)) {
       shuffledOpts.forEach((optObj, displayedIdx) => {
         const letter = String.fromCharCode(65 + displayedIdx);
+        const numKey = displayedIdx + 1;
+        const keyHintText = `Press [${letter}] or [${numKey}]`;
         const btn = document.createElement('button');
         btn.className = 'option-btn';
-        btn.setAttribute('data-key-hint', `Press [${letter}]`);
+        btn.setAttribute('data-key-hint', keyHintText);
         
         const origIdx = optObj.originalIndex;
         const optText = cleanOptionText(optObj.text);
@@ -3219,6 +3221,7 @@ function renderCurrentPracticeQuestion() {
           btn.innerHTML = `
             <span class="option-letter">${letter}</span>
             <span class="option-text">${formatMathTypography(escapeHTML(optText))}</span>
+            <span class="option-key-hint">${keyHintText}</span>
           `;
         }
 

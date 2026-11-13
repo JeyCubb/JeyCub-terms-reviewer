@@ -1189,7 +1189,66 @@ body[data-mode="all"] .pdf-btn {
 
   flex: 1;
 
+  min-width: 0;
+
   padding-top: 0;
+
+}
+
+.option-key-hint {
+
+  margin-left: auto;
+
+  flex-shrink: 0;
+
+  background: rgba(249, 115, 22, 0.15);
+
+  border: 1px solid var(--accent-primary);
+
+  color: var(--accent-primary);
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  padding: 3px 8px;
+
+  border-radius: var(--radius-sm);
+
+  white-space: nowrap;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition: opacity 0.2s ease, transform 0.2s ease;
+
+  transform: translateX(4px);
+
+  align-self: center;
+
+}
+
+.option-btn:hover:not(.disabled) .option-key-hint,
+.option-btn:focus-visible .option-key-hint {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateX(0);
+
+}
+
+@media (max-width: 640px) {
+
+  .option-key-hint {
+
+    display: none !important;
+
+  }
 
 }
 
