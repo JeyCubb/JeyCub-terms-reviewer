@@ -509,6 +509,16 @@ body[data-mode="all"] .mode-nav {
   justify-self: start !important;
 }
 
+/* PDF Button: Hidden in Practice Mode, only visible when in All Questions mode */
+body:not([data-mode="all"]) .pdf-btn,
+body[data-mode="practice"] .pdf-btn {
+  display: none !important;
+}
+
+body[data-mode="all"] .pdf-btn {
+  display: inline-flex !important;
+}
+
 /* ==========================================================================
    Tablet & iPad Ribbon Sizing (641px – 1080px)
    Prevents overflow, fits all controls cleanly in a sleek, non-clipped dock

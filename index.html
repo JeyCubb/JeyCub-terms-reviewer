@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=165.0">
+  <link rel="stylesheet" href="styles.css?v=166.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -287,8 +287,8 @@
               <i class="fa-solid fa-shuffle"></i>
             </button>
 
-            <!-- 5. PDF Export Button -->
-            <button class="control-single-btn action-single-btn pdf-btn" title="Download Subject as Printable PDF (Randomized, 2 Columns, 0.05 margin)" onclick="downloadSubjectPdf()" aria-label="Download Printable PDF">
+            <!-- 5. PDF Export Button (Visible only in All Questions mode) -->
+            <button class="control-single-btn action-single-btn pdf-btn" id="btn-pdf-export" title="Download Subject as Printable PDF (Randomized, 2 Columns, 0.05 margin)" onclick="downloadSubjectPdf()" aria-label="Download Printable PDF">
               <i class="fa-solid fa-file-pdf"></i>
             </button>
 
