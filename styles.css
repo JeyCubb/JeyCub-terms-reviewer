@@ -506,7 +506,6 @@ body[data-mode="practice"].hints-open {
 /* When in All Questions mode, hide quiz practice scores and practice controls */
 body[data-mode="all"] .quiz-score-badge,
 body[data-mode="all"] #btn-quiz-reset,
-body[data-mode="all"] #btn-quiz-jump,
 body[data-mode="all"] #pool-single-wrapper,
 body[data-mode="all"] #btn-toggle-random,
 body[data-mode="all"] #q-audio-btn {
