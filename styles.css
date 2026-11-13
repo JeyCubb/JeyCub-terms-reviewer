@@ -2629,10 +2629,10 @@ body[data-mode="all"] .pdf-btn {
   }
   .header-container {
     display: grid;
-    grid-template-columns: auto auto minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr);
     grid-template-areas: 
-      "mode     score    ."
-      "brand    buttons  buttons";
+      "score    mode"
+      "brand    buttons";
     gap: 0.35rem 0.45rem;
     align-items: center;
     width: 100%;
@@ -2691,7 +2691,7 @@ body[data-mode="all"] .pdf-btn {
     grid-area: mode;
     width: auto;
     display: inline-flex;
-    justify-self: start;
+    justify-self: end;
     gap: 0.2rem;
     padding: 2px;
     border-radius: var(--radius-full);
