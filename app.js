@@ -2,13 +2,13 @@
 (function() {
   try {
     let s = localStorage.getItem('jt_font_scale');
-    // If not set or previously set to older defaults, update to new default 1.35 (135%)
-    if (!s || s === '1' || s === '1.0' || s === '1.00' || s === '1.1' || s === '1.10') {
-      s = '1.35';
-      localStorage.setItem('jt_font_scale', '1.35');
+    // If not set or previously set to older defaults, update to new default 2.00 (200%)
+    if (!s || s === '1' || s === '1.0' || s === '1.00' || s === '1.1' || s === '1.10' || s === '1.35') {
+      s = '2.00';
+      localStorage.setItem('jt_font_scale', '2.00');
     }
     const v = parseFloat(s);
-    if (!isNaN(v) && v >= 0.75 && v <= 2.2) {
+    if (!isNaN(v) && v >= 0.75 && v <= 3.0) {
       document.documentElement.style.setProperty('--font-scale', v);
     }
   } catch (e) {}
@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSnapInstant();
   initCrossAppNav();
   initRibbonAutoHide();
+  updateScrollLock();
 
   // Anchor at the very top of the question card
   scrollToTopInstant();
@@ -144,6 +145,8 @@ function initScrollSnapInstant() {
   window.addEventListener('wheel', (e) => {
     if (e.ctrlKey) return; // Ignore pinch-to-zoom gestures on trackpads
     if (state.currentMode !== 'practice') return;
+    // When in practice mode and hints are not activated, lock scrolling
+    if (!state.notesOpen) return;
     const active = document.activeElement;
     if (active && (active.tagName === 'TEXTAREA' || active.tagName === 'INPUT')) return;
 
@@ -166,7 +169,7 @@ function initScrollSnapInstant() {
    Persists across Next/Previous questions, refreshes, and app sessions
    ========================================================================== */
 
-const DEFAULT_FONT_SCALE = 1.35;
+const DEFAULT_FONT_SCALE = 2.0;
 let currentFontScale = DEFAULT_FONT_SCALE;
 let fontToastTimeout = null;
 
@@ -215,12 +218,12 @@ function setFontScale(scale, showToast = true) {
 }
 
 function adjustFontSize(delta = 0.05) {
-  const newScale = Math.min(2.0, Math.max(0.75, currentFontScale + delta));
+  const newScale = Math.min(3.0, Math.max(0.75, currentFontScale + delta));
   setFontScale(newScale, true);
 }
 
 function cycleFontSize() {
-  const steps = [1.35, 1.50, 1.65, 1.85, 1.00, 1.15];
+  const steps = [2.00, 2.25, 2.50, 1.35, 1.65, 1.85];
   let nextIdx = 0;
   for (let i = 0; i < steps.length; i++) {
     if (Math.abs(currentFontScale - steps[i]) < 0.05) {
@@ -246,12 +249,12 @@ function initPinchToFontResize() {
   // 1. Restore saved scale on boot
   try {
     let saved = localStorage.getItem('jt_font_scale');
-    if (!saved || saved === '1' || saved === '1.0' || saved === '1.00' || saved === '1.1' || saved === '1.10') {
-      saved = '1.35';
-      localStorage.setItem('jt_font_scale', '1.35');
+    if (!saved || saved === '1' || saved === '1.0' || saved === '1.00' || saved === '1.1' || saved === '1.10' || saved === '1.35') {
+      saved = '2.00';
+      localStorage.setItem('jt_font_scale', '2.00');
     }
     const parsed = parseFloat(saved);
-    if (!isNaN(parsed) && parsed >= 0.75 && parsed <= 2.2) {
+    if (!isNaN(parsed) && parsed >= 0.75 && parsed <= 3.0) {
       currentFontScale = parsed;
       setFontScale(parsed, false);
     }
@@ -273,7 +276,7 @@ function initPinchToFontResize() {
   document.addEventListener('gesturechange', (e) => {
     e.preventDefault();
     if (!e.scale) return;
-    const newScale = Math.min(2.0, Math.max(0.75, gestureBaseScale * e.scale));
+    const newScale = Math.min(3.0, Math.max(0.75, gestureBaseScale * e.scale));
     setFontScale(newScale, true);
   }, { passive: false });
 
@@ -310,7 +313,7 @@ function initPinchToFontResize() {
       if (initialTouchDistance > 10) {
         e.preventDefault();
         const ratio = currentDist / initialTouchDistance;
-        const newScale = Math.min(2.0, Math.max(0.75, touchBaseScale * ratio));
+        const newScale = Math.min(3.0, Math.max(0.75, touchBaseScale * ratio));
         setFontScale(newScale, true);
       }
     }
@@ -340,7 +343,7 @@ function initPinchToFontResize() {
       if (Math.abs(trackpadAccumulator) >= THRESHOLD) {
         const step = trackpadAccumulator < 0 ? 0.05 : -0.05;
         trackpadAccumulator = 0;
-        const newScale = Math.min(2.0, Math.max(0.75, currentFontScale + step));
+        const newScale = Math.min(3.0, Math.max(0.75, currentFontScale + step));
         setFontScale(newScale, true);
       }
     }
@@ -811,6 +814,15 @@ function promptPoolFilterSelection() {
     const select = document.getElementById('practice-filter-select');
     if (select) select.value = val;
     changePracticeFilter(val);
+    if (state.currentMode === 'all') {
+      const allSelect = document.getElementById('filter-status-select');
+      if (allSelect) {
+        allSelect.value = val === 'weak' ? 'weak' : 'all';
+      }
+      if (typeof filterAllQuestions === 'function') {
+        filterAllQuestions();
+      }
+    }
   }
 
   window._onSelectPoolOption = function(val) {
@@ -1721,7 +1733,7 @@ function loadStoredData() {
     const s = localStorage.getItem('jt_font_scale');
     if (s) {
       const v = parseFloat(s);
-      if (!isNaN(v) && v >= 0.75 && v <= 2.0) {
+      if (!isNaN(v) && v >= 0.75 && v <= 3.0) {
         currentFontScale = v;
         document.documentElement.style.setProperty('--font-scale', v);
       }
@@ -3467,6 +3479,7 @@ function prevQuestion() {
 
 function hideNotesSection() {
   state.notesOpen = false;
+  document.body.classList.remove('hints-open');
   const container = document.getElementById('notes-section-container');
   const btn = document.getElementById('toggle-notes-btn');
   const wrapper = btn ? btn.closest('.notes-toggle-wrapper') : null;
@@ -3477,6 +3490,8 @@ function hideNotesSection() {
     btn.classList.remove('active');
     btn.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Show Solution & Hint <span id="notes-count-badge" style="display:none;"></span><i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
   }
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  if (typeof updateScrollLock === 'function') updateScrollLock();
 }
 
 function toggleNotesSection() {
@@ -3488,9 +3503,11 @@ function toggleNotesSection() {
   if (!container || !btn) return;
 
   if (state.notesOpen) {
+    document.body.classList.add('hints-open');
     container.classList.remove('hidden');
     if (wrapper) wrapper.classList.add('hidden-toggle');
     subscribeLiveNotesCurrent();
+    if (typeof updateScrollLock === 'function') updateScrollLock();
   } else {
     hideNotesSection();
   }
@@ -4514,11 +4531,29 @@ let ribbonTouchStartY = 0;
 let ribbonTouchStartX = 0;
 let ribbonIsInteracting = false;
 
+function updateScrollLock() {
+  const isPractice = state.currentMode === 'practice';
+  const panel = document.querySelector('.bottom-panel');
+  const isRibbonHidden = document.body.classList.contains('ribbon-hidden') || (panel && panel.classList.contains('ribbon-hidden'));
+  const isHintsOpen = !!state.notesOpen;
+
+  if (isPractice && isRibbonHidden && !isHintsOpen) {
+    document.documentElement.classList.add('practice-no-scroll');
+    document.body.classList.add('practice-no-scroll');
+  } else {
+    document.documentElement.classList.remove('practice-no-scroll');
+    document.body.classList.remove('practice-no-scroll');
+  }
+}
+window.updateScrollLock = updateScrollLock;
+
 function showRibbon(duration = 3500) {
   const panel = document.querySelector('.bottom-panel');
   const headerBar = document.querySelector('.question-header-bar');
   if (panel) panel.classList.remove('ribbon-hidden');
   if (headerBar) headerBar.classList.remove('ribbon-hidden');
+  document.body.classList.remove('ribbon-hidden');
+  updateScrollLock();
 
   if (ribbonAutoHideTimer) {
     clearTimeout(ribbonAutoHideTimer);
@@ -4544,6 +4579,8 @@ function hideRibbon() {
 
   if (panel) panel.classList.add('ribbon-hidden');
   if (headerBar) headerBar.classList.add('ribbon-hidden');
+  document.body.classList.add('ribbon-hidden');
+  updateScrollLock();
 
   if (ribbonAutoHideTimer) {
     clearTimeout(ribbonAutoHideTimer);
