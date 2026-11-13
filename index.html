@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=174.0">
+  <link rel="stylesheet" href="styles.css?v=175.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -67,6 +67,7 @@
         <!-- Question Body -->
         <div class="question-content">
           <div class="question-header-bar">
+            <!-- Top Left: Subject Selector Dropdown Badge -->
             <div class="question-number-badge subject-selector-badge" id="card-subject-badge" onclick="promptSubjectSelection()" title="Click to change subject" role="button" tabindex="0">
               <div class="badge-subject-select-wrapper">
                 <span id="subject-badge-name">Fluid Mechanics</span>
@@ -80,7 +81,10 @@
                   <option value="ac_dc_machinery">AC/DC Machinery</option>
                 </select>
               </div>
-              <span class="badge-dot">•</span>
+            </div>
+
+            <!-- Top Right: Problem Number Indicator Badge -->
+            <div class="question-number-badge problem-number-badge" id="card-problem-badge" onclick="promptJumpToQuestion()" title="Jump to Problem Number" role="button" tabindex="0">
               <span class="badge-problem-info">Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span></span>
             </div>
           </div>

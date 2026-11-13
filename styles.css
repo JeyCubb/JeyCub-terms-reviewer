@@ -1471,6 +1471,16 @@ body[data-mode="all"] .pdf-btn {
   box-shadow: 0 0 10px var(--accent-glow);
 }
 
+.subject-selector-badge {
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.problem-number-badge {
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
 .badge-subject-select-wrapper {
   position: relative;
   display: inline-flex;
@@ -5414,16 +5424,21 @@ input[type="number"],
   .question-number-badge {
     text-align: center;
     font-size: 0.74rem;
-    padding: 0.2rem 0.45rem;
+    padding: 0.2rem 0.55rem;
     gap: 0.3rem;
     width: auto;
-    max-width: calc(100% - 70px);
     box-sizing: border-box;
+  }
+  .subject-selector-badge {
     flex-shrink: 1;
     min-width: 0;
+    max-width: calc(100% - 110px);
+  }
+  .problem-number-badge {
+    flex-shrink: 0;
   }
   .badge-subject-select-wrapper span#subject-badge-name {
-    max-width: 120px;
+    max-width: 130px;
   }
   .q-audio-btn {
     padding: 0.2rem 0.45rem;
