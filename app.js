@@ -2,14 +2,20 @@
 (function() {
   try {
     let s = localStorage.getItem('jt_font_scale');
-    // If not set or previously set to older defaults, update to new default 2.00 (200%)
-    if (!s || s === '1' || s === '1.0' || s === '1.00' || s === '1.1' || s === '1.10' || s === '1.35') {
-      s = '2.00';
-      localStorage.setItem('jt_font_scale', '2.00');
+    // If not set or previously set to older defaults, update to new default 1.75 (175%)
+    if (!s || s === '1' || s === '1.0' || s === '1.00' || s === '1.1' || s === '1.10' || s === '1.35' || s === '2' || s === '2.0' || s === '2.00') {
+      s = '1.75';
+      localStorage.setItem('jt_font_scale', '1.75');
     }
-    const v = parseFloat(s);
-    if (!isNaN(v) && v >= 0.75 && v <= 3.0) {
-      document.documentElement.style.setProperty('--font-scale', v);
+    let v = parseFloat(s);
+    if (!isNaN(v)) {
+      if (v > 2.5) {
+        v = 2.5;
+        localStorage.setItem('jt_font_scale', '2.50');
+      }
+      if (v >= 0.75 && v <= 2.5) {
+        document.documentElement.style.setProperty('--font-scale', v);
+      }
     }
   } catch (e) {}
 })();
@@ -169,7 +175,7 @@ function initScrollSnapInstant() {
    Persists across Next/Previous questions, refreshes, and app sessions
    ========================================================================== */
 
-const DEFAULT_FONT_SCALE = 2.0;
+const DEFAULT_FONT_SCALE = 1.75;
 let currentFontScale = DEFAULT_FONT_SCALE;
 let fontToastTimeout = null;
 
@@ -218,12 +224,12 @@ function setFontScale(scale, showToast = true) {
 }
 
 function adjustFontSize(delta = 0.05) {
-  const newScale = Math.min(3.0, Math.max(0.75, currentFontScale + delta));
+  const newScale = Math.min(2.5, Math.max(0.75, currentFontScale + delta));
   setFontScale(newScale, true);
 }
 
 function cycleFontSize() {
-  const steps = [2.00, 2.25, 2.50, 1.35, 1.65, 1.85];
+  const steps = [1.75, 2.00, 2.25, 2.50, 1.00, 1.25, 1.50];
   let nextIdx = 0;
   for (let i = 0; i < steps.length; i++) {
     if (Math.abs(currentFontScale - steps[i]) < 0.05) {
@@ -249,14 +255,20 @@ function initPinchToFontResize() {
   // 1. Restore saved scale on boot
   try {
     let saved = localStorage.getItem('jt_font_scale');
-    if (!saved || saved === '1' || saved === '1.0' || saved === '1.00' || saved === '1.1' || saved === '1.10' || saved === '1.35') {
-      saved = '2.00';
-      localStorage.setItem('jt_font_scale', '2.00');
+    if (!saved || saved === '1' || saved === '1.0' || saved === '1.00' || saved === '1.1' || saved === '1.10' || saved === '1.35' || saved === '2' || saved === '2.0' || saved === '2.00') {
+      saved = '1.75';
+      localStorage.setItem('jt_font_scale', '1.75');
     }
-    const parsed = parseFloat(saved);
-    if (!isNaN(parsed) && parsed >= 0.75 && parsed <= 3.0) {
-      currentFontScale = parsed;
-      setFontScale(parsed, false);
+    let parsed = parseFloat(saved);
+    if (!isNaN(parsed)) {
+      if (parsed > 2.5) {
+        parsed = 2.5;
+        localStorage.setItem('jt_font_scale', '2.50');
+      }
+      if (parsed >= 0.75 && parsed <= 2.5) {
+        currentFontScale = parsed;
+        setFontScale(parsed, false);
+      }
     }
   } catch (e) {}
 
@@ -276,7 +288,7 @@ function initPinchToFontResize() {
   document.addEventListener('gesturechange', (e) => {
     e.preventDefault();
     if (!e.scale) return;
-    const newScale = Math.min(3.0, Math.max(0.75, gestureBaseScale * e.scale));
+    const newScale = Math.min(2.5, Math.max(0.75, gestureBaseScale * e.scale));
     setFontScale(newScale, true);
   }, { passive: false });
 
@@ -313,7 +325,7 @@ function initPinchToFontResize() {
       if (initialTouchDistance > 10) {
         e.preventDefault();
         const ratio = currentDist / initialTouchDistance;
-        const newScale = Math.min(3.0, Math.max(0.75, touchBaseScale * ratio));
+        const newScale = Math.min(2.5, Math.max(0.75, touchBaseScale * ratio));
         setFontScale(newScale, true);
       }
     }
@@ -343,7 +355,7 @@ function initPinchToFontResize() {
       if (Math.abs(trackpadAccumulator) >= THRESHOLD) {
         const step = trackpadAccumulator < 0 ? 0.05 : -0.05;
         trackpadAccumulator = 0;
-        const newScale = Math.min(3.0, Math.max(0.75, currentFontScale + step));
+        const newScale = Math.min(2.5, Math.max(0.75, currentFontScale + step));
         setFontScale(newScale, true);
       }
     }
@@ -1732,10 +1744,13 @@ function loadStoredData() {
   try {
     const s = localStorage.getItem('jt_font_scale');
     if (s) {
-      const v = parseFloat(s);
-      if (!isNaN(v) && v >= 0.75 && v <= 3.0) {
-        currentFontScale = v;
-        document.documentElement.style.setProperty('--font-scale', v);
+      let v = parseFloat(s);
+      if (!isNaN(v)) {
+        if (v > 2.5) v = 2.5;
+        if (v >= 0.75 && v <= 2.5) {
+          currentFontScale = v;
+          document.documentElement.style.setProperty('--font-scale', v);
+        }
       }
     }
   } catch (e) {}

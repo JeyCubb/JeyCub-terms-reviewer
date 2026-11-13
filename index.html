@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=159.0">
+  <link rel="stylesheet" href="styles.css?v=160.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -30,14 +30,20 @@
     (function() {
       try {
         var s = localStorage.getItem('jt_font_scale');
-        // If not set or previously set to older defaults, update to new default 2.00 (200%)
-        if (!s || s === '1' || s === '1.0' || s === '1.00' || s === '1.1' || s === '1.10' || s === '1.35') {
-          s = '2.00';
-          localStorage.setItem('jt_font_scale', '2.00');
+        // If not set or previously set to older defaults, update to new default 1.75 (175%)
+        if (!s || s === '1' || s === '1.0' || s === '1.00' || s === '1.1' || s === '1.10' || s === '1.35' || s === '2' || s === '2.0' || s === '2.00') {
+          s = '1.75';
+          localStorage.setItem('jt_font_scale', '1.75');
         }
         var val = parseFloat(s);
-        if (!isNaN(val) && val >= 0.75 && val <= 3.0) {
-          document.documentElement.style.setProperty('--font-scale', val);
+        if (!isNaN(val)) {
+          if (val > 2.5) {
+            val = 2.5;
+            localStorage.setItem('jt_font_scale', '2.50');
+          }
+          if (val >= 0.75 && val <= 2.5) {
+            document.documentElement.style.setProperty('--font-scale', val);
+          }
         }
       } catch (e) {}
     })();
@@ -298,19 +304,19 @@
     </div><!-- /.bottom-panel -->
 
   </main>
-  <!-- Floating Font Size Indicator Toast (Tap to reset to 100%) -->
-    <!-- Floating Font Size Control Toast (Accessible Text Sizing) -->
+  <!-- Floating Font Size Indicator Toast (Tap to reset to 175%) -->
+  <!-- Floating Font Size Control Toast (Accessible Text Sizing) -->
   <div id="font-scale-toast" class="font-scale-toast" title="Text Size Controls">
     <button type="button" class="toast-adjust-btn" onclick="adjustFontSize(-0.05); event.stopPropagation();" title="Smaller (A-)"><i class="fa-solid fa-minus"></i></button>
-    <div class="toast-center-content" onclick="resetFontScale()" title="Tap to reset to 200%">
-      <i class="fa-solid fa-text-height"></i> Text: <span id="font-scale-val">200%</span>
+    <div class="toast-center-content" onclick="resetFontScale()" title="Tap to reset to 175%">
+      <i class="fa-solid fa-text-height"></i> Text: <span id="font-scale-val">175%</span>
     </div>
     <button type="button" class="toast-adjust-btn" onclick="adjustFontSize(0.05); event.stopPropagation();" title="Larger (A+)"><i class="fa-solid fa-plus"></i></button>
   </div>
 
 
   <script src="questions.js?v=114.0"></script>
-  <script src="app.js?v=131.0"></script>
+  <script src="app.js?v=132.0"></script>
   <!-- App Confirmation & Alert Modal (TIP Grade Calculator Design) -->
   <div id="app-confirm-modal" class="profile-modal-overlay" style="display: none;">
     <div class="profile-modal-dialog">
