@@ -2514,10 +2514,10 @@ body[data-mode="all"] .mode-nav {
   }
   .header-container {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-columns: auto auto minmax(0, 1fr);
     grid-template-areas: 
       "brand    buttons  buttons"
-      ".        mode     score";
+      "mode     score    .";
     gap: 0.35rem 0.45rem;
     align-items: center;
     width: 100%;
@@ -2527,7 +2527,7 @@ body[data-mode="all"] .mode-nav {
   }
   .quiz-score-badge {
     grid-area: score;
-    justify-self: end;
+    justify-self: start;
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
@@ -2576,7 +2576,7 @@ body[data-mode="all"] .mode-nav {
     grid-area: mode;
     width: auto;
     display: inline-flex;
-    justify-self: end;
+    justify-self: start;
     gap: 0.2rem;
     padding: 2px;
     border-radius: var(--radius-full);
@@ -5266,7 +5266,7 @@ input[type="number"],
   }
   .quiz-score-badge {
     grid-area: score;
-    justify-self: end;
+    justify-self: start;
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
