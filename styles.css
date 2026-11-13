@@ -2153,6 +2153,8 @@ body[data-mode="all"] .pdf-btn {
 
   margin-bottom: 5rem;
 
+  scroll-margin-top: 1rem;
+
   animation: fadeIn 0.3s ease;
 
 }

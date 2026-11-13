@@ -3532,6 +3532,13 @@ function toggleNotesSection() {
     if (wrapper) wrapper.classList.add('hidden-toggle');
     subscribeLiveNotesCurrent();
     if (typeof updateScrollLock === 'function') updateScrollLock();
+
+    // Auto roll down smoothly to reveal hint and solution in full view
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    });
   } else {
     hideNotesSection();
   }
