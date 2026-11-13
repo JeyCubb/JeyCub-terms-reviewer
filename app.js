@@ -4636,6 +4636,19 @@ function initRibbonAutoHide() {
     }
   }, { passive: true });
 
+  // 2b. Desktop Wheel & Trackpad Scroll Detection: scrolling on desktop reveals ribbon
+  window.addEventListener('wheel', (e) => {
+    if (e.ctrlKey) return; // Skip pinch-to-zoom gestures (Ctrl + wheel)
+    if (Math.abs(e.deltaY) > 1 || Math.abs(e.deltaX) > 1) {
+      showRibbon(3500);
+    }
+  }, { passive: true });
+
+  // 2c. Window Scroll Detection (scrollbar dragging, keyboard PageUp/Down / space)
+  window.addEventListener('scroll', () => {
+    showRibbon(3500);
+  }, { passive: true });
+
   // 3. Ribbon Interaction Listeners: Keep visible while hovering or touching bottom panel
   if (panel) {
     panel.addEventListener('mouseenter', () => {
