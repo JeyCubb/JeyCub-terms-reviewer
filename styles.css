@@ -2631,8 +2631,8 @@ body[data-mode="all"] .pdf-btn {
     display: grid;
     grid-template-columns: auto auto minmax(0, 1fr);
     grid-template-areas: 
-      "brand    buttons  buttons"
-      "mode     score    .";
+      "mode     score    ."
+      "brand    buttons  buttons";
     gap: 0.35rem 0.45rem;
     align-items: center;
     width: 100%;
