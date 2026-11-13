@@ -29,7 +29,7 @@
 
   
 
-  --text-primary: #fcf6f2;
+  --text-primary: #ffffff;
 
   --text-secondary: #a39287;
 
@@ -172,7 +172,7 @@ body {
 
   border: 1.5px solid var(--color-warning);
 
-  color: #fcf6f2;
+  color: #ffffff;
 
   padding: 0.65rem 1.35rem;
 
@@ -220,7 +220,7 @@ body {
   transform: translateX(-50%) translateY(18px);
   background: rgba(28, 21, 17, 0.96);
   border: 1.5px solid var(--accent-primary, #ff8c00);
-  color: #fcf6f2;
+  color: #ffffff;
   padding: 0.65rem 1.35rem;
   border-radius: var(--radius-full, 9999px);
   font-size: 0.92rem;
@@ -253,7 +253,7 @@ body {
   transform: translateX(-50%) translateY(18px);
   background: #1c1511;
   border: 1.5px solid var(--accent-primary, #ff8c00);
-  color: #fcf6f2;
+  color: #ffffff;
   padding: 0.55rem 0.85rem 0.55rem 1.25rem;
   border-radius: var(--radius-full, 9999px);
   font-size: 0.92rem;
@@ -299,7 +299,7 @@ body {
 .pool-reset-prompt .prompt-btn {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #fcf6f2;
+  color: #ffffff;
   font-size: 0.82rem;
   font-weight: 700;
   padding: 0.32rem 0.85rem;
@@ -510,7 +510,8 @@ body[data-mode="all"] .quiz-score-badge,
 body[data-mode="all"] #btn-quiz-reset,
 body[data-mode="all"] #btn-quiz-jump,
 body[data-mode="all"] #pool-single-wrapper,
-body[data-mode="all"] #btn-toggle-random {
+body[data-mode="all"] #btn-toggle-random,
+body[data-mode="all"] #q-audio-btn {
   display: none !important;
 }
 
@@ -772,7 +773,7 @@ body[data-mode="all"] .pdf-btn {
 
 .subject-dropdown-wrapper select option {
   background: #1c1511;
-  color: #fcf6f2;
+  color: #ffffff;
   padding: 0.5rem;
   font-weight: 600;
 }
@@ -1493,7 +1494,7 @@ body[data-mode="all"] .pdf-btn {
 
 .badge-subject-select-wrapper select option {
   background: #1c1511;
-  color: #fcf6f2;
+  color: #ffffff;
   padding: 0.5rem;
   font-weight: 600;
   font-size: 0.85rem;
@@ -1569,6 +1570,21 @@ body[data-mode="all"] .pdf-btn {
   box-shadow: 0 0 8px rgba(245, 158, 11, 0.3);
 }
 
+.control-single-btn.audio-single-btn.is-active {
+  background: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.control-single-btn.audio-single-btn.is-speaking {
+  background: rgba(239, 68, 68, 0.18);
+  color: #ef4444;
+  border-color: #ef4444;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
+  animation: pulse-speaking 1.4s infinite ease-in-out;
+}
+
 .control-single-btn.pdf-btn {
   color: #ef4444;
   border-color: rgba(239, 68, 68, 0.35);
@@ -1604,7 +1620,7 @@ body[data-mode="all"] .pdf-btn {
 
 .pool-single-btn-wrapper select option {
   background: #1c1511;
-  color: #fcf6f2;
+  color: #ffffff;
   padding: 0.5rem;
   font-weight: 600;
   font-size: 0.85rem;
@@ -4983,7 +4999,7 @@ sup {
 .profile-modal-title {
   font-size: 1.05rem;
   font-weight: 800;
-  color: var(--text-primary, #fcf6f2);
+  color: var(--text-primary, #ffffff);
   line-height: 1.2;
   margin: 0;
 }
@@ -5008,7 +5024,7 @@ sup {
 }
 
 .profile-modal-close-btn:hover {
-  color: var(--text-primary, #fcf6f2);
+  color: var(--text-primary, #ffffff);
 }
 
 .profile-modal-body {
@@ -5034,7 +5050,7 @@ sup {
 }
 
 .btn-modal-cancel {
-  color: var(--text-primary, #fcf6f2);
+  color: var(--text-primary, #ffffff);
   border-color: var(--border-color, rgba(249, 115, 22, 0.12));
   background: rgba(255, 255, 255, 0.04);
 }
@@ -5221,7 +5237,7 @@ input[type="number"],
   border: 1.5px solid var(--border-color, rgba(249, 115, 22, 0.12));
   border-radius: var(--radius-md, 12px);
   padding: 0.65rem 0.85rem;
-  color: var(--text-primary, #fcf6f2);
+  color: var(--text-primary, #ffffff);
   font-family: inherit;
   cursor: pointer;
   text-align: left;
@@ -5265,7 +5281,7 @@ input[type="number"],
 .pool-modal-option-title {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--text-primary, #fcf6f2);
+  color: var(--text-primary, #ffffff);
   white-space: normal;
   line-height: 1.35;
   word-break: break-word;

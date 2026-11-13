@@ -4476,8 +4476,8 @@ function updateNarrationUI() {
     if (narrateLabel) narrateLabel.textContent = 'Stop';
 
     if (qListenBtn) {
-      qListenBtn.className = 'q-audio-btn is-speaking';
-      qListenBtn.setAttribute('title', 'Stop narration');
+      qListenBtn.className = 'control-single-btn audio-single-btn is-speaking';
+      qListenBtn.setAttribute('title', 'Stop narration [Press M]');
     }
     if (qListenIcon) qListenIcon.className = 'fa-solid fa-stop';
     if (qListenLabel) qListenLabel.textContent = 'Stop';
@@ -4491,8 +4491,8 @@ function updateNarrationUI() {
     if (narrateLabel) narrateLabel.textContent = 'Auto: ON';
 
     if (qListenBtn) {
-      qListenBtn.className = 'q-audio-btn is-active';
-      qListenBtn.setAttribute('title', 'Auto-Narration is ON. Click to turn OFF');
+      qListenBtn.className = 'control-single-btn audio-single-btn is-active';
+      qListenBtn.setAttribute('title', 'Auto-Narration is ON (speaks on Next/Prev). Click to turn OFF [Press M]');
     }
     if (qListenIcon) qListenIcon.className = 'fa-solid fa-volume-high';
     if (qListenLabel) qListenLabel.textContent = 'Auto: ON';
@@ -4506,8 +4506,8 @@ function updateNarrationUI() {
     if (narrateLabel) narrateLabel.textContent = 'Narrate';
 
     if (qListenBtn) {
-      qListenBtn.className = 'q-audio-btn';
-      qListenBtn.setAttribute('title', 'Narrate question and choices');
+      qListenBtn.className = 'control-single-btn audio-single-btn';
+      qListenBtn.setAttribute('title', 'Narrate question & choices [Press M]');
     }
     if (qListenIcon) qListenIcon.className = 'fa-solid fa-volume-high';
     if (qListenLabel) qListenLabel.textContent = 'Listen';

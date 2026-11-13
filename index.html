@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=173.0">
+  <link rel="stylesheet" href="styles.css?v=174.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -83,9 +83,6 @@
               <span class="badge-dot">•</span>
               <span class="badge-problem-info">Problem <span id="q-current-num">1</span> of <span id="q-total-num">127</span></span>
             </div>
-            <button type="button" class="q-audio-btn" id="q-audio-btn" onclick="toggleNarration()" title="Narrate question &amp; choices [Press M]">
-              <i class="fa-solid fa-volume-high" id="q-audio-icon"></i> <span id="q-audio-label">Listen</span>
-            </button>
           </div>
           <h2 class="question-text" id="q-text">Loading question...</h2>
           
@@ -262,18 +259,24 @@
 
           <!-- Right: All 6 Action Buttons in a Single Contiguous Row -->
           <div class="header-action-buttons-group">
-            <!-- 1. Reset Current Subject Button -->
+            <!-- 1. Listen / Narration Button -->
+            <button type="button" class="control-single-btn audio-single-btn" id="q-audio-btn" onclick="toggleNarration()" title="Narrate question &amp; choices [Press M]" aria-label="Narrate question and choices">
+              <i class="fa-solid fa-volume-high" id="q-audio-icon"></i>
+              <span id="q-audio-label" style="display: none;">Listen</span>
+            </button>
+
+            <!-- 2. Reset Current Subject Button -->
             <button class="control-single-btn reset-single-btn" id="btn-quiz-reset" onclick="resetAllSubjectAnswers()" title="Reset All Answers (Keeps Weak Questions Memory)" aria-label="Reset All Answers">
               <i class="fa-solid fa-rotate-left"></i>
               <span id="reset-subject-name" style="display: none;"></span>
             </button>
 
-            <!-- 2. Jump to Question Button -->
+            <!-- 3. Jump to Question Button -->
             <button class="control-single-btn jump-single-btn" id="btn-quiz-jump" onclick="promptJumpToQuestion()" title="Jump to Problem Number" aria-label="Jump to Problem Number">
               <i class="fa-solid fa-hashtag"></i>
             </button>
 
-            <!-- 3. Practice Pool Filter -->
+            <!-- 4. Practice Pool Filter -->
             <button type="button" class="control-single-btn pool-single-btn-wrapper" id="pool-single-wrapper" onclick="promptPoolFilterSelection()" title="Question Pool: All Questions" aria-label="Question Pool">
               <i class="fa-solid fa-layer-group"></i>
               <select id="practice-filter-select" style="display: none;" onchange="changePracticeFilter(this.value)" title="Question Pool" tabindex="-1" aria-hidden="true">
@@ -282,12 +285,12 @@
               </select>
             </button>
 
-            <!-- 4. Random Toggle Button -->
+            <!-- 5. Random Toggle Button -->
             <button class="control-single-btn random-single-btn" id="btn-toggle-random" onclick="toggleRandomMode()" title="Random Order: OFF (Click to turn ON)" aria-label="Toggle Random Order">
               <i class="fa-solid fa-shuffle"></i>
             </button>
 
-            <!-- 5. PDF Export Button (Visible only in All Questions mode) -->
+            <!-- 6. PDF Export Button (Visible only in All Questions mode) -->
             <button class="control-single-btn action-single-btn pdf-btn" id="btn-pdf-export" title="Download Subject as Printable PDF (Randomized, 2 Columns, 0.05 margin)" onclick="downloadSubjectPdf()" aria-label="Download Printable PDF">
               <i class="fa-solid fa-file-pdf"></i>
             </button>
@@ -316,7 +319,7 @@
 
 
   <script src="questions.js?v=114.0"></script>
-  <script src="app.js?v=134.0"></script>
+  <script src="app.js?v=135.0"></script>
   <!-- App Confirmation & Alert Modal (TIP Grade Calculator Design) -->
   <div id="app-confirm-modal" class="profile-modal-overlay" style="display: none;">
     <div class="profile-modal-dialog">
