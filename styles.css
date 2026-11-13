@@ -1276,25 +1276,17 @@ body[data-mode="all"] .pdf-btn {
 }
 
 .option-btn.selected-incorrect {
-
-  background: var(--color-error-bg);
-
-  border-color: var(--color-error);
-
-  color: var(--color-error);
-
-  font-weight: 700;
-
-  box-shadow: 0 0 12px rgba(239, 68, 68, 0.25);
-
+  background: rgba(239, 68, 68, 0.05);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+  font-weight: 600;
+  box-shadow: none;
 }
 
 .option-btn.selected-incorrect .option-letter {
-
-  background: var(--color-error);
-
-  color: #fff;
-
+  background: rgba(239, 68, 68, 0.16);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #f87171;
 }
 
 .option-btn.other-incorrect {
@@ -1356,11 +1348,28 @@ body[data-mode="all"] .pdf-btn {
 }
 
 .opt-badge-tag.incorrect-tag {
+  background: rgba(239, 68, 68, 0.14);
+  border: 1px solid rgba(239, 68, 68, 0.32);
+  color: #fca5a5;
+  font-weight: 600;
+}
 
-  background: var(--color-error);
+[data-theme="light"] .option-btn.selected-incorrect {
+  background: rgba(239, 68, 68, 0.05);
+  border-color: rgba(239, 68, 68, 0.28);
+  color: #b91c1c;
+}
 
-  color: #fff;
+[data-theme="light"] .option-btn.selected-incorrect .option-letter {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.25);
+  color: #dc2626;
+}
 
+[data-theme="light"] .opt-badge-tag.incorrect-tag {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.22);
+  color: #b91c1c;
 }
 
 .opt-badge-tag.dimmed-tag {
