@@ -3533,6 +3533,12 @@ function toggleNotesSection() {
     subscribeLiveNotesCurrent();
     if (typeof updateScrollLock === 'function') updateScrollLock();
 
+    // Immediately hide ribbon into Zen Mode so it never covers hints or breaks focus
+    ribbonIsInteracting = false;
+    if (typeof hideRibbon === 'function') {
+      hideRibbon();
+    }
+
     // Auto roll down smoothly to reveal hint and solution in full view
     requestAnimationFrame(() => {
       setTimeout(() => {
@@ -4577,6 +4583,11 @@ function updateScrollLock() {
 window.updateScrollLock = updateScrollLock;
 
 function showRibbon(duration = 3500) {
+  // If hints/solution are open in practice mode, preserve Zen Mode and never show ribbon
+  if (state.currentMode === 'practice' && state.notesOpen) {
+    return;
+  }
+
   const panel = document.querySelector('.bottom-panel');
   const headerBar = document.querySelector('.question-header-bar');
   if (panel) panel.classList.remove('ribbon-hidden');
@@ -4645,7 +4656,7 @@ function initRibbonAutoHide() {
 
       // Vertical swipe: if vertical movement > 10px and vertical movement dominates
       if (Math.abs(deltaY) > 10 && Math.abs(deltaY) > Math.abs(deltaX)) {
-        showRibbon(3500);
+        if (!state.notesOpen) showRibbon(3500);
       }
     }
     // Prevent dragging/scrolling page in practice mode when hints are closed
@@ -4660,7 +4671,7 @@ function initRibbonAutoHide() {
   // 2b. Desktop Wheel & Trackpad Scroll Detection: scrolling on desktop reveals ribbon
   window.addEventListener('wheel', (e) => {
     if (e.ctrlKey) return; // Skip pinch-to-zoom gestures (Ctrl + wheel)
-    if (Math.abs(e.deltaY) > 1 || Math.abs(e.deltaX) > 1) {
+    if (!state.notesOpen && (Math.abs(e.deltaY) > 1 || Math.abs(e.deltaX) > 1)) {
       showRibbon(3500);
     }
     // Prevent page scrolling on desktop in practice mode when hints are closed
@@ -4671,6 +4682,7 @@ function initRibbonAutoHide() {
 
   // 2c. Window Scroll Detection (scrollbar dragging, keyboard PageUp/Down / space)
   window.addEventListener('scroll', () => {
+    if (state.notesOpen) return;
     showRibbon(3500);
   }, { passive: true });
 
