@@ -3206,6 +3206,8 @@ function renderCurrentPracticeQuestion() {
     const shuffledOpts = getShuffledOptionsForQuestion(key, q);
 
     if (shuffledOpts && Array.isArray(shuffledOpts)) {
+      const rowCount = Math.max(1, Math.ceil(shuffledOpts.length / 2));
+      optionsContainer.style.setProperty('--grid-rows', rowCount);
       shuffledOpts.forEach((optObj, displayedIdx) => {
         const letter = String.fromCharCode(65 + displayedIdx);
         const numKey = displayedIdx + 1;
