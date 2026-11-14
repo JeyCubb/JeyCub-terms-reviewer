@@ -4129,7 +4129,7 @@ function downloadSubjectPdf() {
       font-size: 8.2pt;
       font-weight: 500;
       margin-bottom: 1.5px;
-      text-align: justify;
+      text-align: left;
     }
     .pdf-q-text strong {
       font-weight: 700;

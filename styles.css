@@ -1076,8 +1076,7 @@ body[data-mode="all"] .pdf-btn {
 
   min-height: auto;
 
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 
 }
 
@@ -2595,8 +2594,7 @@ body[data-mode="all"] .pdf-btn {
 
   margin-bottom: 1rem;
 
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 
 }
 
@@ -2915,8 +2913,7 @@ body[data-mode="all"] .pdf-btn {
     margin-bottom: 0.45rem;
     min-height: 0 !important;
     display: block;
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: left;
   }
 
   .options-grid {
