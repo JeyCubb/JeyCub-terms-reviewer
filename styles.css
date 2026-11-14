@@ -719,7 +719,7 @@ body[data-mode="all"] .pdf-btn {
   border-color: var(--accent-primary) !important;
   color: #ffffff !important;
   transform: translateY(-2px) scale(1.14);
-  box-shadow: 0 6px 16px var(--accent-glow) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35) !important;
   z-index: 5;
 }
 
@@ -733,7 +733,7 @@ body[data-mode="all"] .pdf-btn {
   background: var(--accent-primary) !important;
   border-color: var(--accent-primary) !important;
   color: #ffffff !important;
-  box-shadow: 0 0 12px var(--accent-glow) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35) !important;
 }
 
 /* Unified Brand Navigation Dropdown Pop-Up */
@@ -819,7 +819,7 @@ body[data-mode="all"] .pdf-btn {
 
 .subject-dropdown-wrapper:hover {
   border-color: var(--accent-primary);
-  box-shadow: 0 0 10px var(--accent-glow);
+  box-shadow: var(--shadow-sm);
 }
 
 .subject-dropdown-wrapper .subject-icon {
@@ -849,74 +849,46 @@ body[data-mode="all"] .pdf-btn {
 /* Mode Navigation */
 
 .mode-nav {
-
   display: flex;
-
   align-items: center;
-
   justify-self: start;
-
-  background: var(--bg-input);
-
-  padding: 6px;
-
+  background: transparent;
+  padding: 0;
   border-radius: var(--radius-full);
-
-  border: 1px solid var(--border-color);
-
+  border: none;
   gap: 0.4rem;
-
 }
 
 .nav-btn {
-
   background: transparent;
-
   border: none;
-
   color: var(--text-secondary);
-
   padding: 0.28rem 0.75rem;
-
   border-radius: var(--radius-full);
-
   font-size: 0.82rem;
-
   font-weight: 600;
-
   cursor: pointer;
-
   display: flex;
-
   align-items: center;
-
   gap: 0.32rem;
-
   transition: var(--transition);
-
 }
 
 .nav-btn:hover {
-
   color: var(--text-primary);
-
 }
 
 .nav-btn.active {
-
   background: var(--bg-card);
-
   color: var(--accent-primary);
-
   box-shadow: var(--shadow-sm);
-
 }
 
 #btn-mode-toggle {
   background: var(--bg-card);
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
   color: var(--accent-primary);
-  box-shadow: 0 0 10px var(--accent-glow);
+  box-shadow: none !important;
   padding: 0.28rem 0.85rem;
   user-select: none;
   -webkit-user-select: none;
@@ -925,14 +897,15 @@ body[data-mode="all"] .pdf-btn {
 
 #btn-mode-toggle:hover {
   background: var(--bg-card-hover);
-  border-color: var(--accent-primary);
+  border-color: var(--border-color-hover);
   color: var(--accent-primary);
-  box-shadow: 0 0 14px var(--accent-glow);
+  box-shadow: none !important;
   transform: translateY(-1px);
 }
 
 #btn-mode-toggle:active {
   transform: scale(0.96);
+  box-shadow: none !important;
 }
 
 /* Header Action Buttons */
@@ -1658,7 +1631,7 @@ body[data-mode="all"] .pdf-btn {
 
 .control-single-btn:hover {
   border-color: var(--accent-primary);
-  box-shadow: 0 0 10px var(--accent-glow);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
   transform: translateY(-1px);
 }
 
@@ -1670,20 +1643,20 @@ body[data-mode="all"] .pdf-btn {
   background: var(--accent-primary);
   color: #ffffff;
   border-color: var(--accent-primary);
-  box-shadow: 0 0 12px var(--accent-glow);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 .control-single-btn.has-filter {
   border-color: #f59e0b;
   color: #f59e0b;
-  box-shadow: 0 0 8px rgba(245, 158, 11, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 .control-single-btn.audio-single-btn.is-active {
   background: var(--accent-primary);
   color: #ffffff;
   border-color: var(--accent-primary);
-  box-shadow: 0 0 12px var(--accent-glow);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 .control-single-btn.audio-single-btn.is-speaking {
@@ -2906,8 +2879,10 @@ body[data-mode="all"] .pdf-btn {
     width: auto !important;
     display: inline-flex !important;
     justify-self: start !important;
-    gap: 0.12rem !important;
-    padding: 2px !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
     border-radius: var(--radius-full) !important;
     flex-shrink: 0 !important;
     white-space: nowrap !important;
@@ -2921,6 +2896,7 @@ body[data-mode="all"] .pdf-btn {
     gap: 0.18rem !important;
     border-radius: var(--radius-full) !important;
     white-space: nowrap !important;
+    box-shadow: none !important;
   }
   .nav-btn i {
     font-size: 0.65rem !important;
