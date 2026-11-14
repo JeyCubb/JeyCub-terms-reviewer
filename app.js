@@ -139,9 +139,13 @@ function scrollToBottomInstant() {
 }
 
 function scrollToTopInstant() {
+  suppressRibbonOnScroll = true;
   window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   if (document.documentElement) document.documentElement.scrollTop = 0;
   if (document.body) document.body.scrollTop = 0;
+  setTimeout(() => {
+    suppressRibbonOnScroll = false;
+  }, 180);
 }
 
 /* Instant Wheel / Scroll Handler: 1 wheel notch up = Page Up, 1 wheel notch down = Page Down */
@@ -3516,7 +3520,17 @@ function prevQuestion() {
    Togglable Per-Question Hints & Solution Section (Manual Scroll)
    ========================================================================== */
 
-function hideNotesSection() {
+function hideNotesSection(e) {
+  if (e && e.stopPropagation) {
+    e.stopPropagation();
+  }
+  if (e && e.preventDefault) {
+    e.preventDefault();
+  }
+  if (document.activeElement && typeof document.activeElement.blur === 'function') {
+    document.activeElement.blur();
+  }
+
   state.notesOpen = false;
   document.body.classList.remove('hints-open');
   const container = document.getElementById('notes-section-container');
@@ -3529,7 +3543,26 @@ function hideNotesSection() {
     btn.classList.remove('active');
     btn.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Show Solution & Hint <span id="notes-count-badge" style="display:none;"></span><i class="fa-solid fa-chevron-down" id="toggle-notes-chevron"></i>`;
   }
+
+  // Preserve Zen Mode: ensure ribbon and top bar stay strictly hidden
+  if (ribbonAutoHideTimer) {
+    clearTimeout(ribbonAutoHideTimer);
+    ribbonAutoHideTimer = null;
+  }
+  ribbonIsInteracting = false;
+  const panel = document.querySelector('.bottom-panel');
+  const headerBar = document.querySelector('.question-header-bar');
+  if (panel) panel.classList.add('ribbon-hidden');
+  if (headerBar) headerBar.classList.add('ribbon-hidden');
+  document.body.classList.add('ribbon-hidden');
+
+  // Suppress scroll-triggered ribbon reveal while returning to top
+  suppressRibbonOnScroll = true;
   window.scrollTo({ top: 0, behavior: 'instant' });
+  setTimeout(() => {
+    suppressRibbonOnScroll = false;
+  }, 250);
+
   if (typeof updateScrollLock === 'function') updateScrollLock();
 }
 
@@ -4591,6 +4624,7 @@ let ribbonAutoHideTimer = null;
 let ribbonTouchStartY = 0;
 let ribbonTouchStartX = 0;
 let ribbonIsInteracting = false;
+let suppressRibbonOnScroll = false;
 
 function updateScrollLock() {
   const isPractice = state.currentMode === 'practice';
@@ -4706,7 +4740,7 @@ function initRibbonAutoHide() {
 
   // 2c. Window Scroll Detection (scrollbar dragging, keyboard PageUp/Down / space)
   window.addEventListener('scroll', () => {
-    if (state.notesOpen) return;
+    if (state.notesOpen || suppressRibbonOnScroll) return;
     showRibbon(3500);
   }, { passive: true });
 
@@ -4777,8 +4811,8 @@ function initRibbonAutoHide() {
   // 6. Desktop Mouse Hover Zone Detection (hovering tightly at very bottom edge near task bar)
   let wasInBottomZone = false;
   window.addEventListener('mousemove', (e) => {
-    if (state.notesOpen) return;
-    if (e.target && e.target.closest && (e.target.closest('.notes-toggle-wrapper') || e.target.closest('#toggle-notes-btn') || e.target.closest('#notes-section-container'))) {
+    if (state.notesOpen || suppressRibbonOnScroll) return;
+    if (e.target && e.target.closest && (e.target.closest('.notes-toggle-wrapper') || e.target.closest('#toggle-notes-btn') || e.target.closest('#notes-section-container') || e.target.closest('.hide-hints-top-btn'))) {
       return;
     }
     const triggerThreshold = 32; // Tight zone: within bottom 32px right near taskbar
@@ -4796,8 +4830,8 @@ function initRibbonAutoHide() {
 
   // 7. Tap near bottom edge: if tapped within bottom 45px when hidden, reveal ribbon
   window.addEventListener('click', (e) => {
-    if (state.notesOpen) return;
-    if (e.target && e.target.closest && (e.target.closest('.notes-toggle-wrapper') || e.target.closest('#toggle-notes-btn') || e.target.closest('#notes-section-container'))) {
+    if (state.notesOpen || suppressRibbonOnScroll) return;
+    if (e.target && e.target.closest && (e.target.closest('.notes-toggle-wrapper') || e.target.closest('#toggle-notes-btn') || e.target.closest('#notes-section-container') || e.target.closest('.hide-hints-top-btn'))) {
       return;
     }
     const isNearBottom = e.clientY > (window.innerHeight - 45);
