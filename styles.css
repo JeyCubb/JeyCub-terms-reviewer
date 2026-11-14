@@ -374,23 +374,25 @@ body[data-mode="all"] .main-container {
   padding-bottom: 6rem;
 }
 
-/* Practice Mode No Scroll Lock: Pin viewport completely when hints are closed */
-html.practice-no-scroll,
-body.practice-no-scroll,
-html:has(body[data-mode="practice"]:not(.hints-open)),
-body[data-mode="practice"]:not(.hints-open) {
-  overflow: hidden !important;
-  overflow-x: hidden !important;
-  overflow-y: hidden !important;
-  height: 100% !important;
-  max-height: 100vh !important;
-  max-height: 100dvh !important;
-  overscroll-behavior: none !important;
-  overscroll-behavior-y: none !important;
-}
+/* Practice Mode No Scroll Lock: Pin viewport completely when hints are closed (Only on screens tall enough to fit content) */
+@media (min-height: 551px) {
+  html.practice-no-scroll,
+  body.practice-no-scroll,
+  html:has(body[data-mode="practice"]:not(.hints-open)),
+  body[data-mode="practice"]:not(.hints-open) {
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    height: 100% !important;
+    max-height: 100vh !important;
+    max-height: 100dvh !important;
+    overscroll-behavior: none !important;
+    overscroll-behavior-y: none !important;
+  }
 
-body[data-mode="practice"]:not(.hints-open) {
-  touch-action: manipulation;
+  body[data-mode="practice"]:not(.hints-open) {
+    touch-action: manipulation;
+  }
 }
 
 /* Ensure hint activation restores full scrollable height */
@@ -5537,5 +5539,144 @@ input[type="number"],
     font-size: 0.72rem;
     padding: 0.2rem 0.42rem;
     box-sizing: border-box;
+  }
+}
+
+/* ==========================================================================
+   Mobile Landscape & Short Viewport Optimization (e.g. iPhone 11 Landscape)
+   ========================================================================== */
+
+@media (max-height: 550px) and (orientation: landscape), (max-height: 500px) {
+  /* 1. Ensure vertical scrolling is fully natural and unlocked */
+  html,
+  body,
+  html.practice-no-scroll,
+  body.practice-no-scroll,
+  html:has(body[data-mode="practice"]:not(.hints-open)),
+  body[data-mode="practice"]:not(.hints-open) {
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100% !important;
+    max-height: none !important;
+    overscroll-behavior-y: auto !important;
+    touch-action: pan-y !important;
+  }
+
+  /* 2. Container sizing: safe area insets and comfortable scroll padding */
+  .main-container {
+    padding-top: calc(clamp(0.35rem, 1vh, 0.55rem) + env(safe-area-inset-top, 0px)) !important;
+    padding-left: max(0.75rem, env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(0.75rem, env(safe-area-inset-right, 0px)) !important;
+    padding-bottom: calc(75px + max(0.45rem, env(safe-area-inset-bottom, 0px))) !important;
+  }
+
+  body.ribbon-hidden:not(.hints-open) .main-container {
+    padding-top: calc(clamp(0.35rem, 1vh, 0.55rem) + env(safe-area-inset-top, 0px)) !important;
+    padding-bottom: calc(1.2rem + max(0.45rem, env(safe-area-inset-bottom, 0px))) !important;
+  }
+
+  /* 3. Compact Quiz Card */
+  .quiz-card {
+    padding: 0.45rem 0.75rem !important;
+    margin-bottom: 0.35rem !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .question-content {
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* 4. Compact Header Bar */
+  .question-header-bar {
+    margin-bottom: 0.3rem !important;
+    gap: 0.35rem !important;
+  }
+
+  .question-pill-badge,
+  .subject-selector-badge {
+    padding: 0.18rem 0.5rem !important;
+    font-size: 0.72rem !important;
+  }
+
+  /* 5. Question Text */
+  .question-text {
+    font-size: calc(0.92rem * var(--font-scale, 1)) !important;
+    line-height: 1.32 !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  /* 6. Two-Column Options Grid to save immense vertical space */
+  .options-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.3rem 0.55rem !important;
+    margin-top: 0 !important;
+  }
+
+  .option-btn {
+    padding: 0.32rem 0.55rem !important;
+    font-size: calc(0.82rem * var(--font-scale, 1)) !important;
+    gap: 0.45rem !important;
+    min-height: 36px !important;
+    border-radius: var(--radius-sm) !important;
+  }
+
+  .option-letter {
+    width: 1.85em !important;
+    height: 1.85em !important;
+    min-width: 1.85em !important;
+    min-height: 1.85em !important;
+    font-size: 0.74em !important;
+  }
+
+  .option-key-hint {
+    display: none !important;
+  }
+
+  /* Optional diagrams max height */
+  .question-image-container img {
+    max-height: 130px !important;
+    object-fit: contain;
+  }
+
+  /* 7. Inline Navigation Row */
+  .inline-nav-container {
+    margin-top: 0.3rem !important;
+    padding-top: 0.3rem !important;
+    gap: 0.35rem !important;
+  }
+
+  .inline-nav-container .quiz-nav-btn {
+    height: 38px !important;
+    padding: 0.35rem 0.55rem !important;
+    font-size: 0.84rem !important;
+  }
+
+  /* 8. Notes Toggle Button */
+  .notes-toggle-wrapper {
+    margin-top: 0.28rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .notes-toggle-btn {
+    padding: 0.32rem 0.65rem !important;
+    font-size: 0.78rem !important;
+    min-height: 30px !important;
+  }
+
+  /* 9. Interactive Drawer (Hints/Solution) in landscape */
+  .interactive-drawer {
+    margin-top: 0.3rem !important;
+    padding: 0.55rem 0.75rem !important;
+  }
+
+  .explanation-box {
+    padding: 0.65rem 0.85rem !important;
+    font-size: calc(0.85rem * var(--font-scale, 1)) !important;
+  }
+
+  /* 10. Bottom Ribbon Dock: sleek and compact */
+  .bottom-panel {
+    padding: 0.2rem 0.45rem max(0.35rem, env(safe-area-inset-bottom, 0px)) 0.45rem !important;
   }
 }

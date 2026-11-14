@@ -155,6 +155,7 @@ function initScrollSnapInstant() {
   window.addEventListener('wheel', (e) => {
     if (e.ctrlKey) return; // Ignore pinch-to-zoom gestures on trackpads
     if (state.currentMode !== 'practice') return;
+    if (window.innerHeight <= 550) return; // Allow natural scrolling on short landscape phone screens
     // When in practice mode and hints are not activated, lock scrolling
     if (!state.notesOpen) {
       if (e.cancelable) e.preventDefault();
@@ -4629,8 +4630,9 @@ let suppressRibbonOnScroll = false;
 function updateScrollLock() {
   const isPractice = state.currentMode === 'practice';
   const isHintsOpen = !!state.notesOpen;
+  const isShortScreen = window.innerHeight <= 550;
 
-  if (isPractice && !isHintsOpen) {
+  if (isPractice && !isHintsOpen && !isShortScreen) {
     document.documentElement.classList.add('practice-no-scroll');
     document.body.classList.add('practice-no-scroll');
   } else {
@@ -4639,6 +4641,10 @@ function updateScrollLock() {
   }
 }
 window.updateScrollLock = updateScrollLock;
+window.addEventListener('resize', updateScrollLock);
+window.addEventListener('orientationchange', () => {
+  setTimeout(updateScrollLock, 100);
+});
 
 function showRibbon(duration = 3500) {
   // If hints/solution are open in practice mode, preserve Zen Mode and never show ribbon
@@ -4717,8 +4723,8 @@ function initRibbonAutoHide() {
         if (!state.notesOpen) showRibbon(3500);
       }
     }
-    // Prevent dragging/scrolling page in practice mode when hints are closed
-    if (state.currentMode === 'practice' && !state.notesOpen) {
+    // Prevent dragging/scrolling page in practice mode when hints are closed (Only on tall screens)
+    if (state.currentMode === 'practice' && !state.notesOpen && window.innerHeight > 550) {
       const active = document.activeElement;
       if (!active || (active.tagName !== 'TEXTAREA' && active.tagName !== 'INPUT')) {
         if (e.cancelable) e.preventDefault();
@@ -4732,8 +4738,8 @@ function initRibbonAutoHide() {
     if (!state.notesOpen && (Math.abs(e.deltaY) > 1 || Math.abs(e.deltaX) > 1)) {
       showRibbon(3500);
     }
-    // Prevent page scrolling on desktop in practice mode when hints are closed
-    if (state.currentMode === 'practice' && !state.notesOpen) {
+    // Prevent page scrolling on desktop in practice mode when hints are closed (Only on tall screens)
+    if (state.currentMode === 'practice' && !state.notesOpen && window.innerHeight > 550) {
       if (e.cancelable) e.preventDefault();
     }
   }, { passive: false });
