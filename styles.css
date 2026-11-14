@@ -912,6 +912,29 @@ body[data-mode="all"] .pdf-btn {
 
 }
 
+#btn-mode-toggle {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  color: var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-glow);
+  padding: 0.28rem 0.85rem;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+
+#btn-mode-toggle:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: 0 0 14px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+#btn-mode-toggle:active {
+  transform: scale(0.96);
+}
+
 /* Header Action Buttons */
 
 .header-actions {

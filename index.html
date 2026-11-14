@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=193.0">
+  <link rel="stylesheet" href="styles.css?v=194.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -261,13 +261,11 @@
             <span class="score-tag incorrect" title="Incorrect Answers"><i class="fa-solid fa-xmark"></i> <span id="stat-incorrect">0</span> Wrong</span>
           </div>
 
-          <!-- Center: Review Modes Toggle -->
-          <nav class="mode-nav">
-            <button class="nav-btn active" id="btn-practice-mode" onclick="switchMode('practice')">
-              <i class="fa-solid fa-graduation-cap"></i> Practice
-            </button>
-            <button class="nav-btn" id="btn-all-mode" onclick="switchMode('all')">
-              <i class="fa-solid fa-list-check"></i> All Questions
+          <!-- Center: Review Mode Toggle (Click to Switch between Practice and All Questions) -->
+          <nav class="mode-nav" id="mode-toggle-nav">
+            <button type="button" class="nav-btn active" id="btn-mode-toggle" onclick="toggleMode()" title="Current Mode: Practice (Click to Switch to All Questions)" aria-label="Toggle Practice or All Questions Mode">
+              <i class="fa-solid fa-graduation-cap" id="mode-toggle-icon"></i>
+              <span id="mode-toggle-label">Practice</span>
             </button>
           </nav>
 
@@ -328,7 +326,7 @@
 
 
   <script src="questions.js?v=115.0"></script>
-  <script src="app.js?v=150.0"></script>
+  <script src="app.js?v=151.0"></script>
   <!-- App Confirmation & Alert Modal (TIP Grade Calculator Design) -->
   <div id="app-confirm-modal" class="profile-modal-overlay" style="display: none;">
     <div class="profile-modal-dialog">

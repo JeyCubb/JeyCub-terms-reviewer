@@ -1853,6 +1853,11 @@ function saveData(key, data) {
    Navigation & UI Mode Switcher
    ========================================================================== */
 
+function toggleMode() {
+  const nextMode = state.currentMode === 'all' ? 'practice' : 'all';
+  switchMode(nextMode);
+}
+
 function switchMode(mode) {
   if (mode !== 'practice') {
     stopNarration(true);
@@ -1863,8 +1868,28 @@ function switchMode(mode) {
     updateScrollLock();
   }
 
+  // Update single toggle button if present
+  const toggleBtn = document.getElementById('btn-mode-toggle');
+  const toggleIcon = document.getElementById('mode-toggle-icon');
+  const toggleLabel = document.getElementById('mode-toggle-label');
+
+  if (toggleBtn) {
+    toggleBtn.classList.add('active');
+    if (mode === 'all') {
+      if (toggleIcon) toggleIcon.className = 'fa-solid fa-list-check';
+      if (toggleLabel) toggleLabel.textContent = 'All Questions';
+      toggleBtn.setAttribute('title', 'Current Mode: All Questions (Click to Switch to Practice)');
+      toggleBtn.setAttribute('aria-label', 'Switch to Practice Mode');
+    } else {
+      if (toggleIcon) toggleIcon.className = 'fa-solid fa-graduation-cap';
+      if (toggleLabel) toggleLabel.textContent = 'Practice';
+      toggleBtn.setAttribute('title', 'Current Mode: Practice (Click to Switch to All Questions)');
+      toggleBtn.setAttribute('aria-label', 'Switch to All Questions Mode');
+    }
+  }
+
   document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-  const btn = document.getElementById(`btn-${mode}-mode`);
+  const btn = document.getElementById(`btn-${mode}-mode`) || toggleBtn;
   if (btn) btn.classList.add('active');
 
   document.querySelectorAll('.view-section').forEach(view => view.classList.remove('active'));
