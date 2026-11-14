@@ -3518,7 +3518,10 @@ function hideNotesSection() {
   if (typeof updateScrollLock === 'function') updateScrollLock();
 }
 
-function toggleNotesSection() {
+function toggleNotesSection(e) {
+  if (e && e.stopPropagation) {
+    e.stopPropagation();
+  }
   state.notesOpen = !state.notesOpen;
   const container = document.getElementById('notes-section-container');
   const btn = document.getElementById('toggle-notes-btn');
@@ -3533,11 +3536,15 @@ function toggleNotesSection() {
     subscribeLiveNotesCurrent();
     if (typeof updateScrollLock === 'function') updateScrollLock();
 
-    // Immediately hide ribbon into Zen Mode so it never covers hints or breaks focus
-    ribbonIsInteracting = false;
-    if (typeof hideRibbon === 'function') {
-      hideRibbon();
+    // Immediately and unconditionally hide bottom ribbon into Zen Mode
+    if (ribbonAutoHideTimer) {
+      clearTimeout(ribbonAutoHideTimer);
+      ribbonAutoHideTimer = null;
     }
+    ribbonIsInteracting = false;
+    const panel = document.querySelector('.bottom-panel');
+    if (panel) panel.classList.add('ribbon-hidden');
+    document.body.classList.add('ribbon-hidden');
 
     // Auto roll down smoothly to reveal hint and solution in full view
     requestAnimationFrame(() => {
@@ -4743,6 +4750,10 @@ function initRibbonAutoHide() {
   // 6. Desktop Mouse Hover Zone Detection (hovering tightly at very bottom edge near task bar)
   let wasInBottomZone = false;
   window.addEventListener('mousemove', (e) => {
+    if (state.notesOpen) return;
+    if (e.target && e.target.closest && (e.target.closest('.notes-toggle-wrapper') || e.target.closest('#toggle-notes-btn') || e.target.closest('#notes-section-container'))) {
+      return;
+    }
     const triggerThreshold = 32; // Tight zone: within bottom 32px right near taskbar
     const isAtBottom = e.clientY >= (window.innerHeight - triggerThreshold);
 
@@ -4758,6 +4769,10 @@ function initRibbonAutoHide() {
 
   // 7. Tap near bottom edge: if tapped within bottom 45px when hidden, reveal ribbon
   window.addEventListener('click', (e) => {
+    if (state.notesOpen) return;
+    if (e.target && e.target.closest && (e.target.closest('.notes-toggle-wrapper') || e.target.closest('#toggle-notes-btn') || e.target.closest('#notes-section-container'))) {
+      return;
+    }
     const isNearBottom = e.clientY > (window.innerHeight - 45);
     const isHidden = (panel && panel.classList.contains('ribbon-hidden')) || (headerBar && headerBar.classList.contains('ribbon-hidden'));
     if (isNearBottom && isHidden) {
