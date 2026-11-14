@@ -1396,7 +1396,10 @@ function initKeyboardShortcuts() {
       showPoolResetPrompt('Reset quiz progress & return to zero?');
     } else if (e.key === ' ' || e.key === 'Spacebar' || key === 'space' || code === 'space') {
       e.preventDefault();
-      toggleNotesSection();
+      if (activeEl && typeof activeEl.blur === 'function') {
+        activeEl.blur();
+      }
+      toggleNotesSection(e);
     } else if (e.key === '\\' || key === '\\' || code === 'backslash') {
       e.preventDefault();
       toggleBookmarkCurrent(true); // Pass true to trigger toast notification!
@@ -1427,6 +1430,18 @@ function initKeyboardShortcuts() {
     } else if (e.key === 'PageUp' || code === 'pageup' || e.key === 'Home' || code === 'home') {
       e.preventDefault();
       scrollToTopInstant();
+    }
+  });
+
+  // Prevent desktop Space keyup from triggering synthetic click on focused buttons
+  document.addEventListener('keyup', (e) => {
+    const key = e.key ? e.key.toLowerCase() : '';
+    const code = e.code ? e.code.toLowerCase() : '';
+    if (e.key === ' ' || e.key === 'Spacebar' || key === 'space' || code === 'space') {
+      e.preventDefault();
+      if (document.activeElement && typeof document.activeElement.blur === 'function') {
+        document.activeElement.blur();
+      }
     }
   });
 }
@@ -3543,7 +3558,9 @@ function toggleNotesSection(e) {
     }
     ribbonIsInteracting = false;
     const panel = document.querySelector('.bottom-panel');
+    const headerBar = document.querySelector('.question-header-bar');
     if (panel) panel.classList.add('ribbon-hidden');
+    if (headerBar) headerBar.classList.add('ribbon-hidden');
     document.body.classList.add('ribbon-hidden');
 
     // Auto roll down smoothly to reveal hint and solution in full view
@@ -4696,26 +4713,31 @@ function initRibbonAutoHide() {
   // 3. Ribbon Interaction Listeners: Keep visible while hovering or touching bottom panel
   if (panel) {
     panel.addEventListener('mouseenter', () => {
+      if (state.notesOpen) return;
       ribbonIsInteracting = true;
       showRibbon(0); // keep visible
     });
 
     panel.addEventListener('mouseleave', () => {
+      if (state.notesOpen) return;
       ribbonIsInteracting = false;
       showRibbon(2500);
     });
 
     panel.addEventListener('touchstart', () => {
+      if (state.notesOpen) return;
       ribbonIsInteracting = true;
       showRibbon(0);
     }, { passive: true });
 
     panel.addEventListener('touchend', () => {
+      if (state.notesOpen) return;
       ribbonIsInteracting = false;
       showRibbon(3500);
     }, { passive: true });
 
     panel.addEventListener('click', () => {
+      if (state.notesOpen) return;
       showRibbon(3500);
     });
   }
@@ -4723,26 +4745,31 @@ function initRibbonAutoHide() {
   // 5. Header Bar Interaction Listeners: Keep visible while hovering or touching top header bar
   if (headerBar) {
     headerBar.addEventListener('mouseenter', () => {
+      if (state.notesOpen) return;
       ribbonIsInteracting = true;
       showRibbon(0);
     });
 
     headerBar.addEventListener('mouseleave', () => {
+      if (state.notesOpen) return;
       ribbonIsInteracting = false;
       showRibbon(2500);
     });
 
     headerBar.addEventListener('touchstart', () => {
+      if (state.notesOpen) return;
       ribbonIsInteracting = true;
       showRibbon(0);
     }, { passive: true });
 
     headerBar.addEventListener('touchend', () => {
+      if (state.notesOpen) return;
       ribbonIsInteracting = false;
       showRibbon(3500);
     }, { passive: true });
 
     headerBar.addEventListener('click', () => {
+      if (state.notesOpen) return;
       showRibbon(3500);
     });
   }

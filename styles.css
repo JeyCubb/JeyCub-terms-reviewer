@@ -426,10 +426,12 @@ body[data-mode="practice"].hints-open {
   pointer-events: auto !important;
 }
 
-.bottom-panel.ribbon-hidden {
+.bottom-panel.ribbon-hidden,
+body.hints-open .bottom-panel {
   transform: translateY(calc(100% + 25px)) !important;
   opacity: 0 !important;
   pointer-events: none !important;
+  visibility: hidden !important;
 }
 
 .app-header {
