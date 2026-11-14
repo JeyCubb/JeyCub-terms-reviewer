@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPinchToFontResize();
   initScrollSnapInstant();
   initCrossAppNav();
+  initBrandNavPopup();
   initRibbonAutoHide();
   updateScrollLock();
 
@@ -4613,6 +4614,49 @@ function initCrossAppNav() {
       }
     });
   }
+}
+
+// Pop-Up Brand Navigation Controller
+function initBrandNavPopup() {
+  const trigger = document.getElementById('brand-nav-trigger');
+  const popup = document.getElementById('brand-nav-popup');
+  const revItem = document.getElementById('btn-header-reviewer');
+
+  if (!trigger || !popup) return;
+
+  function togglePopup(open) {
+    const willOpen = open !== undefined ? open : !popup.classList.contains('is-open');
+    popup.classList.toggle('is-open', willOpen);
+    popup.setAttribute('aria-hidden', willOpen ? 'false' : 'true');
+    trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+  }
+
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    togglePopup();
+  });
+
+  if (revItem) {
+    revItem.addEventListener('click', (e) => {
+      e.preventDefault();
+      togglePopup(false);
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (popup.classList.contains('is-open')) {
+      if (!popup.contains(e.target) && !trigger.contains(e.target)) {
+        togglePopup(false);
+      }
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popup.classList.contains('is-open')) {
+      togglePopup(false);
+      trigger.focus();
+    }
+  });
 }
 
 /* ==========================================================================
