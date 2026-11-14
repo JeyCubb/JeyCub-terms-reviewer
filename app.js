@@ -3349,12 +3349,8 @@ function getAmbiguousHint(q, isAnswered) {
   }
 
   return `<div class="ambiguous-hint-content">` +
-    `<div style="line-height: 1.6; color: var(--text-secondary); margin-bottom: 0.75rem;">` +
+    `<div style="line-height: 1.6; color: var(--text-secondary);">` +
     `💡 <strong>Conceptual Guidance:</strong><br>${escapeHTML(text).replace(/\n/g, '<br>')}` +
-    `</div>` +
-    `<div class="hint-spoiler-footer" style="padding-top: 0.5rem; border-top: 1px dashed var(--border-color); font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">` +
-    `<span><i class="fa-solid fa-lock"></i> Direct answer is hidden so you can deduce it.</span>` +
-    `<button type="button" class="btn-reveal-solution" onclick="revealCurrentSolution()"><i class="fa-solid fa-eye"></i> Reveal Full Answer</button>` +
     `</div>` +
     `</div>`;
 }
