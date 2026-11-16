@@ -3979,10 +3979,7 @@ function filterAllQuestions() {
     }
 
     item.innerHTML = `
-      <div class="item-top">
-        <span class="item-num">${q.id}.)</span>
-      </div>
-      <div class="item-q-text">${formatMathTypography(escapeHTML(q.question || ''))}</div>
+      <div class="item-q-text"><span class="item-num">${q.id}.)</span> ${formatMathTypography(escapeHTML(q.question || ''))}</div>
       ${q.image ? `<div class="question-image-container"><img src="${escapeHTML(q.image)}" alt="Quiz Diagram" class="quiz-question-img"></div>` : ''}
       <div class="item-options" style="display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 0.5rem 0.75rem !important;">${optionsHtml}</div>
       <div class="explanation-box" style="margin: 0; padding: 0.85rem;">

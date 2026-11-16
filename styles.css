@@ -2663,23 +2663,17 @@ button.brand-nav-btn.brand-nav-trigger[aria-expanded="true"] {
 }
 
 .item-num {
-
   font-weight: 700;
-
   color: var(--accent-primary);
-
+  margin-right: 0.25rem;
 }
 
 .item-q-text {
-
   font-size: 1.05rem;
-
   font-weight: 600;
-
   margin-bottom: 1rem;
-
   text-align: left;
-
+  line-height: 1.45;
 }
 
 .item-options {
