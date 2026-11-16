@@ -1287,33 +1287,21 @@ button.brand-nav-btn.brand-nav-trigger[aria-expanded="true"] {
 }
 
 .option-letter {
-
   width: 2.15em;
-
   height: 2.15em;
-
   min-width: 2.15em;
-
   min-height: 2.15em;
-
   border-radius: 50%;
-
   background: rgba(255, 255, 255, 0.08);
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   font-weight: 700;
-
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  letter-spacing: 0.02em;
   font-size: 0.82em;
-
   line-height: 1;
-
   flex-shrink: 0;
-
 }
 
 .option-text {
@@ -1534,6 +1522,8 @@ button.brand-nav-btn.brand-nav-trigger[aria-expanded="true"] {
   border-radius: var(--radius-md);
   font-size: 0.95rem;
   font-weight: 700;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  letter-spacing: 0.03em;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1604,6 +1594,13 @@ button.brand-nav-btn.brand-nav-trigger[aria-expanded="true"] {
 .problem-number-badge {
   flex-shrink: 0;
   cursor: pointer;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.badge-problem-info {
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  letter-spacing: 0.03em;
 }
 
 .badge-subject-select-wrapper {
@@ -2178,33 +2175,21 @@ button.brand-nav-btn.brand-nav-trigger[aria-expanded="true"] {
 }
 
 .notes-toggle-btn {
-
   appearance: none;
-
   -webkit-appearance: none;
-
   background: var(--bg-card);
-
   border: 1px solid var(--border-color);
-
   color: var(--accent-primary);
-
   padding: clamp(0.55rem, 1vh, 0.75rem) 1.5rem;
-
   border-radius: var(--radius-full);
-
   font-size: 0.95rem;
-
   font-weight: 700;
-
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  letter-spacing: 0.03em;
   cursor: pointer;
-
   display: inline-flex;
-
   align-items: center;
-
   gap: 0.6rem;
-
   box-shadow: var(--shadow-sm);
 
   transition: var(--transition);
@@ -2593,7 +2578,8 @@ button.brand-nav-btn.brand-nav-trigger[aria-expanded="true"] {
   color: var(--accent-primary);
   font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.01em;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  letter-spacing: 0.03em;
 }
 
 [data-theme="light"] .filter-controls-card {
@@ -2662,14 +2648,25 @@ button.brand-nav-btn.brand-nav-trigger[aria-expanded="true"] {
   margin-bottom: 0.75rem;
 }
 
-.item-num {
+.item-num,
+.q-id-num {
+  font-family: 'Orbitron', 'Inter', sans-serif;
   font-weight: 700;
   color: #ffffff;
-  margin-right: 0.25rem;
+  margin-right: 0.35rem;
+  letter-spacing: 0.03em;
 }
 
-[data-theme="light"] .item-num {
+[data-theme="light"] .item-num,
+[data-theme="light"] .q-id-num {
   color: var(--text-primary);
+}
+
+.item-opt-letter {
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  font-weight: 700;
+  margin-right: 0.3rem;
+  letter-spacing: 0.02em;
 }
 
 .item-q-text {
@@ -5007,19 +5004,13 @@ sup {
 }
 
 /* ==========================================================================
-   KaTeX Mathematical Typography
+   KaTeX & Mathematical Typography (Cambria Math)
    ========================================================================== */
 .katex {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
-  font-style: normal !important;
-  font-size: 1.06em !important;
+  font-family: "Cambria Math", Cambria, "STIX Two Math", "KaTeX_Math", "KaTeX_Main", serif !important;
+  font-size: 1.08em !important;
   text-rendering: auto;
   letter-spacing: normal;
-}
-
-.katex,
-.katex * {
-  font-style: normal !important;
 }
 
 .katex .mathrm,
@@ -5028,8 +5019,19 @@ sup {
 .katex .mord:not(.delimsizingclass),
 .katex .mbin,
 .katex .mrel {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif, "KaTeX_Main", "KaTeX_Math" !important;
+  font-family: "Cambria Math", Cambria, "STIX Two Math", "KaTeX_Math", "KaTeX_Main", serif !important;
+}
+
+.katex .mathrm,
+.katex .text {
   font-style: normal !important;
+}
+
+.formula-math-display,
+.formula-latex,
+.ref-formula-math,
+.katex-fallback {
+  font-family: "Cambria Math", Cambria, "STIX Two Math", "KaTeX_Math", "KaTeX_Main", serif !important;
 }
 
 .katex-display {
@@ -5190,6 +5192,8 @@ sup {
 .profile-modal-title {
   font-size: 1.05rem;
   font-weight: 800;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  letter-spacing: 0.03em;
   color: var(--text-primary, #ffffff);
   line-height: 1.2;
   margin: 0;
@@ -5289,6 +5293,9 @@ input[type="number"],
 #jump-modal-input {
   -moz-appearance: textfield !important;
   appearance: textfield !important;
+  font-family: 'Orbitron', 'Inter', monospace !important;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 /* Custom Noticeable Checkbox Card for Reset Modal */
@@ -5575,8 +5582,9 @@ input[type="number"],
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 700;
+  font-family: 'Orbitron', 'Inter', sans-serif;
   box-shadow: var(--shadow-sm);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   white-space: nowrap;
 }
 
