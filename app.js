@@ -1174,6 +1174,7 @@ function showCustomConfirm({
     if (confirmBtn) {
       confirmBtn.textContent = confirmText;
       confirmBtn.className = `btn-modal ${confirmClass}`;
+      confirmBtn.style.display = 'inline-flex';
     }
 
     if (cancelBtn) {
@@ -1288,19 +1289,13 @@ async function resetAllSubjectAnswers() {
         <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: ${accuracy >= 75 ? 'var(--color-success)' : 'var(--text-secondary)'};">${accuracy}% (${correctCount} correct, ${wrongCount} wrong)</span>
       </div>
     </div>
-    <p style="margin: 0.15rem 0 0 0; font-size: 0.825rem; color: var(--text-secondary); line-height: 1.45;">
-      Are you sure you want to reset all your answered practice questions for <strong style="color: var(--text-primary);">${escapeHTML(info.title)}</strong>? You will be returned to Question 1.
-    </p>
     <div class="reset-weak-card" id="modal-reset-weak-card" onclick="toggleResetWeakCheckbox(event)" role="checkbox" aria-checked="false" tabindex="0" onkeydown="if(event.key===' '||event.key==='Enter'){event.preventDefault(); toggleResetWeakCheckbox(event);}">
       <div class="custom-checkbox-indicator" id="modal-weak-checkbox-indicator">
         <i class="fa-solid fa-check"></i>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 0.15rem; min-width: 0;">
+      <div style="display: flex; align-items: center; min-width: 0;">
         <span style="font-size: 0.85rem; font-weight: 700; color: #f87171; display: flex; align-items: center; gap: 0.35rem;">
           <i class="fa-solid fa-trash-can" style="font-size: 0.8rem;"></i> Also delete Weak Questions memory
-        </span>
-        <span style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.35;">
-          Erases logged mistakes so they won't appear in ⚠️ Weak Questions
         </span>
       </div>
       <input type="checkbox" id="modal-reset-weak-cb" style="display: none;" />
@@ -1309,7 +1304,7 @@ async function resetAllSubjectAnswers() {
 
   const confirmed = await showCustomConfirm({
     title: 'Reset Practice Answers?',
-    subtitle: `${info.title} (${questions.length} questions)`,
+    subtitle: '',
     iconBg: 'rgba(239, 68, 68, 0.15)',
     iconColor: 'var(--color-error)',
     iconSvg: `
