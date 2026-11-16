@@ -662,12 +662,41 @@ function promptJumpToQuestion() {
   }
 
   let isDone = false;
+  function updateModalPositionForViewport() {
+    if (!modal || modal.style.display !== 'flex') return;
+    const dialog = modal.querySelector('.profile-modal-dialog');
+    if (!dialog) return;
+
+    if (window.visualViewport) {
+      const vv = window.visualViewport;
+      const availableHeight = vv.height;
+      const dialogHeight = dialog.offsetHeight || 210;
+
+      // When software keyboard takes up significant screen height (typical on mobile/tablet)
+      if (availableHeight < window.innerHeight * 0.85) {
+        modal.style.alignItems = 'flex-start';
+        const idealTop = Math.max(10, Math.floor((availableHeight - dialogHeight) / 2) + Math.round(vv.offsetTop));
+        modal.style.paddingTop = `${idealTop}px`;
+      } else {
+        modal.style.alignItems = '';
+        modal.style.paddingTop = '';
+      }
+    }
+  }
+
   function finish() {
     if (isDone) return;
     isDone = true;
     modal.classList.remove('open');
+    modal.classList.remove('has-input');
+    if (window.visualViewport) {
+      window.visualViewport.removeEventListener('resize', updateModalPositionForViewport);
+      window.visualViewport.removeEventListener('scroll', updateModalPositionForViewport);
+    }
     setTimeout(() => {
       modal.style.display = 'none';
+      modal.style.alignItems = '';
+      modal.style.paddingTop = '';
       if (typeof showRibbon === 'function') {
         showRibbon(3500);
       }
@@ -719,6 +748,10 @@ function promptJumpToQuestion() {
     if (closeBtn) closeBtn.removeEventListener('click', finish);
     if (modal) modal.removeEventListener('click', onOverlayClick);
     document.removeEventListener('keydown', onKeyDown);
+    if (window.visualViewport) {
+      window.visualViewport.removeEventListener('resize', updateModalPositionForViewport);
+      window.visualViewport.removeEventListener('scroll', updateModalPositionForViewport);
+    }
   }
 
   if (confirmBtn) confirmBtn.addEventListener('click', submitJump);
@@ -727,8 +760,15 @@ function promptJumpToQuestion() {
   if (modal) modal.addEventListener('click', onOverlayClick);
   document.addEventListener('keydown', onKeyDown);
 
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', updateModalPositionForViewport);
+    window.visualViewport.addEventListener('scroll', updateModalPositionForViewport);
+  }
+
+  modal.classList.add('has-input');
   modal.style.display = 'flex';
   modal.classList.add('open');
+  updateModalPositionForViewport();
 
   const input = document.getElementById('jump-modal-input');
   if (input) {
@@ -743,6 +783,7 @@ function promptJumpToQuestion() {
 
   // 2. Secondary focus on animation frame to reinforce focus after layout
   requestAnimationFrame(() => {
+    updateModalPositionForViewport();
     if (input) {
       input.focus({ preventScroll: true });
       try {
@@ -755,6 +796,7 @@ function promptJumpToQuestion() {
 
   // 3. Fallback for mobile WebKit timing
   setTimeout(() => {
+    updateModalPositionForViewport();
     if (input && document.activeElement !== input) {
       input.focus({ preventScroll: true });
       try {
