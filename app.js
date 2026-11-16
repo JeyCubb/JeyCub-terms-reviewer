@@ -3959,10 +3959,7 @@ function filterAllQuestions() {
     item.innerHTML = `
       <div class="item-top">
         <span class="item-num">${q.id}.)</span>
-        <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-          ${mistakeCount > 0 ? `<span style="color: var(--color-error); font-size: 0.8rem; font-weight: 700; background: var(--color-error-bg); padding: 2px 8px; border-radius: var(--radius-sm);"><i class="fa-solid fa-triangle-exclamation"></i> ${mistakeCount} class ${mistakeCount === 1 ? 'mistake' : 'mistakes'}</span>` : ''}
-          
-        </div>
+        ${mistakeCount > 0 ? `<span style="color: var(--color-error); font-size: 0.8rem; font-weight: 700; background: var(--color-error-bg); padding: 2px 8px; border-radius: var(--radius-sm);"><i class="fa-solid fa-triangle-exclamation"></i> ${mistakeCount} class ${mistakeCount === 1 ? 'mistake' : 'mistakes'}</span>` : ''}
       </div>
       <div class="item-q-text">${formatMathTypography(escapeHTML(q.question || ''))}</div>
       ${q.image ? `<div class="question-image-container"><img src="${escapeHTML(q.image)}" alt="Quiz Diagram" class="quiz-question-img"></div>` : ''}
