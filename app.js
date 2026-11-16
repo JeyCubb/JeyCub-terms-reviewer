@@ -370,13 +370,18 @@ function initPinchToFontResize() {
     }
   }, { passive: false });
 
-  // 5. Double-tap Zoom Prevention
+  // 5. Double-tap Zoom Prevention on non-interactive areas
   let lastTouchEnd = 0;
   document.addEventListener('touchend', (e) => {
     const now = Date.now();
+    const target = e.target;
+    // Never cancel taps on buttons, links, controls, or interactive elements (allows rapid spam tapping)
+    if (target && target.closest('button, a, input, textarea, select, [onclick], [role="button"], .quiz-nav-btn, .option-btn, .notes-toggle-btn')) {
+      lastTouchEnd = now;
+      return;
+    }
     if (now - lastTouchEnd <= 300) {
-      const target = e.target;
-      if (target && target.tagName !== 'INPUT' && target.tagName !== 'TEXTAREA' && !target.closest('.font-scale-toast')) {
+      if (target && !target.closest('.font-scale-toast')) {
         e.preventDefault();
       }
     }
@@ -3485,8 +3490,8 @@ function selectPracticeAnswer(key, optionIdx) {
   }
 
   if (isAlreadyAnswered) {
-    // Guard against accidental ultra-fast double clicks (< 180ms)
-    if (Date.now() - lastAnswerSelectTime < 180) {
+    // Ultra-low 50ms guard against ghost touches while allowing fast spamming
+    if (Date.now() - lastAnswerSelectTime < 50) {
       return;
     }
     nextQuestion();
@@ -3556,7 +3561,9 @@ function resetCurrentQuestionState() {
 function nextQuestion() {
   const questions = getFilteredPracticeQuestions();
   if (!questions || questions.length === 0) return;
-  hideNotesSection();
+  if (state.notesOpen) {
+    hideNotesSection();
+  }
 
   if (state.randomMode) {
     if (!state.randomSequence || state.randomSequence.length !== questions.length) {
@@ -3588,7 +3595,9 @@ function prevQuestion() {
   dismissPoolResetPrompt();
   const questions = getFilteredPracticeQuestions();
   if (!questions || questions.length === 0) return;
-  hideNotesSection();
+  if (state.notesOpen) {
+    hideNotesSection();
+  }
 
   if (state.randomMode) {
     if (!state.randomSequence || state.randomSequence.length !== questions.length) {
