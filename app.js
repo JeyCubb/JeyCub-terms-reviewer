@@ -1907,11 +1907,12 @@ function loadStoredData() {
       if (parsed && typeof parsed === 'object') state.formulaState.mastered = parsed;
     }
 
+    const isExplicit = localStorage.getItem('fm_theme_explicit') === 'true';
     const savedTheme = localStorage.getItem('fm_theme');
-    if (savedTheme) {
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      updateThemeIcon(savedTheme);
-    }
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const activeTheme = (isExplicit && savedTheme) ? savedTheme : (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', activeTheme);
+    updateThemeIcon(activeTheme);
   } catch (e) {
     console.error('Error loading stored data', e);
   }
@@ -2972,10 +2973,14 @@ function filterFormulasList() {
 }
 
 function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const currentTheme = document.documentElement.getAttribute('data-theme') || (prefersDark ? 'dark' : 'light');
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('fm_theme', newTheme);
+  try {
+    localStorage.setItem('fm_theme', newTheme);
+    localStorage.setItem('fm_theme_explicit', 'true');
+  } catch (e) {}
   updateThemeIcon(newTheme);
 }
 
@@ -2986,6 +2991,23 @@ function updateThemeIcon(theme) {
     icon.className = 'fa-solid fa-sun';
   } else {
     icon.className = 'fa-solid fa-moon';
+  }
+}
+
+// Real-time listener: automatically adjust if system dark/light mode toggles (unless user explicitly locked it)
+if (window.matchMedia) {
+  const colorSchemeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+  const handleSystemThemeChange = (e) => {
+    if (localStorage.getItem('fm_theme_explicit') !== 'true') {
+      const detected = e.matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', detected);
+      updateThemeIcon(detected);
+    }
+  };
+  if (colorSchemeMedia.addEventListener) {
+    colorSchemeMedia.addEventListener('change', handleSystemThemeChange);
+  } else if (colorSchemeMedia.addListener) {
+    colorSchemeMedia.addListener(handleSystemThemeChange);
   }
 }
 
