@@ -634,11 +634,13 @@ function promptJumpToQuestion() {
           <label for="jump-modal-input" style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.4rem;">
             Problem Number (1 – ${totalNum}):
           </label>
-          <input type="number" id="jump-modal-input" min="1" max="${totalNum}" value="${currentNum}" inputmode="numeric"
-            style="width: 100%; box-sizing: border-box; background: var(--bg-input); border: 2px solid var(--border-color); border-radius: var(--radius-md); padding: 0.65rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 800; color: var(--accent-primary); text-align: center; outline: none; transition: all 0.2s ease;"
-            onfocus="this.style.borderColor='var(--accent-primary)'; this.style.boxShadow='0 0 14px var(--accent-glow)';"
-            onblur="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none';"
-            onwheel="event.preventDefault();"
+          <input type="text" id="jump-modal-input" min="1" max="${totalNum}" value="${currentNum}" inputmode="numeric" pattern="[0-9]*"
+            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus
+            style="width: 100%; box-sizing: border-box; background: var(--bg-input); border: 2px solid var(--border-color); border-radius: var(--radius-md); padding: 0.65rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 800; color: var(--accent-primary); text-align: center; outline: none; transition: border-color 0.2s ease;"
+            onfocus="this.style.borderColor='var(--accent-primary)';"
+            onblur="this.style.borderColor='var(--border-color)';"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+            onclick="this.focus(); try{ this.setSelectionRange(0, this.value.length); }catch(e){ this.select(); }"
           />
           <div id="jump-modal-error" style="display: none; color: var(--color-error); font-size: 0.75rem; font-weight: 700; margin-top: 0.35rem; text-align: center;">
             Please enter a number between 1 and ${totalNum}
@@ -682,9 +684,13 @@ function promptJumpToQuestion() {
       if (errEl) {
         errEl.style.display = 'block';
         input.style.borderColor = 'var(--color-error)';
-        input.style.boxShadow = '0 0 12px rgba(239, 68, 68, 0.4)';
       }
       input.focus();
+      try {
+        input.setSelectionRange(0, input.value.length);
+      } catch (e) {
+        try { input.select(); } catch (err) {}
+      }
       return;
     }
     finish();
@@ -722,14 +728,42 @@ function promptJumpToQuestion() {
   document.addEventListener('keydown', onKeyDown);
 
   modal.style.display = 'flex';
+  modal.classList.add('open');
+
+  const input = document.getElementById('jump-modal-input');
+  if (input) {
+    // 1. Synchronous focus directly inside user gesture to force the iOS/Android numpad to open
+    input.focus({ preventScroll: true });
+    try {
+      input.setSelectionRange(0, input.value.length);
+    } catch (e) {
+      try { input.select(); } catch (err) {}
+    }
+  }
+
+  // 2. Secondary focus on animation frame to reinforce focus after layout
   requestAnimationFrame(() => {
-    modal.classList.add('open');
-    const input = document.getElementById('jump-modal-input');
     if (input) {
-      input.focus();
-      input.select();
+      input.focus({ preventScroll: true });
+      try {
+        input.setSelectionRange(0, input.value.length);
+      } catch (e) {
+        try { input.select(); } catch (err) {}
+      }
     }
   });
+
+  // 3. Fallback for mobile WebKit timing
+  setTimeout(() => {
+    if (input && document.activeElement !== input) {
+      input.focus({ preventScroll: true });
+      try {
+        input.setSelectionRange(0, input.value.length);
+      } catch (e) {
+        try { input.select(); } catch (err) {}
+      }
+    }
+  }, 60);
 }
 
 function executeJumpFromInput() {
