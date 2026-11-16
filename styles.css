@@ -2019,19 +2019,20 @@ button.brand-nav-btn.brand-nav-trigger[aria-expanded="true"] {
 
 .explanation-box {
   font-size: calc(0.92rem * var(--font-scale, 1));
-
   background: rgba(249, 115, 22, 0.05);
-
   border: 1px dashed rgba(249, 115, 22, 0.3);
-
   border-radius: var(--radius-md);
-
   padding: 1.1rem 1.25rem;
-
-  margin-bottom: 1.5rem;
-
+  margin-bottom: 0;
   animation: fadeIn 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+  transition: var(--transition);
+}
 
+.explanation-box:hover {
+  background: rgba(249, 115, 22, 0.08);
+  border-color: rgba(249, 115, 22, 0.45);
 }
 
 /* Top Row Inside Hint & Concept Box */
@@ -2251,25 +2252,17 @@ button.brand-nav-btn.brand-nav-trigger[aria-expanded="true"] {
 /* Interactive Per-Question Notes Section (Attaches right below toggle button) */
 
 .interactive-drawer {
-
   background: var(--bg-card);
-
   border: 1px solid var(--border-color);
-
   border-radius: var(--radius-lg);
-
-  padding: 2rem;
-
+  padding: 1rem 1.25rem;
   box-shadow: var(--shadow-md);
-
   margin-top: 0.5rem;
-
   margin-bottom: 5rem;
-
   scroll-margin-top: 1rem;
-
   animation: fadeIn 0.3s ease;
-
+  cursor: pointer;
+  user-select: none;
 }
 
 .interactive-drawer.hidden {

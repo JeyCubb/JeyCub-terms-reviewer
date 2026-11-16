@@ -3413,6 +3413,7 @@ function getAmbiguousHint(q, isAnswered) {
   text = text.replace(/•?\s*Official\s+Exam\s+(?:Valid\s+)?(?:Answer|Key)\s*:[^\n]+(?:\n|$)/gi, '');
   text = text.replace(/\bOption\s+[A-D]\b/gi, 'this choice');
   text = text.replace(/\b[A-D]\.\s*/g, '');
+  text = text.replace(/^•\s*/, '');
 
   // 3. Detect if the remaining text is too short or just a tautological repeat of the correct option
   const cleanedLower = text.replace(/[.,\s]/g, '').toLowerCase();
@@ -3447,7 +3448,7 @@ function getAmbiguousHint(q, isAnswered) {
 
   return `<div class="ambiguous-hint-content">` +
     `<div style="line-height: 1.6; color: var(--text-secondary);">` +
-    `💡 <strong>Conceptual Guidance:</strong><br>${escapeHTML(text).replace(/\n/g, '<br>')}` +
+    `${escapeHTML(text).replace(/\n/g, '<br>')}` +
     `</div>` +
     `</div>`;
 }
@@ -3625,6 +3626,11 @@ function hideNotesSection(e) {
   }
   if (document.activeElement && typeof document.activeElement.blur === 'function') {
     document.activeElement.blur();
+  }
+
+  // Prevent accidental dismissal if text was deliberately selected
+  if (window.getSelection && window.getSelection().toString().trim().length > 0) {
+    return;
   }
 
   state.notesOpen = false;

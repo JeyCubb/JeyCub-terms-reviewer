@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=202.0">
+  <link rel="stylesheet" href="styles.css?v=203.0">
 
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -121,21 +121,17 @@
       </div>
 
       <!-- Collapsible Per-Question Notes & Solution Section -->
-      <!-- Interactive Notes & Hints Drawer -->
-      <div id="notes-section-container" class="interactive-drawer hidden">
+      <!-- Interactive Notes & Hints Drawer (Click anywhere hides it) -->
+      <div id="notes-section-container" class="interactive-drawer hidden" onclick="hideNotesSection(event)" title="Click anywhere to hide">
         <!-- Concept Hint Box -->
         <div class="explanation-box" id="q-explanation-box">
-          <div class="explanation-box-top-row">
-            <div class="explanation-header" id="q-explanation-header"><i class="fa-solid fa-lightbulb"></i> Hint & Concept:</div>
-            <button class="hide-hints-top-btn" onclick="hideNotesSection(event)" title="Hide Hints (Press Space)">
-              <i class="fa-solid fa-xmark"></i> Hide Hints
-            </button>
-          </div>
           <div class="explanation-text" id="q-explanation-text"></div>
         </div>
 
         <!-- Hidden dummy elements to maintain JS compatibility -->
         <div style="display: none;" aria-hidden="true">
+          <div id="q-explanation-header"></div>
+          <button class="hide-hints-top-btn" onclick="hideNotesSection(event)"></button>
           <span id="notes-q-num"></span>
           <div id="live-notes-container"></div>
         </div>
@@ -325,7 +321,7 @@
 
 
   <script src="questions.js?v=115.0"></script>
-  <script src="app.js?v=162.0"></script>
+  <script src="app.js?v=163.0"></script>
   <!-- App Confirmation & Alert Modal (TIP Grade Calculator Design) -->
   <div id="app-confirm-modal" class="profile-modal-overlay" style="display: none;">
     <div class="profile-modal-dialog">
