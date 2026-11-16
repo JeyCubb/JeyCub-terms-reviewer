@@ -4059,6 +4059,11 @@ function formatMathTypography(str) {
   s = s.replace(/^([0-9]+|[a-zA-Z])\/([0-9]+|[a-zA-Z])$/, '$\\frac{$1}{$2}$');
   s = s.replace(/^([0-9]+)\/([0-9]+)\s+([A-Za-zΩ]+)$/, '$\\frac{$1}{$2}\\text{ $3}$');
 
+  // Auto-convert common raw ASCII/Unicode physics and engineering formulas into KaTeX:
+  s = s.replace(/\(\s*α\s*=\s*k\s*\/\s*\(\s*ρ\s*c_?p\s*\)\s*\)/gi, '$\\left(\\alpha = \\frac{k}{\\rho c_p}\\right)$');
+  s = s.replace(/α\s*=\s*k\s*\/\s*\(\s*ρ\s*c_?p\s*\)/gi, '$\\alpha = \\frac{k}{\\rho c_p}$');
+  s = s.replace(/\(\s*Pr\s*=\s*ν\s*\/\s*α\s*=\s*μ\s*c_?p\s*\/\s*k\s*\)/gi, '$\\left(\\text{Pr} = \\frac{\\nu}{\\alpha} = \\frac{\\mu c_p}{k}\\right)$');
+
   // Helper to safely render KaTeX
   function renderKaTeX(tex, isDisplay) {
     if (typeof katex !== 'undefined' && typeof katex.renderToString === 'function') {
