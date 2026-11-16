@@ -4706,7 +4706,7 @@ function initCrossAppNav() {
     schedBtn.addEventListener('click', (e) => {
       if (!e.ctrlKey && !e.metaKey && e.button !== 1) {
         e.preventDefault();
-        window.location.href = 'https://jeycubb.github.io/scheduler/';
+        window.location.href = 'https://jeycubb.github.io/scheduler/?switch=1';
       }
     });
   }
