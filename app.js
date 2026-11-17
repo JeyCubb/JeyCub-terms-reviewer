@@ -229,6 +229,10 @@ function setFontScale(scale, showToast = true) {
         toast.classList.remove('show');
       }, 1800);
     }
+    // When zooming, execute zen mode immediately
+    if (typeof executeZenMode === 'function') {
+      executeZenMode();
+    }
   }
 }
 
@@ -292,17 +296,20 @@ function initPinchToFontResize() {
   document.addEventListener('gesturestart', (e) => {
     e.preventDefault();
     gestureBaseScale = currentFontScale;
+    if (typeof executeZenMode === 'function') executeZenMode();
   }, { passive: false });
 
   document.addEventListener('gesturechange', (e) => {
     e.preventDefault();
     if (!e.scale) return;
+    if (typeof executeZenMode === 'function') executeZenMode();
     const newScale = Math.min(2.5, Math.max(0.75, gestureBaseScale * e.scale));
     setFontScale(newScale, true);
   }, { passive: false });
 
   document.addEventListener('gestureend', (e) => {
     e.preventDefault();
+    if (typeof executeZenMode === 'function') executeZenMode();
     saveFontScale();
   }, { passive: false });
 
@@ -312,6 +319,7 @@ function initPinchToFontResize() {
 
   document.addEventListener('touchstart', (e) => {
     if (e.touches && e.touches.length === 2) {
+      if (typeof executeZenMode === 'function') executeZenMode();
       initialTouchDistance = Math.hypot(
         e.touches[0].clientX - e.touches[1].clientX,
         e.touches[0].clientY - e.touches[1].clientY
@@ -322,6 +330,7 @@ function initPinchToFontResize() {
 
   document.addEventListener('touchmove', (e) => {
     if (e.touches && e.touches.length === 2) {
+      if (typeof executeZenMode === 'function') executeZenMode();
       const currentDist = Math.hypot(
         e.touches[0].clientX - e.touches[1].clientX,
         e.touches[0].clientY - e.touches[1].clientY
@@ -343,6 +352,7 @@ function initPinchToFontResize() {
   document.addEventListener('touchend', (e) => {
     if (initialTouchDistance > 0 && (!e.touches || e.touches.length < 2)) {
       initialTouchDistance = 0;
+      if (typeof executeZenMode === 'function') executeZenMode();
       saveFontScale();
     }
   }, { passive: true });
@@ -354,6 +364,7 @@ function initPinchToFontResize() {
   window.addEventListener('wheel', (e) => {
     if (e.ctrlKey) {
       e.preventDefault();
+      if (typeof executeZenMode === 'function') executeZenMode();
       trackpadAccumulator += e.deltaY;
 
       if (trackpadResetTimer) clearTimeout(trackpadResetTimer);
@@ -3678,16 +3689,9 @@ function hideNotesSection(e) {
   }
 
   // Preserve Zen Mode: ensure ribbon and top bar stay strictly hidden
-  if (ribbonAutoHideTimer) {
-    clearTimeout(ribbonAutoHideTimer);
-    ribbonAutoHideTimer = null;
+  if (typeof executeZenMode === 'function') {
+    executeZenMode();
   }
-  ribbonIsInteracting = false;
-  const panel = document.querySelector('.bottom-panel');
-  const headerBar = document.querySelector('.question-header-bar');
-  if (panel) panel.classList.add('ribbon-hidden');
-  if (headerBar) headerBar.classList.add('ribbon-hidden');
-  document.body.classList.add('ribbon-hidden');
 
   // Suppress scroll-triggered ribbon reveal while returning to top
   suppressRibbonOnScroll = true;
@@ -3718,16 +3722,9 @@ function toggleNotesSection(e) {
     if (typeof updateScrollLock === 'function') updateScrollLock();
 
     // Immediately and unconditionally hide bottom ribbon into Zen Mode
-    if (ribbonAutoHideTimer) {
-      clearTimeout(ribbonAutoHideTimer);
-      ribbonAutoHideTimer = null;
+    if (typeof executeZenMode === 'function') {
+      executeZenMode();
     }
-    ribbonIsInteracting = false;
-    const panel = document.querySelector('.bottom-panel');
-    const headerBar = document.querySelector('.question-header-bar');
-    if (panel) panel.classList.add('ribbon-hidden');
-    if (headerBar) headerBar.classList.add('ribbon-hidden');
-    document.body.classList.add('ribbon-hidden');
 
     // Auto roll down smoothly to reveal hint and solution in full view
     requestAnimationFrame(() => {
@@ -4819,9 +4816,34 @@ window.addEventListener('orientationchange', () => {
   setTimeout(updateScrollLock, 100);
 });
 
+function executeZenMode() {
+  if (ribbonAutoHideTimer) {
+    clearTimeout(ribbonAutoHideTimer);
+    ribbonAutoHideTimer = null;
+  }
+  ribbonIsInteracting = false;
+  suppressRibbonOnScroll = true;
+  if (window._suppressRibbonTimer) clearTimeout(window._suppressRibbonTimer);
+  window._suppressRibbonTimer = setTimeout(() => {
+    suppressRibbonOnScroll = false;
+  }, 1200);
+
+  const panel = document.querySelector('.bottom-panel');
+  const headerBar = document.querySelector('.question-header-bar');
+  if (panel) panel.classList.add('ribbon-hidden');
+  if (headerBar) headerBar.classList.add('ribbon-hidden');
+  document.body.classList.add('ribbon-hidden');
+  if (typeof updateScrollLock === 'function') updateScrollLock();
+}
+window.executeZenMode = executeZenMode;
+
 function showRibbon(duration = 3500) {
   // If hints/solution are open in practice mode, preserve Zen Mode and never show ribbon
   if (state.currentMode === 'practice' && state.notesOpen) {
+    return;
+  }
+  // While suppressing ribbon on scroll or during/after zooming, preserve Zen Mode
+  if (suppressRibbonOnScroll) {
     return;
   }
 
@@ -4881,11 +4903,18 @@ function initRibbonAutoHide() {
     if (e.touches && e.touches.length === 1) {
       ribbonTouchStartY = e.touches[0].clientY;
       ribbonTouchStartX = e.touches[0].clientX;
+    } else if (e.touches && e.touches.length > 1) {
+      if (typeof executeZenMode === 'function') executeZenMode();
     }
   }, { passive: true });
 
   window.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches.length > 1) {
+      if (typeof executeZenMode === 'function') executeZenMode();
+      return;
+    }
     if (e.touches && e.touches.length === 1) {
+      if (suppressRibbonOnScroll) return;
       const currentY = e.touches[0].clientY;
       const currentX = e.touches[0].clientX;
       const deltaY = currentY - ribbonTouchStartY;
@@ -4991,7 +5020,7 @@ function initRibbonAutoHide() {
   let wasInBottomZone = false;
   window.addEventListener('mousemove', (e) => {
     if (state.notesOpen || suppressRibbonOnScroll) return;
-    if (e.target && e.target.closest && (e.target.closest('.notes-toggle-wrapper') || e.target.closest('#toggle-notes-btn') || e.target.closest('#notes-section-container') || e.target.closest('.hide-hints-top-btn'))) {
+    if (e.target && e.target.closest && (e.target.closest('.notes-toggle-wrapper') || e.target.closest('#toggle-notes-btn') || e.target.closest('#notes-section-container') || e.target.closest('.hide-hints-top-btn') || e.target.closest('.font-scale-toast') || e.target.closest('#font-scale-toast'))) {
       return;
     }
     const triggerThreshold = 32; // Tight zone: within bottom 32px right near taskbar
@@ -5010,7 +5039,7 @@ function initRibbonAutoHide() {
   // 7. Tap near bottom edge: if tapped within bottom 45px when hidden, reveal ribbon
   window.addEventListener('click', (e) => {
     if (state.notesOpen || suppressRibbonOnScroll) return;
-    if (e.target && e.target.closest && (e.target.closest('.notes-toggle-wrapper') || e.target.closest('#toggle-notes-btn') || e.target.closest('#notes-section-container') || e.target.closest('.hide-hints-top-btn'))) {
+    if (e.target && e.target.closest && (e.target.closest('.notes-toggle-wrapper') || e.target.closest('#toggle-notes-btn') || e.target.closest('#notes-section-container') || e.target.closest('.hide-hints-top-btn') || e.target.closest('.font-scale-toast') || e.target.closest('#font-scale-toast'))) {
       return;
     }
     const isNearBottom = e.clientY > (window.innerHeight - 45);
