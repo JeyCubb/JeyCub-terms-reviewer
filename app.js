@@ -3300,7 +3300,7 @@ function renderCurrentPracticeQuestion() {
 
 
   // Question Text
-  if (qText) qText.innerHTML = `<span class="q-id-num">${q.id}.)</span> ` + formatMathTypography(escapeHTML(q.question || ''));
+  if (qText) qText.innerHTML = formatMathTypography(escapeHTML(`${q.id}.) ${q.question || ''}`));
 
   // Question Image (Diagram)
   const imgContainer = document.getElementById('q-image-container');
@@ -3974,7 +3974,7 @@ function filterAllQuestions() {
     if (q.options && Array.isArray(q.options)) {
       q.options.forEach((opt, idx) => {
         const isCorrectOpt = idx === q.answer;
-        optionsHtml += `<div class="item-opt ${isCorrectOpt ? 'correct-opt' : ''}"><span class="item-opt-letter">${String.fromCharCode(65 + idx)}.</span> ${formatMathTypography(escapeHTML(cleanOptionText(opt)))}</div>`;
+        optionsHtml += `<div class="item-opt ${isCorrectOpt ? 'correct-opt' : ''}">${String.fromCharCode(65 + idx)}. ${formatMathTypography(escapeHTML(cleanOptionText(opt)))}</div>`;
       });
     }
 
