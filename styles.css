@@ -2552,8 +2552,9 @@ button.brand-nav-btn.brand-nav-trigger[aria-expanded="true"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.75rem;
+  width: 100%;
 }
 
 #filter-status-select {
@@ -2567,6 +2568,8 @@ button.brand-nav-btn.brand-nav-trigger[aria-expanded="true"] {
   cursor: pointer;
   outline: none;
   transition: all 0.2s ease;
+  min-width: 0;
+  white-space: nowrap;
 }
 
 #filter-status-select:hover,
@@ -2586,6 +2589,7 @@ button.brand-nav-btn.brand-nav-trigger[aria-expanded="true"] {
 .search-count-label {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding: 0.38rem 0.95rem;
   border-radius: var(--radius-full);
   background: rgba(249, 115, 22, 0.1);
@@ -2594,6 +2598,62 @@ button.brand-nav-btn.brand-nav-trigger[aria-expanded="true"] {
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.01em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .filter-controls-card {
+    padding: 0.85rem 0.9rem !important;
+    gap: 0.65rem !important;
+  }
+
+  .filters-row {
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    gap: 0.45rem !important;
+    width: 100% !important;
+  }
+
+  #filter-status-select {
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.78rem !important;
+    min-width: 0 !important;
+    max-width: 50% !important;
+    flex: 1 1 auto !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .search-count-label {
+    padding: 0.32rem 0.55rem !important;
+    font-size: 0.75rem !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .filter-controls-card {
+    padding: 0.75rem 0.7rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .filters-row {
+    gap: 0.3rem !important;
+  }
+
+  #filter-status-select {
+    padding: 0.3rem 0.5rem !important;
+    font-size: 0.72rem !important;
+    max-width: 48% !important;
+  }
+
+  .search-count-label {
+    padding: 0.28rem 0.45rem !important;
+    font-size: 0.7rem !important;
+  }
 }
 
 [data-theme="light"] .filter-controls-card {
