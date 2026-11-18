@@ -537,13 +537,16 @@ body[data-mode="all"] .mode-nav {
   justify-self: start !important;
 }
 
-/* PDF Button: Hidden in Practice Mode, only visible when in All Questions mode */
+/* PDF Button & Dark Mode Toggle: Hidden in Practice Mode, only visible when in All Questions mode */
 body:not([data-mode="all"]) .pdf-btn,
-body[data-mode="practice"] .pdf-btn {
+body[data-mode="practice"] .pdf-btn,
+body:not([data-mode="all"]) .theme-toggle,
+body[data-mode="practice"] .theme-toggle {
   display: none !important;
 }
 
-body[data-mode="all"] .pdf-btn {
+body[data-mode="all"] .pdf-btn,
+body[data-mode="all"] .theme-toggle {
   display: inline-flex !important;
 }
 
