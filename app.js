@@ -516,7 +516,7 @@ function updatePoolButtonTitle() {
   const wrapper = document.getElementById('pool-single-wrapper');
   if (select && wrapper) {
     const selectedText = select.options[select.selectedIndex]?.textContent || 'All Questions';
-    wrapper.title = `Question Pool: ${selectedText}`;
+    wrapper.title = `Question Pool: ${selectedText} [P]`;
     if (select.value !== 'all') {
       wrapper.classList.add('has-filter');
     } else {
@@ -1395,7 +1395,16 @@ async function resetAllSubjectAnswers() {
    Keyboard Shortcuts for PC Navigation, Answers, Hints & Bookmarks
    ========================================================================== */
 
+let activePressedKeys = new Set();
+let lastKeyTimeMap = {};
+let lastResetChordTime = 0;
+let lastRandomChordTime = 0;
+
 function initKeyboardShortcuts() {
+  window.addEventListener('blur', () => {
+    activePressedKeys.clear();
+  });
+
   document.addEventListener('keydown', (e) => {
     const activeEl = document.activeElement;
 
@@ -1476,8 +1485,63 @@ function initKeyboardShortcuts() {
 
     if (state.currentMode !== 'practice') return;
 
+    // Track active key presses for simultaneous chord detection
+    const now = Date.now();
     const key = e.key ? e.key.toLowerCase() : '';
     const code = e.code ? e.code.toLowerCase() : '';
+    activePressedKeys.add(key);
+    activePressedKeys.add(code);
+    lastKeyTimeMap[key] = now;
+    lastKeyTimeMap[code] = now;
+
+    // If modal dialog is already open, ignore new trigger shortcuts
+    const modal = document.getElementById('app-confirm-modal');
+    if (modal && modal.classList.contains('open')) {
+      return;
+    }
+
+    function isKeyDownOrRecent(k, threshold = 280) {
+      if (activePressedKeys.has(k)) return true;
+      return (now - (lastKeyTimeMap[k] || 0)) < threshold;
+    }
+
+    const isRDown = isKeyDownOrRecent('r') || isKeyDownOrRecent('keyr');
+    const isEDown = isKeyDownOrRecent('e') || isKeyDownOrRecent('keye');
+    const isADown = isKeyDownOrRecent('a') || isKeyDownOrRecent('keya');
+
+    // 1. Pressing R and E at the same time: prompts reset
+    if ((key === 'r' || key === 'e' || code === 'keyr' || code === 'keye') && isRDown && isEDown) {
+      if (now - lastResetChordTime > 500) {
+        lastResetChordTime = now;
+        e.preventDefault();
+        resetAllSubjectAnswers();
+      }
+      return;
+    }
+
+    // 2. Pressing R and A at the same time: prompts random
+    if ((key === 'r' || key === 'a' || code === 'keyr' || code === 'keya') && isRDown && isADown) {
+      if (now - lastRandomChordTime > 500) {
+        lastRandomChordTime = now;
+        e.preventDefault();
+        toggleRandomMode();
+      }
+      return;
+    }
+
+    // 3. P prompts pools
+    if (key === 'p' || code === 'keyp') {
+      e.preventDefault();
+      promptPoolFilterSelection();
+      return;
+    }
+
+    // 4. M still prompts mic (speech narration)
+    if (key === 'm' || key === 'n' || code === 'keym' || code === 'keyn') {
+      e.preventDefault();
+      toggleNarration();
+      return;
+    }
 
     if (e.key === 'Enter' || code === 'enter') {
       e.preventDefault();
@@ -1487,50 +1551,61 @@ function initKeyboardShortcuts() {
       return;
     } else if (e.key === 'Delete' || code === 'delete' || e.key === 'Del') {
       e.preventDefault();
-      showPoolResetPrompt('Reset quiz progress & return to zero?');
+      resetAllSubjectAnswers();
+      return;
     } else if (e.key === ' ' || e.key === 'Spacebar' || key === 'space' || code === 'space') {
       e.preventDefault();
       if (activeEl && typeof activeEl.blur === 'function') {
         activeEl.blur();
       }
       toggleNotesSection(e);
+      return;
     } else if (e.key === '\\' || key === '\\' || code === 'backslash') {
       e.preventDefault();
       toggleBookmarkCurrent(true); // Pass true to trigger toast notification!
-    } else if (key === 'm' || key === 'n' || code === 'keym' || code === 'keyn') {
-      e.preventDefault();
-      toggleNarration();
+      return;
     } else if (e.key === 'ArrowRight' || code === 'arrowright') {
       e.preventDefault();
       nextQuestion();
+      return;
     } else if (e.key === 'ArrowLeft' || code === 'arrowleft') {
       e.preventDefault();
       prevQuestion();
+      return;
     } else if (key === 'a' || e.key === '1' || code === 'keya' || code === 'digit1') {
       e.preventDefault();
       triggerOptionSelection(0);
+      return;
     } else if (key === 'b' || e.key === '2' || code === 'keyb' || code === 'digit2') {
       e.preventDefault();
       triggerOptionSelection(1);
+      return;
     } else if (key === 'c' || e.key === '3' || code === 'keyc' || code === 'digit3') {
       e.preventDefault();
       triggerOptionSelection(2);
+      return;
     } else if (key === 'd' || e.key === '4' || code === 'keyd' || code === 'digit4') {
       e.preventDefault();
       triggerOptionSelection(3);
+      return;
     } else if (e.key === 'PageDown' || code === 'pagedown' || e.key === 'End' || code === 'end') {
       e.preventDefault();
       scrollToBottomInstant();
+      return;
     } else if (e.key === 'PageUp' || code === 'pageup' || e.key === 'Home' || code === 'home') {
       e.preventDefault();
       scrollToTopInstant();
+      return;
     }
   });
 
-  // Prevent desktop Space keyup from triggering synthetic click on focused buttons
+  // Track keyup to remove from active pressed keys
   document.addEventListener('keyup', (e) => {
     const key = e.key ? e.key.toLowerCase() : '';
     const code = e.code ? e.code.toLowerCase() : '';
+    activePressedKeys.delete(key);
+    activePressedKeys.delete(code);
+
     if (e.key === ' ' || e.key === 'Spacebar' || key === 'space' || code === 'space') {
       e.preventDefault();
       if (document.activeElement && typeof document.activeElement.blur === 'function') {
@@ -1646,7 +1721,7 @@ function updateSubjectUI() {
 
   const resetBtn = document.getElementById('btn-quiz-reset');
   if (resetBtn) {
-    resetBtn.title = `Reset All Answers for ${info.title} (Keeps Weak Questions Memory)`;
+    resetBtn.title = `Reset All Answers for ${info.title} [R + E]`;
   }
 
   updateFormulasUI();
@@ -3265,8 +3340,8 @@ function updateRandomButtonUI() {
     btn.innerHTML = '<i class="fa-solid fa-shuffle"></i>';
     btn.classList.toggle('active', !!state.randomMode);
     btn.title = state.randomMode
-      ? 'Random Order: ON (Click to turn OFF)'
-      : 'Random Order: OFF (Click to turn ON)';
+      ? 'Random Order: ON (Click to turn OFF) [R + A]'
+      : 'Random Order: OFF (Click to turn ON) [R + A]';
   }
 }
 
@@ -4682,7 +4757,7 @@ function updateNarrationUI() {
 
     if (qListenBtn) {
       qListenBtn.className = 'control-single-btn audio-single-btn is-speaking';
-      qListenBtn.setAttribute('title', 'Stop narration [Press M]');
+      qListenBtn.setAttribute('title', 'Stop narration [M]');
     }
     if (qListenIcon) qListenIcon.className = 'fa-solid fa-stop';
     if (qListenLabel) qListenLabel.textContent = 'Stop';
@@ -4697,7 +4772,7 @@ function updateNarrationUI() {
 
     if (qListenBtn) {
       qListenBtn.className = 'control-single-btn audio-single-btn is-active';
-      qListenBtn.setAttribute('title', 'Auto-Narration is ON (speaks on Next/Prev). Click to turn OFF [Press M]');
+      qListenBtn.setAttribute('title', 'Auto-Narration is ON (speaks on Next/Prev). Click to turn OFF [M]');
     }
     if (qListenIcon) qListenIcon.className = 'fa-solid fa-volume-high';
     if (qListenLabel) qListenLabel.textContent = 'Auto: ON';
@@ -4712,7 +4787,7 @@ function updateNarrationUI() {
 
     if (qListenBtn) {
       qListenBtn.className = 'control-single-btn audio-single-btn';
-      qListenBtn.setAttribute('title', 'Narrate question & choices [Press M]');
+      qListenBtn.setAttribute('title', 'Narrate question & choices [M]');
     }
     if (qListenIcon) qListenIcon.className = 'fa-solid fa-volume-high';
     if (qListenLabel) qListenLabel.textContent = 'Listen';
