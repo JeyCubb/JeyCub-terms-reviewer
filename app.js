@@ -898,8 +898,8 @@ function promptPoolFilterSelection() {
 
   if (titleEl) titleEl.textContent = 'Question Pool';
   if (subtitleEl) {
-    subtitleEl.textContent = `${info.title} • Select a Pool`;
-    subtitleEl.style.display = 'block';
+    subtitleEl.textContent = '';
+    subtitleEl.style.display = 'none';
   }
 
   const subjectOpts = SUBJECT_FILTERS[state.currentSubject] || [];
