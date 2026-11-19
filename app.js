@@ -639,19 +639,20 @@ function promptJumpToQuestion() {
 
   if (titleEl) titleEl.textContent = 'Jump to Problem';
   if (subtitleEl) {
-    subtitleEl.textContent = `${info.title} • ${poolName}`;
-    subtitleEl.style.display = 'block';
+    subtitleEl.textContent = '';
+    subtitleEl.style.display = 'none';
   }
 
   if (contentEl) {
     contentEl.innerHTML = `
       <div style="display: flex; flex-direction: column; gap: 0.5rem;">
         <div>
-          <label for="jump-modal-input" style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.4rem;">
-            Problem Number (1 – ${totalNum}):
+          <label for="jump-modal-input" style="display: block; font-size: 0.82rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.45rem;">
+            1 – ${totalNum}
           </label>
           <input type="text" id="jump-modal-input" min="1" max="${totalNum}" value="${currentNum}" inputmode="numeric" pattern="[0-9]*"
             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus
+            aria-label="Problem number range 1 to ${totalNum}"
             style="width: 100%; box-sizing: border-box; background: var(--bg-input); border: 2px solid var(--border-color); border-radius: var(--radius-md); padding: 0.65rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 800; color: var(--accent-primary); text-align: center; outline: none; transition: border-color 0.2s ease;"
             onfocus="this.style.borderColor='var(--accent-primary)';"
             onblur="this.style.borderColor='var(--border-color)';"
