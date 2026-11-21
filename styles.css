@@ -716,14 +716,16 @@ body[data-mode="all"] .theme-toggle {
   }
 }
 
-.brand-nav-btn:hover,
-.reviewer-link-icon:hover {
-  background: var(--accent-primary) !important;
-  border-color: var(--accent-primary) !important;
-  color: #ffffff !important;
-  transform: translateY(-2px) scale(1.14);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35) !important;
-  z-index: 5;
+@media (hover: hover) and (pointer: fine) {
+  .brand-nav-btn:hover,
+  .reviewer-link-icon:hover {
+    background: var(--accent-primary) !important;
+    border-color: var(--accent-primary) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) scale(1.14);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35) !important;
+    z-index: 5;
+  }
 }
 
 .brand-nav-btn:active,
